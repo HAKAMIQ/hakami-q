@@ -2,72 +2,138 @@
 const today = new Date();
 ---
 
-<footer>
-	<p>
-		&copy; {today.getFullYear()} HAKAMIQ. جميع الحقوق محفوظة.
-	</p>
+<footer class="site-footer">
+	<div class="site-container footer-grid">
+		<section class="footer-brand">
+			<a class="footer-logo" href="/">HAKAMIQ</a>
+			<p>
+				دليل عربي لشروحات المحاكيات وتشغيل الألعاب وحلول المشاكل على الكمبيوتر وأجهزة الألعاب
+			</p>
+		</section>
 
-	<nav>
-		<a href="/privacy">سياسة الخصوصية</a>
-		<a href="/terms">اتفاقية الاستخدام</a>
-		<a href="/contact">اتصل بنا</a>
-		<a href="/services">خدمة المحاكيات</a>
-	</nav>
+		<section>
+			<h2>روابط الموقع</h2>
+			<nav aria-label="روابط الموقع">
+				<a href="/blog">المقالات</a>
+				<a href="/emulators">المحاكيات</a>
+				<a href="/games">الألعاب</a>
+				<a href="/services">الخدمات</a>
+			</nav>
+		</section>
 
-	<div class="social-links">
-		<a href="https://www.youtube.com/@HAKAMIQ" target="_blank">
-			YouTube
-		</a>
+		<section>
+			<h2>معلومات</h2>
+			<nav aria-label="روابط المعلومات">
+				<a href="/about">من نحن</a>
+				<a href="/contact">اتصل بنا</a>
+				<a href="/privacy">سياسة الخصوصية</a>
+				<a href="/terms">اتفاقية الاستخدام</a>
+			</nav>
+		</section>
 
-		<a href="https://discord.gg/WqgRrmAKpC" target="_blank">
-			Discord
-		</a>
+		<section>
+			<h2>تابع HAKAMIQ</h2>
+			<nav aria-label="الشبكات الاجتماعية">
+				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer">YouTube</a>
+				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer">Discord</a>
+				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer">Telegram</a>
+			</nav>
+		</section>
+	</div>
 
-		<a href="https://t.me/hakamiq0" target="_blank">
-			Telegram
-		</a>
+	<div class="footer-bottom">
+		<div class="site-container">
+			<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
+		</div>
 	</div>
 </footer>
 
 <style>
-	footer {
-		padding: 2em 1em 4em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-		direction: rtl;
+	.site-footer {
+		margin-top: 4rem;
+		border-top: 1px solid var(--hq-border);
+		background: #0d1014;
+		color: var(--hq-muted);
 	}
 
-	nav {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 1rem;
-		margin: 1rem 0;
+	.footer-grid {
+		display: grid;
+		grid-template-columns: minmax(260px, 1.5fr) repeat(3, minmax(150px, 1fr));
+		gap: 2rem;
+		padding-block: 2.8rem;
 	}
 
-	nav a,
-	.social-links a {
-		color: rgb(var(--gray));
+	.footer-brand {
+		max-width: 420px;
+	}
+
+	.footer-logo {
+		display: inline-block;
+		margin-bottom: 0.8rem;
+		color: var(--hq-text);
+		font-size: 1.5rem;
+		font-weight: 900;
+		letter-spacing: 0.04em;
 		text-decoration: none;
 	}
 
-	nav a:hover,
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
+	.footer-brand p {
+		font-size: 0.92rem;
+		line-height: 1.9;
 	}
 
-	.social-links {
+	h2 {
+		margin-bottom: 0.85rem;
+		font-size: 1rem;
+	}
+
+	nav {
+		display: grid;
+		gap: 0.45rem;
+	}
+
+	nav a {
+		width: fit-content;
+		color: var(--hq-muted);
+		font-size: 0.88rem;
+		text-decoration: none;
+		transition: color 0.2s ease, transform 0.2s ease;
+	}
+
+	nav a:hover {
+		color: var(--hq-text);
+		transform: translateX(-3px);
+	}
+
+	.footer-bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+		background: #0a0d10;
+	}
+
+	.footer-bottom .site-container {
 		display: flex;
+		min-height: 58px;
+		align-items: center;
 		justify-content: center;
-		gap: 1rem;
-		margin-top: 1rem;
+		font-size: 0.82rem;
+		text-align: center;
 	}
 
-	@media (max-width: 720px) {
-		nav,
-		.social-links {
-			flex-direction: column;
+	@media (max-width: 900px) {
+		.footer-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 560px) {
+		.site-footer {
+			margin-top: 3rem;
+		}
+
+		.footer-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding-block: 2rem;
 		}
 	}
 </style>
