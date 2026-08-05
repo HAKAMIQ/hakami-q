@@ -90,7 +90,7 @@ labels: ["Nintendo","NS"]
 
 <h3>🌐 خدمات إضافية</h3>
 <ul>
-  <li>🎮 Nintendo Switch + مكتبة ألعاب NES/SNES/GB/GBA/N64</li>
+  <li>🎮 Nintendo Switch Online = أونلاين + مكتبة ألعاب NES/SNES/GB/GBA/N64</li>
   <li>💾 النسخ الاحتياطي السحابي للألعاب</li>
   <li>👨‍👩‍👧 حسابات متعددة + متجر رقمي</li>
 </ul>
