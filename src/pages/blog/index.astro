@@ -1,114 +1,290 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const formatDate = (date: Date) =>
+	new Intl.DateTimeFormat('ar-SA', {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+	}).format(date);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		<BaseHead title={`المقالات | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
+
 	<body>
 		<Header />
+
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+			<section class="page-hero">
+				<div class="site-container">
+					<span>مكتبة HAKAMIQ</span>
+					<h1>المقالات والشروحات</h1>
+					<p>
+						جميع شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم
+					</p>
+					<strong>{posts.length} مقال</strong>
+				</div>
+			</section>
+
+			<section class="posts-section">
+				<div class="site-container">
+					<div class="posts-grid">
+						{
+							posts.map((post, index) => (
+								<article class:list={['post-card', { featured: index === 0 }]}>
+									<a href={`/blog/${post.id}/`}>
+										<div class="post-image">
+											{post.data.heroImageUrl ? (
+												<img
+													src={post.data.heroImageUrl}
+													alt={post.data.title}
+													loading={index === 0 ? 'eager' : 'lazy'}
+													fetchpriority={index === 0 ? 'high' : 'auto'}
+													referrerpolicy="no-referrer"
+												/>
+											) : (
+												<div class="image-placeholder">HAKAMIQ</div>
+											)}
+										</div>
+
+										<div class="post-content">
+											{post.data.labels.length > 0 && (
+												<span class="post-label">{post.data.labels[0]}</span>
+											)}
+											<h2>{post.data.title}</h2>
+											<p>{post.data.description}</p>
+											<time datetime={post.data.pubDate.toISOString()}>
+												{formatDate(post.data.pubDate)}
+											</time>
+										</div>
+									</a>
+								</article>
+							))
+						}
+					</div>
+				</div>
 			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.page-hero {
+		padding: 3.5rem 0;
+		border-bottom: 1px solid var(--hq-border);
+		background:
+			linear-gradient(115deg, rgba(229, 21, 21, 0.13), transparent 42%),
+			var(--hq-surface);
+	}
+
+	.page-hero .site-container {
+		position: relative;
+	}
+
+	.page-hero span {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		color: #ff6c73;
+		font-size: 0.82rem;
+		font-weight: 800;
+	}
+
+	.page-hero h1 {
+		font-size: clamp(2rem, 4vw, 3.4rem);
+	}
+
+	.page-hero p {
+		max-width: 720px;
+		margin-top: 0.9rem;
+		color: var(--hq-muted);
+	}
+
+	.page-hero strong {
+		display: inline-flex;
+		margin-top: 1rem;
+		padding: 0.32rem 0.7rem;
+		border: 1px solid rgba(229, 21, 21, 0.3);
+		border-radius: 999px;
+		background: rgba(229, 21, 21, 0.1);
+		color: #ff747a;
+		font-size: 0.8rem;
+	}
+
+	.posts-section {
+		padding: 2.5rem 0 1rem;
+	}
+
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.post-card {
+		overflow: hidden;
+		border: 1px solid var(--hq-border);
+		border-radius: var(--hq-radius-md);
+		background: var(--hq-card);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+		transition: transform 0.2s ease, border-color 0.2s ease;
+	}
+
+	.post-card:hover {
+		border-color: rgba(229, 21, 21, 0.48);
+		transform: translateY(-4px);
+	}
+
+	.post-card.featured {
+		grid-column: span 2;
+	}
+
+	.post-card > a {
+		display: grid;
+		height: 100%;
+		text-decoration: none;
+	}
+
+	.post-image {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: #0d1014;
+	}
+
+	.post-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.35s ease;
+	}
+
+	.post-card:hover img {
+		transform: scale(1.035);
+	}
+
+	.image-placeholder {
+		display: grid;
+		width: 100%;
+		height: 100%;
+		place-items: center;
+		background:
+			linear-gradient(135deg, rgba(229, 21, 21, 0.19), transparent),
+			#181c22;
+		color: rgba(255, 255, 255, 0.28);
+		font-size: 1.4rem;
+		font-weight: 900;
+	}
+
+	.post-content {
+		display: flex;
+		min-height: 230px;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 1.1rem;
+	}
+
+	.post-label {
+		margin-bottom: 0.6rem;
+		padding: 0.2rem 0.55rem;
+		border-radius: 999px;
+		background: rgba(229, 21, 21, 0.12);
+		color: #ff7279;
+		font-size: 0.7rem;
+		font-weight: 800;
+	}
+
+	.post-content h2 {
+		display: -webkit-box;
+		overflow: hidden;
+		font-size: 1.12rem;
+		line-height: 1.55;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.featured .post-content h2 {
+		font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+	}
+
+	.post-content p {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: 0.65rem;
+		color: var(--hq-muted);
+		font-size: 0.86rem;
+		line-height: 1.75;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
+
+	.post-content time {
+		margin-top: auto;
+		padding-top: 1rem;
+		color: var(--hq-muted);
+		font-size: 0.74rem;
+	}
+
+	@media (max-width: 1050px) {
+		.posts-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 680px) {
+		.page-hero {
+			padding: 2.5rem 0;
+		}
+
+		.posts-grid {
+			grid-template-columns: 1fr;
+			gap: 0.9rem;
+		}
+
+		.post-card.featured {
+			grid-column: auto;
+		}
+
+		.post-card > a {
+			grid-template-columns: 132px minmax(0, 1fr);
+		}
+
+		.post-image {
+			height: 100%;
+			min-height: 140px;
+			aspect-ratio: auto;
+		}
+
+		.post-content {
+			min-height: 140px;
+			padding: 0.85rem;
+		}
+
+		.post-content p {
+			display: none;
+		}
+
+		.post-content h2,
+		.featured .post-content h2 {
+			font-size: 0.95rem;
+		}
+	}
+
+	@media (max-width: 430px) {
+		.post-card > a {
+			grid-template-columns: 105px minmax(0, 1fr);
+		}
+	}
+</style>
