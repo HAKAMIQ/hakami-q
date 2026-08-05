@@ -9,6 +9,106 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+const categoryDefinitions = [
+	{
+		slug: 'playstation',
+		name: 'PlayStation',
+		keywords: [
+			'playstation',
+			'ps1',
+			'ps2',
+			'ps3',
+			'ps4',
+			'ps5',
+			'psp',
+			'vita',
+			'rpcs3',
+			'pcsx2',
+			'duckstation',
+			'ppsspp',
+			'vita3k',
+			'shadps4',
+			'بلايستيشن',
+		],
+	},
+	{
+		slug: 'nintendo',
+		name: 'Nintendo',
+		keywords: [
+			'nintendo',
+			'switch',
+			'wii',
+			'gamecube',
+			'3ds',
+			'2ds',
+			'game boy',
+			'gba',
+			'gbc',
+			'nes',
+			'snes',
+			'cemu',
+			'dolphin',
+			'yuzu',
+			'ryujinx',
+			'eden',
+			'citra',
+			'نينتندو',
+		],
+	},
+	{
+		slug: 'xbox',
+		name: 'Xbox',
+		keywords: ['xbox', 'xenia', 'xemu', 'إكس بوكس', 'اكس بوكس'],
+	},
+	{
+		slug: 'sega',
+		name: 'SEGA',
+		keywords: [
+			'sega',
+			'dreamcast',
+			'saturn',
+			'genesis',
+			'mega drive',
+			'game gear',
+			'naomi',
+			'flycast',
+			'سيجا',
+		],
+	},
+	{
+		slug: 'pc',
+		name: 'PC Emulation',
+		keywords: [
+			'pc emulation',
+			'retroarch',
+			'launchbox',
+			'chdman',
+			'chd tool',
+			'rclone',
+			'jdownloader',
+			'wmi',
+			'ffmpeg',
+			'كمبيوتر',
+		],
+	},
+];
+
+const getPostCategories = (post: (typeof posts)[number]) => {
+	const searchableText = [
+		post.data.title,
+		post.data.description,
+		...post.data.labels,
+	]
+		.join(' ')
+		.toLowerCase();
+
+	return categoryDefinitions
+		.filter((category) =>
+			category.keywords.some((keyword) => searchableText.includes(keyword.toLowerCase())),
+		)
+		.map((category) => category.slug);
+};
+
 const formatDate = (date: Date) =>
 	new Intl.DateTimeFormat('ar-SA', {
 		year: 'numeric',
@@ -34,16 +134,31 @@ const formatDate = (date: Date) =>
 					<p>
 						جميع شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم
 					</p>
-					<strong>{posts.length} مقال</strong>
+					<strong id="post-count" data-total={posts.length}>{posts.length} مقال</strong>
 				</div>
 			</section>
 
 			<section class="posts-section">
 				<div class="site-container">
-					<div class="posts-grid">
+					<div class="filter-status" id="filter-status" hidden>
+						<p>
+							القسم الحالي
+							<strong id="filter-name"></strong>
+						</p>
+						<a href="/blog">عرض جميع المقالات</a>
+					</div>
+
+					<p class="no-results" id="no-results" hidden>
+						لا توجد مقالات مطابقة لهذا القسم حاليا
+					</p>
+
+					<div class="posts-grid" id="posts-grid">
 						{
 							posts.map((post, index) => (
-								<article class:list={['post-card', { featured: index === 0 }]}>
+								<article
+									class:list={['post-card', { featured: index === 0 }]}
+									data-categories={getPostCategories(post).join(' ')}
+								>
 									<a href={`/blog/${post.id}/`}>
 										<div class="post-image">
 											{post.data.heroImageUrl ? (
@@ -82,6 +197,53 @@ const formatDate = (date: Date) =>
 	</body>
 </html>
 
+<script>
+	const categoryNames: Record<string, string> = {
+		playstation: 'PlayStation',
+		nintendo: 'Nintendo',
+		xbox: 'Xbox',
+		sega: 'SEGA',
+		pc: 'PC Emulation',
+	};
+
+	const selectedCategory = new URLSearchParams(window.location.search)
+		.get('category')
+		?.trim()
+		.toLowerCase();
+
+	if (selectedCategory && categoryNames[selectedCategory]) {
+		const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card'));
+		const filterStatus = document.querySelector<HTMLElement>('#filter-status');
+		const filterName = document.querySelector<HTMLElement>('#filter-name');
+		const postCount = document.querySelector<HTMLElement>('#post-count');
+		const noResults = document.querySelector<HTMLElement>('#no-results');
+
+		let visibleCount = 0;
+		let firstVisibleCard: HTMLElement | undefined;
+
+		for (const card of cards) {
+			card.classList.remove('featured');
+
+			const categories = (card.dataset.categories ?? '').split(' ').filter(Boolean);
+			const shouldShow = categories.includes(selectedCategory);
+
+			card.hidden = !shouldShow;
+
+			if (shouldShow) {
+				visibleCount += 1;
+				firstVisibleCard ??= card;
+			}
+		}
+
+		firstVisibleCard?.classList.add('featured');
+
+		if (filterStatus) filterStatus.hidden = false;
+		if (filterName) filterName.textContent = categoryNames[selectedCategory];
+		if (postCount) postCount.textContent = `${visibleCount} مقال`;
+		if (noResults) noResults.hidden = visibleCount !== 0;
+	}
+</script>
+
 <style>
 	.page-hero {
 		padding: 3.5rem 0;
@@ -113,7 +275,7 @@ const formatDate = (date: Date) =>
 		color: var(--hq-muted);
 	}
 
-	.page-hero strong {
+	.page-hero > .site-container > strong {
 		display: inline-flex;
 		margin-top: 1rem;
 		padding: 0.32rem 0.7rem;
@@ -126,6 +288,52 @@ const formatDate = (date: Date) =>
 
 	.posts-section {
 		padding: 2.5rem 0 1rem;
+	}
+
+	.filter-status {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 1.25rem;
+		padding: 0.85rem 1rem;
+		border: 1px solid var(--hq-border);
+		border-radius: 13px;
+		background: var(--hq-card);
+	}
+
+	.filter-status[hidden] {
+		display: none;
+	}
+
+	.filter-status p {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--hq-muted);
+		font-size: 0.88rem;
+	}
+
+	.filter-status strong {
+		color: #ff747a;
+	}
+
+	.filter-status a {
+		padding: 0.45rem 0.7rem;
+		border-radius: 9px;
+		background: rgba(229, 21, 21, 0.12);
+		color: #ff747a;
+		font-size: 0.8rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	.no-results {
+		padding: 2rem;
+		border: 1px dashed var(--hq-border);
+		border-radius: var(--hq-radius-md);
+		color: var(--hq-muted);
+		text-align: center;
 	}
 
 	.posts-grid {
@@ -141,6 +349,10 @@ const formatDate = (date: Date) =>
 		background: var(--hq-card);
 		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 		transition: transform 0.2s ease, border-color 0.2s ease;
+	}
+
+	.post-card[hidden] {
+		display: none;
 	}
 
 	.post-card:hover {
@@ -246,6 +458,11 @@ const formatDate = (date: Date) =>
 	@media (max-width: 680px) {
 		.page-hero {
 			padding: 2.5rem 0;
+		}
+
+		.filter-status {
+			align-items: flex-start;
+			flex-direction: column;
 		}
 
 		.posts-grid {
