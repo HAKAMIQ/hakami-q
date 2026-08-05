@@ -3,90 +3,220 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
-	<nav>
-		<h2>
-			<a href="/">{SITE_TITLE}</a>
-		</h2>
+<header class="site-header">
+	<div class="topbar">
+		<div class="site-container topbar-inner">
+			<div class="top-links" aria-label="روابط إضافية">
+				<a href="/privacy">سياسة الخصوصية</a>
+				<a href="/terms">اتفاقية الاستخدام</a>
+				<a href="/contact">اتصل بنا</a>
+			</div>
 
-		<div class="internal-links">
-			<HeaderLink href="/">الرئيسية</HeaderLink>
-			<HeaderLink href="/blog">المقالات</HeaderLink>
-			<HeaderLink href="/emulators">المحاكيات</HeaderLink>
-			<HeaderLink href="/games">الألعاب</HeaderLink>
-			<HeaderLink href="/services">الخدمات</HeaderLink>
-			<HeaderLink href="/about">من نحن</HeaderLink>
-			<HeaderLink href="/contact">اتصل بنا</HeaderLink>
+			<div class="social-links" aria-label="الشبكات الاجتماعية">
+				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer">YouTube</a>
+				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer">Discord</a>
+				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer">Telegram</a>
+			</div>
 		</div>
+	</div>
 
-		<div class="social-links">
-			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank">
-				YouTube
+	<div class="brand-row">
+		<div class="site-container brand-row-inner">
+			<a class="brand" href="/" aria-label="الصفحة الرئيسية">
+				<span class="brand-mark">H</span>
+				<span class="brand-copy">
+					<strong>{SITE_TITLE}</strong>
+					<small>دليل المحاكيات والألعاب</small>
+				</span>
 			</a>
 
-			<a href="https://discord.gg/WqgRrmAKpC" target="_blank">
-				Discord
-			</a>
+			<p class="brand-description">
+				شروحات تشغيل المحاكيات وإعداد الألعاب وحلول المشاكل على الكمبيوتر
+			</p>
+		</div>
+	</div>
 
-			<a href="https://t.me/hakamiq0" target="_blank">
-				Telegram
-			</a>
+	<nav class="main-nav" aria-label="القائمة الرئيسية">
+		<div class="site-container nav-inner">
+			<div class="nav-links">
+				<HeaderLink href="/">الرئيسية</HeaderLink>
+				<HeaderLink href="/blog">المقالات</HeaderLink>
+				<HeaderLink href="/emulators">المحاكيات</HeaderLink>
+				<HeaderLink href="/games">الألعاب</HeaderLink>
+				<HeaderLink href="/services">الخدمات</HeaderLink>
+				<HeaderLink href="/about">من نحن</HeaderLink>
+				<HeaderLink href="/contact">اتصل بنا</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1.5rem;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	.site-header {
+		position: relative;
+		z-index: 30;
+		border-bottom: 1px solid var(--hq-border);
+		background: rgba(17, 20, 24, 0.96);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 	}
 
-	nav {
+	.topbar {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+		background: #0d1014;
+	}
+
+	.topbar-inner,
+	.brand-row-inner,
+	.nav-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 1.25rem;
+	}
+
+	.topbar-inner {
+		min-height: 38px;
+		font-size: 0.8rem;
+		color: var(--hq-muted);
+	}
+
+	.top-links,
+	.social-links,
+	.nav-links {
+		display: flex;
+		align-items: center;
 		gap: 1rem;
 	}
 
-	h2 {
-		margin: 0;
-		font-size: 1.3rem;
-	}
-
-	h2 a {
+	.topbar a {
 		text-decoration: none;
+		transition: color 0.2s ease;
 	}
 
-	.internal-links,
-	.social-links {
-		display: flex;
+	.topbar a:hover {
+		color: var(--hq-text);
+	}
+
+	.brand-row {
+		background:
+			linear-gradient(90deg, transparent, rgba(229, 21, 21, 0.06), transparent),
+			var(--hq-surface);
+	}
+
+	.brand-row-inner {
+		min-height: 92px;
+		padding-block: 1rem;
+	}
+
+	.brand {
+		display: inline-flex;
 		align-items: center;
-		gap: 0.5rem;
-	}
-
-	nav a {
-		padding: 1rem 0.5rem;
-		color: var(--black);
+		gap: 0.8rem;
 		text-decoration: none;
-		border-bottom: 3px solid transparent;
 	}
 
-	nav a:hover {
-		border-bottom-color: var(--accent);
+	.brand-mark {
+		display: grid;
+		width: 50px;
+		height: 50px;
+		place-items: center;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 15px;
+		background: linear-gradient(145deg, #ff2c35, var(--hq-red-dark));
+		box-shadow: 0 12px 26px rgba(229, 21, 21, 0.24);
+		color: white;
+		font-size: 1.65rem;
+		font-weight: 900;
 	}
 
-	@media (max-width: 900px) {
-		nav {
-			flex-direction: column;
-			padding: 1rem 0;
+	.brand-copy {
+		display: grid;
+		gap: 0.05rem;
+	}
+
+	.brand-copy strong {
+		color: var(--hq-text);
+		font-size: 1.35rem;
+		letter-spacing: 0.04em;
+	}
+
+	.brand-copy small {
+		color: var(--hq-muted);
+		font-size: 0.78rem;
+	}
+
+	.brand-description {
+		max-width: 520px;
+		color: var(--hq-muted);
+		font-size: 0.92rem;
+		text-align: left;
+	}
+
+	.main-nav {
+		background: linear-gradient(90deg, var(--hq-red-dark), var(--hq-red));
+	}
+
+	.nav-inner {
+		min-height: 50px;
+	}
+
+	.nav-links {
+		width: 100%;
+		gap: 0.15rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.nav-links::-webkit-scrollbar {
+		display: none;
+	}
+
+	.nav-links :global(a) {
+		flex: 0 0 auto;
+		padding: 0.78rem 0.95rem;
+		border-radius: 9px;
+		color: white;
+		font-size: 0.93rem;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: background 0.2s ease;
+	}
+
+	.nav-links :global(a:hover),
+	.nav-links :global(a.active) {
+		background: rgba(0, 0, 0, 0.2);
+		text-decoration: none;
+	}
+
+	@media (max-width: 800px) {
+		.top-links {
+			display: none;
 		}
 
-		.internal-links,
-		.social-links {
-			flex-wrap: wrap;
+		.topbar-inner {
 			justify-content: center;
+		}
+
+		.brand-row-inner {
+			min-height: 78px;
+		}
+
+		.brand-description {
+			display: none;
+		}
+
+		.brand-mark {
+			width: 44px;
+			height: 44px;
+		}
+
+		.nav-inner {
+			width: 100%;
+		}
+
+		.nav-links {
+			padding-inline: 12px;
 		}
 	}
 </style>
