@@ -1,4 +1,4 @@
-# build output
+﻿# build output
 dist/
 # generated types
 .astro/
@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Blogger migration working files
+blogger-live-export/
+/content/
+src/content/blog-clean/
+src/content/blog-imported/
+src/content/blog-imported-backup/
+src/content/blog-original-backup/
