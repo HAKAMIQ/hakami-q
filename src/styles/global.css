@@ -1,141 +1,193 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--hq-red: #e51515;
+	--hq-red-dark: #b90f16;
+	--hq-bg: #111418;
+	--hq-surface: #171a20;
+	--hq-card: #1d2127;
+	--hq-card-soft: #22272e;
+	--hq-border: #303640;
+	--hq-text: #f4f6f8;
+	--hq-text-soft: #d6dce4;
+	--hq-muted: #aab3bf;
+	--hq-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+	--hq-radius-lg: 22px;
+	--hq-radius-md: 16px;
+	--hq-radius-sm: 12px;
+	--hq-container: 1400px;
+	--accent: var(--hq-red);
+	--accent-dark: var(--hq-red-dark);
+	--black: 244, 246, 248;
+	--gray: 170, 179, 191;
+	--gray-light: 48, 54, 64;
+	--gray-dark: 214, 220, 228;
+	--gray-gradient: #111418, #171a20;
+	--box-shadow: var(--hq-shadow);
 }
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	background: var(--hq-bg);
+}
+
 body {
-	font-family: var(--font-atkinson);
 	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	min-width: 320px;
+	font-family: var(--font-atkinson), "Segoe UI", Tahoma, Arial, sans-serif;
+	font-size: 17px;
+	line-height: 1.75;
+	color: var(--hq-text-soft);
+	background:
+		radial-gradient(circle at 85% -10%, rgba(229, 21, 21, 0.14), transparent 34rem),
+		linear-gradient(180deg, #111418 0%, #14181e 100%);
+	text-align: right;
+	direction: rtl;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
 }
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+
+a {
+	color: inherit;
 }
+
+a:hover {
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+	margin: 0;
+	color: var(--hq-text);
+	line-height: 1.35;
 }
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
+
 p {
-	margin-bottom: 1em;
+	margin: 0;
 }
+
+ul,
+ol {
+	margin: 0;
+}
+
+main {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-container {
+	width: min(calc(100% - 36px), var(--hq-container));
+	margin-inline: auto;
+}
+
+.prose {
+	width: min(calc(100% - 36px), 900px);
+	margin-inline: auto;
+	padding-block: 2rem 4rem;
+}
+
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1.35rem;
 }
-textarea {
+
+.prose a {
+	color: #ff6168;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+.prose img {
+	margin: 1.5rem auto;
+	border-radius: var(--hq-radius-md);
+}
+
+.prose table {
 	width: 100%;
-	font-size: 16px;
+	border-collapse: collapse;
 }
-input {
-	font-size: 16px;
+
+.prose th,
+.prose td {
+	padding: 0.75rem;
+	border: 1px solid var(--hq-border);
 }
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
+
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: 0.12rem 0.38rem;
+	border: 1px solid var(--hq-border);
+	border-radius: 6px;
+	background: #0d1014;
+	color: #f7b7ba;
 }
+
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	overflow: auto;
+	padding: 1.25rem;
+	border: 1px solid var(--hq-border);
+	border-radius: var(--hq-radius-md);
+	background: #0d1014;
 }
+
 pre > code {
 	all: unset;
 }
+
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+	margin: 1.5rem 0;
+	padding: 1rem 1.25rem;
+	border-right: 4px solid var(--hq-red);
+	border-radius: var(--hq-radius-sm);
+	background: var(--hq-card);
 }
+
 hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+	border: 0;
+	border-top: 1px solid var(--hq-border);
 }
 
 .sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
 	position: absolute !important;
-	height: 1px;
 	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
+	border: 0;
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 16px;
+	}
+
+	.site-container,
+	.prose {
+		width: min(calc(100% - 24px), var(--hq-container));
+	}
 }
