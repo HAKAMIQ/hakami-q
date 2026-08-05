@@ -1,6 +1,139 @@
 ---
 import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+
+type MenuItem = {
+	label: string;
+	slug: string;
+	children?: MenuItem[];
+	openDirection?: 'start' | 'end';
+};
+
+type MenuGroup = {
+	label: string;
+	slug: string;
+	tone: string;
+	items?: MenuItem[];
+};
+
+const categoryHref = (slug: string) => `/blog?category=${encodeURIComponent(slug)}`;
+
+const menuGroups: MenuGroup[] = [
+	{
+		label: 'NINTENDO',
+		slug: 'nintendo',
+		tone: 'nintendo',
+		items: [
+			{ label: 'Nintendo Switch', slug: 'nintendo-switch' },
+			{ label: 'Wii U', slug: 'wii-u' },
+			{ label: 'Wii', slug: 'wii' },
+			{ label: 'GameCube - GCN', slug: 'gamecube' },
+			{ label: 'Nintendo 64 - N64', slug: 'n64' },
+			{ label: 'SNES', slug: 'snes' },
+			{ label: 'NES', slug: 'nes' },
+			{
+				label: 'Nintendo Handhelds',
+				slug: 'nintendo-handhelds',
+				openDirection: 'end',
+				children: [
+					{ label: 'Nintendo 3DS', slug: 'nintendo-3ds' },
+					{ label: 'Nintendo DS - NDS', slug: 'nintendo-ds' },
+					{ label: 'Game Boy Advance - GBA', slug: 'gba' },
+					{ label: 'Game Boy Color - GBC', slug: 'gbc' },
+					{ label: 'Game Boy - GB', slug: 'game-boy' },
+					{ label: 'Virtual Boy - VB', slug: 'virtual-boy' },
+				],
+			},
+		],
+	},
+	{
+		label: 'PLAYSTATION',
+		slug: 'playstation',
+		tone: 'playstation',
+		items: [
+			{ label: 'PlayStation 1 - PS1', slug: 'ps1' },
+			{ label: 'PlayStation 2 - PS2', slug: 'ps2' },
+			{ label: 'PlayStation 3 - PS3', slug: 'ps3' },
+			{ label: 'PlayStation 4 - PS4', slug: 'ps4' },
+			{ label: 'PlayStation 5 - PS5', slug: 'ps5' },
+			{
+				label: 'PlayStation Handhelds',
+				slug: 'playstation-handhelds',
+				openDirection: 'end',
+				children: [
+					{ label: 'PlayStation Portable - PSP', slug: 'psp' },
+					{ label: 'PlayStation Vita - PS Vita', slug: 'ps-vita' },
+				],
+			},
+		],
+	},
+	{
+		label: 'XBOX',
+		slug: 'xbox',
+		tone: 'xbox',
+		items: [
+			{ label: 'Original Xbox - OG Xbox', slug: 'original-xbox' },
+			{ label: 'Xbox 360 - X360', slug: 'xbox-360' },
+		],
+	},
+	{
+		label: 'SEGA',
+		slug: 'sega',
+		tone: 'sega',
+		items: [
+			{ label: 'Mega Drive / Genesis', slug: 'genesis' },
+			{ label: 'SEGA Saturn', slug: 'saturn' },
+			{ label: 'Dreamcast - DC', slug: 'dreamcast' },
+			{ label: 'Game Gear - GG', slug: 'game-gear' },
+			{ label: 'SEGA NAOMI', slug: 'naomi' },
+			{ label: 'SEGA Pico', slug: 'pico' },
+			{ label: 'Advanced Pico Beena', slug: 'beena' },
+		],
+	},
+	{
+		label: 'OTHER CONSOLES',
+		slug: 'other-consoles',
+		tone: 'other',
+		items: [
+			{
+				label: 'Atari',
+				slug: 'atari',
+				openDirection: 'start',
+				children: [
+					{ label: 'Atari 2600', slug: 'atari-2600' },
+					{ label: 'Atari 5200', slug: 'atari-5200' },
+					{ label: 'Atari 7800', slug: 'atari-7800' },
+					{ label: 'Atari 800', slug: 'atari-800' },
+				],
+			},
+			{
+				label: 'Commodore',
+				slug: 'commodore',
+				openDirection: 'start',
+				children: [
+					{ label: 'Commodore 64 - C64', slug: 'commodore-64' },
+					{ label: 'Amiga', slug: 'amiga' },
+				],
+			},
+			{ label: 'Android Emulators', slug: 'android-emulators' },
+			{ label: 'Guides & Articles', slug: 'guides-articles' },
+		],
+	},
+	{
+		label: 'MULTI-SYSTEM',
+		slug: 'multi-system',
+		tone: 'multi',
+		items: [
+			{ label: 'RetroArch', slug: 'retroarch' },
+			{ label: 'RetroBat', slug: 'retrobat' },
+			{ label: 'LaunchBox', slug: 'launchbox' },
+		],
+	},
+	{
+		label: 'PC',
+		slug: 'pc',
+		tone: 'pc',
+	},
+];
 ---
 
 <header class="site-header">
@@ -36,111 +169,239 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</div>
 
-	<nav class="main-nav" aria-label="القائمة الرئيسية">
+	<nav class="main-nav" aria-label="أقسام HAKAMIQ">
 		<div class="site-container nav-inner">
-			<div class="nav-links">
-				<HeaderLink href="/">الرئيسية</HeaderLink>
-				<HeaderLink href="/blog">المقالات</HeaderLink>
+			<button
+				class="mobile-menu-toggle"
+				type="button"
+				aria-expanded="false"
+				aria-controls="primary-menu"
+			>
+				<span>الأقسام</span>
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M4 7h16M4 12h16M4 17h16"></path>
+				</svg>
+			</button>
 
-				<details class="nav-dropdown">
-					<summary>
-						<span>الأقسام</span>
-						<span class="dropdown-arrow" aria-hidden="true">⌄</span>
-					</summary>
+			<div class="menu-bar" id="primary-menu" dir="ltr">
+				<a class="home-menu-link" href="/" aria-label="الصفحة الرئيسية">
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path d="m3 11 9-8 9 8"></path>
+						<path d="M5 10v10h14V10"></path>
+						<path d="M9 20v-6h6v6"></path>
+					</svg>
+				</a>
 
-					<div class="dropdown-menu">
-						<a href="/blog?category=playstation">
-							<span class="dropdown-icon">PS</span>
-							<span class="dropdown-copy">
-								<strong>PlayStation</strong>
-								<small>PS1 وPS2 وPS3 وPS4 وPSP وVita</small>
-							</span>
-						</a>
+				{
+					menuGroups.map((group) =>
+						group.items ? (
+							<details
+								class:list={['menu-group', `tone-${group.tone}`]}
+								data-menu-group
+							>
+								<summary>
+									<span>{group.label}</span>
+									<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true">
+										<path d="m6 8 4 4 4-4"></path>
+									</svg>
+								</summary>
 
-						<a href="/blog?category=nintendo">
-							<span class="dropdown-icon">N</span>
-							<span class="dropdown-copy">
-								<strong>Nintendo</strong>
-								<small>Switch وWii وGameCube و3DS</small>
-							</span>
-						</a>
+								<div class="menu-panel">
+									<a
+										class="menu-overview"
+										href={categoryHref(group.slug)}
+										data-category={group.slug}
+									>
+										<span>All {group.label}</span>
+										<svg viewBox="0 0 20 20" aria-hidden="true">
+											<path d="M4 10h12M12 6l4 4-4 4"></path>
+										</svg>
+									</a>
 
-						<a href="/blog?category=xbox">
-							<span class="dropdown-icon">X</span>
-							<span class="dropdown-copy">
-								<strong>Xbox</strong>
-								<small>Xbox وXbox 360 وXemu وXenia</small>
-							</span>
-						</a>
+									<div class="menu-list">
+										{
+											group.items.map((item) =>
+												item.children ? (
+													<details
+														class:list={[
+															'submenu-group',
+															item.openDirection === 'end'
+																? 'open-end'
+																: 'open-start',
+														]}
+														data-submenu-group
+													>
+														<summary>
+															<span>{item.label}</span>
+															<svg viewBox="0 0 20 20" aria-hidden="true">
+																<path d="m8 5 5 5-5 5"></path>
+															</svg>
+														</summary>
 
-						<a href="/blog?category=sega">
-							<span class="dropdown-icon">S</span>
-							<span class="dropdown-copy">
-								<strong>SEGA</strong>
-								<small>Dreamcast وSaturn وGenesis وNAOMI</small>
-							</span>
-						</a>
+														<div class="submenu-panel">
+															<a
+																class="submenu-overview"
+																href={categoryHref(item.slug)}
+																data-category={item.slug}
+															>
+																All {item.label}
+															</a>
 
-						<a href="/blog?category=pc">
-							<span class="dropdown-icon">PC</span>
-							<span class="dropdown-copy">
-								<strong>PC Emulation</strong>
-								<small>الأدوات والإعدادات وحلول التشغيل</small>
-							</span>
-						</a>
-					</div>
-				</details>
-
-				<HeaderLink href="/emulators">المحاكيات</HeaderLink>
-				<HeaderLink href="/games">الألعاب</HeaderLink>
-				<HeaderLink href="/services">الخدمات</HeaderLink>
-				<HeaderLink href="/about">من نحن</HeaderLink>
-				<HeaderLink href="/contact">اتصل بنا</HeaderLink>
+															{
+																item.children.map((child) => (
+																	<a
+																		href={categoryHref(child.slug)}
+																		data-category={child.slug}
+																	>
+																		{child.label}
+																	</a>
+																))
+															}
+														</div>
+													</details>
+												) : (
+													<a
+														href={categoryHref(item.slug)}
+														data-category={item.slug}
+													>
+														{item.label}
+													</a>
+												),
+											)
+										}
+									</div>
+								</div>
+							</details>
+						) : (
+							<a
+								class:list={['menu-direct', `tone-${group.tone}`]}
+								href={categoryHref(group.slug)}
+								data-category={group.slug}
+							>
+								{group.label}
+							</a>
+						),
+					)
+				}
 			</div>
 		</div>
 	</nav>
 </header>
 
 <script>
-	const dropdowns = Array.from(document.querySelectorAll<HTMLDetailsElement>('.nav-dropdown'));
+	document.documentElement.classList.add('js-nav');
 
-	for (const dropdown of dropdowns) {
-		dropdown.addEventListener('toggle', () => {
-			if (!dropdown.open) return;
+	const header = document.querySelector<HTMLElement>('.site-header');
 
-			for (const otherDropdown of dropdowns) {
-				if (otherDropdown !== dropdown) otherDropdown.open = false;
+	if (header) {
+		const menuToggle = header.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
+		const menuLinks = Array.from(header.querySelectorAll<HTMLAnchorElement>('.menu-bar a'));
+		const topLevelMenus = Array.from(
+			header.querySelectorAll<HTMLDetailsElement>('[data-menu-group]'),
+		);
+		const nestedMenus = Array.from(
+			header.querySelectorAll<HTMLDetailsElement>('[data-submenu-group]'),
+		);
+		const mobileMedia = window.matchMedia('(max-width: 920px)');
+
+		const closeNestedMenus = (except?: HTMLDetailsElement) => {
+			for (const menu of nestedMenus) {
+				if (menu !== except) menu.open = false;
 			}
-		});
-	}
+		};
 
-	document.addEventListener('click', (event) => {
-		const target = event.target;
-		if (!(target instanceof Node)) return;
+		const closeTopLevelMenus = (except?: HTMLDetailsElement) => {
+			for (const menu of topLevelMenus) {
+				if (menu !== except) menu.open = false;
+			}
+		};
 
-		for (const dropdown of dropdowns) {
-			if (!dropdown.contains(target)) dropdown.open = false;
+		const setMobileMenu = (open: boolean) => {
+			header.classList.toggle('mobile-open', open);
+			menuToggle?.setAttribute('aria-expanded', String(open));
+
+			if (!open) {
+				closeNestedMenus();
+				closeTopLevelMenus();
+			}
+		};
+
+		for (const menu of topLevelMenus) {
+			menu.addEventListener('toggle', () => {
+				if (!menu.open) return;
+				closeTopLevelMenus(menu);
+				closeNestedMenus();
+			});
 		}
-	});
 
-	document.addEventListener('keydown', (event) => {
-		if (event.key !== 'Escape') return;
-		for (const dropdown of dropdowns) dropdown.open = false;
-	});
+		for (const menu of nestedMenus) {
+			menu.addEventListener('toggle', () => {
+				if (menu.open) closeNestedMenus(menu);
+			});
+		}
+
+		menuToggle?.addEventListener('click', () => {
+			setMobileMenu(!header.classList.contains('mobile-open'));
+		});
+
+		for (const link of menuLinks) {
+			link.addEventListener('click', () => {
+				if (mobileMedia.matches) setMobileMenu(false);
+			});
+		}
+
+		document.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof Node) || header.contains(target)) return;
+
+			closeNestedMenus();
+			closeTopLevelMenus();
+			if (mobileMedia.matches) setMobileMenu(false);
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key !== 'Escape') return;
+
+			closeNestedMenus();
+			closeTopLevelMenus();
+			setMobileMenu(false);
+			menuToggle?.focus();
+		});
+
+		mobileMedia.addEventListener('change', () => {
+			setMobileMenu(false);
+		});
+
+		const selectedCategory = new URLSearchParams(window.location.search)
+			.get('category')
+			?.trim()
+			.toLowerCase();
+
+		if (selectedCategory) {
+			for (const link of header.querySelectorAll<HTMLAnchorElement>('[data-category]')) {
+				if (link.dataset.category?.toLowerCase() !== selectedCategory) continue;
+
+				link.classList.add('is-active');
+				link.closest<HTMLDetailsElement>('[data-menu-group]')
+					?.querySelector<HTMLElement>(':scope > summary')
+					?.classList.add('has-active-child');
+			}
+		}
+	}
 </script>
 
 <style>
 	.site-header {
 		position: relative;
-		z-index: 30;
+		z-index: 50;
 		border-bottom: 1px solid var(--hq-border);
-		background: rgba(17, 20, 24, 0.96);
-		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+		background: rgba(17, 20, 24, 0.97);
+		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 	}
 
 	.topbar {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-		background: #0d1014;
+		background: #0c0f13;
 	}
 
 	.topbar-inner,
@@ -154,21 +415,21 @@ import HeaderLink from './HeaderLink.astro';
 
 	.topbar-inner {
 		min-height: 38px;
-		font-size: 0.8rem;
 		color: var(--hq-muted);
+		font-size: 0.8rem;
 	}
 
 	.top-links,
-	.social-links,
-	.nav-links {
+	.social-links {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
 	}
 
 	.topbar a {
+		color: var(--hq-muted);
 		text-decoration: none;
-		transition: color 0.2s ease;
+		transition: color 0.18s ease;
 	}
 
 	.topbar a:hover {
@@ -202,7 +463,7 @@ import HeaderLink from './HeaderLink.astro';
 		border-radius: 15px;
 		background: linear-gradient(145deg, #ff2c35, var(--hq-red-dark));
 		box-shadow: 0 12px 26px rgba(229, 21, 21, 0.24);
-		color: white;
+		color: #fff;
 		font-size: 1.65rem;
 		font-weight: 900;
 	}
@@ -231,154 +492,377 @@ import HeaderLink from './HeaderLink.astro';
 	}
 
 	.main-nav {
-		background: linear-gradient(90deg, var(--hq-red-dark), var(--hq-red));
+		position: relative;
+		z-index: 60;
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+		background: linear-gradient(180deg, #ef262c 0%, #cb1017 100%);
+		box-shadow:
+			inset 0 1px rgba(255, 255, 255, 0.08),
+			0 8px 20px rgba(0, 0, 0, 0.2);
 	}
 
 	.nav-inner {
-		min-height: 50px;
-	}
-
-	.nav-links {
-		width: 100%;
-		gap: 0.15rem;
+		position: relative;
+		min-height: 52px;
 		overflow: visible;
 	}
 
-	.nav-links :global(a),
-	.nav-dropdown summary {
-		flex: 0 0 auto;
-		padding: 0.78rem 0.95rem;
-		border-radius: 9px;
-		color: white;
-		font-size: 0.93rem;
-		font-weight: 700;
+	.menu-bar {
+		display: flex;
+		width: 100%;
+		align-items: stretch;
+		overflow: visible;
+	}
+
+	.home-menu-link,
+	.menu-direct,
+	.menu-group > summary {
+		display: flex;
+		min-height: 52px;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		box-sizing: border-box;
+		border: 0;
+		border-inline-end: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: 0;
+		background: transparent;
+		color: #fff;
+		font-family: inherit;
+		font-size: 0.76rem;
+		font-weight: 800;
+		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
-		transition: background 0.2s ease;
+		cursor: pointer;
+		transition:
+			background 0.16s ease,
+			color 0.16s ease;
 	}
 
-	.nav-links :global(a:hover),
-	.nav-links :global(a.active),
-	.nav-dropdown[open] summary,
-	.nav-dropdown summary:hover {
-		background: rgba(0, 0, 0, 0.2);
-		text-decoration: none;
+	.home-menu-link {
+		width: 54px;
+		padding: 0;
+		background: rgba(255, 255, 255, 0.08);
 	}
 
-	.nav-dropdown {
+	.home-menu-link svg {
+		width: 19px;
+		height: 19px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2;
+	}
+
+	.menu-direct,
+	.menu-group > summary {
+		padding: 0 0.85rem;
+	}
+
+	.menu-group {
+		--menu-accent: #ff3b42;
 		position: relative;
 		flex: 0 0 auto;
 	}
 
-	.nav-dropdown summary {
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		cursor: pointer;
+	.menu-group.tone-nintendo {
+		--menu-accent: #ff3342;
+	}
+
+	.menu-group.tone-playstation {
+		--menu-accent: #3d96ff;
+	}
+
+	.menu-group.tone-xbox {
+		--menu-accent: #47c95a;
+	}
+
+	.menu-group.tone-sega {
+		--menu-accent: #3b9cff;
+	}
+
+	.menu-group.tone-other {
+		--menu-accent: #ff8a3d;
+	}
+
+	.menu-group.tone-multi {
+		--menu-accent: #aa83ff;
+	}
+
+	.menu-group > summary,
+	.submenu-group > summary {
 		list-style: none;
 		user-select: none;
 	}
 
-	.nav-dropdown summary::-webkit-details-marker {
+	.menu-group > summary::-webkit-details-marker,
+	.submenu-group > summary::-webkit-details-marker {
 		display: none;
 	}
 
-	.dropdown-arrow {
-		display: inline-block;
-		font-size: 0.9rem;
-		transition: transform 0.2s ease;
+	.menu-chevron {
+		width: 14px;
+		height: 14px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2;
+		transition: transform 0.18s ease;
 	}
 
-	.nav-dropdown[open] .dropdown-arrow {
+	.menu-group[open] > summary .menu-chevron {
 		transform: rotate(180deg);
 	}
 
-	.dropdown-menu {
-		position: absolute;
-		top: calc(100% + 10px);
-		right: 0;
-		display: grid;
-		width: 320px;
-		gap: 0.35rem;
-		padding: 0.6rem;
-		border: 1px solid var(--hq-border);
-		border-radius: 15px;
-		background: #171a20;
-		box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
-		opacity: 0;
-		visibility: hidden;
-		transform: translateY(-8px);
-		pointer-events: none;
-		transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-		z-index: 100;
+	.home-menu-link:hover,
+	.home-menu-link:focus-visible,
+	.menu-direct:hover,
+	.menu-direct:focus-visible,
+	.menu-direct.is-active,
+	.menu-group[open] > summary,
+	.menu-group > summary:hover,
+	.menu-group > summary:focus-visible,
+	.menu-group > summary.has-active-child {
+		background: rgba(121, 0, 5, 0.34);
+		color: #fff;
+		outline: none;
 	}
 
-	.nav-dropdown[open] .dropdown-menu {
+	.menu-panel,
+	.submenu-panel {
+		direction: ltr;
+		text-align: left;
+	}
+
+	.menu-panel {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 244px;
+		padding: 6px 0 8px;
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-top: 3px solid var(--menu-accent);
+		border-radius: 0 0 10px 10px;
+		background: #101217;
+		box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-7px);
+		pointer-events: none;
+		transition:
+			opacity 0.16s ease,
+			transform 0.16s ease,
+			visibility 0.16s ease;
+		z-index: 200;
+	}
+
+	.tone-other > .menu-panel,
+	.tone-multi > .menu-panel {
+		right: 0;
+		left: auto;
+	}
+
+	.menu-group[open] > .menu-panel,
+	.menu-group:focus-within > .menu-panel {
 		opacity: 1;
 		visibility: visible;
 		transform: translateY(0);
 		pointer-events: auto;
 	}
 
-	.dropdown-menu a {
-		display: grid !important;
-		grid-template-columns: 42px minmax(0, 1fr);
+	.menu-overview {
+		display: flex;
+		min-height: 40px;
 		align-items: center;
+		justify-content: space-between;
 		gap: 0.75rem;
-		padding: 0.7rem !important;
-		border: 1px solid transparent;
-		border-radius: 11px !important;
-		background: transparent !important;
-		color: var(--hq-text) !important;
-		white-space: normal !important;
+		margin: 0 6px 6px;
+		padding: 0 11px;
+		border: 1px solid color-mix(in srgb, var(--menu-accent) 30%, transparent);
+		border-radius: 7px;
+		background: color-mix(in srgb, var(--menu-accent) 10%, transparent);
+		color: #fff;
+		font-size: 0.76rem;
+		font-weight: 800;
+		text-decoration: none;
 	}
 
-	.dropdown-menu a:hover {
-		border-color: rgba(229, 21, 21, 0.35);
-		background: rgba(229, 21, 21, 0.1) !important;
+	.menu-overview svg {
+		width: 15px;
+		height: 15px;
+		fill: none;
+		stroke: var(--menu-accent);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2;
 	}
 
-	.dropdown-icon {
-		display: grid;
-		width: 42px;
-		height: 42px;
-		place-items: center;
-		border-radius: 11px;
-		background: rgba(229, 21, 21, 0.14);
-		color: #ff747a;
-		font-size: 0.75rem;
-		font-weight: 900;
+	.menu-list > a,
+	.submenu-group > summary,
+	.submenu-panel > a {
+		position: relative;
+		display: flex;
+		min-height: 38px;
+		align-items: center;
+		box-sizing: border-box;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+		background: transparent;
+		color: #f4f5f7;
+		font-size: 0.76rem;
+		font-weight: 700;
+		line-height: 1.35;
+		text-decoration: none;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease,
+			padding 0.15s ease;
 	}
 
-	.dropdown-copy {
-		display: grid;
-		gap: 0.08rem;
-		min-width: 0;
-		text-align: right;
+	.menu-list > a,
+	.submenu-panel > a {
+		padding: 0.45rem 13px 0.45rem 24px;
 	}
 
-	.dropdown-copy strong {
-		color: var(--hq-text);
-		font-size: 0.86rem;
+	.menu-list > a::before,
+	.submenu-panel > a::before {
+		position: absolute;
+		left: 12px;
+		width: 4px;
+		height: 4px;
+		border-radius: 999px;
+		background: var(--menu-accent);
+		content: '';
+		opacity: 0.72;
 	}
 
-	.dropdown-copy small {
-		color: var(--hq-muted);
-		font-size: 0.68rem;
-		font-weight: 400;
-		line-height: 1.55;
+	.menu-list > a:hover,
+	.menu-list > a:focus-visible,
+	.menu-list > a.is-active,
+	.submenu-group > summary:hover,
+	.submenu-group > summary:focus-visible,
+	.submenu-panel > a:hover,
+	.submenu-panel > a:focus-visible,
+	.submenu-panel > a.is-active {
+		background: linear-gradient(90deg, color-mix(in srgb, var(--menu-accent) 88%, #b40008), #b90d14);
+		color: #fff;
+		outline: none;
 	}
 
-	@media (hover: hover) and (pointer: fine) {
-		.nav-dropdown:hover .dropdown-menu {
+	.menu-list > a:hover,
+	.menu-list > a:focus-visible,
+	.menu-list > a.is-active,
+	.submenu-panel > a:hover,
+	.submenu-panel > a:focus-visible,
+	.submenu-panel > a.is-active {
+		padding-left: 27px;
+	}
+
+	.submenu-group {
+		position: relative;
+	}
+
+	.submenu-group > summary {
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.45rem 11px 0.45rem 13px;
+		cursor: pointer;
+	}
+
+	.submenu-group > summary svg {
+		width: 15px;
+		height: 15px;
+		flex: 0 0 auto;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2;
+		transition: transform 0.16s ease;
+	}
+
+	.submenu-group.open-start > summary svg {
+		transform: rotate(180deg);
+	}
+
+	.submenu-panel {
+		position: absolute;
+		top: -7px;
+		width: 232px;
+		padding: 7px 0;
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-top: 3px solid var(--menu-accent);
+		border-radius: 9px;
+		background: #101217;
+		box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(-7px);
+		pointer-events: none;
+		transition:
+			opacity 0.16s ease,
+			transform 0.16s ease,
+			visibility 0.16s ease;
+		z-index: 220;
+	}
+
+	.submenu-group.open-end > .submenu-panel {
+		left: calc(100% + 4px);
+	}
+
+	.submenu-group.open-start > .submenu-panel {
+		right: calc(100% + 4px);
+		transform: translateX(7px);
+	}
+
+	.submenu-group[open] > .submenu-panel,
+	.submenu-group:focus-within > .submenu-panel {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+		pointer-events: auto;
+	}
+
+	.submenu-overview {
+		margin-bottom: 5px;
+		background: rgba(255, 255, 255, 0.035) !important;
+		color: var(--menu-accent) !important;
+	}
+
+	.menu-direct.tone-pc {
+		--menu-accent: #a982ff;
+	}
+
+	.menu-direct.is-active {
+		box-shadow: inset 0 -3px var(--menu-accent);
+	}
+
+	.mobile-menu-toggle {
+		display: none;
+	}
+
+	@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
+		.menu-group:hover > .menu-panel,
+		.submenu-group:hover > .submenu-panel {
 			opacity: 1;
 			visibility: visible;
-			transform: translateY(0);
+			transform: translate(0);
 			pointer-events: auto;
 		}
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 1120px) and (min-width: 921px) {
+		.menu-direct,
+		.menu-group > summary {
+			padding-inline: 0.58rem;
+			font-size: 0.68rem;
+		}
+	}
+
+	@media (max-width: 920px) {
 		.top-links {
 			display: none;
 		}
@@ -401,43 +885,196 @@ import HeaderLink from './HeaderLink.astro';
 		}
 
 		.nav-inner {
+			min-height: 50px;
 			width: 100%;
 		}
 
-		.nav-links {
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 0.1rem;
-			padding: 0.35rem 12px;
+		.mobile-menu-toggle {
+			display: none;
+			width: 100%;
+			min-height: 50px;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 14px;
+			border: 0;
+			background: transparent;
+			color: #fff;
+			font-family: inherit;
+			font-size: 0.9rem;
+			font-weight: 800;
+			cursor: pointer;
 		}
 
-		.nav-links :global(a),
-		.nav-dropdown summary {
-			padding: 0.65rem 0.75rem;
-			font-size: 0.86rem;
+		.mobile-menu-toggle svg {
+			width: 21px;
+			height: 21px;
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 2;
 		}
 
-		.dropdown-menu {
-			position: fixed;
-			top: 50%;
-			right: 50%;
-			width: min(calc(100% - 24px), 360px);
-			max-height: min(520px, calc(100vh - 32px));
+		.menu-bar {
+			display: grid;
+			width: 100%;
+			grid-template-columns: 1fr;
+			background: #101217;
+		}
+
+		:global(html.js-nav) .mobile-menu-toggle {
+			display: flex;
+		}
+
+		:global(html.js-nav) .menu-bar {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			left: 0;
+			display: none;
+			max-height: min(72vh, 620px);
+			overflow-x: hidden;
 			overflow-y: auto;
-			transform: translate(50%, -48%);
+			overscroll-behavior: contain;
+			border: 1px solid rgba(255, 255, 255, 0.09);
+			border-top: 0;
+			border-radius: 0 0 12px 12px;
+			box-shadow: 0 22px 44px rgba(0, 0, 0, 0.48);
+			scrollbar-gutter: stable;
+			z-index: 300;
 		}
 
-		.nav-dropdown[open] .dropdown-menu,
-		.nav-dropdown:hover .dropdown-menu {
-			transform: translate(50%, -50%);
+		:global(html.js-nav) .site-header.mobile-open .menu-bar {
+			display: grid;
 		}
 
-		.nav-dropdown[open]::before {
-			position: fixed;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.68);
-			content: '';
-			z-index: 99;
+		.home-menu-link,
+		.menu-direct,
+		.menu-group > summary {
+			width: 100%;
+			min-height: 47px;
+			justify-content: space-between;
+			padding: 0 15px;
+			border: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+			background: #12141a;
+			font-size: 0.78rem;
+			text-align: left;
+		}
+
+		.home-menu-link {
+			justify-content: flex-start;
+		}
+
+		.home-menu-link::after {
+			margin-left: 10px;
+			content: 'HOME';
+			font-size: 0.78rem;
+			font-weight: 800;
+		}
+
+		.menu-group {
+			width: 100%;
+		}
+
+		.menu-panel,
+		.submenu-panel,
+		.tone-other > .menu-panel,
+		.tone-multi > .menu-panel,
+		.submenu-group.open-end > .submenu-panel,
+		.submenu-group.open-start > .submenu-panel {
+			position: static;
+			right: auto;
+			left: auto;
+			display: none;
+			width: auto;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			background: #0d0f14;
+			box-shadow: none;
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+			pointer-events: auto;
+		}
+
+		.menu-group[open] > .menu-panel,
+		.submenu-group[open] > .submenu-panel {
+			display: block;
+		}
+
+		.menu-group:not([open]) > .menu-panel,
+		.submenu-group:not([open]) > .submenu-panel {
+			display: none !important;
+		}
+
+		.menu-overview {
+			min-height: 42px;
+			margin: 0;
+			padding: 0 18px;
+			border: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+			border-radius: 0;
+			background: color-mix(in srgb, var(--menu-accent) 11%, #0d0f14);
+		}
+
+		.menu-list > a,
+		.submenu-group > summary,
+		.submenu-panel > a {
+			min-height: 42px;
+			font-size: 0.76rem;
+		}
+
+		.menu-list > a,
+		.submenu-group > summary {
+			padding-inline: 28px 15px;
+		}
+
+		.submenu-panel > a {
+			padding-inline: 44px 15px;
+		}
+
+		.menu-list > a::before {
+			left: 16px;
+		}
+
+		.submenu-panel > a::before {
+			left: 31px;
+		}
+
+		.submenu-group.open-start > summary svg {
+			transform: none;
+		}
+
+		.submenu-group[open] > summary svg {
+			transform: rotate(90deg);
+		}
+
+		.submenu-overview {
+			padding-left: 44px !important;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.topbar-inner {
+			min-height: 34px;
+		}
+
+		.social-links {
+			gap: 0.7rem;
+			font-size: 0.73rem;
+		}
+
+		.brand-row-inner {
+			min-height: 70px;
+		}
+
+		.brand-copy strong {
+			font-size: 1.18rem;
+		}
+
+		.brand-copy small {
+			font-size: 0.7rem;
 		}
 	}
 </style>
