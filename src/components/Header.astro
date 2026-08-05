@@ -41,6 +41,56 @@ import HeaderLink from './HeaderLink.astro';
 			<div class="nav-links">
 				<HeaderLink href="/">الرئيسية</HeaderLink>
 				<HeaderLink href="/blog">المقالات</HeaderLink>
+
+				<details class="nav-dropdown">
+					<summary>
+						<span>الأقسام</span>
+						<span class="dropdown-arrow" aria-hidden="true">⌄</span>
+					</summary>
+
+					<div class="dropdown-menu">
+						<a href="/blog?category=playstation">
+							<span class="dropdown-icon">PS</span>
+							<span class="dropdown-copy">
+								<strong>PlayStation</strong>
+								<small>PS1 وPS2 وPS3 وPS4 وPSP وVita</small>
+							</span>
+						</a>
+
+						<a href="/blog?category=nintendo">
+							<span class="dropdown-icon">N</span>
+							<span class="dropdown-copy">
+								<strong>Nintendo</strong>
+								<small>Switch وWii وGameCube و3DS</small>
+							</span>
+						</a>
+
+						<a href="/blog?category=xbox">
+							<span class="dropdown-icon">X</span>
+							<span class="dropdown-copy">
+								<strong>Xbox</strong>
+								<small>Xbox وXbox 360 وXemu وXenia</small>
+							</span>
+						</a>
+
+						<a href="/blog?category=sega">
+							<span class="dropdown-icon">S</span>
+							<span class="dropdown-copy">
+								<strong>SEGA</strong>
+								<small>Dreamcast وSaturn وGenesis وNAOMI</small>
+							</span>
+						</a>
+
+						<a href="/blog?category=pc">
+							<span class="dropdown-icon">PC</span>
+							<span class="dropdown-copy">
+								<strong>PC Emulation</strong>
+								<small>الأدوات والإعدادات وحلول التشغيل</small>
+							</span>
+						</a>
+					</div>
+				</details>
+
 				<HeaderLink href="/emulators">المحاكيات</HeaderLink>
 				<HeaderLink href="/games">الألعاب</HeaderLink>
 				<HeaderLink href="/services">الخدمات</HeaderLink>
@@ -50,6 +100,34 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</nav>
 </header>
+
+<script>
+	const dropdowns = Array.from(document.querySelectorAll<HTMLDetailsElement>('.nav-dropdown'));
+
+	for (const dropdown of dropdowns) {
+		dropdown.addEventListener('toggle', () => {
+			if (!dropdown.open) return;
+
+			for (const otherDropdown of dropdowns) {
+				if (otherDropdown !== dropdown) otherDropdown.open = false;
+			}
+		});
+	}
+
+	document.addEventListener('click', (event) => {
+		const target = event.target;
+		if (!(target instanceof Node)) return;
+
+		for (const dropdown of dropdowns) {
+			if (!dropdown.contains(target)) dropdown.open = false;
+		}
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key !== 'Escape') return;
+		for (const dropdown of dropdowns) dropdown.open = false;
+	});
+</script>
 
 <style>
 	.site-header {
@@ -163,15 +241,11 @@ import HeaderLink from './HeaderLink.astro';
 	.nav-links {
 		width: 100%;
 		gap: 0.15rem;
-		overflow-x: auto;
-		scrollbar-width: none;
+		overflow: visible;
 	}
 
-	.nav-links::-webkit-scrollbar {
-		display: none;
-	}
-
-	.nav-links :global(a) {
+	.nav-links :global(a),
+	.nav-dropdown summary {
 		flex: 0 0 auto;
 		padding: 0.78rem 0.95rem;
 		border-radius: 9px;
@@ -184,9 +258,124 @@ import HeaderLink from './HeaderLink.astro';
 	}
 
 	.nav-links :global(a:hover),
-	.nav-links :global(a.active) {
+	.nav-links :global(a.active),
+	.nav-dropdown[open] summary,
+	.nav-dropdown summary:hover {
 		background: rgba(0, 0, 0, 0.2);
 		text-decoration: none;
+	}
+
+	.nav-dropdown {
+		position: relative;
+		flex: 0 0 auto;
+	}
+
+	.nav-dropdown summary {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		cursor: pointer;
+		list-style: none;
+		user-select: none;
+	}
+
+	.nav-dropdown summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.dropdown-arrow {
+		display: inline-block;
+		font-size: 0.9rem;
+		transition: transform 0.2s ease;
+	}
+
+	.nav-dropdown[open] .dropdown-arrow {
+		transform: rotate(180deg);
+	}
+
+	.dropdown-menu {
+		position: absolute;
+		top: calc(100% + 10px);
+		right: 0;
+		display: grid;
+		width: 320px;
+		gap: 0.35rem;
+		padding: 0.6rem;
+		border: 1px solid var(--hq-border);
+		border-radius: 15px;
+		background: #171a20;
+		box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-8px);
+		pointer-events: none;
+		transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+		z-index: 100;
+	}
+
+	.nav-dropdown[open] .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	.dropdown-menu a {
+		display: grid !important;
+		grid-template-columns: 42px minmax(0, 1fr);
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.7rem !important;
+		border: 1px solid transparent;
+		border-radius: 11px !important;
+		background: transparent !important;
+		color: var(--hq-text) !important;
+		white-space: normal !important;
+	}
+
+	.dropdown-menu a:hover {
+		border-color: rgba(229, 21, 21, 0.35);
+		background: rgba(229, 21, 21, 0.1) !important;
+	}
+
+	.dropdown-icon {
+		display: grid;
+		width: 42px;
+		height: 42px;
+		place-items: center;
+		border-radius: 11px;
+		background: rgba(229, 21, 21, 0.14);
+		color: #ff747a;
+		font-size: 0.75rem;
+		font-weight: 900;
+	}
+
+	.dropdown-copy {
+		display: grid;
+		gap: 0.08rem;
+		min-width: 0;
+		text-align: right;
+	}
+
+	.dropdown-copy strong {
+		color: var(--hq-text);
+		font-size: 0.86rem;
+	}
+
+	.dropdown-copy small {
+		color: var(--hq-muted);
+		font-size: 0.68rem;
+		font-weight: 400;
+		line-height: 1.55;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.nav-dropdown:hover .dropdown-menu {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+			pointer-events: auto;
+		}
 	}
 
 	@media (max-width: 800px) {
@@ -216,7 +405,39 @@ import HeaderLink from './HeaderLink.astro';
 		}
 
 		.nav-links {
-			padding-inline: 12px;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 0.1rem;
+			padding: 0.35rem 12px;
+		}
+
+		.nav-links :global(a),
+		.nav-dropdown summary {
+			padding: 0.65rem 0.75rem;
+			font-size: 0.86rem;
+		}
+
+		.dropdown-menu {
+			position: fixed;
+			top: 50%;
+			right: 50%;
+			width: min(calc(100% - 24px), 360px);
+			max-height: min(520px, calc(100vh - 32px));
+			overflow-y: auto;
+			transform: translate(50%, -48%);
+		}
+
+		.nav-dropdown[open] .dropdown-menu,
+		.nav-dropdown:hover .dropdown-menu {
+			transform: translate(50%, -50%);
+		}
+
+		.nav-dropdown[open]::before {
+			position: fixed;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.68);
+			content: '';
+			z-index: 99;
 		}
 	}
 </style>
