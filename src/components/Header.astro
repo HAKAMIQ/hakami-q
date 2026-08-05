@@ -1,3 +1,4 @@
+@"
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
@@ -12,7 +13,25 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="internal-links">
 			<HeaderLink href="/">الرئيسية</HeaderLink>
 			<HeaderLink href="/blog">المقالات</HeaderLink>
-			<HeaderLink href="/about">عن HAKAMIQ</HeaderLink>
+			<HeaderLink href="/emulators">المحاكيات</HeaderLink>
+			<HeaderLink href="/games">الألعاب</HeaderLink>
+			<HeaderLink href="/services">الخدمات</HeaderLink>
+			<HeaderLink href="/about">من نحن</HeaderLink>
+			<HeaderLink href="/contact">اتصل بنا</HeaderLink>
+		</div>
+
+		<div class="social-links">
+			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank">
+				YouTube
+			</a>
+
+			<a href="https://discord.gg/WqgRrmAKpC" target="_blank">
+				Discord
+			</a>
+
+			<a href="https://t.me/hakamiq0" target="_blank">
+				Telegram
+			</a>
 		</div>
 	</nav>
 </header>
@@ -20,47 +39,56 @@ import HeaderLink from './HeaderLink.astro';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 0 1.5rem;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-
-	h2 {
-		margin: 0;
-		font-size: 1.2em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
 	}
 
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 1rem;
 	}
 
-	.internal-links {
+	h2 {
+		margin: 0;
+		font-size: 1.3rem;
+	}
+
+	h2 a {
+		text-decoration: none;
+	}
+
+	.internal-links,
+	.social-links {
 		display: flex;
+		align-items: center;
 		gap: 0.5rem;
 	}
 
 	nav a {
-		padding: 1em 0.5em;
+		padding: 1rem 0.5rem;
 		color: var(--black);
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		border-bottom: 3px solid transparent;
 	}
 
-	nav a.active {
+	nav a:hover {
 		border-bottom-color: var(--accent);
 	}
 
-	@media (max-width: 720px) {
+	@media (max-width: 900px) {
 		nav {
 			flex-direction: column;
-			align-items: flex-start;
+			padding: 1rem 0;
+		}
+
+		.internal-links,
+		.social-links {
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 	}
 </style>
+"@ | Set-Content -Encoding UTF8 .\src\components\Header.astro
