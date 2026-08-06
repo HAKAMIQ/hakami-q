@@ -3,263 +3,245 @@ const today = new Date();
 ---
 
 <footer class="site-footer" dir="rtl">
-	<div class="site-container footer-main">
-		<nav class="footer-navigation" aria-label="روابط تذييل الموقع">
-			<section class="footer-column" aria-labelledby="footer-content-title">
-				<h2 id="footer-content-title">المحتوى</h2>
-				<div class="footer-links">
-					<a href="/blog">المقالات</a>
-					<a href="/services">خدمة المحاكيات</a>
-				</div>
-			</section>
+	<div class="site-container footer-primary">
+		<nav class="footer-links" aria-label="روابط الموقع">
+			<a href="/blog">المقالات</a>
+			<a href="/services">خدمة المحاكيات</a>
+			<a href="/about">من نحن</a>
+			<a href="/contact">اتصل بنا</a>
+			<a href="/privacy">سياسة الخصوصية</a>
+			<a href="/terms">اتفاقية الاستخدام</a>
+			<a href="/disclaimer">إخلاء المسؤولية</a>
+		</nav>
 
-			<section class="footer-column" aria-labelledby="footer-about-title">
-				<h2 id="footer-about-title">عن الموقع</h2>
-				<div class="footer-links">
-					<a href="/about">من نحن</a>
-					<a href="/contact">اتصل بنا</a>
-				</div>
-			</section>
+		<nav class="footer-social" aria-label="الشبكات الاجتماعية" dir="ltr">
+			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path>
+					<path d="m10 9 5 3-5 3Z"></path>
+				</svg>
+			</a>
 
-			<section class="footer-column" aria-labelledby="footer-policy-title">
-				<h2 id="footer-policy-title">السياسات</h2>
-				<div class="footer-links">
-					<a href="/privacy">سياسة الخصوصية</a>
-					<a href="/terms">اتفاقية الاستخدام</a>
-					<a href="/disclaimer">إخلاء المسؤولية</a>
-				</div>
-			</section>
+			<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path>
+					<circle cx="9" cy="13" r="1"></circle>
+					<circle cx="15" cy="13" r="1"></circle>
+				</svg>
+			</a>
+
+			<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path>
+				</svg>
+			</a>
 		</nav>
 	</div>
 
-	<div class="footer-bottom">
-		<div class="site-container footer-bottom-inner">
-			<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
+	<div class="footer-divider" aria-hidden="true"></div>
 
-			<a class="footer-rss" href="/rss.xml" aria-label="خلاصة RSS">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<circle cx="6" cy="18" r="1.5"></circle>
-					<path d="M5 11a8 8 0 0 1 8 8"></path>
-					<path d="M5 5a14 14 0 0 1 14 14"></path>
-				</svg>
-				<span>RSS</span>
-			</a>
-		</div>
+	<div class="site-container footer-bottom">
+		<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
+
+		<a class="footer-rss" href="/rss.xml" aria-label="خلاصة RSS">
+			<svg viewBox="0 0 24 24" aria-hidden="true">
+				<circle cx="6" cy="18" r="1.5"></circle>
+				<path d="M5 11a8 8 0 0 1 8 8"></path>
+				<path d="M5 5a14 14 0 0 1 14 14"></path>
+			</svg>
+			<span>RSS</span>
+		</a>
 	</div>
 </footer>
 
 <style>
 	.site-footer {
-		--footer-space-1: 4px;
-		--footer-space-2: 8px;
-		--footer-space-3: 12px;
-		--footer-space-4: 16px;
-		--footer-space-5: 20px;
-		--footer-space-6: 24px;
-		--footer-space-8: 32px;
-		--footer-radius-small: 4px;
-		--footer-radius-medium: 8px;
-		position: relative;
+		--footer-control-size: 32px;
 		margin-top: clamp(2.5rem, 4vw, 4rem);
 		border-top: 1px solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-2);
+		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-3);
 	}
 
-	.site-footer::before {
-		content: '';
-		position: absolute;
-		top: -1px;
-		right: 0;
-		width: clamp(72px, 9vw, 120px);
-		height: 2px;
-		background: var(--color-brand-background);
-	}
-
-	.footer-main {
-		padding-block: clamp(28px, 3vw, 40px);
-	}
-
-	.footer-navigation {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: clamp(28px, 5vw, 72px);
-		width: min(100%, 940px);
-		margin-inline: auto;
-	}
-
-	.footer-column {
-		position: relative;
-		min-width: 0;
-	}
-
-	.footer-column:not(:last-child)::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: calc(clamp(28px, 5vw, 72px) / -2);
-		width: 1px;
-		background: var(--color-neutral-stroke-alpha);
-	}
-
-	.footer-column h2 {
+	.footer-primary,
+	.footer-bottom {
 		display: flex;
 		align-items: center;
-		gap: var(--footer-space-2);
-		margin: 0 0 var(--footer-space-3);
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.9rem;
-		font-weight: 650;
-		line-height: 1.5;
+		justify-content: space-between;
+		gap: 24px;
 	}
 
-	.footer-column h2::before {
-		content: '';
-		width: 3px;
-		height: 16px;
-		border-radius: 999px;
-		background: var(--color-brand-background);
+	.footer-primary {
+		min-height: 76px;
+		padding-block: 18px;
 	}
 
 	.footer-links {
-		display: grid;
-		gap: var(--footer-space-1);
+		display: flex;
+		min-width: 0;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 2px;
+	}
+
+	.footer-links a,
+	.footer-rss,
+	.footer-social a {
+		border-radius: var(--radius-small);
+		color: var(--color-neutral-foreground-3);
+		text-decoration: none;
+		transition:
+			background var(--duration-faster) var(--curve-easy-ease),
+			color var(--duration-faster) var(--curve-easy-ease),
+			border-color var(--duration-faster) var(--curve-easy-ease);
 	}
 
 	.footer-links a {
 		display: inline-flex;
-		width: fit-content;
-		min-height: 36px;
+		min-height: var(--footer-control-size);
 		align-items: center;
-		padding-inline: var(--footer-space-2);
-		border-radius: var(--footer-radius-small);
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.8125rem;
-		line-height: 1.45;
-		text-decoration: none;
-		transition:
-			background var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease);
+		padding-inline: 10px;
+		font-size: 0.78rem;
+		line-height: 1.4;
+		white-space: nowrap;
 	}
 
-	.footer-links a:hover {
+	.footer-social {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.footer-social a {
+		display: grid;
+		width: var(--footer-control-size);
+		height: var(--footer-control-size);
+		place-items: center;
+		border: 1px solid transparent;
+	}
+
+	.footer-social svg {
+		width: 15px;
+		height: 15px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.65;
+	}
+
+	.footer-social a:first-child svg path:first-child {
+		fill: currentColor;
+		stroke: none;
+	}
+
+	.footer-social a:first-child svg path:last-child {
+		fill: var(--color-neutral-background-3);
+		stroke: none;
+	}
+
+	.footer-links a:hover,
+	.footer-rss:hover,
+	.footer-social a:hover {
 		background: var(--color-subtle-background-hover);
 		color: var(--color-neutral-foreground-1);
 	}
 
+	.footer-social a:hover {
+		border-color: var(--color-neutral-stroke-alpha);
+	}
+
 	.footer-links a:focus-visible,
-	.footer-rss:focus-visible {
+	.footer-rss:focus-visible,
+	.footer-social a:focus-visible {
 		outline: 2px solid var(--color-brand-stroke-1);
 		outline-offset: 2px;
 	}
 
+	.footer-divider {
+		height: 1px;
+		margin-inline: max(24px, calc((100% - min(calc(100% - 48px), 1500px)) / 2));
+		background: var(--color-neutral-stroke-alpha);
+	}
+
 	.footer-bottom {
-		border-top: 1px solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-4);
-	}
-
-	.footer-bottom-inner {
-		display: flex;
 		min-height: 52px;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--footer-space-4);
-		font-size: 0.75rem;
+		font-size: 0.74rem;
 	}
 
-	.footer-bottom-inner p {
+	.footer-bottom p {
 		margin: 0;
 		color: var(--color-neutral-foreground-3);
 	}
 
 	.footer-rss {
 		display: inline-flex;
-		min-height: 32px;
+		min-height: var(--footer-control-size);
 		align-items: center;
 		gap: 6px;
-		padding-inline: var(--footer-space-2);
-		border-radius: var(--footer-radius-small);
-		color: var(--color-neutral-foreground-3);
-		text-decoration: none;
-		transition:
-			background var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease);
-	}
-
-	.footer-rss:hover {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
+		padding-inline: 8px;
 	}
 
 	.footer-rss svg {
-		width: 15px;
-		height: 15px;
+		width: 14px;
+		height: 14px;
 		fill: currentColor;
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-width: 1.8;
 	}
 
-	@media (max-width: 720px) {
-		.footer-navigation {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: var(--footer-space-8) var(--footer-space-6);
+	@media (max-width: 820px) {
+		.footer-primary {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 12px;
+			padding-block: 20px;
 		}
 
-		.footer-column:not(:last-child)::after {
-			display: none;
-		}
-
-		.footer-column:last-child {
-			grid-column: 1 / -1;
-			padding-top: var(--footer-space-6);
-			border-top: 1px solid var(--color-neutral-stroke-alpha);
+		.footer-social {
+			align-self: flex-start;
 		}
 	}
 
-	@media (max-width: 460px) {
-		.site-footer {
-			margin-top: 2.5rem;
-		}
-
-		.footer-main {
-			padding-block: var(--footer-space-8);
-		}
-
-		.footer-navigation {
-			grid-template-columns: 1fr;
-			gap: var(--footer-space-6);
-		}
-
-		.footer-column,
-		.footer-column:last-child {
-			grid-column: auto;
-			padding-top: 0;
-			border-top: 0;
-		}
-
-		.footer-column + .footer-column {
-			padding-top: var(--footer-space-6);
-			border-top: 1px solid var(--color-neutral-stroke-alpha);
+	@media (max-width: 520px) {
+		.footer-links {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2px;
 		}
 
 		.footer-links a {
-			min-height: 44px;
+			min-height: 40px;
+			white-space: normal;
 		}
 
-		.footer-bottom-inner {
+		.footer-divider {
+			margin-inline: 12px;
+		}
+
+		.footer-bottom {
 			min-height: 68px;
+			align-items: flex-start;
 			flex-direction: column;
 			justify-content: center;
-			gap: var(--footer-space-1);
-			text-align: center;
+			gap: 2px;
+			padding-block: 10px;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.footer-links {
+			grid-template-columns: 1fr;
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.footer-links a,
-		.footer-rss {
+		.footer-rss,
+		.footer-social a {
 			transition: none;
 		}
 	}
