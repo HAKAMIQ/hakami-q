@@ -1,0 +1,58 @@
+name: Sync Blogger Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-blogger-pages.mjs'
+      - 'src/pages/[...page].astro'
+      - 'src/layouts/BloggerPageLayout.astro'
+      - 'package.json'
+      - '.github/workflows/sync-blogger-pages.yml'
+  schedule:
+    - cron: '17 2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-blogger-pages
+  cancel-in-progress: false
+
+jobs:
+  sync-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download all public Blogger pages
+        run: npm run sync:blogger-pages
+
+      - name: Validate Astro production build
+        run: npx astro build
+
+      - name: Save updated page archive
+        run: |
+          if git diff --quiet -- src/data/blogger-pages.json; then
+            echo "No Blogger page changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/blogger-pages.json
+          git commit -m "content: sync Blogger static pages"
+          git push
