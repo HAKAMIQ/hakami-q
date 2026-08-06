@@ -1,27 +1,21 @@
 name: Sync Blogger Pages
 
-on:
-  workflow_dispatch:
+"on":
+  workflow_dispatch: {}
   push:
-    branches: [main]
-    paths:
-      - 'scripts/sync-blogger-pages.mjs'
-      - 'src/pages/[...page].astro'
-      - 'src/layouts/BloggerPageLayout.astro'
-      - 'package.json'
-      - '.github/workflows/sync-blogger-pages.yml'
+    branches:
+      - main
+    paths-ignore:
+      - src/data/blogger-pages.json
   schedule:
-    - cron: '17 2 * * *'
+    - cron: "17 2 * * *"
 
 permissions:
   contents: write
 
-concurrency:
-  group: sync-blogger-pages
-  cancel-in-progress: false
-
 jobs:
   sync-and-validate:
+    name: Download and validate pages
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -32,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -45,6 +39,7 @@ jobs:
         run: npx astro build
 
       - name: Save updated page archive
+        shell: bash
         run: |
           if git diff --quiet -- src/data/blogger-pages.json; then
             echo "No Blogger page changes detected."
