@@ -6,7 +6,10 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "sync:blogger-pages": "node scripts/sync-blogger-pages.mjs",
+    "predev": "npm run sync:blogger-pages",
     "dev": "astro dev",
+    "prebuild": "npm run sync:blogger-pages",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
