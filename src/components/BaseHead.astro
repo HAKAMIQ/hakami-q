@@ -44,3 +44,15 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="og:image" content={new URL(image.src, Astro.url)} />
 
 <meta name="twitter:card" content="summary_large_image" />
+
+<style is:global>
+	main > .hero-section {
+		padding-block: clamp(2rem, 3vw, 2.75rem) !important;
+	}
+
+	@media (max-width: 700px) {
+		main > .hero-section {
+			padding-block: 1.75rem !important;
+		}
+	}
+</style>
