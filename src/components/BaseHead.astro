@@ -50,6 +50,14 @@ const { title, description, image = FallbackImage } = Astro.props;
 		padding-block: clamp(2rem, 3vw, 2.75rem) !important;
 	}
 
+	.site-header .menu-overview {
+		display: none !important;
+	}
+
+	.site-header .menu-list {
+		margin-top: 0 !important;
+	}
+
 	@media (max-width: 700px) {
 		main > .hero-section {
 			padding-block: 1.75rem !important;
