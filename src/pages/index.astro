@@ -58,21 +58,6 @@ const formatDate = (date: Date) =>
 		<Header />
 
 		<main>
-			<section class="hero-section">
-				<div class="site-container hero-content">
-					<h1>دليل HAKAMIQ للمحاكيات والألعاب</h1>
-					<p>
-						شروحات عربية عملية لإعداد المحاكيات وتشغيل الألعاب وحل المشاكل على الكمبيوتر
-						وأجهزة الألعاب القديمة
-					</p>
-
-					<div class="hero-actions">
-						<a class="primary-button" href="/blog">تصفح المقالات</a>
-						<a class="secondary-button" href="/emulators">دليل المحاكيات</a>
-					</div>
-				</div>
-			</section>
-
 			<section class="content-section">
 				<div class="site-container">
 					<div class="section-heading">
@@ -171,90 +156,6 @@ const formatDate = (date: Date) =>
 </html>
 
 <style>
-	.hero-section {
-		position: relative;
-		overflow: hidden;
-		padding: clamp(3.5rem, 7vw, 6.5rem) 0;
-		border-bottom: 1px solid var(--hq-border);
-		background:
-			radial-gradient(circle at 82% 22%, rgba(229, 21, 21, 0.17), transparent 34%),
-			linear-gradient(180deg, #171a20, #111418);
-	}
-
-	.hero-section::after {
-		position: absolute;
-		inset: auto -10rem -16rem auto;
-		width: 34rem;
-		height: 34rem;
-		border: 1px solid rgba(229, 21, 21, 0.13);
-		border-radius: 50%;
-		content: '';
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		max-width: 1180px;
-	}
-
-	h1 {
-		max-width: 900px;
-		font-size: clamp(2.35rem, 5.4vw, 4.7rem);
-		line-height: 1.22;
-		letter-spacing: -0.035em;
-	}
-
-	.hero-content > p {
-		max-width: 760px;
-		margin-top: 1.25rem;
-		color: var(--hq-muted);
-		font-size: clamp(1rem, 1.7vw, 1.16rem);
-		line-height: 1.95;
-	}
-
-	.hero-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-		margin-top: 1.75rem;
-	}
-
-	.hero-actions a {
-		display: inline-flex;
-		min-height: 46px;
-		align-items: center;
-		justify-content: center;
-		padding: 0.72rem 1.2rem;
-		border-radius: 12px;
-		font-weight: 800;
-		text-decoration: none;
-		transition:
-			transform 0.2s ease,
-			border-color 0.2s ease,
-			background 0.2s ease;
-	}
-
-	.hero-actions a:hover {
-		transform: translateY(-2px);
-	}
-
-	.primary-button {
-		background: linear-gradient(135deg, #ff2d36, var(--hq-red-dark));
-		box-shadow: 0 13px 28px rgba(229, 21, 21, 0.24);
-		color: white;
-	}
-
-	.secondary-button {
-		border: 1px solid var(--hq-border);
-		background: rgba(255, 255, 255, 0.035);
-		color: var(--hq-text);
-	}
-
-	.secondary-button:hover {
-		border-color: rgba(229, 21, 21, 0.6);
-		background: rgba(229, 21, 21, 0.08);
-	}
-
 	.content-section,
 	.categories-section {
 		padding-top: 4rem;
@@ -497,10 +398,6 @@ const formatDate = (date: Date) =>
 	}
 
 	@media (max-width: 700px) {
-		.hero-section {
-			padding: 3.25rem 0;
-		}
-
 		.latest-list,
 		.category-grid {
 			grid-template-columns: 1fr;
@@ -525,7 +422,7 @@ const formatDate = (date: Date) =>
 
 		.post-thumb {
 			height: 100%;
-		aspect-ratio: auto;
+			aspect-ratio: auto;
 		}
 
 		.post-card-content {
@@ -534,10 +431,6 @@ const formatDate = (date: Date) =>
 	}
 
 	@media (max-width: 440px) {
-		.hero-actions a {
-			width: 100%;
-		}
-
 		.section-heading {
 			flex-direction: column;
 		}
