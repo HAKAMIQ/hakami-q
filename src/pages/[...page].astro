@@ -14,9 +14,8 @@ type BloggerPage = {
 	content: string;
 };
 
-const pages = bloggerPages as BloggerPage[];
-
 export function getStaticPaths() {
+	const pages = bloggerPages as BloggerPage[];
 	const paths: Array<{ params: { page: string }; props: { page: BloggerPage } }> = [];
 	const used = new Set<string>();
 
