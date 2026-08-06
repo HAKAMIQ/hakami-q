@@ -1,0 +1,12 @@
+.menu-overview,
+.submenu-overview {
+	display: none !important;
+}
+
+.menu-panel {
+	padding-top: 4px !important;
+}
+
+.submenu-panel {
+	padding-top: 4px !important;
+}
