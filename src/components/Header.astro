@@ -15,7 +15,7 @@ const categoryHref = (slug: string) => `/blog?category=${encodeURIComponent(slug
 
 const menuGroups: MenuGroup[] = [
 	{
-		label: 'Nintendo',
+		label: 'NINTENDO',
 		slug: 'nintendo',
 		items: [
 			{ label: 'Nintendo Switch', slug: 'nintendo-switch' },
@@ -26,7 +26,7 @@ const menuGroups: MenuGroup[] = [
 			{ label: 'SNES', slug: 'snes' },
 			{ label: 'NES', slug: 'nes' },
 			{
-				label: 'Nintendo handhelds',
+				label: 'Nintendo Handhelds',
 				slug: 'nintendo-handhelds',
 				children: [
 					{ label: 'Nintendo 3DS', slug: 'nintendo-3ds' },
@@ -40,7 +40,7 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'PlayStation',
+		label: 'PLAYSTATION',
 		slug: 'playstation',
 		items: [
 			{ label: 'PlayStation 1 - PS1', slug: 'ps1' },
@@ -49,7 +49,7 @@ const menuGroups: MenuGroup[] = [
 			{ label: 'PlayStation 4 - PS4', slug: 'ps4' },
 			{ label: 'PlayStation 5 - PS5', slug: 'ps5' },
 			{
-				label: 'PlayStation handhelds',
+				label: 'PlayStation Handhelds',
 				slug: 'playstation-handhelds',
 				children: [
 					{ label: 'PlayStation Portable - PSP', slug: 'psp' },
@@ -59,7 +59,7 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'Xbox',
+		label: 'XBOX',
 		slug: 'xbox',
 		items: [
 			{ label: 'Original Xbox - OG Xbox', slug: 'original-xbox' },
@@ -80,7 +80,7 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'Other consoles',
+		label: 'OTHER CONSOLES',
 		slug: 'other-consoles',
 		items: [
 			{
@@ -101,12 +101,12 @@ const menuGroups: MenuGroup[] = [
 					{ label: 'Amiga', slug: 'amiga' },
 				],
 			},
-			{ label: 'Android emulators', slug: 'android-emulators' },
-			{ label: 'Guides & articles', slug: 'guides-articles' },
+			{ label: 'Android Emulators', slug: 'android-emulators' },
+			{ label: 'Guides & Articles', slug: 'guides-articles' },
 		],
 	},
 	{
-		label: 'Multi-system',
+		label: 'MULTI-SYSTEM',
 		slug: 'multi-system',
 		items: [
 			{ label: 'RetroArch', slug: 'retroarch' },
@@ -122,15 +122,24 @@ const menuGroups: MenuGroup[] = [
 	<div class="utility-bar">
 		<div class="site-container utility-inner">
 			<nav class="social-links" aria-label="الشبكات الاجتماعية" dir="ltr">
-				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer">YouTube</a>
-				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer">Discord</a>
-				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer">Telegram</a>
+				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
+				</a>
+				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
+				</a>
+				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
+				</a>
 			</nav>
 
 			<nav class="utility-links" aria-label="روابط المعلومات" dir="rtl">
+				<a href="/">الصفحة الرئيسية</a>
 				<a href="/privacy">سياسة الخصوصية</a>
 				<a href="/terms">اتفاقية الاستخدام</a>
 				<a href="/contact">اتصل بنا</a>
+				<a href="/about">من نحن</a>
+				<a href="/services">خدمة المحاكيات</a>
 			</nav>
 		</div>
 	</div>
@@ -138,32 +147,25 @@ const menuGroups: MenuGroup[] = [
 	<div class="brand-surface">
 		<div class="site-container brand-inner">
 			<a class="brand" href="/" aria-label="HAKAMIQ - الصفحة الرئيسية">
-				<img src="/hakamiq-logo.svg" width="214" height="102" alt="HAKAMIQ" />
+				<img src="/hakamiq-logo.svg" width="500" height="241" alt="HAKAMIQ" />
 			</a>
 
 			<p class="brand-description">
-				شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر
+				شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر وأجهزة الألعاب
 			</p>
 
-			<a class="brand-action" href="/blog">
-				<span>تصفح المقالات</span>
-				<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5"></path></svg>
-			</a>
+			<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+				<span>الأقسام</span>
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+			</button>
 		</div>
 	</div>
 
 	<nav class="main-nav" aria-label="أقسام HAKAMIQ">
 		<div class="site-container nav-inner">
-			<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
-				<span>الأقسام</span>
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-			</button>
-
 			<div class="menu-bar" id="primary-menu" dir="ltr">
 				<a class="home-menu-link" href="/" aria-label="الصفحة الرئيسية">
-					<svg viewBox="0 0 24 24" aria-hidden="true">
-						<path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path>
-					</svg>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>
 				</a>
 
 				{
@@ -182,13 +184,7 @@ const menuGroups: MenuGroup[] = [
 												group.items.map((item) =>
 													item.children ? (
 														<div class="submenu-group" data-submenu-group>
-															<button
-																class="submenu-trigger"
-																type="button"
-																aria-expanded="false"
-																aria-haspopup="menu"
-																aria-label={`فتح ${item.label}`}
-															>
+															<button class="submenu-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-label={`فتح ${item.label}`}>
 																<span>{item.label}</span>
 																<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"></path></svg>
 															</button>
@@ -228,7 +224,7 @@ const menuGroups: MenuGroup[] = [
 		if (!header || header.dataset.initialized === 'true') return;
 		header.dataset.initialized = 'true';
 
-		const desktop = window.matchMedia('(min-width: 1081px)');
+		const desktop = window.matchMedia('(min-width: 781px)');
 		const menuToggle = header.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
 		const topMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-menu-group]'));
 		const nestedMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-submenu-group]'));
@@ -260,7 +256,6 @@ const menuGroups: MenuGroup[] = [
 			if (!desktop.matches) return;
 			const panel = menu.querySelector<HTMLElement>(':scope > [data-menu-panel]');
 			if (!panel) return;
-
 			panel.classList.remove('align-end');
 			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) panel.classList.add('align-end');
 		};
@@ -269,7 +264,6 @@ const menuGroups: MenuGroup[] = [
 			if (!desktop.matches) return;
 			const panel = menu.querySelector<HTMLElement>(':scope > [data-submenu-panel]');
 			if (!panel) return;
-
 			panel.classList.remove('open-start');
 			menu.classList.remove('opens-start');
 			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) {
@@ -308,30 +302,25 @@ const menuGroups: MenuGroup[] = [
 
 		for (const menu of topMenus) {
 			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .menu-trigger');
-
 			menu.addEventListener('pointerenter', () => {
 				if (!desktop.matches) return;
 				clearTimer(menu);
 				openTopMenu(menu);
 			});
-
 			menu.addEventListener('pointerleave', (event) => {
 				if (!desktop.matches) return;
 				const next = event.relatedTarget;
 				if (next instanceof Node && menu.contains(next)) return;
 				scheduleClose(menu);
 			});
-
 			menu.addEventListener('focusin', () => {
 				if (desktop.matches) openTopMenu(menu);
 			});
-
 			menu.addEventListener('focusout', () => {
 				window.setTimeout(() => {
 					if (!menu.contains(document.activeElement)) scheduleClose(menu);
 				}, 0);
 			});
-
 			trigger?.addEventListener('click', () => {
 				const willOpen = !menu.classList.contains('is-open');
 				if (willOpen) openTopMenu(menu);
@@ -344,30 +333,25 @@ const menuGroups: MenuGroup[] = [
 
 		for (const menu of nestedMenus) {
 			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .submenu-trigger');
-
 			menu.addEventListener('pointerenter', () => {
 				if (!desktop.matches) return;
 				clearTimer(menu);
 				openNestedMenu(menu);
 			});
-
 			menu.addEventListener('pointerleave', (event) => {
 				if (!desktop.matches) return;
 				const next = event.relatedTarget;
 				if (next instanceof Node && menu.contains(next)) return;
 				scheduleClose(menu, true);
 			});
-
 			menu.addEventListener('focusin', () => {
 				if (desktop.matches) openNestedMenu(menu);
 			});
-
 			menu.addEventListener('focusout', () => {
 				window.setTimeout(() => {
 					if (!menu.contains(document.activeElement)) scheduleClose(menu, true);
 				}, 0);
 			});
-
 			trigger?.addEventListener('click', (event) => {
 				event.stopPropagation();
 				const willOpen = !menu.classList.contains('is-open');
@@ -386,18 +370,13 @@ const menuGroups: MenuGroup[] = [
 			}
 		});
 
-		header.querySelectorAll<HTMLAnchorElement>('.menu-bar a').forEach((link) => {
-			link.addEventListener('click', closeAll);
-		});
-
-		document.addEventListener('pointerdown', (event) => {
+		header.querySelectorAll<HTMLAnchorElement>('.menu-bar a').forEach((link) => link.addEventListener('click', closeAll));
+	document.addEventListener('pointerdown', (event) => {
 			if (event.target instanceof Node && !header.contains(event.target)) closeAll();
 		});
-
 		document.addEventListener('keydown', (event) => {
 			if (event.key === 'Escape') closeAll();
 		});
-
 		desktop.addEventListener('change', closeAll);
 		window.addEventListener('resize', () => {
 			for (const menu of topMenus) if (menu.classList.contains('is-open')) positionTopPanel(menu);
@@ -421,79 +400,125 @@ const menuGroups: MenuGroup[] = [
 
 <style>
 	.site-header {
-		--header-space-1: 4px;
-		--header-space-2: 8px;
-		--header-space-3: 12px;
-		--header-space-4: 16px;
-		--header-radius-small: 4px;
-		--header-radius-medium: 8px;
-		--header-radius-large: 12px;
-		--header-menu-width: 288px;
-		--header-menu-surface: rgba(31, 34, 38, 0.98);
-		--header-menu-hover: rgba(255, 255, 255, 0.065);
+		--header-red: #d71047;
+		--header-red-hover: #b90d3d;
+		--header-red-pressed: #960a31;
 		position: relative;
 		z-index: 1000;
 		overflow: visible;
-		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
-		background: var(--color-neutral-background-1);
-		box-shadow: var(--shadow-2);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		background: #111315;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
 	}
 
 	.utility-bar {
-		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
-		background: #0d0f11;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+		background: #0b0d0f;
 	}
 
 	.utility-inner {
 		display: flex;
-		min-height: 32px;
+		min-height: 38px;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--header-space-4);
+		gap: 20px;
 		direction: ltr;
+	}
+
+	.social-links,
+	.utility-links {
+		display: flex;
+		align-items: center;
+	}
+
+	.social-links {
+		gap: 7px;
+	}
+
+	.social-links a {
+		display: grid;
+		width: 29px;
+		height: 29px;
+		place-items: center;
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.045);
+		color: #d8dbe0;
+		text-decoration: none;
+		transition: background 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+	}
+
+	.social-links a:hover,
+	.social-links a:focus-visible {
+		border-color: rgba(215, 16, 71, 0.72);
+		background: rgba(215, 16, 71, 0.18);
+		color: #fff;
+		outline: none;
+		transform: translateY(-1px);
+	}
+
+	.social-links svg {
+		width: 15px;
+		height: 15px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.65;
+	}
+
+	.social-links a:first-child svg path:first-child {
+		fill: currentColor;
+		stroke: none;
+	}
+
+	.social-links a:first-child svg path:last-child {
+		fill: #0b0d0f;
+		stroke: none;
+	}
+
+	.utility-links {
+		gap: 2px;
 		font-size: 0.72rem;
 	}
 
-	.utility-links,
-	.social-links {
-		display: flex;
-		align-items: center;
-		gap: var(--header-space-1);
-	}
-
-	.utility-bar a {
+	.utility-links a {
 		display: inline-flex;
-		min-height: 28px;
+		min-height: 30px;
 		align-items: center;
-		padding-inline: var(--header-space-2);
-		border-radius: var(--header-radius-small);
-		color: var(--color-neutral-foreground-3);
+		padding-inline: 9px;
+		border-radius: 5px;
+		color: #c3c7cd;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 
-	.utility-bar a:hover,
-	.utility-bar a:focus-visible {
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-1);
+	.utility-links a:hover,
+	.utility-links a:focus-visible {
+		background: rgba(255, 255, 255, 0.06);
+		color: #fff;
 		outline: none;
 	}
 
 	.brand-surface {
-		background: var(--color-neutral-background-2);
+		background:
+			linear-gradient(90deg, rgba(9, 11, 13, 0.48), rgba(9, 11, 13, 0.92)),
+			radial-gradient(circle at 17% 52%, rgba(215, 16, 71, 0.22), transparent 25rem),
+			linear-gradient(135deg, #23272d 0%, #171a1e 58%, #111315 100%);
 	}
 
 	.brand-inner {
 		display: grid;
-		min-height: 84px;
-		grid-template-columns: auto minmax(260px, 1fr) auto;
+		min-height: 116px;
+		grid-template-columns: auto minmax(280px, 1fr);
 		align-items: center;
-		gap: clamp(20px, 3vw, 44px);
-		direction: rtl;
+		gap: clamp(36px, 6vw, 96px);
+		direction: ltr;
 	}
 
 	.brand {
 		display: inline-flex;
-		width: 176px;
+		width: clamp(225px, 22vw, 275px);
 		align-items: center;
 		justify-content: flex-start;
 		text-decoration: none;
@@ -502,74 +527,49 @@ const menuGroups: MenuGroup[] = [
 	.brand img {
 		display: block;
 		width: 100%;
-		height: 68px;
+		height: 94px;
 		object-fit: contain;
-		object-position: right center;
+		object-position: left center;
+		filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.24));
 	}
 
 	.brand-description {
-		max-width: 650px;
-		margin: 0 auto;
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.875rem;
-		line-height: 1.65;
+		max-width: 680px;
+		justify-self: end;
+		margin: 0;
+		direction: rtl;
+		color: #d2d5da;
+		font-size: 0.9rem;
+		line-height: 1.75;
 		text-align: right;
 	}
 
-	.brand-action {
-		display: inline-flex;
-		min-height: 40px;
-		align-items: center;
-		justify-content: center;
-		gap: var(--header-space-2);
-		padding-inline: var(--header-space-4);
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--header-radius-medium);
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.82rem;
-		font-weight: 600;
-		text-decoration: none;
-		box-shadow: var(--shadow-2);
-	}
-
-	.brand-action:hover,
-	.brand-action:focus-visible {
-		border-color: var(--color-neutral-stroke-2);
-		background: var(--color-neutral-background-4);
-		outline: none;
-	}
-
-	.brand-action svg {
-		width: 16px;
-		height: 16px;
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.8;
+	.mobile-menu-toggle {
+		display: none;
 	}
 
 	.main-nav {
 		position: relative;
-		z-index: 20;
+		z-index: 30;
 		overflow: visible;
-		border-top: 1px solid var(--color-neutral-stroke-subtle);
-		background: rgba(23, 25, 28, 0.98);
-		backdrop-filter: blur(16px) saturate(1.05);
+		border-top: 1px solid rgba(255, 255, 255, 0.14);
+		border-bottom: 3px solid var(--header-red-pressed);
+		background: linear-gradient(180deg, #e43a58 0%, var(--header-red) 56%, #c70e41 100%);
+		box-shadow: 0 3px 12px rgba(0, 0, 0, 0.26);
 	}
 
 	.nav-inner {
 		position: relative;
-		min-height: 52px;
+		min-height: 53px;
 		overflow: visible;
 	}
 
 	.menu-bar {
 		display: flex;
 		width: 100%;
-		align-items: center;
-		gap: var(--header-space-1);
+		min-height: 53px;
+		align-items: stretch;
+		gap: 0;
 		overflow: visible;
 	}
 
@@ -577,28 +577,37 @@ const menuGroups: MenuGroup[] = [
 	.menu-direct,
 	.menu-trigger {
 		display: inline-flex;
-		min-height: 40px;
+		min-height: 50px;
 		align-items: center;
 		justify-content: center;
-		gap: 6px;
+		gap: 5px;
 		box-sizing: border-box;
-		border: 1px solid transparent;
-		border-radius: var(--header-radius-medium);
+		border: 0;
+		border-inline-end: 1px solid rgba(255, 255, 255, 0.09);
+		border-radius: 0;
 		background: transparent;
-		color: var(--color-neutral-foreground-2);
+		color: #fff;
 		font: inherit;
-		font-size: 0.8125rem;
-		font-weight: 600;
+		font-size: 0.76rem;
+		font-weight: 760;
 		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
 		cursor: pointer;
-		transition: background var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease);
+		transition: background 120ms ease, color 120ms ease;
 	}
 
-	.home-menu-link { width: 40px; padding: 0; }
+	.home-menu-link {
+		width: 52px;
+		flex: 0 0 52px;
+		padding: 0;
+		border-inline-start: 1px solid rgba(255, 255, 255, 0.09);
+	}
+
 	.menu-direct,
-	.menu-trigger { padding-inline: var(--header-space-3); }
+	.menu-trigger {
+		padding-inline: 14px;
+	}
 
 	.home-menu-link svg,
 	.menu-chevron,
@@ -607,11 +616,19 @@ const menuGroups: MenuGroup[] = [
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 1.8;
+		stroke-width: 1.9;
 	}
 
-	.home-menu-link svg { width: 18px; height: 18px; }
-	.menu-chevron { width: 14px; height: 14px; transition: transform var(--duration-faster) var(--curve-easy-ease); }
+	.home-menu-link svg {
+		width: 19px;
+		height: 19px;
+	}
+
+	.menu-chevron {
+		width: 13px;
+		height: 13px;
+		transition: transform 120ms ease;
+	}
 
 	.menu-group {
 		position: relative;
@@ -627,18 +644,19 @@ const menuGroups: MenuGroup[] = [
 	.menu-trigger:focus-visible,
 	.menu-trigger.has-active-child,
 	.menu-group.is-open > .menu-trigger {
-		border-color: var(--color-neutral-stroke-1);
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-1);
+		background: rgba(75, 0, 20, 0.24);
+		color: #fff;
 		outline: none;
 	}
 
 	.menu-direct.is-active,
 	.menu-trigger.has-active-child {
-		box-shadow: inset 0 -2px var(--color-brand-background);
+		box-shadow: inset 0 -3px #fff;
 	}
 
-	.menu-group.is-open > .menu-trigger .menu-chevron { transform: rotate(180deg); }
+	.menu-group.is-open > .menu-trigger .menu-chevron {
+		transform: rotate(180deg);
+	}
 
 	.menu-panel,
 	.submenu-panel {
@@ -647,7 +665,7 @@ const menuGroups: MenuGroup[] = [
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: opacity var(--duration-faster) var(--curve-easy-ease), transform var(--duration-faster) var(--curve-easy-ease), visibility var(--duration-faster) var(--curve-easy-ease);
+		transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
 	}
 
 	.menu-panel {
@@ -655,9 +673,9 @@ const menuGroups: MenuGroup[] = [
 		top: 100%;
 		left: 0;
 		right: auto;
-		width: min(var(--header-menu-width), calc(100vw - 24px));
-		padding-top: var(--header-space-1);
-		transform: translateY(-4px);
+		width: min(286px, calc(100vw - 24px));
+		padding-top: 7px;
+		transform: translateY(-5px);
 		z-index: 220;
 	}
 
@@ -676,12 +694,12 @@ const menuGroups: MenuGroup[] = [
 
 	.menu-surface,
 	.submenu-surface {
-		padding: var(--header-space-2);
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--header-radius-medium);
-		background: var(--header-menu-surface);
-		box-shadow: var(--shadow-16);
-		backdrop-filter: blur(20px) saturate(1.08);
+		padding: 8px;
+		border: 1px solid #3a3f46;
+		border-radius: 10px;
+		background: rgba(27, 30, 34, 0.985);
+		box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46), 0 2px 8px rgba(0, 0, 0, 0.28);
+		backdrop-filter: blur(18px) saturate(1.08);
 	}
 
 	.menu-surface {
@@ -704,12 +722,12 @@ const menuGroups: MenuGroup[] = [
 		align-items: center;
 		box-sizing: border-box;
 		border: 1px solid transparent;
-		border-radius: var(--header-radius-small);
+		border-radius: 6px;
 		background: transparent;
-		color: var(--color-neutral-foreground-2);
+		color: #d5d8dd;
 		font: inherit;
-		font-size: 0.875rem;
-		font-weight: 500;
+		font-size: 0.82rem;
+		font-weight: 600;
 		line-height: 1.35;
 		text-align: left;
 		text-decoration: none;
@@ -718,7 +736,7 @@ const menuGroups: MenuGroup[] = [
 	.menu-list > a,
 	.submenu-surface > a,
 	.submenu-trigger {
-		padding: var(--header-space-2) var(--header-space-3);
+		padding: 8px 12px;
 	}
 
 	.menu-list > a:hover,
@@ -729,23 +747,25 @@ const menuGroups: MenuGroup[] = [
 	.submenu-surface > a:hover,
 	.submenu-surface > a:focus-visible,
 	.submenu-surface > a.is-active {
-		border-color: var(--color-neutral-stroke-subtle);
-		background: var(--header-menu-hover);
-		color: var(--color-neutral-foreground-1);
+		border-color: rgba(215, 16, 71, 0.34);
+		background: rgba(215, 16, 71, 0.14);
+		color: #fff;
 		outline: none;
 	}
 
 	.menu-list > a.is-active,
 	.submenu-surface > a.is-active {
-		box-shadow: inset 2px 0 var(--color-brand-background);
+		box-shadow: inset 2px 0 var(--header-red);
 	}
 
-	.submenu-group { position: relative; }
+	.submenu-group {
+		position: relative;
+	}
 
 	.submenu-trigger {
 		width: 100%;
 		justify-content: space-between;
-		gap: var(--header-space-3);
+		gap: 12px;
 		cursor: pointer;
 	}
 
@@ -753,7 +773,7 @@ const menuGroups: MenuGroup[] = [
 		width: 15px;
 		height: 15px;
 		flex: 0 0 auto;
-		transition: transform var(--duration-faster) var(--curve-easy-ease);
+		transition: transform 120ms ease;
 	}
 
 	.submenu-panel {
@@ -762,93 +782,152 @@ const menuGroups: MenuGroup[] = [
 		left: 100%;
 		right: auto;
 		width: min(260px, calc(100vw - 24px));
-		padding-left: var(--header-space-1);
-		transform: translateX(-4px);
+		padding-left: 7px;
+		transform: translateX(-5px);
 		z-index: 240;
 	}
 
 	.submenu-panel.open-start {
 		left: auto;
 		right: 100%;
-		padding-right: var(--header-space-1);
+		padding-right: 7px;
 		padding-left: 0;
-		transform: translateX(4px);
+		transform: translateX(5px);
 	}
 
-	.submenu-group.opens-start > .submenu-trigger svg { transform: rotate(180deg); }
-
-	.mobile-menu-toggle { display: none; }
-
-	@media (max-width: 1220px) and (min-width: 1081px) {
-		.menu-direct,
-		.menu-trigger { padding-inline: var(--header-space-2); font-size: 0.75rem; }
-		.brand-description { max-width: 500px; font-size: 0.82rem; }
-		.brand { width: 164px; }
+	.submenu-group.opens-start > .submenu-trigger svg {
+		transform: rotate(180deg);
 	}
 
-	@media (max-width: 1080px) {
-		.utility-links { display: none; }
-		.utility-inner { justify-content: center; }
-
-		.brand-inner {
-			min-height: 72px;
-			grid-template-columns: 1fr;
-			justify-items: center;
-			padding-block: var(--header-space-2);
+	@media (max-width: 1080px) and (min-width: 781px) {
+		.utility-links {
+			font-size: 0.66rem;
 		}
 
-		.brand { width: 150px; justify-content: center; }
-		.brand img { height: 58px; object-position: center; }
-		.brand-description,
-		.brand-action { display: none; }
+		.utility-links a {
+			padding-inline: 6px;
+		}
 
-		.nav-inner { min-height: 50px; width: 100%; }
+		.brand-inner {
+			min-height: 104px;
+			gap: 32px;
+		}
+
+		.brand {
+			width: 220px;
+		}
+
+		.brand img {
+			height: 84px;
+		}
+
+		.brand-description {
+			max-width: 530px;
+			font-size: 0.8rem;
+		}
+
+		.menu-direct,
+		.menu-trigger {
+			padding-inline: 9px;
+			font-size: 0.67rem;
+		}
+
+		.home-menu-link {
+			width: 45px;
+			flex-basis: 45px;
+		}
+	}
+
+	@media (max-width: 780px) {
+		.utility-bar {
+			display: none;
+		}
+
+		.brand-surface {
+			background: linear-gradient(135deg, #1d2024, #111315);
+		}
+
+		.brand-inner {
+			display: grid;
+			min-height: 72px;
+			grid-template-columns: auto 1fr;
+			gap: 16px;
+			direction: ltr;
+		}
+
+		.brand {
+			width: 158px;
+			grid-column: 1;
+			justify-self: start;
+		}
+
+		.brand img {
+			height: 60px;
+			object-position: left center;
+		}
+
+		.brand-description {
+			display: none;
+		}
 
 		.mobile-menu-toggle {
-			display: flex;
-			width: 100%;
-			min-height: 50px;
+			display: inline-flex;
+			min-height: 40px;
+			grid-column: 2;
 			align-items: center;
-			justify-content: space-between;
-			padding: 0 var(--header-space-4);
-			border: 0;
-			background: transparent;
-			color: var(--color-neutral-foreground-1);
+			justify-self: end;
+			gap: 8px;
+			padding-inline: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.045);
+			color: #fff;
 			font: inherit;
-			font-size: 0.875rem;
-			font-weight: 600;
+			font-size: 0.8rem;
+			font-weight: 700;
 			cursor: pointer;
 		}
 
 		.mobile-menu-toggle svg {
-			width: 20px;
-			height: 20px;
+			width: 19px;
+			height: 19px;
 			fill: none;
 			stroke: currentColor;
 			stroke-linecap: round;
-			stroke-width: 1.8;
+			stroke-width: 1.9;
+		}
+
+		.main-nav,
+		.nav-inner {
+			position: static;
+			min-height: 0;
+			border: 0;
+			background: transparent;
+			box-shadow: none;
 		}
 
 		.menu-bar {
 			position: absolute;
 			top: 100%;
-			right: 0;
-			left: 0;
+			right: 12px;
+			left: 12px;
 			display: none;
+			min-height: 0;
 			max-height: min(76vh, 680px);
 			grid-template-columns: 1fr;
 			overflow-x: hidden;
 			overflow-y: auto;
-			padding: var(--header-space-2);
-			border: 1px solid var(--color-neutral-stroke-1);
-			border-top: 0;
-			border-radius: 0 0 var(--header-radius-large) var(--header-radius-large);
+			padding: 8px;
+			border: 1px solid #3a3f46;
+			border-radius: 12px;
 			background: rgba(23, 25, 28, 0.995);
-			box-shadow: var(--shadow-16);
+			box-shadow: 0 20px 52px rgba(0, 0, 0, 0.5);
 			z-index: 300;
 		}
 
-		.site-header.mobile-open .menu-bar { display: grid; }
+		.site-header.mobile-open .menu-bar {
+			display: grid;
+		}
 
 		.home-menu-link,
 		.menu-direct,
@@ -856,14 +935,27 @@ const menuGroups: MenuGroup[] = [
 			width: 100%;
 			min-height: 44px;
 			justify-content: space-between;
-			padding: 0 var(--header-space-3);
-			font-size: 0.85rem;
+			padding: 0 12px;
+			border: 0;
+			border-radius: 7px;
+			font-size: 0.82rem;
 			text-align: left;
 		}
 
-		.home-menu-link { justify-content: flex-start; gap: 10px; }
-		.home-menu-link::after { content: 'Home'; font-size: 0.85rem; font-weight: 600; }
-		.menu-group { width: 100%; }
+		.home-menu-link {
+			justify-content: flex-start;
+			gap: 10px;
+		}
+
+		.home-menu-link::after {
+			content: 'HOME';
+			font-size: 0.82rem;
+			font-weight: 700;
+		}
+
+		.menu-group {
+			width: 100%;
+		}
 
 		.menu-panel,
 		.submenu-panel,
@@ -874,7 +966,7 @@ const menuGroups: MenuGroup[] = [
 			left: auto;
 			display: none;
 			width: auto;
-			padding: 0 0 var(--header-space-1) var(--header-space-3);
+			padding: 0 0 4px 12px;
 			opacity: 1;
 			visibility: visible;
 			transform: none;
@@ -882,33 +974,64 @@ const menuGroups: MenuGroup[] = [
 		}
 
 		.menu-group.is-open > .menu-panel,
-		.submenu-group.is-open > .submenu-panel { display: block; }
+		.submenu-group.is-open > .submenu-panel {
+			display: block;
+		}
 
 		.menu-surface,
 		.submenu-surface {
-			padding: var(--header-space-1);
-			border-radius: var(--header-radius-medium);
+			padding: 4px;
+			border-radius: 7px;
 			background: rgba(255, 255, 255, 0.025);
 			box-shadow: none;
 			backdrop-filter: none;
 		}
 
-		.menu-surface { max-height: none; overflow: visible; }
-		.submenu-group.opens-start > .submenu-trigger svg { transform: none; }
-		.submenu-group.is-open > .submenu-trigger svg { transform: rotate(90deg); }
+		.menu-surface {
+			max-height: none;
+			overflow: visible;
+		}
+
+		.submenu-group.opens-start > .submenu-trigger svg {
+			transform: none;
+		}
+
+		.submenu-group.is-open > .submenu-trigger svg {
+			transform: rotate(90deg);
+		}
 	}
 
-	@media (max-width: 540px) {
-		.utility-bar { display: none; }
-		.brand-inner { min-height: 66px; }
-		.brand { width: 138px; }
-		.brand img { height: 54px; }
+	@media (max-width: 420px) {
+		.brand-inner {
+			min-height: 66px;
+		}
+
+		.brand {
+			width: 138px;
+		}
+
+		.brand img {
+			height: 54px;
+		}
+
+		.mobile-menu-toggle span {
+			display: none;
+		}
+
+		.mobile-menu-toggle {
+			width: 42px;
+			padding: 0;
+			justify-content: center;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.social-links a,
 		.menu-panel,
 		.submenu-panel,
 		.menu-chevron,
-		.submenu-trigger svg { transition: none; }
+		.submenu-trigger svg {
+			transition: none;
+		}
 	}
 </style>
