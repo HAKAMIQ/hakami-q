@@ -5,10 +5,6 @@ const today = new Date();
 <footer class="site-footer">
 	<div class="site-container footer-main">
 		<section class="footer-brand">
-			<a class="footer-logo" href="/" aria-label="HAKAMIQ - الصفحة الرئيسية">
-				<img src="/hakamiq-logo.svg" width="214" height="102" alt="HAKAMIQ" />
-			</a>
-
 			<p>
 				دليل عربي عملي للمحاكيات وتشغيل الألعاب وإعدادها وحلول المشاكل على الكمبيوتر وأجهزة الألعاب
 			</p>
@@ -77,25 +73,9 @@ const today = new Date();
 		max-width: 640px;
 	}
 
-	.footer-logo {
-		display: inline-flex;
-		width: 178px;
-		align-items: center;
-		text-decoration: none;
-	}
-
-	.footer-logo img {
-		display: block;
-		width: 100%;
-		height: 78px;
-		object-fit: contain;
-		object-position: right center;
-		filter: drop-shadow(0 10px 24px rgba(215, 16, 71, 0.14));
-	}
-
 	.footer-brand > p {
 		max-width: 590px;
-		margin-top: 0.8rem;
+		margin: 0;
 		color: var(--color-neutral-foreground-3);
 		font-size: 0.83rem;
 		line-height: 1.9;
@@ -216,8 +196,6 @@ const today = new Date();
 	@media (max-width: 620px) {
 		.site-footer { margin-top: 2.5rem; }
 		.footer-main { padding-block: 1.85rem; }
-		.footer-logo { width: 158px; }
-		.footer-logo img { height: 70px; }
 		.footer-navigation { grid-template-columns: 1fr 1fr; gap: 1rem; }
 		.footer-column:last-child { grid-column: 1 / -1; }
 		.footer-bottom-inner {
