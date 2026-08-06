@@ -1,0 +1,474 @@
+---
+import StaticPageLayout from '../layouts/StaticPageLayout.astro';
+
+type PageLink = {
+	label: string;
+	description: string;
+	href: string;
+	external?: boolean;
+};
+
+type PageSection = {
+	title: string;
+	paragraphs?: string[];
+	bullets?: string[];
+	links?: PageLink[];
+};
+
+type PageData = {
+	slug: string;
+	title: string;
+	description: string;
+	lang: 'ar' | 'en';
+	dir: 'rtl' | 'ltr';
+	eyebrow: string;
+	alternateHref: string;
+	alternateLabel: string;
+	sections: PageSection[];
+};
+
+const communityLinks: PageLink[] = [
+	{
+		label: 'YouTube',
+		description: 'شروحات HAKAMIQ المرئية',
+		href: 'https://www.youtube.com/@HAKAMIQ',
+		external: true,
+	},
+	{
+		label: 'Discord',
+		description: 'مجتمع المساعدة والنقاش',
+		href: 'https://discord.gg/WqgRrmAKpC',
+		external: true,
+	},
+	{
+		label: 'Telegram',
+		description: 'التحديثات والروابط الرسمية',
+		href: 'https://t.me/hakamiq0',
+		external: true,
+	},
+];
+
+const communityLinksEn: PageLink[] = [
+	{
+		label: 'YouTube',
+		description: 'HAKAMIQ video guides',
+		href: 'https://www.youtube.com/@HAKAMIQ',
+		external: true,
+	},
+	{
+		label: 'Discord',
+		description: 'Community help and discussion',
+		href: 'https://discord.gg/WqgRrmAKpC',
+		external: true,
+	},
+	{
+		label: 'Telegram',
+		description: 'Official updates and links',
+		href: 'https://t.me/hakamiq0',
+		external: true,
+	},
+];
+
+const pages: PageData[] = [
+	{
+		slug: 'about',
+		title: 'من نحن',
+		description: 'تعرف على HAKAMIQ ورسالة الموقع في تقديم محتوى عربي عملي عن المحاكيات والألعاب.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'عن HAKAMIQ',
+		alternateHref: '/en/about',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'ما هو HAKAMIQ؟',
+				paragraphs: [
+					'HAKAMIQ موقع عربي متخصص في شروحات المحاكيات وإعداد الألعاب وحل المشاكل التقنية المرتبطة بها على الكمبيوتر والأجهزة المدعومة.',
+					'يركز المحتوى على الخطوات العملية والمعلومات الواضحة مع تحديث الشروحات عند تغير البرامج أو ظهور حلول أفضل.',
+				],
+			},
+			{
+				title: 'ماذا نقدم؟',
+				bullets: [
+					'أدلة تثبيت وضبط المحاكيات.',
+					'حلول للأخطاء والمشاكل الشائعة.',
+					'شرح إعدادات الأداء والصورة والتحكم.',
+					'متابعة أخبار وتحديثات مشاريع المحاكاة المهمة.',
+				],
+			},
+			{
+				title: 'قنوات HAKAMIQ',
+				paragraphs: ['استخدم القنوات الرسمية التالية لمتابعة المحتوى والتواصل مع المجتمع.'],
+				links: communityLinks,
+			},
+		],
+	},
+	{
+		slug: 'contact',
+		title: 'اتصل بنا',
+		description: 'قنوات التواصل الرسمية مع HAKAMIQ للاستفسارات والملاحظات والمساعدة المجتمعية.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'التواصل',
+		alternateHref: '/en/contact',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'التواصل الرسمي',
+				paragraphs: [
+					'للملاحظات على الموقع أو اقتراح موضوع جديد استخدم إحدى القنوات الرسمية أدناه.',
+					'عند طلب مساعدة تقنية اذكر اسم المحاكي وإصداره ونظام التشغيل ومواصفات الجهاز ورسالة الخطأ كاملة.',
+				],
+				links: communityLinks,
+			},
+			{
+				title: 'قبل إرسال المشكلة',
+				bullets: [
+					'تأكد من استخدام أحدث إصدار رسمي من المحاكي.',
+					'أرفق صورة واضحة أو سجل الخطأ عند توفره.',
+					'لا ترسل ملفات ألعاب أو مفاتيح أو بيانات حسابات شخصية.',
+				],
+			},
+		],
+	},
+	{
+		slug: 'services',
+		title: 'خدمة المحاكيات',
+		description: 'نطاق المساعدة التي يقدمها HAKAMIQ للمستخدمين في إعداد المحاكيات وتشخيص المشاكل.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'Emulator Service',
+		alternateHref: '/en/services',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'نطاق الخدمة',
+				bullets: [
+					'المساعدة في اختيار المحاكي المناسب للنظام المطلوب.',
+					'شرح التثبيت والإعدادات الأساسية والمتقدمة.',
+					'تشخيص مشاكل الأداء والصورة والصوت والتحكم.',
+					'توجيه المستخدم إلى المصادر الرسمية وقوائم التوافق.',
+				],
+			},
+			{
+				title: 'ما لا تشمله الخدمة',
+				paragraphs: [
+					'لا يوفر HAKAMIQ ألعابا مقرصنة أو مفاتيح تشفير أو ملفات نظام محمية بحقوق النشر، ولا يطلب بيانات الدخول إلى حسابات المستخدمين.',
+					'المساعدة التقنية تعتمد على المعلومات المتاحة وتوافق اللعبة ومواصفات الجهاز، لذلك لا يمكن ضمان تشغيل كل لعبة أو مشروع تجريبي.',
+				],
+			},
+			{
+				title: 'طلب المساعدة',
+				paragraphs: ['اختر القناة المناسبة وأرسل تفاصيل المشكلة بشكل واضح لتسهيل التشخيص.'],
+				links: communityLinks,
+			},
+		],
+	},
+	{
+		slug: 'privacy',
+		title: 'سياسة الخصوصية',
+		description: 'توضح هذه الصفحة كيفية التعامل مع البيانات عند استخدام موقع HAKAMIQ وروابطه الخارجية.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'السياسات',
+		alternateHref: '/en/privacy',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'البيانات التي يعالجها الموقع',
+				paragraphs: [
+					'الموقع ثابت ولا يطلب إنشاء حساب مباشر. قد تسجل منصة الاستضافة بيانات تقنية معتادة مثل عنوان IP ونوع المتصفح ووقت الطلب لأغراض الأمان والتشغيل.',
+					'عند الانتقال إلى YouTube أو Discord أو Telegram تخضع البيانات لسياسة الخصوصية الخاصة بالخدمة الخارجية.',
+				],
+			},
+			{
+				title: 'ملفات الارتباط والمحتوى الخارجي',
+				paragraphs: [
+					'قد تستخدم الخدمات الخارجية أو المحتويات المضمنة ملفات ارتباط وفقا لإعداداتها وسياساتها. لا يستخدم HAKAMIQ ملفات ارتباط لإنشاء ملفات تعريف إعلانية مباشرة داخل الموقع.',
+				],
+			},
+			{
+				title: 'الأمان والتحديثات',
+				paragraphs: [
+					'نتخذ إجراءات معقولة لحماية الموقع، لكن لا توجد وسيلة نقل أو تخزين مضمونة بالكامل. قد يتم تحديث هذه السياسة عند تغير خدمات الموقع أو متطلباته.',
+				],
+			},
+		],
+	},
+	{
+		slug: 'terms',
+		title: 'اتفاقية الاستخدام',
+		description: 'الشروط العامة لاستخدام موقع HAKAMIQ ومحتواه وروابطه.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'السياسات',
+		alternateHref: '/en/terms',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'استخدام المحتوى',
+				paragraphs: [
+					'يقدم المحتوى لأغراض تعليمية ومعلوماتية. يجب استخدام البرامج والألعاب والملفات بطريقة قانونية ووفقا لتراخيص أصحابها والقوانين المعمول بها.',
+				],
+			},
+			{
+				title: 'السلوك المقبول',
+				bullets: [
+					'عدم إساءة استخدام الموقع أو محاولة تعطيله.',
+					'عدم استخدام المحتوى لتوزيع برمجيات ضارة أو مواد مخالفة.',
+					'احترام حقوق النشر والعلامات التجارية والمصادر المشار إليها.',
+				],
+			},
+			{
+				title: 'التغييرات',
+				paragraphs: ['يجوز تحديث المحتوى أو الروابط أو هذه الشروط عند الحاجة. استمرار استخدام الموقع بعد التحديث يعني قبول النسخة المنشورة.'],
+			},
+		],
+	},
+	{
+		slug: 'disclaimer',
+		title: 'إخلاء المسؤولية',
+		description: 'حدود المسؤولية المتعلقة بالمعلومات التقنية والبرامج والروابط المنشورة في HAKAMIQ.',
+		lang: 'ar',
+		dir: 'rtl',
+		eyebrow: 'السياسات',
+		alternateHref: '/en/disclaimer',
+		alternateLabel: 'English',
+		sections: [
+			{
+				title: 'المعلومات التقنية',
+				paragraphs: [
+					'نبذل جهدا لتقديم معلومات دقيقة، لكن مشاريع المحاكاة تتغير باستمرار وقد تختلف النتائج حسب إصدار البرنامج ومواصفات الجهاز واللعبة.',
+					'يتحمل المستخدم مسؤولية إنشاء نسخة احتياطية وقراءة تعليمات المشروع الرسمي قبل تطبيق أي تعديل.',
+				],
+			},
+			{
+				title: 'الملكية والروابط الخارجية',
+				paragraphs: [
+					'أسماء الشركات والأجهزة والألعاب والعلامات التجارية مملوكة لأصحابها. HAKAMIQ موقع مستقل وغير تابع لمصنعي الأجهزة أو مطوري المحاكيات ما لم يذكر خلاف ذلك.',
+					'الروابط الخارجية مقدمة للتسهيل ولا تعني ضمان محتواها أو استمرار توفرها.',
+				],
+			},
+		],
+	},
+	{
+		slug: 'en/about',
+		title: 'About Us',
+		description: 'Learn about HAKAMIQ and its practical Arabic coverage of emulation, games, and troubleshooting.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'About HAKAMIQ',
+		alternateHref: '/about',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'What is HAKAMIQ?',
+				paragraphs: [
+					'HAKAMIQ is an Arabic technology website focused on emulator setup, game configuration, and practical troubleshooting for supported computers and devices.',
+					'The goal is to publish clear, usable guides and update them when software behavior or recommended settings change.',
+				],
+			},
+			{
+				title: 'What we cover',
+				bullets: [
+					'Emulator installation and configuration.',
+					'Common error and compatibility fixes.',
+					'Performance, graphics, audio, and controller settings.',
+					'Important emulation project news and releases.',
+				],
+			},
+			{ title: 'Official channels', paragraphs: ['Follow HAKAMIQ and reach the community through the official links below.'], links: communityLinksEn },
+		],
+	},
+	{
+		slug: 'en/contact',
+		title: 'Contact Us',
+		description: 'Official HAKAMIQ channels for feedback, suggestions, and community support.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'Contact',
+		alternateHref: '/contact',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'Official contact channels',
+				paragraphs: [
+					'Use one of the official channels below for website feedback or content suggestions.',
+					'For technical help, include the emulator name and version, operating system, hardware specifications, and the complete error message.',
+				],
+				links: communityLinksEn,
+			},
+			{
+				title: 'Before requesting help',
+				bullets: [
+					'Use the latest official emulator release.',
+					'Attach a clear screenshot or log when available.',
+					'Do not send game files, encryption keys, passwords, or personal account data.',
+				],
+			},
+		],
+	},
+	{
+		slug: 'en/services',
+		title: 'Emulator Service',
+		description: 'The scope of HAKAMIQ community assistance for emulator setup and troubleshooting.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'Support scope',
+		alternateHref: '/services',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'What the service covers',
+				bullets: [
+					'Choosing a suitable emulator for the target system.',
+					'Installation and basic or advanced configuration guidance.',
+					'Troubleshooting performance, graphics, audio, and controller issues.',
+					'Pointing users to official documentation and compatibility lists.',
+				],
+			},
+			{
+				title: 'Limitations',
+				paragraphs: [
+					'HAKAMIQ does not provide pirated games, encryption keys, or copyrighted system files, and will never request account passwords.',
+					'Results depend on software maturity, game compatibility, and hardware capabilities. Successful operation cannot be guaranteed for every title or experimental project.',
+				],
+			},
+			{ title: 'Request help', paragraphs: ['Choose the appropriate channel and provide complete technical details.'], links: communityLinksEn },
+		],
+	},
+	{
+		slug: 'en/privacy',
+		title: 'Privacy Policy',
+		description: 'How technical and external-service data may be handled when you use HAKAMIQ.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'Policies',
+		alternateHref: '/privacy',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'Technical data',
+				paragraphs: [
+					'The website is static and does not require a direct user account. The hosting platform may process standard technical data such as IP address, browser type, and request time for security and operation.',
+					'When you follow links to YouTube, Discord, or Telegram, their own privacy policies apply.',
+				],
+			},
+			{
+				title: 'Cookies and external content',
+				paragraphs: ['External services or embedded content may use cookies under their own settings and policies. HAKAMIQ does not directly build advertising profiles through the static website.'],
+			},
+			{
+				title: 'Security and updates',
+				paragraphs: ['Reasonable measures are used to protect the website, but no transmission or storage method is completely guaranteed. This policy may be updated when site services change.'],
+			},
+		],
+	},
+	{
+		slug: 'en/terms',
+		title: 'Terms of Use',
+		description: 'General terms for using HAKAMIQ content, guides, and external links.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'Policies',
+		alternateHref: '/terms',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'Content use',
+				paragraphs: ['Content is provided for educational and informational purposes. Software, games, and files must be used legally and according to their licenses and applicable law.'],
+			},
+			{
+				title: 'Acceptable use',
+				bullets: [
+					'Do not disrupt or misuse the website.',
+					'Do not use the content to distribute malware or unlawful material.',
+					'Respect copyright, trademarks, and cited sources.',
+				],
+			},
+			{
+				title: 'Changes',
+				paragraphs: ['Content, links, and these terms may be updated when necessary. Continued use after an update means acceptance of the published version.'],
+			},
+		],
+	},
+	{
+		slug: 'en/disclaimer',
+		title: 'Disclaimer',
+		description: 'Limits of responsibility for technical information, software, and external links published by HAKAMIQ.',
+		lang: 'en',
+		dir: 'ltr',
+		eyebrow: 'Policies',
+		alternateHref: '/disclaimer',
+		alternateLabel: 'العربية',
+		sections: [
+			{
+				title: 'Technical information',
+				paragraphs: [
+					'We aim to provide accurate information, but emulation projects change frequently and results vary by software version, hardware, and game.',
+					'Users are responsible for backups and for reviewing official project documentation before applying changes.',
+				],
+			},
+			{
+				title: 'Ownership and external links',
+				paragraphs: [
+					'Company, console, game, and trademark names belong to their respective owners. HAKAMIQ is independent and is not affiliated with hardware manufacturers or emulator developers unless explicitly stated.',
+					'External links are provided for convenience and do not guarantee third-party content or availability.',
+				],
+			},
+		],
+	},
+];
+
+export function getStaticPaths() {
+	return pages.map((page) => ({
+		params: { page: page.slug },
+		props: { pageData: page },
+	}));
+}
+
+const { pageData } = Astro.props as { pageData: PageData };
+---
+
+<StaticPageLayout
+	title={pageData.title}
+	description={pageData.description}
+	lang={pageData.lang}
+	dir={pageData.dir}
+	eyebrow={pageData.eyebrow}
+	alternateHref={pageData.alternateHref}
+	alternateLabel={pageData.alternateLabel}
+>
+	{
+		pageData.sections.map((section) => (
+			<section>
+				<h2>{section.title}</h2>
+				{section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+				{
+					section.bullets && (
+						<ul>
+							{section.bullets.map((item) => <li>{item}</li>)}
+						</ul>
+					)
+				}
+				{
+					section.links && (
+						<div class="link-grid">
+							{section.links.map((link) => (
+								<a
+									class="contact-card"
+									href={link.href}
+									target={link.external ? '_blank' : undefined}
+									rel={link.external ? 'noopener noreferrer' : undefined}
+								>
+									<strong>{link.label}</strong>
+									<span>{link.description}</span>
+								</a>
+							))}
+						</div>
+					)
+				}
+			</section>
+		))
+	}
+</StaticPageLayout>

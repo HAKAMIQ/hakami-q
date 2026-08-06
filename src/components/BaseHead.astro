@@ -22,29 +22,22 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="application-name" content="HAKAMIQ" />
 <meta name="apple-mobile-web-app-title" content="HAKAMIQ" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate icon" href="/favicon.ico" />
 <link rel="mask-icon" href="/favicon.svg" color="#d71047" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
 <meta name="generator" content={Astro.generator} />
 
 <Font cssVariable="--font-atkinson" preload />
 
 <link rel="canonical" href={canonicalURL} />
-
 <title>{title}</title>
 <meta name="description" content={description} />
-
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image.src, Astro.url)} />
-
 <meta name="twitter:card" content="summary_large_image" />
 
 <style is:global>
@@ -60,48 +53,6 @@ const { title, description, image = FallbackImage } = Astro.props;
 		padding-block: clamp(2rem, 3vw, 2.75rem) !important;
 	}
 
-	.site-header .menu-overview {
-		display: none !important;
-	}
-
-	.site-header .menu-list {
-		margin-top: 0 !important;
-	}
-
-	/* Official HAKAMIQ identity */
-	.site-header .brand {
-		display: block !important;
-		width: 154px;
-		height: 74px;
-		flex: 0 0 154px !important;
-		background: url('/hakamiq-logo.svg') center / contain no-repeat;
-		font-size: 0;
-	}
-
-	.site-header .brand > * {
-		display: none !important;
-	}
-
-	.site-header .brand-surface {
-		background:
-			radial-gradient(circle at 92% 50%, rgba(215, 16, 71, 0.12), transparent 20rem),
-			linear-gradient(110deg, rgba(215, 16, 71, 0.06), transparent 40%),
-			var(--color-neutral-background-2) !important;
-	}
-
-	.site-footer .footer-logo {
-		display: block !important;
-		width: 176px;
-		height: 85px;
-		background: url('/hakamiq-logo.svg') center / contain no-repeat;
-		font-size: 0;
-	}
-
-	.site-footer .footer-logo > * {
-		display: none !important;
-	}
-
-	/* Compact Fluent-style homepage cards */
 	body main .content-section {
 		padding-block: 1.5rem 1rem !important;
 	}
@@ -207,13 +158,6 @@ const { title, description, image = FallbackImage } = Astro.props;
 	}
 
 	@media (max-width: 960px) {
-		.site-header .brand {
-			width: 52px;
-			height: 56px;
-			flex-basis: 52px !important;
-			background-image: url('/favicon.svg');
-		}
-
 		body main .featured-card > a {
 			height: auto !important;
 			grid-template-columns: 1fr !important;
@@ -253,13 +197,6 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 		body main .post-card-content h3 {
 			font-size: 0.86rem !important;
-		}
-	}
-
-	@media (max-width: 560px) {
-		.site-footer .footer-logo {
-			width: 152px;
-			height: 74px;
 		}
 	}
 </style>

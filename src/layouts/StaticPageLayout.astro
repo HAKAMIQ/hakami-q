@@ -1,0 +1,249 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	lang?: 'ar' | 'en';
+	dir?: 'rtl' | 'ltr';
+	eyebrow?: string;
+	alternateHref?: string;
+	alternateLabel?: string;
+}
+
+const {
+	title,
+	description,
+	lang = 'ar',
+	dir = lang === 'ar' ? 'rtl' : 'ltr',
+	eyebrow = lang === 'ar' ? 'صفحات HAKAMIQ' : 'HAKAMIQ Pages',
+	alternateHref,
+	alternateLabel,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+	<head>
+		<BaseHead title={`${title} | HAKAMIQ`} description={description} />
+	</head>
+	<body>
+		<Header />
+
+		<main class="static-main">
+			<div class="site-container static-shell">
+				<header class="static-hero">
+					<div class="static-hero-copy">
+						<span class="eyebrow">{eyebrow}</span>
+						<h1>{title}</h1>
+						<p>{description}</p>
+					</div>
+
+					{
+						alternateHref && alternateLabel && (
+							<a class="language-link" href={alternateHref} hreflang={lang === 'ar' ? 'en' : 'ar'}>
+								{alternateLabel}
+							</a>
+						)
+					}
+				</header>
+
+				<article class="static-content">
+					<slot />
+				</article>
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.static-main {
+		padding: clamp(1.25rem, 3vw, 2.5rem) 0 0;
+	}
+
+	.static-shell {
+		width: min(calc(100% - 48px), 1080px);
+	}
+
+	.static-hero {
+		position: relative;
+		display: flex;
+		overflow: hidden;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: clamp(1.5rem, 4vw, 3rem);
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-xxlarge);
+		background:
+			linear-gradient(120deg, rgba(215, 16, 71, 0.12), transparent 42%),
+			radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.05), transparent 24rem),
+			var(--color-neutral-background-2);
+		box-shadow: var(--shadow-8);
+	}
+
+	.static-hero::after {
+		position: absolute;
+		inset: auto -9rem -13rem auto;
+		width: 25rem;
+		height: 25rem;
+		border: 1px solid rgba(215, 16, 71, 0.16);
+		border-radius: 50%;
+		content: '';
+		pointer-events: none;
+	}
+
+	.static-hero-copy {
+		position: relative;
+		z-index: 1;
+		max-width: 760px;
+	}
+
+	.eyebrow {
+		display: inline-flex;
+		margin-bottom: 0.8rem;
+		color: var(--color-brand-foreground-strong);
+		font-size: 0.76rem;
+		font-weight: 760;
+	}
+
+	.static-hero h1 {
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: clamp(2rem, 5vw, 3.7rem);
+		font-weight: 800;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+	}
+
+	.static-hero p {
+		max-width: 720px;
+		margin-top: 0.9rem;
+		color: var(--color-neutral-foreground-3);
+		font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+		line-height: 1.9;
+	}
+
+	.language-link {
+		position: relative;
+		z-index: 1;
+		display: inline-flex;
+		min-height: 40px;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+		padding-inline: 0.9rem;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: rgba(255, 255, 255, 0.035);
+		color: var(--color-neutral-foreground-1);
+		font-size: 0.78rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.language-link:hover,
+	.language-link:focus-visible {
+		border-color: color-mix(in srgb, var(--color-brand-foreground) 42%, var(--color-neutral-stroke-1));
+		background: rgba(215, 16, 71, 0.1);
+		outline: none;
+	}
+
+	.static-content {
+		margin-top: 1.25rem;
+		padding: clamp(1.35rem, 4vw, 2.5rem);
+		border: 1px solid var(--color-neutral-stroke-subtle);
+		border-radius: var(--radius-xxlarge);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-4);
+		color: var(--color-neutral-foreground-2);
+		font-size: 0.98rem;
+		line-height: 2;
+	}
+
+	.static-content :global(section + section) {
+		margin-top: 2rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--color-neutral-stroke-subtle);
+	}
+
+	.static-content :global(h2) {
+		margin: 0 0 0.75rem;
+		color: var(--color-neutral-foreground-1);
+		font-size: clamp(1.2rem, 2vw, 1.5rem);
+		line-height: 1.45;
+	}
+
+	.static-content :global(p) {
+		margin: 0.65rem 0 0;
+		color: var(--color-neutral-foreground-2);
+	}
+
+	.static-content :global(ul) {
+		margin: 0.85rem 0 0;
+		padding-inline-start: 1.25rem;
+	}
+
+	.static-content :global(li + li) {
+		margin-top: 0.35rem;
+	}
+
+	.static-content :global(a) {
+		color: var(--color-brand-foreground-strong);
+		text-underline-offset: 0.2em;
+	}
+
+	.static-content :global(.link-grid) {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	.static-content :global(.contact-card) {
+		display: grid;
+		gap: 0.2rem;
+		padding: 1rem;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-1);
+		text-decoration: none;
+	}
+
+	.static-content :global(.contact-card strong) {
+		font-size: 0.92rem;
+	}
+
+	.static-content :global(.contact-card span) {
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.78rem;
+	}
+
+	@media (max-width: 760px) {
+		.static-shell {
+			width: min(calc(100% - 24px), 1080px);
+		}
+
+		.static-hero {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 1.2rem;
+		}
+
+		.static-content :global(.link-grid) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.static-main { padding-top: 0.75rem; }
+		.static-hero,
+		.static-content { border-radius: var(--radius-xlarge); }
+		.static-content { font-size: 0.94rem; }
+	}
+</style>
