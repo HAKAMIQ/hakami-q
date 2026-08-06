@@ -137,26 +137,26 @@ const menuGroups: MenuGroup[] = [
 ---
 
 <header class="site-header">
-	<div class="topbar">
-		<div class="site-container topbar-inner">
-			<div class="top-links" aria-label="روابط إضافية">
+	<div class="utility-bar">
+		<div class="site-container utility-inner">
+			<nav class="utility-links" aria-label="روابط المعلومات">
 				<a href="/privacy">سياسة الخصوصية</a>
 				<a href="/terms">اتفاقية الاستخدام</a>
 				<a href="/contact">اتصل بنا</a>
-			</div>
+			</nav>
 
-			<div class="social-links" aria-label="الشبكات الاجتماعية">
+			<nav class="social-links" aria-label="الشبكات الاجتماعية" dir="ltr">
 				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer">YouTube</a>
 				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer">Discord</a>
 				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer">Telegram</a>
-			</div>
+			</nav>
 		</div>
 	</div>
 
-	<div class="brand-row">
-		<div class="site-container brand-row-inner">
+	<div class="brand-surface">
+		<div class="site-container brand-inner">
 			<a class="brand" href="/" aria-label="الصفحة الرئيسية">
-				<span class="brand-mark">H</span>
+				<span class="brand-mark" aria-hidden="true">H</span>
 				<span class="brand-copy">
 					<strong>{SITE_TITLE}</strong>
 					<small>دليل المحاكيات والألعاب</small>
@@ -164,8 +164,15 @@ const menuGroups: MenuGroup[] = [
 			</a>
 
 			<p class="brand-description">
-				شروحات تشغيل المحاكيات وإعداد الألعاب وحلول المشاكل على الكمبيوتر
+				شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر
 			</p>
+
+			<a class="brand-action" href="/blog">
+				<span>تصفح المقالات</span>
+				<svg viewBox="0 0 20 20" aria-hidden="true">
+					<path d="M4 10h12M11 5l5 5-5 5"></path>
+				</svg>
+			</a>
 		</div>
 	</div>
 
@@ -178,7 +185,7 @@ const menuGroups: MenuGroup[] = [
 				aria-controls="primary-menu"
 			>
 				<span>الأقسام</span>
-				<svg viewBox="0 0 24 24" aria-hidden="true">
+				<svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
 					<path d="M4 7h16M4 12h16M4 17h16"></path>
 				</svg>
 			</button>
@@ -207,17 +214,6 @@ const menuGroups: MenuGroup[] = [
 								</summary>
 
 								<div class="menu-panel">
-									<a
-										class="menu-overview"
-										href={categoryHref(group.slug)}
-										data-category={group.slug}
-									>
-										<span>All {group.label}</span>
-										<svg viewBox="0 0 20 20" aria-hidden="true">
-											<path d="M4 10h12M12 6l4 4-4 4"></path>
-										</svg>
-									</a>
-
 									<div class="menu-list">
 										{
 											group.items.map((item) =>
@@ -239,14 +235,6 @@ const menuGroups: MenuGroup[] = [
 														</summary>
 
 														<div class="submenu-panel">
-															<a
-																class="submenu-overview"
-																href={categoryHref(item.slug)}
-																data-category={item.slug}
-															>
-																All {item.label}
-															</a>
-
 															{
 																item.children.map((child) => (
 																	<a
@@ -291,18 +279,21 @@ const menuGroups: MenuGroup[] = [
 <script>
 	document.documentElement.classList.add('js-nav');
 
-	const header = document.querySelector<HTMLElement>('.site-header');
+	const initializeHeader = () => {
+		const header = document.querySelector<HTMLElement>('.site-header');
+		if (!header || header.dataset.initialized === 'true') return;
 
-	if (header) {
+		header.dataset.initialized = 'true';
+
 		const menuToggle = header.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
-		const menuLinks = Array.from(header.querySelectorAll<HTMLAnchorElement>('.menu-bar a'));
 		const topLevelMenus = Array.from(
 			header.querySelectorAll<HTMLDetailsElement>('[data-menu-group]'),
 		);
 		const nestedMenus = Array.from(
 			header.querySelectorAll<HTMLDetailsElement>('[data-submenu-group]'),
 		);
-		const mobileMedia = window.matchMedia('(max-width: 920px)');
+		const menuLinks = Array.from(header.querySelectorAll<HTMLAnchorElement>('.menu-bar a'));
+		const desktopMedia = window.matchMedia('(min-width: 961px)');
 
 		const closeNestedMenus = (except?: HTMLDetailsElement) => {
 			for (const menu of nestedMenus) {
@@ -327,16 +318,53 @@ const menuGroups: MenuGroup[] = [
 		};
 
 		for (const menu of topLevelMenus) {
+			const summary = menu.querySelector<HTMLElement>(':scope > summary');
+
 			menu.addEventListener('toggle', () => {
 				if (!menu.open) return;
 				closeTopLevelMenus(menu);
 				closeNestedMenus();
 			});
+
+			menu.addEventListener('mouseenter', () => {
+				if (!desktopMedia.matches) return;
+				closeTopLevelMenus(menu);
+				closeNestedMenus();
+				menu.open = true;
+			});
+
+			menu.addEventListener('mouseleave', () => {
+				if (!desktopMedia.matches) return;
+				menu.open = false;
+				for (const nested of menu.querySelectorAll<HTMLDetailsElement>('[data-submenu-group]')) {
+					nested.open = false;
+				}
+			});
+
+			summary?.addEventListener('click', (event) => {
+				if (desktopMedia.matches && event.detail > 0) event.preventDefault();
+			});
 		}
 
 		for (const menu of nestedMenus) {
+			const summary = menu.querySelector<HTMLElement>(':scope > summary');
+
 			menu.addEventListener('toggle', () => {
 				if (menu.open) closeNestedMenus(menu);
+			});
+
+			menu.addEventListener('mouseenter', () => {
+				if (!desktopMedia.matches) return;
+				closeNestedMenus(menu);
+				menu.open = true;
+			});
+
+			menu.addEventListener('mouseleave', () => {
+				if (desktopMedia.matches) menu.open = false;
+			});
+
+			summary?.addEventListener('click', (event) => {
+				if (desktopMedia.matches && event.detail > 0) event.preventDefault();
 			});
 		}
 
@@ -346,7 +374,7 @@ const menuGroups: MenuGroup[] = [
 
 		for (const link of menuLinks) {
 			link.addEventListener('click', () => {
-				if (mobileMedia.matches) setMobileMenu(false);
+				if (!desktopMedia.matches) setMobileMenu(false);
 			});
 		}
 
@@ -356,7 +384,7 @@ const menuGroups: MenuGroup[] = [
 
 			closeNestedMenus();
 			closeTopLevelMenus();
-			if (mobileMedia.matches) setMobileMenu(false);
+			if (!desktopMedia.matches) setMobileMenu(false);
 		});
 
 		document.addEventListener('keydown', (event) => {
@@ -368,7 +396,7 @@ const menuGroups: MenuGroup[] = [
 			menuToggle?.focus();
 		});
 
-		mobileMedia.addEventListener('change', () => {
+		desktopMedia.addEventListener('change', () => {
 			setMobileMenu(false);
 		});
 
@@ -387,68 +415,82 @@ const menuGroups: MenuGroup[] = [
 					?.classList.add('has-active-child');
 			}
 		}
+	};
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initializeHeader, { once: true });
+	} else {
+		initializeHeader();
 	}
+
+	document.addEventListener('astro:page-load', initializeHeader);
 </script>
 
 <style>
 	.site-header {
 		position: relative;
-		z-index: 50;
-		border-bottom: 1px solid var(--hq-border);
-		background: rgba(17, 20, 24, 0.97);
-		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+		z-index: 1000;
+		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
+		background: rgba(17, 19, 21, 0.96);
+		box-shadow: var(--shadow-4);
 	}
 
-	.topbar {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-		background: #0c0f13;
+	.utility-bar {
+		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
+		background: #0c0e10;
 	}
 
-	.topbar-inner,
-	.brand-row-inner,
+	.utility-inner,
+	.brand-inner,
 	.nav-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1.25rem;
-	}
-
-	.topbar-inner {
-		min-height: 38px;
-		color: var(--hq-muted);
-		font-size: 0.8rem;
-	}
-
-	.top-links,
-	.social-links {
-		display: flex;
-		align-items: center;
 		gap: 1rem;
 	}
 
-	.topbar a {
-		color: var(--hq-muted);
+	.utility-inner {
+		min-height: 36px;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.76rem;
+	}
+
+	.utility-links,
+	.social-links {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.utility-bar a {
+		padding: 0.25rem 0.55rem;
+		border-radius: var(--radius-medium);
+		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
-		transition: color 0.18s ease;
+		transition:
+			background var(--duration-fast) var(--curve-easy-ease),
+			color var(--duration-fast) var(--curve-easy-ease);
 	}
 
-	.topbar a:hover {
-		color: var(--hq-text);
+	.utility-bar a:hover {
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-1);
 	}
 
-	.brand-row {
+	.brand-surface {
 		background:
-			linear-gradient(90deg, transparent, rgba(229, 21, 21, 0.06), transparent),
-			var(--hq-surface);
+			linear-gradient(110deg, rgba(232, 17, 35, 0.08), transparent 36%),
+			var(--color-neutral-background-2);
 	}
 
-	.brand-row-inner {
-		min-height: 92px;
-		padding-block: 1rem;
+	.brand-inner {
+		min-height: 88px;
+		padding-block: 0.85rem;
 	}
 
 	.brand {
 		display: inline-flex;
+		flex: 0 0 auto;
 		align-items: center;
 		gap: 0.8rem;
 		text-decoration: none;
@@ -456,140 +498,180 @@ const menuGroups: MenuGroup[] = [
 
 	.brand-mark {
 		display: grid;
-		width: 50px;
-		height: 50px;
+		width: 52px;
+		height: 52px;
 		place-items: center;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 15px;
-		background: linear-gradient(145deg, #ff2c35, var(--hq-red-dark));
-		box-shadow: 0 12px 26px rgba(229, 21, 21, 0.24);
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: var(--radius-xlarge);
+		background:
+			linear-gradient(145deg, rgba(255, 255, 255, 0.16), transparent 46%),
+			var(--color-brand-background);
+		box-shadow: 0 8px 24px rgba(232, 17, 35, 0.28);
 		color: #fff;
 		font-size: 1.65rem;
-		font-weight: 900;
+		font-weight: 850;
 	}
 
 	.brand-copy {
 		display: grid;
-		gap: 0.05rem;
+		gap: 0.1rem;
 	}
 
 	.brand-copy strong {
-		color: var(--hq-text);
+		color: var(--color-neutral-foreground-1);
 		font-size: 1.35rem;
-		letter-spacing: 0.04em;
+		font-weight: 800;
+		letter-spacing: 0.045em;
 	}
 
 	.brand-copy small {
-		color: var(--hq-muted);
-		font-size: 0.78rem;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.76rem;
 	}
 
 	.brand-description {
-		max-width: 520px;
-		color: var(--hq-muted);
-		font-size: 0.92rem;
-		text-align: left;
+		max-width: 560px;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.9rem;
+		text-align: center;
+	}
+
+	.brand-action {
+		display: inline-flex;
+		min-height: 38px;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+		gap: 0.45rem;
+		padding: 0 0.85rem;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-1);
+		font-size: 0.78rem;
+		font-weight: 700;
+		text-decoration: none;
+		box-shadow: var(--shadow-2);
+		transition:
+			background var(--duration-fast) var(--curve-easy-ease),
+			border-color var(--duration-fast) var(--curve-easy-ease);
+	}
+
+	.brand-action:hover {
+		border-color: var(--color-neutral-stroke-2);
+		background: var(--color-neutral-background-4);
+	}
+
+	.brand-action svg {
+		width: 16px;
+		height: 16px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.8;
+		transform: scaleX(-1);
 	}
 
 	.main-nav {
 		position: relative;
-		z-index: 60;
-		border-top: 1px solid rgba(255, 255, 255, 0.07);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.28);
-		background: linear-gradient(180deg, #ef262c 0%, #cb1017 100%);
-		box-shadow:
-			inset 0 1px rgba(255, 255, 255, 0.08),
-			0 8px 20px rgba(0, 0, 0, 0.2);
+		z-index: 20;
+		border-top: 1px solid var(--color-neutral-stroke-subtle);
+		background: rgba(23, 25, 28, 0.94);
+		backdrop-filter: blur(18px) saturate(1.08);
 	}
 
 	.nav-inner {
 		position: relative;
-		min-height: 52px;
-		overflow: visible;
+		min-height: 54px;
 	}
 
 	.menu-bar {
 		display: flex;
 		width: 100%;
-		align-items: stretch;
+		align-items: center;
+		gap: 4px;
 		overflow: visible;
 	}
 
 	.home-menu-link,
 	.menu-direct,
 	.menu-group > summary {
-		display: flex;
-		min-height: 52px;
+		display: inline-flex;
+		min-height: 42px;
 		align-items: center;
 		justify-content: center;
 		gap: 0.35rem;
 		box-sizing: border-box;
-		border: 0;
-		border-inline-end: 1px solid rgba(0, 0, 0, 0.12);
-		border-radius: 0;
+		border: 1px solid transparent;
+		border-radius: var(--radius-medium);
 		background: transparent;
-		color: #fff;
+		color: var(--color-neutral-foreground-2);
 		font-family: inherit;
-		font-size: 0.76rem;
-		font-weight: 800;
+		font-size: 0.75rem;
+		font-weight: 700;
 		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
 		cursor: pointer;
 		transition:
-			background 0.16s ease,
-			color 0.16s ease;
+			background var(--duration-fast) var(--curve-easy-ease),
+			border-color var(--duration-fast) var(--curve-easy-ease),
+			color var(--duration-fast) var(--curve-easy-ease);
 	}
 
 	.home-menu-link {
-		width: 54px;
+		width: 44px;
 		padding: 0;
-		background: rgba(255, 255, 255, 0.08);
 	}
 
 	.home-menu-link svg {
-		width: 19px;
-		height: 19px;
+		width: 18px;
+		height: 18px;
 		fill: none;
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 2;
+		stroke-width: 1.8;
 	}
 
 	.menu-direct,
 	.menu-group > summary {
-		padding: 0 0.85rem;
+		padding-inline: 0.78rem;
 	}
 
 	.menu-group {
-		--menu-accent: #ff3b42;
+		--menu-accent: var(--color-brand-foreground);
 		position: relative;
 		flex: 0 0 auto;
 	}
 
 	.menu-group.tone-nintendo {
-		--menu-accent: #ff3342;
+		--menu-accent: #ff5b67;
 	}
 
 	.menu-group.tone-playstation {
-		--menu-accent: #3d96ff;
+		--menu-accent: #68a8ff;
 	}
 
 	.menu-group.tone-xbox {
-		--menu-accent: #47c95a;
+		--menu-accent: #61cf72;
 	}
 
 	.menu-group.tone-sega {
-		--menu-accent: #3b9cff;
+		--menu-accent: #65b4ff;
 	}
 
 	.menu-group.tone-other {
-		--menu-accent: #ff8a3d;
+		--menu-accent: #ff9d5c;
 	}
 
 	.menu-group.tone-multi {
-		--menu-accent: #aa83ff;
+		--menu-accent: #b699ff;
+	}
+
+	.menu-direct.tone-pc {
+		--menu-accent: #b699ff;
 	}
 
 	.menu-group > summary,
@@ -610,8 +692,8 @@ const menuGroups: MenuGroup[] = [
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 2;
-		transition: transform 0.18s ease;
+		stroke-width: 1.8;
+		transition: transform var(--duration-fast) var(--curve-easy-ease);
 	}
 
 	.menu-group[open] > summary .menu-chevron {
@@ -627,9 +709,15 @@ const menuGroups: MenuGroup[] = [
 	.menu-group > summary:hover,
 	.menu-group > summary:focus-visible,
 	.menu-group > summary.has-active-child {
-		background: rgba(121, 0, 5, 0.34);
-		color: #fff;
+		border-color: var(--color-neutral-stroke-1);
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-1);
 		outline: none;
+	}
+
+	.menu-direct.is-active,
+	.menu-group > summary.has-active-child {
+		box-shadow: inset 0 -2px var(--menu-accent);
 	}
 
 	.menu-panel,
@@ -640,23 +728,23 @@ const menuGroups: MenuGroup[] = [
 
 	.menu-panel {
 		position: absolute;
-		top: 100%;
+		top: calc(100% + 7px);
 		left: 0;
-		width: 244px;
-		padding: 6px 0 8px;
-		border: 1px solid rgba(255, 255, 255, 0.09);
-		border-top: 3px solid var(--menu-accent);
-		border-radius: 0 0 10px 10px;
-		background: #101217;
-		box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+		width: 270px;
+		padding: 8px;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: rgba(31, 34, 38, 0.98);
+		box-shadow: var(--shadow-64);
 		opacity: 0;
 		visibility: hidden;
-		transform: translateY(-7px);
+		transform: translateY(-6px) scale(0.985);
+		transform-origin: top left;
 		pointer-events: none;
 		transition:
-			opacity 0.16s ease,
-			transform 0.16s ease,
-			visibility 0.16s ease;
+			opacity var(--duration-fast) var(--curve-easy-ease),
+			transform var(--duration-fast) var(--curve-easy-ease),
+			visibility var(--duration-fast) var(--curve-easy-ease);
 		z-index: 200;
 	}
 
@@ -664,41 +752,20 @@ const menuGroups: MenuGroup[] = [
 	.tone-multi > .menu-panel {
 		right: 0;
 		left: auto;
+		transform-origin: top right;
 	}
 
 	.menu-group[open] > .menu-panel,
 	.menu-group:focus-within > .menu-panel {
 		opacity: 1;
 		visibility: visible;
-		transform: translateY(0);
+		transform: translateY(0) scale(1);
 		pointer-events: auto;
 	}
 
-	.menu-overview {
-		display: flex;
-		min-height: 40px;
-		align-items: center;
-		justify-content: space-between;
-		gap: 0.75rem;
-		margin: 0 6px 6px;
-		padding: 0 11px;
-		border: 1px solid color-mix(in srgb, var(--menu-accent) 30%, transparent);
-		border-radius: 7px;
-		background: color-mix(in srgb, var(--menu-accent) 10%, transparent);
-		color: #fff;
-		font-size: 0.76rem;
-		font-weight: 800;
-		text-decoration: none;
-	}
-
-	.menu-overview svg {
-		width: 15px;
-		height: 15px;
-		fill: none;
-		stroke: var(--menu-accent);
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 2;
+	.menu-list {
+		display: grid;
+		gap: 2px;
 	}
 
 	.menu-list > a,
@@ -706,37 +773,26 @@ const menuGroups: MenuGroup[] = [
 	.submenu-panel > a {
 		position: relative;
 		display: flex;
-		min-height: 38px;
+		min-height: 40px;
 		align-items: center;
 		box-sizing: border-box;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+		border: 1px solid transparent;
+		border-radius: var(--radius-medium);
 		background: transparent;
-		color: #f4f5f7;
-		font-size: 0.76rem;
-		font-weight: 700;
+		color: var(--color-neutral-foreground-2);
+		font-size: 0.78rem;
+		font-weight: 650;
 		line-height: 1.35;
 		text-decoration: none;
 		transition:
-			background 0.15s ease,
-			color 0.15s ease,
-			padding 0.15s ease;
+			background var(--duration-fast) var(--curve-easy-ease),
+			border-color var(--duration-fast) var(--curve-easy-ease),
+			color var(--duration-fast) var(--curve-easy-ease);
 	}
 
 	.menu-list > a,
 	.submenu-panel > a {
-		padding: 0.45rem 13px 0.45rem 24px;
-	}
-
-	.menu-list > a::before,
-	.submenu-panel > a::before {
-		position: absolute;
-		left: 12px;
-		width: 4px;
-		height: 4px;
-		border-radius: 999px;
-		background: var(--menu-accent);
-		content: '';
-		opacity: 0.72;
+		padding: 0.5rem 0.75rem;
 	}
 
 	.menu-list > a:hover,
@@ -747,18 +803,15 @@ const menuGroups: MenuGroup[] = [
 	.submenu-panel > a:hover,
 	.submenu-panel > a:focus-visible,
 	.submenu-panel > a.is-active {
-		background: linear-gradient(90deg, color-mix(in srgb, var(--menu-accent) 88%, #b40008), #b90d14);
-		color: #fff;
+		border-color: color-mix(in srgb, var(--menu-accent) 28%, transparent);
+		background: color-mix(in srgb, var(--menu-accent) 12%, var(--color-neutral-background-4));
+		color: var(--color-neutral-foreground-1);
 		outline: none;
 	}
 
-	.menu-list > a:hover,
-	.menu-list > a:focus-visible,
 	.menu-list > a.is-active,
-	.submenu-panel > a:hover,
-	.submenu-panel > a:focus-visible,
 	.submenu-panel > a.is-active {
-		padding-left: 27px;
+		box-shadow: inset 3px 0 var(--menu-accent);
 	}
 
 	.submenu-group {
@@ -768,7 +821,7 @@ const menuGroups: MenuGroup[] = [
 	.submenu-group > summary {
 		justify-content: space-between;
 		gap: 0.75rem;
-		padding: 0.45rem 11px 0.45rem 13px;
+		padding: 0.5rem 0.7rem;
 		cursor: pointer;
 	}
 
@@ -780,8 +833,8 @@ const menuGroups: MenuGroup[] = [
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 2;
-		transition: transform 0.16s ease;
+		stroke-width: 1.8;
+		transition: transform var(--duration-fast) var(--curve-easy-ease);
 	}
 
 	.submenu-group.open-start > summary svg {
@@ -790,135 +843,120 @@ const menuGroups: MenuGroup[] = [
 
 	.submenu-panel {
 		position: absolute;
-		top: -7px;
-		width: 232px;
-		padding: 7px 0;
-		border: 1px solid rgba(255, 255, 255, 0.09);
-		border-top: 3px solid var(--menu-accent);
-		border-radius: 9px;
-		background: #101217;
-		box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46);
+		top: -8px;
+		width: 250px;
+		padding: 8px;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: rgba(31, 34, 38, 0.99);
+		box-shadow: var(--shadow-64);
 		opacity: 0;
 		visibility: hidden;
-		transform: translateX(-7px);
+		transform: translateX(-6px) scale(0.985);
 		pointer-events: none;
 		transition:
-			opacity 0.16s ease,
-			transform 0.16s ease,
-			visibility 0.16s ease;
+			opacity var(--duration-fast) var(--curve-easy-ease),
+			transform var(--duration-fast) var(--curve-easy-ease),
+			visibility var(--duration-fast) var(--curve-easy-ease);
 		z-index: 220;
 	}
 
 	.submenu-group.open-end > .submenu-panel {
-		left: calc(100% + 4px);
+		left: calc(100% + 7px);
+		transform-origin: top left;
 	}
 
 	.submenu-group.open-start > .submenu-panel {
-		right: calc(100% + 4px);
-		transform: translateX(7px);
+		right: calc(100% + 7px);
+		transform: translateX(6px) scale(0.985);
+		transform-origin: top right;
 	}
 
 	.submenu-group[open] > .submenu-panel,
 	.submenu-group:focus-within > .submenu-panel {
 		opacity: 1;
 		visibility: visible;
-		transform: translateX(0);
+		transform: translateX(0) scale(1);
 		pointer-events: auto;
-	}
-
-	.submenu-overview {
-		margin-bottom: 5px;
-		background: rgba(255, 255, 255, 0.035) !important;
-		color: var(--menu-accent) !important;
-	}
-
-	.menu-direct.tone-pc {
-		--menu-accent: #a982ff;
-	}
-
-	.menu-direct.is-active {
-		box-shadow: inset 0 -3px var(--menu-accent);
 	}
 
 	.mobile-menu-toggle {
 		display: none;
 	}
 
-	@media (hover: hover) and (pointer: fine) and (min-width: 921px) {
-		.menu-group:hover > .menu-panel,
-		.submenu-group:hover > .submenu-panel {
-			opacity: 1;
-			visibility: visible;
-			transform: translate(0);
-			pointer-events: auto;
-		}
-	}
-
-	@media (max-width: 1120px) and (min-width: 921px) {
+	@media (max-width: 1180px) and (min-width: 961px) {
 		.menu-direct,
 		.menu-group > summary {
-			padding-inline: 0.58rem;
+			padding-inline: 0.5rem;
 			font-size: 0.68rem;
-		}
-	}
-
-	@media (max-width: 920px) {
-		.top-links {
-			display: none;
-		}
-
-		.topbar-inner {
-			justify-content: center;
-		}
-
-		.brand-row-inner {
-			min-height: 78px;
 		}
 
 		.brand-description {
+			max-width: 420px;
+			font-size: 0.82rem;
+		}
+	}
+
+	@media (max-width: 960px) {
+		.utility-links {
+			display: none;
+		}
+
+		.utility-inner {
+			justify-content: center;
+		}
+
+		.brand-inner {
+			min-height: 76px;
+		}
+
+		.brand-description,
+		.brand-action {
 			display: none;
 		}
 
 		.brand-mark {
-			width: 44px;
-			height: 44px;
+			width: 46px;
+			height: 46px;
+			border-radius: var(--radius-large);
 		}
 
 		.nav-inner {
-			min-height: 50px;
+			min-height: 52px;
 			width: 100%;
 		}
 
 		.mobile-menu-toggle {
 			display: none;
 			width: 100%;
-			min-height: 50px;
+			min-height: 52px;
 			align-items: center;
 			justify-content: space-between;
 			padding: 0 14px;
 			border: 0;
 			background: transparent;
-			color: #fff;
+			color: var(--color-neutral-foreground-1);
 			font-family: inherit;
 			font-size: 0.9rem;
-			font-weight: 800;
+			font-weight: 750;
 			cursor: pointer;
 		}
 
-		.mobile-menu-toggle svg {
+		.mobile-menu-toggle .menu-icon {
 			width: 21px;
 			height: 21px;
 			fill: none;
 			stroke: currentColor;
 			stroke-linecap: round;
-			stroke-width: 2;
+			stroke-width: 1.8;
 		}
 
 		.menu-bar {
 			display: grid;
 			width: 100%;
 			grid-template-columns: 1fr;
-			background: #101217;
+			gap: 0;
+			background: var(--color-neutral-background-2);
 		}
 
 		:global(html.js-nav) .mobile-menu-toggle {
@@ -931,14 +969,16 @@ const menuGroups: MenuGroup[] = [
 			right: 0;
 			left: 0;
 			display: none;
-			max-height: min(72vh, 620px);
+			max-height: min(76vh, 680px);
 			overflow-x: hidden;
 			overflow-y: auto;
 			overscroll-behavior: contain;
-			border: 1px solid rgba(255, 255, 255, 0.09);
+			padding: 8px;
+			border: 1px solid var(--color-neutral-stroke-1);
 			border-top: 0;
-			border-radius: 0 0 12px 12px;
-			box-shadow: 0 22px 44px rgba(0, 0, 0, 0.48);
+			border-radius: 0 0 var(--radius-xlarge) var(--radius-xlarge);
+			background: rgba(23, 25, 28, 0.99);
+			box-shadow: var(--shadow-64);
 			scrollbar-gutter: stable;
 			z-index: 300;
 		}
@@ -951,25 +991,25 @@ const menuGroups: MenuGroup[] = [
 		.menu-direct,
 		.menu-group > summary {
 			width: 100%;
-			min-height: 47px;
+			min-height: 46px;
 			justify-content: space-between;
-			padding: 0 15px;
-			border: 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.065);
-			background: #12141a;
+			padding: 0 13px;
+			border: 1px solid transparent;
+			border-radius: var(--radius-medium);
+			background: transparent;
 			font-size: 0.78rem;
 			text-align: left;
 		}
 
 		.home-menu-link {
 			justify-content: flex-start;
+			gap: 0.65rem;
 		}
 
 		.home-menu-link::after {
-			margin-left: 10px;
 			content: 'HOME';
 			font-size: 0.78rem;
-			font-weight: 800;
+			font-weight: 700;
 		}
 
 		.menu-group {
@@ -987,15 +1027,21 @@ const menuGroups: MenuGroup[] = [
 			left: auto;
 			display: none;
 			width: auto;
-			padding: 0;
+			padding: 4px 0 4px 14px;
 			border: 0;
 			border-radius: 0;
-			background: #0d0f14;
+			background: transparent;
 			box-shadow: none;
 			opacity: 1;
 			visibility: visible;
 			transform: none;
 			pointer-events: auto;
+		}
+
+		.submenu-panel,
+		.submenu-group.open-end > .submenu-panel,
+		.submenu-group.open-start > .submenu-panel {
+			padding-inline-start: 16px;
 		}
 
 		.menu-group[open] > .menu-panel,
@@ -1008,38 +1054,11 @@ const menuGroups: MenuGroup[] = [
 			display: none !important;
 		}
 
-		.menu-overview {
-			min-height: 42px;
-			margin: 0;
-			padding: 0 18px;
-			border: 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-			border-radius: 0;
-			background: color-mix(in srgb, var(--menu-accent) 11%, #0d0f14);
-		}
-
 		.menu-list > a,
 		.submenu-group > summary,
 		.submenu-panel > a {
 			min-height: 42px;
 			font-size: 0.76rem;
-		}
-
-		.menu-list > a,
-		.submenu-group > summary {
-			padding-inline: 28px 15px;
-		}
-
-		.submenu-panel > a {
-			padding-inline: 44px 15px;
-		}
-
-		.menu-list > a::before {
-			left: 16px;
-		}
-
-		.submenu-panel > a::before {
-			left: 31px;
 		}
 
 		.submenu-group.open-start > summary svg {
@@ -1049,32 +1068,32 @@ const menuGroups: MenuGroup[] = [
 		.submenu-group[open] > summary svg {
 			transform: rotate(90deg);
 		}
-
-		.submenu-overview {
-			padding-left: 44px !important;
-		}
 	}
 
-	@media (max-width: 520px) {
-		.topbar-inner {
+	@media (max-width: 540px) {
+		.utility-inner {
 			min-height: 34px;
 		}
 
 		.social-links {
-			gap: 0.7rem;
-			font-size: 0.73rem;
+			gap: 0.1rem;
+			font-size: 0.7rem;
 		}
 
-		.brand-row-inner {
-			min-height: 70px;
+		.utility-bar a {
+			padding-inline: 0.4rem;
+		}
+
+		.brand-inner {
+			min-height: 68px;
 		}
 
 		.brand-copy strong {
-			font-size: 1.18rem;
+			font-size: 1.16rem;
 		}
 
 		.brand-copy small {
-			font-size: 0.7rem;
+			font-size: 0.68rem;
 		}
 	}
 </style>
