@@ -3,7 +3,6 @@ type MenuItem = {
 	label: string;
 	slug: string;
 	children?: MenuItem[];
-	openDirection?: 'start' | 'end';
 };
 
 type MenuGroup = {
@@ -31,7 +30,6 @@ const menuGroups: MenuGroup[] = [
 			{
 				label: 'Nintendo Handhelds',
 				slug: 'nintendo-handhelds',
-				openDirection: 'end',
 				children: [
 					{ label: 'Nintendo 3DS', slug: 'nintendo-3ds' },
 					{ label: 'Nintendo DS - NDS', slug: 'nintendo-ds' },
@@ -56,7 +54,6 @@ const menuGroups: MenuGroup[] = [
 			{
 				label: 'PlayStation Handhelds',
 				slug: 'playstation-handhelds',
-				openDirection: 'end',
 				children: [
 					{ label: 'PlayStation Portable - PSP', slug: 'psp' },
 					{ label: 'PlayStation Vita - PS Vita', slug: 'ps-vita' },
@@ -95,7 +92,6 @@ const menuGroups: MenuGroup[] = [
 			{
 				label: 'Atari',
 				slug: 'atari',
-				openDirection: 'start',
 				children: [
 					{ label: 'Atari 2600', slug: 'atari-2600' },
 					{ label: 'Atari 5200', slug: 'atari-5200' },
@@ -106,7 +102,6 @@ const menuGroups: MenuGroup[] = [
 			{
 				label: 'Commodore',
 				slug: 'commodore',
-				openDirection: 'start',
 				children: [
 					{ label: 'Commodore 64 - C64', slug: 'commodore-64' },
 					{ label: 'Amiga', slug: 'amiga' },
@@ -182,30 +177,39 @@ const menuGroups: MenuGroup[] = [
 					menuGroups.map((group) =>
 						group.items ? (
 							<div class:list={['menu-group', `tone-${group.tone}`]} data-menu-group>
-								<button class="menu-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+								<button class="menu-trigger" type="button" aria-expanded="false" aria-haspopup="menu">
 									<span>{group.label}</span>
 									<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
 								</button>
 
-								<div class="menu-panel">
-									<div class="menu-surface">
+								<div class="menu-panel" data-menu-panel>
+									<div class="menu-surface" role="menu" aria-label={group.label}>
 										<div class="menu-list">
 											{
 												group.items.map((item) =>
 													item.children ? (
-														<div class:list={['submenu-group', item.openDirection === 'end' ? 'open-end' : 'open-start']} data-submenu-group>
-															<button class="submenu-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+														<div class="submenu-group" data-submenu-group>
+															<button
+																class="submenu-trigger"
+																type="button"
+																aria-expanded="false"
+																aria-haspopup="menu"
+																aria-label={`فتح ${item.label}`}
+															>
 																<span>{item.label}</span>
-																<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"></path></svg>
+																<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"></path></svg>
 															</button>
-															<div class="submenu-panel">
-																<div class="submenu-surface">
-																	{item.children.map((child) => <a href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>)}
+
+															<div class="submenu-panel" data-submenu-panel>
+																<div class="submenu-surface" role="menu" aria-label={item.label}>
+																	{item.children.map((child) => (
+																		<a role="menuitem" href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>
+																	))}
 																</div>
 															</div>
 														</div>
 													) : (
-														<a href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
+														<a role="menuitem" href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
 													),
 												)
 											}
@@ -236,6 +240,8 @@ const menuGroups: MenuGroup[] = [
 		const topMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-menu-group]'));
 		const nestedMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-submenu-group]'));
 		const timers = new WeakMap<HTMLElement, number>();
+		const closeDelay = 180;
+		const viewportGap = 12;
 
 		const clearTimer = (menu: HTMLElement) => {
 			const timer = timers.get(menu);
@@ -249,53 +255,129 @@ const menuGroups: MenuGroup[] = [
 			menu.querySelector<HTMLButtonElement>(':scope > button')?.setAttribute('aria-expanded', String(open));
 		};
 
-		const closeAll = (except?: HTMLElement) => {
-			for (const menu of [...nestedMenus, ...topMenus]) if (menu !== except) setOpen(menu, false);
+		const closeNestedMenus = (except?: HTMLElement) => {
+			for (const menu of nestedMenus) if (menu !== except) setOpen(menu, false);
 		};
 
-		const scheduleClose = (menu: HTMLElement) => {
+		const closeTopMenus = (except?: HTMLElement) => {
+			for (const menu of topMenus) if (menu !== except) setOpen(menu, false);
+		};
+
+		const positionTopPanel = (menu: HTMLElement) => {
+			if (!desktop.matches) return;
+			const panel = menu.querySelector<HTMLElement>(':scope > [data-menu-panel]');
+			if (!panel) return;
+
+			panel.classList.remove('align-end');
+			const rect = panel.getBoundingClientRect();
+			if (rect.right > window.innerWidth - viewportGap) panel.classList.add('align-end');
+		};
+
+		const positionSubmenu = (menu: HTMLElement) => {
+			if (!desktop.matches) return;
+			const panel = menu.querySelector<HTMLElement>(':scope > [data-submenu-panel]');
+			if (!panel) return;
+
+			panel.classList.remove('open-start');
+			const rect = panel.getBoundingClientRect();
+			if (rect.right > window.innerWidth - viewportGap) panel.classList.add('open-start');
+		};
+
+		const openTopMenu = (menu: HTMLElement) => {
+			closeTopMenus(menu);
+			closeNestedMenus();
+			setOpen(menu, true);
+			window.requestAnimationFrame(() => positionTopPanel(menu));
+		};
+
+		const openNestedMenu = (menu: HTMLElement) => {
+			closeNestedMenus(menu);
+			setOpen(menu, true);
+			window.requestAnimationFrame(() => positionSubmenu(menu));
+		};
+
+		const scheduleClose = (menu: HTMLElement, nested = false) => {
 			clearTimer(menu);
-			timers.set(menu, window.setTimeout(() => setOpen(menu, false), 240));
+			timers.set(menu, window.setTimeout(() => {
+				setOpen(menu, false);
+				if (!nested) closeNestedMenus();
+			}, closeDelay));
+		};
+
+		const closeMobileMenu = () => {
+			header.classList.remove('mobile-open');
+			menuToggle?.setAttribute('aria-expanded', 'false');
+			closeNestedMenus();
+			closeTopMenus();
 		};
 
 		for (const menu of topMenus) {
 			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .menu-trigger');
+
 			menu.addEventListener('pointerenter', () => {
 				if (!desktop.matches) return;
 				clearTimer(menu);
-				for (const other of topMenus) if (other !== menu) setOpen(other, false);
-				setOpen(menu, true);
+				openTopMenu(menu);
 			});
+
 			menu.addEventListener('pointerleave', (event) => {
 				if (!desktop.matches) return;
 				const next = event.relatedTarget;
 				if (next instanceof Node && menu.contains(next)) return;
 				scheduleClose(menu);
 			});
+
+			menu.addEventListener('focusin', () => {
+				if (desktop.matches) openTopMenu(menu);
+			});
+
+			menu.addEventListener('focusout', () => {
+				window.setTimeout(() => {
+					if (!menu.contains(document.activeElement)) scheduleClose(menu);
+				}, 0);
+			});
+
 			trigger?.addEventListener('click', () => {
 				const willOpen = !menu.classList.contains('is-open');
-				if (willOpen) for (const other of topMenus) if (other !== menu) setOpen(other, false);
-				setOpen(menu, willOpen);
+				if (willOpen) openTopMenu(menu);
+				else {
+					setOpen(menu, false);
+					closeNestedMenus();
+				}
 			});
 		}
 
 		for (const menu of nestedMenus) {
 			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .submenu-trigger');
+
 			menu.addEventListener('pointerenter', () => {
 				if (!desktop.matches) return;
 				clearTimer(menu);
-				for (const other of nestedMenus) if (other !== menu) setOpen(other, false);
-				setOpen(menu, true);
+				openNestedMenu(menu);
 			});
+
 			menu.addEventListener('pointerleave', (event) => {
 				if (!desktop.matches) return;
 				const next = event.relatedTarget;
 				if (next instanceof Node && menu.contains(next)) return;
-				scheduleClose(menu);
+				scheduleClose(menu, true);
 			});
+
+			menu.addEventListener('focusin', () => {
+				if (desktop.matches) openNestedMenu(menu);
+			});
+
+			menu.addEventListener('focusout', () => {
+				window.setTimeout(() => {
+					if (!menu.contains(document.activeElement)) scheduleClose(menu, true);
+				}, 0);
+			});
+
 			trigger?.addEventListener('click', (event) => {
 				event.stopPropagation();
-				setOpen(menu, !menu.classList.contains('is-open'));
+				const willOpen = !menu.classList.contains('is-open');
+				if (willOpen) openNestedMenu(menu);
+				else setOpen(menu, false);
 			});
 		}
 
@@ -303,38 +385,30 @@ const menuGroups: MenuGroup[] = [
 			const open = !header.classList.contains('mobile-open');
 			header.classList.toggle('mobile-open', open);
 			menuToggle.setAttribute('aria-expanded', String(open));
-			if (!open) closeAll();
+			if (!open) {
+				closeNestedMenus();
+				closeTopMenus();
+			}
 		});
 
 		header.querySelectorAll<HTMLAnchorElement>('.menu-bar a').forEach((link) => {
-			link.addEventListener('click', () => {
-				if (!desktop.matches) {
-					header.classList.remove('mobile-open');
-					menuToggle?.setAttribute('aria-expanded', 'false');
-				}
-				closeAll();
-			});
+			link.addEventListener('click', () => closeMobileMenu());
 		});
 
 		document.addEventListener('pointerdown', (event) => {
-			if (event.target instanceof Node && !header.contains(event.target)) {
-				closeAll();
-				header.classList.remove('mobile-open');
-				menuToggle?.setAttribute('aria-expanded', 'false');
-			}
+			if (event.target instanceof Node && !header.contains(event.target)) closeMobileMenu();
 		});
 
 		document.addEventListener('keydown', (event) => {
 			if (event.key !== 'Escape') return;
-			closeAll();
-			header.classList.remove('mobile-open');
-			menuToggle?.setAttribute('aria-expanded', 'false');
+			closeMobileMenu();
+			menuToggle?.focus();
 		});
 
-		desktop.addEventListener('change', () => {
-			header.classList.remove('mobile-open');
-			menuToggle?.setAttribute('aria-expanded', 'false');
-			closeAll();
+		desktop.addEventListener('change', closeMobileMenu);
+		window.addEventListener('resize', () => {
+			for (const menu of topMenus) if (menu.classList.contains('is-open')) positionTopPanel(menu);
+			for (const menu of nestedMenus) if (menu.classList.contains('is-open')) positionSubmenu(menu);
 		});
 
 		const selected = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
@@ -354,8 +428,21 @@ const menuGroups: MenuGroup[] = [
 
 <style>
 	.site-header {
+		--nav-space-1: 4px;
+		--nav-space-2: 8px;
+		--nav-space-3: 12px;
+		--nav-space-4: 16px;
+		--nav-radius-small: 4px;
+		--nav-radius-medium: 6px;
+		--nav-radius-large: 8px;
+		--nav-menu-width: 278px;
+		--nav-surface: rgba(32, 35, 39, 0.96);
+		--nav-surface-hover: rgba(255, 255, 255, 0.075);
+		--nav-stroke: rgba(255, 255, 255, 0.12);
+		--nav-shadow-16: 0 8px 16px rgba(0, 0, 0, 0.38), 0 1px 3px rgba(0, 0, 0, 0.28);
 		position: relative;
 		z-index: 1000;
+		overflow: visible;
 		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
 		background: rgba(17, 19, 21, 0.97);
 		box-shadow: var(--shadow-4);
@@ -371,7 +458,7 @@ const menuGroups: MenuGroup[] = [
 		min-height: 34px;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1rem;
+		gap: var(--nav-space-4);
 		direction: ltr;
 		font-size: 0.73rem;
 	}
@@ -380,12 +467,12 @@ const menuGroups: MenuGroup[] = [
 	.social-links {
 		display: flex;
 		align-items: center;
-		gap: 0.2rem;
+		gap: 2px;
 	}
 
 	.utility-bar a {
-		padding: 0.28rem 0.52rem;
-		border-radius: var(--radius-medium);
+		padding: 4px 8px;
+		border-radius: var(--nav-radius-medium);
 		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
 	}
@@ -409,7 +496,7 @@ const menuGroups: MenuGroup[] = [
 		min-height: 92px;
 		grid-template-columns: auto minmax(240px, 1fr) auto;
 		align-items: center;
-		gap: clamp(1.25rem, 3vw, 3rem);
+		gap: clamp(20px, 3vw, 48px);
 		direction: ltr;
 	}
 
@@ -444,10 +531,10 @@ const menuGroups: MenuGroup[] = [
 		min-height: 40px;
 		align-items: center;
 		justify-content: center;
-		gap: 0.45rem;
-		padding-inline: 0.9rem;
+		gap: var(--nav-space-2);
+		padding-inline: 14px;
 		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
+		border-radius: var(--nav-radius-medium);
 		background: rgba(255, 255, 255, 0.035);
 		color: var(--color-neutral-foreground-1);
 		font-size: 0.78rem;
@@ -493,7 +580,7 @@ const menuGroups: MenuGroup[] = [
 		display: flex;
 		width: 100%;
 		align-items: center;
-		gap: 4px;
+		gap: var(--nav-space-1);
 		overflow: visible;
 	}
 
@@ -501,25 +588,29 @@ const menuGroups: MenuGroup[] = [
 	.menu-direct,
 	.menu-trigger {
 		display: inline-flex;
-		min-height: 42px;
+		min-height: 40px;
 		align-items: center;
 		justify-content: center;
-		gap: 0.35rem;
+		gap: 6px;
 		box-sizing: border-box;
 		border: 1px solid transparent;
-		border-radius: var(--radius-medium);
+		border-radius: var(--nav-radius-medium);
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
 		font: inherit;
-		font-size: 0.73rem;
-		font-weight: 750;
+		font-size: 0.75rem;
+		font-weight: 700;
 		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
 		cursor: pointer;
+		transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
 	}
 
-	.home-menu-link { width: 44px; padding: 0; }
+	.home-menu-link { width: 42px; padding: 0; }
+	.menu-direct,
+	.menu-trigger { padding-inline: 12px; }
+
 	.home-menu-link svg,
 	.menu-chevron,
 	.submenu-trigger svg {
@@ -529,16 +620,16 @@ const menuGroups: MenuGroup[] = [
 		stroke-linejoin: round;
 		stroke-width: 1.8;
 	}
+
 	.home-menu-link svg { width: 18px; height: 18px; }
-	.menu-chevron { width: 14px; height: 14px; transition: transform var(--duration-fast) var(--curve-easy-ease); }
-	.menu-direct,
-	.menu-trigger { padding-inline: 0.74rem; }
+	.menu-chevron { width: 14px; height: 14px; transition: transform 120ms ease; }
 
 	.menu-group {
 		--menu-accent: var(--color-brand-foreground);
 		position: relative;
 		flex: 0 0 auto;
 	}
+
 	.tone-nintendo { --menu-accent: #ff5b67; }
 	.tone-playstation { --menu-accent: #68a8ff; }
 	.tone-xbox { --menu-accent: #61cf72; }
@@ -555,16 +646,19 @@ const menuGroups: MenuGroup[] = [
 	.menu-trigger:hover,
 	.menu-trigger:focus-visible,
 	.menu-trigger.has-active-child,
-	.menu-group.is-open > .menu-trigger,
-	.menu-group:focus-within > .menu-trigger {
+	.menu-group.is-open > .menu-trigger {
 		border-color: var(--color-neutral-stroke-1);
 		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-1);
 		outline: none;
 	}
 
-	.menu-group.is-open > .menu-trigger .menu-chevron,
-	.menu-group:focus-within > .menu-trigger .menu-chevron { transform: rotate(180deg); }
+	.menu-direct.is-active,
+	.menu-trigger.has-active-child {
+		box-shadow: inset 0 -2px var(--menu-accent);
+	}
+
+	.menu-group.is-open > .menu-trigger .menu-chevron { transform: rotate(180deg); }
 
 	.menu-panel,
 	.submenu-panel {
@@ -573,27 +667,26 @@ const menuGroups: MenuGroup[] = [
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+		transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
 	}
 
 	.menu-panel {
 		position: absolute;
 		top: 100%;
 		left: 0;
-		width: 278px;
-		padding-top: 10px;
+		right: auto;
+		width: min(var(--nav-menu-width), calc(100vw - 24px));
+		padding-top: 6px;
 		transform: translateY(-4px);
 		z-index: 220;
 	}
 
-	.tone-other > .menu-panel,
-	.tone-multi > .menu-panel { right: 0; left: auto; }
+	.menu-panel.align-end {
+		left: auto;
+		right: 0;
+	}
 
-	.menu-group:hover > .menu-panel,
-	.menu-group:focus-within > .menu-panel,
 	.menu-group.is-open > .menu-panel,
-	.submenu-group:hover > .submenu-panel,
-	.submenu-group:focus-within > .submenu-panel,
 	.submenu-group.is-open > .submenu-panel {
 		opacity: 1;
 		visibility: visible;
@@ -603,14 +696,25 @@ const menuGroups: MenuGroup[] = [
 
 	.menu-surface,
 	.submenu-surface {
-		padding: 8px;
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
-		background: rgba(30, 33, 37, 0.99);
-		box-shadow: var(--shadow-64);
+		padding: var(--nav-space-2);
+		border: 1px solid var(--nav-stroke);
+		border-radius: var(--nav-radius-large);
+		background: var(--nav-surface);
+		box-shadow: var(--nav-shadow-16);
+		backdrop-filter: blur(20px) saturate(1.15);
 	}
 
-	.menu-list { display: grid; gap: 2px; }
+	.menu-surface {
+		max-height: min(70vh, 560px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+	}
+
+	.menu-list {
+		display: grid;
+		gap: 2px;
+	}
 
 	.menu-list > a,
 	.submenu-trigger,
@@ -620,19 +724,22 @@ const menuGroups: MenuGroup[] = [
 		align-items: center;
 		box-sizing: border-box;
 		border: 1px solid transparent;
-		border-radius: var(--radius-medium);
+		border-radius: var(--nav-radius-small);
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
 		font: inherit;
-		font-size: 0.77rem;
-		font-weight: 650;
+		font-size: 0.875rem;
+		font-weight: 600;
 		line-height: 1.35;
+		text-align: left;
 		text-decoration: none;
 	}
 
 	.menu-list > a,
 	.submenu-surface > a,
-	.submenu-trigger { padding: 0.5rem 0.75rem; }
+	.submenu-trigger {
+		padding: 8px 12px;
+	}
 
 	.menu-list > a:hover,
 	.menu-list > a:focus-visible,
@@ -642,31 +749,60 @@ const menuGroups: MenuGroup[] = [
 	.submenu-surface > a:hover,
 	.submenu-surface > a:focus-visible,
 	.submenu-surface > a.is-active {
-		border-color: color-mix(in srgb, var(--menu-accent) 30%, transparent);
-		background: color-mix(in srgb, var(--menu-accent) 14%, var(--color-neutral-background-4));
+		border-color: color-mix(in srgb, var(--menu-accent) 22%, transparent);
+		background: var(--nav-surface-hover);
 		color: var(--color-neutral-foreground-1);
 		outline: none;
 	}
 
+	.menu-list > a.is-active,
+	.submenu-surface > a.is-active {
+		box-shadow: inset 2px 0 var(--menu-accent);
+	}
+
 	.submenu-group { position: relative; }
-	.submenu-trigger { width: 100%; justify-content: space-between; gap: 0.75rem; cursor: pointer; }
-	.submenu-trigger svg { width: 15px; height: 15px; flex: 0 0 auto; }
-	.submenu-group.open-start > .submenu-trigger svg { transform: rotate(180deg); }
+
+	.submenu-trigger {
+		width: 100%;
+		justify-content: space-between;
+		gap: var(--nav-space-3);
+		cursor: pointer;
+	}
+
+	.submenu-trigger svg {
+		width: 15px;
+		height: 15px;
+		flex: 0 0 auto;
+		transition: transform 120ms ease;
+	}
 
 	.submenu-panel {
 		position: absolute;
 		top: -8px;
-		width: 258px;
+		left: 100%;
+		right: auto;
+		width: min(258px, calc(100vw - 24px));
+		padding-left: 6px;
+		transform: translateX(-4px);
 		z-index: 240;
 	}
-	.submenu-group.open-end > .submenu-panel { left: 100%; padding-left: 10px; transform: translateX(-4px); }
-	.submenu-group.open-start > .submenu-panel { right: 100%; padding-right: 10px; transform: translateX(4px); }
+
+	.submenu-panel.open-start {
+		left: auto;
+		right: 100%;
+		padding-right: 6px;
+		padding-left: 0;
+		transform: translateX(4px);
+	}
+
+	.submenu-panel.open-start + * { direction: ltr; }
+	.submenu-group:has(> .submenu-panel.open-start) > .submenu-trigger svg { transform: rotate(180deg); }
 
 	.mobile-menu-toggle { display: none; }
 
 	@media (max-width: 1180px) and (min-width: 961px) {
 		.menu-direct,
-		.menu-trigger { padding-inline: 0.48rem; font-size: 0.66rem; }
+		.menu-trigger { padding-inline: 8px; font-size: 0.69rem; }
 		.brand-description { max-width: 460px; font-size: 0.8rem; }
 		.brand { width: 170px; }
 	}
@@ -674,17 +810,21 @@ const menuGroups: MenuGroup[] = [
 	@media (max-width: 960px) {
 		.utility-links { display: none; }
 		.utility-inner { justify-content: center; }
+
 		.brand-inner {
 			min-height: 76px;
 			grid-template-columns: 1fr;
 			justify-items: center;
-			padding-block: 0.6rem;
+			padding-block: 10px;
 		}
+
 		.brand { width: 160px; justify-content: center; }
 		.brand img { height: 62px; object-position: center; }
 		.brand-description,
 		.brand-action { display: none; }
+
 		.nav-inner { min-height: 52px; width: 100%; }
+
 		.mobile-menu-toggle {
 			display: flex;
 			width: 100%;
@@ -697,10 +837,19 @@ const menuGroups: MenuGroup[] = [
 			color: var(--color-neutral-foreground-1);
 			font: inherit;
 			font-size: 0.88rem;
-			font-weight: 750;
+			font-weight: 700;
 			cursor: pointer;
 		}
-		.mobile-menu-toggle svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8; }
+
+		.mobile-menu-toggle svg {
+			width: 21px;
+			height: 21px;
+			fill: none;
+			stroke: currentColor;
+			stroke-linecap: round;
+			stroke-width: 1.8;
+		}
+
 		.menu-bar {
 			position: absolute;
 			top: 100%;
@@ -709,62 +858,71 @@ const menuGroups: MenuGroup[] = [
 			display: none;
 			max-height: min(76vh, 680px);
 			grid-template-columns: 1fr;
+			overflow-x: hidden;
 			overflow-y: auto;
-			padding: 8px;
-			border: 1px solid var(--color-neutral-stroke-1);
+			padding: var(--nav-space-2);
+			border: 1px solid var(--nav-stroke);
 			border-top: 0;
-			border-radius: 0 0 var(--radius-xlarge) var(--radius-xlarge);
-			background: rgba(23, 25, 28, 0.995);
-			box-shadow: var(--shadow-64);
+			border-radius: 0 0 var(--nav-radius-large) var(--nav-radius-large);
+			background: rgba(23, 25, 28, 0.99);
+			box-shadow: var(--nav-shadow-16);
 			z-index: 300;
 		}
+
 		.site-header.mobile-open .menu-bar { display: grid; }
+
 		.home-menu-link,
 		.menu-direct,
 		.menu-trigger {
 			width: 100%;
-			min-height: 46px;
+			min-height: 44px;
 			justify-content: space-between;
-			padding: 0 13px;
-			font-size: 0.77rem;
+			padding: 0 12px;
+			font-size: 0.8rem;
 			text-align: left;
 		}
-		.home-menu-link { justify-content: flex-start; gap: 0.65rem; }
-		.home-menu-link::after { content: 'HOME'; font-size: 0.77rem; font-weight: 700; }
+
+		.home-menu-link { justify-content: flex-start; gap: 10px; }
+		.home-menu-link::after { content: 'HOME'; font-size: 0.8rem; font-weight: 700; }
 		.menu-group { width: 100%; }
+
 		.menu-panel,
 		.submenu-panel,
-		.tone-other > .menu-panel,
-		.tone-multi > .menu-panel,
-		.submenu-group.open-end > .submenu-panel,
-		.submenu-group.open-start > .submenu-panel {
+		.menu-panel.align-end,
+		.submenu-panel.open-start {
 			position: static;
 			right: auto;
 			left: auto;
 			display: none;
 			width: auto;
-			padding: 0 0 4px 14px;
+			padding: 0 0 4px 12px;
 			opacity: 1;
 			visibility: visible;
 			transform: none;
 			pointer-events: auto;
 		}
-		.menu-group:hover > .menu-panel,
-		.menu-group:focus-within > .menu-panel,
-		.submenu-group:hover > .submenu-panel,
-		.submenu-group:focus-within > .submenu-panel { display: none; }
+
 		.menu-group.is-open > .menu-panel,
 		.submenu-group.is-open > .submenu-panel { display: block; }
+
 		.menu-surface,
-		.submenu-surface { padding: 5px; border-radius: var(--radius-medium); background: rgba(255, 255, 255, 0.025); box-shadow: none; }
-		.submenu-group.open-start > .submenu-trigger svg { transform: none; }
+		.submenu-surface {
+			padding: var(--nav-space-1);
+			border-radius: var(--nav-radius-medium);
+			background: rgba(255, 255, 255, 0.025);
+			box-shadow: none;
+			backdrop-filter: none;
+		}
+
+		.menu-surface { max-height: none; overflow: visible; }
+		.submenu-group:has(> .submenu-panel.open-start) > .submenu-trigger svg { transform: none; }
 		.submenu-group.is-open > .submenu-trigger svg { transform: rotate(90deg); }
 	}
 
 	@media (max-width: 540px) {
 		.utility-inner { min-height: 32px; }
 		.social-links { gap: 0; font-size: 0.68rem; }
-		.utility-bar a { padding-inline: 0.4rem; }
+		.utility-bar a { padding-inline: 6px; }
 		.brand { width: 146px; }
 		.brand img { height: 58px; }
 	}
@@ -772,6 +930,7 @@ const menuGroups: MenuGroup[] = [
 	@media (prefers-reduced-motion: reduce) {
 		.menu-panel,
 		.submenu-panel,
-		.menu-chevron { transition: none; }
+		.menu-chevron,
+		.submenu-trigger svg { transition: none; }
 	}
 </style>
