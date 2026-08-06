@@ -189,9 +189,6 @@ const menuGroups: MenuGroup[] = [
 
 								<div class="menu-panel">
 									<div class="menu-surface">
-										<a class="menu-overview" href={categoryHref(group.slug)} data-category={group.slug}>
-											<span>{`ALL ${group.label}`}</span><span aria-hidden="true">→</span>
-										</a>
 										<div class="menu-list">
 											{
 												group.items.map((item) =>
@@ -203,9 +200,6 @@ const menuGroups: MenuGroup[] = [
 															</button>
 															<div class="submenu-panel">
 																<div class="submenu-surface">
-																	<a class="menu-overview" href={categoryHref(item.slug)} data-category={item.slug}>
-																		<span>{`ALL ${item.label.toUpperCase()}`}</span><span aria-hidden="true">→</span>
-																	</a>
 																	{item.children.map((child) => <a href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>)}
 																</div>
 															</div>
@@ -616,9 +610,8 @@ const menuGroups: MenuGroup[] = [
 		box-shadow: var(--shadow-64);
 	}
 
-	.menu-list { display: grid; gap: 2px; margin-top: 4px; }
+	.menu-list { display: grid; gap: 2px; }
 
-	.menu-overview,
 	.menu-list > a,
 	.submenu-trigger,
 	.submenu-surface > a {
@@ -637,22 +630,10 @@ const menuGroups: MenuGroup[] = [
 		text-decoration: none;
 	}
 
-	.menu-overview {
-		justify-content: space-between;
-		gap: 0.75rem;
-		padding: 0.55rem 0.75rem;
-		border-color: color-mix(in srgb, var(--menu-accent) 34%, transparent);
-		background: color-mix(in srgb, var(--menu-accent) 9%, var(--color-neutral-background-3));
-		color: var(--color-neutral-foreground-1);
-		font-weight: 760;
-	}
-
 	.menu-list > a,
 	.submenu-surface > a,
 	.submenu-trigger { padding: 0.5rem 0.75rem; }
 
-	.menu-overview:hover,
-	.menu-overview:focus-visible,
 	.menu-list > a:hover,
 	.menu-list > a:focus-visible,
 	.menu-list > a.is-active,
