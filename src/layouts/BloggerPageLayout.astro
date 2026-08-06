@@ -9,8 +9,6 @@ interface Props {
 	lang: 'ar' | 'en';
 	dir: 'rtl' | 'ltr';
 	content: string;
-	updated?: string;
-	sourceUrl?: string;
 }
 
 const {
@@ -19,15 +17,7 @@ const {
 	lang,
 	dir,
 	content,
-	updated = '',
-	sourceUrl = '',
 } = Astro.props;
-
-const updatedLabel = updated
-	? new Intl.DateTimeFormat(lang === 'ar' ? 'ar-SA' : 'en-US', {
-		dateStyle: 'long',
-	}).format(new Date(updated))
-	: '';
 ---
 
 <!doctype html>
@@ -40,35 +30,7 @@ const updatedLabel = updated
 
 		<main class="blogger-page-shell">
 			<div class="site-container blogger-page-container">
-				<header class="blogger-page-meta">
-					<div>
-						<span class="blogger-page-kicker">
-							{lang === 'ar' ? 'صفحة من Blogger' : 'Blogger page'}
-						</span>
-						<h1>{title}</h1>
-					</div>
-
-					{
-						updatedLabel && (
-							<time datetime={updated}>
-								{lang === 'ar' ? `آخر تحديث: ${updatedLabel}` : `Last updated: ${updatedLabel}`}
-							</time>
-						)
-					}
-				</header>
-
 				<article class="blogger-page-content" set:html={content} />
-
-				{
-					sourceUrl && (
-						<footer class="blogger-page-source">
-							<span>{lang === 'ar' ? 'المصدر الأصلي' : 'Original source'}</span>
-							<a href={sourceUrl} rel="noopener noreferrer" target="_blank">
-								{lang === 'ar' ? 'عرض صفحة Blogger' : 'View Blogger page'}
-							</a>
-						</footer>
-					)
-				}
 			</div>
 		</main>
 
@@ -78,50 +40,16 @@ const updatedLabel = updated
 
 <style>
 	.blogger-page-shell {
-		padding: clamp(1rem, 2.5vw, 2rem) 0 0;
+		padding: clamp(0.75rem, 2vw, 1.5rem) 0 0;
 	}
 
 	.blogger-page-container {
 		width: min(calc(100% - 32px), 1080px);
 	}
 
-	.blogger-page-meta {
-		display: flex;
-		align-items: end;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 1rem;
-		padding: 1rem 1.2rem;
-		border: 1px solid var(--color-neutral-stroke-subtle);
-		border-radius: var(--radius-xlarge);
-		background: var(--color-neutral-background-2);
-	}
-
-	.blogger-page-kicker {
-		display: block;
-		margin-bottom: 0.25rem;
-		color: var(--color-brand-foreground-strong);
-		font-size: 0.72rem;
-		font-weight: 750;
-	}
-
-	.blogger-page-meta h1 {
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: clamp(1.45rem, 3vw, 2.15rem);
-		line-height: 1.35;
-	}
-
-	.blogger-page-meta time {
-		flex: 0 0 auto;
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.75rem;
-	}
-
 	.blogger-page-content {
 		min-width: 0;
 		overflow: hidden;
-		border-radius: var(--radius-xxlarge);
 	}
 
 	.blogger-page-content :global(img),
@@ -142,34 +70,9 @@ const updatedLabel = updated
 		overflow-wrap: anywhere;
 	}
 
-	.blogger-page-source {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-top: 1rem;
-		padding: 0.9rem 1rem;
-		border: 1px solid var(--color-neutral-stroke-subtle);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-2);
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.76rem;
-	}
-
-	.blogger-page-source a {
-		color: var(--color-brand-foreground-strong);
-		font-weight: 700;
-	}
-
 	@media (max-width: 700px) {
 		.blogger-page-container {
 			width: min(calc(100% - 20px), 1080px);
-		}
-
-		.blogger-page-meta,
-		.blogger-page-source {
-			align-items: flex-start;
-			flex-direction: column;
 		}
 	}
 </style>
