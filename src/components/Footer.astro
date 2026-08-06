@@ -2,41 +2,48 @@
 const today = new Date();
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" dir="rtl">
 	<div class="site-container footer-main">
-		<div class="footer-navigation">
-			<nav class="footer-column" aria-label="روابط الموقع">
-				<h2>الموقع</h2>
-				<a href="/blog">المقالات</a>
-				<a href="/services">خدمة المحاكيات</a>
-				<a href="/about">من نحن</a>
-				<a href="/contact">اتصل بنا</a>
-			</nav>
+		<nav class="footer-navigation" aria-label="روابط تذييل الموقع">
+			<section class="footer-column" aria-labelledby="footer-content-title">
+				<h2 id="footer-content-title">المحتوى</h2>
+				<div class="footer-links">
+					<a href="/blog">المقالات</a>
+					<a href="/services">خدمة المحاكيات</a>
+				</div>
+			</section>
 
-			<nav class="footer-column" aria-label="الروابط القانونية">
-				<h2>السياسات</h2>
-				<a href="/privacy">سياسة الخصوصية</a>
-				<a href="/terms">اتفاقية الاستخدام</a>
-				<a href="/disclaimer">إخلاء المسؤولية</a>
-			</nav>
+			<section class="footer-column" aria-labelledby="footer-about-title">
+				<h2 id="footer-about-title">عن الموقع</h2>
+				<div class="footer-links">
+					<a href="/about">من نحن</a>
+					<a href="/contact">اتصل بنا</a>
+				</div>
+			</section>
 
-			<nav class="footer-column footer-column-english" aria-label="English pages" dir="ltr">
-				<h2>English</h2>
-				<a href="/en/about">About us</a>
-				<a href="/en/contact">Contact us</a>
-				<a href="/en/services">Emulator service</a>
-				<a href="/en/privacy">Privacy & terms</a>
-			</nav>
-		</div>
+			<section class="footer-column" aria-labelledby="footer-policy-title">
+				<h2 id="footer-policy-title">السياسات</h2>
+				<div class="footer-links">
+					<a href="/privacy">سياسة الخصوصية</a>
+					<a href="/terms">اتفاقية الاستخدام</a>
+					<a href="/disclaimer">إخلاء المسؤولية</a>
+				</div>
+			</section>
+		</nav>
 	</div>
 
 	<div class="footer-bottom">
 		<div class="site-container footer-bottom-inner">
 			<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
-			<nav class="footer-meta" aria-label="روابط إضافية" dir="ltr">
-				<a href="/rss.xml">RSS</a>
-				<a href="/en/about" lang="en">English</a>
-			</nav>
+
+			<a class="footer-rss" href="/rss.xml" aria-label="خلاصة RSS">
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<circle cx="6" cy="18" r="1.5"></circle>
+					<path d="M5 11a8 8 0 0 1 8 8"></path>
+					<path d="M5 5a14 14 0 0 1 14 14"></path>
+				</svg>
+				<span>RSS</span>
+			</a>
 		</div>
 	</div>
 </footer>
@@ -45,126 +52,204 @@ const today = new Date();
 	.site-footer {
 		--footer-space-1: 4px;
 		--footer-space-2: 8px;
+		--footer-space-3: 12px;
 		--footer-space-4: 16px;
+		--footer-space-5: 20px;
 		--footer-space-6: 24px;
 		--footer-space-8: 32px;
 		--footer-radius-small: 4px;
+		--footer-radius-medium: 8px;
+		position: relative;
 		margin-top: clamp(2.5rem, 4vw, 4rem);
-		border-top: 1px solid var(--color-neutral-stroke-subtle);
+		border-top: 1px solid var(--color-neutral-stroke-alpha);
 		background: var(--color-neutral-background-2);
 		color: var(--color-neutral-foreground-3);
 	}
 
+	.site-footer::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		right: 0;
+		width: clamp(72px, 9vw, 120px);
+		height: 2px;
+		background: var(--color-brand-background);
+	}
+
 	.footer-main {
-		padding-block: clamp(32px, 4vw, 48px);
+		padding-block: clamp(28px, 3vw, 40px);
 	}
 
 	.footer-navigation {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: clamp(24px, 5vw, 72px);
-		align-items: start;
-		width: 100%;
+		gap: clamp(28px, 5vw, 72px);
+		width: min(100%, 940px);
+		margin-inline: auto;
 	}
 
 	.footer-column {
-		display: grid;
-		align-content: start;
-		gap: var(--footer-space-1);
+		position: relative;
+		min-width: 0;
+	}
+
+	.footer-column:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(clamp(28px, 5vw, 72px) / -2);
+		width: 1px;
+		background: var(--color-neutral-stroke-alpha);
 	}
 
 	.footer-column h2 {
-		margin: 0 0 var(--footer-space-2);
+		display: flex;
+		align-items: center;
+		gap: var(--footer-space-2);
+		margin: 0 0 var(--footer-space-3);
 		color: var(--color-neutral-foreground-1);
-		font-size: 0.875rem;
-		font-weight: 600;
+		font-size: 0.9rem;
+		font-weight: 650;
 		line-height: 1.5;
 	}
 
-	.footer-column a {
+	.footer-column h2::before {
+		content: '';
+		width: 3px;
+		height: 16px;
+		border-radius: 999px;
+		background: var(--color-brand-background);
+	}
+
+	.footer-links {
+		display: grid;
+		gap: var(--footer-space-1);
+	}
+
+	.footer-links a {
 		display: inline-flex;
 		width: fit-content;
-		min-height: 34px;
+		min-height: 36px;
 		align-items: center;
 		padding-inline: var(--footer-space-2);
 		border-radius: var(--footer-radius-small);
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.8rem;
+		font-size: 0.8125rem;
 		line-height: 1.45;
 		text-decoration: none;
-		transition: background var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease);
+		transition:
+			background var(--duration-faster) var(--curve-easy-ease),
+			color var(--duration-faster) var(--curve-easy-ease);
 	}
 
-	.footer-column a:hover,
-	.footer-column a:focus-visible {
-		background: var(--color-neutral-background-3);
+	.footer-links a:hover {
+		background: var(--color-subtle-background-hover);
 		color: var(--color-neutral-foreground-1);
-		outline: none;
 	}
 
-	.footer-column-english {
-		text-align: left;
+	.footer-links a:focus-visible,
+	.footer-rss:focus-visible {
+		outline: 2px solid var(--color-brand-stroke-1);
+		outline-offset: 2px;
 	}
 
 	.footer-bottom {
-		border-top: 1px solid var(--color-neutral-stroke-subtle);
-		background: var(--color-neutral-background-1);
+		border-top: 1px solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-4);
 	}
 
 	.footer-bottom-inner {
 		display: flex;
-		min-height: 50px;
+		min-height: 52px;
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--footer-space-4);
-		font-size: 0.74rem;
+		font-size: 0.75rem;
 	}
 
 	.footer-bottom-inner p {
 		margin: 0;
+		color: var(--color-neutral-foreground-3);
 	}
 
-	.footer-meta {
-		display: flex;
-		align-items: center;
-		gap: var(--footer-space-1);
-	}
-
-	.footer-meta a {
+	.footer-rss {
 		display: inline-flex;
-		min-height: 30px;
+		min-height: 32px;
 		align-items: center;
+		gap: 6px;
 		padding-inline: var(--footer-space-2);
 		border-radius: var(--footer-radius-small);
 		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
+		transition:
+			background var(--duration-faster) var(--curve-easy-ease),
+			color var(--duration-faster) var(--curve-easy-ease);
 	}
 
-	.footer-meta a:hover,
-	.footer-meta a:focus-visible {
-		background: var(--color-neutral-background-2);
+	.footer-rss:hover {
+		background: var(--color-subtle-background-hover);
 		color: var(--color-neutral-foreground-1);
-		outline: none;
 	}
 
-	@media (max-width: 640px) {
-		.site-footer { margin-top: 2.5rem; }
+	.footer-rss svg {
+		width: 15px;
+		height: 15px;
+		fill: currentColor;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-width: 1.8;
+	}
+
+	@media (max-width: 720px) {
+		.footer-navigation {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: var(--footer-space-8) var(--footer-space-6);
+		}
+
+		.footer-column:not(:last-child)::after {
+			display: none;
+		}
+
+		.footer-column:last-child {
+			grid-column: 1 / -1;
+			padding-top: var(--footer-space-6);
+			border-top: 1px solid var(--color-neutral-stroke-alpha);
+		}
+	}
+
+	@media (max-width: 460px) {
+		.site-footer {
+			margin-top: 2.5rem;
+		}
 
 		.footer-main {
 			padding-block: var(--footer-space-8);
 		}
 
 		.footer-navigation {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-columns: 1fr;
 			gap: var(--footer-space-6);
 		}
 
-		.footer-column-english {
-			grid-column: 1 / -1;
+		.footer-column,
+		.footer-column:last-child {
+			grid-column: auto;
+			padding-top: 0;
+			border-top: 0;
+		}
+
+		.footer-column + .footer-column {
+			padding-top: var(--footer-space-6);
+			border-top: 1px solid var(--color-neutral-stroke-alpha);
+		}
+
+		.footer-links a {
+			min-height: 44px;
 		}
 
 		.footer-bottom-inner {
-			min-height: 64px;
+			min-height: 68px;
 			flex-direction: column;
 			justify-content: center;
 			gap: var(--footer-space-1);
@@ -172,18 +257,9 @@ const today = new Date();
 		}
 	}
 
-	@media (max-width: 420px) {
-		.footer-navigation {
-			grid-template-columns: 1fr;
-		}
-
-		.footer-column-english {
-			grid-column: auto;
-		}
-	}
-
 	@media (prefers-reduced-motion: reduce) {
-		.footer-column a {
+		.footer-links a,
+		.footer-rss {
 			transition: none;
 		}
 	}
