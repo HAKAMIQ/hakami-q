@@ -136,7 +136,7 @@ const menuGroups: MenuGroup[] = [
 ];
 ---
 
-<header class="site-header">
+<header class="site-header" data-site-header>
 	<div class="utility-bar">
 		<div class="site-container utility-inner">
 			<nav class="utility-links" aria-label="روابط المعلومات">
@@ -202,64 +202,96 @@ const menuGroups: MenuGroup[] = [
 				{
 					menuGroups.map((group) =>
 						group.items ? (
-							<details
+							<div
 								class:list={['menu-group', `tone-${group.tone}`]}
 								data-menu-group
 							>
-								<summary>
+								<button
+									class="menu-trigger"
+									type="button"
+									aria-expanded="false"
+									aria-haspopup="true"
+								>
 									<span>{group.label}</span>
 									<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true">
 										<path d="m6 8 4 4 4-4"></path>
 									</svg>
-								</summary>
+								</button>
 
-								<div class="menu-panel">
-									<div class="menu-list">
-										{
-											group.items.map((item) =>
-												item.children ? (
-													<details
-														class:list={[
-															'submenu-group',
-															item.openDirection === 'end'
-																? 'open-end'
-																: 'open-start',
-														]}
-														data-submenu-group
-													>
-														<summary>
-															<span>{item.label}</span>
-															<svg viewBox="0 0 20 20" aria-hidden="true">
-																<path d="m8 5 5 5-5 5"></path>
-															</svg>
-														</summary>
+								<div class="menu-panel" data-menu-panel>
+									<div class="menu-surface">
+										<a
+											class="menu-overview"
+											href={categoryHref(group.slug)}
+											data-category={group.slug}
+										>
+											<span>{`ALL ${group.label}`}</span>
+											<span aria-hidden="true">→</span>
+										</a>
 
-														<div class="submenu-panel">
-															{
-																item.children.map((child) => (
+										<div class="menu-list">
+											{
+												group.items.map((item) =>
+													item.children ? (
+														<div
+															class:list={[
+																'submenu-group',
+																item.openDirection === 'end'
+																	? 'open-end'
+																	: 'open-start',
+															]}
+															data-submenu-group
+														>
+															<button
+																class="submenu-trigger"
+																type="button"
+																aria-expanded="false"
+																aria-haspopup="true"
+															>
+																<span>{item.label}</span>
+																<svg viewBox="0 0 20 20" aria-hidden="true">
+																	<path d="m8 5 5 5-5 5"></path>
+																</svg>
+															</button>
+
+															<div class="submenu-panel" data-submenu-panel>
+																<div class="submenu-surface">
 																	<a
-																		href={categoryHref(child.slug)}
-																		data-category={child.slug}
+																		class="menu-overview"
+																		href={categoryHref(item.slug)}
+																		data-category={item.slug}
 																	>
-																		{child.label}
+																		<span>{`ALL ${item.label.toUpperCase()}`}</span>
+																		<span aria-hidden="true">→</span>
 																	</a>
-																))
-															}
+
+																	{
+																		item.children.map((child) => (
+																			<a
+																				href={categoryHref(child.slug)}
+																				data-category={child.slug}
+																			>
+																				{child.label}
+																			</a>
+																		))
+																	}
+																</div>
+															</div>
 														</div>
-													</details>
-												) : (
-													<a
-														href={categoryHref(item.slug)}
-														data-category={item.slug}
-													>
-														{item.label}
-													</a>
-												),
-											)
-										}
+													) : (
+														<a
+															href={categoryHref(item.slug)}
+															data-category={item.slug}
+														>
+															{item.label}
+														</a>
+													),
+												)
+											}
+										</div>
 									</div>
 								</div>
-							</details>
+							</div>
 						) : (
 							<a
 								class:list={['menu-direct', `tone-${group.tone}`]}
@@ -280,31 +312,77 @@ const menuGroups: MenuGroup[] = [
 	document.documentElement.classList.add('js-nav');
 
 	const initializeHeader = () => {
-		const header = document.querySelector<HTMLElement>('.site-header');
+		const header = document.querySelector<HTMLElement>('[data-site-header]');
 		if (!header || header.dataset.initialized === 'true') return;
 
 		header.dataset.initialized = 'true';
 
 		const menuToggle = header.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
-		const topLevelMenus = Array.from(
-			header.querySelectorAll<HTMLDetailsElement>('[data-menu-group]'),
+		const menuBar = header.querySelector<HTMLElement>('.menu-bar');
+		const topMenus = Array.from(
+			header.querySelectorAll<HTMLElement>('[data-menu-group]'),
 		);
 		const nestedMenus = Array.from(
-			header.querySelectorAll<HTMLDetailsElement>('[data-submenu-group]'),
+			header.querySelectorAll<HTMLElement>('[data-submenu-group]'),
 		);
-		const menuLinks = Array.from(header.querySelectorAll<HTMLAnchorElement>('.menu-bar a'));
 		const desktopMedia = window.matchMedia('(min-width: 961px)');
+		const closeDelay = 170;
+		const timers = new WeakMap<HTMLElement, number>();
 
-		const closeNestedMenus = (except?: HTMLDetailsElement) => {
-			for (const menu of nestedMenus) {
-				if (menu !== except) menu.open = false;
+		const clearCloseTimer = (menu: HTMLElement) => {
+			const timer = timers.get(menu);
+			if (timer !== undefined) {
+				window.clearTimeout(timer);
+				timers.delete(menu);
 			}
 		};
 
-		const closeTopLevelMenus = (except?: HTMLDetailsElement) => {
-			for (const menu of topLevelMenus) {
-				if (menu !== except) menu.open = false;
+		const setExpanded = (menu: HTMLElement, open: boolean) => {
+			clearCloseTimer(menu);
+			menu.classList.toggle('is-open', open);
+			menu
+				.querySelector<HTMLButtonElement>(
+					':scope > .menu-trigger, :scope > .submenu-trigger',
+				)
+				?.setAttribute('aria-expanded', String(open));
+		};
+
+		const closeNestedMenus = (except?: HTMLElement) => {
+			for (const menu of nestedMenus) {
+				if (menu !== except) setExpanded(menu, false);
 			}
+		};
+
+		const closeTopMenus = (except?: HTMLElement) => {
+			for (const menu of topMenus) {
+				if (menu !== except) setExpanded(menu, false);
+			}
+		};
+
+		const openTopMenu = (menu: HTMLElement) => {
+			closeTopMenus(menu);
+			closeNestedMenus();
+			setExpanded(menu, true);
+		};
+
+		const openNestedMenu = (menu: HTMLElement) => {
+			closeNestedMenus(menu);
+			setExpanded(menu, true);
+		};
+
+		const scheduleClose = (menu: HTMLElement, nested = false) => {
+			clearCloseTimer(menu);
+			const timer = window.setTimeout(() => {
+				setExpanded(menu, false);
+				if (!nested) {
+					for (const child of menu.querySelectorAll<HTMLElement>(
+						'[data-submenu-group]',
+					)) {
+						setExpanded(child, false);
+					}
+				}
+			}, closeDelay);
+			timers.set(menu, timer);
 		};
 
 		const setMobileMenu = (open: boolean) => {
@@ -313,58 +391,74 @@ const menuGroups: MenuGroup[] = [
 
 			if (!open) {
 				closeNestedMenus();
-				closeTopLevelMenus();
+				closeTopMenus();
 			}
 		};
 
-		for (const menu of topLevelMenus) {
-			const summary = menu.querySelector<HTMLElement>(':scope > summary');
+		for (const menu of topMenus) {
+			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .menu-trigger');
 
-			menu.addEventListener('toggle', () => {
-				if (!menu.open) return;
-				closeTopLevelMenus(menu);
-				closeNestedMenus();
-			});
-
-			menu.addEventListener('mouseenter', () => {
+			menu.addEventListener('pointerenter', () => {
 				if (!desktopMedia.matches) return;
-				closeTopLevelMenus(menu);
-				closeNestedMenus();
-				menu.open = true;
+				clearCloseTimer(menu);
+				openTopMenu(menu);
 			});
 
-			menu.addEventListener('mouseleave', () => {
+			menu.addEventListener('pointerleave', (event) => {
 				if (!desktopMedia.matches) return;
-				menu.open = false;
-				for (const nested of menu.querySelectorAll<HTMLDetailsElement>('[data-submenu-group]')) {
-					nested.open = false;
-				}
+				const nextTarget = event.relatedTarget;
+				if (nextTarget instanceof Node && menu.contains(nextTarget)) return;
+				scheduleClose(menu);
 			});
 
-			summary?.addEventListener('click', (event) => {
-				if (desktopMedia.matches && event.detail > 0) event.preventDefault();
+			menu.addEventListener('focusin', () => {
+				if (desktopMedia.matches) openTopMenu(menu);
+			});
+
+			menu.addEventListener('focusout', () => {
+				window.setTimeout(() => {
+					if (!menu.contains(document.activeElement)) scheduleClose(menu);
+				}, 0);
+			});
+
+			trigger?.addEventListener('click', () => {
+				const open = !menu.classList.contains('is-open');
+				if (open) openTopMenu(menu);
+				else setExpanded(menu, false);
 			});
 		}
 
 		for (const menu of nestedMenus) {
-			const summary = menu.querySelector<HTMLElement>(':scope > summary');
+			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .submenu-trigger');
 
-			menu.addEventListener('toggle', () => {
-				if (menu.open) closeNestedMenus(menu);
-			});
-
-			menu.addEventListener('mouseenter', () => {
+			menu.addEventListener('pointerenter', () => {
 				if (!desktopMedia.matches) return;
-				closeNestedMenus(menu);
-				menu.open = true;
+				clearCloseTimer(menu);
+				openNestedMenu(menu);
 			});
 
-			menu.addEventListener('mouseleave', () => {
-				if (desktopMedia.matches) menu.open = false;
+			menu.addEventListener('pointerleave', (event) => {
+				if (!desktopMedia.matches) return;
+				const nextTarget = event.relatedTarget;
+				if (nextTarget instanceof Node && menu.contains(nextTarget)) return;
+				scheduleClose(menu, true);
 			});
 
-			summary?.addEventListener('click', (event) => {
-				if (desktopMedia.matches && event.detail > 0) event.preventDefault();
+			menu.addEventListener('focusin', () => {
+				if (desktopMedia.matches) openNestedMenu(menu);
+			});
+
+			menu.addEventListener('focusout', () => {
+				window.setTimeout(() => {
+					if (!menu.contains(document.activeElement)) scheduleClose(menu, true);
+				}, 0);
+			});
+
+			trigger?.addEventListener('click', (event) => {
+				event.stopPropagation();
+				const open = !menu.classList.contains('is-open');
+				if (open) openNestedMenu(menu);
+				else setExpanded(menu, false);
 			});
 		}
 
@@ -372,18 +466,20 @@ const menuGroups: MenuGroup[] = [
 			setMobileMenu(!header.classList.contains('mobile-open'));
 		});
 
-		for (const link of menuLinks) {
+		for (const link of header.querySelectorAll<HTMLAnchorElement>('.menu-bar a')) {
 			link.addEventListener('click', () => {
+				closeNestedMenus();
+				closeTopMenus();
 				if (!desktopMedia.matches) setMobileMenu(false);
 			});
 		}
 
-		document.addEventListener('click', (event) => {
+		document.addEventListener('pointerdown', (event) => {
 			const target = event.target;
 			if (!(target instanceof Node) || header.contains(target)) return;
 
 			closeNestedMenus();
-			closeTopLevelMenus();
+			closeTopMenus();
 			if (!desktopMedia.matches) setMobileMenu(false);
 		});
 
@@ -391,7 +487,7 @@ const menuGroups: MenuGroup[] = [
 			if (event.key !== 'Escape') return;
 
 			closeNestedMenus();
-			closeTopLevelMenus();
+			closeTopMenus();
 			setMobileMenu(false);
 			menuToggle?.focus();
 		});
@@ -410,10 +506,22 @@ const menuGroups: MenuGroup[] = [
 				if (link.dataset.category?.toLowerCase() !== selectedCategory) continue;
 
 				link.classList.add('is-active');
-				link.closest<HTMLDetailsElement>('[data-menu-group]')
-					?.querySelector<HTMLElement>(':scope > summary')
+				link
+					.closest<HTMLElement>('[data-menu-group]')
+					?.querySelector<HTMLElement>(':scope > .menu-trigger')
 					?.classList.add('has-active-child');
 			}
+		}
+
+		if (menuBar) {
+			menuBar.addEventListener('pointerleave', () => {
+				if (!desktopMedia.matches) return;
+				for (const menu of topMenus) {
+					if (menu.matches(':hover')) return;
+				}
+				closeNestedMenus();
+				closeTopMenus();
+			});
 		}
 	};
 
@@ -431,7 +539,7 @@ const menuGroups: MenuGroup[] = [
 		position: relative;
 		z-index: 1000;
 		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
-		background: rgba(17, 19, 21, 0.96);
+		background: rgba(17, 19, 21, 0.97);
 		box-shadow: var(--shadow-4);
 	}
 
@@ -552,9 +660,6 @@ const menuGroups: MenuGroup[] = [
 		font-weight: 700;
 		text-decoration: none;
 		box-shadow: var(--shadow-2);
-		transition:
-			background var(--duration-fast) var(--curve-easy-ease),
-			border-color var(--duration-fast) var(--curve-easy-ease);
 	}
 
 	.brand-action:hover {
@@ -576,14 +681,16 @@ const menuGroups: MenuGroup[] = [
 	.main-nav {
 		position: relative;
 		z-index: 20;
+		overflow: visible;
 		border-top: 1px solid var(--color-neutral-stroke-subtle);
-		background: rgba(23, 25, 28, 0.94);
+		background: rgba(23, 25, 28, 0.96);
 		backdrop-filter: blur(18px) saturate(1.08);
 	}
 
 	.nav-inner {
 		position: relative;
 		min-height: 54px;
+		overflow: visible;
 	}
 
 	.menu-bar {
@@ -596,7 +703,7 @@ const menuGroups: MenuGroup[] = [
 
 	.home-menu-link,
 	.menu-direct,
-	.menu-group > summary {
+	.menu-trigger {
 		display: inline-flex;
 		min-height: 42px;
 		align-items: center;
@@ -636,7 +743,7 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.menu-direct,
-	.menu-group > summary {
+	.menu-trigger {
 		padding-inline: 0.78rem;
 	}
 
@@ -666,23 +773,9 @@ const menuGroups: MenuGroup[] = [
 		--menu-accent: #ff9d5c;
 	}
 
-	.menu-group.tone-multi {
-		--menu-accent: #b699ff;
-	}
-
+	.menu-group.tone-multi,
 	.menu-direct.tone-pc {
 		--menu-accent: #b699ff;
-	}
-
-	.menu-group > summary,
-	.submenu-group > summary {
-		list-style: none;
-		user-select: none;
-	}
-
-	.menu-group > summary::-webkit-details-marker,
-	.submenu-group > summary::-webkit-details-marker {
-		display: none;
 	}
 
 	.menu-chevron {
@@ -696,7 +789,7 @@ const menuGroups: MenuGroup[] = [
 		transition: transform var(--duration-fast) var(--curve-easy-ease);
 	}
 
-	.menu-group[open] > summary .menu-chevron {
+	.menu-group.is-open > .menu-trigger .menu-chevron {
 		transform: rotate(180deg);
 	}
 
@@ -705,10 +798,10 @@ const menuGroups: MenuGroup[] = [
 	.menu-direct:hover,
 	.menu-direct:focus-visible,
 	.menu-direct.is-active,
-	.menu-group[open] > summary,
-	.menu-group > summary:hover,
-	.menu-group > summary:focus-visible,
-	.menu-group > summary.has-active-child {
+	.menu-group.is-open > .menu-trigger,
+	.menu-trigger:hover,
+	.menu-trigger:focus-visible,
+	.menu-trigger.has-active-child {
 		border-color: var(--color-neutral-stroke-1);
 		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-1);
@@ -716,7 +809,7 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.menu-direct.is-active,
-	.menu-group > summary.has-active-child {
+	.menu-trigger.has-active-child {
 		box-shadow: inset 0 -2px var(--menu-accent);
 	}
 
@@ -724,27 +817,23 @@ const menuGroups: MenuGroup[] = [
 	.submenu-panel {
 		direction: ltr;
 		text-align: left;
-	}
-
-	.menu-panel {
-		position: absolute;
-		top: calc(100% + 7px);
-		left: 0;
-		width: 270px;
-		padding: 8px;
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
-		background: rgba(31, 34, 38, 0.98);
-		box-shadow: var(--shadow-64);
 		opacity: 0;
 		visibility: hidden;
-		transform: translateY(-6px) scale(0.985);
-		transform-origin: top left;
 		pointer-events: none;
 		transition:
 			opacity var(--duration-fast) var(--curve-easy-ease),
 			transform var(--duration-fast) var(--curve-easy-ease),
 			visibility var(--duration-fast) var(--curve-easy-ease);
+	}
+
+	.menu-panel {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 278px;
+		padding-top: 8px;
+		transform: translateY(-4px);
+		transform-origin: top left;
 		z-index: 200;
 	}
 
@@ -755,22 +844,32 @@ const menuGroups: MenuGroup[] = [
 		transform-origin: top right;
 	}
 
-	.menu-group[open] > .menu-panel,
-	.menu-group:focus-within > .menu-panel {
+	.menu-group.is-open > .menu-panel {
 		opacity: 1;
 		visibility: visible;
-		transform: translateY(0) scale(1);
+		transform: translateY(0);
 		pointer-events: auto;
+	}
+
+	.menu-surface,
+	.submenu-surface {
+		padding: 8px;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: rgba(31, 34, 38, 0.99);
+		box-shadow: var(--shadow-64);
 	}
 
 	.menu-list {
 		display: grid;
 		gap: 2px;
+		margin-top: 4px;
 	}
 
+	.menu-overview,
 	.menu-list > a,
-	.submenu-group > summary,
-	.submenu-panel > a {
+	.submenu-trigger,
+	.submenu-surface > a {
 		position: relative;
 		display: flex;
 		min-height: 40px;
@@ -780,6 +879,7 @@ const menuGroups: MenuGroup[] = [
 		border-radius: var(--radius-medium);
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
+		font-family: inherit;
 		font-size: 0.78rem;
 		font-weight: 650;
 		line-height: 1.35;
@@ -790,27 +890,40 @@ const menuGroups: MenuGroup[] = [
 			color var(--duration-fast) var(--curve-easy-ease);
 	}
 
+	.menu-overview {
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.55rem 0.75rem;
+		border-color: color-mix(in srgb, var(--menu-accent) 36%, transparent);
+		background: color-mix(in srgb, var(--menu-accent) 10%, var(--color-neutral-background-3));
+		color: var(--color-neutral-foreground-1);
+		font-weight: 750;
+	}
+
 	.menu-list > a,
-	.submenu-panel > a {
+	.submenu-surface > a {
 		padding: 0.5rem 0.75rem;
 	}
 
+	.menu-overview:hover,
+	.menu-overview:focus-visible,
 	.menu-list > a:hover,
 	.menu-list > a:focus-visible,
 	.menu-list > a.is-active,
-	.submenu-group > summary:hover,
-	.submenu-group > summary:focus-visible,
-	.submenu-panel > a:hover,
-	.submenu-panel > a:focus-visible,
-	.submenu-panel > a.is-active {
-		border-color: color-mix(in srgb, var(--menu-accent) 28%, transparent);
-		background: color-mix(in srgb, var(--menu-accent) 12%, var(--color-neutral-background-4));
+	.submenu-trigger:hover,
+	.submenu-trigger:focus-visible,
+	.submenu-surface > a:hover,
+	.submenu-surface > a:focus-visible,
+	.submenu-surface > a.is-active {
+		border-color: color-mix(in srgb, var(--menu-accent) 30%, transparent);
+		background: color-mix(in srgb, var(--menu-accent) 14%, var(--color-neutral-background-4));
 		color: var(--color-neutral-foreground-1);
 		outline: none;
 	}
 
 	.menu-list > a.is-active,
-	.submenu-panel > a.is-active {
+	.submenu-surface > a.is-active,
+	.menu-overview.is-active {
 		box-shadow: inset 3px 0 var(--menu-accent);
 	}
 
@@ -818,14 +931,15 @@ const menuGroups: MenuGroup[] = [
 		position: relative;
 	}
 
-	.submenu-group > summary {
+	.submenu-trigger {
+		width: 100%;
 		justify-content: space-between;
 		gap: 0.75rem;
 		padding: 0.5rem 0.7rem;
 		cursor: pointer;
 	}
 
-	.submenu-group > summary svg {
+	.submenu-trigger svg {
 		width: 15px;
 		height: 15px;
 		flex: 0 0 auto;
@@ -837,46 +951,35 @@ const menuGroups: MenuGroup[] = [
 		transition: transform var(--duration-fast) var(--curve-easy-ease);
 	}
 
-	.submenu-group.open-start > summary svg {
+	.submenu-group.open-start > .submenu-trigger svg {
 		transform: rotate(180deg);
 	}
 
 	.submenu-panel {
 		position: absolute;
 		top: -8px;
-		width: 250px;
-		padding: 8px;
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
-		background: rgba(31, 34, 38, 0.99);
-		box-shadow: var(--shadow-64);
-		opacity: 0;
-		visibility: hidden;
-		transform: translateX(-6px) scale(0.985);
-		pointer-events: none;
-		transition:
-			opacity var(--duration-fast) var(--curve-easy-ease),
-			transform var(--duration-fast) var(--curve-easy-ease),
-			visibility var(--duration-fast) var(--curve-easy-ease);
+		width: 258px;
 		z-index: 220;
 	}
 
 	.submenu-group.open-end > .submenu-panel {
-		left: calc(100% + 7px);
+		left: 100%;
+		padding-left: 8px;
+		transform: translateX(-4px);
 		transform-origin: top left;
 	}
 
 	.submenu-group.open-start > .submenu-panel {
-		right: calc(100% + 7px);
-		transform: translateX(6px) scale(0.985);
+		right: 100%;
+		padding-right: 8px;
+		transform: translateX(4px);
 		transform-origin: top right;
 	}
 
-	.submenu-group[open] > .submenu-panel,
-	.submenu-group:focus-within > .submenu-panel {
+	.submenu-group.is-open > .submenu-panel {
 		opacity: 1;
 		visibility: visible;
-		transform: translateX(0) scale(1);
+		transform: translateX(0);
 		pointer-events: auto;
 	}
 
@@ -886,7 +989,7 @@ const menuGroups: MenuGroup[] = [
 
 	@media (max-width: 1180px) and (min-width: 961px) {
 		.menu-direct,
-		.menu-group > summary {
+		.menu-trigger {
 			padding-inline: 0.5rem;
 			font-size: 0.68rem;
 		}
@@ -989,7 +1092,7 @@ const menuGroups: MenuGroup[] = [
 
 		.home-menu-link,
 		.menu-direct,
-		.menu-group > summary {
+		.menu-trigger {
 			width: 100%;
 			min-height: 46px;
 			justify-content: space-between;
@@ -1027,45 +1130,39 @@ const menuGroups: MenuGroup[] = [
 			left: auto;
 			display: none;
 			width: auto;
-			padding: 4px 0 4px 14px;
-			border: 0;
-			border-radius: 0;
-			background: transparent;
-			box-shadow: none;
+			padding: 0 0 4px 14px;
 			opacity: 1;
 			visibility: visible;
 			transform: none;
 			pointer-events: auto;
 		}
 
-		.submenu-panel,
-		.submenu-group.open-end > .submenu-panel,
-		.submenu-group.open-start > .submenu-panel {
-			padding-inline-start: 16px;
-		}
-
-		.menu-group[open] > .menu-panel,
-		.submenu-group[open] > .submenu-panel {
+		.menu-group.is-open > .menu-panel,
+		.submenu-group.is-open > .submenu-panel {
 			display: block;
 		}
 
-		.menu-group:not([open]) > .menu-panel,
-		.submenu-group:not([open]) > .submenu-panel {
-			display: none !important;
+		.menu-surface,
+		.submenu-surface {
+			padding: 5px;
+			border-radius: var(--radius-medium);
+			background: rgba(255, 255, 255, 0.025);
+			box-shadow: none;
 		}
 
+		.menu-overview,
 		.menu-list > a,
-		.submenu-group > summary,
-		.submenu-panel > a {
+		.submenu-trigger,
+		.submenu-surface > a {
 			min-height: 42px;
 			font-size: 0.76rem;
 		}
 
-		.submenu-group.open-start > summary svg {
+		.submenu-group.open-start > .submenu-trigger svg {
 			transform: none;
 		}
 
-		.submenu-group[open] > summary svg {
+		.submenu-group.is-open > .submenu-trigger svg {
 			transform: rotate(90deg);
 		}
 	}
