@@ -1,430 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
+import BlogSidebar from '../../components/fluent/BlogSidebar.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-
-type CategoryDefinition = {
-	slug: string;
-	name: string;
-	parents?: string[];
-	labels?: string[];
-	keywords?: string[];
-};
+import {
+	categoryNames,
+	formatArabicDate,
+	getPostCategories,
+} from '../../data/blog-taxonomy';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const categoryDefinitions: CategoryDefinition[] = [
-	{
-		slug: 'nintendo',
-		name: 'Nintendo',
-		labels: ['Nintendo'],
-		keywords: ['nintendo', 'نينتندو', 'yuzu', 'ryujinx', 'eden emulator', 'cemu', 'dolphin emulator', 'citra'],
-	},
-	{
-		slug: 'nintendo-switch',
-		name: 'Nintendo Switch',
-		parents: ['nintendo'],
-		labels: ['NS', 'Nintendo Switch'],
-		keywords: ['nintendo switch', 'switch emulator', 'yuzu', 'ryujinx', 'eden'],
-	},
-	{
-		slug: 'wii-u',
-		name: 'Nintendo Wii U',
-		parents: ['nintendo'],
-		labels: ['Wii-U'],
-		keywords: ['wii u', 'wii-u', 'cemu'],
-	},
-	{
-		slug: 'wii',
-		name: 'Nintendo Wii',
-		parents: ['nintendo'],
-		labels: ['Wii'],
-		keywords: ['nintendo wii', 'wii remote'],
-	},
-	{
-		slug: 'gamecube',
-		name: 'Nintendo GameCube',
-		parents: ['nintendo'],
-		labels: ['GameCube'],
-		keywords: ['gamecube', 'gcn'],
-	},
-	{
-		slug: 'n64',
-		name: 'Nintendo 64',
-		parents: ['nintendo'],
-		labels: ['N64'],
-		keywords: ['nintendo 64', 'project64', 'n64'],
-	},
-	{
-		slug: 'snes',
-		name: 'Super Nintendo - SNES',
-		parents: ['nintendo'],
-		labels: ['SNES'],
-		keywords: ['super nintendo', 'snes'],
-	},
-	{
-		slug: 'nes',
-		name: 'Nintendo Entertainment System - NES',
-		parents: ['nintendo'],
-		labels: ['Nintendo-NES', 'NES'],
-		keywords: ['nintendo entertainment system', 'nes'],
-	},
-	{
-		slug: 'nintendo-handhelds',
-		name: 'Nintendo Handhelds',
-		parents: ['nintendo'],
-		labels: ['Handheld'],
-		keywords: ['nintendo handheld'],
-	},
-	{
-		slug: 'nintendo-3ds',
-		name: 'Nintendo 3DS',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['N3DS'],
-		keywords: ['nintendo 3ds', '3ds', '2ds', 'citra'],
-	},
-	{
-		slug: 'nintendo-ds',
-		name: 'Nintendo DS - NDS',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['N-DS', 'NDS'],
-		keywords: ['nintendo ds', 'melonds', 'nds'],
-	},
-	{
-		slug: 'gba',
-		name: 'Game Boy Advance - GBA',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['GBA', 'GBASP'],
-		keywords: ['game boy advance', 'gba', 'gba sp'],
-	},
-	{
-		slug: 'gbc',
-		name: 'Game Boy Color - GBC',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['GBC'],
-		keywords: ['game boy color', 'gbc'],
-	},
-	{
-		slug: 'game-boy',
-		name: 'Game Boy - GB',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['GB'],
-		keywords: ['game boy'],
-	},
-	{
-		slug: 'virtual-boy',
-		name: 'Virtual Boy - VB',
-		parents: ['nintendo-handhelds', 'nintendo'],
-		labels: ['VirtualBoy'],
-		keywords: ['virtual boy'],
-	},
-	{
-		slug: 'playstation',
-		name: 'PlayStation',
-		labels: ['PlayStation'],
-		keywords: ['playstation', 'بلايستيشن', 'rpcs3', 'pcsx2', 'duckstation', 'ppsspp', 'vita3k', 'shadps4'],
-	},
-	{
-		slug: 'ps1',
-		name: 'PlayStation 1 - PS1',
-		parents: ['playstation'],
-		labels: ['PS1'],
-		keywords: ['playstation 1', 'ps1', 'psx', 'duckstation', 'epsxe'],
-	},
-	{
-		slug: 'ps2',
-		name: 'PlayStation 2 - PS2',
-		parents: ['playstation'],
-		labels: ['PS2'],
-		keywords: ['playstation 2', 'ps2', 'pcsx2', 'aethersx2'],
-	},
-	{
-		slug: 'ps3',
-		name: 'PlayStation 3 - PS3',
-		parents: ['playstation'],
-		labels: ['PS3'],
-		keywords: ['playstation 3', 'ps3', 'rpcs3'],
-	},
-	{
-		slug: 'ps4',
-		name: 'PlayStation 4 - PS4',
-		parents: ['playstation'],
-		labels: ['PS4'],
-		keywords: ['playstation 4', 'ps4', 'shadps4', 'fpPS4'],
-	},
-	{
-		slug: 'ps5',
-		name: 'PlayStation 5 - PS5',
-		parents: ['playstation'],
-		labels: ['PS5'],
-		keywords: ['playstation 5', 'ps5'],
-	},
-	{
-		slug: 'playstation-handhelds',
-		name: 'PlayStation Handhelds',
-		parents: ['playstation'],
-		labels: ['PSP', 'PSPVita'],
-		keywords: ['playstation handheld'],
-	},
-	{
-		slug: 'psp',
-		name: 'PlayStation Portable - PSP',
-		parents: ['playstation-handhelds', 'playstation'],
-		labels: ['PSP'],
-		keywords: ['playstation portable', 'psp', 'ppsspp'],
-	},
-	{
-		slug: 'ps-vita',
-		name: 'PlayStation Vita - PS Vita',
-		parents: ['playstation-handhelds', 'playstation'],
-		labels: ['PSPVita', 'PS Vita'],
-		keywords: ['playstation vita', 'ps vita', 'vita3k'],
-	},
-	{
-		slug: 'xbox',
-		name: 'Xbox',
-		labels: ['Xbox'],
-		keywords: ['xbox', 'إكس بوكس', 'اكس بوكس', 'xenia', 'xemu'],
-	},
-	{
-		slug: 'original-xbox',
-		name: 'Original Xbox - OG Xbox',
-		parents: ['xbox'],
-		labels: ['Xbox-Original'],
-		keywords: ['original xbox', 'og xbox', 'xemu'],
-	},
-	{
-		slug: 'xbox-360',
-		name: 'Xbox 360 - X360',
-		parents: ['xbox'],
-		labels: ['Xbox360'],
-		keywords: ['xbox 360', 'x360', 'xenia'],
-	},
-	{
-		slug: 'sega',
-		name: 'SEGA',
-		labels: ['sega', 'SEGA'],
-		keywords: ['sega', 'سيجا', 'flycast'],
-	},
-	{
-		slug: 'genesis',
-		name: 'Mega Drive / Genesis',
-		parents: ['sega'],
-		labels: ['Genesis-MegaDrive', 'Genesis32X'],
-		keywords: ['mega drive', 'genesis', 'sega 32x'],
-	},
-	{
-		slug: 'saturn',
-		name: 'SEGA Saturn',
-		parents: ['sega'],
-		labels: ['Saturn'],
-		keywords: ['sega saturn', 'saturn', 'ymir'],
-	},
-	{
-		slug: 'dreamcast',
-		name: 'Dreamcast - DC',
-		parents: ['sega'],
-		labels: ['Dreamcast'],
-		keywords: ['dreamcast', 'flycast', 'deecy'],
-	},
-	{
-		slug: 'game-gear',
-		name: 'Game Gear - GG',
-		parents: ['sega'],
-		labels: ['Sega-GameGear'],
-		keywords: ['game gear'],
-	},
-	{
-		slug: 'naomi',
-		name: 'SEGA NAOMI',
-		parents: ['sega'],
-		labels: ['Sega-Naomi'],
-		keywords: ['sega naomi', 'naomi'],
-	},
-	{
-		slug: 'pico',
-		name: 'SEGA Pico',
-		parents: ['sega'],
-		labels: ['Pico'],
-		keywords: ['sega pico'],
-	},
-	{
-		slug: 'beena',
-		name: 'Advanced Pico Beena',
-		parents: ['sega'],
-		labels: ['Beena'],
-		keywords: ['advanced pico beena', 'beena'],
-	},
-	{
-		slug: 'other-consoles',
-		name: 'Other Consoles',
-	},
-	{
-		slug: 'atari',
-		name: 'Atari',
-		parents: ['other-consoles'],
-		labels: ['Atari'],
-		keywords: ['atari'],
-	},
-	{
-		slug: 'atari-2600',
-		name: 'Atari 2600',
-		parents: ['atari', 'other-consoles'],
-		labels: ['Atari2600'],
-		keywords: ['atari 2600'],
-	},
-	{
-		slug: 'atari-5200',
-		name: 'Atari 5200',
-		parents: ['atari', 'other-consoles'],
-		labels: ['Atari5200'],
-		keywords: ['atari 5200'],
-	},
-	{
-		slug: 'atari-7800',
-		name: 'Atari 7800',
-		parents: ['atari', 'other-consoles'],
-		labels: ['Atari7800'],
-		keywords: ['atari 7800'],
-	},
-	{
-		slug: 'atari-800',
-		name: 'Atari 800',
-		parents: ['atari', 'other-consoles'],
-		labels: ['Atari800'],
-		keywords: ['atari 800'],
-	},
-	{
-		slug: 'commodore',
-		name: 'Commodore',
-		parents: ['other-consoles'],
-		labels: ['Commodore'],
-		keywords: ['commodore'],
-	},
-	{
-		slug: 'commodore-64',
-		name: 'Commodore 64 - C64',
-		parents: ['commodore', 'other-consoles'],
-		labels: ['Commodore64'],
-		keywords: ['commodore 64', 'c64'],
-	},
-	{
-		slug: 'amiga',
-		name: 'Amiga',
-		parents: ['commodore', 'other-consoles'],
-		labels: ['Commodore-AMIGA', 'Amiga'],
-		keywords: ['commodore amiga', 'amiga'],
-	},
-	{
-		slug: 'android-emulators',
-		name: 'Android Emulators',
-		parents: ['other-consoles'],
-		labels: ['ANDROID-EMU'],
-		keywords: ['android emulator', 'android emulators'],
-	},
-	{
-		slug: 'guides-articles',
-		name: 'Guides & Articles',
-		parents: ['other-consoles'],
-		labels: ['articles'],
-		keywords: ['guides & articles', 'gaming articles'],
-	},
-	{
-		slug: 'multi-system',
-		name: 'Multi-System',
-		labels: ['MultiEmu'],
-		keywords: ['multi-system', 'multi system', 'retroarch', 'retrobat', 'launchbox'],
-	},
-	{
-		slug: 'retroarch',
-		name: 'RetroArch',
-		parents: ['multi-system'],
-		labels: ['RetroArch'],
-		keywords: ['retroarch'],
-	},
-	{
-		slug: 'retrobat',
-		name: 'RetroBat',
-		parents: ['multi-system'],
-		labels: ['RetroBat'],
-		keywords: ['retrobat'],
-	},
-	{
-		slug: 'launchbox',
-		name: 'LaunchBox',
-		parents: ['multi-system'],
-		labels: ['LaunchBox'],
-		keywords: ['launchbox'],
-	},
-	{
-		slug: 'pc',
-		name: 'PC',
-		labels: ['PC'],
-		keywords: ['pc emulation', 'chdman', 'chd tool', 'rclone', 'jdownloader', 'wmi', 'ffmpeg'],
-	},
-];
-
-const normalize = (value: string) =>
-	value
-		.normalize('NFKC')
-		.replace(/\s+/g, ' ')
-		.trim()
-		.toLowerCase();
-
-const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const containsTerm = (text: string, term: string) => {
-	const normalizedTerm = normalize(term);
-	if (!normalizedTerm) return false;
-
-	if (/^[a-z0-9][a-z0-9+.#-]{0,5}$/i.test(normalizedTerm)) {
-		return new RegExp(
-			`(^|[^a-z0-9])${escapeRegExp(normalizedTerm)}($|[^a-z0-9])`,
-			'i',
-		).test(text);
-	}
-
-	return text.includes(normalizedTerm);
-};
-
-const getPostCategories = (post: (typeof posts)[number]) => {
-	const normalizedLabels = post.data.labels.map(normalize);
-	const searchableText = normalize(
-		[post.data.title, post.data.description, ...post.data.labels].join(' '),
-	);
-	const matchedCategories = new Set<string>();
-
-	for (const category of categoryDefinitions) {
-		const matchesLabel = (category.labels ?? []).some((label) =>
-			normalizedLabels.includes(normalize(label)),
-		);
-		const matchesKeyword = (category.keywords ?? []).some((keyword) =>
-			containsTerm(searchableText, keyword),
-		);
-
-		if (!matchesLabel && !matchesKeyword) continue;
-
-		matchedCategories.add(category.slug);
-		for (const parent of category.parents ?? []) matchedCategories.add(parent);
-	}
-
-	return Array.from(matchedCategories);
-};
-
-const categoryNames = Object.fromEntries(
-	categoryDefinitions.map((category) => [category.slug, category.name]),
-);
-
-const formatDate = (date: Date) =>
-	new Intl.DateTimeFormat('ar-SA', {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric',
-	}).format(date);
+const postItems = posts.map((post) => ({
+	post,
+	categories: getPostCategories(post),
+}));
 ---
 
 <!doctype html>
@@ -441,70 +35,66 @@ const formatDate = (date: Date) =>
 				<div class="site-container">
 					<span>مكتبة HAKAMIQ</span>
 					<h1>المقالات والشروحات</h1>
-					<p>
-						جميع شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم
-					</p>
+					<p>شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم</p>
 					<strong id="post-count" data-total={posts.length}>{posts.length} مقال</strong>
 				</div>
 			</section>
 
 			<section class="posts-section">
-				<div class="site-container">
-					<div
-						id="category-data"
-						data-categories={JSON.stringify(categoryNames)}
-						hidden
-					></div>
+				<div
+					id="category-data"
+					data-categories={JSON.stringify(categoryNames)}
+					hidden
+				></div>
 
-					<div class="filter-status" id="filter-status" hidden>
-						<p>
-							القسم الحالي
-							<strong id="filter-name"></strong>
-						</p>
-						<a href="/blog">عرض جميع المقالات</a>
+				<div class="site-container blog-layout">
+					<div class="posts-content">
+						<div class="filter-status" id="filter-status" hidden>
+							<p>
+								القسم الحالي
+								<strong id="filter-name"></strong>
+							</p>
+							<a href="/blog">عرض جميع المقالات</a>
+						</div>
+
+						<p class="no-results" id="no-results" hidden>لا توجد مقالات مطابقة لهذا القسم حاليا</p>
+
+						<div class="posts-grid" id="posts-grid">
+							{
+								postItems.map(({ post, categories }, index) => (
+									<article
+										class:list={['post-card', { featured: index === 0 }]}
+										data-categories={categories.join(' ')}
+									>
+										<a href={`/blog/${post.id}/`}>
+											<div class="post-image">
+												{post.data.heroImageUrl ? (
+													<img
+														src={post.data.heroImageUrl}
+														alt={post.data.title}
+														loading={index === 0 ? 'eager' : 'lazy'}
+														fetchpriority={index === 0 ? 'high' : 'auto'}
+														referrerpolicy="no-referrer"
+													/>
+												) : (
+													<div class="image-placeholder">HAKAMIQ</div>
+												)}
+											</div>
+
+											<div class="post-content">
+												{post.data.labels.length > 0 && <span class="post-label">{post.data.labels[0]}</span>}
+												<h2>{post.data.title}</h2>
+												<p>{post.data.description}</p>
+												<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
+											</div>
+										</a>
+									</article>
+								))
+							}
+						</div>
 					</div>
 
-					<p class="no-results" id="no-results" hidden>
-						لا توجد مقالات مطابقة لهذا القسم حاليا
-					</p>
-
-					<div class="posts-grid" id="posts-grid">
-						{
-							posts.map((post, index) => (
-								<article
-									class:list={['post-card', { featured: index === 0 }]}
-									data-categories={getPostCategories(post).join(' ')}
-								>
-									<a href={`/blog/${post.id}/`}>
-										<div class="post-image">
-											{post.data.heroImageUrl ? (
-												<img
-													src={post.data.heroImageUrl}
-													alt={post.data.title}
-													loading={index === 0 ? 'eager' : 'lazy'}
-													fetchpriority={index === 0 ? 'high' : 'auto'}
-													referrerpolicy="no-referrer"
-												/>
-											) : (
-												<div class="image-placeholder">HAKAMIQ</div>
-											)}
-										</div>
-
-										<div class="post-content">
-											{post.data.labels.length > 0 && (
-												<span class="post-label">{post.data.labels[0]}</span>
-											)}
-											<h2>{post.data.title}</h2>
-											<p>{post.data.description}</p>
-											<time datetime={post.data.pubDate.toISOString()}>
-												{formatDate(post.data.pubDate)}
-											</time>
-										</div>
-									</a>
-								</article>
-							))
-						}
-					</div>
+					<BlogSidebar posts={posts} />
 				</div>
 			</section>
 		</main>
@@ -515,14 +105,8 @@ const formatDate = (date: Date) =>
 
 <script>
 	const categoryData = document.querySelector<HTMLElement>('#category-data');
-	const categoryNames = JSON.parse(
-		categoryData?.dataset.categories ?? '{}',
-	) as Record<string, string>;
-
-	const selectedCategory = new URLSearchParams(window.location.search)
-		.get('category')
-		?.trim()
-		.toLowerCase();
+	const categoryNames = JSON.parse(categoryData?.dataset.categories ?? '{}') as Record<string, string>;
+	const selectedCategory = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
 
 	if (selectedCategory && categoryNames[selectedCategory]) {
 		const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card'));
@@ -530,26 +114,22 @@ const formatDate = (date: Date) =>
 		const filterName = document.querySelector<HTMLElement>('#filter-name');
 		const postCount = document.querySelector<HTMLElement>('#post-count');
 		const noResults = document.querySelector<HTMLElement>('#no-results');
-
 		let visibleCount = 0;
 		let firstVisibleCard: HTMLElement | undefined;
 
 		for (const card of cards) {
 			card.classList.remove('featured');
-
 			const categories = (card.dataset.categories ?? '').split(' ').filter(Boolean);
-			const shouldShow = categories.includes(selectedCategory);
+			const visible = categories.includes(selectedCategory);
+			card.hidden = !visible;
 
-			card.hidden = !shouldShow;
-
-			if (shouldShow) {
+			if (visible) {
 				visibleCount += 1;
 				firstVisibleCard ??= card;
 			}
 		}
 
 		firstVisibleCard?.classList.add('featured');
-
 		if (filterStatus) filterStatus.hidden = false;
 		if (filterName) filterName.textContent = categoryNames[selectedCategory];
 		if (postCount) postCount.textContent = `${visibleCount} مقال`;
@@ -559,118 +139,150 @@ const formatDate = (date: Date) =>
 
 <style>
 	.page-hero {
-		padding: 3.5rem 0;
-		border-bottom: 1px solid var(--hq-border);
-		background:
-			linear-gradient(115deg, rgba(229, 21, 21, 0.13), transparent 42%),
-			var(--hq-surface);
-	}
-
-	.page-hero .site-container {
-		position: relative;
+		padding: clamp(2.25rem, 4vw, 3.25rem) 0;
+		border-bottom: 1px solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-2);
 	}
 
 	.page-hero span {
 		display: inline-block;
-		margin-bottom: 0.5rem;
-		color: #ff6c73;
-		font-size: 0.82rem;
-		font-weight: 800;
+		margin-bottom: 6px;
+		color: var(--color-brand-foreground);
+		font-size: 0.75rem;
+		font-weight: 650;
 	}
 
 	.page-hero h1 {
-		font-size: clamp(2rem, 4vw, 3.4rem);
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+		line-height: 1.25;
 	}
 
 	.page-hero p {
-		max-width: 720px;
-		margin-top: 0.9rem;
-		color: var(--hq-muted);
+		max-width: 700px;
+		margin: 10px 0 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.92rem;
+		line-height: 1.75;
 	}
 
-	.page-hero > .site-container > strong {
+	.page-hero strong {
 		display: inline-flex;
-		margin-top: 1rem;
-		padding: 0.32rem 0.7rem;
-		border: 1px solid rgba(229, 21, 21, 0.3);
+		min-height: 28px;
+		align-items: center;
+		margin-top: 14px;
+		padding-inline: 10px;
 		border-radius: 999px;
-		background: rgba(229, 21, 21, 0.1);
-		color: #ff747a;
-		font-size: 0.8rem;
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground);
+		font-size: 0.72rem;
+		font-weight: 650;
 	}
 
 	.posts-section {
-		padding: 2.5rem 0 1rem;
+		padding: 28px 0 8px;
+	}
+
+	.blog-layout {
+		display: grid;
+		grid-template-columns: 304px minmax(0, 1fr);
+		gap: 22px;
+		align-items: start;
+	}
+
+	.posts-content {
+		min-width: 0;
+		grid-column: 2;
+	}
+
+	.blog-layout :global(.blog-sidebar) {
+		grid-column: 1;
 	}
 
 	.filter-status {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 1.25rem;
-		padding: 0.85rem 1rem;
-		border: 1px solid var(--hq-border);
-		border-radius: 13px;
-		background: var(--hq-card);
+		gap: 16px;
+		margin-bottom: 16px;
+		padding: 10px 12px;
+		border: 1px solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-2);
 	}
 
-	.filter-status[hidden] {
+	.filter-status[hidden],
+	.no-results[hidden],
+	.post-card[hidden] {
 		display: none;
 	}
 
 	.filter-status p {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
-		color: var(--hq-muted);
-		font-size: 0.88rem;
+		gap: 8px;
+		margin: 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.8rem;
 	}
 
 	.filter-status strong {
-		color: #ff747a;
+		color: var(--color-brand-foreground);
 	}
 
 	.filter-status a {
-		padding: 0.45rem 0.7rem;
-		border-radius: 9px;
-		background: rgba(229, 21, 21, 0.12);
-		color: #ff747a;
-		font-size: 0.8rem;
-		font-weight: 800;
+		display: inline-flex;
+		min-height: 32px;
+		align-items: center;
+		padding-inline: 10px;
+		border-radius: var(--radius-small);
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground);
+		font-size: 0.75rem;
+		font-weight: 650;
 		text-decoration: none;
 	}
 
+	.filter-status a:hover,
+	.filter-status a:focus-visible {
+		background: var(--color-brand-background-2-hover);
+		color: var(--color-neutral-foreground-1);
+		outline: none;
+	}
+
 	.no-results {
-		padding: 2rem;
-		border: 1px dashed var(--hq-border);
-		border-radius: var(--hq-radius-md);
-		color: var(--hq-muted);
+		margin: 0 0 16px;
+		padding: 24px;
+		border: 1px dashed var(--color-neutral-stroke-1);
+		border-radius: var(--radius-medium);
+		color: var(--color-neutral-foreground-3);
 		text-align: center;
 	}
 
 	.posts-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1.25rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
 	}
 
 	.post-card {
 		overflow: hidden;
-		border: 1px solid var(--hq-border);
-		border-radius: var(--hq-radius-md);
-		background: var(--hq-card);
-		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-		transition: transform 0.2s ease, border-color 0.2s ease;
-	}
-
-	.post-card[hidden] {
-		display: none;
+		border: 1px solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-4);
+		transition:
+			border-color var(--duration-normal) var(--curve-easy-ease),
+			box-shadow var(--duration-normal) var(--curve-easy-ease),
+			transform var(--duration-normal) var(--curve-easy-ease);
 	}
 
 	.post-card:hover {
-		border-color: rgba(229, 21, 21, 0.48);
-		transform: translateY(-4px);
+		border-color: var(--color-brand-stroke-2);
+		box-shadow: var(--shadow-8);
+		transform: translateY(-2px);
 	}
 
 	.post-card.featured {
@@ -683,94 +295,130 @@ const formatDate = (date: Date) =>
 		text-decoration: none;
 	}
 
+	.post-card.featured > a {
+		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+	}
+
 	.post-image {
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
-		background: #0d1014;
+		background: var(--color-neutral-background-3);
+	}
+
+	.featured .post-image {
+		aspect-ratio: auto;
 	}
 
 	.post-image img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.35s ease;
+		transition: transform var(--duration-slower) var(--curve-easy-ease);
 	}
 
 	.post-card:hover img {
-		transform: scale(1.035);
+		transform: scale(1.025);
 	}
 
 	.image-placeholder {
 		display: grid;
 		width: 100%;
 		height: 100%;
+		min-height: 190px;
 		place-items: center;
-		background:
-			linear-gradient(135deg, rgba(229, 21, 21, 0.19), transparent),
-			#181c22;
-		color: rgba(255, 255, 255, 0.28);
-		font-size: 1.4rem;
-		font-weight: 900;
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-4);
+		font-size: 1rem;
+		font-weight: 700;
 	}
 
 	.post-content {
 		display: flex;
-		min-height: 230px;
+		min-height: 190px;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 1.1rem;
+		padding: 16px;
 	}
 
 	.post-label {
-		margin-bottom: 0.6rem;
-		padding: 0.2rem 0.55rem;
+		display: inline-flex;
+		min-height: 24px;
+		align-items: center;
+		margin-bottom: 8px;
+		padding-inline: 8px;
 		border-radius: 999px;
-		background: rgba(229, 21, 21, 0.12);
-		color: #ff7279;
-		font-size: 0.7rem;
-		font-weight: 800;
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground);
+		font-size: 0.66rem;
+		font-weight: 650;
 	}
 
 	.post-content h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		font-size: 1.12rem;
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: 1rem;
 		line-height: 1.55;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 	}
 
 	.featured .post-content h2 {
-		font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+		font-size: clamp(1.15rem, 2vw, 1.55rem);
 	}
 
 	.post-content p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin-top: 0.65rem;
-		color: var(--hq-muted);
-		font-size: 0.86rem;
-		line-height: 1.75;
+		margin: 8px 0 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.8rem;
+		line-height: 1.7;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
 	}
 
 	.post-content time {
 		margin-top: auto;
-		padding-top: 1rem;
-		color: var(--hq-muted);
-		font-size: 0.74rem;
+		padding-top: 14px;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.7rem;
 	}
 
-	@media (max-width: 1050px) {
-		.posts-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
+	@media (max-width: 1180px) {
+		.blog-layout {
+			grid-template-columns: 284px minmax(0, 1fr);
+			gap: 18px;
+		}
+
+		.post-card.featured > a {
+			grid-template-columns: 1fr;
+		}
+
+		.featured .post-image {
+			aspect-ratio: 16 / 9;
+		}
+	}
+
+	@media (max-width: 1020px) {
+		.blog-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.posts-content,
+		.blog-layout :global(.blog-sidebar) {
+			grid-column: 1;
 		}
 	}
 
 	@media (max-width: 680px) {
 		.page-hero {
-			padding: 2.5rem 0;
+			padding: 2rem 0;
+		}
+
+		.posts-section {
+			padding-top: 18px;
 		}
 
 		.filter-status {
@@ -780,26 +428,28 @@ const formatDate = (date: Date) =>
 
 		.posts-grid {
 			grid-template-columns: 1fr;
-			gap: 0.9rem;
+			gap: 10px;
 		}
 
 		.post-card.featured {
 			grid-column: auto;
 		}
 
-		.post-card > a {
-			grid-template-columns: 132px minmax(0, 1fr);
+		.post-card > a,
+		.post-card.featured > a {
+			grid-template-columns: 116px minmax(0, 1fr);
 		}
 
-		.post-image {
+		.post-image,
+		.featured .post-image {
 			height: 100%;
-			min-height: 140px;
+			min-height: 132px;
 			aspect-ratio: auto;
 		}
 
 		.post-content {
-			min-height: 140px;
-			padding: 0.85rem;
+			min-height: 132px;
+			padding: 12px;
 		}
 
 		.post-content p {
@@ -808,13 +458,21 @@ const formatDate = (date: Date) =>
 
 		.post-content h2,
 		.featured .post-content h2 {
-			font-size: 0.95rem;
+			font-size: 0.88rem;
 		}
 	}
 
-	@media (max-width: 430px) {
-		.post-card > a {
-			grid-template-columns: 105px minmax(0, 1fr);
+	@media (max-width: 420px) {
+		.post-card > a,
+		.post-card.featured > a {
+			grid-template-columns: 96px minmax(0, 1fr);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.post-card,
+		.post-image img {
+			transition: none;
 		}
 	}
 </style>
