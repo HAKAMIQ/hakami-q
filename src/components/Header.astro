@@ -8,7 +8,6 @@ type MenuItem = {
 type MenuGroup = {
 	label: string;
 	slug: string;
-	tone: string;
 	items?: MenuItem[];
 };
 
@@ -16,9 +15,8 @@ const categoryHref = (slug: string) => `/blog?category=${encodeURIComponent(slug
 
 const menuGroups: MenuGroup[] = [
 	{
-		label: 'NINTENDO',
+		label: 'Nintendo',
 		slug: 'nintendo',
-		tone: 'nintendo',
 		items: [
 			{ label: 'Nintendo Switch', slug: 'nintendo-switch' },
 			{ label: 'Wii U', slug: 'wii-u' },
@@ -28,7 +26,7 @@ const menuGroups: MenuGroup[] = [
 			{ label: 'SNES', slug: 'snes' },
 			{ label: 'NES', slug: 'nes' },
 			{
-				label: 'Nintendo Handhelds',
+				label: 'Nintendo handhelds',
 				slug: 'nintendo-handhelds',
 				children: [
 					{ label: 'Nintendo 3DS', slug: 'nintendo-3ds' },
@@ -42,9 +40,8 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'PLAYSTATION',
+		label: 'PlayStation',
 		slug: 'playstation',
-		tone: 'playstation',
 		items: [
 			{ label: 'PlayStation 1 - PS1', slug: 'ps1' },
 			{ label: 'PlayStation 2 - PS2', slug: 'ps2' },
@@ -52,7 +49,7 @@ const menuGroups: MenuGroup[] = [
 			{ label: 'PlayStation 4 - PS4', slug: 'ps4' },
 			{ label: 'PlayStation 5 - PS5', slug: 'ps5' },
 			{
-				label: 'PlayStation Handhelds',
+				label: 'PlayStation handhelds',
 				slug: 'playstation-handhelds',
 				children: [
 					{ label: 'PlayStation Portable - PSP', slug: 'psp' },
@@ -62,9 +59,8 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'XBOX',
+		label: 'Xbox',
 		slug: 'xbox',
-		tone: 'xbox',
 		items: [
 			{ label: 'Original Xbox - OG Xbox', slug: 'original-xbox' },
 			{ label: 'Xbox 360 - X360', slug: 'xbox-360' },
@@ -73,7 +69,6 @@ const menuGroups: MenuGroup[] = [
 	{
 		label: 'SEGA',
 		slug: 'sega',
-		tone: 'sega',
 		items: [
 			{ label: 'Mega Drive / Genesis', slug: 'genesis' },
 			{ label: 'SEGA Saturn', slug: 'saturn' },
@@ -85,9 +80,8 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'OTHER CONSOLES',
+		label: 'Other consoles',
 		slug: 'other-consoles',
-		tone: 'other',
 		items: [
 			{
 				label: 'Atari',
@@ -107,21 +101,20 @@ const menuGroups: MenuGroup[] = [
 					{ label: 'Amiga', slug: 'amiga' },
 				],
 			},
-			{ label: 'Android Emulators', slug: 'android-emulators' },
-			{ label: 'Guides & Articles', slug: 'guides-articles' },
+			{ label: 'Android emulators', slug: 'android-emulators' },
+			{ label: 'Guides & articles', slug: 'guides-articles' },
 		],
 	},
 	{
-		label: 'MULTI-SYSTEM',
+		label: 'Multi-system',
 		slug: 'multi-system',
-		tone: 'multi',
 		items: [
 			{ label: 'RetroArch', slug: 'retroarch' },
 			{ label: 'RetroBat', slug: 'retrobat' },
 			{ label: 'LaunchBox', slug: 'launchbox' },
 		],
 	},
-	{ label: 'PC', slug: 'pc', tone: 'pc' },
+	{ label: 'PC', slug: 'pc' },
 ];
 ---
 
@@ -148,13 +141,13 @@ const menuGroups: MenuGroup[] = [
 				<img src="/hakamiq-logo.svg" width="214" height="102" alt="HAKAMIQ" />
 			</a>
 
-			<p class="brand-description" dir="rtl">
+			<p class="brand-description">
 				شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر
 			</p>
 
-			<a class="brand-action" href="/blog" dir="rtl">
+			<a class="brand-action" href="/blog">
 				<span>تصفح المقالات</span>
-				<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+				<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5"></path></svg>
 			</a>
 		</div>
 	</div>
@@ -176,7 +169,7 @@ const menuGroups: MenuGroup[] = [
 				{
 					menuGroups.map((group) =>
 						group.items ? (
-							<div class:list={['menu-group', `tone-${group.tone}`]} data-menu-group>
+							<div class="menu-group" data-menu-group>
 								<button class="menu-trigger" type="button" aria-expanded="false" aria-haspopup="menu">
 									<span>{group.label}</span>
 									<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
@@ -218,7 +211,7 @@ const menuGroups: MenuGroup[] = [
 								</div>
 							</div>
 						) : (
-							<a class:list={['menu-direct', `tone-${group.tone}`]} href={categoryHref(group.slug)} data-category={group.slug}>{group.label}</a>
+							<a class="menu-direct" href={categoryHref(group.slug)} data-category={group.slug}>{group.label}</a>
 						),
 					)
 				}
@@ -235,7 +228,7 @@ const menuGroups: MenuGroup[] = [
 		if (!header || header.dataset.initialized === 'true') return;
 		header.dataset.initialized = 'true';
 
-		const desktop = window.matchMedia('(min-width: 961px)');
+		const desktop = window.matchMedia('(min-width: 1081px)');
 		const menuToggle = header.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
 		const topMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-menu-group]'));
 		const nestedMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-submenu-group]'));
@@ -269,8 +262,7 @@ const menuGroups: MenuGroup[] = [
 			if (!panel) return;
 
 			panel.classList.remove('align-end');
-			const rect = panel.getBoundingClientRect();
-			if (rect.right > window.innerWidth - viewportGap) panel.classList.add('align-end');
+			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) panel.classList.add('align-end');
 		};
 
 		const positionSubmenu = (menu: HTMLElement) => {
@@ -279,8 +271,11 @@ const menuGroups: MenuGroup[] = [
 			if (!panel) return;
 
 			panel.classList.remove('open-start');
-			const rect = panel.getBoundingClientRect();
-			if (rect.right > window.innerWidth - viewportGap) panel.classList.add('open-start');
+			menu.classList.remove('opens-start');
+			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) {
+				panel.classList.add('open-start');
+				menu.classList.add('opens-start');
+			}
 		};
 
 		const openTopMenu = (menu: HTMLElement) => {
@@ -304,7 +299,7 @@ const menuGroups: MenuGroup[] = [
 			}, closeDelay));
 		};
 
-		const closeMobileMenu = () => {
+		const closeAll = () => {
 			header.classList.remove('mobile-open');
 			menuToggle?.setAttribute('aria-expanded', 'false');
 			closeNestedMenus();
@@ -392,20 +387,18 @@ const menuGroups: MenuGroup[] = [
 		});
 
 		header.querySelectorAll<HTMLAnchorElement>('.menu-bar a').forEach((link) => {
-			link.addEventListener('click', () => closeMobileMenu());
+			link.addEventListener('click', closeAll);
 		});
 
 		document.addEventListener('pointerdown', (event) => {
-			if (event.target instanceof Node && !header.contains(event.target)) closeMobileMenu();
+			if (event.target instanceof Node && !header.contains(event.target)) closeAll();
 		});
 
 		document.addEventListener('keydown', (event) => {
-			if (event.key !== 'Escape') return;
-			closeMobileMenu();
-			menuToggle?.focus();
+			if (event.key === 'Escape') closeAll();
 		});
 
-		desktop.addEventListener('change', closeMobileMenu);
+		desktop.addEventListener('change', closeAll);
 		window.addEventListener('resize', () => {
 			for (const menu of topMenus) if (menu.classList.contains('is-open')) positionTopPanel(menu);
 			for (const menu of nestedMenus) if (menu.classList.contains('is-open')) positionSubmenu(menu);
@@ -428,51 +421,52 @@ const menuGroups: MenuGroup[] = [
 
 <style>
 	.site-header {
-		--nav-space-1: 4px;
-		--nav-space-2: 8px;
-		--nav-space-3: 12px;
-		--nav-space-4: 16px;
-		--nav-radius-small: 4px;
-		--nav-radius-medium: 6px;
-		--nav-radius-large: 8px;
-		--nav-menu-width: 278px;
-		--nav-surface: rgba(32, 35, 39, 0.96);
-		--nav-surface-hover: rgba(255, 255, 255, 0.075);
-		--nav-stroke: rgba(255, 255, 255, 0.12);
-		--nav-shadow-16: 0 8px 16px rgba(0, 0, 0, 0.38), 0 1px 3px rgba(0, 0, 0, 0.28);
+		--header-space-1: 4px;
+		--header-space-2: 8px;
+		--header-space-3: 12px;
+		--header-space-4: 16px;
+		--header-radius-small: 4px;
+		--header-radius-medium: 8px;
+		--header-radius-large: 12px;
+		--header-menu-width: 288px;
+		--header-menu-surface: rgba(31, 34, 38, 0.98);
+		--header-menu-hover: rgba(255, 255, 255, 0.065);
 		position: relative;
 		z-index: 1000;
 		overflow: visible;
 		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
-		background: rgba(17, 19, 21, 0.97);
-		box-shadow: var(--shadow-4);
+		background: var(--color-neutral-background-1);
+		box-shadow: var(--shadow-2);
 	}
 
 	.utility-bar {
 		border-bottom: 1px solid var(--color-neutral-stroke-subtle);
-		background: #0b0d0f;
+		background: #0d0f11;
 	}
 
 	.utility-inner {
 		display: flex;
-		min-height: 34px;
+		min-height: 32px;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--nav-space-4);
+		gap: var(--header-space-4);
 		direction: ltr;
-		font-size: 0.73rem;
+		font-size: 0.72rem;
 	}
 
 	.utility-links,
 	.social-links {
 		display: flex;
 		align-items: center;
-		gap: 2px;
+		gap: var(--header-space-1);
 	}
 
 	.utility-bar a {
-		padding: 4px 8px;
-		border-radius: var(--nav-radius-medium);
+		display: inline-flex;
+		min-height: 28px;
+		align-items: center;
+		padding-inline: var(--header-space-2);
+		border-radius: var(--header-radius-small);
 		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
 	}
@@ -485,24 +479,21 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.brand-surface {
-		background:
-			radial-gradient(circle at 10% 50%, rgba(215, 16, 71, 0.13), transparent 22rem),
-			linear-gradient(100deg, rgba(215, 16, 71, 0.055), transparent 42%),
-			var(--color-neutral-background-2);
+		background: var(--color-neutral-background-2);
 	}
 
 	.brand-inner {
 		display: grid;
-		min-height: 92px;
-		grid-template-columns: auto minmax(240px, 1fr) auto;
+		min-height: 84px;
+		grid-template-columns: auto minmax(260px, 1fr) auto;
 		align-items: center;
-		gap: clamp(20px, 3vw, 48px);
-		direction: ltr;
+		gap: clamp(20px, 3vw, 44px);
+		direction: rtl;
 	}
 
 	.brand {
 		display: inline-flex;
-		width: 190px;
+		width: 176px;
 		align-items: center;
 		justify-content: flex-start;
 		text-decoration: none;
@@ -511,19 +502,18 @@ const menuGroups: MenuGroup[] = [
 	.brand img {
 		display: block;
 		width: 100%;
-		height: 76px;
+		height: 68px;
 		object-fit: contain;
-		object-position: left center;
-		filter: drop-shadow(0 10px 22px rgba(215, 16, 71, 0.16));
+		object-position: right center;
 	}
 
 	.brand-description {
-		max-width: 620px;
+		max-width: 650px;
 		margin: 0 auto;
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.86rem;
-		line-height: 1.8;
-		text-align: center;
+		font-size: 0.875rem;
+		line-height: 1.65;
+		text-align: right;
 	}
 
 	.brand-action {
@@ -531,34 +521,33 @@ const menuGroups: MenuGroup[] = [
 		min-height: 40px;
 		align-items: center;
 		justify-content: center;
-		gap: var(--nav-space-2);
-		padding-inline: 14px;
+		gap: var(--header-space-2);
+		padding-inline: var(--header-space-4);
 		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--nav-radius-medium);
-		background: rgba(255, 255, 255, 0.035);
+		border-radius: var(--header-radius-medium);
+		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-1);
-		font-size: 0.78rem;
-		font-weight: 700;
+		font-size: 0.82rem;
+		font-weight: 600;
 		text-decoration: none;
 		box-shadow: var(--shadow-2);
 	}
 
 	.brand-action:hover,
 	.brand-action:focus-visible {
-		border-color: color-mix(in srgb, var(--color-brand-foreground) 42%, var(--color-neutral-stroke-1));
-		background: rgba(215, 16, 71, 0.1);
+		border-color: var(--color-neutral-stroke-2);
+		background: var(--color-neutral-background-4);
 		outline: none;
 	}
 
 	.brand-action svg {
-		width: 15px;
-		height: 15px;
+		width: 16px;
+		height: 16px;
 		fill: none;
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		stroke-width: 1.8;
-		transform: scaleX(-1);
 	}
 
 	.main-nav {
@@ -566,13 +555,13 @@ const menuGroups: MenuGroup[] = [
 		z-index: 20;
 		overflow: visible;
 		border-top: 1px solid var(--color-neutral-stroke-subtle);
-		background: rgba(20, 23, 26, 0.98);
-		backdrop-filter: blur(18px) saturate(1.08);
+		background: rgba(23, 25, 28, 0.98);
+		backdrop-filter: blur(16px) saturate(1.05);
 	}
 
 	.nav-inner {
 		position: relative;
-		min-height: 54px;
+		min-height: 52px;
 		overflow: visible;
 	}
 
@@ -580,7 +569,7 @@ const menuGroups: MenuGroup[] = [
 		display: flex;
 		width: 100%;
 		align-items: center;
-		gap: var(--nav-space-1);
+		gap: var(--header-space-1);
 		overflow: visible;
 	}
 
@@ -594,22 +583,22 @@ const menuGroups: MenuGroup[] = [
 		gap: 6px;
 		box-sizing: border-box;
 		border: 1px solid transparent;
-		border-radius: var(--nav-radius-medium);
+		border-radius: var(--header-radius-medium);
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
 		font: inherit;
-		font-size: 0.75rem;
-		font-weight: 700;
+		font-size: 0.8125rem;
+		font-weight: 600;
 		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
 		cursor: pointer;
-		transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+		transition: background var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease);
 	}
 
-	.home-menu-link { width: 42px; padding: 0; }
+	.home-menu-link { width: 40px; padding: 0; }
 	.menu-direct,
-	.menu-trigger { padding-inline: 12px; }
+	.menu-trigger { padding-inline: var(--header-space-3); }
 
 	.home-menu-link svg,
 	.menu-chevron,
@@ -622,21 +611,12 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.home-menu-link svg { width: 18px; height: 18px; }
-	.menu-chevron { width: 14px; height: 14px; transition: transform 120ms ease; }
+	.menu-chevron { width: 14px; height: 14px; transition: transform var(--duration-faster) var(--curve-easy-ease); }
 
 	.menu-group {
-		--menu-accent: var(--color-brand-foreground);
 		position: relative;
 		flex: 0 0 auto;
 	}
-
-	.tone-nintendo { --menu-accent: #ff5b67; }
-	.tone-playstation { --menu-accent: #68a8ff; }
-	.tone-xbox { --menu-accent: #61cf72; }
-	.tone-sega { --menu-accent: #65b4ff; }
-	.tone-other { --menu-accent: #ff9d5c; }
-	.tone-multi,
-	.tone-pc { --menu-accent: #b699ff; }
 
 	.home-menu-link:hover,
 	.home-menu-link:focus-visible,
@@ -655,7 +635,7 @@ const menuGroups: MenuGroup[] = [
 
 	.menu-direct.is-active,
 	.menu-trigger.has-active-child {
-		box-shadow: inset 0 -2px var(--menu-accent);
+		box-shadow: inset 0 -2px var(--color-brand-background);
 	}
 
 	.menu-group.is-open > .menu-trigger .menu-chevron { transform: rotate(180deg); }
@@ -667,7 +647,7 @@ const menuGroups: MenuGroup[] = [
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+		transition: opacity var(--duration-faster) var(--curve-easy-ease), transform var(--duration-faster) var(--curve-easy-ease), visibility var(--duration-faster) var(--curve-easy-ease);
 	}
 
 	.menu-panel {
@@ -675,8 +655,8 @@ const menuGroups: MenuGroup[] = [
 		top: 100%;
 		left: 0;
 		right: auto;
-		width: min(var(--nav-menu-width), calc(100vw - 24px));
-		padding-top: 6px;
+		width: min(var(--header-menu-width), calc(100vw - 24px));
+		padding-top: var(--header-space-1);
 		transform: translateY(-4px);
 		z-index: 220;
 	}
@@ -696,12 +676,12 @@ const menuGroups: MenuGroup[] = [
 
 	.menu-surface,
 	.submenu-surface {
-		padding: var(--nav-space-2);
-		border: 1px solid var(--nav-stroke);
-		border-radius: var(--nav-radius-large);
-		background: var(--nav-surface);
-		box-shadow: var(--nav-shadow-16);
-		backdrop-filter: blur(20px) saturate(1.15);
+		padding: var(--header-space-2);
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--header-radius-medium);
+		background: var(--header-menu-surface);
+		box-shadow: var(--shadow-16);
+		backdrop-filter: blur(20px) saturate(1.08);
 	}
 
 	.menu-surface {
@@ -724,12 +704,12 @@ const menuGroups: MenuGroup[] = [
 		align-items: center;
 		box-sizing: border-box;
 		border: 1px solid transparent;
-		border-radius: var(--nav-radius-small);
+		border-radius: var(--header-radius-small);
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
 		font: inherit;
 		font-size: 0.875rem;
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.35;
 		text-align: left;
 		text-decoration: none;
@@ -738,7 +718,7 @@ const menuGroups: MenuGroup[] = [
 	.menu-list > a,
 	.submenu-surface > a,
 	.submenu-trigger {
-		padding: 8px 12px;
+		padding: var(--header-space-2) var(--header-space-3);
 	}
 
 	.menu-list > a:hover,
@@ -749,15 +729,15 @@ const menuGroups: MenuGroup[] = [
 	.submenu-surface > a:hover,
 	.submenu-surface > a:focus-visible,
 	.submenu-surface > a.is-active {
-		border-color: color-mix(in srgb, var(--menu-accent) 22%, transparent);
-		background: var(--nav-surface-hover);
+		border-color: var(--color-neutral-stroke-subtle);
+		background: var(--header-menu-hover);
 		color: var(--color-neutral-foreground-1);
 		outline: none;
 	}
 
 	.menu-list > a.is-active,
 	.submenu-surface > a.is-active {
-		box-shadow: inset 2px 0 var(--menu-accent);
+		box-shadow: inset 2px 0 var(--color-brand-background);
 	}
 
 	.submenu-group { position: relative; }
@@ -765,7 +745,7 @@ const menuGroups: MenuGroup[] = [
 	.submenu-trigger {
 		width: 100%;
 		justify-content: space-between;
-		gap: var(--nav-space-3);
+		gap: var(--header-space-3);
 		cursor: pointer;
 	}
 
@@ -773,7 +753,7 @@ const menuGroups: MenuGroup[] = [
 		width: 15px;
 		height: 15px;
 		flex: 0 0 auto;
-		transition: transform 120ms ease;
+		transition: transform var(--duration-faster) var(--curve-easy-ease);
 	}
 
 	.submenu-panel {
@@ -781,8 +761,8 @@ const menuGroups: MenuGroup[] = [
 		top: -8px;
 		left: 100%;
 		right: auto;
-		width: min(258px, calc(100vw - 24px));
-		padding-left: 6px;
+		width: min(260px, calc(100vw - 24px));
+		padding-left: var(--header-space-1);
 		transform: translateX(-4px);
 		z-index: 240;
 	}
@@ -790,60 +770,59 @@ const menuGroups: MenuGroup[] = [
 	.submenu-panel.open-start {
 		left: auto;
 		right: 100%;
-		padding-right: 6px;
+		padding-right: var(--header-space-1);
 		padding-left: 0;
 		transform: translateX(4px);
 	}
 
-	.submenu-panel.open-start + * { direction: ltr; }
-	.submenu-group:has(> .submenu-panel.open-start) > .submenu-trigger svg { transform: rotate(180deg); }
+	.submenu-group.opens-start > .submenu-trigger svg { transform: rotate(180deg); }
 
 	.mobile-menu-toggle { display: none; }
 
-	@media (max-width: 1180px) and (min-width: 961px) {
+	@media (max-width: 1220px) and (min-width: 1081px) {
 		.menu-direct,
-		.menu-trigger { padding-inline: 8px; font-size: 0.69rem; }
-		.brand-description { max-width: 460px; font-size: 0.8rem; }
-		.brand { width: 170px; }
+		.menu-trigger { padding-inline: var(--header-space-2); font-size: 0.75rem; }
+		.brand-description { max-width: 500px; font-size: 0.82rem; }
+		.brand { width: 164px; }
 	}
 
-	@media (max-width: 960px) {
+	@media (max-width: 1080px) {
 		.utility-links { display: none; }
 		.utility-inner { justify-content: center; }
 
 		.brand-inner {
-			min-height: 76px;
+			min-height: 72px;
 			grid-template-columns: 1fr;
 			justify-items: center;
-			padding-block: 10px;
+			padding-block: var(--header-space-2);
 		}
 
-		.brand { width: 160px; justify-content: center; }
-		.brand img { height: 62px; object-position: center; }
+		.brand { width: 150px; justify-content: center; }
+		.brand img { height: 58px; object-position: center; }
 		.brand-description,
 		.brand-action { display: none; }
 
-		.nav-inner { min-height: 52px; width: 100%; }
+		.nav-inner { min-height: 50px; width: 100%; }
 
 		.mobile-menu-toggle {
 			display: flex;
 			width: 100%;
-			min-height: 52px;
+			min-height: 50px;
 			align-items: center;
 			justify-content: space-between;
-			padding: 0 14px;
+			padding: 0 var(--header-space-4);
 			border: 0;
 			background: transparent;
 			color: var(--color-neutral-foreground-1);
 			font: inherit;
-			font-size: 0.88rem;
-			font-weight: 700;
+			font-size: 0.875rem;
+			font-weight: 600;
 			cursor: pointer;
 		}
 
 		.mobile-menu-toggle svg {
-			width: 21px;
-			height: 21px;
+			width: 20px;
+			height: 20px;
 			fill: none;
 			stroke: currentColor;
 			stroke-linecap: round;
@@ -860,12 +839,12 @@ const menuGroups: MenuGroup[] = [
 			grid-template-columns: 1fr;
 			overflow-x: hidden;
 			overflow-y: auto;
-			padding: var(--nav-space-2);
-			border: 1px solid var(--nav-stroke);
+			padding: var(--header-space-2);
+			border: 1px solid var(--color-neutral-stroke-1);
 			border-top: 0;
-			border-radius: 0 0 var(--nav-radius-large) var(--nav-radius-large);
-			background: rgba(23, 25, 28, 0.99);
-			box-shadow: var(--nav-shadow-16);
+			border-radius: 0 0 var(--header-radius-large) var(--header-radius-large);
+			background: rgba(23, 25, 28, 0.995);
+			box-shadow: var(--shadow-16);
 			z-index: 300;
 		}
 
@@ -877,13 +856,13 @@ const menuGroups: MenuGroup[] = [
 			width: 100%;
 			min-height: 44px;
 			justify-content: space-between;
-			padding: 0 12px;
-			font-size: 0.8rem;
+			padding: 0 var(--header-space-3);
+			font-size: 0.85rem;
 			text-align: left;
 		}
 
 		.home-menu-link { justify-content: flex-start; gap: 10px; }
-		.home-menu-link::after { content: 'HOME'; font-size: 0.8rem; font-weight: 700; }
+		.home-menu-link::after { content: 'Home'; font-size: 0.85rem; font-weight: 600; }
 		.menu-group { width: 100%; }
 
 		.menu-panel,
@@ -895,7 +874,7 @@ const menuGroups: MenuGroup[] = [
 			left: auto;
 			display: none;
 			width: auto;
-			padding: 0 0 4px 12px;
+			padding: 0 0 var(--header-space-1) var(--header-space-3);
 			opacity: 1;
 			visibility: visible;
 			transform: none;
@@ -907,24 +886,23 @@ const menuGroups: MenuGroup[] = [
 
 		.menu-surface,
 		.submenu-surface {
-			padding: var(--nav-space-1);
-			border-radius: var(--nav-radius-medium);
+			padding: var(--header-space-1);
+			border-radius: var(--header-radius-medium);
 			background: rgba(255, 255, 255, 0.025);
 			box-shadow: none;
 			backdrop-filter: none;
 		}
 
 		.menu-surface { max-height: none; overflow: visible; }
-		.submenu-group:has(> .submenu-panel.open-start) > .submenu-trigger svg { transform: none; }
+		.submenu-group.opens-start > .submenu-trigger svg { transform: none; }
 		.submenu-group.is-open > .submenu-trigger svg { transform: rotate(90deg); }
 	}
 
 	@media (max-width: 540px) {
-		.utility-inner { min-height: 32px; }
-		.social-links { gap: 0; font-size: 0.68rem; }
-		.utility-bar a { padding-inline: 6px; }
-		.brand { width: 146px; }
-		.brand img { height: 58px; }
+		.utility-bar { display: none; }
+		.brand-inner { min-height: 66px; }
+		.brand { width: 138px; }
+		.brand img { height: 54px; }
 	}
 
 	@media (prefers-reduced-motion: reduce) {
