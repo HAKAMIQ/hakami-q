@@ -19,8 +19,10 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#111315" />
 <meta name="color-scheme" content="dark" />
+<meta name="application-name" content="HAKAMIQ" />
+<meta name="apple-mobile-web-app-title" content="HAKAMIQ" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="mask-icon" href="/favicon.svg" color="#d71047" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
 	rel="alternate"
@@ -46,6 +48,14 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta name="twitter:card" content="summary_large_image" />
 
 <style is:global>
+	:root {
+		--color-brand-background: #d71047;
+		--color-brand-background-hover: #b90d3d;
+		--color-brand-background-pressed: #960a31;
+		--color-brand-foreground: #f33d72;
+		--color-brand-foreground-strong: #ff7398;
+	}
+
 	main > .hero-section {
 		padding-block: clamp(2rem, 3vw, 2.75rem) !important;
 	}
@@ -56,6 +66,39 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 	.site-header .menu-list {
 		margin-top: 0 !important;
+	}
+
+	/* Official HAKAMIQ identity */
+	.site-header .brand {
+		display: block !important;
+		width: 154px;
+		height: 74px;
+		flex: 0 0 154px !important;
+		background: url('/hakamiq-logo.svg') center / contain no-repeat;
+		font-size: 0;
+	}
+
+	.site-header .brand > * {
+		display: none !important;
+	}
+
+	.site-header .brand-surface {
+		background:
+			radial-gradient(circle at 92% 50%, rgba(215, 16, 71, 0.12), transparent 20rem),
+			linear-gradient(110deg, rgba(215, 16, 71, 0.06), transparent 40%),
+			var(--color-neutral-background-2) !important;
+	}
+
+	.site-footer .footer-logo {
+		display: block !important;
+		width: 176px;
+		height: 85px;
+		background: url('/hakamiq-logo.svg') center / contain no-repeat;
+		font-size: 0;
+	}
+
+	.site-footer .footer-logo > * {
+		display: none !important;
 	}
 
 	/* Compact Fluent-style homepage cards */
@@ -163,7 +206,14 @@ const { title, description, image = FallbackImage } = Astro.props;
 		}
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 960px) {
+		.site-header .brand {
+			width: 52px;
+			height: 56px;
+			flex-basis: 52px !important;
+			background-image: url('/favicon.svg');
+		}
+
 		body main .featured-card > a {
 			height: auto !important;
 			grid-template-columns: 1fr !important;
@@ -203,6 +253,13 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 		body main .post-card-content h3 {
 			font-size: 0.86rem !important;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.site-footer .footer-logo {
+			width: 152px;
+			height: 74px;
 		}
 	}
 </style>
