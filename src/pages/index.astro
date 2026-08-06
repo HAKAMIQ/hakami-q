@@ -12,34 +12,6 @@ const posts = (await getCollection('blog')).sort(
 const featuredPost = posts[0];
 const latestPosts = posts.slice(1, 7);
 
-const categories = [
-	{
-		name: 'PlayStation',
-		description: 'PS1 وPS2 وPS3 وPS4 وPSP وVita',
-		icon: 'PS',
-	},
-	{
-		name: 'Nintendo',
-		description: 'Switch وWii U وWii وGameCube و3DS',
-		icon: 'N',
-	},
-	{
-		name: 'Xbox',
-		description: 'Xbox وXbox 360 ومحاكيات Xemu وXenia',
-		icon: 'X',
-	},
-	{
-		name: 'SEGA',
-		description: 'Dreamcast وSaturn وGenesis وأجهزة SEGA',
-		icon: 'S',
-	},
-	{
-		name: 'PC Emulation',
-		description: 'الأدوات والإعدادات وحلول تشغيل المحاكيات',
-		icon: 'PC',
-	},
-];
-
 const formatDate = (date: Date) =>
 	new Intl.DateTimeFormat('ar-SA', {
 		year: 'numeric',
@@ -127,29 +99,6 @@ const formatDate = (date: Date) =>
 					}
 				</div>
 			</section>
-
-			<section class="categories-section" aria-labelledby="main-categories-title">
-				<div class="site-container">
-					<div class="section-heading categories-heading">
-						<h2 id="main-categories-title">الأقسام الرئيسية</h2>
-					</div>
-
-					<div class="category-grid">
-						{
-							categories.map((category) => (
-								<a class="category-card" href="/blog">
-									<span class="category-icon" aria-hidden="true">{category.icon}</span>
-									<span class="category-copy">
-										<strong>{category.name}</strong>
-										<small>{category.description}</small>
-									</span>
-									<span class="category-arrow" aria-hidden="true">←</span>
-								</a>
-							))
-						}
-					</div>
-				</div>
-			</section>
 		</main>
 
 		<Footer />
@@ -159,10 +108,6 @@ const formatDate = (date: Date) =>
 <style>
 	.content-section {
 		padding-block: clamp(2rem, 3.2vw, 3.25rem) 1.25rem;
-	}
-
-	.categories-section {
-		padding-block: clamp(2.4rem, 4vw, 3.75rem) 0.75rem;
 	}
 
 	.section-heading {
@@ -211,8 +156,7 @@ const formatDate = (date: Date) =>
 	}
 
 	.featured-card,
-	.post-card,
-	.category-card {
+	.post-card {
 		border: 1px solid var(--color-neutral-stroke-1);
 		background: var(--color-neutral-background-2);
 		box-shadow: var(--shadow-4);
@@ -338,8 +282,7 @@ const formatDate = (date: Date) =>
 			box-shadow var(--duration-fast) var(--curve-easy-ease);
 	}
 
-	.post-card:hover,
-	.category-card:hover {
+	.post-card:hover {
 		border-color: var(--color-neutral-stroke-2);
 		background: var(--color-neutral-background-3);
 		box-shadow: var(--shadow-8);
@@ -387,95 +330,6 @@ const formatDate = (date: Date) =>
 		padding-top: 0.7rem;
 	}
 
-	.categories-heading {
-		margin-bottom: 1rem;
-	}
-
-	.category-grid {
-		display: grid;
-		grid-template-columns: repeat(5, minmax(0, 1fr));
-		gap: 0.85rem;
-	}
-
-	.category-card {
-		position: relative;
-		display: grid;
-		grid-template-columns: auto minmax(0, 1fr) auto;
-		align-items: center;
-		gap: 0.75rem;
-		min-height: 116px;
-		padding: 0.95rem;
-		overflow: hidden;
-		border-radius: var(--radius-xlarge);
-		color: inherit;
-		text-decoration: none;
-		transition:
-			transform var(--duration-fast) var(--curve-easy-ease),
-			border-color var(--duration-fast) var(--curve-easy-ease),
-			background var(--duration-fast) var(--curve-easy-ease),
-			box-shadow var(--duration-fast) var(--curve-easy-ease);
-	}
-
-	.category-card::before {
-		position: absolute;
-		inset: 0 0 auto;
-		height: 2px;
-		background: linear-gradient(90deg, transparent, rgba(255, 107, 120, 0.72), transparent);
-		content: '';
-		opacity: 0;
-		transition: opacity var(--duration-fast) var(--curve-easy-ease);
-	}
-
-	.category-card:hover::before {
-		opacity: 1;
-	}
-
-	.category-icon {
-		display: grid;
-		width: 42px;
-		height: 42px;
-		place-items: center;
-		border: 1px solid rgba(255, 107, 120, 0.22);
-		border-radius: var(--radius-large);
-		background: rgba(232, 17, 35, 0.11);
-		color: var(--color-brand-foreground-strong);
-		font-size: 0.74rem;
-		font-weight: 800;
-	}
-
-	.category-copy {
-		display: grid;
-		gap: 0.2rem;
-		min-width: 0;
-	}
-
-	.category-copy strong {
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.9rem;
-		line-height: 1.35;
-	}
-
-	.category-copy small {
-		display: -webkit-box;
-		overflow: hidden;
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.7rem;
-		line-height: 1.55;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.category-arrow {
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.9rem;
-		transition: transform var(--duration-fast) var(--curve-easy-ease);
-	}
-
-	.category-card:hover .category-arrow {
-		color: var(--color-neutral-foreground-1);
-		transform: translateX(-2px);
-	}
-
 	@media (max-width: 1180px) {
 		.featured-card > a {
 			grid-template-columns: minmax(0, 1.4fr) minmax(290px, 0.8fr);
@@ -483,10 +337,6 @@ const formatDate = (date: Date) =>
 
 		.latest-grid {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
-		.category-grid {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
 
@@ -511,10 +361,6 @@ const formatDate = (date: Date) =>
 	@media (max-width: 720px) {
 		.content-section {
 			padding-top: 1.5rem;
-		}
-
-		.categories-section {
-			padding-top: 2.25rem;
 		}
 
 		.section-heading {
@@ -594,16 +440,6 @@ const formatDate = (date: Date) =>
 		.post-card-content time {
 			padding-top: 0.4rem;
 		}
-
-		.category-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 0.7rem;
-		}
-
-		.category-card {
-			min-height: 104px;
-			padding: 0.8rem;
-		}
 	}
 
 	@media (max-width: 500px) {
@@ -621,23 +457,12 @@ const formatDate = (date: Date) =>
 			grid-template-columns: 100px minmax(0, 1fr);
 			min-height: 100px;
 		}
-
-		.category-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.category-card {
-			min-height: 92px;
-		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.featured-image img,
 		.post-thumb img,
 		.post-card,
-		.category-card,
-		.category-card::before,
-		.category-arrow,
 		.section-action {
 			transition: none;
 		}
