@@ -58,9 +58,151 @@ const { title, description, image = FallbackImage } = Astro.props;
 		margin-top: 0 !important;
 	}
 
+	/* Compact Fluent-style homepage cards */
+	body main .content-section {
+		padding-block: 1.5rem 1rem !important;
+	}
+
+	body main .content-section > .site-container {
+		width: min(calc(100% - 48px), 1320px) !important;
+	}
+
+	body main .content-section .section-heading {
+		margin-bottom: 1rem !important;
+	}
+
+	body main .content-section .section-heading h2 {
+		font-size: clamp(1.35rem, 1.8vw, 1.7rem) !important;
+		line-height: 1.3 !important;
+	}
+
+	body main .content-section .section-action {
+		min-height: 36px !important;
+		padding-inline: 0.8rem !important;
+		font-size: 0.76rem !important;
+	}
+
+	body main .articles-layout {
+		gap: 14px !important;
+	}
+
+	body main .featured-card {
+		border-radius: 16px !important;
+	}
+
+	body main .featured-card > a {
+		grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.72fr) !important;
+		height: 310px !important;
+		min-height: 0 !important;
+	}
+
+	body main .featured-content {
+		justify-content: center !important;
+		padding: 1.35rem !important;
+	}
+
+	body main .featured-label {
+		margin-bottom: 0.55rem !important;
+		font-size: 0.7rem !important;
+	}
+
+	body main .featured-content h3 {
+		font-size: clamp(1.35rem, 1.8vw, 1.7rem) !important;
+		line-height: 1.42 !important;
+		-webkit-line-clamp: 2 !important;
+	}
+
+	body main .featured-content p {
+		margin-top: 0.65rem !important;
+		font-size: 0.86rem !important;
+		line-height: 1.7 !important;
+		-webkit-line-clamp: 2 !important;
+	}
+
+	body main .featured-content time,
+	body main .post-card-content time {
+		font-size: 0.68rem !important;
+	}
+
+	body main .featured-content time {
+		margin-top: 0.8rem !important;
+	}
+
+	body main .latest-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+		gap: 14px !important;
+	}
+
+	body main .post-card {
+		border-radius: 12px !important;
+	}
+
+	body main .post-card-content {
+		min-height: 96px !important;
+		padding: 0.78rem 0.85rem 0.72rem !important;
+	}
+
+	body main .post-card-content h3 {
+		font-size: 0.88rem !important;
+		line-height: 1.5 !important;
+		-webkit-line-clamp: 2 !important;
+	}
+
+	body main .post-card-content time {
+		padding-top: 0.55rem !important;
+	}
+
+	@media (max-width: 1180px) {
+		body main .featured-card > a {
+			height: 290px !important;
+			grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.78fr) !important;
+		}
+
+		body main .latest-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+		}
+	}
+
+	@media (max-width: 900px) {
+		body main .featured-card > a {
+			height: auto !important;
+			grid-template-columns: 1fr !important;
+		}
+
+		body main .featured-content {
+			padding: 1.1rem !important;
+		}
+
+		body main .latest-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		}
+	}
+
 	@media (max-width: 700px) {
 		main > .hero-section {
 			padding-block: 1.75rem !important;
+		}
+
+		body main .content-section {
+			padding-top: 1rem !important;
+		}
+
+		body main .content-section > .site-container {
+			width: min(calc(100% - 24px), 1320px) !important;
+		}
+
+		body main .latest-grid {
+			grid-template-columns: 1fr !important;
+			gap: 10px !important;
+		}
+
+		body main .post-card-content {
+			min-height: 0 !important;
+			padding: 0.72rem !important;
+		}
+
+		body main .post-card-content h3 {
+			font-size: 0.86rem !important;
 		}
 	}
 </style>
