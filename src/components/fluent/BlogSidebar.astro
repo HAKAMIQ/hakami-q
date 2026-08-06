@@ -1,0 +1,686 @@
+---
+import type { BlogPostEntry } from '../../data/blog-taxonomy';
+import {
+	categoryDefinitions,
+	categoryGroups,
+	formatArabicDate,
+	getPostCategories,
+	normalizeSearchText,
+} from '../../data/blog-taxonomy';
+
+interface Props {
+	posts: BlogPostEntry[];
+}
+
+const { posts } = Astro.props;
+
+const categoryBySlug = Object.fromEntries(
+	categoryDefinitions.map((category) => [category.slug, category]),
+);
+
+const categoryCounts = new Map<string, number>();
+for (const post of posts) {
+	for (const category of getPostCategories(post)) {
+		categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
+	}
+}
+
+const topicPriority = ['rpcs3', 'pcsx2', 'shadps4', 'yuzu', 'vita3k', 'xenia', 'cemu'];
+const highlightedPosts: BlogPostEntry[] = [];
+const highlightedIds = new Set<string>();
+
+for (const topic of topicPriority) {
+	const match = posts.find((post) => {
+		if (highlightedIds.has(post.id)) return false;
+		const text = normalizeSearchText(
+			[post.data.title, post.data.description, ...post.data.labels].join(' '),
+		);
+		return text.includes(topic);
+	});
+
+	if (!match) continue;
+	highlightedPosts.push(match);
+	highlightedIds.add(match.id);
+	if (highlightedPosts.length === 5) break;
+}
+
+for (const post of posts) {
+	if (highlightedPosts.length === 5) break;
+	if (highlightedIds.has(post.id)) continue;
+	highlightedPosts.push(post);
+	highlightedIds.add(post.id);
+}
+
+const latestPosts = posts.slice(0, 3);
+const guidePost =
+	posts.find((post) => {
+		const text = normalizeSearchText(
+			[post.data.title, post.data.description, ...post.data.labels].join(' '),
+		);
+		return ['دليل', 'شرح كامل', 'إعداد', 'quickstart', 'guide'].some((term) => text.includes(term));
+	}) ?? posts[0];
+---
+
+<aside class="blog-sidebar" aria-label="التنقل والمحتوى المقترح">
+	<div class="sidebar-stack">
+		<section class="sidebar-surface category-surface" aria-labelledby="sidebar-categories-title">
+			<header class="surface-header">
+				<div>
+					<span class="surface-eyebrow">التنقل</span>
+					<h2 id="sidebar-categories-title">استكشف الأقسام</h2>
+				</div>
+			</header>
+
+			<label class="category-search">
+				<span class="sr-only">ابحث في الأقسام</span>
+				<svg viewBox="0 0 20 20" aria-hidden="true">
+					<circle cx="8.5" cy="8.5" r="5.5"></circle>
+					<path d="m12.5 12.5 4 4"></path>
+				</svg>
+				<input type="search" placeholder="ابحث عن قسم" autocomplete="off" data-category-search />
+			</label>
+
+			<div class="category-groups" data-category-groups>
+				{
+					categoryGroups.map((group, groupIndex) => (
+						<details class="category-group" data-category-group open={groupIndex === 0}>
+							<summary data-category-search-text={normalizeSearchText(group.name)}>
+								<span>{group.name}</span>
+								<span class="group-count">{categoryCounts.get(group.slug) ?? 0}</span>
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
+							</summary>
+
+							<div class="category-children">
+								<a
+									class="category-link category-link-all"
+									href={`/blog?category=${group.slug}`}
+									data-category-link={group.slug}
+									data-category-search-text={normalizeSearchText(`${group.name} جميع المقالات`)}
+								>
+									<span>عرض جميع مقالات {group.name}</span>
+									<strong>{categoryCounts.get(group.slug) ?? 0}</strong>
+								</a>
+
+								{
+									group.children
+										.filter((slug) => slug !== group.slug)
+										.map((slug) => {
+											const category = categoryBySlug[slug];
+											if (!category) return null;
+											return (
+												<a
+													class="category-link"
+													href={`/blog?category=${category.slug}`}
+													data-category-link={category.slug}
+													data-category-search-text={normalizeSearchText(category.name)}
+												>
+													<span>{category.name}</span>
+													<strong>{categoryCounts.get(category.slug) ?? 0}</strong>
+												</a>
+											);
+										})
+								}
+							</div>
+						</details>
+					))
+				}
+			</div>
+
+			<p class="category-empty" data-category-empty hidden>لا يوجد قسم مطابق</p>
+		</section>
+
+		<section class="sidebar-surface" aria-labelledby="sidebar-popular-title">
+			<header class="surface-header compact-header">
+				<div>
+					<span class="surface-eyebrow">مختارات</span>
+					<h2 id="sidebar-popular-title">الأكثر قراءة</h2>
+				</div>
+			</header>
+
+			<ol class="ranked-posts">
+				{
+					highlightedPosts.map((post, index) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								<span class="rank-number">{String(index + 1).padStart(2, '0')}</span>
+								<span class="rank-title">{post.data.title}</span>
+							</a>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+
+		<section class="sidebar-surface" aria-labelledby="sidebar-latest-title">
+			<header class="surface-header compact-header">
+				<div>
+					<span class="surface-eyebrow">جديد</span>
+					<h2 id="sidebar-latest-title">أحدث المقالات</h2>
+				</div>
+			</header>
+
+			<div class="latest-posts">
+				{
+					latestPosts.map((post) => (
+						<a href={`/blog/${post.id}/`}>
+							<span>{post.data.title}</span>
+							<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
+						</a>
+					))
+				}
+			</div>
+		</section>
+
+		{
+			guidePost && (
+				<section class="sidebar-surface guide-surface" aria-labelledby="sidebar-guide-title">
+					<header class="surface-header compact-header">
+						<div>
+							<span class="surface-eyebrow">موصى به</span>
+							<h2 id="sidebar-guide-title">دليل مختار</h2>
+						</div>
+					</header>
+
+					<a class="guide-card" href={`/blog/${guidePost.id}/`}>
+						<div class="guide-image">
+							{guidePost.data.heroImageUrl ? (
+								<img src={guidePost.data.heroImageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" />
+							) : (
+								<span>HAKAMIQ</span>
+							)}
+						</div>
+						<div class="guide-content">
+							<h3>{guidePost.data.title}</h3>
+							<p>{guidePost.data.description}</p>
+							<span class="guide-action">
+								قراءة الدليل
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+							</span>
+						</div>
+					</a>
+				</section>
+			)
+		}
+	</div>
+</aside>
+
+<script>
+	const initializeBlogSidebar = () => {
+		const sidebar = document.querySelector<HTMLElement>('.blog-sidebar');
+		if (!sidebar || sidebar.dataset.initialized === 'true') return;
+		sidebar.dataset.initialized = 'true';
+
+		const groups = Array.from(sidebar.querySelectorAll<HTMLDetailsElement>('[data-category-group]'));
+		const search = sidebar.querySelector<HTMLInputElement>('[data-category-search]');
+		const empty = sidebar.querySelector<HTMLElement>('[data-category-empty]');
+		const selectedCategory = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
+
+		for (const group of groups) {
+			group.addEventListener('toggle', () => {
+				if (!group.open || search?.value.trim()) return;
+				for (const other of groups) if (other !== group) other.open = false;
+			});
+		}
+
+		if (selectedCategory) {
+			const activeLink = sidebar.querySelector<HTMLAnchorElement>(`[data-category-link="${CSS.escape(selectedCategory)}"]`);
+			if (activeLink) {
+				activeLink.setAttribute('aria-current', 'page');
+				activeLink.closest<HTMLDetailsElement>('[data-category-group]')?.setAttribute('open', '');
+			}
+		}
+
+		search?.addEventListener('input', () => {
+			const term = search.value.normalize('NFKC').trim().toLowerCase();
+			let visibleGroups = 0;
+
+			for (const group of groups) {
+				const summary = group.querySelector<HTMLElement>('summary');
+				const groupMatches = (summary?.dataset.categorySearchText ?? '').includes(term);
+				const links = Array.from(group.querySelectorAll<HTMLElement>('[data-category-search-text]')).filter((item) => item !== summary);
+				let visibleLinks = 0;
+
+				for (const link of links) {
+					const matches = !term || groupMatches || (link.dataset.categorySearchText ?? '').includes(term);
+					link.hidden = !matches;
+					if (matches) visibleLinks += 1;
+				}
+
+				const groupVisible = !term || groupMatches || visibleLinks > 0;
+				group.hidden = !groupVisible;
+				if (groupVisible) visibleGroups += 1;
+				if (term && groupVisible) group.open = true;
+			}
+
+			if (!term) {
+				for (const [index, group] of groups.entries()) group.open = index === 0;
+			}
+
+			if (empty) empty.hidden = visibleGroups > 0;
+		});
+	};
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeBlogSidebar, { once: true });
+	else initializeBlogSidebar();
+	document.addEventListener('astro:page-load', initializeBlogSidebar);
+</script>
+
+<style>
+	.blog-sidebar {
+		min-width: 0;
+	}
+
+	.sidebar-stack {
+		position: sticky;
+		top: 20px;
+		display: grid;
+		gap: 16px;
+	}
+
+	.sidebar-surface {
+		overflow: hidden;
+		border: 1px solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-4);
+	}
+
+	.surface-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 16px 12px;
+	}
+
+	.compact-header {
+		padding-bottom: 8px;
+	}
+
+	.surface-eyebrow {
+		display: block;
+		margin-bottom: 2px;
+		color: var(--color-brand-foreground);
+		font-size: 0.68rem;
+		font-weight: 650;
+		line-height: 1.4;
+	}
+
+	.surface-header h2 {
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: 0.95rem;
+		font-weight: 650;
+		line-height: 1.45;
+	}
+
+	.category-search {
+		display: flex;
+		height: 38px;
+		align-items: center;
+		gap: 8px;
+		margin: 0 12px 12px;
+		padding-inline: 11px;
+		border: 1px solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-1);
+		color: var(--color-neutral-foreground-3);
+	}
+
+	.category-search:focus-within {
+		border-color: var(--color-brand-stroke-1);
+		box-shadow: 0 0 0 1px var(--color-brand-stroke-1);
+	}
+
+	.category-search svg {
+		width: 16px;
+		height: 16px;
+		flex: 0 0 auto;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-width: 1.7;
+	}
+
+	.category-search input {
+		width: 100%;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		color: var(--color-neutral-foreground-1);
+		font: inherit;
+		font-size: 0.8rem;
+	}
+
+	.category-search input::placeholder {
+		color: var(--color-neutral-foreground-3);
+	}
+
+	.category-groups {
+		display: grid;
+		padding: 0 8px 10px;
+	}
+
+	.category-group {
+		border-top: 1px solid var(--color-neutral-stroke-alpha);
+	}
+
+	.category-group:first-child {
+		border-top: 0;
+	}
+
+	.category-group summary {
+		display: grid;
+		min-height: 42px;
+		grid-template-columns: minmax(0, 1fr) auto auto;
+		align-items: center;
+		gap: 8px;
+		padding-inline: 10px;
+		border-radius: var(--radius-medium);
+		color: var(--color-neutral-foreground-2);
+		font-size: 0.84rem;
+		font-weight: 600;
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.category-group summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.category-group summary:hover,
+	.category-group summary:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+		outline: none;
+	}
+
+	.category-group summary svg {
+		width: 14px;
+		height: 14px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.8;
+		transition: transform var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.category-group[open] summary svg {
+		transform: rotate(180deg);
+	}
+
+	.group-count,
+	.category-link strong {
+		display: inline-flex;
+		min-width: 24px;
+		height: 22px;
+		align-items: center;
+		justify-content: center;
+		padding-inline: 5px;
+		border-radius: 999px;
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.68rem;
+		font-weight: 600;
+	}
+
+	.category-children {
+		display: grid;
+		gap: 2px;
+		padding: 2px 0 8px 8px;
+	}
+
+	.category-link {
+		display: flex;
+		min-height: 36px;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		padding: 6px 10px;
+		border-radius: var(--radius-small);
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.77rem;
+		line-height: 1.4;
+		text-decoration: none;
+	}
+
+	.category-link span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.category-link:hover,
+	.category-link:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+		outline: none;
+	}
+
+	.category-link[aria-current='page'] {
+		background: var(--color-brand-background-2);
+		box-shadow: inset -3px 0 var(--color-brand-stroke-1);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.category-link-all {
+		font-weight: 600;
+	}
+
+	.category-empty {
+		margin: 0;
+		padding: 0 16px 16px;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.78rem;
+	}
+
+	.ranked-posts {
+		margin: 0;
+		padding: 0 10px 12px;
+		list-style: none;
+	}
+
+	.ranked-posts li + li {
+		border-top: 1px solid var(--color-neutral-stroke-alpha);
+	}
+
+	.ranked-posts a {
+		display: grid;
+		min-height: 48px;
+		grid-template-columns: 30px minmax(0, 1fr);
+		align-items: center;
+		gap: 10px;
+		padding: 8px 6px;
+		border-radius: var(--radius-small);
+		color: var(--color-neutral-foreground-2);
+		text-decoration: none;
+	}
+
+	.ranked-posts a:hover,
+	.ranked-posts a:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+		outline: none;
+	}
+
+	.rank-number {
+		color: var(--color-brand-foreground);
+		font-size: 0.75rem;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.rank-title {
+		display: -webkit-box;
+		overflow: hidden;
+		font-size: 0.78rem;
+		font-weight: 550;
+		line-height: 1.5;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.latest-posts {
+		display: grid;
+		padding: 0 10px 12px;
+	}
+
+	.latest-posts a {
+		display: grid;
+		gap: 3px;
+		padding: 9px 6px;
+		border-top: 1px solid var(--color-neutral-stroke-alpha);
+		border-radius: var(--radius-small);
+		color: var(--color-neutral-foreground-2);
+		text-decoration: none;
+	}
+
+	.latest-posts a:first-child {
+		border-top: 0;
+	}
+
+	.latest-posts a:hover,
+	.latest-posts a:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+		outline: none;
+	}
+
+	.latest-posts span {
+		display: -webkit-box;
+		overflow: hidden;
+		font-size: 0.78rem;
+		font-weight: 550;
+		line-height: 1.5;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.latest-posts time {
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.68rem;
+	}
+
+	.guide-card {
+		display: block;
+		margin: 0 10px 10px;
+		overflow: hidden;
+		border: 1px solid var(--color-neutral-stroke-alpha);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-1);
+		color: var(--color-neutral-foreground-2);
+		text-decoration: none;
+	}
+
+	.guide-card:hover,
+	.guide-card:focus-visible {
+		border-color: var(--color-brand-stroke-2);
+		box-shadow: var(--shadow-8);
+		outline: none;
+	}
+
+	.guide-image {
+		display: grid;
+		aspect-ratio: 16 / 8.5;
+		overflow: hidden;
+		place-items: center;
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-4);
+		font-size: 0.78rem;
+		font-weight: 700;
+	}
+
+	.guide-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.guide-content {
+		padding: 12px;
+	}
+
+	.guide-content h3 {
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: 0.84rem;
+		line-height: 1.5;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.guide-content p {
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 6px 0 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: 0.72rem;
+		line-height: 1.6;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.guide-action {
+		display: inline-flex;
+		min-height: 32px;
+		align-items: center;
+		gap: 6px;
+		margin-top: 10px;
+		padding-inline: 10px;
+		border-radius: var(--radius-small);
+		background: var(--color-brand-background);
+		color: var(--color-neutral-foreground-on-brand);
+		font-size: 0.72rem;
+		font-weight: 650;
+	}
+
+	.guide-action svg {
+		width: 14px;
+		height: 14px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.8;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		clip-path: inset(50%);
+	}
+
+	@media (max-width: 1020px) {
+		.sidebar-stack {
+			position: static;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			align-items: start;
+		}
+
+		.category-surface {
+			grid-row: span 2;
+		}
+	}
+
+	@media (max-width: 680px) {
+		.sidebar-stack {
+			grid-template-columns: 1fr;
+		}
+
+		.category-surface {
+			grid-row: auto;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.category-group summary svg {
+			transition: none;
+		}
+	}
+</style>
