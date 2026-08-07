@@ -1,4 +1,12 @@
-<a class="skip-link" href="#main-content">تخطي إلى المحتوى</a>
+---
+interface Props {
+	label?: string;
+}
+
+const { label = 'تخطي إلى المحتوى' } = Astro.props;
+---
+
+<a class="skip-link" href="#main-content">{label}</a>
 
 <style>
 	.skip-link {
