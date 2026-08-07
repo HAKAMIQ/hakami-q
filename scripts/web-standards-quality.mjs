@@ -9,11 +9,12 @@ const read = (file) => fs.readFile(path.join(root, file), 'utf8');
 const fail = (file, rule, message) => errors.push({ file, rule, message });
 const warn = (file, rule, message) => warnings.push({ file, rule, message });
 
-const [pkgText, config, head, theme, components] = await Promise.all([
+const [pkgText, config, head, theme, textStyles, components] = await Promise.all([
 	read('package.json'),
 	read('astro.config.mjs'),
 	read('src/components/BaseHead.astro'),
 	read('src/styles/fluent-core-theme.css'),
+	read('src/styles/fluent-text.css'),
 	read('src/styles/fluent-web-components.css'),
 ]);
 
@@ -57,6 +58,49 @@ for (const requiredToken of [
 
 if (!components.includes('var(--color-neutral-card-background)')) {
 	fail('src/styles/fluent-web-components.css', 'tokens.component-consumption', 'Reusable components must consume semantic Fluent tokens.');
+}
+
+// Fluent Text contract: preserve semantic HTML while exposing the documented presentation controls.
+if (!head.includes("import '../styles/fluent-text.css';")) {
+	fail('src/components/BaseHead.astro', 'text.global-load', 'Fluent Text styles must be loaded globally.');
+}
+
+for (const size of [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]) {
+	if (!textStyles.includes(`.fui-text--size-${size}`)) {
+		fail('src/styles/fluent-text.css', 'text.size-ramp', `Missing Fluent Text size utility: ${size}.`);
+	}
+}
+
+for (const requiredTextUtility of [
+	'.fui-text--nowrap',
+	'.fui-text--truncate',
+	'.fui-text--italic',
+	'.fui-text--underline',
+	'.fui-text--strikethrough',
+	'.fui-text--block',
+	'.fui-text--weight-medium',
+	'.fui-text--weight-regular',
+	'.fui-text--weight-semibold',
+	'.fui-text--weight-bold',
+	'.fui-text--align-start',
+	'.fui-text--align-end',
+	'.fui-text--align-center',
+	'.fui-text--align-justify',
+	'.fui-text--font-base',
+	'.fui-text--font-numeric',
+	'.fui-text--font-monospace',
+]) {
+	if (!textStyles.includes(requiredTextUtility)) {
+		fail('src/styles/fluent-text.css', 'text.utility', `Missing Fluent Text utility: ${requiredTextUtility}.`);
+	}
+}
+
+if (/text-align\s*:\s*(left|right)\b/i.test(textStyles)) {
+	fail('src/styles/fluent-text.css', 'text.logical-alignment', 'Fluent Text must use logical start/end alignment instead of left/right so RTL remains correct.');
+}
+
+if (!textStyles.includes("font-variant-numeric: tabular-nums")) {
+	fail('src/styles/fluent-text.css', 'text.numeric-font', 'Numeric text must expose stable tabular-number rendering.');
 }
 
 // The site intentionally uses native semantic elements for simple controls. A Web Component
