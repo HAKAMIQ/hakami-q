@@ -1,12 +1,7 @@
-/*
- * HAKAMIQ Fluent 2 Core dark theme
- *
- * The palette is split into global ramps and semantic alias tokens so the
- * interface consumes meaning-based colors instead of component-specific hexes.
- */
+/* HAKAMIQ — Fluent 2 Web design language tokens */
 
 :root {
-	/* HAKAMIQ brand ramp */
+	/* Brand ramp: HAKAMIQ identity mapped to Fluent's 10–160 ramp. */
 	--color-brand-10: #2b0709;
 	--color-brand-20: #430a10;
 	--color-brand-30: #5d0c18;
@@ -24,251 +19,222 @@
 	--color-brand-150: #fddde4;
 	--color-brand-160: #fff7f8;
 
-	/* Fluent 2 dark neutral aliases */
-	--color-neutral-background-1: #292929 !important;
+	/* Fluent dark neutral aliases. */
+	--color-neutral-background-1: #292929;
 	--color-neutral-background-1-hover: #3d3d3d;
 	--color-neutral-background-1-pressed: #1f1f1f;
 	--color-neutral-background-1-selected: #383838;
-	--color-neutral-background-2: #1f1f1f !important;
+	--color-neutral-background-2: #1f1f1f;
 	--color-neutral-background-2-hover: #333333;
 	--color-neutral-background-2-pressed: #141414;
 	--color-neutral-background-2-selected: #2e2e2e;
-	--color-neutral-background-3: #141414 !important;
+	--color-neutral-background-3: #141414;
 	--color-neutral-background-3-hover: #292929;
 	--color-neutral-background-3-pressed: #0a0a0a;
 	--color-neutral-background-3-selected: #242424;
-	--color-neutral-background-4: #0a0a0a !important;
+	--color-neutral-background-4: #0a0a0a;
 	--color-neutral-background-4-hover: #1f1f1f;
 	--color-neutral-background-4-pressed: #000000;
 	--color-neutral-background-4-selected: #1a1a1a;
 	--color-neutral-background-5: #000000;
 	--color-neutral-background-6: #333333;
-	--color-neutral-card-background: #333333;
-	--color-neutral-card-background-hover: #3d3d3d;
-	--color-neutral-card-background-pressed: #2e2e2e;
-	--color-neutral-card-background-selected: #383838;
+	--color-neutral-background-alpha: rgba(31, 31, 31, 0.92);
+	--color-neutral-background-alpha-2: rgba(20, 20, 20, 0.82);
+	--color-neutral-card-background: #292929;
+	--color-neutral-card-background-hover: #333333;
 	--color-subtle-background: transparent;
 	--color-subtle-background-hover: #383838;
 	--color-subtle-background-pressed: #2e2e2e;
 	--color-subtle-background-selected: #333333;
 
-	--color-neutral-foreground-1: #ffffff !important;
-	--color-neutral-foreground-2: #d6d6d6 !important;
-	--color-neutral-foreground-3: #adadad !important;
+	--color-neutral-foreground-1: #ffffff;
+	--color-neutral-foreground-2: #d6d6d6;
+	--color-neutral-foreground-3: #adadad;
 	--color-neutral-foreground-4: #999999;
-	--color-neutral-foreground-disabled: #5c5c5c !important;
+	--color-neutral-foreground-disabled: #5c5c5c;
 	--color-neutral-foreground-on-brand: #ffffff;
 
 	--color-neutral-stroke-accessible: #adadad;
-	--color-neutral-stroke-1: #666666 !important;
+	--color-neutral-stroke-1: #666666;
 	--color-neutral-stroke-1-hover: #757575;
 	--color-neutral-stroke-1-pressed: #6b6b6b;
-	--color-neutral-stroke-2: #525252 !important;
+	--color-neutral-stroke-2: #525252;
 	--color-neutral-stroke-3: #3d3d3d;
-	--color-neutral-stroke-subtle: #0a0a0a !important;
-	--color-neutral-stroke-alpha: rgba(255, 255, 255, 0.1);
-	--color-neutral-stroke-alpha-2: rgba(255, 255, 255, 0.2);
+	--color-neutral-stroke-subtle: #333333;
+	--color-neutral-stroke-alpha: rgba(255, 255, 255, 0.10);
+	--color-neutral-stroke-alpha-2: rgba(255, 255, 255, 0.20);
 
-	/* Fluent alias mapping for the HAKAMIQ brand ramp */
-	--color-brand-background: var(--color-brand-70) !important;
-	--color-brand-background-hover: var(--color-brand-80) !important;
-	--color-brand-background-pressed: var(--color-brand-40) !important;
+	/* Fluent brand aliases. */
+	--color-brand-background: var(--color-brand-70);
+	--color-brand-background-hover: var(--color-brand-80);
+	--color-brand-background-pressed: var(--color-brand-40);
 	--color-brand-background-selected: var(--color-brand-60);
 	--color-brand-background-static: var(--color-brand-80);
 	--color-brand-background-2: var(--color-brand-20);
 	--color-brand-background-2-hover: var(--color-brand-40);
 	--color-brand-background-2-pressed: var(--color-brand-10);
-	--color-brand-foreground: var(--color-brand-100) !important;
-	--color-brand-foreground-strong: var(--color-brand-110) !important;
+	--color-brand-foreground: var(--color-brand-100);
+	--color-brand-foreground-strong: var(--color-brand-110);
 	--color-brand-foreground-link: var(--color-brand-100);
 	--color-brand-foreground-link-hover: var(--color-brand-110);
+	--color-brand-foreground-link-pressed: var(--color-brand-90);
 	--color-brand-stroke-1: var(--color-brand-100);
 	--color-brand-stroke-2: var(--color-brand-50);
 	--color-brand-background-alpha: rgba(215, 16, 71, 0.14);
-	--color-brand-background-alpha-hover: rgba(215, 16, 71, 0.2);
+	--color-brand-background-alpha-hover: rgba(215, 16, 71, 0.20);
 
-	/* Fluent dark shadows */
+	/* Status aliases used by message bars and imported article content. */
+	--color-status-danger-background-1: #3b0b10;
+	--color-status-danger-background-2: #5a1018;
+	--color-status-danger-background-3: #c50f1f;
+	--color-status-danger-foreground: #ff99a4;
+	--color-status-danger-border: #c50f1f;
+	--color-status-warning-background-1: #3d2600;
+	--color-status-warning-background-2: #593900;
+	--color-status-warning-foreground: #fce100;
+	--color-status-warning-border: #d29200;
+	--color-status-success-background-1: #052505;
+	--color-status-success-background-2: #094509;
+	--color-status-success-foreground: #54b054;
+	--color-status-success-border: #0e7a0d;
+
+	/* Fluent spacing ramp (px). */
+	--spacing-none: 0px;
+	--spacing-20: 2px;
+	--spacing-40: 4px;
+	--spacing-60: 6px;
+	--spacing-80: 8px;
+	--spacing-100: 10px;
+	--spacing-120: 12px;
+	--spacing-160: 16px;
+	--spacing-200: 20px;
+	--spacing-240: 24px;
+	--spacing-280: 28px;
+	--spacing-320: 32px;
+	--spacing-360: 36px;
+	--spacing-400: 40px;
+	--spacing-480: 48px;
+	--spacing-520: 52px;
+	--spacing-560: 56px;
+
+	/* Fluent Web shape and stroke tokens. */
+	--radius-none: 0px;
+	--radius-small: 2px;
+	--radius-medium: 4px;
+	--radius-large: 8px;
+	--radius-xlarge: 12px;
+	--radius-circular: 9999px;
+	--stroke-thin: 1px;
+	--stroke-thick: 2px;
+	--stroke-thicker: 3px;
+	--stroke-thickest: 4px;
+
+	/* Fluent Web type ramp. */
+	--font-family-base: "Segoe UI Variable", "Segoe UI", Tahoma, Arial, sans-serif;
+	--font-family-monospace: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+	--font-weight-regular: 400;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-size-caption-2: 10px;
+	--line-height-caption-2: 14px;
+	--font-size-caption-1: 12px;
+	--line-height-caption-1: 16px;
+	--font-size-body-1: 14px;
+	--line-height-body-1: 20px;
+	--font-size-subtitle-2: 16px;
+	--line-height-subtitle-2: 22px;
+	--font-size-subtitle-1: 20px;
+	--line-height-subtitle-1: 26px;
+	--font-size-title-3: 24px;
+	--line-height-title-3: 32px;
+	--font-size-title-2: 28px;
+	--line-height-title-2: 36px;
+	--font-size-title-1: 32px;
+	--line-height-title-1: 40px;
+	--font-size-large-title: 40px;
+	--line-height-large-title: 52px;
+	--font-size-display: 68px;
+	--line-height-display: 92px;
+
+	/* Long-form reading token: deliberately one step roomier than UI Body 1. */
+	--font-size-reading: 16px;
+	--line-height-reading: 28px;
+
+	/* Fluent motion tokens. */
+	--duration-ultra-fast: 50ms;
+	--duration-faster: 100ms;
+	--duration-fast: 150ms;
+	--duration-normal: 200ms;
+	--duration-gentle: 250ms;
+	--duration-slow: 300ms;
+	--duration-slower: 400ms;
+	--duration-ultra-slow: 500ms;
+	--curve-linear: cubic-bezier(0, 0, 1, 1);
+	--curve-easy-ease: cubic-bezier(0.33, 0, 0.67, 1);
+	--curve-easy-ease-max: cubic-bezier(0.8, 0, 0.2, 1);
+	--curve-accelerate-mid: cubic-bezier(0.7, 0, 1, 0.5);
+	--curve-decelerate-mid: cubic-bezier(0.1, 0.9, 0.2, 1);
+
+	/* Fluent dark elevation ramp: ambient + key shadow pairing. */
 	--color-neutral-shadow-ambient: rgba(0, 0, 0, 0.24);
 	--color-neutral-shadow-key: rgba(0, 0, 0, 0.28);
 	--color-neutral-shadow-ambient-lighter: rgba(0, 0, 0, 0.12);
 	--color-neutral-shadow-key-lighter: rgba(0, 0, 0, 0.14);
-	--color-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.4);
+	--color-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.40);
 	--color-neutral-shadow-key-darker: rgba(0, 0, 0, 0.48);
-	--shadow-2: 0 1px 2px var(--color-neutral-shadow-key-lighter) !important;
-	--shadow-4: 0 2px 4px var(--color-neutral-shadow-key), 0 0 2px var(--color-neutral-shadow-ambient) !important;
-	--shadow-8: 0 4px 8px var(--color-neutral-shadow-key), 0 0 2px var(--color-neutral-shadow-ambient) !important;
-	--shadow-16: 0 8px 16px var(--color-neutral-shadow-key-darker), 0 0 2px var(--color-neutral-shadow-ambient-darker) !important;
-	--shadow-64: 0 32px 64px var(--color-neutral-shadow-key-darker), 0 0 8px var(--color-neutral-shadow-ambient-darker) !important;
+	--shadow-2: 0 1px 2px var(--color-neutral-shadow-key-lighter), 0 0 2px var(--color-neutral-shadow-ambient-lighter);
+	--shadow-4: 0 2px 4px var(--color-neutral-shadow-key), 0 0 2px var(--color-neutral-shadow-ambient);
+	--shadow-8: 0 4px 8px var(--color-neutral-shadow-key), 0 0 2px var(--color-neutral-shadow-ambient);
+	--shadow-16: 0 8px 16px var(--color-neutral-shadow-key-darker), 0 0 2px var(--color-neutral-shadow-ambient-darker);
+	--shadow-28: 0 14px 28px var(--color-neutral-shadow-key-darker), 0 0 4px var(--color-neutral-shadow-ambient-darker);
+	--shadow-64: 0 32px 64px var(--color-neutral-shadow-key-darker), 0 0 8px var(--color-neutral-shadow-ambient-darker);
 
-	/* Compatibility aliases used by the current Astro templates */
-	--hq-red: var(--color-brand-background) !important;
-	--hq-red-dark: var(--color-brand-background-pressed) !important;
-	--hq-bg: var(--color-neutral-background-4) !important;
-	--hq-surface: var(--color-neutral-background-2) !important;
-	--hq-card: var(--color-neutral-background-1) !important;
-	--hq-card-soft: var(--color-neutral-background-2) !important;
-	--hq-border: var(--color-neutral-stroke-2) !important;
-	--hq-text: var(--color-neutral-foreground-1) !important;
-	--hq-text-soft: var(--color-neutral-foreground-2) !important;
-	--hq-muted: var(--color-neutral-foreground-3) !important;
-	--accent: var(--color-brand-background) !important;
-	--accent-dark: var(--color-brand-background-pressed) !important;
+	/* Site-level semantic aliases. */
+	--control-height-small: 32px;
+	--control-height-medium: 40px;
+	--control-height-touch: 44px;
+	--site-width: 1440px;
+	--content-width: 960px;
+	--reading-width: 880px;
+	--page-gutter: var(--spacing-240);
+	--focus-ring: 0 0 0 2px var(--color-neutral-background-4), 0 0 0 4px var(--color-brand-stroke-1);
+
+	/* Compatibility aliases retained for migrated templates/content. */
+	--hq-red: var(--color-brand-background);
+	--hq-red-dark: var(--color-brand-background-pressed);
+	--hq-bg: var(--color-neutral-background-4);
+	--hq-surface: var(--color-neutral-background-2);
+	--hq-card: var(--color-neutral-background-1);
+	--hq-card-soft: var(--color-neutral-background-2);
+	--hq-border: var(--color-neutral-stroke-2);
+	--hq-text: var(--color-neutral-foreground-1);
+	--hq-text-soft: var(--color-neutral-foreground-2);
+	--hq-muted: var(--color-neutral-foreground-3);
+	--hq-shadow: var(--shadow-16);
+	--hq-radius-lg: var(--radius-xlarge);
+	--hq-radius-md: var(--radius-large);
+	--hq-radius-sm: var(--radius-medium);
+	--hq-container: var(--site-width);
+	--accent: var(--color-brand-background);
+	--accent-dark: var(--color-brand-background-pressed);
+	--black: 255, 255, 255;
+	--gray: 173, 173, 173;
+	--gray-light: 82, 82, 82;
+	--gray-dark: 214, 214, 214;
+	--gray-gradient: #0a0a0a, #1f1f1f;
+	--box-shadow: var(--shadow-16);
 }
 
-html,
-body {
-	background: var(--color-neutral-background-4) !important;
-	color: var(--color-neutral-foreground-2) !important;
+@media (max-width: 639px) {
+	:root {
+		--page-gutter: var(--spacing-160);
+	}
 }
 
-body::before {
-	background-image: linear-gradient(var(--color-neutral-stroke-subtle) 1px, transparent 1px) !important;
-	opacity: 0.35;
-}
-
-::selection {
-	background: var(--color-brand-background) !important;
-	color: var(--color-neutral-foreground-on-brand) !important;
-}
-
-/* Header: neutral surfaces, brand used only for identity and interaction */
-.site-header {
-	--header-red: var(--color-brand-background) !important;
-	--header-red-hover: var(--color-brand-background-hover) !important;
-	--header-red-pressed: var(--color-brand-background-pressed) !important;
-	border-color: var(--color-neutral-stroke-alpha) !important;
-	background: var(--color-neutral-background-3) !important;
-	box-shadow: var(--shadow-4) !important;
-}
-
-.site-header .utility-bar {
-	border-color: var(--color-neutral-stroke-alpha) !important;
-	background: var(--color-neutral-background-4) !important;
-}
-
-.site-header .utility-links a,
-.site-header .social-links a {
-	color: var(--color-neutral-foreground-3) !important;
-}
-
-.site-header .social-links a {
-	border-color: var(--color-neutral-stroke-alpha-2) !important;
-	background: var(--color-subtle-background) !important;
-}
-
-.site-header .utility-links a:hover,
-.site-header .utility-links a:focus-visible,
-.site-header .social-links a:hover,
-.site-header .social-links a:focus-visible {
-	border-color: var(--color-brand-stroke-1) !important;
-	background: var(--color-brand-background-2) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-.site-header .brand-surface {
-	background: var(--color-neutral-background-2) !important;
-}
-
-.site-header .brand-description {
-	color: var(--color-neutral-foreground-2) !important;
-}
-
-.site-header .main-nav {
-	border-top-color: var(--color-neutral-stroke-alpha) !important;
-	border-bottom-color: var(--color-brand-background) !important;
-	background: var(--color-neutral-background-3) !important;
-	box-shadow: var(--shadow-4) !important;
-}
-
-.site-header .home-menu-link,
-.site-header .menu-direct,
-.site-header .menu-trigger {
-	border-color: transparent !important;
-	border-inline-end-color: var(--color-neutral-stroke-alpha) !important;
-	background: var(--color-subtle-background) !important;
-	color: var(--color-neutral-foreground-2) !important;
-}
-
-.site-header .home-menu-link:hover,
-.site-header .home-menu-link:focus-visible,
-.site-header .menu-direct:hover,
-.site-header .menu-direct:focus-visible,
-.site-header .menu-trigger:hover,
-.site-header .menu-trigger:focus-visible,
-.site-header .menu-group.is-open > .menu-trigger {
-	background: var(--color-subtle-background-hover) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-.site-header .menu-direct.is-active,
-.site-header .menu-trigger.has-active-child {
-	background: var(--color-brand-background-2) !important;
-	box-shadow: inset 0 -3px var(--color-brand-stroke-1) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-.site-header .menu-surface,
-.site-header .submenu-surface {
-	border-color: var(--color-neutral-stroke-1) !important;
-	background: var(--color-neutral-background-1) !important;
-	box-shadow: var(--shadow-16) !important;
-}
-
-.site-header .menu-list > a,
-.site-header .submenu-trigger,
-.site-header .submenu-surface > a {
-	color: var(--color-neutral-foreground-2) !important;
-}
-
-.site-header .menu-list > a:hover,
-.site-header .menu-list > a:focus-visible,
-.site-header .submenu-trigger:hover,
-.site-header .submenu-trigger:focus-visible,
-.site-header .submenu-surface > a:hover,
-.site-header .submenu-surface > a:focus-visible {
-	border-color: transparent !important;
-	background: var(--color-subtle-background-hover) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-.site-header .menu-list > a.is-active,
-.site-header .submenu-surface > a.is-active {
-	border-color: transparent !important;
-	background: var(--color-brand-background-2) !important;
-	box-shadow: inset 2px 0 var(--color-brand-stroke-1) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-/* Shared surfaces */
-.site-footer,
-.post-card,
-.featured-card,
-.prose table,
-.prose blockquote {
-	border-color: var(--color-neutral-stroke-2) !important;
-}
-
-.site-footer {
-	background: var(--color-neutral-background-2) !important;
-}
-
-.site-footer .footer-bottom {
-	background: var(--color-neutral-background-4) !important;
-}
-
-.site-footer a:hover,
-.site-footer a:focus-visible {
-	background: var(--color-subtle-background-hover) !important;
-	color: var(--color-neutral-foreground-1) !important;
-}
-
-@media (forced-colors: active) {
-	.site-header .main-nav,
-	.site-header .menu-surface,
-	.site-header .submenu-surface,
-	.site-footer {
-		border-color: CanvasText !important;
-		background: Canvas !important;
-		color: CanvasText !important;
+@media (prefers-contrast: more) {
+	:root {
+		--color-neutral-stroke-alpha: rgba(255, 255, 255, 0.24);
+		--color-neutral-stroke-alpha-2: rgba(255, 255, 255, 0.36);
+		--color-neutral-foreground-3: #cfcfcf;
 	}
 }
