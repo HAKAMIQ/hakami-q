@@ -9,7 +9,6 @@ const warnings = [];
 
 const read = (file) => fs.readFile(path.join(root, file), 'utf8');
 const fail = (file, rule, message) => errors.push({ file, rule, message });
-const warn = (file, rule, message) => warnings.push({ file, rule, message });
 
 function requireText(file, source, needle, rule, message) {
 	if (!source.includes(needle)) fail(file, rule, message);
@@ -41,6 +40,7 @@ async function collectAstroFiles(dir) {
 const files = {
 	home: 'src/pages/index.astro',
 	blog: 'src/pages/blog/index.astro',
+	articleRoute: 'src/pages/blog/[...slug].astro',
 	article: 'src/layouts/BlogPost.astro',
 	blogger: 'src/layouts/BloggerPageLayout.astro',
 	static: 'src/layouts/StaticPageLayout.astro',
@@ -49,6 +49,7 @@ const files = {
 	sidebar: 'src/components/fluent/BlogSidebar.astro',
 	global: 'src/styles/global.css',
 	components: 'src/styles/fluent-web-components.css',
+	tooltip: 'src/styles/fluent-tooltip.css',
 	native: 'src/styles/fluent-native-controls.css',
 	navCss: 'src/styles/header-persistent-nav.css',
 	theme: 'src/styles/fluent-core-theme.css',
@@ -79,11 +80,22 @@ if (titleIndex < 0 || contentIndex < titleIndex) {
 	fail(files.article, 'article.order', 'Article content must follow the page title directly in document order.');
 }
 
+for (const [needle, rule, message] of [
+	[".replace(/<h1\\b([^>]*)>/gi, '<h2$1>')", 'article.legacy-h1', 'Imported article H1 headings must be normalized below the page-level H1.'],
+	['if (!/\\balt\\s*=/i.test(normalized))', 'article.legacy-alt', 'Imported article images must receive an alt fallback when the legacy source omitted one.'],
+	['noopener noreferrer', 'article.new-tab-security', 'Imported new-tab links must receive noopener noreferrer.'],
+]) requireText(files.articleRoute, source.articleRoute, needle, rule, message);
+
+for (const [needle, rule, message] of [
+	[".replace(/<main\\b([^>]*)>/gi, '<div$1>')", 'static.no-nested-main', 'Imported Blogger page content must not create a nested main landmark.'],
+	[".replace(/<h1\\b([^>]*)>/gi, '<h2$1>')", 'static.single-h1', 'Imported Blogger page H1 headings must be normalized below the layout H1.'],
+	['if (!/\\balt\\s*=/i.test(normalized))', 'static.legacy-alt', 'Imported Blogger page images must receive an alt fallback when omitted.'],
+]) requireText(files.blogger, source.blogger, needle, rule, message);
+
 forbidText(files.home, source.home, 'BlogSidebar', 'home.no-sidebar', 'Do not add the blog/category sidebar to the homepage.');
 forbidText(files.home, source.home, '<time', 'home.no-dates', 'Do not reintroduce article dates on the homepage.');
 requireText(files.home, source.home, 'id="home-feed-size"', 'home.display-count', 'Homepage must keep the controlled latest-post count selector.');
 
-// Listing performance: never return to rendering the full collection as cards.
 requireText(files.blog, source.blog, 'const DEFAULT_PAGE_SIZE = 12;', 'listing.default-page-size', 'Blog listing must retain a bounded default page size.');
 requireText(files.blog, source.blog, 'const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);', 'listing.initial-slice', 'Initial blog DOM must contain only the bounded first page.');
 requireText(files.blog, source.blog, 'id="posts-per-page"', 'listing.page-size-control', 'Blog listing must keep the 12/24/36 page-size control.');
@@ -120,7 +132,7 @@ for (const [key, css] of [['global', source.global], ['article', source.article]
 	}
 }
 
-for (const key of ['global', 'components', 'native', 'navCss', 'article', 'static', 'blogger', 'home', 'blog', 'header', 'footer', 'sidebar']) {
+for (const key of ['global', 'components', 'tooltip', 'native', 'navCss', 'article', 'static', 'blogger', 'home', 'blog', 'header', 'footer', 'sidebar']) {
 	const matches = [...source[key].matchAll(/#[0-9a-fA-F]{3,8}\b/g)];
 	if (matches.length) fail(files[key], 'tokens.raw-color', `Found ${matches.length} raw hex color value(s); use semantic Fluent aliases instead.`);
 	if (/transition\s*:\s*all\b/i.test(source[key])) fail(files[key], 'motion.transition-all', 'Avoid transition: all; animate only properties that communicate state.');
@@ -155,9 +167,7 @@ for (const file of astroFiles) {
 	}
 }
 
-if (!source.components.includes('.fui-tooltip')) {
-	warn(files.components, 'component.tooltip', 'No custom tooltip primitive is defined. This is acceptable while native title text is only supplemental; add a real tooltip only when the experience needs one.');
-}
+requireText(files.tooltip, source.tooltip, '.fui-tooltip-surface', 'component.tooltip', 'Fluent tooltip surface must remain defined.');
 
 const report = {
 	generatedAt: new Date().toISOString(),
