@@ -11,6 +11,7 @@ html {
 	color-scheme: dark;
 	background: var(--color-neutral-background-4);
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
 	text-size-adjust: 100%;
 }
 
@@ -38,6 +39,10 @@ body.sidebar-drawer-open {
 main {
 	display: block;
 	width: 100%;
+}
+
+main > section {
+	scroll-margin-top: calc(var(--control-height-touch) + var(--spacing-160));
 }
 
 .site-container {
@@ -127,6 +132,11 @@ h5,
 h6 {
 	font-size: var(--font-size-body-1);
 	line-height: var(--line-height-body-1);
+}
+
+p,
+li {
+	text-wrap: pretty;
 }
 
 :where(ul, ol) {
@@ -428,6 +438,33 @@ pre > code {
 	background: var(--color-neutral-background-5) !important;
 }
 
+/* Top-level navigation uses a quick fade rather than sliding large surfaces. */
+@view-transition {
+	navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: var(--motion-duration-page);
+	animation-timing-function: var(--curve-easy-ease);
+}
+
+::view-transition-old(root) {
+	animation-name: fluent-page-fade-out;
+}
+
+::view-transition-new(root) {
+	animation-name: fluent-page-fade-in;
+}
+
+@keyframes fluent-page-fade-out {
+	to { opacity: 0; }
+}
+
+@keyframes fluent-page-fade-in {
+	from { opacity: 0; }
+}
+
 @media (max-width: 639px) {
 	h1 {
 		font-size: var(--font-size-title-2);
@@ -462,6 +499,11 @@ pre > code {
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
+	}
+
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none !important;
 	}
 }
 
