@@ -11,13 +11,7 @@ interface Props {
 	content: string;
 }
 
-const {
-	title,
-	description,
-	lang,
-	dir,
-	content,
-} = Astro.props;
+const { title, description, lang, dir, content } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +24,18 @@ const {
 
 		<main class="blogger-page-shell">
 			<div class="site-container blogger-page-container">
-				<article class="blogger-page-content" set:html={content} />
+				<header class="blogger-page-header fui-card">
+					<nav class="fui-breadcrumb" aria-label={lang === 'ar' ? 'مسار الصفحة' : 'Breadcrumb'}>
+						<ol>
+							<li><a href="/">{lang === 'ar' ? 'الرئيسية' : 'Home'}</a></li>
+							<li aria-current="page">{title}</li>
+						</ol>
+					</nav>
+					<h1>{title}</h1>
+					{description && <p>{description}</p>}
+				</header>
+
+				<article class="blogger-page-content fluent-rich-text" set:html={content} />
 			</div>
 		</main>
 
@@ -39,40 +44,76 @@ const {
 </html>
 
 <style>
-	.blogger-page-shell {
-		padding: clamp(0.75rem, 2vw, 1.5rem) 0 0;
-	}
+	.blogger-page-shell { padding-top: var(--spacing-240); }
 
 	.blogger-page-container {
-		width: min(calc(100% - 32px), 1080px);
+		width: min(calc(100% - (var(--page-gutter) * 2)), 960px);
+	}
+
+	.blogger-page-header {
+		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
+	}
+
+	.blogger-page-header .fui-breadcrumb { margin-bottom: var(--spacing-160); }
+
+	.blogger-page-header h1 {
+		font-size: var(--font-size-title-1);
+		line-height: var(--line-height-title-1);
+	}
+
+	.blogger-page-header p {
+		max-width: 760px;
+		margin-top: var(--spacing-100);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 	}
 
 	.blogger-page-content {
 		min-width: 0;
+		margin-top: var(--spacing-160);
+		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
 		overflow: hidden;
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-xlarge);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-4);
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-reading);
+		line-height: var(--line-height-reading);
 	}
 
-	.blogger-page-content :global(img),
-	.blogger-page-content :global(video),
-	.blogger-page-content :global(iframe) {
-		max-width: 100%;
+	.blogger-page-content :global(h1) {
+		font-size: var(--font-size-title-2) !important;
+		line-height: var(--line-height-title-2) !important;
 	}
 
-	.blogger-page-content :global(img) {
-		height: auto;
+	.blogger-page-content :global(h2) {
+		margin-block: var(--spacing-320) var(--spacing-120);
+		font-size: var(--font-size-title-3) !important;
+		line-height: var(--line-height-title-3) !important;
 	}
 
-	.blogger-page-content :global(table) {
-		max-width: 100%;
+	.blogger-page-content :global(h3) {
+		margin-block: var(--spacing-240) var(--spacing-100);
+		font-size: var(--font-size-subtitle-1) !important;
+		line-height: var(--line-height-subtitle-1) !important;
 	}
 
-	.blogger-page-content :global(a) {
-		overflow-wrap: anywhere;
+	.blogger-page-content :global(h4) {
+		margin-block: var(--spacing-200) var(--spacing-80);
+		font-size: var(--font-size-subtitle-2) !important;
+		line-height: var(--line-height-subtitle-2) !important;
 	}
 
-	@media (max-width: 700px) {
-		.blogger-page-container {
-			width: min(calc(100% - 20px), 1080px);
-		}
+	.blogger-page-content :global(p) { margin-block: 0 var(--spacing-160); }
+	.blogger-page-content :global(table) { max-width: 100%; }
+	.blogger-page-content :global(a) { overflow-wrap: anywhere; }
+
+	@media (max-width: 639px) {
+		.blogger-page-shell { padding-top: var(--spacing-120); }
+		.blogger-page-header,
+		.blogger-page-content { padding: var(--spacing-160); }
+		.blogger-page-header h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
 	}
 </style>
