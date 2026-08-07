@@ -17,6 +17,8 @@ const searchItems = posts.map((post) => ({
 	labels: post.data.labels ?? [],
 	href: `/blog/${post.id}/`,
 }));
+
+const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 ---
 
 <!doctype html>
@@ -54,17 +56,20 @@ const searchItems = posts.map((post) => ({
 
 							<div class="home-search-results" id="home-search-results" role="listbox" aria-label="نتائج البحث" hidden></div>
 						</div>
+
+						<nav class="browse-shortcuts" aria-label="تصفح سريع حسب المنصة">
+							{browseTerms.map((term) => (
+								<button type="button" data-search-term={term}>{term}</button>
+							))}
+						</nav>
 					</div>
 				</div>
 			</section>
 
 			<section class="content-section" aria-labelledby="latest-posts-title">
-				<div class="site-container">
+				<div class="site-container home-content-container">
 					<header class="section-heading">
-						<div>
-							<span class="section-eyebrow">جديد</span>
-							<h2 id="latest-posts-title">أحدث المقالات</h2>
-						</div>
+						<h2 id="latest-posts-title">أحدث المقالات</h2>
 						<a class="fui-link section-action" href="/blog">
 							<span>عرض جميع المقالات</span>
 							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
@@ -84,7 +89,7 @@ const searchItems = posts.map((post) => ({
 									</div>
 
 									<div class="featured-content">
-										<span class="fui-badge fui-badge--brand">المقال الأحدث</span>
+										{featuredPost.data.labels?.[0] && <span class="article-category">{featuredPost.data.labels[0]}</span>}
 										<h2>{featuredPost.data.title}</h2>
 										<p>{featuredPost.data.description}</p>
 									</div>
@@ -104,6 +109,7 @@ const searchItems = posts.map((post) => ({
 											</div>
 
 											<div class="post-card-content">
+												{post.data.labels?.[0] && <span class="article-category compact">{post.data.labels[0]}</span>}
 												<h2>{post.data.title}</h2>
 											</div>
 										</a>
@@ -129,6 +135,7 @@ const searchItems = posts.map((post) => ({
 				const input = root.querySelector<HTMLInputElement>('#home-search-input');
 				const results = root.querySelector<HTMLElement>('#home-search-results');
 				const clearButton = root.querySelector<HTMLButtonElement>('.home-search-clear');
+				const browseButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-search-term]'));
 				if (!input || !results || !clearButton) return;
 
 				type SearchItem = { title: string; description: string; labels: string[]; href: string };
@@ -236,8 +243,16 @@ const searchItems = posts.map((post) => ({
 					input.focus();
 				});
 
+				for (const button of browseButtons) {
+					button.addEventListener('click', () => {
+						input.value = button.dataset.searchTerm ?? '';
+						render();
+						input.focus();
+					});
+				}
+
 				document.addEventListener('pointerdown', (event) => {
-					if (event.target instanceof Node && !root.contains(event.target)) closeResults();
+					if (event.target instanceof Node && !root.contains(event.target) && !(event.target instanceof Element && event.target.closest('[data-search-term]'))) closeResults();
 				});
 			};
 
@@ -250,19 +265,19 @@ const searchItems = posts.map((post) => ({
 
 <style>
 	.home-search-section {
-		padding-block: var(--spacing-240) var(--spacing-80);
+		padding-block: var(--spacing-160) var(--spacing-80);
 	}
 
 	.home-search-wrap {
-		width: min(100%, 880px);
+		width: min(100%, 820px);
 		margin-inline: auto;
 	}
 
 	.home-search-title {
-		margin-bottom: var(--spacing-100);
-		font-size: var(--font-size-title-3);
+		margin-bottom: var(--spacing-80);
+		font-size: var(--font-size-subtitle-1);
 		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-title-3);
+		line-height: var(--line-height-subtitle-1);
 		text-align: center;
 	}
 
@@ -273,24 +288,18 @@ const searchItems = posts.map((post) => ({
 
 	.home-search-field {
 		display: flex;
-		min-height: 48px;
+		min-height: 44px;
 		align-items: center;
 		gap: var(--spacing-80);
 		padding-inline: var(--spacing-120);
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
+		border-radius: var(--radius-medium);
 		background: var(--color-neutral-background-1);
-		box-shadow: var(--shadow-4);
+		box-shadow: var(--shadow-2);
 		transition:
 			border-color var(--duration-faster) var(--curve-easy-ease),
 			box-shadow var(--duration-faster) var(--curve-easy-ease),
 			background var(--duration-faster) var(--curve-easy-ease);
-	}
-
-	.home-search-field:focus-within {
-		border-color: var(--color-brand-stroke-1);
-		box-shadow: var(--focus-ring), var(--shadow-4);
-		background: var(--color-neutral-background-1-hover);
 	}
 
 	.home-search-field > svg {
@@ -307,7 +316,7 @@ const searchItems = posts.map((post) => ({
 	.home-search-field input {
 		width: 100%;
 		min-width: 0;
-		height: 46px;
+		height: 42px;
 		padding: 0;
 		border: 0;
 		outline: 0;
@@ -316,13 +325,8 @@ const searchItems = posts.map((post) => ({
 		font-size: var(--font-size-body-1);
 	}
 
-	.home-search-field input::placeholder {
-		color: var(--color-neutral-foreground-4);
-	}
-
-	.home-search-field input::-webkit-search-cancel-button {
-		display: none;
-	}
+	.home-search-field input::placeholder { color: var(--color-neutral-foreground-4); }
+	.home-search-field input::-webkit-search-cancel-button { display: none; }
 
 	.home-search-clear {
 		display: grid;
@@ -369,9 +373,7 @@ const searchItems = posts.map((post) => ({
 	}
 
 	:global(.home-search-result:hover),
-	:global(.home-search-result:focus-visible) {
-		background: var(--color-subtle-background-hover);
-	}
+	:global(.home-search-result:focus-visible) { background: var(--color-subtle-background-hover); }
 
 	:global(.home-search-result strong) {
 		display: -webkit-box;
@@ -397,25 +399,44 @@ const searchItems = posts.map((post) => ({
 		text-align: center;
 	}
 
-	.content-section {
-		padding-block: var(--spacing-240) var(--spacing-160);
+	.browse-shortcuts {
+		display: flex;
+		justify-content: center;
+		gap: var(--spacing-60);
+		margin-top: var(--spacing-100);
+		flex-wrap: wrap;
 	}
+
+	.browse-shortcuts button {
+		min-height: 30px;
+		padding-inline: var(--spacing-100);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-circular);
+		background: var(--color-subtle-background);
+		color: var(--color-neutral-foreground-3);
+		font: inherit;
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+		transition: background var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.browse-shortcuts button:hover,
+	.browse-shortcuts button:focus-visible {
+		border-color: var(--color-neutral-stroke-1-hover);
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.content-section { padding-block: var(--spacing-120) var(--spacing-160); }
+	.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 1200px); }
 
 	.section-heading {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: space-between;
 		gap: var(--spacing-160);
-		margin-bottom: var(--spacing-200);
-	}
-
-	.section-eyebrow {
-		display: block;
-		margin-bottom: var(--spacing-40);
-		color: var(--color-brand-foreground);
-		font-size: var(--font-size-caption-1);
-		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-caption-1);
+		margin-bottom: var(--spacing-160);
 	}
 
 	.section-heading h2 {
@@ -426,18 +447,13 @@ const searchItems = posts.map((post) => ({
 	.section-action { flex: 0 0 auto; }
 	.section-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
 
-	.articles-layout {
-		display: grid;
-		gap: var(--spacing-160);
-	}
-
-	.featured-card,
-	.post-card { overflow: hidden; }
+	.articles-layout { display: grid; gap: var(--spacing-140); }
+	.featured-card, .post-card { overflow: hidden; }
 
 	.featured-card > a {
 		display: grid;
-		grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
-		min-height: 280px;
+		grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
+		height: 244px;
 		color: inherit;
 		direction: ltr;
 		text-decoration: none;
@@ -455,15 +471,38 @@ const searchItems = posts.map((post) => ({
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: var(--spacing-240);
+		padding: var(--spacing-200);
 		direction: rtl;
 		text-align: right;
+	}
+
+	.article-category {
+		display: inline-flex;
+		max-width: 100%;
+		min-height: 24px;
+		align-items: center;
+		padding-inline: var(--spacing-80);
+		border-radius: var(--radius-circular);
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.article-category.compact {
+		min-height: 20px;
+		padding-inline: var(--spacing-60);
+		font-size: 0.68rem;
 	}
 
 	.featured-content h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		margin-top: var(--spacing-100);
+		margin-top: var(--spacing-80);
 		font-size: var(--font-size-subtitle-1);
 		line-height: var(--line-height-subtitle-1);
 		-webkit-box-orient: vertical;
@@ -473,12 +512,12 @@ const searchItems = posts.map((post) => ({
 	.featured-content p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin-top: var(--spacing-80);
+		margin-top: var(--spacing-60);
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-body-1);
 		line-height: var(--line-height-body-1);
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 2;
 	}
 
 	.featured-image img,
@@ -496,7 +535,7 @@ const searchItems = posts.map((post) => ({
 		display: grid;
 		width: 100%;
 		height: 100%;
-		min-height: 180px;
+		min-height: 160px;
 		place-items: center;
 		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-4);
@@ -509,7 +548,7 @@ const searchItems = posts.map((post) => ({
 	.latest-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: var(--spacing-160);
+		gap: var(--spacing-140);
 	}
 
 	.post-card > a {
@@ -522,18 +561,20 @@ const searchItems = posts.map((post) => ({
 	}
 
 	.post-thumb {
-		aspect-ratio: 16 / 9;
+		aspect-ratio: 2 / 1;
 		overflow: hidden;
 		background: var(--color-neutral-background-3);
 	}
 
 	.post-card-content {
 		display: flex;
-		min-height: 74px;
+		min-height: 92px;
 		min-width: 0;
 		flex: 1;
+		flex-direction: column;
 		align-items: flex-start;
-		padding: var(--spacing-120);
+		gap: var(--spacing-60);
+		padding: var(--spacing-100) var(--spacing-120);
 		text-align: right;
 	}
 
@@ -548,34 +589,35 @@ const searchItems = posts.map((post) => ({
 	}
 
 	@media (max-width: 1023px) {
-		.featured-card > a { grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr); min-height: 250px; }
+		.featured-card > a { grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); height: 232px; }
 		.latest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
 	@media (max-width: 767px) {
-		.home-search-section { padding-top: var(--spacing-200); }
-		.home-search-title { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
-		.content-section { padding-top: var(--spacing-200); }
-		.section-heading { align-items: flex-start; }
-		.featured-card > a { grid-template-columns: 1fr; min-height: 0; }
-		.featured-image { aspect-ratio: 16 / 9; }
-		.featured-content { padding: var(--spacing-160); }
+		.home-search-section { padding-top: var(--spacing-120); }
+		.home-search-title { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.content-section { padding-top: var(--spacing-100); }
+		.featured-card > a { grid-template-columns: 1fr; height: auto; }
+		.featured-image { aspect-ratio: 16 / 8.5; }
+		.featured-content { padding: var(--spacing-140); }
 		.featured-content h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
-		.featured-content p { -webkit-line-clamp: 2; }
 	}
 
 	@media (max-width: 639px) {
 		.home-search-title { text-align: right; }
-		.home-search-field { min-height: 44px; padding-inline: var(--spacing-100); }
-		.home-search-field input { height: 42px; }
-		.section-heading { flex-direction: column; gap: var(--spacing-100); }
+		.browse-shortcuts { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; scrollbar-width: none; }
+		.browse-shortcuts::-webkit-scrollbar { display: none; }
+		.browse-shortcuts button { flex: 0 0 auto; min-height: 36px; }
+		.section-heading { gap: var(--spacing-80); }
+		.section-action span { display: none; }
+		.section-action { width: 36px; height: 36px; justify-content: center; padding: 0; }
 		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
-		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
-		.post-thumb { height: 100%; min-height: 96px; aspect-ratio: auto; }
-		.post-card-content { min-height: 96px; align-items: center; }
+		.post-card > a { display: grid; grid-template-columns: 124px minmax(0, 1fr); }
+		.post-thumb { height: 100%; min-height: 102px; aspect-ratio: auto; }
+		.post-card-content { min-height: 102px; justify-content: center; }
 	}
 
 	@media (max-width: 420px) {
-		.post-card > a { grid-template-columns: 96px minmax(0, 1fr); }
+		.post-card > a { grid-template-columns: 108px minmax(0, 1fr); }
 	}
 </style>
