@@ -1,0 +1,88 @@
+/* Fluent Text primitive for semantic Astro/HTML content.
+ * Keep native semantic elements (h1, p, span, pre, etc.) and opt into
+ * presentation through these classes only when a component needs it. */
+
+:root {
+	/* Fluent Text size scale mapped onto the site's established type ramp. */
+	--font-size-text-100: var(--font-size-caption-2);
+	--line-height-text-100: var(--line-height-caption-2);
+	--font-size-text-200: var(--font-size-caption-1);
+	--line-height-text-200: var(--line-height-caption-1);
+	--font-size-text-300: var(--font-size-body-1);
+	--line-height-text-300: var(--line-height-body-1);
+	--font-size-text-400: var(--font-size-subtitle-2);
+	--line-height-text-400: var(--line-height-subtitle-2);
+	--font-size-text-500: var(--font-size-subtitle-1);
+	--line-height-text-500: var(--line-height-subtitle-1);
+	--font-size-text-600: var(--font-size-title-3);
+	--line-height-text-600: var(--line-height-title-3);
+	--font-size-text-700: var(--font-size-title-2);
+	--line-height-text-700: var(--line-height-title-2);
+	--font-size-text-800: var(--font-size-title-1);
+	--line-height-text-800: var(--line-height-title-1);
+	--font-size-text-900: var(--font-size-large-title);
+	--line-height-text-900: var(--line-height-large-title);
+	--font-size-text-1000: var(--font-size-display);
+	--line-height-text-1000: var(--line-height-display);
+	--font-weight-medium: 500;
+	--font-family-numeric: var(--font-family-base);
+}
+
+.fui-text {
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-text-300);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-text-300);
+}
+
+.fui-text--block { display: block; width: 100%; }
+.fui-text--nowrap { white-space: nowrap; }
+.fui-text--truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.fui-text--italic { font-style: italic; }
+.fui-text--underline { text-decoration-line: underline; text-underline-offset: 0.15em; }
+.fui-text--strikethrough { text-decoration-line: line-through; }
+
+.fui-text--size-100 { font-size: var(--font-size-text-100); line-height: var(--line-height-text-100); }
+.fui-text--size-200 { font-size: var(--font-size-text-200); line-height: var(--line-height-text-200); }
+.fui-text--size-300 { font-size: var(--font-size-text-300); line-height: var(--line-height-text-300); }
+.fui-text--size-400 { font-size: var(--font-size-text-400); line-height: var(--line-height-text-400); }
+.fui-text--size-500 { font-size: var(--font-size-text-500); line-height: var(--line-height-text-500); }
+.fui-text--size-600 { font-size: var(--font-size-text-600); line-height: var(--line-height-text-600); }
+.fui-text--size-700 { font-size: var(--font-size-text-700); line-height: var(--line-height-text-700); }
+.fui-text--size-800 { font-size: var(--font-size-text-800); line-height: var(--line-height-text-800); }
+.fui-text--size-900 { font-size: var(--font-size-text-900); line-height: var(--line-height-text-900); }
+.fui-text--size-1000 { font-size: var(--font-size-text-1000); line-height: var(--line-height-text-1000); }
+
+.fui-text--weight-regular { font-weight: var(--font-weight-regular); }
+.fui-text--weight-medium { font-weight: var(--font-weight-medium); }
+.fui-text--weight-semibold { font-weight: var(--font-weight-semibold); }
+.fui-text--weight-bold { font-weight: var(--font-weight-bold); }
+
+.fui-text--align-start { text-align: start; }
+.fui-text--align-end { text-align: end; }
+.fui-text--align-center { text-align: center; }
+.fui-text--align-justify { text-align: justify; }
+
+.fui-text--font-base { font-family: var(--font-family-base); }
+.fui-text--font-numeric {
+	font-family: var(--font-family-numeric);
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum' 1;
+}
+.fui-text--font-monospace { font-family: var(--font-family-monospace); }
+
+/* Utility for two-line card titles/descriptions. Unlike truncate, this keeps wrapping. */
+.fui-text--clamp-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+/* Arabic/RTL uses logical alignment. Do not force left/right directions. */
+[dir='rtl'] .fui-text--align-start { text-align: start; }
+[dir='rtl'] .fui-text--align-end { text-align: end; }
