@@ -13,12 +13,9 @@ interface Props {
 }
 
 const { posts } = Astro.props;
-
-const categoryBySlug = Object.fromEntries(
-	categoryDefinitions.map((category) => [category.slug, category]),
-);
-
+const categoryBySlug = Object.fromEntries(categoryDefinitions.map((category) => [category.slug, category]));
 const categoryCounts = new Map<string, number>();
+
 for (const post of posts) {
 	for (const category of getPostCategories(post)) {
 		categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
@@ -32,12 +29,8 @@ const highlightedIds = new Set<string>();
 for (const topic of topicPriority) {
 	const match = posts.find((post) => {
 		if (highlightedIds.has(post.id)) return false;
-		const text = normalizeSearchText(
-			[post.data.title, post.data.description, ...post.data.labels].join(' '),
-		);
-		return text.includes(topic);
+		return normalizeSearchText([post.data.title, post.data.description, ...post.data.labels].join(' ')).includes(topic);
 	});
-
 	if (!match) continue;
 	highlightedPosts.push(match);
 	highlightedIds.add(match.id);
@@ -52,36 +45,21 @@ for (const post of posts) {
 }
 
 const latestPosts = posts.slice(0, 3);
-const guidePost =
-	posts.find((post) => {
-		const text = normalizeSearchText(
-			[post.data.title, post.data.description, ...post.data.labels].join(' '),
-		);
-		return ['دليل', 'شرح كامل', 'إعداد', 'quickstart', 'guide'].some((term) => text.includes(term));
-	}) ?? posts[0];
+const guidePost = posts.find((post) => {
+	const text = normalizeSearchText([post.data.title, post.data.description, ...post.data.labels].join(' '));
+	return ['دليل', 'شرح كامل', 'إعداد', 'quickstart', 'guide'].some((term) => text.includes(term));
+}) ?? posts[0];
 ---
 
 <div class="sidebar-region" data-sidebar-region>
-	<button
-		class="sidebar-drawer-trigger fui-button fui-button--secondary"
-		type="button"
-		aria-expanded="false"
-		aria-controls="blog-sidebar"
-		data-sidebar-open
-	>
+	<button class="sidebar-drawer-trigger fui-button fui-button--secondary" type="button" aria-expanded="false" aria-controls="blog-sidebar" data-sidebar-open>
 		<span>الأقسام والمحتوى المقترح</span>
 		<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"></path></svg>
 	</button>
 
 	<div class="fui-drawer-scrim sidebar-scrim" data-sidebar-scrim aria-hidden="true"></div>
 
-	<aside
-		class="blog-sidebar"
-		id="blog-sidebar"
-		aria-label="التنقل والمحتوى المقترح"
-		tabindex="-1"
-		data-blog-sidebar
-	>
+	<aside class="blog-sidebar" id="blog-sidebar" aria-label="التنقل والمحتوى المقترح" tabindex="-1" data-blog-sidebar>
 		<header class="drawer-header">
 			<div>
 				<span>التنقل</span>
@@ -104,18 +82,8 @@ const guidePost =
 				<div class="category-body fui-card__body">
 					<div class="fui-searchbox category-search" role="search">
 						<label class="sr-only" for="category-search-input">ابحث في الأقسام</label>
-						<svg viewBox="0 0 20 20" aria-hidden="true">
-							<circle cx="8.5" cy="8.5" r="5.5"></circle>
-							<path d="m12.5 12.5 4 4"></path>
-						</svg>
-						<input
-							id="category-search-input"
-							type="search"
-							placeholder="ابحث عن قسم"
-							autocomplete="off"
-							aria-controls="category-groups"
-							data-category-search
-						/>
+						<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m12.5 12.5 4 4"></path></svg>
+						<input id="category-search-input" type="search" placeholder="ابحث عن قسم" autocomplete="off" aria-controls="category-groups" data-category-search />
 						<button class="fui-searchbox__clear" type="button" aria-label="مسح البحث" title="مسح البحث" data-category-clear hidden>
 							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"></path></svg>
 						</button>
@@ -127,49 +95,28 @@ const guidePost =
 								const panelId = `category-panel-${group.slug}`;
 								return (
 									<div class="fui-accordion__item category-group" data-category-group>
-										<button
-											class="fui-accordion__header"
-											type="button"
-											aria-expanded="false"
-											aria-controls={panelId}
-											data-accordion-trigger
-											data-category-search-text={normalizeSearchText(group.name)}
-										>
+										<button class="fui-accordion__header" type="button" aria-expanded="false" aria-controls={panelId} data-accordion-trigger data-category-search-text={normalizeSearchText(group.name)}>
 											<span>{group.name}</span>
 											<span class="fui-badge">{categoryCounts.get(group.slug) ?? 0}</span>
 											<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
 										</button>
 
 										<div class="fui-accordion__panel category-children" id={panelId} data-accordion-panel hidden>
-											<a
-												class="category-link category-link-all"
-												href={`/blog?category=${group.slug}`}
-												data-category-link={group.slug}
-												data-category-search-text={normalizeSearchText(`${group.name} جميع المقالات`)}
-											>
+											<a class="category-link category-link-all" href={`/blog?category=${group.slug}`} data-category-link={group.slug} data-category-search-text={normalizeSearchText(`${group.name} جميع المقالات`)}>
 												<span>جميع مقالات {group.name}</span>
 												<strong class="fui-badge">{categoryCounts.get(group.slug) ?? 0}</strong>
 											</a>
 
-											{
-												group.children
-													.filter((slug) => slug !== group.slug)
-													.map((slug) => {
-														const category = categoryBySlug[slug];
-														if (!category) return null;
-														return (
-															<a
-																class="category-link"
-																href={`/blog?category=${category.slug}`}
-																data-category-link={category.slug}
-																data-category-search-text={normalizeSearchText(category.name)}
-															>
-																<span>{category.name}</span>
-																<strong class="fui-badge">{categoryCounts.get(category.slug) ?? 0}</strong>
-															</a>
-														);
-													})
-											}
+											{group.children.filter((slug) => slug !== group.slug).map((slug) => {
+												const category = categoryBySlug[slug];
+												if (!category) return null;
+												return (
+													<a class="category-link" href={`/blog?category=${category.slug}`} data-category-link={category.slug} data-category-search-text={normalizeSearchText(category.name)}>
+														<span>{category.name}</span>
+														<strong class="fui-badge">{categoryCounts.get(category.slug) ?? 0}</strong>
+													</a>
+												);
+											})}
 										</div>
 									</div>
 								);
@@ -183,84 +130,49 @@ const guidePost =
 
 			<section class="sidebar-surface fui-card" aria-labelledby="sidebar-highlighted-title">
 				<header class="surface-header compact-header fui-card__header">
-					<div>
-						<span class="surface-eyebrow">مختارات</span>
-						<h2 id="sidebar-highlighted-title">مقالات بارزة</h2>
-					</div>
+					<div><span class="surface-eyebrow">مختارات</span><h2 id="sidebar-highlighted-title">مقالات بارزة</h2></div>
 				</header>
-
 				<div class="fui-card__body list-body">
 					<ol class="ranked-posts fui-list">
-						{
-							highlightedPosts.map((post, index) => (
-								<li>
-									<a href={`/blog/${post.id}/`}>
-										<span class="rank-number">{String(index + 1).padStart(2, '0')}</span>
-										<span class="rank-title">{post.data.title}</span>
-									</a>
-								</li>
-							))
-						}
+						{highlightedPosts.map((post, index) => (
+							<li><a href={`/blog/${post.id}/`}><span class="rank-number">{String(index + 1).padStart(2, '0')}</span><span class="rank-title">{post.data.title}</span></a></li>
+						))}
 					</ol>
 				</div>
 			</section>
 
 			<section class="sidebar-surface fui-card" aria-labelledby="sidebar-latest-title">
 				<header class="surface-header compact-header fui-card__header">
-					<div>
-						<span class="surface-eyebrow">جديد</span>
-						<h2 id="sidebar-latest-title">أحدث المقالات</h2>
-					</div>
+					<div><span class="surface-eyebrow">جديد</span><h2 id="sidebar-latest-title">أحدث المقالات</h2></div>
 				</header>
-
 				<div class="fui-card__body list-body">
 					<ul class="latest-posts fui-list">
-						{
-							latestPosts.map((post) => (
-								<li>
-									<a href={`/blog/${post.id}/`}>
-										<span>{post.data.title}</span>
-										<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
-									</a>
-								</li>
-							))
-						}
+						{latestPosts.map((post) => (
+							<li><a href={`/blog/${post.id}/`}><span>{post.data.title}</span><time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time></a></li>
+						))}
 					</ul>
 				</div>
 			</section>
 
-			{
-				guidePost && (
-					<section class="sidebar-surface fui-card" aria-labelledby="sidebar-guide-title">
-						<header class="surface-header compact-header fui-card__header">
-							<div>
-								<span class="surface-eyebrow">موصى به</span>
-								<h2 id="sidebar-guide-title">دليل مختار</h2>
+			{guidePost && (
+				<section class="sidebar-surface fui-card" aria-labelledby="sidebar-guide-title">
+					<header class="surface-header compact-header fui-card__header">
+						<div><span class="surface-eyebrow">موصى به</span><h2 id="sidebar-guide-title">دليل مختار</h2></div>
+					</header>
+					<div class="fui-card__body guide-body">
+						<a class="guide-card fui-card fui-card--interactive" href={`/blog/${guidePost.id}/`}>
+							<div class="guide-image">
+								{guidePost.data.heroImageUrl ? <img src={guidePost.data.heroImageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" /> : <span>HAKAMIQ</span>}
 							</div>
-						</header>
-
-						<div class="fui-card__body guide-body">
-							<a class="guide-card fui-card fui-card--interactive" href={`/blog/${guidePost.id}/`}>
-								<div class="guide-image">
-									{guidePost.data.heroImageUrl ? (
-										<img src={guidePost.data.heroImageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" />
-									) : (
-										<span>HAKAMIQ</span>
-									)}
-								</div>
-								<div class="guide-content">
-									<h3>{guidePost.data.title}</h3>
-									<p>{guidePost.data.description}</p>
-									<span class="guide-action fui-button fui-button--primary">
-										قراءة الدليل
-										<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-									</span>
-								</div>
-							</a>
-						</div>
-					</section>
-				)
-			}
+							<div class="guide-content">
+								<h3>{guidePost.data.title}</h3>
+								<p>{guidePost.data.description}</p>
+								<span class="guide-action fui-button fui-button--primary">قراءة الدليل <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg></span>
+							</div>
+						</a>
+					</div>
+				</section>
+			)}
 		</div>
 	</aside>
 </div>
@@ -282,13 +194,13 @@ const guidePost =
 		const empty = region.querySelector<HTMLElement>('[data-category-empty]');
 		const selectedCategory = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
 		let lastFocused: HTMLElement | null = null;
+		let activeGroup: HTMLElement | undefined;
 
 		if (!sidebar) return;
 
 		const setGroupOpen = (group: HTMLElement, open: boolean) => {
-			const trigger = group.querySelector<HTMLButtonElement>('[data-accordion-trigger]');
+			group.querySelector<HTMLButtonElement>('[data-accordion-trigger]')?.setAttribute('aria-expanded', String(open));
 			const panel = group.querySelector<HTMLElement>('[data-accordion-panel]');
-			trigger?.setAttribute('aria-expanded', String(open));
 			if (panel) panel.hidden = !open;
 		};
 
@@ -305,7 +217,6 @@ const guidePost =
 			});
 		}
 
-		let activeGroup: HTMLElement | undefined;
 		if (selectedCategory) {
 			const activeLink = region.querySelector<HTMLAnchorElement>(`[data-category-link="${CSS.escape(selectedCategory)}"]`);
 			if (activeLink) {
@@ -318,13 +229,12 @@ const guidePost =
 		const filterCategories = () => {
 			const term = search?.value.normalize('NFKC').trim().toLowerCase() ?? '';
 			let visibleGroups = 0;
-
 			if (clearSearch) clearSearch.hidden = !term;
 
 			for (const group of groups) {
 				const trigger = group.querySelector<HTMLElement>('[data-accordion-trigger]');
 				const groupMatches = (trigger?.dataset.categorySearchText ?? '').includes(term);
-				const links = Array.from(group.querySelectorAll<HTMLElement>('[data-category-search-text]'));
+				const links = Array.from(group.querySelectorAll<HTMLElement>('[data-category-link][data-category-search-text]'));
 				let visibleLinks = 0;
 
 				for (const link of links) {
@@ -343,7 +253,6 @@ const guidePost =
 				closeGroups(activeGroup);
 				if (activeGroup) setGroupOpen(activeGroup, true);
 			}
-
 			if (empty) empty.hidden = visibleGroups > 0;
 		};
 
@@ -354,8 +263,6 @@ const guidePost =
 			filterCategories();
 			search.focus();
 		});
-
-		const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 		const closeDrawer = (restoreFocus = true) => {
 			sidebar.classList.remove('is-open');
@@ -390,13 +297,17 @@ const guidePost =
 		const syncMode = () => {
 			if (mobileMode.matches) {
 				closeDrawer(false);
-			} else {
-				sidebar.inert = false;
-				sidebar.removeAttribute('aria-hidden');
-				sidebar.classList.remove('is-open');
-				scrim?.classList.remove('is-open');
-				document.body.classList.remove('sidebar-drawer-open');
+				return;
 			}
+			sidebar.inert = false;
+			sidebar.removeAttribute('aria-hidden');
+			sidebar.removeAttribute('role');
+			sidebar.removeAttribute('aria-modal');
+			sidebar.removeAttribute('aria-labelledby');
+			sidebar.classList.remove('is-open');
+			scrim?.classList.remove('is-open');
+			openButton?.setAttribute('aria-expanded', 'false');
+			document.body.classList.remove('sidebar-drawer-open');
 		};
 
 		openButton?.addEventListener('click', openDrawer);
@@ -410,10 +321,9 @@ const guidePost =
 				closeDrawer();
 				return;
 			}
-
 			if (event.key !== 'Tab' || !mobileMode.matches || !sidebar.classList.contains('is-open')) return;
-			const focusable = Array.from(sidebar.querySelectorAll<HTMLElement>(focusableSelector)).filter((item) => !item.hidden && !item.closest('[hidden]'));
-			if (focusable.length === 0) return;
+			const focusable = Array.from(sidebar.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter((item) => !item.hidden && !item.closest('[hidden]'));
+			if (!focusable.length) return;
 			const first = focusable[0];
 			const last = focusable[focusable.length - 1];
 			if (event.shiftKey && document.activeElement === first) {
@@ -441,335 +351,70 @@ const guidePost =
 
 <style>
 	.sidebar-region,
-	.blog-sidebar {
-		min-width: 0;
-	}
-
+	.blog-sidebar { min-width: 0; }
 	.sidebar-drawer-trigger,
 	.drawer-header,
-	.sidebar-scrim {
-		display: none;
-	}
-
-	.blog-sidebar {
-		position: relative;
-	}
-
-	.sidebar-stack {
-		position: sticky;
-		top: 20px;
-		display: grid;
-		gap: 16px;
-	}
-
-	.sidebar-surface {
-		overflow: hidden;
-	}
-
-	.surface-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.compact-header {
-		padding-bottom: 8px;
-	}
-
+	.sidebar-scrim { display: none; }
+	.blog-sidebar { position: relative; }
+	.sidebar-stack { position: sticky; top: 20px; display: grid; gap: 16px; }
+	.sidebar-surface { overflow: hidden; }
+	.surface-header { display: flex; align-items: center; justify-content: space-between; }
+	.compact-header { padding-bottom: 8px; }
 	.surface-eyebrow,
-	.drawer-header span {
-		display: block;
-		margin-bottom: 2px;
-		color: var(--color-brand-foreground);
-		font-size: 0.68rem;
-		font-weight: 650;
-		line-height: 1.4;
-	}
-
+	.drawer-header span { display: block; margin-bottom: 2px; color: var(--color-brand-foreground); font-size: 0.68rem; font-weight: 650; }
 	.surface-header h2,
-	.drawer-header h2 {
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.95rem;
-		font-weight: 650;
-		line-height: 1.45;
-	}
-
-	.category-body {
-		padding-inline: 12px;
-	}
-
-	.category-search {
-		margin-bottom: 12px;
-	}
-
-	.category-groups {
-		padding-bottom: 2px;
-	}
-
-	.category-children {
-		display: grid;
-		gap: 2px;
-		padding: 2px 0 8px 8px;
-	}
-
-	.category-link {
-		display: flex;
-		min-height: 36px;
-		align-items: center;
-		justify-content: space-between;
-		gap: 10px;
-		padding: 6px 10px;
-		border-radius: var(--radius-small);
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.77rem;
-		line-height: 1.4;
-		text-decoration: none;
-	}
-
-	.category-link > span {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-
+	.drawer-header h2 { margin: 0; color: var(--color-neutral-foreground-1); font-size: 0.95rem; font-weight: 650; }
+	.category-body { padding-inline: 12px; }
+	.category-search { margin-bottom: 12px; }
+	.category-children { display: grid; gap: 2px; padding: 2px 0 8px 8px; }
+	.category-link { display: flex; min-height: 36px; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 10px; border-radius: var(--radius-small); color: var(--color-neutral-foreground-3); font-size: 0.77rem; text-decoration: none; }
+	.category-link > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 	.category-link:hover,
-	.category-link:focus-visible {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-		outline: none;
-	}
-
-	.category-link[aria-current='page'] {
-		background: var(--color-brand-background-2);
-		box-shadow: inset -3px 0 var(--color-brand-stroke-1);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.category-link[aria-current='page'] .fui-badge {
-		border-color: var(--color-brand-stroke-2);
-		background: var(--color-brand-background-alpha);
-		color: var(--color-brand-foreground);
-	}
-
-	.category-link-all {
-		font-weight: 600;
-	}
-
-	.category-empty {
-		margin: 0;
-		padding: 4px 4px 0;
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.78rem;
-	}
-
+	.category-link:focus-visible { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); outline: none; }
+	.category-link[aria-current='page'] { background: var(--color-brand-background-2); box-shadow: inset -3px 0 var(--color-brand-stroke-1); color: var(--color-neutral-foreground-1); }
+	.category-link[aria-current='page'] .fui-badge { border-color: var(--color-brand-stroke-2); background: var(--color-brand-background-alpha); color: var(--color-brand-foreground); }
+	.category-link-all { font-weight: 600; }
+	.category-empty { margin: 0; padding: 4px 4px 0; color: var(--color-neutral-foreground-3); font-size: 0.78rem; }
 	.list-body,
-	.guide-body {
-		padding-inline: 10px;
-		padding-bottom: 10px;
-	}
-
-	.ranked-posts a {
-		display: grid;
-		min-height: 48px;
-		grid-template-columns: 30px minmax(0, 1fr);
-		align-items: center;
-		gap: 10px;
-		padding: 8px 6px;
-		border-radius: var(--radius-small);
-		color: var(--color-neutral-foreground-2);
-		text-decoration: none;
-	}
-
+	.guide-body { padding-inline: 10px; padding-bottom: 10px; }
+	.ranked-posts a { display: grid; min-height: 48px; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 10px; padding: 8px 6px; border-radius: var(--radius-small); color: var(--color-neutral-foreground-2); text-decoration: none; }
+	.latest-posts a { display: grid; gap: 3px; padding: 9px 6px; border-radius: var(--radius-small); color: var(--color-neutral-foreground-2); text-decoration: none; }
 	.ranked-posts a:hover,
 	.ranked-posts a:focus-visible,
 	.latest-posts a:hover,
-	.latest-posts a:focus-visible {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-		outline: none;
-	}
-
-	.rank-number {
-		color: var(--color-brand-foreground);
-		font-size: 0.75rem;
-		font-weight: 700;
-		font-variant-numeric: tabular-nums;
-	}
-
+	.latest-posts a:focus-visible { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); outline: none; }
+	.rank-number { color: var(--color-brand-foreground); font-size: 0.75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 	.rank-title,
-	.latest-posts span {
-		display: -webkit-box;
-		overflow: hidden;
-		font-size: 0.78rem;
-		font-weight: 550;
-		line-height: 1.5;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.latest-posts a {
-		display: grid;
-		gap: 3px;
-		padding: 9px 6px;
-		border-radius: var(--radius-small);
-		color: var(--color-neutral-foreground-2);
-		text-decoration: none;
-	}
-
-	.latest-posts time {
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.68rem;
-	}
-
-	.guide-card {
-		display: block;
-		overflow: hidden;
-		color: var(--color-neutral-foreground-2);
-		text-decoration: none;
-	}
-
-	.guide-card:focus-visible {
-		outline: none;
-		box-shadow: var(--fui-focus-ring);
-	}
-
-	.guide-image {
-		display: grid;
-		aspect-ratio: 16 / 8.5;
-		overflow: hidden;
-		place-items: center;
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-4);
-		font-size: 0.78rem;
-		font-weight: 700;
-	}
-
-	.guide-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.guide-content {
-		padding: 12px;
-	}
-
-	.guide-content h3 {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.84rem;
-		line-height: 1.5;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.guide-content p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 6px 0 0;
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.72rem;
-		line-height: 1.6;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.guide-action {
-		margin-top: 10px;
-	}
-
+	.latest-posts span { display: -webkit-box; overflow: hidden; font-size: 0.78rem; font-weight: 550; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.latest-posts time { color: var(--color-neutral-foreground-3); font-size: 0.68rem; }
+	.guide-card { display: block; overflow: hidden; color: var(--color-neutral-foreground-2); text-decoration: none; }
+	.guide-card:focus-visible { outline: none; box-shadow: var(--fui-focus-ring); }
+	.guide-image { display: grid; aspect-ratio: 16 / 8.5; overflow: hidden; place-items: center; background: var(--color-neutral-background-3); color: var(--color-neutral-foreground-4); font-size: 0.78rem; font-weight: 700; }
+	.guide-image img { width: 100%; height: 100%; object-fit: cover; }
+	.guide-content { padding: 12px; }
+	.guide-content h3 { display: -webkit-box; overflow: hidden; margin: 0; color: var(--color-neutral-foreground-1); font-size: 0.84rem; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.guide-content p { display: -webkit-box; overflow: hidden; margin: 6px 0 0; color: var(--color-neutral-foreground-3); font-size: 0.72rem; line-height: 1.6; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.guide-action { margin-top: 10px; }
 	.guide-action svg,
 	.sidebar-drawer-trigger svg,
-	.drawer-header svg {
-		width: 15px;
-		height: 15px;
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.8;
-	}
-
-	.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		clip-path: inset(50%);
-	}
+	.drawer-header svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+	.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
 
 	@media (max-width: 1020px) {
-		:global(body.sidebar-drawer-open) {
-			overflow: hidden;
-		}
-
-		.sidebar-drawer-trigger {
-			display: flex;
-			width: 100%;
-			min-height: 44px;
-			justify-content: space-between;
-		}
-
-		.sidebar-scrim {
-			display: block;
-		}
-
-		.blog-sidebar {
-			position: fixed;
-			inset-block: 0;
-			inset-inline-start: 0;
-			z-index: 2100;
-			display: flex;
-			width: min(360px, calc(100vw - 36px));
-			flex-direction: column;
-			overflow: hidden;
-			border-inline-end: 1px solid var(--color-neutral-stroke-1);
-			background: var(--color-neutral-background-3);
-			box-shadow: var(--shadow-64);
-			transform: translateX(105%);
-			transition: transform var(--duration-normal) var(--curve-easy-ease);
-		}
-
-		.blog-sidebar.is-open {
-			transform: translateX(0);
-		}
-
-		.drawer-header {
-			display: flex;
-			min-height: 64px;
-			flex: 0 0 auto;
-			align-items: center;
-			justify-content: space-between;
-			gap: 16px;
-			padding: 10px 14px;
-			border-bottom: 1px solid var(--color-neutral-stroke-alpha);
-			background: var(--color-neutral-background-2);
-		}
-
-		.sidebar-stack {
-			position: static;
-			overflow-x: hidden;
-			overflow-y: auto;
-			overscroll-behavior: contain;
-			padding: 14px;
-			scrollbar-width: thin;
-		}
+		:global(body.sidebar-drawer-open) { overflow: hidden; }
+		.sidebar-drawer-trigger { display: flex; width: 100%; min-height: 44px; justify-content: space-between; }
+		.sidebar-scrim { display: block; }
+		.blog-sidebar { position: fixed; inset-block: 0; inset-inline-start: 0; z-index: 2100; display: flex; width: min(360px, calc(100vw - 36px)); flex-direction: column; overflow: hidden; border-inline-end: 1px solid var(--color-neutral-stroke-1); background: var(--color-neutral-background-3); box-shadow: var(--shadow-64); transform: translateX(105%); transition: transform var(--duration-normal) var(--curve-easy-ease); }
+		.blog-sidebar.is-open { transform: translateX(0); }
+		.drawer-header { display: flex; min-height: 64px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 14px; border-bottom: 1px solid var(--color-neutral-stroke-alpha); background: var(--color-neutral-background-2); }
+		.sidebar-stack { position: static; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: 14px; scrollbar-width: thin; }
 	}
 
 	@media (max-width: 460px) {
-		.blog-sidebar {
-			width: min(336px, calc(100vw - 20px));
-		}
+		.blog-sidebar { width: min(336px, calc(100vw - 20px)); }
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.blog-sidebar {
-			transition: none;
-		}
+		.blog-sidebar { transition: none; }
 	}
 </style>
