@@ -27,10 +27,17 @@
 
 :where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):hover:not(:disabled) {
 	border-color: var(--color-neutral-stroke-1-hover);
+	background: var(--color-neutral-background-1-hover);
+}
+
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):active:not(:disabled) {
+	border-color: var(--color-neutral-stroke-1-pressed);
+	background: var(--color-neutral-background-1-pressed);
 }
 
 :where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):focus-visible {
 	border-color: var(--color-brand-stroke-1);
+	background: var(--color-neutral-background-1);
 	box-shadow: inset 0 -2px var(--color-brand-stroke-1), var(--focus-ring);
 }
 
@@ -51,8 +58,8 @@ select {
 }
 
 :where(input, textarea, select):disabled {
-	border-color: var(--color-neutral-stroke-alpha);
-	background: var(--color-neutral-background-3);
+	border-color: var(--color-neutral-stroke-disabled);
+	background: var(--color-neutral-background-disabled);
 	color: var(--color-neutral-foreground-disabled);
 }
 
@@ -144,7 +151,7 @@ progress::-moz-progress-bar {
 }
 
 :where(dialog)::backdrop {
-	background: rgba(0, 0, 0, 0.58);
+	background: color-mix(in srgb, var(--color-neutral-background-5) 58%, transparent);
 }
 
 :where(details) > summary {
@@ -171,7 +178,7 @@ progress::-moz-progress-bar {
 	border-bottom: 0 !important;
 	border-radius: 0;
 	outline: 0 !important;
-	background: transparent !important;
+	background: var(--color-transparent-background) !important;
 	box-shadow: none !important;
 }
 
