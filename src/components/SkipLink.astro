@@ -1,0 +1,32 @@
+<a class="skip-link" href="#main-content">تخطي إلى المحتوى</a>
+
+<style>
+	.skip-link {
+		position: fixed;
+		inset-block-start: var(--spacing-80);
+		inset-inline-start: var(--spacing-80);
+		z-index: 5000;
+		display: inline-flex;
+		min-height: var(--control-height-medium);
+		align-items: center;
+		padding-inline: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
+		border-radius: var(--radius-medium);
+		background: var(--material-solid-raised);
+		color: var(--color-neutral-foreground-1);
+		box-shadow: var(--shadow-16);
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+		transform: translateY(calc(-100% - var(--spacing-160)));
+		transition: transform var(--motion-duration-control) var(--motion-ease-enter);
+	}
+
+	.skip-link:focus-visible {
+		transform: translateY(0);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.skip-link { transition: none; }
+	}
+</style>
