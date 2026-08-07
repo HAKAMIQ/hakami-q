@@ -61,6 +61,29 @@
 			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
+	/* Header typography stays readable across desktop widths. Do not collapse
+	 * primary navigation to Caption 2 (10px) at narrower desktop breakpoints. */
+	.site-header.site-header .utility-inner {
+		min-height: 36px;
+	}
+
+	.site-header.site-header .utility-links a {
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
+	}
+
+	.site-header.site-header .brand-description {
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+	}
+
+	.site-header.site-header .menu-direct,
+	.site-header.site-header .menu-trigger {
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-body-1);
+	}
+
 	.site-header .home-menu-link {
 		width: 44px;
 		flex: 0 0 44px;
@@ -142,12 +165,30 @@
 		color: var(--color-neutral-foreground-1);
 	}
 
-	/* Keep the full strip visible at standard desktop widths without scrolling. */
+	/* Keep the full strip visible at standard desktop widths without scrolling.
+	 * Reduce spacing only; typography remains Body 1 for readability. */
 	@media (max-width: 1180px) {
-		.site-header .menu-trigger,
-		.site-header .menu-direct {
+		.site-header.site-header .utility-links a {
+			padding-inline: var(--spacing-40);
+			font-size: var(--font-size-caption-1);
+			line-height: var(--line-height-caption-1);
+		}
+
+		.site-header.site-header .brand-inner {
+			min-height: 84px;
+		}
+
+		.site-header.site-header .brand-description {
+			max-width: 560px;
+			font-size: var(--font-size-body-1);
+			line-height: var(--line-height-body-1);
+		}
+
+		.site-header.site-header .menu-trigger,
+		.site-header.site-header .menu-direct {
 			padding-inline: var(--spacing-80);
-			font-size: var(--font-size-caption-2);
+			font-size: var(--font-size-body-1);
+			line-height: var(--line-height-body-1);
 		}
 
 		.site-header .menu-bar {
