@@ -66,7 +66,35 @@ function removeDuplicateArticleHeading(html: string, title: string) {
 	return result;
 }
 
-const renderedBody = removeDuplicateArticleHeading(rawBody, post.data.title);
+function normalizeLegacyArticleMarkup(html: string) {
+	let result = html.replace(/^\s*---\s*$/gm, '<hr />');
+
+	result = result.replace(/<img\b[^>]*>/gi, (tag) => {
+		let normalized = tag.replace(
+			/(\bsrc\s*=\s*["'])(https:\/\/blogger\.googleusercontent\.com\/[^"']+)(["'])/i,
+			(_match, prefix, url, suffix) => {
+				const upgraded = String(url).replace(
+					/\/s(?:32|72|96|144|160|200|220|240|320|400|480|512|600|640)(-[^/]+)?\//i,
+					(_segment, modifier = '') => `/s1280${modifier}/`,
+				);
+				return `${prefix}${upgraded}${suffix}`;
+			},
+		);
+
+		if (!/\bloading\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img loading="lazy"');
+		if (!/\bdecoding\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img decoding="async"');
+		return normalized;
+	});
+
+	result = result.replace(/<iframe\b[^>]*>/gi, (tag) => {
+		if (/\bloading\s*=/i.test(tag)) return tag;
+		return tag.replace(/^<iframe\b/i, '<iframe loading="lazy"');
+	});
+
+	return result;
+}
+
+const renderedBody = normalizeLegacyArticleMarkup(removeDuplicateArticleHeading(rawBody, post.data.title));
 ---
 
 <BlogPost {...post.data}>
