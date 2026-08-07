@@ -81,6 +81,15 @@ if (titleIndex < 0 || contentIndex < titleIndex) {
 
 forbidText(files.home, source.home, 'BlogSidebar', 'home.no-sidebar', 'Do not add the blog/category sidebar to the homepage.');
 forbidText(files.home, source.home, '<time', 'home.no-dates', 'Do not reintroduce article dates on the homepage.');
+requireText(files.home, source.home, 'id="home-feed-size"', 'home.display-count', 'Homepage must keep the controlled latest-post count selector.');
+
+// Listing performance: never return to rendering the full collection as cards.
+requireText(files.blog, source.blog, 'const DEFAULT_PAGE_SIZE = 12;', 'listing.default-page-size', 'Blog listing must retain a bounded default page size.');
+requireText(files.blog, source.blog, 'const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);', 'listing.initial-slice', 'Initial blog DOM must contain only the bounded first page.');
+requireText(files.blog, source.blog, 'id="posts-per-page"', 'listing.page-size-control', 'Blog listing must keep the 12/24/36 page-size control.');
+requireText(files.blog, source.blog, 'id="posts-pagination"', 'listing.pagination', 'Blog listing must keep pagination navigation.');
+forbidText(files.blog, source.blog, '{postItems.map(', 'listing.no-full-dom', 'Do not render the entire post collection into the listing DOM.');
+
 forbidText(files.footer, source.footer, 'hakamiq-logo', 'footer.no-logo', 'Do not reintroduce the footer logo.');
 forbidText(files.footer, source.footer, 'brand-description', 'footer.no-description', 'Do not reintroduce the removed footer brand-description block.');
 
