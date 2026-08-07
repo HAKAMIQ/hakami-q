@@ -32,13 +32,9 @@ const searchItems = posts.map((post) => ({
 			<section class="home-search-section" aria-labelledby="home-search-title">
 				<div class="site-container">
 					<div class="home-search-wrap">
-						<div class="home-search-copy">
-							<h1 id="home-search-title">ابحث في HAKAMIQ</h1>
-							<p>ابحث مباشرة عن المحاكي أو الجهاز أو الشرح الذي تحتاجه.</p>
-						</div>
+						<h1 class="home-search-title" id="home-search-title">بحث في المقالات</h1>
 
 						<div class="home-search" data-home-search>
-							<label class="sr-only" for="home-search-input">بحث في المقالات</label>
 							<div class="home-search-field">
 								<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
 								<input
@@ -47,6 +43,7 @@ const searchItems = posts.map((post) => ({
 									placeholder="ابحث عن PCSX2 أو RPCS3 أو Nintendo Switch..."
 									autocomplete="off"
 									spellcheck="false"
+									aria-label="بحث في المقالات"
 									aria-controls="home-search-results"
 									aria-expanded="false"
 								/>
@@ -65,7 +62,7 @@ const searchItems = posts.map((post) => ({
 				<div class="site-container">
 					<header class="section-heading">
 						<div>
-							<span class="section-eyebrow">جديد HAKAMIQ</span>
+							<span class="section-eyebrow">جديد</span>
 							<h2 id="latest-posts-title">أحدث المقالات</h2>
 						</div>
 						<a class="fui-link section-action" href="/blog">
@@ -82,7 +79,7 @@ const searchItems = posts.map((post) => ({
 										{featuredPost.data.heroImageUrl ? (
 											<img src={featuredPost.data.heroImageUrl} alt={featuredPost.data.title} loading="eager" fetchpriority="high" referrerpolicy="no-referrer" />
 										) : (
-											<div class="image-placeholder">HAKAMIQ</div>
+											<div class="image-placeholder">H</div>
 										)}
 									</div>
 
@@ -261,21 +258,12 @@ const searchItems = posts.map((post) => ({
 		margin-inline: auto;
 	}
 
-	.home-search-copy {
-		margin-bottom: var(--spacing-120);
+	.home-search-title {
+		margin-bottom: var(--spacing-100);
+		font-size: var(--font-size-title-3);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-title-3);
 		text-align: center;
-	}
-
-	.home-search-copy h1 {
-		font-size: var(--font-size-title-2);
-		line-height: var(--line-height-title-2);
-	}
-
-	.home-search-copy p {
-		margin-top: var(--spacing-40);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
 	}
 
 	.home-search {
@@ -566,7 +554,7 @@ const searchItems = posts.map((post) => ({
 
 	@media (max-width: 767px) {
 		.home-search-section { padding-top: var(--spacing-200); }
-		.home-search-copy h1 { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
+		.home-search-title { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
 		.content-section { padding-top: var(--spacing-200); }
 		.section-heading { align-items: flex-start; }
 		.featured-card > a { grid-template-columns: 1fr; min-height: 0; }
@@ -577,7 +565,7 @@ const searchItems = posts.map((post) => ({
 	}
 
 	@media (max-width: 639px) {
-		.home-search-copy { text-align: right; }
+		.home-search-title { text-align: right; }
 		.home-search-field { min-height: 44px; padding-inline: var(--spacing-100); }
 		.home-search-field input { height: 42px; }
 		.section-heading { flex-direction: column; gap: var(--spacing-100); }
