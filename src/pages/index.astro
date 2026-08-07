@@ -32,71 +32,60 @@ const formatDate = (date: Date) =>
 		<main>
 			<section class="content-section" aria-labelledby="latest-posts-title">
 				<div class="site-container">
-					<div class="section-heading">
-						<h2 id="latest-posts-title">أحدث المقالات</h2>
-						<a class="section-action" href="/blog">عرض جميع المقالات</a>
-					</div>
+					<header class="section-heading">
+						<div>
+							<span class="section-eyebrow">جديد HAKAMIQ</span>
+							<h1 id="latest-posts-title">أحدث المقالات</h1>
+						</div>
+						<a class="fui-link section-action" href="/blog">
+							<span>عرض جميع المقالات</span>
+							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+						</a>
+					</header>
 
-					{
-						featuredPost && (
-							<div class="articles-layout">
-								<article class="featured-card">
-									<a href={`/blog/${featuredPost.id}/`}>
-										<div class="featured-image">
-											{featuredPost.data.heroImageUrl ? (
-												<img
-													src={featuredPost.data.heroImageUrl}
-													alt={featuredPost.data.title}
-													loading="eager"
-													fetchpriority="high"
-													referrerpolicy="no-referrer"
-												/>
-											) : (
-												<div class="image-placeholder">HAKAMIQ</div>
-											)}
-										</div>
+					{featuredPost && (
+						<div class="articles-layout">
+							<article class="featured-card fui-card fui-card--interactive">
+								<a href={`/blog/${featuredPost.id}/`} aria-label={featuredPost.data.title}>
+									<div class="featured-image">
+										{featuredPost.data.heroImageUrl ? (
+											<img src={featuredPost.data.heroImageUrl} alt={featuredPost.data.title} loading="eager" fetchpriority="high" referrerpolicy="no-referrer" />
+										) : (
+											<div class="image-placeholder">HAKAMIQ</div>
+										)}
+									</div>
 
-										<div class="featured-content">
-											<span class="featured-label">المقال الأحدث</span>
-											<h3>{featuredPost.data.title}</h3>
-											<p>{featuredPost.data.description}</p>
-											<time datetime={featuredPost.data.pubDate.toISOString()}>
-												{formatDate(featuredPost.data.pubDate)}
-											</time>
-										</div>
-									</a>
-								</article>
+									<div class="featured-content">
+										<span class="fui-badge fui-badge--brand">المقال الأحدث</span>
+										<h2>{featuredPost.data.title}</h2>
+										<p>{featuredPost.data.description}</p>
+										<time datetime={featuredPost.data.pubDate.toISOString()}>{formatDate(featuredPost.data.pubDate)}</time>
+									</div>
+								</a>
+							</article>
 
-								<div class="latest-grid">
-									{latestPosts.map((post) => (
-										<article class="post-card">
-											<a href={`/blog/${post.id}/`}>
-												<div class="post-thumb">
-													{post.data.heroImageUrl ? (
-														<img
-															src={post.data.heroImageUrl}
-															alt={post.data.title}
-															loading="lazy"
-															referrerpolicy="no-referrer"
-														/>
-													) : (
-														<div class="image-placeholder small">H</div>
-													)}
-												</div>
+							<div class="latest-grid">
+								{latestPosts.map((post) => (
+									<article class="post-card fui-card fui-card--interactive">
+										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
+											<div class="post-thumb">
+												{post.data.heroImageUrl ? (
+													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" referrerpolicy="no-referrer" />
+												) : (
+													<div class="image-placeholder small">H</div>
+												)}
+											</div>
 
-												<div class="post-card-content">
-													<h3>{post.data.title}</h3>
-													<time datetime={post.data.pubDate.toISOString()}>
-														{formatDate(post.data.pubDate)}
-													</time>
-												</div>
-											</a>
-										</article>
-									))}
-								</div>
+											<div class="post-card-content">
+												<h2>{post.data.title}</h2>
+												<time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+											</div>
+										</a>
+									</article>
+								))}
 							</div>
-						)
-					}
+						</div>
+					)}
 				</div>
 			</section>
 		</main>
@@ -107,118 +96,85 @@ const formatDate = (date: Date) =>
 
 <style>
 	.content-section {
-		padding-block: clamp(2rem, 3.2vw, 3.25rem) 1.25rem;
+		padding-block: var(--spacing-320) var(--spacing-160);
 	}
 
 	.section-heading {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 1.2rem;
+		gap: var(--spacing-160);
+		margin-bottom: var(--spacing-200);
 	}
 
-	.section-heading h2 {
-		font-size: clamp(1.6rem, 2.2vw, 2.05rem);
-		line-height: 1.25;
-		letter-spacing: -0.015em;
+	.section-eyebrow {
+		display: block;
+		margin-bottom: var(--spacing-40);
+		color: var(--color-brand-foreground);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
 	}
 
-	.section-action {
-		display: inline-flex;
-		min-height: 38px;
-		align-items: center;
-		justify-content: center;
-		padding-inline: 0.9rem;
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-medium);
-		background: var(--color-neutral-background-2);
-		color: var(--color-neutral-foreground-2);
-		font-size: 0.8rem;
-		font-weight: 650;
-		text-decoration: none;
-		box-shadow: var(--shadow-2);
-		transition:
-			background var(--duration-fast) var(--curve-easy-ease),
-			border-color var(--duration-fast) var(--curve-easy-ease),
-			color var(--duration-fast) var(--curve-easy-ease);
+	.section-heading h1 {
+		font-size: var(--font-size-title-3);
+		line-height: var(--line-height-title-3);
 	}
 
-	.section-action:hover {
-		border-color: var(--color-neutral-stroke-2);
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-1);
-	}
+	.section-action { flex: 0 0 auto; }
+	.section-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
 
 	.articles-layout {
 		display: grid;
-		gap: 1.15rem;
+		gap: var(--spacing-160);
 	}
 
 	.featured-card,
-	.post-card {
-		border: 1px solid var(--color-neutral-stroke-1);
-		background: var(--color-neutral-background-2);
-		box-shadow: var(--shadow-4);
-	}
-
-	.featured-card {
-		overflow: hidden;
-		border-radius: var(--radius-xlarge);
-	}
+	.post-card { overflow: hidden; }
 
 	.featured-card > a {
 		display: grid;
-		grid-template-areas: "media content";
-		grid-template-columns: minmax(0, 1.75fr) minmax(300px, 0.75fr);
-		min-height: 330px;
+		grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+		min-height: 280px;
 		color: inherit;
 		direction: ltr;
 		text-decoration: none;
 	}
 
 	.featured-image {
-		grid-area: media;
 		min-width: 0;
 		overflow: hidden;
-		background: #0d1014;
+		background: var(--color-neutral-background-3);
 	}
 
 	.featured-content {
 		display: flex;
-		grid-area: content;
 		min-width: 0;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: clamp(1.35rem, 2.3vw, 2rem);
+		padding: var(--spacing-240);
 		direction: rtl;
 		text-align: right;
 	}
 
-	.featured-label {
-		margin-bottom: 0.7rem;
-		color: var(--color-brand-foreground-strong);
-		font-size: 0.72rem;
-		font-weight: 700;
-	}
-
-	.featured-content h3 {
+	.featured-content h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		font-size: clamp(1.4rem, 2vw, 2rem);
-		line-height: 1.42;
+		margin-top: var(--spacing-100);
+		font-size: var(--font-size-subtitle-1);
+		line-height: var(--line-height-subtitle-1);
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 2;
 	}
 
 	.featured-content p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin-top: 0.8rem;
+		margin-top: var(--spacing-80);
 		color: var(--color-neutral-foreground-3);
-		font-size: clamp(0.84rem, 1vw, 0.94rem);
-		line-height: 1.75;
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
 	}
@@ -226,67 +182,41 @@ const formatDate = (date: Date) =>
 	.featured-content time,
 	.post-card-content time {
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.72rem;
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
 	}
 
-	.featured-content time {
-		margin-top: 1rem;
-	}
+	.featured-content time { margin-top: var(--spacing-160); }
 
 	.featured-image img,
 	.post-thumb img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform var(--duration-normal) var(--curve-easy-ease);
+		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
 	}
 
 	.featured-card:hover img,
-	.post-card:hover img {
-		transform: scale(1.02);
-	}
+	.post-card:hover img { transform: scale(1.02); }
 
 	.image-placeholder {
 		display: grid;
 		width: 100%;
 		height: 100%;
-		min-height: 190px;
+		min-height: 180px;
 		place-items: center;
-		background:
-			linear-gradient(135deg, rgba(232, 17, 35, 0.14), transparent 60%),
-			var(--color-neutral-background-3);
-		color: rgba(255, 255, 255, 0.26);
-		font-size: 1.7rem;
-		font-weight: 800;
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-4);
+		font-size: var(--font-size-title-3);
+		font-weight: var(--font-weight-semibold);
 	}
 
-	.image-placeholder.small {
-		min-height: 0;
-		font-size: 1.1rem;
-	}
+	.image-placeholder.small { min-height: 0; font-size: var(--font-size-subtitle-2); }
 
 	.latest-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1rem;
-	}
-
-	.post-card {
-		min-width: 0;
-		overflow: hidden;
-		border-radius: var(--radius-large);
-		transition:
-			transform var(--duration-fast) var(--curve-easy-ease),
-			border-color var(--duration-fast) var(--curve-easy-ease),
-			background var(--duration-fast) var(--curve-easy-ease),
-			box-shadow var(--duration-fast) var(--curve-easy-ease);
-	}
-
-	.post-card:hover {
-		border-color: var(--color-neutral-stroke-2);
-		background: var(--color-neutral-background-3);
-		box-shadow: var(--shadow-8);
-		transform: translateY(-2px);
+		gap: var(--spacing-160);
 	}
 
 	.post-card > a {
@@ -299,172 +229,58 @@ const formatDate = (date: Date) =>
 	}
 
 	.post-thumb {
-		position: relative;
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
-		background: #0d1014;
+		background: var(--color-neutral-background-3);
 	}
 
 	.post-card-content {
 		display: flex;
-		min-height: 112px;
+		min-height: 92px;
 		min-width: 0;
 		flex: 1;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 0.9rem 0.95rem 0.85rem;
+		padding: var(--spacing-120);
 		text-align: right;
 	}
 
-	.post-card-content h3 {
+	.post-card-content h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		font-size: clamp(0.9rem, 1vw, 0.98rem);
-		line-height: 1.55;
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-body-1);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 	}
 
-	.post-card-content time {
-		margin-top: auto;
-		padding-top: 0.7rem;
+	.post-card-content time { margin-top: auto; padding-top: var(--spacing-100); }
+
+	@media (max-width: 1023px) {
+		.featured-card > a { grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr); min-height: 250px; }
+		.latest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
-	@media (max-width: 1180px) {
-		.featured-card > a {
-			grid-template-columns: minmax(0, 1.4fr) minmax(290px, 0.8fr);
-		}
-
-		.latest-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
+	@media (max-width: 767px) {
+		.content-section { padding-top: var(--spacing-240); }
+		.section-heading { align-items: flex-start; }
+		.featured-card > a { grid-template-columns: 1fr; min-height: 0; }
+		.featured-image { aspect-ratio: 16 / 9; }
+		.featured-content { padding: var(--spacing-160); }
+		.featured-content h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.featured-content p { -webkit-line-clamp: 2; }
 	}
 
-	@media (max-width: 900px) {
-		.featured-card > a {
-			grid-template-areas:
-				"media"
-				"content";
-			grid-template-columns: 1fr;
-			min-height: 0;
-		}
-
-		.featured-image {
-			aspect-ratio: 16 / 8.5;
-		}
-
-		.featured-content {
-			justify-content: flex-start;
-		}
+	@media (max-width: 639px) {
+		.section-heading { flex-direction: column; gap: var(--spacing-100); }
+		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
+		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
+		.post-thumb { height: 100%; min-height: 108px; aspect-ratio: auto; }
+		.post-card-content { min-height: 108px; }
 	}
 
-	@media (max-width: 720px) {
-		.content-section {
-			padding-top: 1.5rem;
-		}
-
-		.section-heading {
-			margin-bottom: 1rem;
-		}
-
-		.section-heading h2 {
-			font-size: 1.45rem;
-		}
-
-		.section-action {
-			min-height: 34px;
-			padding-inline: 0.75rem;
-			font-size: 0.73rem;
-		}
-
-		.articles-layout {
-			gap: 0.9rem;
-		}
-
-		.featured-image {
-			aspect-ratio: 16 / 9;
-		}
-
-		.featured-content {
-			padding: 1rem;
-		}
-
-		.featured-label {
-			margin-bottom: 0.45rem;
-		}
-
-		.featured-content h3 {
-			font-size: 1.2rem;
-			-webkit-line-clamp: 2;
-		}
-
-		.featured-content p {
-			margin-top: 0.55rem;
-			font-size: 0.84rem;
-			line-height: 1.65;
-			-webkit-line-clamp: 2;
-		}
-
-		.featured-content time {
-			margin-top: 0.7rem;
-		}
-
-		.latest-grid {
-			grid-template-columns: 1fr;
-			gap: 0.7rem;
-		}
-
-		.post-card > a {
-			display: grid;
-			grid-template-columns: 116px minmax(0, 1fr);
-			min-height: 108px;
-			direction: ltr;
-		}
-
-		.post-thumb {
-			height: 100%;
-			aspect-ratio: auto;
-		}
-
-		.post-card-content {
-			min-height: 0;
-			padding: 0.75rem 0.8rem;
-			direction: rtl;
-		}
-
-		.post-card-content h3 {
-			font-size: 0.86rem;
-			line-height: 1.5;
-		}
-
-		.post-card-content time {
-			padding-top: 0.4rem;
-		}
-	}
-
-	@media (max-width: 500px) {
-		.section-heading {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 0.55rem;
-		}
-
-		.section-action {
-			align-self: flex-start;
-		}
-
-		.post-card > a {
-			grid-template-columns: 100px minmax(0, 1fr);
-			min-height: 100px;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.featured-image img,
-		.post-thumb img,
-		.post-card,
-		.section-action {
-			transition: none;
-		}
+	@media (max-width: 420px) {
+		.post-card > a { grid-template-columns: 96px minmax(0, 1fr); }
 	}
 </style>
