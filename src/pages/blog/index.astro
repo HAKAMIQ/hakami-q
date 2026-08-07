@@ -52,12 +52,12 @@ const postItems = posts.map((post) => ({
 					<BlogSidebar posts={posts} />
 
 					<div class="posts-content">
-						<div class="filter-status fui-message-bar" id="filter-status" role="status" hidden>
+						<div class="filter-status fui-card" id="filter-status" role="status" hidden>
 							<p><span>القسم الحالي</span><strong id="filter-name"></strong></p>
-							<a class="fui-button fui-button--subtle" href="/blog">عرض جميع المقالات</a>
+							<a class="fui-link" href="/blog">عرض جميع المقالات</a>
 						</div>
 
-						<p class="no-results fui-message-bar fui-message-bar--warning" id="no-results" role="status" hidden>
+						<p class="no-results fui-card" id="no-results" role="status" hidden>
 							لا توجد مقالات مطابقة لهذا القسم حاليًا.
 						</p>
 
@@ -125,14 +125,8 @@ const postItems = posts.map((post) => ({
 		background: var(--color-neutral-background-3);
 	}
 
-	.hero-inner {
-		padding-block: var(--spacing-240) var(--spacing-320);
-	}
-
-	.hero-copy {
-		max-width: 760px;
-		margin-top: var(--spacing-160);
-	}
+	.hero-inner { padding-block: var(--spacing-240) var(--spacing-320); }
+	.hero-copy { max-width: 760px; margin-top: var(--spacing-160); }
 
 	.page-eyebrow {
 		display: block;
@@ -143,20 +137,9 @@ const postItems = posts.map((post) => ({
 		line-height: var(--line-height-caption-1);
 	}
 
-	.hero-copy h1 {
-		font-size: var(--font-size-title-1);
-		line-height: var(--line-height-title-1);
-	}
-
-	.hero-copy p {
-		margin-top: var(--spacing-80);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-	}
-
+	.hero-copy h1 { font-size: var(--font-size-title-1); line-height: var(--line-height-title-1); }
+	.hero-copy p { margin-top: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
 	.post-count { margin-top: var(--spacing-120); }
-
 	.posts-section { padding-block: var(--spacing-240) var(--spacing-80); }
 
 	.blog-layout {
@@ -169,29 +152,33 @@ const postItems = posts.map((post) => ({
 	.posts-content { min-width: 0; grid-column: 2; }
 	.blog-layout :global(.sidebar-region) { min-width: 0; grid-column: 1; }
 
-	.filter-status { margin-bottom: var(--spacing-160); }
+	.filter-status {
+		display: flex;
+		min-height: 44px;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-120);
+		margin-bottom: var(--spacing-160);
+		padding: var(--spacing-80) var(--spacing-120);
+	}
+
 	.filter-status[hidden],
 	.no-results[hidden],
 	.post-card[hidden] { display: none; }
 
-	.filter-status p {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-80);
+	.filter-status p { display: flex; align-items: center; gap: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+	.filter-status strong { color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
+
+	.no-results {
+		margin-bottom: var(--spacing-160);
+		padding: var(--spacing-240);
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-body-1);
 		line-height: var(--line-height-body-1);
+		text-align: center;
 	}
 
-	.filter-status strong { color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
-	.no-results { margin-bottom: var(--spacing-160); }
-
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: var(--spacing-160);
-	}
-
+	.posts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-160); }
 	.post-card { min-width: 0; overflow: hidden; }
 
 	.post-card > a {
@@ -203,19 +190,8 @@ const postItems = posts.map((post) => ({
 		text-decoration: none;
 	}
 
-	.post-image {
-		aspect-ratio: 16 / 9;
-		overflow: hidden;
-		background: var(--color-neutral-background-3);
-	}
-
-	.post-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
-	}
-
+	.post-image { aspect-ratio: 16 / 9; overflow: hidden; background: var(--color-neutral-background-3); }
+	.post-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-slow) var(--curve-decelerate-mid); }
 	.post-card:hover .post-image img { transform: scale(1.02); }
 
 	.image-placeholder {
