@@ -215,7 +215,7 @@ h6 {
 	width: 100%;
 	aspect-ratio: 16 / 9;
 	border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-	background: #000;
+	background: var(--color-neutral-background-5);
 }
 
 .prose figure,
@@ -324,6 +324,123 @@ pre > code {
 
 .fluent-rich-text :where(p, li) {
 	overflow-wrap: anywhere;
+}
+
+/* Normalize HAKAMIQ rich modules to the same Fluent semantic color system.
+ * These rules intentionally override legacy article-local raw colors only;
+ * article structure and media remain controlled by the article itself. */
+.fluent-rich-text .hq-sixaxis {
+	--hq-gold: var(--color-brand-foreground-strong) !important;
+	--hq-green: var(--color-status-success-foreground) !important;
+	--hq-blue: var(--color-brand-foreground-link) !important;
+	--hq-red: var(--color-brand-background) !important;
+	--hq-orange: var(--color-status-warning-foreground) !important;
+	--hq-bg: var(--color-neutral-background-4) !important;
+	--hq-card: var(--color-neutral-background-2) !important;
+	--hq-soft: var(--color-neutral-background-3) !important;
+	--hq-border: var(--color-neutral-stroke-2) !important;
+	--hq-text: var(--color-neutral-foreground-1) !important;
+	--hq-muted: var(--color-neutral-foreground-3) !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: var(--color-transparent-background) !important;
+	color: var(--color-neutral-foreground-2) !important;
+}
+
+/* The article layout already renders the title and summary; suppress the
+ * migrated duplicate header and repeated end summary/footer. */
+.fluent-rich-text .hq-sixaxis > .hq-header,
+.fluent-rich-text .hq-sixaxis > section.hq-card:nth-of-type(7),
+.fluent-rich-text .hq-sixaxis > .hq-footer {
+	display: none !important;
+}
+
+/* The setting path and screenshots already explain the first procedure;
+ * remove the second numbered copy of the same instructions. */
+.fluent-rich-text .hq-sixaxis > section.hq-card:first-of-type > p:has(+ .hq-steps),
+.fluent-rich-text .hq-sixaxis > section.hq-card:first-of-type > .hq-steps {
+	display: none !important;
+}
+
+.fluent-rich-text .hq-sixaxis > .hq-card {
+	margin-bottom: var(--spacing-240) !important;
+	padding: clamp(var(--spacing-160), 2vw, var(--spacing-240)) !important;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-3) !important;
+	border-radius: var(--radius-xlarge) !important;
+	background: var(--color-neutral-background-2) !important;
+	color: var(--color-neutral-foreground-2) !important;
+	box-shadow: var(--shadow-2) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-card h3 {
+	margin-bottom: var(--spacing-160) !important;
+	padding: 0 var(--spacing-120) var(--spacing-100) 0 !important;
+	border-right-color: var(--color-brand-stroke-1) !important;
+	border-bottom-color: var(--color-neutral-stroke-alpha) !important;
+	color: var(--color-neutral-foreground-1) !important;
+	font-size: var(--font-size-subtitle-1) !important;
+	line-height: var(--line-height-subtitle-1) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-setting-box {
+	border-color: var(--color-neutral-stroke-2) !important;
+	background: var(--color-neutral-background-3) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-setting-path {
+	border-color: var(--color-neutral-stroke-3) !important;
+	background: var(--color-neutral-background-5) !important;
+	color: var(--color-brand-foreground-link) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-checkbox {
+	border-color: var(--color-neutral-stroke-1) !important;
+	background: var(--color-neutral-background-1) !important;
+	color: var(--color-neutral-foreground-1) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-axis,
+.fluent-rich-text .hq-sixaxis .hq-step,
+.fluent-rich-text .hq-sixaxis .hq-problem,
+.fluent-rich-text .hq-sixaxis .hq-source {
+	border-color: var(--color-neutral-stroke-3) !important;
+	background: var(--color-neutral-background-3) !important;
+	color: var(--color-neutral-foreground-2) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-note,
+.fluent-rich-text .hq-sixaxis .hq-success,
+.fluent-rich-text .hq-sixaxis .hq-warning,
+.fluent-rich-text .hq-sixaxis .hq-danger {
+	background: var(--color-neutral-background-3) !important;
+	color: var(--color-neutral-foreground-2) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-note {
+	border-right-color: var(--color-brand-stroke-1) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-success {
+	border-right-color: var(--color-status-success-border) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-warning {
+	border-right-color: var(--color-status-warning-border) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-danger {
+	border-right-color: var(--color-status-danger-border) !important;
+}
+
+.fluent-rich-text .hq-sixaxis .hq-shot,
+.fluent-rich-text .hq-sixaxis .hq-shot a,
+.fluent-rich-text .hq-sixaxis .hq-shot img {
+	border-color: var(--color-neutral-stroke-3) !important;
+	background: var(--color-neutral-background-5) !important;
 }
 
 @media (max-width: 639px) {
