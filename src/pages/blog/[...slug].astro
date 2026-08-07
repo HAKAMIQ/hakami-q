@@ -27,6 +27,14 @@ function decodeEntities(value: string) {
 		.replace(/&#x([\da-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)));
 }
 
+function escapeAttribute(value: string) {
+	return value
+		.replace(/&/g, '&amp;')
+		.replace(/"/g, '&quot;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;');
+}
+
 function comparableHeading(value: string) {
 	return decodeEntities(value.replace(/<[^>]+>/g, ' '))
 		.normalize('NFKC')
@@ -66,8 +74,14 @@ function removeDuplicateArticleHeading(html: string, title: string) {
 	return result;
 }
 
-function normalizeLegacyArticleMarkup(html: string) {
+function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 	let result = html.replace(/^\s*---\s*$/gm, '<hr />');
+
+	// The page template owns the single H1. Preserve legacy section headings by
+	// downgrading imported body H1 elements instead of hiding or deleting them.
+	result = result
+		.replace(/<h1\b([^>]*)>/gi, '<h2$1>')
+		.replace(/<\/h1>/gi, '</h2>');
 
 	result = result.replace(/<img\b[^>]*>/gi, (tag) => {
 		let normalized = tag.replace(
@@ -81,6 +95,13 @@ function normalizeLegacyArticleMarkup(html: string) {
 			},
 		);
 
+		if (!/\balt\s*=/i.test(normalized)) {
+			const titleAttribute = normalized.match(/\btitle\s*=\s*["']([^"']+)["']/i)?.[1];
+			const fallback = titleAttribute
+				? decodeEntities(titleAttribute)
+				: `صورة توضيحية ضمن مقال ${articleTitle}`;
+			normalized = normalized.replace(/^<img\b/i, `<img alt="${escapeAttribute(fallback)}"`);
+		}
 		if (!/\bloading\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img loading="lazy"');
 		if (!/\bdecoding\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img decoding="async"');
 		return normalized;
@@ -91,10 +112,22 @@ function normalizeLegacyArticleMarkup(html: string) {
 		return tag.replace(/^<iframe\b/i, '<iframe loading="lazy"');
 	});
 
+	result = result.replace(/<a\b[^>]*\btarget\s*=\s*["']_blank["'][^>]*>/gi, (tag) => {
+		const relMatch = tag.match(/\brel\s*=\s*(["'])([^"']*)\1/i);
+		if (!relMatch) return tag.replace(/^<a\b/i, '<a rel="noopener noreferrer"');
+		const tokens = new Set(relMatch[2].split(/\s+/).filter(Boolean).map((token) => token.toLowerCase()));
+		tokens.add('noopener');
+		tokens.add('noreferrer');
+		return tag.replace(relMatch[0], `rel=${relMatch[1]}${[...tokens].join(' ')}${relMatch[1]}`);
+	});
+
 	return result;
 }
 
-const renderedBody = normalizeLegacyArticleMarkup(removeDuplicateArticleHeading(rawBody, post.data.title));
+const renderedBody = normalizeLegacyArticleMarkup(
+	removeDuplicateArticleHeading(rawBody, post.data.title),
+	post.data.title,
+);
 ---
 
 <BlogPost {...post.data}>
