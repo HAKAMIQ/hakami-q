@@ -1,0 +1,51 @@
+/* Lightweight Fluent Tooltip surface for icon-only and compact controls.
+ * The runtime in /public/fluent-tooltip.js owns visibility and positioning. */
+
+.fui-tooltip-surface {
+	position: fixed;
+	z-index: 4000;
+	max-width: min(280px, calc(100vw - (var(--page-gutter) * 2)));
+	box-sizing: border-box;
+	padding: var(--spacing-60) var(--spacing-80);
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+	border-radius: var(--radius-medium);
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+	box-shadow: var(--shadow-16);
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-caption-1);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-caption-1);
+	text-align: start;
+	text-wrap: balance;
+	pointer-events: none;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(2px);
+	transition:
+		opacity var(--motion-duration-control) var(--curve-easy-ease),
+		transform var(--motion-duration-control) var(--curve-easy-ease),
+		visibility 0s linear var(--motion-duration-control);
+}
+
+.fui-tooltip-surface[data-open='true'] {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fui-tooltip-surface {
+		transform: none;
+		transition: none;
+	}
+}
+
+@media (forced-colors: active) {
+	.fui-tooltip-surface {
+		border-color: CanvasText;
+		background: Canvas;
+		color: CanvasText;
+	}
+}
