@@ -92,15 +92,20 @@ for (const [needle, rule, message] of [
 	['if (!/\\balt\\s*=/i.test(normalized))', 'static.legacy-alt', 'Imported Blogger page images must receive an alt fallback when omitted.'],
 ]) requireText(files.blogger, source.blogger, needle, rule, message);
 
-// Homepage is intentionally editorial and bounded: one lead story + six compact rows.
+// Homepage: bounded editorial layout inspired by a news portal, without fabricated metadata.
 forbidText(files.home, source.home, 'BlogSidebar', 'home.no-sidebar', 'Do not add the blog/category sidebar to the homepage.');
 forbidText(files.home, source.home, '<time', 'home.no-dates', 'Do not reintroduce article dates on the homepage.');
 forbidText(files.home, source.home, 'id="home-feed-size"', 'home.no-feed-selector', 'Do not reintroduce the old homepage 6/12/18 feed-size selector.');
-forbidText(files.home, source.home, 'class="latest-grid"', 'home.no-card-grid', 'Homepage latest articles must remain an editorial list rather than the old card grid.');
-requireText(files.home, source.home, 'const latestPosts = posts.slice(1, 7);', 'home.editorial-limit', 'Homepage must keep a bounded six-item latest editorial list after the lead story.');
-requireText(files.home, source.home, 'class="lead-story"', 'home.lead-story', 'Homepage must keep one distinct lead-story treatment.');
-requireText(files.home, source.home, 'class="editorial-list"', 'home.editorial-list', 'Homepage must keep the compact editorial latest-post list.');
-requireText(files.home, source.home, 'id="platforms-title"', 'home.platform-discovery', 'Homepage must keep the platform discovery section after the editorial feed.');
+forbidText(files.home, source.home, 'row-arrow', 'home.no-row-arrows', 'Do not reintroduce decorative row arrows into the article list.');
+requireText(files.home, source.home, 'const featuredPosts = posts.slice(0, 2);', 'home.featured-limit', 'Homepage must keep exactly two featured article slots.');
+requireText(files.home, source.home, 'const picks = posts.slice(2, 6);', 'home.picks-limit', 'Homepage picks sidebar must remain bounded to four articles.');
+requireText(files.home, source.home, 'const latestRows = posts.slice(6, 10);', 'home.rows-limit', 'Homepage horizontal article list must remain bounded to four rows.');
+requireText(files.home, source.home, 'class="featured-grid"', 'home.featured-grid', 'Homepage must keep the two-card featured grid.');
+requireText(files.home, source.home, 'class="home-picks"', 'home.picks', 'Homepage must keep the compact picks sidebar.');
+requireText(files.home, source.home, 'class="latest-rows"', 'home.latest-rows', 'Homepage must keep framed horizontal article rows.');
+requireText(files.home, source.home, 'class="feature-media-frame"', 'home.feature-image-frame', 'Featured article images must remain inside a dedicated frame.');
+requireText(files.home, source.home, 'class="row-media-frame"', 'home.row-image-frame', 'Horizontal article thumbnails must remain inside a dedicated frame.');
+requireText(files.home, source.home, 'id="home-search-input"', 'home.search', 'Homepage must keep article search without a separate oversized search section.');
 
 requireText(files.blog, source.blog, 'const DEFAULT_PAGE_SIZE = 12;', 'listing.default-page-size', 'Blog listing must retain a bounded default page size.');
 requireText(files.blog, source.blog, 'const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);', 'listing.initial-slice', 'Initial blog DOM must contain only the bounded first page.');
