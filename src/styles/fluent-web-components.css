@@ -1,0 +1,384 @@
+/* Reusable Fluent 2 web primitives for Astro templates. */
+
+:root {
+	--fui-control-height-small: 32px;
+	--fui-control-height-medium: 40px;
+	--fui-control-height-large: 48px;
+	--fui-focus-ring: 0 0 0 2px var(--color-neutral-background-4), 0 0 0 4px var(--color-brand-stroke-1);
+}
+
+.fui-card {
+	border: 1px solid var(--color-neutral-stroke-2);
+	border-radius: var(--radius-large);
+	background: var(--color-neutral-background-2);
+	box-shadow: var(--shadow-4);
+}
+
+.fui-card--interactive {
+	transition:
+		border-color var(--duration-normal) var(--curve-easy-ease),
+		box-shadow var(--duration-normal) var(--curve-easy-ease),
+		transform var(--duration-normal) var(--curve-easy-ease);
+}
+
+.fui-card--interactive:hover {
+	border-color: var(--color-neutral-stroke-1-hover);
+	box-shadow: var(--shadow-8);
+	transform: translateY(-2px);
+}
+
+.fui-card__header,
+.fui-card__body,
+.fui-card__footer {
+	padding-inline: 16px;
+}
+
+.fui-card__header {
+	padding-block: 16px 12px;
+}
+
+.fui-card__body {
+	padding-block: 0 16px;
+}
+
+.fui-card__footer {
+	padding-block: 12px 16px;
+	border-top: 1px solid var(--color-neutral-stroke-alpha);
+}
+
+.fui-button,
+.fui-icon-button {
+	appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: var(--fui-control-height-small);
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	border-radius: var(--radius-medium);
+	font: inherit;
+	font-size: 0.78rem;
+	font-weight: 650;
+	line-height: 1;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition:
+		background var(--duration-faster) var(--curve-easy-ease),
+		border-color var(--duration-faster) var(--curve-easy-ease),
+		color var(--duration-faster) var(--curve-easy-ease),
+		box-shadow var(--duration-faster) var(--curve-easy-ease);
+}
+
+.fui-button {
+	padding-inline: 12px;
+}
+
+.fui-icon-button {
+	width: var(--fui-control-height-small);
+	padding: 0;
+}
+
+.fui-button--primary {
+	border-color: var(--color-brand-background);
+	background: var(--color-brand-background);
+	color: var(--color-neutral-foreground-on-brand);
+}
+
+.fui-button--primary:hover {
+	border-color: var(--color-brand-background-hover);
+	background: var(--color-brand-background-hover);
+}
+
+.fui-button--primary:active {
+	border-color: var(--color-brand-background-pressed);
+	background: var(--color-brand-background-pressed);
+}
+
+.fui-button--secondary,
+.fui-icon-button {
+	border-color: var(--color-neutral-stroke-1);
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+}
+
+.fui-button--secondary:hover,
+.fui-icon-button:hover {
+	border-color: var(--color-neutral-stroke-1-hover);
+	background: var(--color-neutral-background-1-hover);
+}
+
+.fui-button--subtle {
+	background: transparent;
+	color: var(--color-neutral-foreground-2);
+}
+
+.fui-button--subtle:hover {
+	background: var(--color-subtle-background-hover);
+	color: var(--color-neutral-foreground-1);
+}
+
+.fui-button:focus-visible,
+.fui-icon-button:focus-visible,
+.fui-searchbox:focus-within,
+.fui-accordion__header:focus-visible,
+.fui-breadcrumb a:focus-visible {
+	outline: none;
+	box-shadow: var(--fui-focus-ring);
+}
+
+.fui-badge {
+	display: inline-flex;
+	min-width: 22px;
+	min-height: 22px;
+	align-items: center;
+	justify-content: center;
+	padding-inline: 6px;
+	border: 1px solid transparent;
+	border-radius: 999px;
+	background: var(--color-neutral-background-3);
+	color: var(--color-neutral-foreground-3);
+	font-size: 0.68rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+}
+
+.fui-badge--brand {
+	border-color: var(--color-brand-stroke-2);
+	background: var(--color-brand-background-2);
+	color: var(--color-brand-foreground);
+}
+
+.fui-searchbox {
+	display: flex;
+	min-height: var(--fui-control-height-medium);
+	align-items: center;
+	gap: 8px;
+	box-sizing: border-box;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: var(--radius-medium);
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-3);
+	transition:
+		border-color var(--duration-faster) var(--curve-easy-ease),
+		box-shadow var(--duration-faster) var(--curve-easy-ease);
+}
+
+.fui-searchbox > svg {
+	width: 16px;
+	height: 16px;
+	flex: 0 0 auto;
+	margin-inline-start: 11px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.7;
+}
+
+.fui-searchbox input {
+	width: 100%;
+	min-width: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: var(--color-neutral-foreground-1);
+	font: inherit;
+	font-size: 0.8rem;
+}
+
+.fui-searchbox input::placeholder {
+	color: var(--color-neutral-foreground-3);
+}
+
+.fui-searchbox__clear {
+	appearance: none;
+	display: grid;
+	width: 30px;
+	height: 30px;
+	flex: 0 0 auto;
+	place-items: center;
+	margin-inline-end: 4px;
+	border: 0;
+	border-radius: var(--radius-small);
+	background: transparent;
+	color: var(--color-neutral-foreground-3);
+	cursor: pointer;
+}
+
+.fui-searchbox__clear:hover,
+.fui-searchbox__clear:focus-visible {
+	background: var(--color-subtle-background-hover);
+	color: var(--color-neutral-foreground-1);
+	outline: none;
+}
+
+.fui-searchbox__clear svg {
+	width: 14px;
+	height: 14px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-width: 1.8;
+}
+
+.fui-accordion {
+	display: grid;
+}
+
+.fui-accordion__item + .fui-accordion__item {
+	border-top: 1px solid var(--color-neutral-stroke-alpha);
+}
+
+.fui-accordion__header {
+	appearance: none;
+	display: grid;
+	width: 100%;
+	min-height: 42px;
+	grid-template-columns: minmax(0, 1fr) auto auto;
+	align-items: center;
+	gap: 8px;
+	box-sizing: border-box;
+	padding-inline: 10px;
+	border: 0;
+	border-radius: var(--radius-medium);
+	background: transparent;
+	color: var(--color-neutral-foreground-2);
+	font: inherit;
+	font-size: 0.84rem;
+	font-weight: 600;
+	text-align: start;
+	cursor: pointer;
+}
+
+.fui-accordion__header:hover {
+	background: var(--color-subtle-background-hover);
+	color: var(--color-neutral-foreground-1);
+}
+
+.fui-accordion__header > svg {
+	width: 14px;
+	height: 14px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+	transition: transform var(--duration-faster) var(--curve-easy-ease);
+}
+
+.fui-accordion__header[aria-expanded='true'] > svg {
+	transform: rotate(180deg);
+}
+
+.fui-accordion__panel[hidden] {
+	display: none;
+}
+
+.fui-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.fui-list > li + li {
+	border-top: 1px solid var(--color-neutral-stroke-alpha);
+}
+
+.fui-divider {
+	height: 1px;
+	border: 0;
+	background: var(--color-neutral-stroke-alpha);
+}
+
+.fui-message-bar {
+	display: flex;
+	min-height: 44px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	box-sizing: border-box;
+	padding: 8px 10px;
+	border: 1px solid var(--color-neutral-stroke-2);
+	border-radius: var(--radius-medium);
+	background: var(--color-neutral-background-2);
+	color: var(--color-neutral-foreground-2);
+	box-shadow: var(--shadow-2);
+}
+
+.fui-message-bar--warning {
+	border-color: var(--color-brand-stroke-2);
+	background: var(--color-brand-background-2);
+}
+
+.fui-breadcrumb ol {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.fui-breadcrumb li {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--color-neutral-foreground-3);
+	font-size: 0.74rem;
+}
+
+.fui-breadcrumb li + li::before {
+	content: '/';
+	color: var(--color-neutral-foreground-4);
+}
+
+.fui-breadcrumb a {
+	border-radius: var(--radius-small);
+	color: var(--color-neutral-foreground-3);
+	text-decoration: none;
+}
+
+.fui-breadcrumb a:hover {
+	color: var(--color-neutral-foreground-1);
+	text-decoration: underline;
+}
+
+.fui-drawer-scrim {
+	position: fixed;
+	inset: 0;
+	z-index: 2090;
+	background: rgba(0, 0, 0, 0.58);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity var(--duration-normal) var(--curve-easy-ease);
+}
+
+.fui-drawer-scrim.is-open {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+@media (forced-colors: active) {
+	.fui-card,
+	.fui-searchbox,
+	.fui-message-bar,
+	.fui-button,
+	.fui-icon-button {
+		border-color: CanvasText;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fui-card--interactive,
+	.fui-button,
+	.fui-icon-button,
+	.fui-searchbox,
+	.fui-accordion__header > svg,
+	.fui-drawer-scrim {
+		transition: none;
+	}
+}
