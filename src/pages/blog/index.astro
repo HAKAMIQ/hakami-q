@@ -4,6 +4,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import BlogSidebar from '../../components/fluent/BlogSidebar.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
+import SkipLink from '../../components/SkipLink.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import { categoryNames, formatArabicDate, getPostCategories } from '../../data/blog-taxonomy';
 
@@ -24,9 +25,10 @@ const postItems = posts.map((post) => ({
 	</head>
 
 	<body>
+		<SkipLink />
 		<Header />
 
-		<main>
+		<main id="main-content" tabindex="-1">
 			<section class="page-hero">
 				<div class="site-container hero-inner">
 					<nav class="fui-breadcrumb" aria-label="مسار التنقل">
@@ -52,12 +54,12 @@ const postItems = posts.map((post) => ({
 					<BlogSidebar posts={posts} />
 
 					<div class="posts-content">
-						<div class="filter-status fui-card" id="filter-status" role="status" hidden>
+						<div class="filter-status fui-card" id="filter-status" role="status" aria-live="polite" hidden>
 							<p><span>القسم الحالي</span><strong id="filter-name"></strong></p>
 							<a class="fui-link" href="/blog">عرض جميع المقالات</a>
 						</div>
 
-						<p class="no-results fui-card" id="no-results" role="status" hidden>
+						<p class="no-results fui-card" id="no-results" role="status" aria-live="polite" hidden>
 							لا توجد مقالات مطابقة لهذا القسم حاليًا.
 						</p>
 
@@ -67,7 +69,7 @@ const postItems = posts.map((post) => ({
 									<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
 										<div class="post-image">
 											{post.data.heroImageUrl ? (
-												<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" referrerpolicy="no-referrer" />
+												<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
 											) : (
 												<div class="image-placeholder">HAKAMIQ</div>
 											)}
