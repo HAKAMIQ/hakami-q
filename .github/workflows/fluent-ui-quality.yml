@@ -7,9 +7,11 @@ name: Fluent UI Quality
       - main
     paths:
       - "astro.config.mjs"
+      - "convert-blogger-live-to-astro.ps1"
       - "package.json"
       - "package-lock.json"
       - "public/**"
+      - "src/content.config.ts"
       - "src/components/**"
       - "src/layouts/**"
       - "src/pages/**"
@@ -19,9 +21,11 @@ name: Fluent UI Quality
   pull_request:
     paths:
       - "astro.config.mjs"
+      - "convert-blogger-live-to-astro.ps1"
       - "package.json"
       - "package-lock.json"
       - "public/**"
+      - "src/content.config.ts"
       - "src/components/**"
       - "src/layouts/**"
       - "src/pages/**"
