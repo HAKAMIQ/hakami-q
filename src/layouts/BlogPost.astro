@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -54,20 +55,22 @@ const articleCategory =
 	</head>
 
 	<body>
+		<SkipLink />
 		<Header />
 
-		<main class="post-main">
-			<article class="post-shell">
+		<main id="main-content" tabindex="-1" class="post-main">
+			<article class="post-shell" aria-labelledby="article-title">
 				<header class="article-header">
 					<nav class="fui-breadcrumb article-breadcrumb" aria-label="مسار الصفحة">
 						<ol>
 							<li><a href="/">الرئيسية</a></li>
 							<li><a href="/blog">المقالات</a></li>
-							{articleCategory && <li aria-current="page">{articleCategory}</li>}
+							{articleCategory && <li>{articleCategory}</li>}
+							<li class="sr-only" aria-current="page">{title}</li>
 						</ol>
 					</nav>
 
-					<h1>{title}</h1>
+					<h1 id="article-title">{title}</h1>
 				</header>
 
 				<div class="article-content fluent-rich-text">
@@ -151,14 +154,8 @@ const articleCategory =
 		min-width: 0;
 	}
 
-	.article-content > :global(:first-child) {
-		margin-top: 0 !important;
-	}
-
-	.article-content :global(p) {
-		margin: 0 0 var(--spacing-160);
-		text-wrap: pretty;
-	}
+	.article-content > :global(:first-child) { margin-top: 0 !important; }
+	.article-content :global(p) { margin: 0 0 var(--spacing-160); text-wrap: pretty; }
 
 	.article-content :global(h2),
 	.article-content :global(h3),
@@ -200,9 +197,7 @@ const articleCategory =
 		text-underline-offset: 3px;
 	}
 
-	.article-content :global(a:hover) {
-		color: var(--color-brand-foreground-link-hover);
-	}
+	.article-content :global(a:hover) { color: var(--color-brand-foreground-link-hover); }
 
 	.article-content :global(img) {
 		display: block;
@@ -276,9 +271,7 @@ const articleCategory =
 		padding-inline-start: var(--spacing-240);
 	}
 
-	.article-content :global(li + li) {
-		margin-top: var(--spacing-80);
-	}
+	.article-content :global(li + li) { margin-top: var(--spacing-80); }
 
 	.article-content :global(blockquote) {
 		margin: var(--spacing-240) 0;
@@ -289,11 +282,7 @@ const articleCategory =
 		background: var(--color-neutral-background-3);
 	}
 
-	.article-content :global(pre) {
-		max-width: 100%;
-		margin: var(--spacing-200) 0;
-		overflow: auto;
-	}
+	.article-content :global(pre) { max-width: 100%; margin: var(--spacing-200) 0; overflow: auto; }
 
 	.article-content :global(button) {
 		min-height: var(--control-height-small);
@@ -312,7 +301,6 @@ const articleCategory =
 		margin-inline: auto !important;
 	}
 
-	/* Long prose stays readable while screenshots, grids and rich modules can use the wider article canvas. */
 	.article-content > :global(p),
 	.article-content > :global(h2),
 	.article-content > :global(h3),
@@ -328,7 +316,6 @@ const articleCategory =
 		margin-inline: auto;
 	}
 
-	/* Imported article headers are content, not a second page title. Keep their text readable and start-aligned. */
 	.article-content :global(header p) {
 		max-width: 920px;
 		margin-inline: auto !important;
@@ -346,7 +333,6 @@ const articleCategory =
 		text-align: start !important;
 	}
 
-	/* Shared treatment for the recurrent HAKAMIQ rich-guide family. No content is hidden. */
 	.article-content :global(.hq-header) {
 		width: min(100%, 920px) !important;
 		margin: 0 auto var(--spacing-240) !important;
@@ -391,133 +377,49 @@ const articleCategory =
 		box-shadow: var(--shadow-2) !important;
 	}
 
-	.article-content :global(.hq-card h3) {
-		margin-top: 0 !important;
-		text-align: start !important;
-	}
-
-	.article-content :global(.hq-setting-box) {
-		width: 100% !important;
-		max-width: 100% !important;
-		margin-inline: 0 !important;
-	}
-
-	.article-content :global(.hq-setting-path) {
-		max-width: 100%;
-		overflow-x: auto;
-		white-space: nowrap;
-	}
+	.article-content :global(.hq-card h3) { margin-top: 0 !important; text-align: start !important; }
+	.article-content :global(.hq-setting-box) { width: 100% !important; max-width: 100% !important; margin-inline: 0 !important; }
+	.article-content :global(.hq-setting-path) { max-width: 100%; overflow-x: auto; white-space: nowrap; }
 
 	.article-content :global(.hq-source),
 	.article-content :global(.hq-axis),
 	.article-content :global(.hq-step),
-	.article-content :global(.hq-problem) {
-		min-width: 0;
-	}
+	.article-content :global(.hq-problem) { min-width: 0; }
 
-	.article-content :global(.hq-source) {
-		min-height: clamp(60px, 5.5vw, 76px);
-	}
-
-	.article-content :global(.hq-shot) {
-		width: min(100%, 960px) !important;
-		max-width: 100% !important;
-		margin-inline: auto !important;
-	}
+	.article-content :global(.hq-source) { min-height: clamp(60px, 5.5vw, 76px); }
+	.article-content :global(.hq-shot) { width: min(100%, 960px) !important; max-width: 100% !important; margin-inline: auto !important; }
 
 	@media (max-width: 1023px) {
-		.post-shell {
-			padding-inline: clamp(var(--spacing-160), 2.5vw, var(--spacing-240));
-		}
-
+		.post-shell { padding-inline: clamp(var(--spacing-160), 2.5vw, var(--spacing-240)); }
 		.article-header,
-		.article-content {
-			width: 100%;
-		}
-
-		.article-header h1 {
-			font-size: clamp(1.75rem, 4vw, 2.125rem);
-		}
+		.article-content { width: 100%; }
+		.article-header h1 { font-size: clamp(1.75rem, 4vw, 2.125rem); }
 	}
 
 	@media (max-width: 639px) {
-		.post-main {
-			padding-top: var(--spacing-100);
-		}
-
-		.post-shell {
-			padding-inline: var(--spacing-120);
-		}
-
-		.article-breadcrumb {
-			margin-bottom: var(--spacing-100);
-			overflow-x: auto;
-			white-space: nowrap;
-			scrollbar-width: none;
-		}
-
-		.article-breadcrumb::-webkit-scrollbar {
-			display: none;
-		}
-
-		.article-header h1 {
-			font-size: clamp(1.55rem, 7vw, 1.875rem);
-			line-height: 1.4;
-			text-wrap: pretty;
-		}
-
-		.article-content {
-			margin-top: var(--spacing-120);
-			font-size: var(--font-size-reading);
-			line-height: var(--line-height-reading);
-		}
-
-		.article-content :global(h2) {
-			margin-top: var(--spacing-280, 28px);
-			font-size: var(--font-size-subtitle-1);
-			line-height: var(--line-height-subtitle-1);
-		}
-
-		.article-content :global(h3) {
-			margin-top: var(--spacing-240);
-			font-size: var(--font-size-subtitle-2);
-			line-height: var(--line-height-subtitle-2);
-		}
-
+		.post-main { padding-top: var(--spacing-100); }
+		.post-shell { padding-inline: var(--spacing-120); }
+		.article-breadcrumb { margin-bottom: var(--spacing-100); overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+		.article-breadcrumb::-webkit-scrollbar { display: none; }
+		.article-header h1 { font-size: clamp(1.55rem, 7vw, 1.875rem); line-height: 1.4; text-wrap: pretty; }
+		.article-content { margin-top: var(--spacing-120); font-size: var(--font-size-reading); line-height: var(--line-height-reading); }
+		.article-content :global(h2) { margin-top: var(--spacing-280, 28px); font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
+		.article-content :global(h3) { margin-top: var(--spacing-240); font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
 		.article-content :global(img),
 		.article-content :global(figure),
 		.article-content :global(iframe),
-		.article-content :global(video) {
-			max-width: 100% !important;
-			margin-block: var(--spacing-140, 14px);
-			border-radius: var(--radius-medium);
-		}
-
-		.article-content :global(.hq-header) {
-			margin-bottom: var(--spacing-160) !important;
-			padding-bottom: var(--spacing-120) !important;
-		}
-
-		.article-content :global(.hq-card) {
-			padding: var(--spacing-140, 14px) !important;
-			border-radius: var(--radius-medium);
-		}
-
-		.article-content :global(.hq-setting-path) {
-			font-size: var(--font-size-caption-1);
-		}
+		.article-content :global(video) { max-width: 100% !important; margin-block: var(--spacing-140, 14px); border-radius: var(--radius-medium); }
+		.article-content :global(.hq-header) { margin-bottom: var(--spacing-160) !important; padding-bottom: var(--spacing-120) !important; }
+		.article-content :global(.hq-card) { padding: var(--spacing-140, 14px) !important; border-radius: var(--radius-medium); }
+		.article-content :global(.hq-setting-path) { font-size: var(--font-size-caption-1); }
 	}
 
 	@media (pointer: coarse) {
 		.article-content :global(button),
-		.article-content :global(.hq-source) {
-			min-height: 44px;
-		}
+		.article-content :global(.hq-source) { min-height: 44px; }
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.article-content :global(*) {
-			scroll-behavior: auto !important;
-		}
+		.article-content :global(*) { scroll-behavior: auto !important; }
 	}
 </style>
