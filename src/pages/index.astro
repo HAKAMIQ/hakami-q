@@ -11,13 +11,12 @@ const posts = (await getCollection('blog')).sort(
 
 const featuredPost = posts[0];
 const latestPosts = posts.slice(1, 7);
-
-const formatDate = (date: Date) =>
-	new Intl.DateTimeFormat('ar-SA', {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric',
-	}).format(date);
+const searchItems = posts.map((post) => ({
+	title: post.data.title,
+	description: post.data.description ?? '',
+	labels: post.data.labels ?? [],
+	href: `/blog/${post.id}/`,
+}));
 ---
 
 <!doctype html>
@@ -30,12 +29,44 @@ const formatDate = (date: Date) =>
 		<Header />
 
 		<main>
+			<section class="home-search-section" aria-labelledby="home-search-title">
+				<div class="site-container">
+					<div class="home-search-wrap">
+						<div class="home-search-copy">
+							<h1 id="home-search-title">ابحث في HAKAMIQ</h1>
+							<p>ابحث مباشرة عن المحاكي أو الجهاز أو الشرح الذي تحتاجه.</p>
+						</div>
+
+						<div class="home-search" data-home-search>
+							<label class="sr-only" for="home-search-input">بحث في المقالات</label>
+							<div class="home-search-field">
+								<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+								<input
+									id="home-search-input"
+									type="search"
+									placeholder="ابحث عن PCSX2 أو RPCS3 أو Nintendo Switch..."
+									autocomplete="off"
+									spellcheck="false"
+									aria-controls="home-search-results"
+									aria-expanded="false"
+								/>
+								<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
+									<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
+								</button>
+							</div>
+
+							<div class="home-search-results" id="home-search-results" role="listbox" aria-label="نتائج البحث" hidden></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="content-section" aria-labelledby="latest-posts-title">
 				<div class="site-container">
 					<header class="section-heading">
 						<div>
 							<span class="section-eyebrow">جديد HAKAMIQ</span>
-							<h1 id="latest-posts-title">أحدث المقالات</h1>
+							<h2 id="latest-posts-title">أحدث المقالات</h2>
 						</div>
 						<a class="fui-link section-action" href="/blog">
 							<span>عرض جميع المقالات</span>
@@ -59,7 +90,6 @@ const formatDate = (date: Date) =>
 										<span class="fui-badge fui-badge--brand">المقال الأحدث</span>
 										<h2>{featuredPost.data.title}</h2>
 										<p>{featuredPost.data.description}</p>
-										<time datetime={featuredPost.data.pubDate.toISOString()}>{formatDate(featuredPost.data.pubDate)}</time>
 									</div>
 								</a>
 							</article>
@@ -78,7 +108,6 @@ const formatDate = (date: Date) =>
 
 											<div class="post-card-content">
 												<h2>{post.data.title}</h2>
-												<time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
 											</div>
 										</a>
 									</article>
@@ -91,12 +120,297 @@ const formatDate = (date: Date) =>
 		</main>
 
 		<Footer />
+
+		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
+		<script>
+			const initializeHomeSearch = () => {
+				const root = document.querySelector<HTMLElement>('[data-home-search]');
+				const dataElement = document.getElementById('home-search-data');
+				if (!root || !dataElement || root.dataset.initialized === 'true') return;
+				root.dataset.initialized = 'true';
+
+				const input = root.querySelector<HTMLInputElement>('#home-search-input');
+				const results = root.querySelector<HTMLElement>('#home-search-results');
+				const clearButton = root.querySelector<HTMLButtonElement>('.home-search-clear');
+				if (!input || !results || !clearButton) return;
+
+				type SearchItem = { title: string; description: string; labels: string[]; href: string };
+				let items: SearchItem[] = [];
+				try {
+					items = JSON.parse(dataElement.textContent || '[]');
+				} catch {
+					items = [];
+				}
+
+				const normalize = (value: string) => value
+					.toLocaleLowerCase('ar')
+					.normalize('NFKD')
+					.replace(/[\u064B-\u065F\u0670]/g, '')
+					.replace(/[أإآ]/g, 'ا')
+					.replace(/ى/g, 'ي')
+					.replace(/ة/g, 'ه')
+					.replace(/\s+/g, ' ')
+					.trim();
+
+				const closeResults = () => {
+					results.hidden = true;
+					results.replaceChildren();
+					input.setAttribute('aria-expanded', 'false');
+				};
+
+				const render = () => {
+					const query = normalize(input.value);
+					clearButton.hidden = query.length === 0;
+
+					if (query.length < 2) {
+						closeResults();
+						return;
+					}
+
+					const terms = query.split(' ').filter(Boolean);
+					const matches = items
+						.map((item) => {
+							const title = normalize(item.title);
+							const description = normalize(item.description);
+							const labels = normalize(item.labels.join(' '));
+							const haystack = `${title} ${labels} ${description}`;
+							if (!terms.every((term) => haystack.includes(term))) return null;
+							let score = 0;
+							if (title === query) score += 100;
+							if (title.startsWith(query)) score += 50;
+							if (title.includes(query)) score += 30;
+							if (labels.includes(query)) score += 15;
+							return { item, score };
+						})
+						.filter((entry): entry is { item: SearchItem; score: number } => entry !== null)
+						.sort((a, b) => b.score - a.score)
+						.slice(0, 8);
+
+					results.replaceChildren();
+
+					if (matches.length === 0) {
+						const empty = document.createElement('p');
+						empty.className = 'home-search-empty';
+						empty.textContent = 'لا توجد نتائج مطابقة. جرّب اسم المحاكي أو الجهاز.';
+						results.append(empty);
+					} else {
+						for (const { item } of matches) {
+							const link = document.createElement('a');
+							link.href = item.href;
+							link.className = 'home-search-result';
+							link.setAttribute('role', 'option');
+
+							const title = document.createElement('strong');
+							title.textContent = item.title;
+							link.append(title);
+
+							if (item.labels.length > 0) {
+								const meta = document.createElement('span');
+								meta.textContent = item.labels.slice(0, 2).join(' · ');
+								link.append(meta);
+							}
+
+							results.append(link);
+						}
+					}
+
+					results.hidden = false;
+					input.setAttribute('aria-expanded', 'true');
+				};
+
+				input.addEventListener('input', render);
+				input.addEventListener('keydown', (event) => {
+					if (event.key === 'Escape') {
+						input.value = '';
+						clearButton.hidden = true;
+						closeResults();
+						input.blur();
+					}
+					if (event.key === 'Enter') {
+						const first = results.querySelector<HTMLAnchorElement>('.home-search-result');
+						if (first) window.location.href = first.href;
+					}
+				});
+
+				clearButton.addEventListener('click', () => {
+					input.value = '';
+					clearButton.hidden = true;
+					closeResults();
+					input.focus();
+				});
+
+				document.addEventListener('pointerdown', (event) => {
+					if (event.target instanceof Node && !root.contains(event.target)) closeResults();
+				});
+			};
+
+			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeHomeSearch, { once: true });
+			else initializeHomeSearch();
+			document.addEventListener('astro:page-load', initializeHomeSearch);
+		</script>
 	</body>
 </html>
 
 <style>
+	.home-search-section {
+		padding-block: var(--spacing-240) var(--spacing-80);
+	}
+
+	.home-search-wrap {
+		width: min(100%, 880px);
+		margin-inline: auto;
+	}
+
+	.home-search-copy {
+		margin-bottom: var(--spacing-120);
+		text-align: center;
+	}
+
+	.home-search-copy h1 {
+		font-size: var(--font-size-title-2);
+		line-height: var(--line-height-title-2);
+	}
+
+	.home-search-copy p {
+		margin-top: var(--spacing-40);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+	}
+
+	.home-search {
+		position: relative;
+		z-index: 20;
+	}
+
+	.home-search-field {
+		display: flex;
+		min-height: 48px;
+		align-items: center;
+		gap: var(--spacing-80);
+		padding-inline: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-1);
+		box-shadow: var(--shadow-4);
+		transition:
+			border-color var(--duration-faster) var(--curve-easy-ease),
+			box-shadow var(--duration-faster) var(--curve-easy-ease),
+			background var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.home-search-field:focus-within {
+		border-color: var(--color-brand-stroke-1);
+		box-shadow: var(--focus-ring), var(--shadow-4);
+		background: var(--color-neutral-background-1-hover);
+	}
+
+	.home-search-field > svg {
+		width: 18px;
+		height: 18px;
+		flex: 0 0 auto;
+		fill: none;
+		stroke: var(--color-neutral-foreground-3);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.6;
+	}
+
+	.home-search-field input {
+		width: 100%;
+		min-width: 0;
+		height: 46px;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-body-1);
+	}
+
+	.home-search-field input::placeholder {
+		color: var(--color-neutral-foreground-4);
+	}
+
+	.home-search-field input::-webkit-search-cancel-button {
+		display: none;
+	}
+
+	.home-search-clear {
+		display: grid;
+		width: 32px;
+		height: 32px;
+		flex: 0 0 auto;
+		place-items: center;
+		padding: 0;
+		border: 0;
+		border-radius: var(--radius-medium);
+		background: transparent;
+		color: var(--color-neutral-foreground-3);
+		cursor: pointer;
+	}
+
+	.home-search-clear[hidden] { display: none; }
+	.home-search-clear:hover { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); }
+	.home-search-clear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
+
+	.home-search-results {
+		position: absolute;
+		inset-inline: 0;
+		top: calc(100% + var(--spacing-60));
+		overflow: hidden;
+		padding: var(--spacing-60);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-1);
+		box-shadow: var(--shadow-16);
+	}
+
+	.home-search-results[hidden] { display: none; }
+
+	:global(.home-search-result) {
+		display: flex;
+		min-height: 52px;
+		flex-direction: column;
+		justify-content: center;
+		gap: 2px;
+		padding: var(--spacing-80) var(--spacing-100);
+		border-radius: var(--radius-medium);
+		color: var(--color-neutral-foreground-1);
+		text-decoration: none;
+	}
+
+	:global(.home-search-result:hover),
+	:global(.home-search-result:focus-visible) {
+		background: var(--color-subtle-background-hover);
+	}
+
+	:global(.home-search-result strong) {
+		display: -webkit-box;
+		overflow: hidden;
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-body-1);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+	}
+
+	:global(.home-search-result span) {
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
+	}
+
+	:global(.home-search-empty) {
+		margin: 0;
+		padding: var(--spacing-160);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		text-align: center;
+	}
+
 	.content-section {
-		padding-block: var(--spacing-320) var(--spacing-160);
+		padding-block: var(--spacing-240) var(--spacing-160);
 	}
 
 	.section-heading {
@@ -116,7 +430,7 @@ const formatDate = (date: Date) =>
 		line-height: var(--line-height-caption-1);
 	}
 
-	.section-heading h1 {
+	.section-heading h2 {
 		font-size: var(--font-size-title-3);
 		line-height: var(--line-height-title-3);
 	}
@@ -179,15 +493,6 @@ const formatDate = (date: Date) =>
 		-webkit-line-clamp: 3;
 	}
 
-	.featured-content time,
-	.post-card-content time {
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
-	}
-
-	.featured-content time { margin-top: var(--spacing-160); }
-
 	.featured-image img,
 	.post-thumb img {
 		width: 100%;
@@ -236,10 +541,9 @@ const formatDate = (date: Date) =>
 
 	.post-card-content {
 		display: flex;
-		min-height: 92px;
+		min-height: 74px;
 		min-width: 0;
 		flex: 1;
-		flex-direction: column;
 		align-items: flex-start;
 		padding: var(--spacing-120);
 		text-align: right;
@@ -255,15 +559,15 @@ const formatDate = (date: Date) =>
 		-webkit-line-clamp: 2;
 	}
 
-	.post-card-content time { margin-top: auto; padding-top: var(--spacing-100); }
-
 	@media (max-width: 1023px) {
 		.featured-card > a { grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr); min-height: 250px; }
 		.latest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
 	@media (max-width: 767px) {
-		.content-section { padding-top: var(--spacing-240); }
+		.home-search-section { padding-top: var(--spacing-200); }
+		.home-search-copy h1 { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
+		.content-section { padding-top: var(--spacing-200); }
 		.section-heading { align-items: flex-start; }
 		.featured-card > a { grid-template-columns: 1fr; min-height: 0; }
 		.featured-image { aspect-ratio: 16 / 9; }
@@ -273,11 +577,14 @@ const formatDate = (date: Date) =>
 	}
 
 	@media (max-width: 639px) {
+		.home-search-copy { text-align: right; }
+		.home-search-field { min-height: 44px; padding-inline: var(--spacing-100); }
+		.home-search-field input { height: 42px; }
 		.section-heading { flex-direction: column; gap: var(--spacing-100); }
 		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
 		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
-		.post-thumb { height: 100%; min-height: 108px; aspect-ratio: auto; }
-		.post-card-content { min-height: 108px; }
+		.post-thumb { height: 100%; min-height: 96px; aspect-ratio: auto; }
+		.post-card-content { min-height: 96px; align-items: center; }
 	}
 
 	@media (max-width: 420px) {
