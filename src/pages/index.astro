@@ -42,8 +42,6 @@ const searchItems = posts.map((post) => ({
 	description: post.data.description ?? '',
 	labels: post.data.labels ?? [],
 	href: `/blog/${post.id}/`,
-	heroImageUrl: post.data.heroImageUrl ?? '',
-	displayCategory: getDisplayCategory(post.data.labels) ?? '',
 }));
 
 const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
@@ -59,105 +57,134 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		<SkipLink />
 		<Header />
 
-		<main id="main-content" tabindex="-1">
+		<main id="main-content" class="home-page" tabindex="-1">
 			<section class="home-search-section" aria-labelledby="home-search-title">
-				<div class="site-container">
-					<div class="home-search-wrap">
-						<h1 class="home-search-title" id="home-search-title">بحث في المقالات</h1>
+				<div class="site-container home-search-container">
+					<div class="home-search-copy">
+						<h1 id="home-search-title">بحث في المقالات</h1>
+						<p>ابحث باسم المحاكي أو الجهاز للوصول إلى الشرح مباشرة.</p>
+					</div>
 
-						<div class="home-search" data-home-search>
-							<div class="home-search-field">
-								<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
-								<input
-									id="home-search-input"
-									type="search"
-									placeholder="ابحث عن PCSX2 أو RPCS3 أو Nintendo Switch…"
-									autocomplete="off"
-									spellcheck="false"
-									aria-label="بحث في المقالات"
-									aria-controls="home-search-results"
-									aria-describedby="home-search-help"
-									aria-expanded="false"
-								/>
-								<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
-									<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
-								</button>
-							</div>
-							<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
-							<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
-							<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+					<div class="home-search" data-home-search>
+						<div class="home-search-field">
+							<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+							<input
+								id="home-search-input"
+								type="search"
+								placeholder="مثال: PCSX2 أو RPCS3 أو Nintendo Switch"
+								autocomplete="off"
+								spellcheck="false"
+								aria-label="بحث في المقالات"
+								aria-controls="home-search-results"
+								aria-describedby="home-search-help"
+								aria-expanded="false"
+							/>
+							<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
+							</button>
 						</div>
+						<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
+						<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
+						<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+					</div>
+				</div>
+			</section>
 
-						<nav class="browse-shortcuts" aria-label="تصفح سريع حسب المنصة">
+			{featuredPost && (
+				<section class="home-featured-section" aria-labelledby="featured-title">
+					<div class="site-container home-editorial-container">
+						<p class="section-kicker">أحدث مقال</p>
+						<article class="lead-story">
+							<a class="lead-story-link" href={`/blog/${featuredPost.id}/`} aria-label={`قراءة مقال: ${featuredPost.data.title}`}>
+								<div class="lead-story-media">
+									{featuredPost.data.heroImageUrl ? (
+										<img
+											src={featuredPost.data.heroImageUrl}
+											alt={featuredPost.data.title}
+											loading="eager"
+											decoding="async"
+											fetchpriority="high"
+											referrerpolicy="no-referrer"
+										/>
+									) : (
+										<div class="home-image-placeholder" aria-hidden="true">H</div>
+									)}
+								</div>
+
+								<div class="lead-story-copy">
+									{featuredCategory && <span class="story-category">{featuredCategory}</span>}
+									<h2 id="featured-title">{featuredPost.data.title}</h2>
+									{featuredPost.data.description && <p>{featuredPost.data.description}</p>}
+									<span class="story-action" aria-hidden="true">
+										قراءة المقال
+										<svg viewBox="0 0 20 20"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+									</span>
+								</div>
+							</a>
+						</article>
+					</div>
+				</section>
+			)}
+
+			<section class="home-latest-section" aria-labelledby="latest-posts-title">
+				<div class="site-container home-editorial-container">
+					<header class="home-section-heading">
+						<div>
+							<p class="section-kicker">جديد المكتبة</p>
+							<h2 id="latest-posts-title">أحدث المقالات</h2>
+						</div>
+					</header>
+
+					<ul class="editorial-list" aria-label="أحدث المقالات">
+						{latestPosts.map((post) => {
+							const category = getDisplayCategory(post.data.labels);
+							return (
+								<li>
+									<article class="editorial-story">
+										<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
+											<div class="editorial-thumb">
+												{post.data.heroImageUrl ? (
+													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+												) : (
+													<div class="home-image-placeholder small" aria-hidden="true">H</div>
+												)}
+											</div>
+											<div class="editorial-copy">
+												{category && <span class="story-category">{category}</span>}
+												<h3>{post.data.title}</h3>
+												{post.data.description && <p>{post.data.description}</p>}
+											</div>
+											<svg class="row-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+										</a>
+									</article>
+								</li>
+							);
+						})}
+					</ul>
+
+					<div class="all-posts-action">
+						<a class="fui-button fui-button--secondary" href="/blog">
+							<span>عرض كل المقالات</span>
+							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="home-platforms-section" aria-labelledby="platforms-title">
+				<div class="site-container home-editorial-container">
+					<div class="platforms-panel">
+						<div class="platforms-copy">
+							<p class="section-kicker">استكشاف</p>
+							<h2 id="platforms-title">استكشف حسب المنصة</h2>
+							<p>اختر منصة للبحث مباشرة في المقالات المرتبطة بها.</p>
+						</div>
+						<nav class="platform-links" aria-label="استكشف المقالات حسب المنصة">
 							{browseTerms.map((term) => (
 								<button type="button" data-search-term={term}>{term}</button>
 							))}
 						</nav>
 					</div>
-				</div>
-			</section>
-
-			<section class="content-section" aria-labelledby="latest-posts-title">
-				<div class="site-container home-content-container">
-					<header class="section-heading">
-						<h2 id="latest-posts-title">أحدث المقالات</h2>
-						<div class="section-tools">
-							<label class="home-feed-size" for="home-feed-size">
-								<span>عرض</span>
-								<select id="home-feed-size" aria-label="عدد أحدث المقالات المعروضة">
-									<option value="6" selected>6</option>
-									<option value="12">12</option>
-									<option value="18">18</option>
-								</select>
-							</label>
-							<a class="fui-link section-action" href="/blog">
-								<span>عرض جميع المقالات</span>
-								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-							</a>
-						</div>
-					</header>
-
-					{featuredPost && (
-						<div class="articles-layout">
-							<article class="featured-card fui-card fui-card--interactive">
-								<a href={`/blog/${featuredPost.id}/`} aria-label={featuredPost.data.title}>
-									<div class="featured-image">
-										{featuredPost.data.heroImageUrl ? (
-											<img src={featuredPost.data.heroImageUrl} alt={featuredPost.data.title} loading="eager" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" />
-										) : (
-											<div class="image-placeholder">H</div>
-										)}
-									</div>
-									<div class="featured-content">
-										{featuredCategory && <span class="article-category">{featuredCategory}</span>}
-										<h2>{featuredPost.data.title}</h2>
-										<p>{featuredPost.data.description}</p>
-									</div>
-								</a>
-							</article>
-
-							<div class="latest-grid" id="home-latest-grid" aria-live="polite">
-								{latestPosts.map((post) => (
-									<article class="post-card fui-card fui-card--interactive">
-										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
-											<div class="post-thumb">
-												{post.data.heroImageUrl ? (
-													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-												) : (
-													<div class="image-placeholder small">H</div>
-												)}
-											</div>
-											<div class="post-card-content">
-												{getDisplayCategory(post.data.labels) && <span class="post-card-category">{getDisplayCategory(post.data.labels)}</span>}
-												<h2>{post.data.title}</h2>
-												{post.data.description && <p>{post.data.description}</p>}
-											</div>
-										</a>
-									</article>
-								))}
-							</div>
-						</div>
-					)}
 				</div>
 			</section>
 		</main>
@@ -166,7 +193,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 
 		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
 		<script>
-			type HomeItem = { title: string; description: string; labels: string[]; href: string; heroImageUrl: string; displayCategory: string };
+			type HomeItem = { title: string; description: string; labels: string[]; href: string };
 
 			const readHomeItems = () => {
 				const dataElement = document.getElementById('home-search-data');
@@ -264,7 +291,8 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					button.addEventListener('click', () => {
 						input.value = button.dataset.searchTerm ?? '';
 						render();
-						input.focus();
+						root.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						input.focus({ preventScroll: true });
 					});
 				}
 				document.addEventListener('pointerdown', (event) => {
@@ -272,78 +300,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				});
 			};
 
-			const initializeHomeFeed = () => {
-				const grid = document.querySelector<HTMLElement>('#home-latest-grid');
-				const select = document.querySelector<HTMLSelectElement>('#home-feed-size');
-				if (!grid || !select || grid.dataset.initialized === 'true') return;
-				grid.dataset.initialized = 'true';
-				const items = readHomeItems().slice(1);
-				const allowed = new Set([6, 12, 18]);
-				let limit = 6;
-				try {
-					const stored = Number.parseInt(localStorage.getItem('hakamiq-home-post-count') ?? '', 10);
-					if (allowed.has(stored)) limit = stored;
-				} catch {}
-				select.value = String(limit);
-
-				const createCard = (item: HomeItem) => {
-					const article = document.createElement('article');
-					article.className = 'post-card fui-card fui-card--interactive';
-					const link = document.createElement('a');
-					link.href = item.href;
-					link.setAttribute('aria-label', item.title);
-					const thumb = document.createElement('div');
-					thumb.className = 'post-thumb';
-					if (item.heroImageUrl) {
-						const image = document.createElement('img');
-						image.src = item.heroImageUrl;
-						image.alt = item.title;
-						image.loading = 'lazy';
-						image.decoding = 'async';
-						image.referrerPolicy = 'no-referrer';
-						thumb.append(image);
-					} else {
-						const placeholder = document.createElement('div');
-						placeholder.className = 'image-placeholder small';
-						placeholder.textContent = 'H';
-						thumb.append(placeholder);
-					}
-					const content = document.createElement('div');
-					content.className = 'post-card-content';
-					if (item.displayCategory) {
-						const category = document.createElement('span');
-						category.className = 'post-card-category';
-						category.textContent = item.displayCategory;
-						content.append(category);
-					}
-					const title = document.createElement('h2');
-					title.textContent = item.title;
-					content.append(title);
-					if (item.description) {
-						const description = document.createElement('p');
-						description.textContent = item.description;
-						content.append(description);
-					}
-					link.append(thumb, content);
-					article.append(link);
-					return article;
-				};
-
-				const render = () => grid.replaceChildren(...items.slice(0, limit).map(createCard));
-				select.addEventListener('change', () => {
-					const next = Number.parseInt(select.value, 10);
-					if (!allowed.has(next)) return;
-					limit = next;
-					try { localStorage.setItem('hakamiq-home-post-count', String(limit)); } catch {}
-					render();
-				});
-				if (limit !== 6) render();
-			};
-
-			const initializeHome = () => {
-				initializeHomeSearch();
-				initializeHomeFeed();
-			};
+			const initializeHome = () => initializeHomeSearch();
 			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeHome, { once: true });
 			else initializeHome();
 			document.addEventListener('astro:page-load', initializeHome);
@@ -351,20 +308,46 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	</body>
 </html>
 
-<style>
-	.home-search-section { padding-block: var(--spacing-160) var(--spacing-80); }
-	.home-search-wrap { width: min(100%, 860px); margin-inline: auto; }
-	.home-search-title {
-		margin-bottom: var(--spacing-80);
-		font-size: var(--font-size-subtitle-1);
-		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-subtitle-1);
-		text-align: center;
+<style is:global>
+	.home-page {
+		background: var(--color-neutral-background-4);
 	}
-	.home-search { position: relative; z-index: 20; }
+
+	.home-search-section {
+		padding-block: var(--spacing-240) var(--spacing-280);
+		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-3);
+	}
+
+	.home-search-container {
+		display: grid;
+		grid-template-columns: minmax(220px, 0.7fr) minmax(360px, 1.3fr);
+		align-items: center;
+		gap: clamp(var(--spacing-200), 4vw, var(--spacing-400));
+		max-width: 1080px;
+	}
+
+	.home-search-copy h1 {
+		font-size: var(--font-size-title-2);
+		line-height: var(--line-height-title-2);
+	}
+
+	.home-search-copy p {
+		max-width: 440px;
+		margin-top: var(--spacing-60);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+	}
+
+	.home-search {
+		position: relative;
+		z-index: 20;
+	}
+
 	.home-search-field {
 		display: flex;
-		min-height: 44px;
+		min-height: 48px;
 		align-items: center;
 		gap: var(--spacing-80);
 		padding-inline: var(--spacing-120);
@@ -374,117 +357,414 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		box-shadow: var(--shadow-2);
 		transition: border-color var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-faster) var(--curve-easy-ease), background var(--duration-faster) var(--curve-easy-ease);
 	}
-	.home-search-field > svg { width: 18px; height: 18px; flex: 0 0 auto; fill: none; stroke: var(--color-neutral-foreground-3); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
-	.home-search-field input { width: 100%; min-width: 0; height: 42px; padding: 0; border: 0; outline: 0; background: transparent; color: var(--color-neutral-foreground-1); font-size: var(--font-size-body-1); }
+
+	.home-search-field:focus-within {
+		border-color: var(--color-brand-stroke-1);
+		box-shadow: var(--focus-ring);
+	}
+
+	.home-search-field > svg {
+		width: 18px;
+		height: 18px;
+		flex: 0 0 auto;
+		fill: none;
+		stroke: var(--color-neutral-foreground-3);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.6;
+	}
+
+	.home-search-field input {
+		width: 100%;
+		min-width: 0;
+		height: 46px;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-body-1);
+	}
+
 	.home-search-field input::placeholder { color: var(--color-neutral-foreground-4); }
 	.home-search-field input::-webkit-search-cancel-button { display: none; }
-	.home-search-clear { display: grid; width: 32px; height: 32px; flex: 0 0 auto; place-items: center; padding: 0; border: 0; border-radius: var(--radius-medium); background: transparent; color: var(--color-neutral-foreground-3); cursor: pointer; }
+
+	.home-search-clear {
+		display: grid;
+		width: 32px;
+		height: 32px;
+		flex: 0 0 auto;
+		place-items: center;
+		padding: 0;
+		border: 0;
+		border-radius: var(--radius-medium);
+		background: transparent;
+		color: var(--color-neutral-foreground-3);
+		cursor: pointer;
+	}
+
 	.home-search-clear[hidden] { display: none; }
 	.home-search-clear:hover { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); }
 	.home-search-clear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
-	.home-search-results { position: absolute; inset-inline: 0; top: calc(100% + var(--spacing-60)); overflow: hidden; padding: var(--spacing-60); border: var(--stroke-thin) solid var(--color-neutral-stroke-1); border-radius: var(--radius-large); background: var(--color-neutral-background-1); box-shadow: var(--shadow-16); }
-	.home-search-results[hidden] { display: none; }
-	:global(.home-search-result) { display: flex; min-height: 52px; flex-direction: column; justify-content: center; gap: 2px; padding: var(--spacing-80) var(--spacing-100); border-radius: var(--radius-medium); color: var(--color-neutral-foreground-1); text-decoration: none; }
-	:global(.home-search-result:hover), :global(.home-search-result:focus-visible) { background: var(--color-subtle-background-hover); }
-	:global(.home-search-result strong) { display: -webkit-box; overflow: hidden; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
-	:global(.home-search-result span) { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
-	:global(.home-search-empty) { margin: 0; padding: var(--spacing-160); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); text-align: center; }
-	.browse-shortcuts { display: flex; justify-content: center; gap: var(--spacing-60); margin-top: var(--spacing-100); flex-wrap: wrap; }
-	.browse-shortcuts button { min-height: 30px; padding-inline: var(--spacing-100); border: var(--stroke-thin) solid var(--color-neutral-stroke-2); border-radius: var(--radius-circular); background: var(--color-subtle-background); color: var(--color-neutral-foreground-3); font: inherit; font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); cursor: pointer; transition: background var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease); }
-	.browse-shortcuts button:hover, .browse-shortcuts button:focus-visible { border-color: var(--color-neutral-stroke-1-hover); background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); }
 
-	.content-section { padding-block: var(--spacing-120) var(--spacing-240); }
-	.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 1160px); }
-	.section-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-160); margin-bottom: var(--spacing-160); }
-	.section-heading h2 { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); text-wrap: balance; }
-	.section-tools { display: flex; align-items: center; gap: var(--spacing-100); }
-	.home-feed-size { display: inline-flex; align-items: center; gap: var(--spacing-60); color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); }
-	.home-feed-size select { min-width: 68px; min-height: 34px; padding-inline: var(--spacing-80); border: var(--stroke-thin) solid var(--color-neutral-stroke-2); border-radius: var(--radius-medium); background: var(--color-neutral-background-1); color: var(--color-neutral-foreground-1); }
-	.section-action { flex: 0 0 auto; color: var(--color-neutral-foreground-3); }
-	.section-action:hover, .section-action:focus-visible { color: var(--color-brand-foreground-strong); }
-	.section-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
-	.articles-layout { display: grid; gap: var(--spacing-160); }
-
-	.featured-card, .post-card {
+	.home-search-results {
+		position: absolute;
+		inset-inline: 0;
+		top: calc(100% + var(--spacing-60));
 		overflow: hidden;
-		border-color: var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-card-background);
-		transition: border-color var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-normal) var(--curve-decelerate-mid), background var(--duration-faster) var(--curve-easy-ease);
+		padding: var(--spacing-60);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-1);
+		box-shadow: var(--shadow-16);
 	}
-	.featured-card:hover, .post-card:hover { border-color: var(--color-neutral-stroke-2); background: var(--color-neutral-card-background-hover); box-shadow: var(--shadow-8); }
-	.featured-card > a, .post-card > a { outline: none; }
-	.featured-card > a:focus-visible, .post-card > a:focus-visible { outline: 2px solid var(--color-brand-stroke-1); outline-offset: -2px; }
-	.featured-card > a { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(330px, 1fr); height: 236px; color: inherit; direction: ltr; text-decoration: none; }
-	.featured-image, .post-thumb { min-width: 0; overflow: hidden; background: var(--color-neutral-background-3); }
-	.featured-content { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; justify-content: center; padding: var(--spacing-180) var(--spacing-200); direction: rtl; text-align: right; }
-	.article-category, .post-card-category { display: inline-flex; max-width: 100%; align-items: center; gap: var(--spacing-60); color: var(--color-brand-foreground-strong); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-caption-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-	.article-category::before, .post-card-category::before { width: 5px; height: 5px; flex: 0 0 auto; border-radius: var(--radius-circular); background: var(--color-brand-background); content: ''; }
-	.featured-content h2 { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-60); font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); text-wrap: balance; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.featured-content p { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-100); color: var(--color-neutral-foreground-2); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); text-wrap: pretty; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.featured-image img, .post-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform var(--duration-slow) var(--curve-decelerate-mid); }
-	.featured-card:hover img, .post-card:hover img { transform: scale(1.01); }
-	.image-placeholder { display: grid; width: 100%; height: 100%; min-height: 160px; place-items: center; background: var(--color-neutral-background-3); color: var(--color-neutral-foreground-4); font-size: var(--font-size-title-3); font-weight: var(--font-weight-semibold); }
-	.image-placeholder.small { min-height: 0; font-size: var(--font-size-subtitle-2); }
 
-	.latest-grid {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		align-items: start;
-		gap: var(--spacing-160);
+	.home-search-results[hidden] { display: none; }
+	.home-search-result { display: flex; min-height: 52px; flex-direction: column; justify-content: center; gap: 2px; padding: var(--spacing-80) var(--spacing-100); border-radius: var(--radius-medium); color: var(--color-neutral-foreground-1); text-decoration: none; }
+	.home-search-result:hover, .home-search-result:focus-visible { background: var(--color-subtle-background-hover); }
+	.home-search-result strong { display: -webkit-box; overflow: hidden; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+	.home-search-result span { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
+	.home-search-empty { margin: 0; padding: var(--spacing-160); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); text-align: center; }
+
+	.home-editorial-container {
+		width: min(calc(100% - (var(--page-gutter) * 2)), 1080px);
 	}
-	.post-card { align-self: start; }
-	.post-card > a { display: flex; min-width: 0; flex-direction: column; color: inherit; text-decoration: none; }
-	.post-thumb { aspect-ratio: 16 / 9; }
-	.post-card-content {
+
+	.home-featured-section {
+		padding-block: var(--spacing-320) var(--spacing-360);
+	}
+
+	.section-kicker {
+		margin-bottom: var(--spacing-60);
+		color: var(--color-brand-foreground-strong);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
+	}
+
+	.lead-story {
+		margin-top: var(--spacing-100);
+		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.lead-story-link {
+		display: grid;
+		grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+		align-items: stretch;
+		color: inherit;
+		direction: ltr;
+		text-decoration: none;
+	}
+
+	.lead-story-media {
+		min-height: 260px;
+		max-height: 340px;
+		overflow: hidden;
+		background: var(--color-neutral-background-3);
+	}
+
+	.lead-story-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform var(--motion-duration-page) var(--curve-decelerate-mid);
+	}
+
+	.lead-story-copy {
 		display: flex;
 		min-width: 0;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: var(--spacing-60);
-		padding: var(--spacing-120) var(--spacing-140) var(--spacing-140);
+		justify-content: center;
+		padding: clamp(var(--spacing-180), 3vw, var(--spacing-320));
 		direction: rtl;
-		text-align: right;
+		text-align: start;
 	}
-	.post-card-content h2 { display: -webkit-box; overflow: hidden; width: 100%; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); text-align: right; text-wrap: pretty; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.post-card-content p { display: -webkit-box; overflow: hidden; width: 100%; margin-top: 2px; color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: 1.65; text-wrap: pretty; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 
-	@media (max-width: 1023px) {
-		.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 960px); }
-		.featured-card > a { grid-template-columns: minmax(0, 1.3fr) minmax(280px, 1fr); height: 220px; }
+	.story-category {
+		display: inline-flex;
+		max-width: 100%;
+		align-items: center;
+		gap: var(--spacing-60);
+		overflow: hidden;
+		color: var(--color-brand-foreground-strong);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
-	@media (max-width: 767px) {
-		.home-search-section { padding-top: var(--spacing-120); }
-		.home-search-title { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
-		.content-section { padding-top: var(--spacing-100); }
-		.featured-card > a { grid-template-columns: 1fr; height: auto; }
-		.featured-image { aspect-ratio: 16 / 8.5; }
-		.featured-content { padding: var(--spacing-140); }
-		.featured-content h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
-		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-140); }
-		.post-card > a { display: grid; grid-template-columns: minmax(180px, 42%) minmax(0, 1fr); }
-		.post-thumb { height: 100%; min-height: 164px; aspect-ratio: auto; }
-		.post-card-content { justify-content: center; }
+
+	.story-category::before {
+		width: 5px;
+		height: 5px;
+		flex: 0 0 auto;
+		border-radius: var(--radius-circular);
+		background: var(--color-brand-background);
+		content: '';
 	}
-	@media (max-width: 639px) {
-		.home-search-title { text-align: right; }
-		.browse-shortcuts { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; scrollbar-width: none; }
-		.browse-shortcuts::-webkit-scrollbar { display: none; }
-		.browse-shortcuts button { flex: 0 0 auto; min-height: 36px; }
-		.section-heading { gap: var(--spacing-80); }
-		.section-tools { gap: var(--spacing-60); }
-		.home-feed-size span { display: none; }
-		.home-feed-size select { min-width: 60px; min-height: 36px; }
-		.section-action span { display: none; }
-		.section-action { width: 36px; height: 36px; justify-content: center; padding: 0; }
-		.post-card > a { grid-template-columns: 124px minmax(0, 1fr); }
-		.post-thumb { min-height: 116px; }
-		.post-card-content { padding: var(--spacing-80) var(--spacing-100); gap: var(--spacing-40); }
-		.post-card-content p { display: none; }
-		.post-card-category { font-size: 11px; }
+
+	.lead-story-copy h2 {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: var(--spacing-80);
+		font-size: var(--font-size-title-3);
+		line-height: var(--line-height-title-3);
+		text-wrap: balance;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
 	}
-	@media (max-width: 420px) { .post-card > a { grid-template-columns: 108px minmax(0, 1fr); } }
+
+	.lead-story-copy > p {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: var(--spacing-100);
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+		text-wrap: pretty;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.story-action {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing-60);
+		margin-top: var(--spacing-160);
+		color: var(--color-brand-foreground-link);
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.story-action svg,
+	.all-posts-action svg,
+	.row-arrow {
+		width: 16px;
+		height: 16px;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.5;
+	}
+
+	.lead-story-link:hover .lead-story-media img { transform: scale(1.012); }
+	.lead-story-link:hover .story-action { color: var(--color-brand-foreground-link-hover); }
+	.lead-story-link:focus-visible { outline: 2px solid var(--color-brand-stroke-1); outline-offset: 4px; }
+
+	.home-image-placeholder {
+		display: grid;
+		width: 100%;
+		height: 100%;
+		min-height: 180px;
+		place-items: center;
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-4);
+		font-size: var(--font-size-title-3);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.home-image-placeholder.small { min-height: 0; font-size: var(--font-size-subtitle-2); }
+
+	.home-latest-section {
+		padding-block: var(--spacing-280) var(--spacing-360);
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-2);
+	}
+
+	.home-section-heading {
+		margin-bottom: var(--spacing-160);
+	}
+
+	.home-section-heading h2,
+	.platforms-copy h2 {
+		font-size: var(--font-size-title-3);
+		line-height: var(--line-height-title-3);
+	}
+
+	.editorial-list {
+		padding: 0;
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		list-style: none;
+	}
+
+	.editorial-list > li {
+		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.editorial-story > a {
+		display: grid;
+		grid-template-columns: 184px minmax(0, 1fr) 24px;
+		align-items: center;
+		gap: var(--spacing-160);
+		padding-block: var(--spacing-140);
+		color: inherit;
+		text-decoration: none;
+		transition: background var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.editorial-story > a:hover {
+		background: var(--color-subtle-background-hover);
+	}
+
+	.editorial-story > a:focus-visible {
+		outline: 2px solid var(--color-brand-stroke-1);
+		outline-offset: 2px;
+	}
+
+	.editorial-thumb {
+		width: 184px;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-3);
+	}
+
+	.editorial-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.editorial-copy {
+		min-width: 0;
+	}
+
+	.editorial-copy h3 {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: var(--spacing-40);
+		font-size: var(--font-size-subtitle-2);
+		line-height: var(--line-height-subtitle-2);
+		text-wrap: pretty;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.editorial-copy p {
+		display: -webkit-box;
+		overflow: hidden;
+		margin-top: var(--spacing-60);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+		text-wrap: pretty;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.row-arrow {
+		color: var(--color-neutral-foreground-4);
+		transition: color var(--duration-faster) var(--curve-easy-ease), transform var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.editorial-story > a:hover .row-arrow {
+		color: var(--color-brand-foreground-strong);
+		transform: translateX(-2px);
+	}
+
+	.all-posts-action {
+		display: flex;
+		justify-content: center;
+		margin-top: var(--spacing-240);
+	}
+
+	.all-posts-action .fui-button {
+		gap: var(--spacing-60);
+		text-decoration: none;
+	}
+
+	.home-platforms-section {
+		padding-block: var(--spacing-320) var(--spacing-400);
+	}
+
+	.platforms-panel {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-240);
+		padding-block: var(--spacing-200);
+		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.platforms-copy > p:last-child {
+		margin-top: var(--spacing-60);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+	}
+
+	.platform-links {
+		display: flex;
+		justify-content: flex-end;
+		gap: var(--spacing-60);
+		flex-wrap: wrap;
+	}
+
+	.platform-links button {
+		min-height: 36px;
+		padding-inline: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-circular);
+		background: var(--color-subtle-background);
+		color: var(--color-neutral-foreground-2);
+		font: inherit;
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+		transition: background var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.platform-links button:hover,
+	.platform-links button:focus-visible {
+		border-color: var(--color-brand-stroke-1);
+		background: var(--color-subtle-background-hover);
+		color: var(--color-brand-foreground-strong);
+	}
+
+	@media (max-width: 900px) {
+		.home-search-container { grid-template-columns: 1fr; gap: var(--spacing-120); }
+		.home-search-copy p { max-width: none; }
+		.lead-story-link { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.88fr); }
+		.editorial-story > a { grid-template-columns: 156px minmax(0, 1fr) 20px; }
+		.editorial-thumb { width: 156px; }
+		.platforms-panel { align-items: flex-start; flex-direction: column; }
+		.platform-links { justify-content: flex-start; }
+	}
+
+	@media (max-width: 700px) {
+		.home-search-section { padding-block: var(--spacing-180) var(--spacing-220); }
+		.home-featured-section { padding-block: var(--spacing-240) var(--spacing-280); }
+		.lead-story-link { grid-template-columns: 1fr; }
+		.lead-story-media { min-height: 0; aspect-ratio: 16 / 9; }
+		.lead-story-copy { padding: var(--spacing-160) var(--spacing-40) var(--spacing-180); }
+		.lead-story-copy h2 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
+		.home-latest-section { padding-block: var(--spacing-220) var(--spacing-280); }
+		.editorial-story > a { grid-template-columns: 124px minmax(0, 1fr); gap: var(--spacing-120); }
+		.editorial-thumb { width: 124px; }
+		.row-arrow { display: none; }
+		.editorial-copy p { -webkit-line-clamp: 1; }
+		.home-platforms-section { padding-block: var(--spacing-240) var(--spacing-320); }
+	}
+
+	@media (max-width: 480px) {
+		.home-search-copy h1 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
+		.home-search-copy p { font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
+		.editorial-story > a { grid-template-columns: 104px minmax(0, 1fr); gap: var(--spacing-100); padding-block: var(--spacing-100); }
+		.editorial-thumb { width: 104px; border-radius: var(--radius-medium); }
+		.editorial-copy h3 { margin-top: var(--spacing-20); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+		.editorial-copy p { display: none; }
+		.story-category { font-size: var(--font-size-caption-2); }
+		.platform-links { width: 100%; }
+		.platform-links button { flex: 1 1 calc(50% - var(--spacing-60)); }
+	}
+
 	@media (prefers-reduced-motion: reduce) {
-		.featured-card, .post-card, .featured-image img, .post-thumb img { transition: none; }
-		.featured-card:hover img, .post-card:hover img { transform: none; }
+		.lead-story-media img,
+		.row-arrow,
+		.platform-links button { transition: none; }
+		.lead-story-link:hover .lead-story-media img,
+		.editorial-story > a:hover .row-arrow { transform: none; }
 	}
 </style>
