@@ -1,0 +1,23 @@
+/* Blog listing cards use Fluent's auto-sizing behavior instead of equal-height stretching. */
+
+#posts-grid {
+	align-items: start;
+}
+
+#posts-grid > .post-card {
+	align-self: start;
+}
+
+#posts-grid > .post-card > a {
+	height: auto;
+}
+
+#posts-grid .post-content {
+	min-height: 0;
+	flex: none;
+}
+
+#posts-grid .post-content time {
+	margin-top: var(--spacing-120);
+	padding-top: 0;
+}
