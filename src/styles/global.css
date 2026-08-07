@@ -336,6 +336,29 @@ pre > code {
 	overflow-wrap: anywhere;
 }
 
+/* Blogger/Dark Reader artifacts are import residue, not editorial styling.
+ * Neutralize only those markers so the article inherits the Fluent theme
+ * without deleting or hiding any article content. */
+.fluent-rich-text [data-darkreader-inline-bgcolor],
+.fluent-rich-text [style*='background-color: white'],
+.fluent-rich-text [style*='background: white'] {
+	background-color: var(--color-transparent-background) !important;
+}
+
+.fluent-rich-text [data-darkreader-inline-color],
+.fluent-rich-text [style*='background-color: white'] {
+	color: inherit !important;
+}
+
+.fluent-rich-text > [data-darkreader-inline-bgcolor],
+.fluent-rich-text > [style*='background-color: white'],
+.fluent-rich-text > [style*='background: white'] {
+	padding: 0 !important;
+	font-family: inherit !important;
+	font-size: inherit !important;
+	line-height: inherit !important;
+}
+
 /* Normalize HAKAMIQ rich modules to the same Fluent semantic color system.
  * These rules override legacy article-local colors only. They do not hide,
  * remove, or reorder imported article content. */
