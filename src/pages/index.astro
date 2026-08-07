@@ -34,17 +34,15 @@ const getDisplayCategory = (labels: string[] = []) => {
 	return candidates.find((label) => !broadLabels.has(label.trim().toLocaleLowerCase('en'))) ?? candidates[0] ?? null;
 };
 
-const featuredPost = posts[0];
-const featuredCategory = featuredPost ? getDisplayCategory(featuredPost.data.labels) : null;
-const latestPosts = posts.slice(1, 7);
+const featuredPosts = posts.slice(0, 2);
+const picks = posts.slice(2, 6);
+const latestRows = posts.slice(6, 10);
 const searchItems = posts.map((post) => ({
 	title: post.data.title,
 	description: post.data.description ?? '',
 	labels: post.data.labels ?? [],
 	href: `/blog/${post.id}/`,
 }));
-
-const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 ---
 
 <!doctype html>
@@ -58,132 +56,149 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		<Header />
 
 		<main id="main-content" class="home-page" tabindex="-1">
-			<section class="home-search-section" aria-labelledby="home-search-title">
-				<div class="site-container home-search-container">
-					<div class="home-search-copy">
-						<h1 id="home-search-title">بحث في المقالات</h1>
-						<p>ابحث باسم المحاكي أو الجهاز للوصول إلى الشرح مباشرة.</p>
-					</div>
-
-					<div class="home-search" data-home-search>
-						<div class="home-search-field">
-							<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
-							<input
-								id="home-search-input"
-								type="search"
-								placeholder="مثال: PCSX2 أو RPCS3 أو Nintendo Switch"
-								autocomplete="off"
-								spellcheck="false"
-								aria-label="بحث في المقالات"
-								aria-controls="home-search-results"
-								aria-describedby="home-search-help"
-								aria-expanded="false"
-							/>
-							<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
-								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
-							</button>
+			<section class="home-news-section" aria-labelledby="latest-posts-title">
+				<div class="site-container home-shell">
+					<header class="home-heading">
+						<div class="home-heading-copy">
+							<p class="section-kicker">أحدث التحديثات والإصدارات</p>
+							<h1 id="latest-posts-title">أحدث المقالات</h1>
 						</div>
-						<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
-						<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
-						<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
-					</div>
-				</div>
-			</section>
 
-			{featuredPost && (
-				<section class="home-featured-section" aria-labelledby="featured-title">
-					<div class="site-container home-editorial-container">
-						<p class="section-kicker">أحدث مقال</p>
-						<article class="lead-story">
-							<a class="lead-story-link" href={`/blog/${featuredPost.id}/`} aria-label={`قراءة مقال: ${featuredPost.data.title}`}>
-								<div class="lead-story-media">
-									{featuredPost.data.heroImageUrl ? (
-										<img
-											src={featuredPost.data.heroImageUrl}
-											alt={featuredPost.data.title}
-											loading="eager"
-											decoding="async"
-											fetchpriority="high"
-											referrerpolicy="no-referrer"
-										/>
-									) : (
-										<div class="home-image-placeholder" aria-hidden="true">H</div>
-									)}
+						<div class="home-heading-tools">
+							<div class="home-search" data-home-search>
+								<div class="home-search-field">
+									<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+									<input
+										id="home-search-input"
+										type="search"
+										placeholder="ابحث في المقالات"
+										autocomplete="off"
+										spellcheck="false"
+										aria-label="بحث في المقالات"
+										aria-controls="home-search-results"
+										aria-describedby="home-search-help"
+										aria-expanded="false"
+									/>
+									<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
+										<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
+									</button>
 								</div>
+								<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
+								<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
+								<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+							</div>
 
-								<div class="lead-story-copy">
-									{featuredCategory && <span class="story-category">{featuredCategory}</span>}
-									<h2 id="featured-title">{featuredPost.data.title}</h2>
-									{featuredPost.data.description && <p>{featuredPost.data.description}</p>}
-									<span class="story-action" aria-hidden="true">
-										قراءة المقال
-										<svg viewBox="0 0 20 20"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-									</span>
-								</div>
+							<a class="all-posts-top" href="/blog">
+								<span>عرض الكل</span>
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
 							</a>
-						</article>
-					</div>
-				</section>
-			)}
-
-			<section class="home-latest-section" aria-labelledby="latest-posts-title">
-				<div class="site-container home-editorial-container">
-					<header class="home-section-heading">
-						<div>
-							<p class="section-kicker">جديد المكتبة</p>
-							<h2 id="latest-posts-title">أحدث المقالات</h2>
 						</div>
 					</header>
 
-					<ul class="editorial-list" aria-label="أحدث المقالات">
-						{latestPosts.map((post) => {
-							const category = getDisplayCategory(post.data.labels);
-							return (
-								<li>
-									<article class="editorial-story">
-										<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
-											<div class="editorial-thumb">
-												{post.data.heroImageUrl ? (
-													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-												) : (
-													<div class="home-image-placeholder small" aria-hidden="true">H</div>
-												)}
-											</div>
-											<div class="editorial-copy">
-												{category && <span class="story-category">{category}</span>}
-												<h3>{post.data.title}</h3>
-												{post.data.description && <p>{post.data.description}</p>}
-											</div>
-											<svg class="row-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-										</a>
-									</article>
-								</li>
-							);
-						})}
-					</ul>
+					<div class="home-editorial-grid">
+						<aside class="home-picks" aria-labelledby="picks-title">
+							<div class="picks-heading">
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 2.3 4.7 5.2.8-3.8 3.7.9 5.2-4.6-2.4-4.6 2.4.9-5.2-3.8-3.7 5.2-.8L10 2Z"></path></svg>
+								<h2 id="picks-title">مختارات</h2>
+							</div>
 
-					<div class="all-posts-action">
-						<a class="fui-button fui-button--secondary" href="/blog">
-							<span>عرض كل المقالات</span>
-							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-						</a>
-					</div>
-				</div>
-			</section>
+							<div class="picks-list">
+								{picks.map((post) => {
+									const category = getDisplayCategory(post.data.labels);
+									return (
+										<article class="pick-card">
+											<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
+												<div class="pick-media-frame">
+													<div class="pick-media-viewport">
+														{post.data.heroImageUrl ? (
+															<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+														) : (
+															<div class="home-image-placeholder small" aria-hidden="true">H</div>
+														)}
+													</div>
+												</div>
+												<div class="pick-copy">
+													{category && <span class="story-category compact">{category}</span>}
+													<h3>{post.data.title}</h3>
+												</div>
+											</a>
+										</article>
+									);
+								})}
+							</div>
+						</aside>
 
-			<section class="home-platforms-section" aria-labelledby="platforms-title">
-				<div class="site-container home-editorial-container">
-					<div class="platforms-panel">
-						<div class="platforms-copy">
-							<p class="section-kicker">استكشاف</p>
-							<h2 id="platforms-title">استكشف حسب المنصة</h2>
-							<p>اختر منصة للبحث مباشرة في المقالات المرتبطة بها.</p>
+						<div class="home-primary-column">
+							<div class="featured-grid">
+								{featuredPosts.map((post, index) => {
+									const category = getDisplayCategory(post.data.labels);
+									return (
+										<article class:list={['feature-card', index === 0 && 'feature-card--primary']}>
+											<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
+												<div class="feature-media-frame">
+													<div class="feature-media-viewport">
+														{post.data.heroImageUrl ? (
+															<img
+																src={post.data.heroImageUrl}
+																alt={post.data.title}
+																loading={index === 0 ? 'eager' : 'lazy'}
+																decoding="async"
+																fetchpriority={index === 0 ? 'high' : undefined}
+																referrerpolicy="no-referrer"
+															/>
+														) : (
+															<div class="home-image-placeholder" aria-hidden="true">H</div>
+														)}
+													</div>
+													<span class="feature-ribbon">{index === 0 ? 'الأحدث' : 'مميز'}</span>
+												</div>
+
+												<div class="feature-copy">
+													{category && <span class="story-category">{category}</span>}
+													<h2>{post.data.title}</h2>
+													{post.data.description && <p>{post.data.description}</p>}
+													<span class="feature-read-more" aria-hidden="true">قراءة المقال</span>
+												</div>
+											</a>
+										</article>
+									);
+								})}
+							</div>
+
+							<div class="latest-rows" aria-label="مقالات حديثة">
+								{latestRows.map((post) => {
+									const category = getDisplayCategory(post.data.labels);
+									return (
+										<article class="article-row">
+											<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
+												<div class="row-media-frame">
+													<div class="row-media-viewport">
+														{post.data.heroImageUrl ? (
+															<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+														) : (
+															<div class="home-image-placeholder small" aria-hidden="true">H</div>
+														)}
+													</div>
+												</div>
+
+												<div class="row-copy">
+													{category && <span class="story-category compact">{category}</span>}
+													<h3>{post.data.title}</h3>
+													{post.data.description && <p>{post.data.description}</p>}
+												</div>
+											</a>
+										</article>
+									);
+								})}
+							</div>
+
+							<div class="all-posts-action">
+								<a class="all-posts-button" href="/blog">
+									<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h10v13H5zM8 7h4M8 10h4M8 13h4"></path></svg>
+									<span>عرض كل المقالات</span>
+								</a>
+							</div>
 						</div>
-						<nav class="platform-links" aria-label="استكشف المقالات حسب المنصة">
-							{browseTerms.map((term) => (
-								<button type="button" data-search-term={term}>{term}</button>
-							))}
-						</nav>
 					</div>
 				</div>
 			</section>
@@ -209,7 +224,6 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				const results = root.querySelector<HTMLElement>('#home-search-results');
 				const clearButton = root.querySelector<HTMLButtonElement>('.home-search-clear');
 				const status = root.querySelector<HTMLElement>('#home-search-status');
-				const browseButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-search-term]'));
 				if (!input || !results || !clearButton || !status) return;
 				const items = readHomeItems();
 				const normalize = (value: string) => value
@@ -241,6 +255,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 						return { item, score };
 					}).filter((entry): entry is { item: HomeItem; score: number } => entry !== null)
 						.sort((a, b) => b.score - a.score).slice(0, 8);
+
 					results.replaceChildren();
 					if (matches.length === 0) {
 						const empty = document.createElement('p');
@@ -268,6 +283,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					results.hidden = false;
 					input.setAttribute('aria-expanded', 'true');
 				};
+
 				input.addEventListener('input', render);
 				input.addEventListener('keydown', (event) => {
 					if (event.key === 'Escape') {
@@ -287,16 +303,8 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					closeResults(true);
 					input.focus();
 				});
-				for (const button of browseButtons) {
-					button.addEventListener('click', () => {
-						input.value = button.dataset.searchTerm ?? '';
-						render();
-						root.scrollIntoView({ behavior: 'smooth', block: 'center' });
-						input.focus({ preventScroll: true });
-					});
-				}
 				document.addEventListener('pointerdown', (event) => {
-					if (event.target instanceof Node && !root.contains(event.target) && !(event.target instanceof Element && event.target.closest('[data-search-term]'))) closeResults();
+					if (event.target instanceof Node && !root.contains(event.target)) closeResults();
 				});
 			};
 
@@ -308,463 +316,310 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	</body>
 </html>
 
-<style is:global>
+<style>
 	.home-page {
-		background: var(--color-neutral-background-4);
+		background:
+			radial-gradient(circle at 18% 15%, color-mix(in srgb, var(--color-brand-background) 8%, transparent), transparent 30%),
+			var(--color-neutral-background-4);
 	}
 
-	.home-search-section {
-		padding-block: var(--spacing-240) var(--spacing-280);
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-3);
-	}
+	.home-news-section { padding-block: var(--spacing-240) var(--spacing-400); }
+	.home-shell { width: min(calc(100% - (var(--page-gutter) * 2)), 1380px); }
 
-	.home-search-container {
-		display: grid;
-		grid-template-columns: minmax(220px, 0.7fr) minmax(360px, 1.3fr);
-		align-items: center;
-		gap: clamp(var(--spacing-200), 4vw, var(--spacing-400));
-		max-width: 1080px;
-	}
-
-	.home-search-copy h1 {
-		font-size: var(--font-size-title-2);
-		line-height: var(--line-height-title-2);
-	}
-
-	.home-search-copy p {
-		max-width: 440px;
-		margin-top: var(--spacing-60);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-	}
-
-	.home-search {
-		position: relative;
-		z-index: 20;
-	}
-
-	.home-search-field {
+	.home-heading {
 		display: flex;
-		min-height: 48px;
-		align-items: center;
-		gap: var(--spacing-80);
-		padding-inline: var(--spacing-120);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-medium);
-		background: var(--color-neutral-background-1);
-		box-shadow: var(--shadow-2);
-		transition: border-color var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-faster) var(--curve-easy-ease), background var(--duration-faster) var(--curve-easy-ease);
-	}
-
-	.home-search-field:focus-within {
-		border-color: var(--color-brand-stroke-1);
-		box-shadow: var(--focus-ring);
-	}
-
-	.home-search-field > svg {
-		width: 18px;
-		height: 18px;
-		flex: 0 0 auto;
-		fill: none;
-		stroke: var(--color-neutral-foreground-3);
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.6;
-	}
-
-	.home-search-field input {
-		width: 100%;
-		min-width: 0;
-		height: 46px;
-		padding: 0;
-		border: 0;
-		outline: 0;
-		background: transparent;
-		color: var(--color-neutral-foreground-1);
-		font-size: var(--font-size-body-1);
-	}
-
-	.home-search-field input::placeholder { color: var(--color-neutral-foreground-4); }
-	.home-search-field input::-webkit-search-cancel-button { display: none; }
-
-	.home-search-clear {
-		display: grid;
-		width: 32px;
-		height: 32px;
-		flex: 0 0 auto;
-		place-items: center;
-		padding: 0;
-		border: 0;
-		border-radius: var(--radius-medium);
-		background: transparent;
-		color: var(--color-neutral-foreground-3);
-		cursor: pointer;
-	}
-
-	.home-search-clear[hidden] { display: none; }
-	.home-search-clear:hover { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); }
-	.home-search-clear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
-
-	.home-search-results {
-		position: absolute;
-		inset-inline: 0;
-		top: calc(100% + var(--spacing-60));
-		overflow: hidden;
-		padding: var(--spacing-60);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-1);
-		box-shadow: var(--shadow-16);
-	}
-
-	.home-search-results[hidden] { display: none; }
-	.home-search-result { display: flex; min-height: 52px; flex-direction: column; justify-content: center; gap: 2px; padding: var(--spacing-80) var(--spacing-100); border-radius: var(--radius-medium); color: var(--color-neutral-foreground-1); text-decoration: none; }
-	.home-search-result:hover, .home-search-result:focus-visible { background: var(--color-subtle-background-hover); }
-	.home-search-result strong { display: -webkit-box; overflow: hidden; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
-	.home-search-result span { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
-	.home-search-empty { margin: 0; padding: var(--spacing-160); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); text-align: center; }
-
-	.home-editorial-container {
-		width: min(calc(100% - (var(--page-gutter) * 2)), 1080px);
-	}
-
-	.home-featured-section {
-		padding-block: var(--spacing-320) var(--spacing-360);
+		align-items: end;
+		justify-content: space-between;
+		gap: var(--spacing-200);
+		margin-bottom: var(--spacing-200);
 	}
 
 	.section-kicker {
-		margin-bottom: var(--spacing-60);
+		margin-bottom: var(--spacing-40);
 		color: var(--color-brand-foreground-strong);
 		font-size: var(--font-size-caption-1);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-caption-1);
 	}
 
-	.lead-story {
-		margin-top: var(--spacing-100);
-		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	.home-heading h1 {
+		font-size: var(--font-size-title-1);
+		line-height: var(--line-height-title-1);
 	}
 
-	.lead-story-link {
-		display: grid;
-		grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-		align-items: stretch;
-		color: inherit;
-		direction: ltr;
+	.home-heading-tools {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: var(--spacing-100);
+		min-width: 0;
+	}
+
+	.home-search { position: relative; z-index: 30; width: min(340px, 36vw); }
+	.home-search-field {
+		display: flex;
+		min-height: 40px;
+		align-items: center;
+		gap: var(--spacing-60);
+		padding-inline: var(--spacing-100);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-2);
+		transition: border-color var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-faster) var(--curve-easy-ease);
+	}
+	.home-search:focus-within .home-search-field { border-color: var(--color-brand-stroke-1); box-shadow: var(--focus-ring); }
+	.home-search-field > svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: var(--color-neutral-foreground-3); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+	.home-search-field input { width: 100%; min-width: 0; height: 38px; padding: 0; border: 0; outline: 0; background: transparent; color: var(--color-neutral-foreground-1); font-size: var(--font-size-body-1); }
+	.home-search-field input::placeholder { color: var(--color-neutral-foreground-4); }
+	.home-search-field input::-webkit-search-cancel-button { display: none; }
+	.home-search-clear { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; padding: 0; border: 0; border-radius: var(--radius-medium); background: transparent; color: var(--color-neutral-foreground-3); cursor: pointer; }
+	.home-search-clear[hidden] { display: none; }
+	.home-search-clear:hover { background: var(--color-subtle-background-hover); color: var(--color-neutral-foreground-1); }
+	.home-search-clear svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
+	.home-search-results { position: absolute; inset-inline: 0; top: calc(100% + var(--spacing-60)); overflow: hidden; padding: var(--spacing-60); border: var(--stroke-thin) solid var(--color-neutral-stroke-1); border-radius: var(--radius-large); background: var(--color-neutral-background-1); box-shadow: var(--shadow-16); }
+	.home-search-results[hidden] { display: none; }
+	:global(.home-search-result) { display: flex; min-height: 50px; flex-direction: column; justify-content: center; gap: 2px; padding: var(--spacing-80) var(--spacing-100); border-radius: var(--radius-medium); color: var(--color-neutral-foreground-1); text-decoration: none; }
+	:global(.home-search-result:hover), :global(.home-search-result:focus-visible) { background: var(--color-subtle-background-hover); }
+	:global(.home-search-result strong) { display: -webkit-box; overflow: hidden; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+	:global(.home-search-result span) { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
+	:global(.home-search-empty) { margin: 0; padding: var(--spacing-160); color: var(--color-neutral-foreground-3); text-align: center; }
+
+	.all-posts-top {
+		display: inline-flex;
+		min-height: 40px;
+		align-items: center;
+		justify-content: center;
+		gap: var(--spacing-60);
+		padding-inline: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-subtle-background);
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
 		text-decoration: none;
 	}
+	.all-posts-top:hover, .all-posts-top:focus-visible { border-color: var(--color-brand-stroke-1); background: var(--color-subtle-background-hover); }
+	.all-posts-top svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
 
-	.lead-story-media {
-		min-height: 260px;
-		max-height: 340px;
-		overflow: hidden;
-		background: var(--color-neutral-background-3);
+	.home-editorial-grid {
+		display: grid;
+		grid-template-columns: 300px minmax(0, 1fr);
+		gap: var(--spacing-160);
+		align-items: start;
 	}
 
-	.lead-story-media img {
+	.home-primary-column { min-width: 0; grid-column: 2; }
+	.home-picks {
+		grid-column: 1;
+		min-width: 0;
+		padding: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-xlarge);
+		background: color-mix(in srgb, var(--color-neutral-background-2) 92%, transparent);
+		box-shadow: var(--shadow-4);
+	}
+
+	.picks-heading { display: flex; align-items: center; gap: var(--spacing-60); margin-bottom: var(--spacing-100); color: var(--color-brand-foreground-strong); }
+	.picks-heading svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+	.picks-heading h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+	.picks-list { display: grid; gap: var(--spacing-80); }
+
+	.pick-card { min-width: 0; }
+	.pick-card a {
+		display: grid;
+		grid-template-columns: 104px minmax(0, 1fr);
+		align-items: center;
+		gap: var(--spacing-80);
+		padding: var(--spacing-60);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-3);
+		color: inherit;
+		text-decoration: none;
+		transition: border-color var(--duration-faster) var(--curve-easy-ease), background var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-normal) var(--curve-decelerate-mid);
+	}
+	.pick-card a:hover, .pick-card a:focus-visible { border-color: var(--color-brand-stroke-1); background: var(--color-neutral-background-2); box-shadow: var(--shadow-4); }
+	.pick-copy { min-width: 0; }
+	.pick-copy h3 { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-40); font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+
+	.pick-media-frame,
+	.feature-media-frame,
+	.row-media-frame {
+		position: relative;
+		overflow: hidden;
+		padding: 4px;
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-1);
+		box-shadow: inset 0 0 0 var(--stroke-thin) var(--color-neutral-stroke-alpha), var(--shadow-2);
+	}
+
+	.pick-media-viewport,
+	.feature-media-viewport,
+	.row-media-viewport {
+		overflow: hidden;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		transition: transform var(--motion-duration-page) var(--curve-decelerate-mid);
+		border-radius: calc(var(--radius-large) - 3px);
+		background: var(--color-neutral-background-5);
 	}
 
-	.lead-story-copy {
-		display: flex;
+	.pick-media-frame { width: 104px; height: 76px; }
+	.pick-media-viewport img,
+	.feature-media-viewport img,
+	.row-media-viewport img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+	.featured-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-120); }
+	.feature-card {
 		min-width: 0;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		padding: clamp(var(--spacing-180), 3vw, var(--spacing-320));
-		direction: rtl;
-		text-align: start;
+		overflow: hidden;
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-xlarge);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-4);
+		transition: border-color var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-normal) var(--curve-decelerate-mid), background var(--duration-faster) var(--curve-easy-ease);
 	}
+	.feature-card--primary { border-color: color-mix(in srgb, var(--color-brand-stroke-1) 70%, var(--color-neutral-stroke-2)); }
+	.feature-card:hover, .feature-card:focus-within { border-color: var(--color-brand-stroke-1); background: var(--color-neutral-card-background-hover); box-shadow: var(--shadow-16); }
+	.feature-card > a { display: block; color: inherit; text-decoration: none; }
+	.feature-media-frame { margin: var(--spacing-80) var(--spacing-80) 0; aspect-ratio: 16 / 9; }
+	.feature-media-viewport img { transition: transform var(--duration-slow) var(--curve-decelerate-mid); }
+	.feature-card:hover .feature-media-viewport img { transform: scale(1.015); }
+	.feature-ribbon {
+		position: absolute;
+		inset-block-start: var(--spacing-100);
+		inset-inline-start: var(--spacing-100);
+		display: inline-flex;
+		min-height: 28px;
+		align-items: center;
+		padding-inline: var(--spacing-100);
+		border: var(--stroke-thin) solid color-mix(in srgb, var(--color-brand-stroke-1) 72%, transparent);
+		border-radius: var(--radius-circular);
+		background: color-mix(in srgb, var(--color-brand-background) 84%, var(--color-neutral-background-1));
+		color: var(--color-neutral-foreground-on-brand);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		box-shadow: var(--shadow-4);
+	}
+	.feature-copy { padding: var(--spacing-140) var(--spacing-160) var(--spacing-160); }
+	.feature-copy h2 { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-80); font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); text-wrap: balance; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+	.feature-copy p { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); text-wrap: pretty; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.feature-read-more { display: inline-flex; margin-top: var(--spacing-120); color: var(--color-brand-foreground-link); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); }
 
 	.story-category {
 		display: inline-flex;
 		max-width: 100%;
 		align-items: center;
-		gap: var(--spacing-60);
-		overflow: hidden;
+		padding: 3px var(--spacing-80);
+		border: var(--stroke-thin) solid color-mix(in srgb, var(--color-brand-stroke-1) 64%, var(--color-neutral-stroke-2));
+		border-radius: var(--radius-circular);
+		background: color-mix(in srgb, var(--color-brand-background-2) 64%, transparent);
 		color: var(--color-brand-foreground-strong);
 		font-size: var(--font-size-caption-1);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-caption-1);
-		text-overflow: ellipsis;
 		white-space: nowrap;
-	}
-
-	.story-category::before {
-		width: 5px;
-		height: 5px;
-		flex: 0 0 auto;
-		border-radius: var(--radius-circular);
-		background: var(--color-brand-background);
-		content: '';
-	}
-
-	.lead-story-copy h2 {
-		display: -webkit-box;
 		overflow: hidden;
-		margin-top: var(--spacing-80);
-		font-size: var(--font-size-title-3);
-		line-height: var(--line-height-title-3);
-		text-wrap: balance;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
+		text-overflow: ellipsis;
 	}
+	.story-category.compact { padding-block: 2px; font-size: 11px; }
 
-	.lead-story-copy > p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin-top: var(--spacing-100);
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		text-wrap: pretty;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
+	.latest-rows { display: grid; gap: var(--spacing-80); margin-top: var(--spacing-120); }
+	.article-row {
+		min-width: 0;
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		border-radius: var(--radius-large);
+		background: color-mix(in srgb, var(--color-neutral-background-2) 92%, transparent);
+		transition: border-color var(--duration-faster) var(--curve-easy-ease), background var(--duration-faster) var(--curve-easy-ease), box-shadow var(--duration-normal) var(--curve-decelerate-mid);
 	}
-
-	.story-action {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--spacing-60);
-		margin-top: var(--spacing-160);
-		color: var(--color-brand-foreground-link);
-		font-size: var(--font-size-body-1);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.story-action svg,
-	.all-posts-action svg,
-	.row-arrow {
-		width: 16px;
-		height: 16px;
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.5;
-	}
-
-	.lead-story-link:hover .lead-story-media img { transform: scale(1.012); }
-	.lead-story-link:hover .story-action { color: var(--color-brand-foreground-link-hover); }
-	.lead-story-link:focus-visible { outline: 2px solid var(--color-brand-stroke-1); outline-offset: 4px; }
-
-	.home-image-placeholder {
+	.article-row:hover, .article-row:focus-within { border-color: var(--color-neutral-stroke-1-hover); background: var(--color-neutral-background-2); box-shadow: var(--shadow-4); }
+	.article-row > a {
 		display: grid;
-		width: 100%;
-		height: 100%;
-		min-height: 180px;
-		place-items: center;
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-4);
-		font-size: var(--font-size-title-3);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.home-image-placeholder.small { min-height: 0; font-size: var(--font-size-subtitle-2); }
-
-	.home-latest-section {
-		padding-block: var(--spacing-280) var(--spacing-360);
-		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-2);
-	}
-
-	.home-section-heading {
-		margin-bottom: var(--spacing-160);
-	}
-
-	.home-section-heading h2,
-	.platforms-copy h2 {
-		font-size: var(--font-size-title-3);
-		line-height: var(--line-height-title-3);
-	}
-
-	.editorial-list {
-		padding: 0;
-		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		list-style: none;
-	}
-
-	.editorial-list > li {
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-	}
-
-	.editorial-story > a {
-		display: grid;
-		grid-template-columns: 184px minmax(0, 1fr) 24px;
+		grid-template-columns: 230px minmax(0, 1fr);
 		align-items: center;
-		gap: var(--spacing-160);
-		padding-block: var(--spacing-140);
+		gap: var(--spacing-140);
+		padding: var(--spacing-80);
 		color: inherit;
 		text-decoration: none;
-		transition: background var(--duration-faster) var(--curve-easy-ease);
 	}
+	.row-media-frame { width: 230px; aspect-ratio: 16 / 8.8; }
+	.row-copy { min-width: 0; padding-inline-end: var(--spacing-40); }
+	.row-copy h3 { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-60); font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+	.row-copy p { display: -webkit-box; overflow: hidden; margin-top: var(--spacing-60); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
 
-	.editorial-story > a:hover {
-		background: var(--color-subtle-background-hover);
-	}
+	.home-image-placeholder { display: grid; width: 100%; height: 100%; min-height: 120px; place-items: center; background: var(--color-neutral-background-3); color: var(--color-neutral-foreground-4); font-size: var(--font-size-title-3); font-weight: var(--font-weight-semibold); }
+	.home-image-placeholder.small { min-height: 0; font-size: var(--font-size-body-1); }
 
-	.editorial-story > a:focus-visible {
-		outline: 2px solid var(--color-brand-stroke-1);
-		outline-offset: 2px;
-	}
-
-	.editorial-thumb {
-		width: 184px;
-		aspect-ratio: 16 / 9;
-		overflow: hidden;
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-3);
-	}
-
-	.editorial-thumb img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.editorial-copy {
-		min-width: 0;
-	}
-
-	.editorial-copy h3 {
-		display: -webkit-box;
-		overflow: hidden;
-		margin-top: var(--spacing-40);
-		font-size: var(--font-size-subtitle-2);
-		line-height: var(--line-height-subtitle-2);
-		text-wrap: pretty;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.editorial-copy p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin-top: var(--spacing-60);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		text-wrap: pretty;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.row-arrow {
-		color: var(--color-neutral-foreground-4);
-		transition: color var(--duration-faster) var(--curve-easy-ease), transform var(--duration-faster) var(--curve-easy-ease);
-	}
-
-	.editorial-story > a:hover .row-arrow {
-		color: var(--color-brand-foreground-strong);
-		transform: translateX(-2px);
-	}
-
-	.all-posts-action {
-		display: flex;
-		justify-content: center;
-		margin-top: var(--spacing-240);
-	}
-
-	.all-posts-action .fui-button {
-		gap: var(--spacing-60);
-		text-decoration: none;
-	}
-
-	.home-platforms-section {
-		padding-block: var(--spacing-320) var(--spacing-400);
-	}
-
-	.platforms-panel {
-		display: flex;
+	.all-posts-action { display: flex; justify-content: center; margin-top: var(--spacing-180); }
+	.all-posts-button {
+		display: inline-flex;
+		min-width: 230px;
+		min-height: 44px;
 		align-items: center;
-		justify-content: space-between;
-		gap: var(--spacing-240);
-		padding-block: var(--spacing-200);
-		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-	}
-
-	.platforms-copy > p:last-child {
-		margin-top: var(--spacing-60);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-	}
-
-	.platform-links {
-		display: flex;
-		justify-content: flex-end;
-		gap: var(--spacing-60);
-		flex-wrap: wrap;
-	}
-
-	.platform-links button {
-		min-height: 36px;
-		padding-inline: var(--spacing-120);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-circular);
-		background: var(--color-subtle-background);
-		color: var(--color-neutral-foreground-2);
-		font: inherit;
+		justify-content: center;
+		gap: var(--spacing-80);
+		padding-inline: var(--spacing-160);
+		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
+		border-radius: var(--radius-large);
+		background: color-mix(in srgb, var(--color-neutral-background-2) 88%, transparent);
+		color: var(--color-neutral-foreground-1);
 		font-size: var(--font-size-body-1);
 		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-		transition: background var(--duration-faster) var(--curve-easy-ease), color var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease);
+		text-decoration: none;
+		box-shadow: 0 0 0 var(--stroke-thin) color-mix(in srgb, var(--color-brand-stroke-1) 30%, transparent), var(--shadow-4);
+	}
+	.all-posts-button:hover, .all-posts-button:focus-visible { background: var(--color-neutral-background-1); box-shadow: var(--shadow-8); }
+	.all-posts-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+
+	@media (max-width: 1180px) {
+		.home-editorial-grid { grid-template-columns: 270px minmax(0, 1fr); }
+		.pick-card a { grid-template-columns: 88px minmax(0, 1fr); }
+		.pick-media-frame { width: 88px; height: 68px; }
+		.article-row > a { grid-template-columns: 200px minmax(0, 1fr); }
+		.row-media-frame { width: 200px; }
 	}
 
-	.platform-links button:hover,
-	.platform-links button:focus-visible {
-		border-color: var(--color-brand-stroke-1);
-		background: var(--color-subtle-background-hover);
-		color: var(--color-brand-foreground-strong);
-	}
-
-	@media (max-width: 900px) {
-		.home-search-container { grid-template-columns: 1fr; gap: var(--spacing-120); }
-		.home-search-copy p { max-width: none; }
-		.lead-story-link { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.88fr); }
-		.editorial-story > a { grid-template-columns: 156px minmax(0, 1fr) 20px; }
-		.editorial-thumb { width: 156px; }
-		.platforms-panel { align-items: flex-start; flex-direction: column; }
-		.platform-links { justify-content: flex-start; }
+	@media (max-width: 959px) {
+		.home-heading { align-items: stretch; flex-direction: column; }
+		.home-heading-tools { justify-content: space-between; }
+		.home-search { width: min(100%, 440px); }
+		.home-editorial-grid { grid-template-columns: 1fr; }
+		.home-primary-column, .home-picks { grid-column: 1; }
+		.home-primary-column { grid-row: 1; }
+		.home-picks { grid-row: 2; margin-top: var(--spacing-160); }
+		.picks-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
 	@media (max-width: 700px) {
-		.home-search-section { padding-block: var(--spacing-180) var(--spacing-220); }
-		.home-featured-section { padding-block: var(--spacing-240) var(--spacing-280); }
-		.lead-story-link { grid-template-columns: 1fr; }
-		.lead-story-media { min-height: 0; aspect-ratio: 16 / 9; }
-		.lead-story-copy { padding: var(--spacing-160) var(--spacing-40) var(--spacing-180); }
-		.lead-story-copy h2 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
-		.home-latest-section { padding-block: var(--spacing-220) var(--spacing-280); }
-		.editorial-story > a { grid-template-columns: 124px minmax(0, 1fr); gap: var(--spacing-120); }
-		.editorial-thumb { width: 124px; }
-		.row-arrow { display: none; }
-		.editorial-copy p { -webkit-line-clamp: 1; }
-		.home-platforms-section { padding-block: var(--spacing-240) var(--spacing-320); }
+		.home-news-section { padding-top: var(--spacing-160); }
+		.home-heading h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
+		.home-heading-tools { align-items: stretch; flex-direction: column; }
+		.home-search { width: 100%; }
+		.all-posts-top { align-self: flex-start; }
+		.featured-grid { grid-template-columns: 1fr; }
+		.feature-copy h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.picks-list { grid-template-columns: 1fr; }
+		.article-row > a { grid-template-columns: 142px minmax(0, 1fr); gap: var(--spacing-100); }
+		.row-media-frame { width: 142px; }
+		.row-copy h3 { margin-top: var(--spacing-40); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+		.row-copy p { display: none; }
+		.story-category.compact { font-size: 10px; }
 	}
 
-	@media (max-width: 480px) {
-		.home-search-copy h1 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
-		.home-search-copy p { font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
-		.editorial-story > a { grid-template-columns: 104px minmax(0, 1fr); gap: var(--spacing-100); padding-block: var(--spacing-100); }
-		.editorial-thumb { width: 104px; border-radius: var(--radius-medium); }
-		.editorial-copy h3 { margin-top: var(--spacing-20); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-		.editorial-copy p { display: none; }
-		.story-category { font-size: var(--font-size-caption-2); }
-		.platform-links { width: 100%; }
-		.platform-links button { flex: 1 1 calc(50% - var(--spacing-60)); }
+	@media (max-width: 440px) {
+		.article-row > a { grid-template-columns: 112px minmax(0, 1fr); padding: var(--spacing-60); }
+		.row-media-frame { width: 112px; }
+		.pick-card a { grid-template-columns: 82px minmax(0, 1fr); }
+		.pick-media-frame { width: 82px; height: 64px; }
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.lead-story-media img,
-		.row-arrow,
-		.platform-links button { transition: none; }
-		.lead-story-link:hover .lead-story-media img,
-		.editorial-story > a:hover .row-arrow { transform: none; }
+		.feature-card,
+		.feature-media-viewport img,
+		.article-row,
+		.pick-card a { transition: none; }
+		.feature-card:hover .feature-media-viewport img { transform: none; }
 	}
 </style>
