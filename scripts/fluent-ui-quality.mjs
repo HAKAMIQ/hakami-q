@@ -125,21 +125,22 @@ for (const key of ['global', 'components', 'native', 'navCss', 'article', 'stati
 forbidText(files.astroConfig, source.astroConfig, 'Atkinson', 'typography.legacy-font', 'Legacy Atkinson font pipeline must remain removed.');
 forbidText(files.astroConfig, source.astroConfig, 'fontProviders', 'typography.legacy-provider', 'Unused Astro font provider must remain removed.');
 
-// Template image semantics and new-window links.
+// Template image semantics and new-window links. Parse only inside one start tag so checks cannot bleed into neighboring markup.
 const astroFiles = await collectAstroFiles('src');
 for (const file of astroFiles) {
 	const text = await read(file);
-	for (const match of text.matchAll(/<img\b([\s\S]*?)(?:\/>|>)/gi)) {
+	for (const match of text.matchAll(/<img\b([^>]*)>/gi)) {
 		if (!/\balt\s*=/.test(match[1])) {
 			fail(file, 'image.alt', 'Template image is missing an alt attribute. Use descriptive alt text or alt="" for decorative images.');
 		}
 	}
-	for (const match of text.matchAll(/<a\b([\s\S]*?)target=["']_blank["']([\s\S]*?)(?:>|\/>)?/gi)) {
+	for (const match of text.matchAll(/<a\b([^>]*)target=["']_blank["']([^>]*)>/gi)) {
 		const attributes = `${match[1]} ${match[2]}`;
-		if (!/rel=["'][^"']*noopener[^"']*noreferrer[^"']*["']/.test(attributes)) {
+		const rel = attributes.match(/\brel=["']([^"']+)["']/i)?.[1] ?? '';
+		if (!/\bnoopener\b/i.test(rel) || !/\bnoreferrer\b/i.test(rel)) {
 			fail(file, 'link.new-context-rel', 'target="_blank" links must include noopener noreferrer.');
 		}
-		const aria = attributes.match(/aria-label=["']([^"']+)["']/)?.[1] ?? '';
+		const aria = attributes.match(/\baria-label=["']([^"']+)["']/i)?.[1] ?? '';
 		if (!/(تبويب|نافذة|tab|window)/i.test(aria)) {
 			fail(file, 'link.new-context-label', 'Links opening a new context must say so in their accessible label.');
 		}
