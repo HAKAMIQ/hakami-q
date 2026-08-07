@@ -12,7 +12,6 @@ const {
 	description,
 	pubDate,
 	updatedDate,
-	originalUrl,
 	labels = [],
 } = Astro.props;
 
@@ -94,16 +93,6 @@ const showUpdatedDate = updatedDate ? !sameCalendarDay(pubDate, updatedDate) : f
 									<span>تحديث</span>
 									<FormattedDate date={updatedDate} />
 								</span>
-							</>
-						)}
-
-						{originalUrl && (
-							<>
-								<span class="meta-separator" aria-hidden="true">·</span>
-								<a class="meta-source" href={originalUrl} target="_blank" rel="noopener noreferrer">
-									<span>المصدر الأصلي</span>
-									<span class="external-mark" aria-hidden="true">↗</span>
-								</a>
 							</>
 						)}
 					</div>
@@ -198,28 +187,6 @@ const showUpdatedDate = updatedDate ? !sameCalendarDay(pubDate, updatedDate) : f
 
 	.meta-separator {
 		color: var(--color-neutral-foreground-disabled);
-	}
-
-	.meta-source {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--spacing-40);
-		border-radius: var(--radius-small);
-		color: var(--color-brand-foreground-link);
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-	}
-
-	.meta-source:hover,
-	.meta-source:focus-visible {
-		color: var(--color-brand-foreground-link-hover);
-		text-decoration: underline;
-		text-underline-offset: 3px;
-	}
-
-	.external-mark {
-		font-size: 0.9em;
-		line-height: 1;
 	}
 
 	.article-content {
@@ -449,7 +416,6 @@ const showUpdatedDate = updatedDate ? !sameCalendarDay(pubDate, updatedDate) : f
 	}
 
 	@media (pointer: coarse) {
-		.meta-source,
 		.article-content :global(button) {
 			min-height: 44px;
 		}
