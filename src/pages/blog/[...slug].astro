@@ -77,9 +77,11 @@ function removeDuplicateArticleHeading(html: string, title: string) {
 function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 	let result = html.replace(/^\s*---\s*$/gm, '<hr />');
 
-	// The page template owns the single H1. Preserve legacy section headings by
-	// downgrading imported body H1 elements instead of hiding or deleting them.
+	// The page template owns the page landmark and H1. Preserve legacy content
+	// while preventing nested <main> landmarks or secondary page-level H1s.
 	result = result
+		.replace(/<main\b([^>]*)>/gi, '<div$1>')
+		.replace(/<\/main>/gi, '</div>')
 		.replace(/<h1\b([^>]*)>/gi, '<h2$1>')
 		.replace(/<\/h1>/gi, '</h2>');
 
