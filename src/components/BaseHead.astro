@@ -3,7 +3,7 @@ import '../styles/fluent-core-theme.css';
 import '../styles/global.css';
 import '../styles/fluent-web-components.css';
 import '../styles/fluent-native-controls.css';
-import '../styles/header-desktop-strip.css';
+import '../styles/header-persistent-nav.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import { SITE_TITLE } from '../consts';
@@ -30,7 +30,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
 <meta name="generator" content={Astro.generator} />
-<script src="/header-desktop-strip.js" defer></script>
+<script src="/header-persistent-nav.js" defer></script>
 
 <link rel="canonical" href={canonicalURL} />
 <title>{title}</title>
