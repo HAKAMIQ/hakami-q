@@ -151,6 +151,47 @@ progress::-moz-progress-bar {
 	cursor: pointer;
 }
 
+/* Homepage Searchbox is a composite control. The field owns the Fluent focus
+ * treatment; the native input must not draw a second focus border or ring. */
+.home-search-field:focus-within {
+	border-color: var(--color-neutral-stroke-1-hover) !important;
+	border-bottom-color: var(--color-brand-stroke-1) !important;
+	background: var(--color-neutral-background-1) !important;
+	box-shadow: inset 0 -2px var(--color-brand-stroke-1), var(--shadow-4) !important;
+}
+
+.home-search-field #home-search-input,
+.home-search-field #home-search-input:hover,
+.home-search-field #home-search-input:focus,
+.home-search-field #home-search-input:focus-visible,
+.home-search-field #home-search-input:active {
+	min-height: 0;
+	padding: 0;
+	border: 0 !important;
+	border-bottom: 0 !important;
+	border-radius: 0;
+	outline: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+.home-search-field:focus-within > svg {
+	stroke: var(--color-neutral-foreground-1);
+}
+
+.home-search-clear:focus-visible {
+	outline: 2px solid var(--color-brand-stroke-1);
+	outline-offset: 1px;
+}
+
+@media (forced-colors: active) {
+	.home-search-field:focus-within {
+		outline: 2px solid Highlight;
+		outline-offset: 2px;
+		box-shadow: none !important;
+	}
+}
+
 @media (pointer: coarse) {
 	:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select) {
 		min-height: var(--control-height-touch);
