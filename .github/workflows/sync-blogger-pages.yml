@@ -35,8 +35,20 @@ jobs:
       - name: Download all public Blogger pages
         run: npm run sync:blogger-pages
 
+      - name: Evaluate all article sources
+        run: npm run content:quality
+
+      - name: Evaluate Fluent UI invariants
+        run: npm run ui:quality
+
+      - name: Evaluate Web Components principles
+        run: npm run web:quality
+
       - name: Validate Astro production build
         run: npx astro build
+
+      - name: Audit rendered pages, articles and links
+        run: npm run final:audit
 
       - name: Save updated page archive
         shell: bash
