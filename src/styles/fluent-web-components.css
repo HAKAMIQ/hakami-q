@@ -3,7 +3,7 @@
 .fui-card {
 	border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 	border-radius: var(--radius-large);
-	background: var(--color-neutral-background-2);
+	background: var(--color-neutral-card-background);
 	box-shadow: var(--shadow-4);
 }
 
@@ -17,9 +17,16 @@
 
 .fui-card--interactive:hover {
 	border-color: var(--color-neutral-stroke-1-hover);
-	background: var(--color-neutral-background-2-hover);
+	background: var(--color-neutral-card-background-hover);
 	box-shadow: var(--shadow-8);
 	transform: translateY(-2px);
+}
+
+.fui-card--interactive:active {
+	border-color: var(--color-neutral-stroke-1-pressed);
+	background: var(--color-neutral-card-background-pressed);
+	box-shadow: var(--shadow-4);
+	transform: translateY(0);
 }
 
 .fui-card--interactive:focus-within {
@@ -54,7 +61,7 @@
 	justify-content: center;
 	gap: var(--spacing-80);
 	box-sizing: border-box;
-	border: var(--stroke-thin) solid transparent;
+	border: var(--stroke-thin) solid var(--color-transparent-stroke);
 	border-radius: var(--radius-medium);
 	font-family: inherit;
 	font-size: var(--font-size-body-1);
@@ -115,21 +122,23 @@
 
 .fui-button--secondary:active,
 .fui-icon-button:active {
+	border-color: var(--color-neutral-stroke-1-pressed);
 	background: var(--color-neutral-background-1-pressed);
 }
 
 .fui-button--subtle {
-	background: transparent;
+	background: var(--color-subtle-background);
 	color: var(--color-neutral-foreground-2);
 }
 
 .fui-button--subtle:hover {
 	background: var(--color-subtle-background-hover);
-	color: var(--color-neutral-foreground-1);
+	color: var(--color-neutral-foreground-2-hover);
 }
 
 .fui-button--subtle:active {
 	background: var(--color-subtle-background-pressed);
+	color: var(--color-neutral-foreground-2-pressed);
 }
 
 .fui-button:focus-visible,
@@ -167,7 +176,7 @@
 	align-items: center;
 	justify-content: center;
 	padding-inline: var(--spacing-60);
-	border: var(--stroke-thin) solid transparent;
+	border: var(--stroke-thin) solid var(--color-transparent-stroke);
 	border-radius: var(--radius-circular);
 	background: var(--color-neutral-background-3);
 	color: var(--color-neutral-foreground-3);
@@ -196,11 +205,13 @@
 	color: var(--color-neutral-foreground-3);
 	transition:
 		border-color var(--duration-faster) var(--curve-easy-ease),
-		box-shadow var(--duration-faster) var(--curve-easy-ease);
+		box-shadow var(--duration-faster) var(--curve-easy-ease),
+		background var(--duration-faster) var(--curve-easy-ease);
 }
 
 .fui-searchbox:hover {
 	border-color: var(--color-neutral-stroke-1-hover);
+	background: var(--color-neutral-background-1-hover);
 }
 
 .fui-searchbox > svg {
@@ -220,7 +231,7 @@
 	min-width: 0;
 	border: 0;
 	outline: 0;
-	background: transparent;
+	background: var(--color-transparent-background);
 	color: var(--color-neutral-foreground-1);
 	font: inherit;
 	font-size: var(--font-size-body-1);
@@ -241,7 +252,7 @@
 	margin-inline-end: var(--spacing-40);
 	border: 0;
 	border-radius: var(--radius-medium);
-	background: transparent;
+	background: var(--color-transparent-background);
 	color: var(--color-neutral-foreground-3);
 	cursor: pointer;
 }
@@ -249,8 +260,13 @@
 .fui-searchbox__clear:hover,
 .fui-searchbox__clear:focus-visible {
 	background: var(--color-subtle-background-hover);
-	color: var(--color-neutral-foreground-1);
+	color: var(--color-neutral-foreground-3-hover);
 	outline: none;
+}
+
+.fui-searchbox__clear:active {
+	background: var(--color-subtle-background-pressed);
+	color: var(--color-neutral-foreground-3-pressed);
 }
 
 .fui-searchbox__clear svg {
@@ -283,7 +299,7 @@
 	padding-inline: var(--spacing-100);
 	border: 0;
 	border-radius: var(--radius-medium);
-	background: transparent;
+	background: var(--color-subtle-background);
 	color: var(--color-neutral-foreground-2);
 	font: inherit;
 	font-size: var(--font-size-body-1);
@@ -295,7 +311,12 @@
 
 .fui-accordion__header:hover {
 	background: var(--color-subtle-background-hover);
-	color: var(--color-neutral-foreground-1);
+	color: var(--color-neutral-foreground-2-hover);
+}
+
+.fui-accordion__header:active {
+	background: var(--color-subtle-background-pressed);
+	color: var(--color-neutral-foreground-2-pressed);
 }
 
 .fui-accordion__header > svg {
@@ -405,7 +426,7 @@
 }
 
 .fui-breadcrumb a:hover {
-	color: var(--color-neutral-foreground-1);
+	color: var(--color-neutral-foreground-3-hover);
 	text-decoration: underline;
 	text-underline-offset: 2px;
 }
@@ -414,7 +435,7 @@
 	position: fixed;
 	inset: 0;
 	z-index: 2090;
-	background: rgba(0, 0, 0, 0.58);
+	background: color-mix(in srgb, var(--color-neutral-background-5) 58%, transparent);
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity var(--duration-normal) var(--curve-easy-ease);
