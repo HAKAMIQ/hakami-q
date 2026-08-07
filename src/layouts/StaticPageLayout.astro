@@ -18,7 +18,7 @@ const {
 	description,
 	lang = 'ar',
 	dir = lang === 'ar' ? 'rtl' : 'ltr',
-	eyebrow = lang === 'ar' ? 'صفحات HAKAMIQ' : 'HAKAMIQ Pages',
+	eyebrow = lang === 'ar' ? 'صفحات HAKAMIQ' : 'HAKAMIQ pages',
 	alternateHref,
 	alternateLabel,
 } = Astro.props;
@@ -34,23 +34,25 @@ const {
 
 		<main class="static-main">
 			<div class="site-container static-shell">
-				<header class="static-hero">
+				<header class="static-hero fui-card">
 					<div class="static-hero-copy">
+						<nav class="fui-breadcrumb static-breadcrumb" aria-label={lang === 'ar' ? 'مسار الصفحة' : 'Breadcrumb'}>
+							<ol>
+								<li><a href="/">{lang === 'ar' ? 'الرئيسية' : 'Home'}</a></li>
+								<li aria-current="page">{title}</li>
+							</ol>
+						</nav>
 						<span class="eyebrow">{eyebrow}</span>
 						<h1>{title}</h1>
 						<p>{description}</p>
 					</div>
 
-					{
-						alternateHref && alternateLabel && (
-							<a class="language-link" href={alternateHref} hreflang={lang === 'ar' ? 'en' : 'ar'}>
-								{alternateLabel}
-							</a>
-						)
-					}
+					{alternateHref && alternateLabel && (
+						<a class="language-link fui-link" href={alternateHref} hreflang={lang === 'ar' ? 'en' : 'ar'}>{alternateLabel}</a>
+					)}
 				</header>
 
-				<article class="static-content">
+				<article class="static-content fluent-rich-text">
 					<slot />
 				</article>
 			</div>
@@ -61,189 +63,118 @@ const {
 </html>
 
 <style>
-	.static-main {
-		padding: clamp(1.25rem, 3vw, 2.5rem) 0 0;
-	}
+	.static-main { padding-top: var(--spacing-240); }
 
 	.static-shell {
-		width: min(calc(100% - 48px), 1080px);
+		width: min(calc(100% - (var(--page-gutter) * 2)), 960px);
 	}
 
 	.static-hero {
-		position: relative;
 		display: flex;
-		overflow: hidden;
 		align-items: flex-end;
 		justify-content: space-between;
-		gap: 2rem;
-		padding: clamp(1.5rem, 4vw, 3rem);
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-xxlarge);
-		background:
-			linear-gradient(120deg, rgba(215, 16, 71, 0.12), transparent 42%),
-			radial-gradient(circle at 10% 12%, rgba(255, 255, 255, 0.05), transparent 24rem),
-			var(--color-neutral-background-2);
-		box-shadow: var(--shadow-8);
+		gap: var(--spacing-240);
+		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
 	}
 
-	.static-hero::after {
-		position: absolute;
-		inset: auto -9rem -13rem auto;
-		width: 25rem;
-		height: 25rem;
-		border: 1px solid rgba(215, 16, 71, 0.16);
-		border-radius: 50%;
-		content: '';
-		pointer-events: none;
-	}
-
-	.static-hero-copy {
-		position: relative;
-		z-index: 1;
-		max-width: 760px;
-	}
+	.static-hero-copy { min-width: 0; max-width: 760px; }
+	.static-breadcrumb { margin-bottom: var(--spacing-160); }
 
 	.eyebrow {
-		display: inline-flex;
-		margin-bottom: 0.8rem;
-		color: var(--color-brand-foreground-strong);
-		font-size: 0.76rem;
-		font-weight: 760;
+		display: block;
+		margin-bottom: var(--spacing-40);
+		color: var(--color-brand-foreground);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
 	}
 
 	.static-hero h1 {
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: clamp(2rem, 5vw, 3.7rem);
-		font-weight: 800;
-		line-height: 1.2;
-		letter-spacing: -0.025em;
+		font-size: var(--font-size-title-1);
+		line-height: var(--line-height-title-1);
 	}
 
 	.static-hero p {
 		max-width: 720px;
-		margin-top: 0.9rem;
+		margin-top: var(--spacing-100);
 		color: var(--color-neutral-foreground-3);
-		font-size: clamp(0.92rem, 1.4vw, 1.05rem);
-		line-height: 1.9;
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 	}
 
-	.language-link {
-		position: relative;
-		z-index: 1;
-		display: inline-flex;
-		min-height: 40px;
-		flex: 0 0 auto;
-		align-items: center;
-		justify-content: center;
-		padding-inline: 0.9rem;
-		border: 1px solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-large);
-		background: rgba(255, 255, 255, 0.035);
-		color: var(--color-neutral-foreground-1);
-		font-size: 0.78rem;
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.language-link:hover,
-	.language-link:focus-visible {
-		border-color: color-mix(in srgb, var(--color-brand-foreground) 42%, var(--color-neutral-stroke-1));
-		background: rgba(215, 16, 71, 0.1);
-		outline: none;
-	}
+	.language-link { flex: 0 0 auto; margin-bottom: var(--spacing-20); }
 
 	.static-content {
-		margin-top: 1.25rem;
-		padding: clamp(1.35rem, 4vw, 2.5rem);
-		border: 1px solid var(--color-neutral-stroke-subtle);
-		border-radius: var(--radius-xxlarge);
+		margin-top: var(--spacing-160);
+		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-xlarge);
 		background: var(--color-neutral-background-2);
 		box-shadow: var(--shadow-4);
 		color: var(--color-neutral-foreground-2);
-		font-size: 0.98rem;
-		line-height: 2;
+		font-size: var(--font-size-reading);
+		line-height: var(--line-height-reading);
 	}
 
 	.static-content :global(section + section) {
-		margin-top: 2rem;
-		padding-top: 2rem;
-		border-top: 1px solid var(--color-neutral-stroke-subtle);
+		margin-top: var(--spacing-320);
+		padding-top: var(--spacing-320);
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
 	}
 
 	.static-content :global(h2) {
-		margin: 0 0 0.75rem;
-		color: var(--color-neutral-foreground-1);
-		font-size: clamp(1.2rem, 2vw, 1.5rem);
-		line-height: 1.45;
+		margin: 0 0 var(--spacing-100);
+		font-size: var(--font-size-subtitle-1);
+		line-height: var(--line-height-subtitle-1);
 	}
 
-	.static-content :global(p) {
-		margin: 0.65rem 0 0;
-		color: var(--color-neutral-foreground-2);
+	.static-content :global(h3) {
+		margin: var(--spacing-240) 0 var(--spacing-80);
+		font-size: var(--font-size-subtitle-2);
+		line-height: var(--line-height-subtitle-2);
 	}
 
-	.static-content :global(ul) {
-		margin: 0.85rem 0 0;
-		padding-inline-start: 1.25rem;
-	}
-
-	.static-content :global(li + li) {
-		margin-top: 0.35rem;
-	}
-
-	.static-content :global(a) {
-		color: var(--color-brand-foreground-strong);
-		text-underline-offset: 0.2em;
-	}
+	.static-content :global(p) { margin-top: var(--spacing-100); }
+	.static-content :global(ul),
+	.static-content :global(ol) { margin-top: var(--spacing-120); padding-inline-start: var(--spacing-240); }
+	.static-content :global(li + li) { margin-top: var(--spacing-80); }
 
 	.static-content :global(.link-grid) {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.75rem;
-		margin-top: 1rem;
+		gap: var(--spacing-120);
+		margin-top: var(--spacing-160);
 	}
 
 	.static-content :global(.contact-card) {
 		display: grid;
-		gap: 0.2rem;
-		padding: 1rem;
-		border: 1px solid var(--color-neutral-stroke-1);
+		gap: var(--spacing-20);
+		padding: var(--spacing-160);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-3);
+		background: var(--color-neutral-background-1);
 		color: var(--color-neutral-foreground-1);
 		text-decoration: none;
+		transition: background var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease);
 	}
 
-	.static-content :global(.contact-card strong) {
-		font-size: 0.92rem;
+	.static-content :global(.contact-card:hover) {
+		border-color: var(--color-neutral-stroke-1-hover);
+		background: var(--color-neutral-background-1-hover);
 	}
 
-	.static-content :global(.contact-card span) {
-		color: var(--color-neutral-foreground-3);
-		font-size: 0.78rem;
-	}
+	.static-content :global(.contact-card strong) { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+	.static-content :global(.contact-card span) { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
 
 	@media (max-width: 760px) {
-		.static-shell {
-			width: min(calc(100% - 24px), 1080px);
-		}
-
-		.static-hero {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 1.2rem;
-		}
-
-		.static-content :global(.link-grid) {
-			grid-template-columns: 1fr;
-		}
+		.static-hero { align-items: flex-start; flex-direction: column; gap: var(--spacing-160); }
+		.static-content :global(.link-grid) { grid-template-columns: 1fr; }
 	}
 
-	@media (max-width: 480px) {
-		.static-main { padding-top: 0.75rem; }
+	@media (max-width: 639px) {
+		.static-main { padding-top: var(--spacing-120); }
 		.static-hero,
-		.static-content { border-radius: var(--radius-xlarge); }
-		.static-content { font-size: 0.94rem; }
+		.static-content { padding: var(--spacing-160); }
+		.static-hero h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
 	}
 </style>
