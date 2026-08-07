@@ -75,6 +75,12 @@
 }
 .fui-text--font-monospace { font-family: var(--font-family-monospace); }
 
+/* Numeric metadata benefits from stable glyph widths without changing its semantic element. */
+:where(time, .post-count, .listing-range, .page-link, .fui-badge) {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum' 1;
+}
+
 /* Utility for two-line card titles/descriptions. Unlike truncate, this keeps wrapping. */
 .fui-text--clamp-2 {
 	display: -webkit-box;
