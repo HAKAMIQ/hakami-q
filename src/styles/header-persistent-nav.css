@@ -1,0 +1,157 @@
+/* Persistent desktop category navigation.
+ * Keeps every top-level section visible, removes drag/scroll behavior,
+ * and applies Fluent 2 Nav/Menu interaction states.
+ */
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+	.site-header .main-nav {
+		position: relative;
+		z-index: 1500;
+		width: 100%;
+		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: color-mix(in srgb, var(--color-neutral-background-2) 94%, transparent);
+		box-shadow: var(--shadow-4);
+		backdrop-filter: blur(18px) saturate(1.08);
+	}
+
+	.site-header .main-nav.is-sticky {
+		position: fixed !important;
+		inset: 0 0 auto 0;
+		z-index: 2500;
+		box-shadow: var(--shadow-16);
+	}
+
+	.site-header .nav-sticky-placeholder {
+		display: block;
+		width: 100%;
+		height: 0;
+		pointer-events: none;
+	}
+
+	.site-header .nav-sticky-placeholder.is-active {
+		height: var(--hq-nav-sticky-height, 48px);
+	}
+
+	.site-header .nav-inner {
+		position: relative;
+		overflow: visible !important;
+	}
+
+	.site-header .menu-bar {
+		display: flex;
+		width: 100%;
+		min-width: 0;
+		min-height: 48px;
+		align-items: stretch;
+		gap: var(--spacing-20);
+		overflow: visible;
+	}
+
+	.site-header .home-menu-link,
+	.site-header .menu-direct,
+	.site-header .menu-trigger {
+		position: relative;
+		min-height: 48px;
+		border: 0;
+		border-radius: var(--radius-medium);
+		background: transparent;
+		color: var(--color-neutral-foreground-2);
+		transition:
+			background var(--duration-faster) var(--curve-easy-ease),
+			color var(--duration-faster) var(--curve-easy-ease),
+			box-shadow var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.site-header .home-menu-link {
+		width: 44px;
+		flex: 0 0 44px;
+	}
+
+	.site-header .menu-group,
+	.site-header .menu-direct {
+		flex: 0 0 auto;
+	}
+
+	.site-header .menu-trigger,
+	.site-header .menu-direct {
+		padding-inline: var(--spacing-120);
+	}
+
+	.site-header .home-menu-link:hover,
+	.site-header .menu-direct:hover,
+	.site-header .menu-trigger:hover,
+	.site-header .home-menu-link:focus-visible,
+	.site-header .menu-direct:focus-visible,
+	.site-header .menu-trigger:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.site-header .menu-group.is-open > .menu-trigger {
+		background: var(--color-neutral-background-1-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.site-header .menu-direct.is-active,
+	.site-header .menu-trigger.has-active-child {
+		background: var(--color-brand-background-2);
+		box-shadow: inset 0 -3px var(--color-brand-stroke-1);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.site-header .menu-direct.is-active:hover,
+	.site-header .menu-trigger.has-active-child:hover,
+	.site-header .menu-group.is-open > .menu-trigger.has-active-child {
+		background: var(--color-brand-background-2-hover);
+	}
+
+	.site-header .menu-panel,
+	.site-header .submenu-panel {
+		filter: none;
+	}
+
+	.site-header .menu-surface,
+	.site-header .submenu-surface {
+		border-color: var(--color-neutral-stroke-1);
+		background: var(--color-neutral-background-1);
+		box-shadow: var(--shadow-16);
+	}
+
+	.site-header .menu-list > a:hover,
+	.site-header .submenu-trigger:hover,
+	.site-header .submenu-surface > a:hover,
+	.site-header .menu-list > a:focus-visible,
+	.site-header .submenu-trigger:focus-visible,
+	.site-header .submenu-surface > a:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.site-header .menu-list > a.is-active,
+	.site-header .submenu-surface > a.is-active {
+		background: var(--color-brand-background-2);
+		box-shadow: inset 2px 0 var(--color-brand-stroke-1);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	/* Keep the full strip visible at standard desktop widths without scrolling. */
+	@media (max-width: 1180px) {
+		.site-header .menu-trigger,
+		.site-header .menu-direct {
+			padding-inline: var(--spacing-80);
+			font-size: var(--font-size-caption-2);
+		}
+
+		.site-header .menu-bar {
+			gap: 0;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-header .home-menu-link,
+	.site-header .menu-direct,
+	.site-header .menu-trigger {
+		transition: none;
+	}
+}
