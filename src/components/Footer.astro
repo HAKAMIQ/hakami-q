@@ -16,24 +16,13 @@ const today = new Date();
 
 		<nav class="footer-social" aria-label="الشبكات الاجتماعية" dir="ltr">
 			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path>
-					<path d="m10 9 5 3-5 3Z"></path>
-				</svg>
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
 			</a>
-
 			<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path>
-					<circle cx="9" cy="13" r="1"></circle>
-					<circle cx="15" cy="13" r="1"></circle>
-				</svg>
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
 			</a>
-
 			<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path>
-				</svg>
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
 			</a>
 		</nav>
 	</div>
@@ -42,13 +31,8 @@ const today = new Date();
 
 	<div class="site-container footer-bottom">
 		<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
-
 		<a class="footer-rss" href="/rss.xml" aria-label="خلاصة RSS">
-			<svg viewBox="0 0 24 24" aria-hidden="true">
-				<circle cx="6" cy="18" r="1.5"></circle>
-				<path d="M5 11a8 8 0 0 1 8 8"></path>
-				<path d="M5 5a14 14 0 0 1 14 14"></path>
-			</svg>
+			<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="1.5"></circle><path d="M5 11a8 8 0 0 1 8 8"></path><path d="M5 5a14 14 0 0 1 14 14"></path></svg>
 			<span>RSS</span>
 		</a>
 	</div>
@@ -56,27 +40,30 @@ const today = new Date();
 
 <style>
 	.site-footer {
-		--footer-content-width: 1120px;
-		--footer-control-size: 32px;
-		margin-top: clamp(2.25rem, 3.5vw, 3.5rem);
-		border-top: 1px solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-2);
+		margin-top: var(--spacing-480);
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-3);
+	}
+
+	.footer-primary,
+	.footer-bottom,
+	.footer-divider {
+		width: min(calc(100% - (var(--page-gutter) * 2)), 1120px);
+		margin-inline: auto;
 	}
 
 	.footer-primary,
 	.footer-bottom {
 		display: flex;
-		width: min(calc(100% - 48px), var(--footer-content-width));
-		margin-inline: auto;
 		align-items: center;
 		justify-content: space-between;
-		gap: 24px;
+		gap: var(--spacing-240);
 	}
 
 	.footer-primary {
-		min-height: 62px;
-		padding-block: 12px;
+		min-height: 56px;
+		padding-block: var(--spacing-100);
 	}
 
 	.footer-links {
@@ -84,29 +71,27 @@ const today = new Date();
 		min-width: 0;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 2px;
+		gap: var(--spacing-20);
 	}
 
 	.footer-links a,
 	.footer-rss,
 	.footer-social a {
-		border-radius: var(--radius-small);
+		border-radius: var(--radius-medium);
 		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
 		transition:
 			background var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease),
-			border-color var(--duration-faster) var(--curve-easy-ease);
+			color var(--duration-faster) var(--curve-easy-ease);
 	}
 
 	.footer-links a {
 		display: inline-flex;
-		min-height: 34px;
+		min-height: 32px;
 		align-items: center;
-		padding-inline: 10px;
-		font-size: 0.82rem;
-		font-weight: 500;
-		line-height: 1.4;
+		padding-inline: var(--spacing-80);
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
 		white-space: nowrap;
 	}
 
@@ -114,36 +99,29 @@ const today = new Date();
 		display: flex;
 		flex: 0 0 auto;
 		align-items: center;
-		gap: 4px;
+		gap: var(--spacing-20);
 	}
 
 	.footer-social a {
 		display: grid;
-		width: var(--footer-control-size);
-		height: var(--footer-control-size);
+		width: 32px;
+		height: 32px;
 		place-items: center;
-		border: 1px solid transparent;
 	}
 
-	.footer-social svg {
+	.footer-social svg,
+	.footer-rss svg {
 		width: 16px;
 		height: 16px;
 		fill: none;
 		stroke: currentColor;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 1.7;
+		stroke-width: 1.5;
 	}
 
-	.footer-social a:first-child svg path:first-child {
-		fill: currentColor;
-		stroke: none;
-	}
-
-	.footer-social a:first-child svg path:last-child {
-		fill: var(--color-neutral-background-2);
-		stroke: none;
-	}
+	.footer-social a:first-child svg path:first-child { fill: currentColor; stroke: none; }
+	.footer-social a:first-child svg path:last-child { fill: var(--color-neutral-background-3); stroke: none; }
 
 	.footer-links a:hover,
 	.footer-links a:focus-visible,
@@ -153,103 +131,62 @@ const today = new Date();
 	.footer-rss:focus-visible {
 		background: var(--color-subtle-background-hover);
 		color: var(--color-neutral-foreground-1);
-		outline: none;
-	}
-
-	.footer-links a:focus-visible,
-	.footer-social a:focus-visible,
-	.footer-rss:focus-visible {
-		box-shadow: 0 0 0 2px var(--color-brand-stroke-1);
 	}
 
 	.footer-divider {
-		width: min(calc(100% - 48px), var(--footer-content-width));
-		height: 1px;
-		margin-inline: auto;
+		height: var(--stroke-thin);
 		background: var(--color-neutral-stroke-alpha);
 	}
 
 	.footer-bottom {
 		min-height: 44px;
-		font-size: 0.78rem;
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
 	}
 
-	.footer-bottom p {
-		margin: 0;
-		color: var(--color-neutral-foreground-3);
-	}
+	.footer-bottom p { color: var(--color-neutral-foreground-3); }
 
 	.footer-rss {
 		display: inline-flex;
-		min-height: 30px;
+		min-height: 32px;
 		align-items: center;
-		gap: 6px;
-		padding-inline: 8px;
-	}
-
-	.footer-rss svg {
-		width: 15px;
-		height: 15px;
-		fill: currentColor;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-width: 1.8;
+		gap: var(--spacing-60);
+		padding-inline: var(--spacing-80);
 	}
 
 	@media (max-width: 760px) {
-		.footer-primary,
-		.footer-bottom,
-		.footer-divider {
-			width: min(calc(100% - 32px), var(--footer-content-width));
-		}
-
 		.footer-primary {
-			min-height: 0;
-			flex-direction: column;
 			align-items: flex-start;
-			gap: 10px;
-			padding-block: 18px;
-		}
-
-		.footer-links {
-			gap: 2px 4px;
-		}
-
-		.footer-social {
-			align-self: flex-start;
+			flex-direction: column;
+			gap: var(--spacing-80);
+			padding-block: var(--spacing-160);
 		}
 	}
 
-	@media (max-width: 460px) {
-		.site-footer {
-			margin-top: 2.25rem;
-		}
-
-		.footer-primary,
-		.footer-bottom,
-		.footer-divider {
-			width: min(calc(100% - 24px), var(--footer-content-width));
-		}
+	@media (max-width: 479px) {
+		.site-footer { margin-top: var(--spacing-400); }
 
 		.footer-links a {
 			min-height: 40px;
-			font-size: 0.8rem;
+			padding-inline: var(--spacing-100);
 		}
 
 		.footer-bottom {
-			min-height: 58px;
+			min-height: 60px;
 			flex-direction: column;
 			justify-content: center;
-			gap: 2px;
+			gap: var(--spacing-20);
 			text-align: center;
 		}
 	}
 
-	@media (prefers-reduced-motion: reduce) {
+	@media (pointer: coarse) {
 		.footer-links a,
-		.footer-rss,
-		.footer-social a {
-			transition: none;
+		.footer-social a,
+		.footer-rss {
+			min-height: 44px;
 		}
+
+		.footer-social a { width: 44px; }
 	}
 </style>
