@@ -21,7 +21,7 @@ const { title, description, lang, dir, content } = Astro.props;
 		<BaseHead title={`${title} | HAKAMIQ`} description={description} />
 	</head>
 	<body>
-		<SkipLink />
+		<SkipLink label={lang === 'ar' ? 'تخطي إلى المحتوى' : 'Skip to content'} />
 		<Header />
 
 		<main id="main-content" tabindex="-1" class="blogger-page-shell">
