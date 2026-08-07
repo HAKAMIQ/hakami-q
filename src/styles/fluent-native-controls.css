@@ -1,13 +1,22 @@
 /* Fluent 2 Web treatment for native controls used by static and imported content. */
 
-:where(label) {
+:where(label),
+.fui-label {
 	color: var(--color-neutral-foreground-1);
 	font-size: var(--font-size-body-1);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-body-1);
 }
 
-:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select) {
+.fui-label[data-required='true']::after {
+	content: ' *';
+	color: var(--color-status-danger-foreground);
+}
+
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select),
+.fui-text-input,
+.fui-textarea,
+.fui-select {
 	min-height: var(--control-height-medium);
 	max-width: 100%;
 	box-sizing: border-box;
@@ -17,50 +26,166 @@
 	border-radius: var(--radius-medium);
 	background: var(--color-neutral-background-1);
 	color: var(--color-neutral-foreground-1);
+	font-family: var(--font-family-base);
 	font-size: var(--font-size-body-1);
+	font-weight: var(--font-weight-regular);
 	line-height: var(--line-height-body-1);
 	transition:
 		border-color var(--duration-faster) var(--curve-easy-ease),
 		box-shadow var(--duration-faster) var(--curve-easy-ease),
-		background var(--duration-faster) var(--curve-easy-ease);
+		background var(--duration-faster) var(--curve-easy-ease),
+		color var(--duration-faster) var(--curve-easy-ease);
 }
 
-:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):hover:not(:disabled) {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):hover:not(:disabled):not([readonly]),
+.fui-text-input:hover:not(:disabled):not([readonly]),
+.fui-textarea:hover:not(:disabled):not([readonly]),
+.fui-select:hover:not(:disabled) {
 	border-color: var(--color-neutral-stroke-1-hover);
 	background: var(--color-neutral-background-1-hover);
 }
 
-:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):active:not(:disabled) {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):active:not(:disabled):not([readonly]),
+.fui-text-input:active:not(:disabled):not([readonly]),
+.fui-textarea:active:not(:disabled):not([readonly]),
+.fui-select:active:not(:disabled) {
 	border-color: var(--color-neutral-stroke-1-pressed);
 	background: var(--color-neutral-background-1-pressed);
 }
 
-:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):focus-visible {
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):focus-visible,
+.fui-text-input:focus-visible,
+.fui-textarea:focus-visible,
+.fui-select:focus-visible {
 	border-color: var(--color-brand-stroke-1);
 	background: var(--color-neutral-background-1);
 	box-shadow: inset 0 -2px var(--color-brand-stroke-1), var(--focus-ring);
 }
 
-:where(input, textarea)::placeholder {
+:where(input, textarea)::placeholder,
+.fui-text-input::placeholder,
+.fui-textarea::placeholder {
 	color: var(--color-neutral-foreground-3);
 	opacity: 1;
 }
 
-textarea {
+/* Fluent Field keeps the label, control, hint and validation message in one semantic stack. */
+.fui-field {
+	display: grid;
+	min-width: 0;
+	gap: var(--spacing-60);
+}
+
+.fui-field--block,
+.fui-text-input--block,
+.fui-textarea--block,
+.fui-select--block {
+	width: 100%;
+}
+
+.fui-field__label {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-40);
+	color: var(--color-neutral-foreground-1);
+	font-size: var(--font-size-body-1);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-body-1);
+}
+
+.fui-field__hint,
+.fui-field__validation-message {
+	color: var(--color-neutral-foreground-3);
+	font-size: var(--font-size-caption-1);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-caption-1);
+}
+
+.fui-field[data-validation='error'] :where(input, textarea, select),
+.fui-field[data-validation='error'] :where(.fui-text-input, .fui-textarea, .fui-select),
+:where(input, textarea, select)[aria-invalid='true'] {
+	border-color: var(--color-status-danger-border);
+	box-shadow: inset 0 -2px var(--color-status-danger-border);
+}
+
+.fui-field[data-validation='error'] :where(.fui-field__hint, .fui-field__validation-message) {
+	color: var(--color-status-danger-foreground);
+}
+
+/* TextInput appearance variants. Outline is the native/default treatment above. */
+.fui-text-input--filled-darker,
+.fui-textarea--filled-darker {
+	border-color: var(--color-transparent-stroke);
+	border-bottom-color: var(--color-neutral-stroke-accessible);
+	background: var(--color-neutral-background-3);
+}
+
+.fui-text-input--filled-lighter,
+.fui-textarea--filled-lighter {
+	border-color: var(--color-transparent-stroke);
+	border-bottom-color: var(--color-neutral-stroke-accessible);
+	background: var(--color-neutral-background-1);
+	box-shadow: var(--shadow-2);
+}
+
+.fui-text-input--small,
+.fui-select--small {
+	min-height: var(--control-height-small);
+	padding-inline: var(--spacing-100);
+	font-size: var(--font-size-caption-1);
+	line-height: var(--line-height-caption-1);
+}
+
+.fui-text-input--large,
+.fui-select--large {
+	min-height: var(--control-height-large);
+	padding-inline: var(--spacing-160);
+	font-size: var(--font-size-subtitle-2);
+	line-height: var(--line-height-subtitle-2);
+}
+
+textarea,
+.fui-textarea {
 	min-height: 96px;
 	padding-block: var(--spacing-100);
 	resize: vertical;
 }
 
-select {
+.fui-textarea--resize-none { resize: none; }
+.fui-textarea--resize-horizontal { resize: horizontal; }
+.fui-textarea--resize-vertical { resize: vertical; }
+.fui-textarea--resize-both { resize: both; }
+
+.fui-textarea[data-auto-resize='true'] {
+	height: auto;
+	min-block-size: 96px;
+	overflow-y: hidden;
+	resize: none;
+}
+
+select,
+.fui-select {
 	padding-inline-end: var(--spacing-320);
 	cursor: pointer;
 }
 
-:where(input, textarea, select):disabled {
+:where(input, textarea, select):read-only,
+.fui-text-input[readonly],
+.fui-textarea[readonly] {
+	border-color: var(--color-neutral-stroke-3);
+	background: var(--color-neutral-background-2);
+	color: var(--color-neutral-foreground-2);
+	cursor: default;
+}
+
+:where(input, textarea, select):disabled,
+.fui-text-input:disabled,
+.fui-textarea:disabled,
+.fui-select:disabled {
 	border-color: var(--color-neutral-stroke-disabled);
 	background: var(--color-neutral-background-disabled);
 	color: var(--color-neutral-foreground-disabled);
+	cursor: not-allowed;
 }
 
 :where(input[type='checkbox'], input[type='radio']) {
@@ -95,25 +220,6 @@ legend {
 	font-size: var(--font-size-body-1);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-body-1);
-}
-
-.fui-field {
-	display: grid;
-	gap: var(--spacing-60);
-}
-
-.fui-field__hint {
-	color: var(--color-neutral-foreground-3);
-	font-size: var(--font-size-caption-1);
-	line-height: var(--line-height-caption-1);
-}
-
-.fui-field[data-validation='error'] :where(input, textarea, select) {
-	border-color: var(--color-status-danger-border);
-}
-
-.fui-field[data-validation='error'] .fui-field__hint {
-	color: var(--color-status-danger-foreground);
 }
 
 progress {
@@ -197,15 +303,32 @@ progress::-moz-progress-bar {
 		outline-offset: 2px;
 		box-shadow: none !important;
 	}
+
+	.fui-text-input,
+	.fui-textarea,
+	.fui-select {
+		border-color: CanvasText;
+	}
 }
 
 @media (pointer: coarse) {
-	:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select) {
+	:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select),
+	.fui-text-input,
+	.fui-textarea,
+	.fui-select {
 		min-height: var(--control-height-touch);
 	}
 
 	:where(input[type='checkbox'], input[type='radio']) {
 		width: 20px;
 		height: 20px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fui-text-input,
+	.fui-textarea,
+	.fui-select {
+		transition: none;
 	}
 }
