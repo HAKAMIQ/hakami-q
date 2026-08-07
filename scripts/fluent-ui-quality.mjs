@@ -92,9 +92,15 @@ for (const [needle, rule, message] of [
 	['if (!/\\balt\\s*=/i.test(normalized))', 'static.legacy-alt', 'Imported Blogger page images must receive an alt fallback when omitted.'],
 ]) requireText(files.blogger, source.blogger, needle, rule, message);
 
+// Homepage is intentionally editorial and bounded: one lead story + six compact rows.
 forbidText(files.home, source.home, 'BlogSidebar', 'home.no-sidebar', 'Do not add the blog/category sidebar to the homepage.');
 forbidText(files.home, source.home, '<time', 'home.no-dates', 'Do not reintroduce article dates on the homepage.');
-requireText(files.home, source.home, 'id="home-feed-size"', 'home.display-count', 'Homepage must keep the controlled latest-post count selector.');
+forbidText(files.home, source.home, 'id="home-feed-size"', 'home.no-feed-selector', 'Do not reintroduce the old homepage 6/12/18 feed-size selector.');
+forbidText(files.home, source.home, 'class="latest-grid"', 'home.no-card-grid', 'Homepage latest articles must remain an editorial list rather than the old card grid.');
+requireText(files.home, source.home, 'const latestPosts = posts.slice(1, 7);', 'home.editorial-limit', 'Homepage must keep a bounded six-item latest editorial list after the lead story.');
+requireText(files.home, source.home, 'class="lead-story"', 'home.lead-story', 'Homepage must keep one distinct lead-story treatment.');
+requireText(files.home, source.home, 'class="editorial-list"', 'home.editorial-list', 'Homepage must keep the compact editorial latest-post list.');
+requireText(files.home, source.home, 'id="platforms-title"', 'home.platform-discovery', 'Homepage must keep the platform discovery section after the editorial feed.');
 
 requireText(files.blog, source.blog, 'const DEFAULT_PAGE_SIZE = 12;', 'listing.default-page-size', 'Blog listing must retain a bounded default page size.');
 requireText(files.blog, source.blog, 'const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);', 'listing.initial-slice', 'Initial blog DOM must contain only the bounded first page.');
