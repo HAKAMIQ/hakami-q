@@ -58,7 +58,7 @@ The site currently has no AI assistant, agent, model-generated response surface,
 
 ### Used and governed
 
-- Accordion: category groups in the blog sidebar. Headers are buttons with `aria-expanded` and `aria-controls`.
+- Accordion/disclosure behavior: expandable category groups retain simple disclosure mechanics, but the category hierarchy is exposed to assistive technology as a Tree because it is genuinely hierarchical navigation.
 - Badge: category/count metadata.
 - Breadcrumb: hierarchy on article, blog, and static pages.
 - Button / icon button: navigation disclosure, drawer controls, search clear controls.
@@ -73,14 +73,18 @@ The site currently has no AI assistant, agent, model-generated response surface,
 - Nav: persistent top-level platform navigation and responsive hamburger pattern.
 - Popover/material surface: transient desktop navigation flyouts use acrylic semantics.
 - Text: native semantic elements remain the source of meaning while `.fui-text` utilities provide Fluent presentation. The site supports sizes `100–1000`, `nowrap`, `truncate`, `italic`, `underline`, `strikethrough`, `block`, four weights, logical alignment, base/numeric/monospace fonts, and stable tabular numerals for metadata such as dates, counts, page numbers, and badges.
+- Tooltip: compact/icon controls that already expose native `title` hints are progressively upgraded to a single lightweight Fluent tooltip surface. The tooltip appears on hover and keyboard focus, uses `role="tooltip"` plus `aria-describedby`, supports logical positioning, closes with Escape, and respects reduced motion. Native title text is removed after enhancement to avoid duplicate tooltip UI.
+- Tree: the category browser is a two-level navigation tree. The runtime assigns `tree`, `treeitem`, and `group` semantics and implements roving focus plus Arrow Up/Down, Arrow Left/Right, Home, and End keyboard navigation while keeping the existing visual design and links.
 
 ### Not currently needed
 
-Avatar, Avatar group, Carousel, Checkbox, Combobox, Dialog, Dropdown, Info label, Persona, Progress bar, Radio group, Rating, Select, Skeleton, Slider, Spin button, Spinner, Switch, Tablist, Tag, Tag picker, Textarea, Toast, Toolbar, Tooltip, Tree.
+Avatar, Avatar group, Carousel, Checkbox, Combobox, Dialog, Dropdown, Info label, Persona, Progress bar, Radio group, Rating, Select, Skeleton, Slider, Spin button, Spinner, Switch, Tablist, Tag, Tag picker, TextArea, Toast, Toolbar.
 
 These are not missing requirements. They are intentionally absent because there is no current task that needs them. Adding unused controls would increase cognitive and implementation complexity and conflict with the Fluent principle of focus.
 
-If a future feature genuinely needs one of these interactions, use the corresponding Fluent guidance and add it deliberately rather than repurposing an unrelated component.
+### TextArea applicability
+
+There is currently no multi-line user input anywhere in the site source, so no TextArea is rendered. Adding a fake TextArea would create a control with no task behind it. When a real feature such as comments, feedback, or a contact form needs multi-line input, it must implement the documented Fluent TextArea contract deliberately: an associated label, appearance and size, resize or auto-resize behavior, autocomplete/spellcheck decisions, required/maxlength/minlength rules where relevant, disabled/readonly states, and native constraint validation. Auto-resize must use a minimum block size instead of a fixed height.
 
 ## Automated gates
 
@@ -88,7 +92,7 @@ If a future feature genuinely needs one of these interactions, use the correspon
 
 `npm run ui:quality:report` writes `reports/fluent-ui-quality.json` for CI artifacts and regression tracking.
 
-`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, token consumption, and the Fluent Text presentation contract.
+`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, token consumption, Fluent Text, Tooltip, Tree, and component applicability.
 
 The gates currently check:
 
@@ -106,3 +110,6 @@ The gates currently check:
 - No accidental React-only Fluent runtime or global third-party script dependency.
 - Required Fluent token definitions and semantic-token consumption by reusable components.
 - Fluent Text size utilities `100–1000`, documented weights, logical RTL-safe alignment, font variants, truncation/nowrap/block behavior, and tabular numeric rendering.
+- Tooltip focus/hover/Escape behavior, `role="tooltip"`, `aria-describedby`, logical positioning, semantic tokens, and reduced-motion styling.
+- Tree `tree/treeitem/group` semantics and Arrow/Home/End keyboard behavior for the category hierarchy.
+- Discovery of any future `<textarea>` so its Fluent TextArea contract can be reviewed before shipping.
