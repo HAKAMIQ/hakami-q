@@ -327,8 +327,8 @@ pre > code {
 }
 
 /* Normalize HAKAMIQ rich modules to the same Fluent semantic color system.
- * These rules intentionally override legacy article-local raw colors only;
- * article structure and media remain controlled by the article itself. */
+ * These rules override legacy article-local colors only. They do not hide,
+ * remove, or reorder imported article content. */
 .fluent-rich-text .hq-sixaxis {
 	--hq-gold: var(--color-brand-foreground-strong) !important;
 	--hq-green: var(--color-status-success-foreground) !important;
@@ -349,21 +349,6 @@ pre > code {
 	border-radius: 0 !important;
 	background: var(--color-transparent-background) !important;
 	color: var(--color-neutral-foreground-2) !important;
-}
-
-/* The article layout already renders the title and summary; suppress the
- * migrated duplicate header and repeated end summary/footer. */
-.fluent-rich-text .hq-sixaxis > .hq-header,
-.fluent-rich-text .hq-sixaxis > section.hq-card:nth-of-type(7),
-.fluent-rich-text .hq-sixaxis > .hq-footer {
-	display: none !important;
-}
-
-/* The setting path and screenshots already explain the first procedure;
- * remove the second numbered copy of the same instructions. */
-.fluent-rich-text .hq-sixaxis > section.hq-card:first-of-type > p:has(+ .hq-steps),
-.fluent-rich-text .hq-sixaxis > section.hq-card:first-of-type > .hq-steps {
-	display: none !important;
 }
 
 .fluent-rich-text .hq-sixaxis > .hq-card {
