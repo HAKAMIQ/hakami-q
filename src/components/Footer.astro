@@ -15,13 +15,13 @@ const today = new Date();
 		</nav>
 
 		<nav class="footer-social" aria-label="الشبكات الاجتماعية" dir="ltr">
-			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube، يفتح في علامة تبويب جديدة" title="YouTube — علامة تبويب جديدة">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
 			</a>
-			<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+			<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord، يفتح في علامة تبويب جديدة" title="Discord — علامة تبويب جديدة">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
 			</a>
-			<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+			<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram، يفتح في علامة تبويب جديدة" title="Telegram — علامة تبويب جديدة">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
 			</a>
 		</nav>
@@ -81,8 +81,8 @@ const today = new Date();
 		color: var(--color-neutral-foreground-3);
 		text-decoration: none;
 		transition:
-			background var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease);
+			background var(--motion-duration-control) var(--curve-easy-ease),
+			color var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
 	.footer-links a {
@@ -111,8 +111,8 @@ const today = new Date();
 
 	.footer-social svg,
 	.footer-rss svg {
-		width: 16px;
-		height: 16px;
+		width: var(--icon-size-small);
+		height: var(--icon-size-small);
 		fill: none;
 		stroke: currentColor;
 		stroke-linecap: round;
@@ -184,9 +184,9 @@ const today = new Date();
 		.footer-links a,
 		.footer-social a,
 		.footer-rss {
-			min-height: 44px;
+			min-height: var(--control-height-touch);
 		}
 
-		.footer-social a { width: 44px; }
+		.footer-social a { width: var(--control-height-touch); }
 	}
 </style>
