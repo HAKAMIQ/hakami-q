@@ -5,11 +5,7 @@ import BlogSidebar from '../../components/fluent/BlogSidebar.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import {
-	categoryNames,
-	formatArabicDate,
-	getPostCategories,
-} from '../../data/blog-taxonomy';
+import { categoryNames, formatArabicDate, getPostCategories } from '../../data/blog-taxonomy';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -32,80 +28,60 @@ const postItems = posts.map((post) => ({
 
 		<main>
 			<section class="page-hero">
-				<div class="site-container">
-					<nav class="fui-breadcrumb page-breadcrumb" aria-label="مسار التنقل">
+				<div class="site-container hero-inner">
+					<nav class="fui-breadcrumb" aria-label="مسار التنقل">
 						<ol>
 							<li><a href="/">الرئيسية</a></li>
 							<li aria-current="page">المقالات</li>
 						</ol>
 					</nav>
 
-					<span class="page-eyebrow">مكتبة HAKAMIQ</span>
-					<h1>المقالات والشروحات</h1>
-					<p>شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم</p>
-					<strong class="fui-badge fui-badge--brand post-count" id="post-count" data-total={posts.length} aria-live="polite">
-						{posts.length} مقال
-					</strong>
+					<div class="hero-copy">
+						<span class="page-eyebrow">مكتبة HAKAMIQ</span>
+						<h1>المقالات والشروحات</h1>
+						<p>شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم.</p>
+						<strong class="fui-badge fui-badge--brand post-count" id="post-count" data-total={posts.length} aria-live="polite">{posts.length} مقال</strong>
+					</div>
 				</div>
 			</section>
 
-			<section class="posts-section">
-				<div
-					id="category-data"
-					data-categories={JSON.stringify(categoryNames)}
-					hidden
-				></div>
+			<section class="posts-section" aria-label="قائمة المقالات">
+				<div id="category-data" data-categories={JSON.stringify(categoryNames)} hidden></div>
 
 				<div class="site-container blog-layout">
 					<BlogSidebar posts={posts} />
 
 					<div class="posts-content">
 						<div class="filter-status fui-message-bar" id="filter-status" role="status" hidden>
-							<p>
-								<span>القسم الحالي</span>
-								<strong id="filter-name"></strong>
-							</p>
+							<p><span>القسم الحالي</span><strong id="filter-name"></strong></p>
 							<a class="fui-button fui-button--subtle" href="/blog">عرض جميع المقالات</a>
 						</div>
 
 						<p class="no-results fui-message-bar fui-message-bar--warning" id="no-results" role="status" hidden>
-							لا توجد مقالات مطابقة لهذا القسم حاليا
+							لا توجد مقالات مطابقة لهذا القسم حاليًا.
 						</p>
 
 						<div class="posts-grid" id="posts-grid">
-							{
-								postItems.map(({ post, categories }, index) => (
-									<article
-										class:list={['post-card', 'fui-card', 'fui-card--interactive', { featured: index === 0 }]}
-										data-categories={categories.join(' ')}
-									>
-										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
-											<div class="post-image">
-												{post.data.heroImageUrl ? (
-													<img
-														src={post.data.heroImageUrl}
-														alt={post.data.title}
-														loading={index === 0 ? 'eager' : 'lazy'}
-														fetchpriority={index === 0 ? 'high' : 'auto'}
-														referrerpolicy="no-referrer"
-													/>
-												) : (
-													<div class="image-placeholder">HAKAMIQ</div>
-												)}
-											</div>
+							{postItems.map(({ post, categories }) => (
+								<article class="post-card fui-card fui-card--interactive" data-categories={categories.join(' ')}>
+									<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
+										<div class="post-image">
+											{post.data.heroImageUrl ? (
+												<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" referrerpolicy="no-referrer" />
+											) : (
+												<div class="image-placeholder">HAKAMIQ</div>
+											)}
+										</div>
 
-											<div class="post-content">
-												{post.data.labels.length > 0 && (
-													<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
-												)}
-												<h2>{post.data.title}</h2>
-												<p>{post.data.description}</p>
-												<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
-											</div>
-										</a>
-									</article>
-								))
-							}
+										<div class="post-content">
+											{post.data.labels.length > 0 && <span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>}
+											<h2>{post.data.title}</h2>
+											<p>{post.data.description}</p>
+											<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
+										</div>
+									</a>
+								</article>
+							))}
 						</div>
 					</div>
 				</div>
@@ -128,21 +104,14 @@ const postItems = posts.map((post) => ({
 		const postCount = document.querySelector<HTMLElement>('#post-count');
 		const noResults = document.querySelector<HTMLElement>('#no-results');
 		let visibleCount = 0;
-		let firstVisibleCard: HTMLElement | undefined;
 
 		for (const card of cards) {
-			card.classList.remove('featured');
 			const categories = (card.dataset.categories ?? '').split(' ').filter(Boolean);
 			const visible = categories.includes(selectedCategory);
 			card.hidden = !visible;
-
-			if (visible) {
-				visibleCount += 1;
-				firstVisibleCard ??= card;
-			}
+			if (visible) visibleCount += 1;
 		}
 
-		firstVisibleCard?.classList.add('featured');
 		if (filterStatus) filterStatus.hidden = false;
 		if (filterName) filterName.textContent = categoryNames[selectedCategory];
 		if (postCount) postCount.textContent = `${visibleCount} مقال`;
@@ -152,122 +121,86 @@ const postItems = posts.map((post) => ({
 
 <style>
 	.page-hero {
-		padding: clamp(2.25rem, 4vw, 3.25rem) 0;
-		border-bottom: 1px solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-2);
+		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-3);
 	}
 
-	.page-breadcrumb {
-		margin-bottom: 14px;
+	.hero-inner {
+		padding-block: var(--spacing-240) var(--spacing-320);
+	}
+
+	.hero-copy {
+		max-width: 760px;
+		margin-top: var(--spacing-160);
 	}
 
 	.page-eyebrow {
-		display: inline-block;
-		margin-bottom: 6px;
+		display: block;
+		margin-bottom: var(--spacing-40);
 		color: var(--color-brand-foreground);
-		font-size: 0.75rem;
-		font-weight: 650;
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
 	}
 
-	.page-hero h1 {
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-		line-height: 1.25;
+	.hero-copy h1 {
+		font-size: var(--font-size-title-1);
+		line-height: var(--line-height-title-1);
 	}
 
-	.page-hero p {
-		max-width: 700px;
-		margin: 10px 0 0;
+	.hero-copy p {
+		margin-top: var(--spacing-80);
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.92rem;
-		line-height: 1.75;
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 	}
 
-	.post-count {
-		margin-top: 14px;
-	}
+	.post-count { margin-top: var(--spacing-120); }
 
-	.posts-section {
-		padding: 28px 0 8px;
-	}
+	.posts-section { padding-block: var(--spacing-240) var(--spacing-80); }
 
 	.blog-layout {
 		display: grid;
-		grid-template-columns: 304px minmax(0, 1fr);
-		gap: 22px;
+		grid-template-columns: 288px minmax(0, 1fr);
+		gap: var(--spacing-240);
 		align-items: start;
 	}
 
-	.blog-layout :global(.sidebar-region) {
-		grid-column: 1;
-	}
+	.posts-content { min-width: 0; grid-column: 2; }
+	.blog-layout :global(.sidebar-region) { min-width: 0; grid-column: 1; }
 
-	.posts-content {
-		min-width: 0;
-		grid-column: 2;
-	}
-
-	.filter-status {
-		margin-bottom: 16px;
-	}
-
+	.filter-status { margin-bottom: var(--spacing-160); }
 	.filter-status[hidden],
 	.no-results[hidden],
-	.post-card[hidden] {
-		display: none;
-	}
+	.post-card[hidden] { display: none; }
 
 	.filter-status p {
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		margin: 0;
+		gap: var(--spacing-80);
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.8rem;
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 	}
 
-	.filter-status strong {
-		color: var(--color-brand-foreground);
-	}
-
-	.no-results {
-		margin: 0 0 16px;
-		justify-content: center;
-		text-align: center;
-	}
+	.filter-status strong { color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
+	.no-results { margin-bottom: var(--spacing-160); }
 
 	.posts-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 16px;
+		gap: var(--spacing-160);
 	}
 
-	.post-card {
-		overflow: hidden;
-	}
-
-	.post-card:focus-within {
-		box-shadow: var(--fui-focus-ring), var(--shadow-8);
-	}
-
-	.post-card.featured {
-		grid-column: span 2;
-	}
+	.post-card { min-width: 0; overflow: hidden; }
 
 	.post-card > a {
-		display: grid;
+		display: flex;
 		height: 100%;
+		min-width: 0;
+		flex-direction: column;
 		color: inherit;
 		text-decoration: none;
-	}
-
-	.post-card.featured > a {
-		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
-	}
-
-	.post-card > a:focus-visible {
-		outline: none;
 	}
 
 	.post-image {
@@ -276,173 +209,92 @@ const postItems = posts.map((post) => ({
 		background: var(--color-neutral-background-3);
 	}
 
-	.featured .post-image {
-		aspect-ratio: auto;
-	}
-
 	.post-image img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform var(--duration-slower) var(--curve-easy-ease);
+		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
 	}
 
-	.post-card:hover img {
-		transform: scale(1.025);
-	}
+	.post-card:hover .post-image img { transform: scale(1.02); }
 
 	.image-placeholder {
 		display: grid;
 		width: 100%;
 		height: 100%;
-		min-height: 190px;
 		place-items: center;
 		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-4);
-		font-size: 1rem;
-		font-weight: 700;
+		font-size: var(--font-size-subtitle-2);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.post-content {
 		display: flex;
-		min-height: 190px;
+		min-height: 164px;
+		flex: 1;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 16px;
+		padding: var(--spacing-160);
 	}
 
-	.post-label {
-		margin-bottom: 8px;
-	}
+	.post-label { margin-bottom: var(--spacing-80); }
 
 	.post-content h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: 1rem;
-		line-height: 1.55;
+		font-size: var(--font-size-subtitle-2);
+		line-height: var(--line-height-subtitle-2);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
-	}
-
-	.featured .post-content h2 {
-		font-size: clamp(1.15rem, 2vw, 1.55rem);
 	}
 
 	.post-content p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin: 8px 0 0;
+		margin-top: var(--spacing-80);
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.8rem;
-		line-height: 1.7;
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 2;
 	}
 
 	.post-content time {
 		margin-top: auto;
-		padding-top: 14px;
+		padding-top: var(--spacing-120);
 		color: var(--color-neutral-foreground-3);
-		font-size: 0.7rem;
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
 	}
 
 	@media (max-width: 1180px) {
-		.blog-layout {
-			grid-template-columns: 284px minmax(0, 1fr);
-			gap: 18px;
-		}
-
-		.post-card.featured > a {
-			grid-template-columns: 1fr;
-		}
-
-		.featured .post-image {
-			aspect-ratio: 16 / 9;
-		}
+		.blog-layout { grid-template-columns: 272px minmax(0, 1fr); gap: var(--spacing-160); }
 	}
 
-	@media (max-width: 1020px) {
-		.blog-layout {
-			grid-template-columns: 1fr;
-			gap: 14px;
-		}
-
-		.blog-layout :global(.sidebar-region),
-		.posts-content {
-			grid-column: 1;
-		}
-
-		.blog-layout :global(.sidebar-region) {
-			grid-row: 1;
-		}
-
-		.posts-content {
-			grid-row: 2;
-		}
+	@media (max-width: 1023px) {
+		.blog-layout { grid-template-columns: 1fr; }
+		.posts-content,
+		.blog-layout :global(.sidebar-region) { grid-column: 1; }
+		.blog-layout :global(.sidebar-region) { grid-row: 1; }
+		.posts-content { grid-row: 2; }
 	}
 
-	@media (max-width: 680px) {
-		.page-hero {
-			padding: 2rem 0;
-		}
-
-		.posts-section {
-			padding-top: 18px;
-		}
-
-		.filter-status {
-			align-items: flex-start;
-			flex-direction: column;
-		}
-
-		.posts-grid {
-			grid-template-columns: 1fr;
-			gap: 10px;
-		}
-
-		.post-card.featured {
-			grid-column: auto;
-		}
-
-		.post-card > a,
-		.post-card.featured > a {
-			grid-template-columns: 116px minmax(0, 1fr);
-		}
-
-		.post-image,
-		.featured .post-image {
-			height: 100%;
-			min-height: 132px;
-			aspect-ratio: auto;
-		}
-
-		.post-content {
-			min-height: 132px;
-			padding: 12px;
-		}
-
-		.post-content p {
-			display: none;
-		}
-
-		.post-content h2,
-		.featured .post-content h2 {
-			font-size: 0.88rem;
-		}
+	@media (max-width: 639px) {
+		.hero-inner { padding-block: var(--spacing-160) var(--spacing-240); }
+		.hero-copy { margin-top: var(--spacing-120); }
+		.hero-copy h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
+		.posts-section { padding-top: var(--spacing-160); }
+		.filter-status { align-items: flex-start; flex-direction: column; }
+		.posts-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
+		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
+		.post-image { height: 100%; min-height: 132px; aspect-ratio: auto; }
+		.post-content { min-height: 132px; padding: var(--spacing-120); }
+		.post-content p { display: none; }
+		.post-content h2 { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
 	}
 
 	@media (max-width: 420px) {
-		.post-card > a,
-		.post-card.featured > a {
-			grid-template-columns: 96px minmax(0, 1fr);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.post-image img {
-			transition: none;
-		}
+		.post-card > a { grid-template-columns: 96px minmax(0, 1fr); }
 	}
 </style>
