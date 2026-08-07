@@ -1,0 +1,141 @@
+/* Desktop-only category strip for precise mouse navigation.
+ * Keeps the existing mobile menu untouched and preserves Fluent 2 interaction states.
+ */
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+	.site-header .main-nav {
+		position: relative;
+	}
+
+	.site-header .nav-inner {
+		position: relative;
+		overflow-x: auto !important;
+		overflow-y: hidden !important;
+		overscroll-behavior-x: contain;
+		scrollbar-width: none;
+		scroll-behavior: smooth;
+		cursor: grab;
+	}
+
+	.site-header .nav-inner::-webkit-scrollbar {
+		display: none;
+	}
+
+	.site-header .nav-inner.is-dragging {
+		scroll-behavior: auto;
+		cursor: grabbing;
+		user-select: none;
+	}
+
+	.site-header .menu-bar {
+		position: relative;
+		width: max-content;
+		min-width: 100%;
+		padding-inline: 2px;
+	}
+
+	.site-header .home-menu-link,
+	.site-header .menu-direct,
+	.site-header .menu-trigger {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 auto;
+	}
+
+	/* A single Fluent-style selection rail follows the hovered/focused section. */
+	.site-header .nav-hover-indicator {
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline-start: 0;
+		z-index: 2;
+		width: var(--nav-indicator-width, 0px);
+		height: 2px;
+		border-radius: var(--radius-circular);
+		background: var(--color-brand-stroke-1);
+		opacity: 0;
+		pointer-events: none;
+		transform: translate3d(var(--nav-indicator-x, 0px), 0, 0);
+		transform-origin: left center;
+		transition:
+			width var(--duration-fast) var(--curve-decelerate-mid),
+			transform var(--duration-fast) var(--curve-decelerate-mid),
+			opacity var(--duration-faster) var(--curve-easy-ease);
+	}
+
+	.site-header .nav-hover-indicator.is-visible {
+		opacity: 1;
+	}
+
+	.site-header .nav-inner.is-dragging .nav-hover-indicator {
+		opacity: 0;
+		transition: none;
+	}
+
+	/* Soft edge hints appear only when more sections exist outside the viewport. */
+	.site-header .main-nav::before,
+	.site-header .main-nav::after {
+		position: absolute;
+		inset-block: 0;
+		z-index: 35;
+		width: 28px;
+		content: '';
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity var(--duration-fast) var(--curve-easy-ease);
+	}
+
+	.site-header .main-nav::before {
+		left: 0;
+		background: linear-gradient(90deg, var(--color-neutral-background-3), transparent);
+	}
+
+	.site-header .main-nav::after {
+		right: 0;
+		background: linear-gradient(270deg, var(--color-neutral-background-3), transparent);
+	}
+
+	.site-header .main-nav.can-scroll-left::before,
+	.site-header .main-nav.can-scroll-right::after {
+		opacity: 1;
+	}
+
+	/* Desktop popovers are viewport-positioned so the horizontal strip can scroll
+	 * without clipping the menu surfaces. JS supplies the coordinates. */
+	.site-header .menu-panel {
+		position: fixed !important;
+		top: var(--hq-panel-top, 0px) !important;
+		left: var(--hq-panel-left, 0px) !important;
+		right: auto !important;
+		padding-top: var(--spacing-60) !important;
+	}
+
+	.site-header .menu-panel.align-end {
+		left: var(--hq-panel-left, 0px) !important;
+		right: auto !important;
+	}
+
+	.site-header .submenu-panel,
+	.site-header .submenu-panel.open-start {
+		position: fixed !important;
+		top: var(--hq-submenu-top, 0px) !important;
+		left: var(--hq-submenu-left, 0px) !important;
+		right: auto !important;
+		padding: 0 !important;
+	}
+
+	.site-header .submenu-group.opens-start > .submenu-trigger svg {
+		transform: none;
+	}
+
+	.site-header .submenu-group.is-open.opens-start > .submenu-trigger svg {
+		transform: rotate(180deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-header .nav-hover-indicator,
+	.site-header .main-nav::before,
+	.site-header .main-nav::after {
+		transition: none;
+	}
+}
