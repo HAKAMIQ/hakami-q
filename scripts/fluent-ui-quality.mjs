@@ -19,6 +19,13 @@ function forbidText(file, source, needle, rule, message) {
 	if (source.includes(needle)) fail(file, rule, message);
 }
 
+function getAstroMarkup(text) {
+	return text
+		.replace(/^\uFEFF?---\s*\r?\n[\s\S]*?\r?\n---\s*\r?\n?/, '')
+		.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+		.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+}
+
 async function collectAstroFiles(dir) {
 	const absolute = path.join(root, dir);
 	const entries = await fs.readdir(absolute, { withFileTypes: true });
@@ -113,7 +120,6 @@ for (const key of ['global', 'components', 'native', 'navCss', 'article', 'stati
 forbidText(files.astroConfig, source.astroConfig, 'Atkinson', 'typography.legacy-font', 'Legacy Atkinson font pipeline must remain removed.');
 forbidText(files.astroConfig, source.astroConfig, 'fontProviders', 'typography.legacy-provider', 'Unused Astro font provider must remain removed.');
 
-// Content-pipeline invariants: improve Blogger media centrally and prevent executable markup from returning on re-import.
 requireText(files.contentConfig, source.contentConfig, 'normalizeBloggerImageUrl', 'media.central-normalization', 'Blogger hero-image normalization must remain centralized in the content schema.');
 requireText(files.contentConfig, source.contentConfig, '/s1280', 'media.hero-resolution', 'Blogger hero images must not fall back to legacy s320-sized sources.');
 for (const [needle, rule, message] of [
@@ -127,11 +133,11 @@ for (const [needle, rule, message] of [
 
 const astroFiles = await collectAstroFiles('src');
 for (const file of astroFiles) {
-	const text = await read(file);
-	for (const match of text.matchAll(/<img\b([^>]*)>/gi)) {
+	const markup = getAstroMarkup(await read(file));
+	for (const match of markup.matchAll(/<img\b([^>]*)>/gi)) {
 		if (!/\balt\s*=/.test(match[1])) fail(file, 'image.alt', 'Template image is missing an alt attribute. Use descriptive alt text or alt="" for decorative images.');
 	}
-	for (const match of text.matchAll(/<a\b([^>]*)target=["']_blank["']([^>]*)>/gi)) {
+	for (const match of markup.matchAll(/<a\b([^>]*)target=["']_blank["']([^>]*)>/gi)) {
 		const attributes = `${match[1]} ${match[2]}`;
 		const rel = attributes.match(/\brel=["']([^"']+)["']/i)?.[1] ?? '';
 		if (!/\bnoopener\b/i.test(rel) || !/\bnoreferrer\b/i.test(rel)) fail(file, 'link.new-context-rel', 'target="_blank" links must include noopener noreferrer.');
