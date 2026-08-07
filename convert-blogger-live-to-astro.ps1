@@ -89,6 +89,80 @@ function ConvertTo-Description {
     return $Text
 }
 
+function ConvertTo-BloggerImageUrl {
+    param([AllowEmptyString()][string]$Value)
+
+    if ([string]::IsNullOrWhiteSpace($Value)) {
+        return ''
+    }
+
+    if ($Value -notmatch 'blogger\.googleusercontent\.com') {
+        return $Value
+    }
+
+    return [regex]::Replace(
+        $Value,
+        '/s(?:32|72|96|144|160|200|220|240|320|400|480|512|600|640)(-[^/]+)?/',
+        {
+            param($Match)
+
+            $Modifier = $Match.Groups[1].Value
+            return "/s1280$Modifier/"
+        },
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+    )
+}
+
+function ConvertTo-SafeArticleHtml {
+    param([AllowEmptyString()][string]$Html)
+
+    if ([string]::IsNullOrEmpty($Html)) {
+        return ''
+    }
+
+    # Keep editorial HTML, styles, images, tables and embeds, but remove active script execution paths.
+    $Result = [regex]::Replace(
+        $Html,
+        '<script\b[^>]*>.*?</script>',
+        '',
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase `
+            -bor [System.Text.RegularExpressions.RegexOptions]::Singleline
+    )
+
+    $Result = [regex]::Replace(
+        $Result,
+        '<!--.*?-->',
+        '',
+        [System.Text.RegularExpressions.RegexOptions]::Singleline
+    )
+
+    # Inline event handlers are executable code and are never required for migrated editorial content.
+    $Result = [regex]::Replace(
+        $Result,
+        '\s+on[a-z0-9_-]+\s*=\s*(?:"[^"]*"|''[^'']*''|[^\s>]+)',
+        '',
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+    )
+
+    # Remove javascript: navigation/source attributes rather than rewriting their destination.
+    $Result = [regex]::Replace(
+        $Result,
+        '\s+(?:href|src|xlink:href)\s*=\s*(?:"\s*javascript:[^"]*"|''\s*javascript:[^'']*''|javascript:[^\s>]+)',
+        '',
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+    )
+
+    # srcdoc can create an executable nested document; migrated articles do not need it.
+    $Result = [regex]::Replace(
+        $Result,
+        '\s+srcdoc\s*=\s*(?:"[^"]*"|''[^'']*''|[^\s>]+)',
+        '',
+        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
+    )
+
+    return $Result.Trim()
+}
+
 function Get-SafeSlug {
     param(
         [string]$Url,
@@ -232,29 +306,13 @@ foreach ($Entry in $Posts) {
         )
 
         if ($ImageMatch.Success) {
-            $HeroImageUrl = [System.Net.WebUtility]::HtmlDecode(
-                $ImageMatch.Groups[1].Value
+            $HeroImageUrl = ConvertTo-BloggerImageUrl -Value (
+                [System.Net.WebUtility]::HtmlDecode($ImageMatch.Groups[1].Value)
             )
         }
     }
 
-    # إزالة السكربتات فقط مع إبقاء HTML والصور وYouTube iframe.
-    $CleanContent = [regex]::Replace(
-        $Content,
-        '<script\b[^>]*>.*?</script>',
-        '',
-        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase `
-            -bor [System.Text.RegularExpressions.RegexOptions]::Singleline
-    )
-
-    $CleanContent = [regex]::Replace(
-        $CleanContent,
-        '<!--.*?-->',
-        '',
-        [System.Text.RegularExpressions.RegexOptions]::Singleline
-    )
-
-    $CleanContent = $CleanContent.Trim()
+    $CleanContent = ConvertTo-SafeArticleHtml -Html $Content
 
     $Description = ConvertTo-Description `
         -Html $CleanContent `
