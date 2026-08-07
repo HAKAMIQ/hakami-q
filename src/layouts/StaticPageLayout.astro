@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
 
 interface Props {
 	title: string;
@@ -30,9 +31,10 @@ const {
 		<BaseHead title={`${title} | HAKAMIQ`} description={description} />
 	</head>
 	<body>
+		<SkipLink label={lang === 'ar' ? 'تخطي إلى المحتوى' : 'Skip to content'} />
 		<Header />
 
-		<main class="static-main">
+		<main id="main-content" tabindex="-1" class="static-main">
 			<div class="site-container static-shell">
 				<header class="static-hero fui-card">
 					<div class="static-hero-copy">
@@ -155,10 +157,11 @@ const {
 		background: var(--color-neutral-background-1);
 		color: var(--color-neutral-foreground-1);
 		text-decoration: none;
-		transition: background var(--duration-faster) var(--curve-easy-ease), border-color var(--duration-faster) var(--curve-easy-ease);
+		transition: background var(--motion-duration-control) var(--curve-easy-ease), border-color var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
-	.static-content :global(.contact-card:hover) {
+	.static-content :global(.contact-card:hover),
+	.static-content :global(.contact-card:focus-visible) {
 		border-color: var(--color-neutral-stroke-1-hover);
 		background: var(--color-neutral-background-1-hover);
 	}
