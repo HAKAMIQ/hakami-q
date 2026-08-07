@@ -41,6 +41,18 @@ These are intentional product decisions and must not be reversed by visual refac
 - Shapes: Fluent radius and stroke tokens are used instead of arbitrary per-component values.
 - Typography: system/native font stack with Fluent type tokens; the unused Atkinson pipeline was removed. `fluent-text.css` maps the documented Text size scale `100–1000` onto the existing type ramp and exposes regular/medium/semibold/bold weights, base/numeric/monospace fonts, logical start/end/center/justify alignment, block/nowrap/truncate, italic/underline/strikethrough, and a two-line clamp helper for card content.
 
+## Theme and tokens
+
+The product currently has one intentional theme: **Web Dark**. There is no light/dark theme switcher, so adding the official `setTheme()` runtime would not change user-visible behavior and would add unnecessary runtime/package cost.
+
+The equivalent static contract is:
+
+- `fluent-core-theme.css` is the single root token source.
+- Semantic component styles consume token aliases instead of duplicating raw values.
+- `color-scheme="dark"` and the browser `theme-color` are declared in `BaseHead.astro`.
+- Windows forced-colors/high-contrast behavior is handled by platform CSS rather than a separate hard-coded high-contrast theme.
+- If theme switching is added later, theme changes must update tokens at a root or scoped element while component CSS remains unchanged, matching the Fluent `setTheme` model.
+
 ## UX frameworks
 
 - Accessibility: WCAG-oriented semantic landmarks, Skip Link, focus-visible states, 44 px coarse-pointer targets, reduced motion, forced colors, accessible image semantics, modal drawer focus management.
@@ -54,45 +66,45 @@ These are intentional product decisions and must not be reversed by visual refac
 
 The site currently has no AI assistant, agent, model-generated response surface, or prompt-driven feature. Responsible-AI and system-prompt rules therefore remain an explicit future-feature boundary rather than a fake UI implementation. If AI is added, it requires a dedicated system prompt, harm analysis, interaction contract, and eval suite before release.
 
-## Web components currently represented
+## Fluent component applicability
 
 ### Used and governed
 
-- Accordion/disclosure behavior: expandable category groups retain simple disclosure mechanics, but the category hierarchy is exposed to assistive technology as a Tree because it is genuinely hierarchical navigation.
-- Badge: category/count metadata.
-- Breadcrumb: hierarchy on article, blog, and static pages.
-- Button / icon button: navigation disclosure, drawer controls, search clear controls.
-- Card: article previews and bounded content surfaces; one-action article cards use one full-card link.
-- Divider: semantic/visual separation.
-- Drawer: responsive blog sidebar; modal on smaller layouts with scrim, Escape dismissal, focus trap, and focus restoration.
-- Field/Input/Searchbox: search experiences have labels and clear controls; placeholders are supplementary.
-- Image: templates require `alt`; decorative duplicate imagery may use `alt=""`.
-- Link: navigation uses links; action-only interactions use buttons.
-- List: ranked/latest content and navigation lists.
-- Menu-like flyouts: header uses disclosure-navigation semantics rather than claiming ARIA Menu roles without the full Menu keyboard contract.
-- Nav: persistent top-level platform navigation and responsive hamburger pattern.
-- Popover/material surface: transient desktop navigation flyouts use acrylic semantics.
-- Text: native semantic elements remain the source of meaning while `.fui-text` utilities provide Fluent presentation. The site supports sizes `100–1000`, `nowrap`, `truncate`, `italic`, `underline`, `strikethrough`, `block`, four weights, logical alignment, base/numeric/monospace fonts, and stable tabular numerals for metadata such as dates, counts, page numbers, and badges.
-- Tooltip: compact/icon controls that already expose native `title` hints are progressively upgraded to a single lightweight Fluent tooltip surface. The tooltip appears on hover and keyboard focus, uses `role="tooltip"` plus `aria-describedby`, supports logical positioning, closes with Escape, and respects reduced motion. Native title text is removed after enhancement to avoid duplicate tooltip UI.
-- Tree: the category browser is a two-level navigation tree. The runtime assigns `tree`, `treeitem`, and `group` semantics and implements roving focus plus Arrow Up/Down, Arrow Left/Right, Home, and End keyboard navigation while keeping the existing visual design and links.
+- **Accordion / disclosure**: expandable category groups keep simple disclosure mechanics; the category hierarchy is additionally exposed as a Tree because it is genuinely hierarchical navigation.
+- **Badge**: category labels and article/count metadata.
+- **Button / icon button**: navigation disclosure, drawer controls, search clear controls, pagination-related actions where appropriate.
+- **Divider**: semantic/visual separation through the shared divider primitive and normalized `<hr>` treatment.
+- **Drawer**: responsive blog sidebar; modal on smaller layouts with scrim, Escape dismissal, focus trap, and focus restoration.
+- **Dropdown / Select**: the article page-size selector uses a labeled native `<select class="fui-select">`; native semantics are retained instead of replacing it with a heavier custom popup.
+- **Field / Label**: field stacks, labels, hints and validation messages are defined centrally. Search and page-size controls keep persistent associated labels; placeholders are hints, not label replacements.
+- **Image**: template images require meaningful `alt` text or `alt=""` when decorative; loading priority and decoding are handled according to context.
+- **Link**: navigation remains semantic links; action-only interactions remain buttons. New-window links disclose the new context and use safe `rel` values.
+- **Menu-like flyouts**: the header deliberately uses disclosure-navigation semantics instead of claiming ARIA Menu/MenuItem behavior without the complete menu keyboard model.
+- **Text**: native semantic elements remain the source of meaning while `.fui-text` utilities provide Fluent presentation. Sizes `100–1000`, wrapping/truncation, four weights, logical alignment, font variants and stable numeric rendering are available.
+- **TextInput contract**: native text inputs have centralized outline/filled appearances, small/medium/large sizing, block sizing, hover/focus/disabled/readonly states and tokenized styling. Current free-text entry points are Searchbox composites, so no redundant standalone TextInput is rendered just to demonstrate the primitive.
+- **Tooltip**: compact/icon controls are progressively enhanced from supplemental `title` hints to one shared tooltip surface. Hover and keyboard focus are supported; Escape closes it; `role="tooltip"` and `aria-describedby` are applied.
+- **Tree / Tree Item**: the category browser is a two-level navigation tree with `tree`, `treeitem`, and `group` semantics, roving focus, Arrow Up/Down/Left/Right, Home and End behavior.
 
-### Not currently needed
+### Contract ready, rendered only when a real task requires it
 
-Avatar, Avatar group, Carousel, Checkbox, Combobox, Dialog, Dropdown, Info label, Persona, Progress bar, Radio group, Rating, Select, Skeleton, Slider, Spin button, Spinner, Switch, Tablist, Tag, Tag picker, TextArea, Toast, Toolbar.
+- **TextArea**: appearance, sizing, block mode, resize modes, auto-resize minimum block size, validation, disabled and readonly states are implemented centrally. No TextArea is rendered because the site currently has no multi-line user-input feature. Comments, feedback, or a real contact form may activate it later.
+- **MessageBar**: visual status primitives exist, but no persistent message bar is inserted without an actual user-facing status/error condition.
+- **ProgressBar**: native progress styling exists, but no progress indicator is shown for synchronous/static work.
+- **Dialog**: native dialog styling exists as a base contract, but no modal is introduced without a task that requires one.
 
-These are not missing requirements. They are intentionally absent because there is no current task that needs them. Adding unused controls would increase cognitive and implementation complexity and conflict with the Fluent principle of focus.
+### Not currently applicable
 
-### TextArea applicability
+Avatar, Checkbox, Combobox, Radio, RadioGroup, Rating Display, Slider, Spinner, Switch, Tablist and Toolbar are currently N/A because the site has no corresponding person identity, multi-choice, exclusive-choice, rating, continuous-value, asynchronous-wait, binary-setting, tabbed-view or toolbar task.
 
-There is currently no multi-line user input anywhere in the site source, so no TextArea is rendered. Adding a fake TextArea would create a control with no task behind it. When a real feature such as comments, feedback, or a contact form needs multi-line input, it must implement the documented Fluent TextArea contract deliberately: an associated label, appearance and size, resize or auto-resize behavior, autocomplete/spellcheck decisions, required/maxlength/minlength rules where relevant, disabled/readonly states, and native constraint validation. Auto-resize must use a minimum block size instead of a fixed height.
+These are not missing requirements. Adding unused controls would increase cognitive load, bundle/maintenance cost, and surface area without adding product value.
 
 ## Automated gates
 
-`npm run ui:quality` checks the source-level Fluent/product invariants before production builds.
+`npm run ui:quality` checks source-level Fluent/product invariants before production builds.
 
 `npm run ui:quality:report` writes `reports/fluent-ui-quality.json` for CI artifacts and regression tracking.
 
-`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, token consumption, Fluent Text, Tooltip, Tree, and component applicability.
+`npm run web:quality` checks Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, theme/tokens, Text, Field/Label/TextInput/Select/TextArea, Tooltip, Tree, and component applicability.
 
 The gates currently check:
 
@@ -108,8 +120,9 @@ The gates currently check:
 - Accessible labels and safe `rel` values on new-tab links.
 - Compressed Astro HTML and cacheable shared CSS.
 - No accidental React-only Fluent runtime or global third-party script dependency.
-- Required Fluent token definitions and semantic-token consumption by reusable components.
+- Root Web Dark theme, browser color-scheme, browser theme color and required token definitions.
 - Fluent Text size utilities `100–1000`, documented weights, logical RTL-safe alignment, font variants, truncation/nowrap/block behavior, and tabular numeric rendering.
+- Field/Label/TextInput/Select/TextArea appearance, size, validation, disabled/readonly and auto-resize contracts.
 - Tooltip focus/hover/Escape behavior, `role="tooltip"`, `aria-describedby`, logical positioning, semantic tokens, and reduced-motion styling.
 - Tree `tree/treeitem/group` semantics and Arrow/Home/End keyboard behavior for the category hierarchy.
-- Discovery of any future `<textarea>` so its Fluent TextArea contract can be reviewed before shipping.
+- Discovery of future Checkbox, Radio, Slider, Dialog, ProgressBar or TextArea UI so its specific Fluent contract can be reviewed before shipping.
