@@ -1,6 +1,5 @@
 /* Persistent desktop category navigation.
- * Keeps every top-level section visible, removes drag/scroll behavior,
- * and applies Fluent 2 Nav/Menu interaction states.
+ * Persistent surfaces stay solid; transient menus use Fluent acrylic.
  */
 
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
@@ -9,16 +8,16 @@
 		z-index: 1500;
 		width: 100%;
 		border-block: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: color-mix(in srgb, var(--color-neutral-background-2) 94%, transparent);
-		box-shadow: var(--shadow-4);
-		backdrop-filter: blur(18px) saturate(1.08);
+		background: var(--material-solid);
+		box-shadow: none;
 	}
 
 	.site-header .main-nav.is-sticky {
 		position: fixed !important;
 		inset: 0 0 auto 0;
 		z-index: 2500;
-		box-shadow: var(--shadow-16);
+		background: var(--material-solid-raised);
+		box-shadow: var(--shadow-8);
 	}
 
 	.site-header .nav-sticky-placeholder {
@@ -57,9 +56,9 @@
 		background: transparent;
 		color: var(--color-neutral-foreground-2);
 		transition:
-			background var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease),
-			box-shadow var(--duration-faster) var(--curve-easy-ease);
+			background var(--motion-duration-control) var(--curve-easy-ease),
+			color var(--motion-duration-control) var(--curve-easy-ease),
+			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
 	.site-header .home-menu-link {
@@ -95,7 +94,7 @@
 	.site-header .menu-direct.is-active,
 	.site-header .menu-trigger.has-active-child {
 		background: var(--color-brand-background-2);
-		box-shadow: inset 0 -3px var(--color-brand-stroke-1);
+		box-shadow: inset 0 -2px var(--color-brand-stroke-1);
 		color: var(--color-neutral-foreground-1);
 	}
 
@@ -113,8 +112,17 @@
 	.site-header .menu-surface,
 	.site-header .submenu-surface {
 		border-color: var(--color-neutral-stroke-1);
-		background: var(--color-neutral-background-1);
+		border-radius: var(--radius-xlarge);
+		background: var(--material-acrylic-fallback);
 		box-shadow: var(--shadow-16);
+	}
+
+	@supports (backdrop-filter: blur(1px)) {
+		.site-header .menu-surface,
+		.site-header .submenu-surface {
+			background: var(--material-acrylic);
+			backdrop-filter: blur(var(--material-acrylic-blur)) saturate(1.08);
+		}
 	}
 
 	.site-header .menu-list > a:hover,
