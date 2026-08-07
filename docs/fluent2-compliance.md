@@ -39,7 +39,7 @@ These are intentional product decisions and must not be reversed by visual refac
 - Material: persistent surfaces are solid; acrylic is reserved for transient desktop flyouts.
 - Motion: short, purposeful property-specific transitions; reduced-motion preferences are honored.
 - Shapes: Fluent radius and stroke tokens are used instead of arbitrary per-component values.
-- Typography: system/native font stack with Fluent type tokens; the unused Atkinson pipeline was removed.
+- Typography: system/native font stack with Fluent type tokens; the unused Atkinson pipeline was removed. `fluent-text.css` maps the documented Text size scale `100–1000` onto the existing type ramp and exposes regular/medium/semibold/bold weights, base/numeric/monospace fonts, logical start/end/center/justify alignment, block/nowrap/truncate, italic/underline/strikethrough, and a two-line clamp helper for card content.
 
 ## UX frameworks
 
@@ -72,7 +72,7 @@ The site currently has no AI assistant, agent, model-generated response surface,
 - Menu-like flyouts: header uses disclosure-navigation semantics rather than claiming ARIA Menu roles without the full Menu keyboard contract.
 - Nav: persistent top-level platform navigation and responsive hamburger pattern.
 - Popover/material surface: transient desktop navigation flyouts use acrylic semantics.
-- Text: shared typography tokens.
+- Text: native semantic elements remain the source of meaning while `.fui-text` utilities provide Fluent presentation. The site supports sizes `100–1000`, `nowrap`, `truncate`, `italic`, `underline`, `strikethrough`, `block`, four weights, logical alignment, base/numeric/monospace fonts, and stable tabular numerals for metadata such as dates, counts, page numbers, and badges.
 
 ### Not currently needed
 
@@ -88,7 +88,7 @@ If a future feature genuinely needs one of these interactions, use the correspon
 
 `npm run ui:quality:report` writes `reports/fluent-ui-quality.json` for CI artifacts and regression tracking.
 
-`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, and token consumption.
+`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, token consumption, and the Fluent Text presentation contract.
 
 The gates currently check:
 
@@ -105,3 +105,4 @@ The gates currently check:
 - Compressed Astro HTML and cacheable shared CSS.
 - No accidental React-only Fluent runtime or global third-party script dependency.
 - Required Fluent token definitions and semantic-token consumption by reusable components.
+- Fluent Text size utilities `100–1000`, documented weights, logical RTL-safe alignment, font variants, truncation/nowrap/block behavior, and tabular numeric rendering.
