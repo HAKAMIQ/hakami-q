@@ -6,6 +6,17 @@ This document records how Fluent 2 guidance is applied to the Astro site. The go
 
 HAKAMIQ is a server-rendered/static Astro website. It uses semantic HTML plus a tokenized Fluent 2 CSS layer. React-only components are not introduced just to imitate Fluent React. A Fluent component is added only when the product has the corresponding interaction or information need.
 
+The Fluent UI Web Components introduction is treated as an architecture contract, not as a requirement to install a runtime package everywhere. The site follows its six stated goals:
+
+- **Customizable**: HAKAMIQ branding is expressed through semantic Fluent aliases and theme tokens instead of hard-coded per-component colors.
+- **Performance**: Astro emits compressed HTML, noncritical media is lazy loaded, and interaction code remains framework-free.
+- **Bundle size**: shared CSS is emitted as external cacheable assets; page-specific functionality is not replaced with a large framework/runtime bundle.
+- **Interoperability**: controls use standards-based HTML/DOM behavior and remain compatible with modern browsers without React-specific assumptions.
+- **Accessibility**: UI contracts target WCAG 2.2 through semantic elements, keyboard behavior, focus management, labels, landmarks, reduced motion, and forced-colors support.
+- **Design to Code**: reusable components consume the central Fluent token layer so design-language changes propagate through aliases rather than one-off values.
+
+Web Components may be introduced when lifecycle or encapsulation provides concrete value. Native semantic HTML remains preferred for simple links, buttons, selects, navigation, and article content because it is lighter and already exposes the correct browser semantics.
+
 ## Product invariants
 
 These are intentional product decisions and must not be reversed by visual refactoring:
@@ -77,7 +88,9 @@ If a future feature genuinely needs one of these interactions, use the correspon
 
 `npm run ui:quality:report` writes `reports/fluent-ui-quality.json` for CI artifacts and regression tracking.
 
-The gate currently checks:
+`npm run web:quality` checks the Fluent UI Web Components architecture principles that matter to this Astro implementation: compact output, cacheable shared CSS, framework interoperability, absence of global third-party runtime scripts, and token consumption.
+
+The gates currently check:
 
 - Skip Link/main landmark coverage.
 - Article title/content ordering and removed article metadata UI.
@@ -89,3 +102,6 @@ The gate currently checks:
 - Removal of the legacy font pipeline.
 - `alt` attributes on template images.
 - Accessible labels and safe `rel` values on new-tab links.
+- Compressed Astro HTML and cacheable shared CSS.
+- No accidental React-only Fluent runtime or global third-party script dependency.
+- Required Fluent token definitions and semantic-token consumption by reusable components.
