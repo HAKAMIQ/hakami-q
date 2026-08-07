@@ -137,7 +137,7 @@
 	--color-neutral-stroke-alpha: rgba(255, 255, 255, 0.10);
 	--color-neutral-stroke-alpha-2: rgba(255, 255, 255, 0.20);
 
-	/* Fluent brand aliases. */
+	/* Fluent brand aliases. Brand is reserved for identity and interaction emphasis. */
 	--color-brand-background: var(--color-brand-70);
 	--color-brand-background-hover: var(--color-brand-80);
 	--color-brand-background-pressed: var(--color-brand-40);
@@ -156,7 +156,7 @@
 	--color-brand-background-alpha: rgba(215, 16, 71, 0.14);
 	--color-brand-background-alpha-hover: rgba(215, 16, 71, 0.20);
 
-	/* Status aliases used by message bars and imported article content. */
+	/* Status aliases: use only when status/urgency has semantic meaning. */
 	--color-status-danger-background-1: #3b0b10;
 	--color-status-danger-background-2: #5a1018;
 	--color-status-danger-background-3: #c50f1f;
@@ -171,7 +171,7 @@
 	--color-status-success-foreground: #54b054;
 	--color-status-success-border: #0e7a0d;
 
-	/* Fluent spacing ramp (px). */
+	/* Fluent spacing ramp. The system is based on a 4px rhythm with 2/6/10px optical helpers. */
 	--spacing-none: 0px;
 	--spacing-20: 2px;
 	--spacing-40: 4px;
@@ -202,8 +202,8 @@
 	--stroke-thicker: 3px;
 	--stroke-thickest: 4px;
 
-	/* Fluent Web type ramp. */
-	--font-family-base: "Segoe UI Variable", "Segoe UI", Tahoma, Arial, sans-serif;
+	/* Fluent Web type ramp. Prefer the native system face on each platform. */
+	--font-family-base: system-ui, "Segoe UI Variable", "Segoe UI", Tahoma, Arial, sans-serif;
 	--font-family-monospace: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 	--font-weight-regular: 400;
 	--font-weight-semibold: 600;
@@ -229,11 +229,17 @@
 	--font-size-display: 68px;
 	--line-height-display: 92px;
 
-	/* Long-form reading token: deliberately one step roomier than UI Body 1. */
+	/* Editorial reading is intentionally roomier than UI Body 1. */
 	--font-size-reading: 16px;
 	--line-height-reading: 28px;
 
-	/* Fluent motion tokens. */
+	/* Fluent system icon sizing. 12px is informational; interactive icons start at 16px. */
+	--icon-size-information: 12px;
+	--icon-size-small: 16px;
+	--icon-size-medium: 20px;
+	--icon-size-large: 24px;
+
+	/* Fluent motion tokens: quick, purposeful and predictable. */
 	--duration-ultra-fast: 50ms;
 	--duration-faster: 100ms;
 	--duration-fast: 150ms;
@@ -247,6 +253,11 @@
 	--curve-easy-ease-max: cubic-bezier(0.8, 0, 0.2, 1);
 	--curve-accelerate-mid: cubic-bezier(0.7, 0, 1, 0.5);
 	--curve-decelerate-mid: cubic-bezier(0.1, 0.9, 0.2, 1);
+	--motion-duration-control: var(--duration-faster);
+	--motion-duration-container: var(--duration-normal);
+	--motion-duration-page: var(--duration-fast);
+	--motion-ease-enter: var(--curve-decelerate-mid);
+	--motion-ease-exit: var(--curve-accelerate-mid);
 
 	/* Fluent dark elevation ramp: ambient + key shadow pairing. */
 	--color-neutral-shadow-ambient: rgba(0, 0, 0, 0.24);
@@ -262,14 +273,24 @@
 	--shadow-28: 0 14px 28px var(--color-neutral-shadow-key-darker), 0 0 4px var(--color-neutral-shadow-ambient-darker);
 	--shadow-64: 0 32px 64px var(--color-neutral-shadow-key-darker), 0 0 8px var(--color-neutral-shadow-ambient-darker);
 
-	/* Site-level semantic aliases. */
+	/* Fluent material aliases. Solid is the default; acrylic is reserved for transient flyouts/menus. */
+	--material-solid: var(--color-neutral-background-2);
+	--material-solid-raised: var(--color-neutral-background-1);
+	--material-acrylic: rgba(41, 41, 41, 0.88);
+	--material-acrylic-fallback: var(--color-neutral-background-1);
+	--material-acrylic-blur: 20px;
+	--material-smoke: rgba(0, 0, 0, 0.64);
+
+	/* Site-level layout aliases. */
 	--control-height-small: 32px;
 	--control-height-medium: 40px;
 	--control-height-touch: 44px;
 	--site-width: 1440px;
+	--editorial-width: 1160px;
 	--content-width: 960px;
 	--reading-width: 880px;
 	--page-gutter: var(--spacing-240);
+	--section-gap: var(--spacing-480);
 	--focus-ring: 0 0 0 2px var(--color-neutral-background-4), 0 0 0 4px var(--color-brand-stroke-1);
 
 	/* Compatibility aliases retained for migrated templates/content. */
@@ -298,9 +319,17 @@
 	--box-shadow: var(--shadow-16);
 }
 
+@media (max-width: 1023px) {
+	:root {
+		--page-gutter: var(--spacing-200);
+		--section-gap: var(--spacing-400);
+	}
+}
+
 @media (max-width: 639px) {
 	:root {
 		--page-gutter: var(--spacing-160);
+		--section-gap: var(--spacing-320);
 	}
 }
 
