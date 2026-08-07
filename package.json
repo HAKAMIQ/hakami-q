@@ -7,9 +7,12 @@
   },
   "scripts": {
     "sync:blogger-pages": "node scripts/sync-blogger-pages.mjs",
+    "content:quality": "node scripts/content-quality.mjs",
+    "content:quality:strict": "node scripts/content-quality.mjs --strict",
+    "content:quality:report": "node scripts/content-quality.mjs --json reports/content-quality.json",
     "predev": "npm run sync:blogger-pages",
     "dev": "astro dev",
-    "prebuild": "npm run sync:blogger-pages",
+    "prebuild": "npm run sync:blogger-pages && npm run content:quality",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
