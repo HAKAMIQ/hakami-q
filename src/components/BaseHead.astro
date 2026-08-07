@@ -2,6 +2,7 @@
 import '../styles/fluent-core-theme.css';
 import '../styles/global.css';
 import '../styles/fluent-text.css';
+import '../styles/fluent-tooltip.css';
 import '../styles/fluent-web-components.css';
 import '../styles/fluent-native-controls.css';
 import '../styles/header-persistent-nav.css';
@@ -33,6 +34,8 @@ const { title, description, image = FallbackImage } = Astro.props;
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
 <meta name="generator" content={Astro.generator} />
 <script src="/header-persistent-nav.js" defer></script>
+<script src="/fluent-tooltip.js" defer></script>
+<script src="/fluent-category-tree.js" defer></script>
 
 <link rel="canonical" href={canonicalURL} />
 <title>{title}</title>
