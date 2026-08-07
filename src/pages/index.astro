@@ -9,6 +9,20 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+const genericLabels = new Set([
+	'articles',
+	'article',
+	'gaming articles',
+	'gaming article',
+	'مقالات',
+	'المقالات',
+	'ألعاب',
+	'العاب',
+]);
+
+const getDisplayCategory = (labels: string[] = []) =>
+	labels.find((label) => !genericLabels.has(label.trim().toLocaleLowerCase('en'))) ?? null;
+
 const featuredPost = posts[0];
 const latestPosts = posts.slice(1, 7);
 const searchItems = posts.map((post) => ({
@@ -89,7 +103,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 									</div>
 
 									<div class="featured-content">
-										{featuredPost.data.labels?.[0] && <span class="article-category">{featuredPost.data.labels[0]}</span>}
+										{getDisplayCategory(featuredPost.data.labels) && <span class="article-category">{getDisplayCategory(featuredPost.data.labels)}</span>}
 										<h2>{featuredPost.data.title}</h2>
 										<p>{featuredPost.data.description}</p>
 									</div>
@@ -109,7 +123,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 											</div>
 
 											<div class="post-card-content">
-												{post.data.labels?.[0] && <span class="article-category compact">{post.data.labels[0]}</span>}
+												{getDisplayCategory(post.data.labels) && <span class="article-category compact">{getDisplayCategory(post.data.labels)}</span>}
 												<h2>{post.data.title}</h2>
 											</div>
 										</a>
@@ -429,7 +443,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	}
 
 	.content-section { padding-block: var(--spacing-120) var(--spacing-160); }
-	.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 1200px); }
+	.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 1120px); }
 
 	.section-heading {
 		display: flex;
@@ -447,19 +461,37 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	.section-action { flex: 0 0 auto; }
 	.section-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
 
-	.articles-layout { display: grid; gap: var(--spacing-140); }
-	.featured-card, .post-card { overflow: hidden; }
+	.articles-layout { display: grid; gap: var(--spacing-160); }
+
+	.featured-card,
+	.post-card {
+		overflow: hidden;
+		border-color: var(--color-neutral-stroke-2);
+		background: var(--color-neutral-background-2);
+		transition:
+			transform var(--duration-normal) var(--curve-decelerate-mid),
+			border-color var(--duration-faster) var(--curve-easy-ease),
+			box-shadow var(--duration-normal) var(--curve-decelerate-mid);
+	}
+
+	.featured-card:hover,
+	.post-card:hover {
+		transform: translateY(-2px);
+		border-color: var(--color-neutral-stroke-1-hover);
+		box-shadow: var(--shadow-8);
+	}
 
 	.featured-card > a {
 		display: grid;
-		grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
-		height: 244px;
+		grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
+		height: 228px;
 		color: inherit;
 		direction: ltr;
 		text-decoration: none;
 	}
 
-	.featured-image {
+	.featured-image,
+	.post-thumb {
 		min-width: 0;
 		overflow: hidden;
 		background: var(--color-neutral-background-3);
@@ -471,7 +503,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: var(--spacing-200);
+		padding: var(--spacing-180) var(--spacing-200);
 		direction: rtl;
 		text-align: right;
 	}
@@ -479,12 +511,13 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	.article-category {
 		display: inline-flex;
 		max-width: 100%;
-		min-height: 24px;
+		min-height: 22px;
 		align-items: center;
 		padding-inline: var(--spacing-80);
+		border: var(--stroke-thin) solid var(--color-brand-stroke-2);
 		border-radius: var(--radius-circular);
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground);
+		background: var(--color-brand-background-alpha);
+		color: var(--color-brand-foreground-strong);
 		font-size: var(--font-size-caption-1);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-caption-1);
@@ -494,9 +527,9 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	}
 
 	.article-category.compact {
-		min-height: 20px;
-		padding-inline: var(--spacing-60);
-		font-size: 0.68rem;
+		min-height: 22px;
+		padding-inline: var(--spacing-70);
+		font-size: var(--font-size-caption-1);
 	}
 
 	.featured-content h2 {
@@ -522,14 +555,16 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 
 	.featured-image img,
 	.post-thumb img {
+		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center;
 		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
 	}
 
 	.featured-card:hover img,
-	.post-card:hover img { transform: scale(1.02); }
+	.post-card:hover img { transform: scale(1.018); }
 
 	.image-placeholder {
 		display: grid;
@@ -548,7 +583,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	.latest-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: var(--spacing-140);
+		gap: var(--spacing-160);
 	}
 
 	.post-card > a {
@@ -560,21 +595,18 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		text-decoration: none;
 	}
 
-	.post-thumb {
-		aspect-ratio: 2 / 1;
-		overflow: hidden;
-		background: var(--color-neutral-background-3);
-	}
+	.post-thumb { aspect-ratio: 2.08 / 1; }
 
 	.post-card-content {
 		display: flex;
-		min-height: 92px;
+		min-height: 98px;
 		min-width: 0;
 		flex: 1;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: var(--spacing-60);
-		padding: var(--spacing-100) var(--spacing-120);
+		justify-content: flex-start;
+		gap: var(--spacing-70);
+		padding: var(--spacing-120) var(--spacing-140) var(--spacing-140);
 		text-align: right;
 	}
 
@@ -589,7 +621,8 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	}
 
 	@media (max-width: 1023px) {
-		.featured-card > a { grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); height: 232px; }
+		.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 960px); }
+		.featured-card > a { grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr); height: 220px; }
 		.latest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
@@ -601,6 +634,8 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		.featured-image { aspect-ratio: 16 / 8.5; }
 		.featured-content { padding: var(--spacing-140); }
 		.featured-content h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.featured-card:hover,
+		.post-card:hover { transform: none; }
 	}
 
 	@media (max-width: 639px) {
@@ -611,10 +646,10 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		.section-heading { gap: var(--spacing-80); }
 		.section-action span { display: none; }
 		.section-action { width: 36px; height: 36px; justify-content: center; padding: 0; }
-		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
+		.latest-grid { grid-template-columns: 1fr; gap: var(--spacing-120); }
 		.post-card > a { display: grid; grid-template-columns: 124px minmax(0, 1fr); }
-		.post-thumb { height: 100%; min-height: 102px; aspect-ratio: auto; }
-		.post-card-content { min-height: 102px; justify-content: center; }
+		.post-thumb { height: 100%; min-height: 108px; aspect-ratio: auto; }
+		.post-card-content { min-height: 108px; justify-content: center; padding: var(--spacing-100) var(--spacing-120); }
 	}
 
 	@media (max-width: 420px) {
