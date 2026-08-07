@@ -33,10 +33,19 @@ const postItems = posts.map((post) => ({
 		<main>
 			<section class="page-hero">
 				<div class="site-container">
-					<span>مكتبة HAKAMIQ</span>
+					<nav class="fui-breadcrumb page-breadcrumb" aria-label="مسار التنقل">
+						<ol>
+							<li><a href="/">الرئيسية</a></li>
+							<li aria-current="page">المقالات</li>
+						</ol>
+					</nav>
+
+					<span class="page-eyebrow">مكتبة HAKAMIQ</span>
 					<h1>المقالات والشروحات</h1>
 					<p>شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم</p>
-					<strong id="post-count" data-total={posts.length}>{posts.length} مقال</strong>
+					<strong class="fui-badge fui-badge--brand post-count" id="post-count" data-total={posts.length} aria-live="polite">
+						{posts.length} مقال
+					</strong>
 				</div>
 			</section>
 
@@ -48,25 +57,29 @@ const postItems = posts.map((post) => ({
 				></div>
 
 				<div class="site-container blog-layout">
+					<BlogSidebar posts={posts} />
+
 					<div class="posts-content">
-						<div class="filter-status" id="filter-status" hidden>
+						<div class="filter-status fui-message-bar" id="filter-status" role="status" hidden>
 							<p>
-								القسم الحالي
+								<span>القسم الحالي</span>
 								<strong id="filter-name"></strong>
 							</p>
-							<a href="/blog">عرض جميع المقالات</a>
+							<a class="fui-button fui-button--subtle" href="/blog">عرض جميع المقالات</a>
 						</div>
 
-						<p class="no-results" id="no-results" hidden>لا توجد مقالات مطابقة لهذا القسم حاليا</p>
+						<p class="no-results fui-message-bar fui-message-bar--warning" id="no-results" role="status" hidden>
+							لا توجد مقالات مطابقة لهذا القسم حاليا
+						</p>
 
 						<div class="posts-grid" id="posts-grid">
 							{
 								postItems.map(({ post, categories }, index) => (
 									<article
-										class:list={['post-card', { featured: index === 0 }]}
+										class:list={['post-card', 'fui-card', 'fui-card--interactive', { featured: index === 0 }]}
 										data-categories={categories.join(' ')}
 									>
-										<a href={`/blog/${post.id}/`}>
+										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
 											<div class="post-image">
 												{post.data.heroImageUrl ? (
 													<img
@@ -82,7 +95,9 @@ const postItems = posts.map((post) => ({
 											</div>
 
 											<div class="post-content">
-												{post.data.labels.length > 0 && <span class="post-label">{post.data.labels[0]}</span>}
+												{post.data.labels.length > 0 && (
+													<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
+												)}
 												<h2>{post.data.title}</h2>
 												<p>{post.data.description}</p>
 												<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
@@ -93,8 +108,6 @@ const postItems = posts.map((post) => ({
 							}
 						</div>
 					</div>
-
-					<BlogSidebar posts={posts} />
 				</div>
 			</section>
 		</main>
@@ -144,7 +157,11 @@ const postItems = posts.map((post) => ({
 		background: var(--color-neutral-background-2);
 	}
 
-	.page-hero span {
+	.page-breadcrumb {
+		margin-bottom: 14px;
+	}
+
+	.page-eyebrow {
 		display: inline-block;
 		margin-bottom: 6px;
 		color: var(--color-brand-foreground);
@@ -167,17 +184,8 @@ const postItems = posts.map((post) => ({
 		line-height: 1.75;
 	}
 
-	.page-hero strong {
-		display: inline-flex;
-		min-height: 28px;
-		align-items: center;
+	.post-count {
 		margin-top: 14px;
-		padding-inline: 10px;
-		border-radius: 999px;
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground);
-		font-size: 0.72rem;
-		font-weight: 650;
 	}
 
 	.posts-section {
@@ -191,26 +199,17 @@ const postItems = posts.map((post) => ({
 		align-items: start;
 	}
 
+	.blog-layout :global(.sidebar-region) {
+		grid-column: 1;
+	}
+
 	.posts-content {
 		min-width: 0;
 		grid-column: 2;
 	}
 
-	.blog-layout :global(.blog-sidebar) {
-		grid-column: 1;
-	}
-
 	.filter-status {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 16px;
 		margin-bottom: 16px;
-		padding: 10px 12px;
-		border: 1px solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-medium);
-		background: var(--color-neutral-background-2);
-		box-shadow: var(--shadow-2);
 	}
 
 	.filter-status[hidden],
@@ -232,32 +231,9 @@ const postItems = posts.map((post) => ({
 		color: var(--color-brand-foreground);
 	}
 
-	.filter-status a {
-		display: inline-flex;
-		min-height: 32px;
-		align-items: center;
-		padding-inline: 10px;
-		border-radius: var(--radius-small);
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground);
-		font-size: 0.75rem;
-		font-weight: 650;
-		text-decoration: none;
-	}
-
-	.filter-status a:hover,
-	.filter-status a:focus-visible {
-		background: var(--color-brand-background-2-hover);
-		color: var(--color-neutral-foreground-1);
-		outline: none;
-	}
-
 	.no-results {
 		margin: 0 0 16px;
-		padding: 24px;
-		border: 1px dashed var(--color-neutral-stroke-1);
-		border-radius: var(--radius-medium);
-		color: var(--color-neutral-foreground-3);
+		justify-content: center;
 		text-align: center;
 	}
 
@@ -269,20 +245,10 @@ const postItems = posts.map((post) => ({
 
 	.post-card {
 		overflow: hidden;
-		border: 1px solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-2);
-		box-shadow: var(--shadow-4);
-		transition:
-			border-color var(--duration-normal) var(--curve-easy-ease),
-			box-shadow var(--duration-normal) var(--curve-easy-ease),
-			transform var(--duration-normal) var(--curve-easy-ease);
 	}
 
-	.post-card:hover {
-		border-color: var(--color-brand-stroke-2);
-		box-shadow: var(--shadow-8);
-		transform: translateY(-2px);
+	.post-card:focus-within {
+		box-shadow: var(--fui-focus-ring), var(--shadow-8);
 	}
 
 	.post-card.featured {
@@ -292,11 +258,16 @@ const postItems = posts.map((post) => ({
 	.post-card > a {
 		display: grid;
 		height: 100%;
+		color: inherit;
 		text-decoration: none;
 	}
 
 	.post-card.featured > a {
 		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+	}
+
+	.post-card > a:focus-visible {
+		outline: none;
 	}
 
 	.post-image {
@@ -341,16 +312,7 @@ const postItems = posts.map((post) => ({
 	}
 
 	.post-label {
-		display: inline-flex;
-		min-height: 24px;
-		align-items: center;
 		margin-bottom: 8px;
-		padding-inline: 8px;
-		border-radius: 999px;
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground);
-		font-size: 0.66rem;
-		font-weight: 650;
 	}
 
 	.post-content h2 {
@@ -404,11 +366,20 @@ const postItems = posts.map((post) => ({
 	@media (max-width: 1020px) {
 		.blog-layout {
 			grid-template-columns: 1fr;
+			gap: 14px;
 		}
 
-		.posts-content,
-		.blog-layout :global(.blog-sidebar) {
+		.blog-layout :global(.sidebar-region),
+		.posts-content {
 			grid-column: 1;
+		}
+
+		.blog-layout :global(.sidebar-region) {
+			grid-row: 1;
+		}
+
+		.posts-content {
+			grid-row: 2;
 		}
 	}
 
@@ -470,7 +441,6 @@ const postItems = posts.map((post) => ({
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.post-card,
 		.post-image img {
 			transition: none;
 		}
