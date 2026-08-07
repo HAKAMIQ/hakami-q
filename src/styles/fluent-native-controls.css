@@ -169,7 +169,7 @@ select,
 	cursor: pointer;
 }
 
-:where(input, textarea, select):read-only,
+:where(input, textarea):read-only,
 .fui-text-input[readonly],
 .fui-textarea[readonly] {
 	border-color: var(--color-neutral-stroke-3);
