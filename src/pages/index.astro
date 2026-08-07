@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const posts = (await getCollection('blog')).sort(
@@ -53,9 +54,10 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	</head>
 
 	<body>
+		<SkipLink />
 		<Header />
 
-		<main>
+		<main id="main-content" tabindex="-1">
 			<section class="home-search-section" aria-labelledby="home-search-title">
 				<div class="site-container">
 					<div class="home-search-wrap">
@@ -67,18 +69,21 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 								<input
 									id="home-search-input"
 									type="search"
-									placeholder="ابحث عن PCSX2 أو RPCS3 أو Nintendo Switch..."
+									placeholder="ابحث عن PCSX2 أو RPCS3 أو Nintendo Switch…"
 									autocomplete="off"
 									spellcheck="false"
 									aria-label="بحث في المقالات"
 									aria-controls="home-search-results"
+									aria-describedby="home-search-help"
 									aria-expanded="false"
 								/>
 								<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
 									<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
 								</button>
 							</div>
-							<div class="home-search-results" id="home-search-results" role="listbox" aria-label="نتائج البحث" hidden></div>
+							<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
+							<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
+							<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
 						</div>
 
 						<nav class="browse-shortcuts" aria-label="تصفح سريع حسب المنصة">
@@ -106,7 +111,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 								<a href={`/blog/${featuredPost.id}/`} aria-label={featuredPost.data.title}>
 									<div class="featured-image">
 										{featuredPost.data.heroImageUrl ? (
-											<img src={featuredPost.data.heroImageUrl} alt={featuredPost.data.title} loading="eager" fetchpriority="high" referrerpolicy="no-referrer" />
+											<img src={featuredPost.data.heroImageUrl} alt={featuredPost.data.title} loading="eager" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" />
 										) : (
 											<div class="image-placeholder">H</div>
 										)}
@@ -125,7 +130,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
 											<div class="post-thumb">
 												{post.data.heroImageUrl ? (
-													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" referrerpolicy="no-referrer" />
+													<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
 												) : (
 													<div class="image-placeholder small">H</div>
 												)}
@@ -157,8 +162,9 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				const input = root.querySelector<HTMLInputElement>('#home-search-input');
 				const results = root.querySelector<HTMLElement>('#home-search-results');
 				const clearButton = root.querySelector<HTMLButtonElement>('.home-search-clear');
+				const status = root.querySelector<HTMLElement>('#home-search-status');
 				const browseButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-search-term]'));
-				if (!input || !results || !clearButton) return;
+				if (!input || !results || !clearButton || !status) return;
 				type SearchItem = { title: string; description: string; labels: string[]; href: string };
 				let items: SearchItem[] = [];
 				try { items = JSON.parse(dataElement.textContent || '[]'); } catch { items = []; }
@@ -166,15 +172,16 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					.toLocaleLowerCase('ar').normalize('NFKD')
 					.replace(/[\u064B-\u065F\u0670]/g, '').replace(/[أإآ]/g, 'ا')
 					.replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/\s+/g, ' ').trim();
-				const closeResults = () => {
+				const closeResults = (clearStatus = false) => {
 					results.hidden = true;
 					results.replaceChildren();
 					input.setAttribute('aria-expanded', 'false');
+					if (clearStatus) status.textContent = '';
 				};
 				const render = () => {
 					const query = normalize(input.value);
 					clearButton.hidden = query.length === 0;
-					if (query.length < 2) { closeResults(); return; }
+					if (query.length < 2) { closeResults(true); return; }
 					const terms = query.split(' ').filter(Boolean);
 					const matches = items.map((item) => {
 						const title = normalize(item.title);
@@ -196,12 +203,12 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 						empty.className = 'home-search-empty';
 						empty.textContent = 'لا توجد نتائج مطابقة. جرّب اسم المحاكي أو الجهاز.';
 						results.append(empty);
+						status.textContent = 'لا توجد نتائج مطابقة';
 					} else {
 						for (const { item } of matches) {
 							const link = document.createElement('a');
 							link.href = item.href;
 							link.className = 'home-search-result';
-							link.setAttribute('role', 'option');
 							const title = document.createElement('strong');
 							title.textContent = item.title;
 							link.append(title);
@@ -212,6 +219,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 							}
 							results.append(link);
 						}
+						status.textContent = `${matches.length} ${matches.length === 1 ? 'نتيجة' : 'نتائج'}`;
 					}
 					results.hidden = false;
 					input.setAttribute('aria-expanded', 'true');
@@ -221,7 +229,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					if (event.key === 'Escape') {
 						input.value = '';
 						clearButton.hidden = true;
-						closeResults();
+						closeResults(true);
 						input.blur();
 					}
 					if (event.key === 'Enter') {
@@ -232,7 +240,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				clearButton.addEventListener('click', () => {
 					input.value = '';
 					clearButton.hidden = true;
-					closeResults();
+					closeResults(true);
 					input.focus();
 				});
 				for (const button of browseButtons) {
