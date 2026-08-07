@@ -15,6 +15,35 @@ const {
 	originalUrl,
 	labels = [],
 } = Astro.props;
+
+const genericLabels = new Set([
+	'articles',
+	'article',
+	'gaming articles',
+	'gaming article',
+	'مقالات',
+	'المقالات',
+	'ألعاب',
+	'العاب',
+]);
+
+const broadPlatformLabels = new Set([
+	'nintendo',
+	'playstation',
+	'xbox',
+	'sega',
+	'pc',
+]);
+
+const normalizedLabels = labels
+	.map((label) => label.trim())
+	.filter(Boolean)
+	.filter((label) => !genericLabels.has(label.toLocaleLowerCase('en')));
+
+const articleCategory =
+	normalizedLabels.find((label) => !broadPlatformLabels.has(label.toLocaleLowerCase('en'))) ??
+	normalizedLabels[0] ??
+	null;
 ---
 
 <!doctype html>
@@ -33,38 +62,42 @@ const {
 						<ol>
 							<li><a href="/">الرئيسية</a></li>
 							<li><a href="/blog">المقالات</a></li>
-							<li aria-current="page">المقال الحالي</li>
+							{articleCategory && <li aria-current="page">{articleCategory}</li>}
 						</ol>
 					</nav>
 
-					{labels.length > 0 && (
-						<div class="article-labels" aria-label="تصنيفات المقال">
-							{labels.slice(0, 4).map((label) => <span class="fui-badge fui-badge--brand">{label}</span>)}
+					{articleCategory && (
+						<div class="article-category" aria-label="تصنيف المقال">
+							<span aria-hidden="true"></span>
+							{articleCategory}
 						</div>
 					)}
 
 					<h1>{title}</h1>
 					<p class="article-description">{description}</p>
 
-					<div class="article-meta">
+					<div class="article-meta" aria-label="معلومات المقال">
 						<span class="meta-item">
 							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2v3M15 2v3M3 7h14M4 4h12a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"></path></svg>
-							<span>نشر في</span>
+							<span>نشر</span>
 							<FormattedDate date={pubDate} />
 						</span>
 
 						{updatedDate && (
+							<span class="meta-separator" aria-hidden="true">·</span>
 							<span class="meta-item">
 								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 6V2m0 0h-4m4 0-3 3a7 7 0 1 0 2 8"></path></svg>
-								<span>آخر تحديث</span>
+								<span>تحديث</span>
 								<FormattedDate date={updatedDate} />
 							</span>
 						)}
-
-						{originalUrl && (
-							<a class="meta-source fui-link" href={originalUrl} target="_blank" rel="noopener noreferrer">المصدر الأصلي</a>
-						)}
 					</div>
+
+					{originalUrl && (
+						<a class="meta-source fui-link" href={originalUrl} target="_blank" rel="noopener noreferrer">
+							المصدر الأصلي
+						</a>
+					)}
 				</header>
 
 				<div class="article-content fluent-rich-text">
@@ -78,7 +111,7 @@ const {
 </html>
 
 <style>
-	.post-main { padding-top: var(--spacing-240); }
+	.post-main { padding-top: var(--spacing-200); }
 
 	.post-shell {
 		width: min(calc(100% - (var(--page-gutter) * 2)), 1120px);
@@ -86,60 +119,85 @@ const {
 	}
 
 	.article-header {
-		width: min(100%, 960px);
+		width: min(100%, 920px);
 		margin-inline: auto;
-		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
+		padding: clamp(var(--spacing-180), 2.4vw, var(--spacing-240));
+		border-color: var(--color-neutral-stroke-2);
+		background: var(--color-neutral-background-2);
+		box-shadow: none;
 	}
 
-	.article-breadcrumb { margin-bottom: var(--spacing-160); }
-
-	.article-labels {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--spacing-60);
+	.article-breadcrumb {
 		margin-bottom: var(--spacing-120);
+		color: var(--color-neutral-foreground-3);
+	}
+
+	.article-breadcrumb :global(a) {
+		color: var(--color-neutral-foreground-3);
+	}
+
+	.article-breadcrumb :global(a:hover),
+	.article-breadcrumb :global(a:focus-visible) {
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.article-category {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing-60);
+		margin-bottom: var(--spacing-80);
+		color: var(--color-brand-foreground-strong);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
+	}
+
+	.article-category > span {
+		width: 6px;
+		height: 6px;
+		flex: 0 0 auto;
+		border-radius: var(--radius-circular);
+		background: var(--color-brand-background);
 	}
 
 	.article-header h1 {
-		max-width: 880px;
-		font-size: var(--font-size-large-title);
+		max-width: 840px;
+		font-size: clamp(2rem, 3vw, 2.375rem);
 		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-large-title);
+		line-height: 1.32;
+		text-wrap: balance;
 	}
 
 	.article-description {
-		max-width: 820px;
-		margin-top: var(--spacing-120);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-subtitle-2);
-		line-height: var(--line-height-subtitle-2);
+		max-width: 760px;
+		margin-top: var(--spacing-100);
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		line-height: 1.75;
+		text-wrap: pretty;
 	}
 
 	.article-meta {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: var(--spacing-80);
-		margin-top: var(--spacing-200);
-	}
-
-	.meta-item {
-		display: inline-flex;
-		min-height: 32px;
-		align-items: center;
 		gap: var(--spacing-60);
-		padding-inline: var(--spacing-100);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-medium);
-		background: var(--color-neutral-background-1);
+		margin-top: var(--spacing-140);
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-caption-1);
 		line-height: var(--line-height-caption-1);
 	}
 
+	.meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--spacing-50);
+		color: inherit;
+	}
+
 	.meta-item svg {
-		width: 16px;
-		height: 16px;
+		width: 15px;
+		height: 15px;
 		flex: 0 0 auto;
 		fill: none;
 		stroke: currentColor;
@@ -149,20 +207,27 @@ const {
 	}
 
 	.meta-item :global(time) {
-		color: var(--color-neutral-foreground-1);
+		color: var(--color-neutral-foreground-2);
+		font-weight: var(--font-weight-medium);
+	}
+
+	.meta-separator { color: var(--color-neutral-foreground-4); }
+
+	.meta-source {
+		display: inline-flex;
+		margin-top: var(--spacing-80);
+		font-size: var(--font-size-caption-1);
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.meta-source { min-height: 32px; padding-inline: var(--spacing-80); }
-
 	.article-content {
 		width: min(100%, var(--reading-width));
-		margin: var(--spacing-160) auto 0;
-		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-xlarge);
-		background: var(--color-neutral-background-2);
-		box-shadow: var(--shadow-4);
+		margin: var(--spacing-200) auto 0;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		box-shadow: none;
 		color: var(--color-neutral-foreground-2);
 		font-size: var(--font-size-reading);
 		line-height: var(--line-height-reading);
@@ -175,7 +240,12 @@ const {
 		width: 100% !important;
 		max-width: 100% !important;
 		margin-inline: 0 !important;
+		padding-inline: 0 !important;
+		border-inline: 0 !important;
+		box-shadow: none !important;
 	}
+
+	.article-content > :global(:first-child) { margin-top: 0 !important; }
 
 	.article-content :global(p) { margin: 0 0 var(--spacing-160); }
 
@@ -220,15 +290,29 @@ const {
 	.article-content :global(a:hover) { color: var(--color-brand-foreground-link-hover); }
 
 	.article-content :global(img) {
-		max-width: 100% !important;
+		display: block;
+		width: auto !important;
+		max-width: min(100%, 760px) !important;
 		height: auto !important;
 		margin: var(--spacing-200) auto;
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
 		border-radius: var(--radius-large);
+		box-shadow: var(--shadow-2);
 	}
 
-	.article-content :global(figure) { max-width: 100% !important; margin: var(--spacing-240) 0; }
-	.article-content :global(figcaption) { margin-top: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); text-align: center; }
+	.article-content :global(figure) {
+		width: min(100%, 820px) !important;
+		max-width: 100% !important;
+		margin: var(--spacing-240) auto;
+	}
+
+	.article-content :global(figcaption) {
+		margin-top: var(--spacing-80);
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
+		text-align: center;
+	}
 
 	.article-content :global(iframe),
 	.article-content :global(video) {
@@ -263,10 +347,18 @@ const {
 		vertical-align: top;
 	}
 
-	.article-content :global(th) { background: var(--color-neutral-background-1); color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
+	.article-content :global(th) {
+		background: var(--color-neutral-background-1);
+		color: var(--color-neutral-foreground-1);
+		font-weight: var(--font-weight-semibold);
+	}
 
 	.article-content :global(ul),
-	.article-content :global(ol) { margin: var(--spacing-160) 0 var(--spacing-200); padding-inline-start: var(--spacing-240); }
+	.article-content :global(ol) {
+		margin: var(--spacing-160) 0 var(--spacing-200);
+		padding-inline-start: var(--spacing-240);
+	}
+
 	.article-content :global(li + li) { margin-top: var(--spacing-80); }
 
 	.article-content :global(blockquote) {
@@ -278,7 +370,11 @@ const {
 		background: var(--color-neutral-background-3);
 	}
 
-	.article-content :global(pre) { max-width: 100%; margin: var(--spacing-200) 0; overflow: auto; }
+	.article-content :global(pre) {
+		max-width: 100%;
+		margin: var(--spacing-200) 0;
+		overflow: auto;
+	}
 
 	.article-content :global(button) {
 		min-height: var(--control-height-small);
@@ -299,19 +395,19 @@ const {
 
 	@media (max-width: 639px) {
 		.post-main { padding-top: var(--spacing-120); }
-		.article-header { padding: var(--spacing-160); }
+		.article-header { padding: var(--spacing-140); }
+		.article-breadcrumb { margin-bottom: var(--spacing-100); }
 		.article-header h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
-		.article-description { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-		.article-meta { margin-top: var(--spacing-160); }
-		.meta-item,
-		.meta-source { min-height: 40px; }
-		.article-content { margin-top: var(--spacing-120); padding: var(--spacing-160); }
+		.article-description { margin-top: var(--spacing-80); font-size: var(--font-size-body-1); line-height: 1.7; }
+		.article-meta { margin-top: var(--spacing-120); gap: var(--spacing-50); }
+		.meta-source { min-height: 40px; align-items: center; }
+		.article-content { margin-top: var(--spacing-140); }
 		.article-content :global(h2) { margin-top: var(--spacing-320); font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
 		.article-content :global(h3) { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.article-content :global(img) { max-width: 100% !important; margin-block: var(--spacing-160); }
 	}
 
 	@media (pointer: coarse) {
-		.meta-item,
 		.meta-source,
 		.article-content :global(button) { min-height: 44px; }
 	}
