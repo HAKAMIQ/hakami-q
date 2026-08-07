@@ -1,0 +1,163 @@
+/* Fluent 2 Web treatment for native controls used by static and imported content. */
+
+:where(label) {
+	color: var(--color-neutral-foreground-1);
+	font-size: var(--font-size-body-1);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-body-1);
+}
+
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select) {
+	min-height: var(--control-height-medium);
+	max-width: 100%;
+	box-sizing: border-box;
+	padding-inline: var(--spacing-120);
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+	border-bottom-color: var(--color-neutral-stroke-accessible);
+	border-radius: var(--radius-medium);
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+	font-size: var(--font-size-body-1);
+	line-height: var(--line-height-body-1);
+	transition:
+		border-color var(--duration-faster) var(--curve-easy-ease),
+		box-shadow var(--duration-faster) var(--curve-easy-ease),
+		background var(--duration-faster) var(--curve-easy-ease);
+}
+
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):hover:not(:disabled) {
+	border-color: var(--color-neutral-stroke-1-hover);
+}
+
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select):focus-visible {
+	border-color: var(--color-brand-stroke-1);
+	box-shadow: inset 0 -2px var(--color-brand-stroke-1), var(--focus-ring);
+}
+
+:where(input, textarea)::placeholder {
+	color: var(--color-neutral-foreground-3);
+	opacity: 1;
+}
+
+textarea {
+	min-height: 96px;
+	padding-block: var(--spacing-100);
+	resize: vertical;
+}
+
+select {
+	padding-inline-end: var(--spacing-320);
+	cursor: pointer;
+}
+
+:where(input, textarea, select):disabled {
+	border-color: var(--color-neutral-stroke-alpha);
+	background: var(--color-neutral-background-3);
+	color: var(--color-neutral-foreground-disabled);
+}
+
+:where(input[type='checkbox'], input[type='radio']) {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	accent-color: var(--color-brand-background);
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+input[type='radio'] {
+	border-radius: var(--radius-circular);
+}
+
+input[type='range'] {
+	width: min(100%, 320px);
+	accent-color: var(--color-brand-background);
+}
+
+fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: var(--spacing-160);
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+	border-radius: var(--radius-large);
+}
+
+legend {
+	padding-inline: var(--spacing-60);
+	color: var(--color-neutral-foreground-1);
+	font-size: var(--font-size-body-1);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-body-1);
+}
+
+.fui-field {
+	display: grid;
+	gap: var(--spacing-60);
+}
+
+.fui-field__hint {
+	color: var(--color-neutral-foreground-3);
+	font-size: var(--font-size-caption-1);
+	line-height: var(--line-height-caption-1);
+}
+
+.fui-field[data-validation='error'] :where(input, textarea, select) {
+	border-color: var(--color-status-danger-border);
+}
+
+.fui-field[data-validation='error'] .fui-field__hint {
+	color: var(--color-status-danger-foreground);
+}
+
+progress {
+	width: 100%;
+	height: 4px;
+	border: 0;
+	border-radius: var(--radius-circular);
+	background: var(--color-neutral-background-1);
+	accent-color: var(--color-brand-background);
+}
+
+progress::-webkit-progress-bar {
+	border-radius: var(--radius-circular);
+	background: var(--color-neutral-background-1);
+}
+
+progress::-webkit-progress-value {
+	border-radius: var(--radius-circular);
+	background: var(--color-brand-background);
+}
+
+progress::-moz-progress-bar {
+	border-radius: var(--radius-circular);
+	background: var(--color-brand-background);
+}
+
+:where(dialog) {
+	max-width: min(560px, calc(100vw - 32px));
+	padding: var(--spacing-240);
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
+	border-radius: var(--radius-xlarge);
+	background: var(--color-neutral-background-2);
+	color: var(--color-neutral-foreground-2);
+	box-shadow: var(--shadow-64);
+}
+
+:where(dialog)::backdrop {
+	background: rgba(0, 0, 0, 0.58);
+}
+
+:where(details) > summary {
+	cursor: pointer;
+}
+
+@media (pointer: coarse) {
+	:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), textarea, select) {
+		min-height: var(--control-height-touch);
+	}
+
+	:where(input[type='checkbox'], input[type='radio']) {
+		width: 20px;
+		height: 20px;
+	}
+}
