@@ -16,8 +16,10 @@ name: Fluent UI Quality
       - "src/layouts/**"
       - "src/pages/**"
       - "src/styles/**"
+      - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/web-standards-quality.mjs"
+      - "scripts/final-site-audit.mjs"
       - ".github/workflows/fluent-ui-quality.yml"
   pull_request:
     paths:
@@ -31,8 +33,10 @@ name: Fluent UI Quality
       - "src/layouts/**"
       - "src/pages/**"
       - "src/styles/**"
+      - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/web-standards-quality.mjs"
+      - "scripts/final-site-audit.mjs"
       - ".github/workflows/fluent-ui-quality.yml"
 
 permissions:
@@ -40,9 +44,9 @@ permissions:
 
 jobs:
   validate:
-    name: Validate Fluent UI and Astro
+    name: Validate complete site
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
 
     steps:
       - name: Checkout repository
@@ -57,6 +61,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Evaluate all article sources
+        run: npm run content:quality:report
+
       - name: Evaluate Fluent UI invariants
         run: npm run ui:quality:report
 
@@ -66,11 +73,17 @@ jobs:
       - name: Validate Astro production build
         run: npx astro build
 
-      - name: Upload Fluent UI report
+      - name: Audit rendered pages, articles and links
+        run: npm run final:audit:report
+
+      - name: Upload quality reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: fluent-ui-quality-report
-          path: reports/fluent-ui-quality.json
+          name: final-site-quality-reports
+          path: |
+            reports/content-quality.json
+            reports/fluent-ui-quality.json
+            reports/final-site-audit.json
           if-no-files-found: warn
           retention-days: 30
