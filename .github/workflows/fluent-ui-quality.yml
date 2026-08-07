@@ -1,0 +1,67 @@
+name: Fluent UI Quality
+
+"on":
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - "astro.config.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - "public/**"
+      - "src/components/**"
+      - "src/layouts/**"
+      - "src/pages/**"
+      - "src/styles/**"
+      - "scripts/fluent-ui-quality.mjs"
+      - ".github/workflows/fluent-ui-quality.yml"
+  pull_request:
+    paths:
+      - "astro.config.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - "public/**"
+      - "src/components/**"
+      - "src/layouts/**"
+      - "src/pages/**"
+      - "src/styles/**"
+      - "scripts/fluent-ui-quality.mjs"
+      - ".github/workflows/fluent-ui-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Fluent UI and Astro
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Evaluate Fluent UI invariants
+        run: npm run ui:quality:report
+
+      - name: Validate Astro production build
+        run: npx astro build
+
+      - name: Upload Fluent UI report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fluent-ui-quality-report
+          path: reports/fluent-ui-quality.json
+          if-no-files-found: warn
+          retention-days: 30
