@@ -122,13 +122,13 @@ const menuGroups: MenuGroup[] = [
 	<div class="utility-bar">
 		<div class="site-container utility-inner">
 			<nav class="social-links" aria-label="الشبكات الاجتماعية" dir="ltr">
-				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube، يفتح في علامة تبويب جديدة" title="YouTube — علامة تبويب جديدة">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
 				</a>
-				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord، يفتح في علامة تبويب جديدة" title="Discord — علامة تبويب جديدة">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
 				</a>
-				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram، يفتح في علامة تبويب جديدة" title="Telegram — علامة تبويب جديدة">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
 				</a>
 			</nav>
@@ -152,7 +152,7 @@ const menuGroups: MenuGroup[] = [
 
 			<p class="brand-description">شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر وأجهزة الألعاب</p>
 
-			<button class="mobile-menu-toggle fui-button fui-button--secondary" type="button" aria-expanded="false" aria-controls="primary-menu">
+			<button class="mobile-menu-toggle fui-button fui-button--secondary" type="button" aria-label="الأقسام" aria-expanded="false" aria-controls="primary-menu">
 				<span>الأقسام</span>
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
 			</button>
@@ -164,47 +164,50 @@ const menuGroups: MenuGroup[] = [
 			<div class="menu-bar" id="primary-menu" dir="ltr">
 				<a class="home-menu-link" href="/" aria-label="الصفحة الرئيسية" title="الصفحة الرئيسية">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>
+					<span class="home-menu-text">الرئيسية</span>
 				</a>
 
-				{menuGroups.map((group) =>
-					group.items ? (
+				{menuGroups.map((group) => {
+					const panelId = `nav-panel-${group.slug}`;
+					return group.items ? (
 						<div class="menu-group" data-menu-group>
-							<button class="menu-trigger" type="button" aria-expanded="false" aria-haspopup="menu">
+							<button class="menu-trigger" type="button" aria-expanded="false" aria-controls={panelId}>
 								<span>{group.label}</span>
 								<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
 							</button>
 
-							<div class="menu-panel" data-menu-panel>
-								<div class="menu-surface" role="menu" aria-label={group.label}>
+							<div class="menu-panel" id={panelId} data-menu-panel>
+								<div class="menu-surface" aria-label={group.label}>
 									<div class="menu-list">
-										{group.items.map((item) =>
-											item.children ? (
+										{group.items.map((item) => {
+											const submenuId = `nav-submenu-${group.slug}-${item.slug}`;
+											return item.children ? (
 												<div class="submenu-group" data-submenu-group>
-													<button class="submenu-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-label={`فتح ${item.label}`}>
+													<button class="submenu-trigger" type="button" aria-expanded="false" aria-controls={submenuId} aria-label={`عرض ${item.label}`}>
 														<span>{item.label}</span>
 														<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"></path></svg>
 													</button>
 
-													<div class="submenu-panel" data-submenu-panel>
-														<div class="submenu-surface" role="menu" aria-label={item.label}>
+													<div class="submenu-panel" id={submenuId} data-submenu-panel>
+														<div class="submenu-surface" aria-label={item.label}>
 															{item.children.map((child) => (
-																<a role="menuitem" href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>
+																<a href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>
 															))}
 														</div>
 													</div>
 												</div>
 											) : (
-												<a role="menuitem" href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
-											),
-										)}
+												<a href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
+											);
+										})}
 									</div>
 								</div>
 							</div>
 						</div>
 					) : (
 						<a class="menu-direct" href={categoryHref(group.slug)} data-category={group.slug}>{group.label}</a>
-					),
-				)}
+					);
+				})}
 			</div>
 		</div>
 	</nav>
@@ -367,13 +370,22 @@ const menuGroups: MenuGroup[] = [
 			if (event.target instanceof Node && !header.contains(event.target)) closeAll();
 		});
 		document.addEventListener('keydown', (event) => {
-			if (event.key === 'Escape') closeAll();
+			if (event.key !== 'Escape') return;
+			const nestedTrigger = header.querySelector<HTMLButtonElement>('.submenu-group.is-open > .submenu-trigger');
+			const topTrigger = header.querySelector<HTMLButtonElement>('.menu-group.is-open > .menu-trigger');
+			const restoreTarget = nestedTrigger ?? topTrigger ?? (header.classList.contains('mobile-open') ? menuToggle : null);
+			closeAll();
+			restoreTarget?.focus();
 		});
 		desktop.addEventListener('change', closeAll);
 		window.addEventListener('resize', () => {
 			for (const menu of topMenus) if (menu.classList.contains('is-open')) positionTopPanel(menu);
 			for (const menu of nestedMenus) if (menu.classList.contains('is-open')) positionSubmenu(menu);
 		});
+
+		if (window.location.pathname === '/') {
+			header.querySelector<HTMLAnchorElement>('.home-menu-link')?.setAttribute('aria-current', 'page');
+		}
 
 		const selected = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
 		if (selected) {
@@ -549,13 +561,14 @@ const menuGroups: MenuGroup[] = [
 		white-space: nowrap;
 		cursor: pointer;
 		transition:
-			background var(--duration-faster) var(--curve-easy-ease),
-			border-color var(--duration-faster) var(--curve-easy-ease),
-			color var(--duration-faster) var(--curve-easy-ease),
-			box-shadow var(--duration-faster) var(--curve-easy-ease);
+			background var(--motion-duration-control) var(--curve-easy-ease),
+			border-color var(--motion-duration-control) var(--curve-easy-ease),
+			color var(--motion-duration-control) var(--curve-easy-ease),
+			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
 	.home-menu-link { width: 40px; padding: 0; }
+	.home-menu-text { display: none; }
 	.menu-direct,
 	.menu-trigger { padding-inline: var(--spacing-120); }
 
@@ -570,6 +583,7 @@ const menuGroups: MenuGroup[] = [
 		color: var(--color-neutral-foreground-1);
 	}
 
+	.home-menu-link[aria-current='page'],
 	.menu-direct.is-active,
 	.menu-trigger.has-active-child {
 		background: var(--color-brand-background-2);
@@ -589,7 +603,7 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.home-menu-link svg { width: 18px; height: 18px; }
-	.menu-chevron { width: 14px; height: 14px; transition: transform var(--duration-faster) var(--curve-easy-ease); }
+	.menu-chevron { width: 14px; height: 14px; transition: transform var(--motion-duration-control) var(--curve-easy-ease); }
 	.menu-group { position: relative; flex: 0 0 auto; }
 	.menu-group.is-open > .menu-trigger .menu-chevron { transform: rotate(180deg); }
 
@@ -601,9 +615,9 @@ const menuGroups: MenuGroup[] = [
 		visibility: hidden;
 		pointer-events: none;
 		transition:
-			opacity var(--duration-faster) var(--curve-easy-ease),
-			transform var(--duration-faster) var(--curve-easy-ease),
-			visibility var(--duration-faster) var(--curve-easy-ease);
+			opacity var(--motion-duration-control) var(--curve-easy-ease),
+			transform var(--motion-duration-control) var(--motion-ease-enter),
+			visibility var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
 	.menu-panel {
@@ -623,8 +637,16 @@ const menuGroups: MenuGroup[] = [
 		padding: var(--spacing-60);
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
 		border-radius: var(--radius-xlarge);
-		background: var(--color-neutral-background-1);
+		background: var(--material-acrylic-fallback);
 		box-shadow: var(--shadow-16);
+	}
+
+	@supports (backdrop-filter: blur(1px)) {
+		.menu-surface,
+		.submenu-surface {
+			background: var(--material-acrylic);
+			backdrop-filter: blur(var(--material-acrylic-blur)) saturate(1.08);
+		}
 	}
 
 	.menu-list { display: grid; gap: 0; }
@@ -676,7 +698,7 @@ const menuGroups: MenuGroup[] = [
 
 	.submenu-group { position: relative; }
 	.submenu-trigger { width: 100%; justify-content: space-between; gap: var(--spacing-120); cursor: pointer; }
-	.submenu-trigger svg { width: 16px; height: 16px; flex: 0 0 auto; transition: transform var(--duration-faster) var(--curve-easy-ease); }
+	.submenu-trigger svg { width: 16px; height: 16px; flex: 0 0 auto; transition: transform var(--motion-duration-control) var(--curve-easy-ease); }
 
 	.submenu-panel {
 		position: absolute;
@@ -727,7 +749,7 @@ const menuGroups: MenuGroup[] = [
 			min-height: 40px;
 			justify-self: end;
 			gap: var(--spacing-80);
-	}
+		}
 
 		.mobile-menu-toggle svg { width: 18px; height: 18px; }
 
@@ -745,13 +767,14 @@ const menuGroups: MenuGroup[] = [
 			inset-inline: var(--spacing-120);
 			display: none;
 			min-height: 0;
-			max-height: calc(100vh - 88px);
+			max-height: calc(100dvh - 88px);
 			grid-template-columns: 1fr;
 			overflow-y: auto;
+			overscroll-behavior: contain;
 			padding: var(--spacing-80);
 			border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
 			border-radius: var(--radius-xlarge);
-			background: var(--color-neutral-background-1);
+			background: var(--material-solid-raised);
 			box-shadow: var(--shadow-28);
 			z-index: 300;
 		}
@@ -770,7 +793,7 @@ const menuGroups: MenuGroup[] = [
 		}
 
 		.home-menu-link { justify-content: flex-start; gap: var(--spacing-100); }
-		.home-menu-link::after { content: 'Home'; font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); }
+		.home-menu-text { display: inline; }
 		.menu-group { width: 100%; }
 
 		.menu-panel,
@@ -797,6 +820,7 @@ const menuGroups: MenuGroup[] = [
 			border-radius: var(--radius-large);
 			background: var(--color-neutral-background-2);
 			box-shadow: none;
+			backdrop-filter: none;
 		}
 
 		.submenu-group.opens-start > .submenu-trigger svg { transform: none; }
@@ -820,7 +844,7 @@ const menuGroups: MenuGroup[] = [
 		.menu-list > a,
 		.submenu-trigger,
 		.submenu-surface > a {
-			min-height: 44px;
+			min-height: var(--control-height-touch);
 		}
 	}
 
