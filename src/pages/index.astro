@@ -42,6 +42,8 @@ const searchItems = posts.map((post) => ({
 	description: post.data.description ?? '',
 	labels: post.data.labels ?? [],
 	href: `/blog/${post.id}/`,
+	heroImageUrl: post.data.heroImageUrl ?? '',
+	displayCategory: getDisplayCategory(post.data.labels) ?? '',
 }));
 
 const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
@@ -99,10 +101,20 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				<div class="site-container home-content-container">
 					<header class="section-heading">
 						<h2 id="latest-posts-title">أحدث المقالات</h2>
-						<a class="fui-link section-action" href="/blog">
-							<span>عرض جميع المقالات</span>
-							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-						</a>
+						<div class="section-tools">
+							<label class="home-feed-size" for="home-feed-size">
+								<span>عرض</span>
+								<select id="home-feed-size" aria-label="عدد أحدث المقالات المعروضة">
+									<option value="6" selected>6</option>
+									<option value="12">12</option>
+									<option value="18">18</option>
+								</select>
+							</label>
+							<a class="fui-link section-action" href="/blog">
+								<span>عرض جميع المقالات</span>
+								<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+							</a>
+						</div>
 					</header>
 
 					{featuredPost && (
@@ -124,7 +136,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 								</a>
 							</article>
 
-							<div class="latest-grid">
+							<div class="latest-grid" id="home-latest-grid" aria-live="polite">
 								{latestPosts.map((post) => (
 									<article class="post-card fui-card fui-card--interactive">
 										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
@@ -154,10 +166,17 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 
 		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
 		<script>
+			type HomeItem = { title: string; description: string; labels: string[]; href: string; heroImageUrl: string; displayCategory: string };
+
+			const readHomeItems = () => {
+				const dataElement = document.getElementById('home-search-data');
+				if (!dataElement) return [] as HomeItem[];
+				try { return JSON.parse(dataElement.textContent || '[]') as HomeItem[]; } catch { return [] as HomeItem[]; }
+			};
+
 			const initializeHomeSearch = () => {
 				const root = document.querySelector<HTMLElement>('[data-home-search]');
-				const dataElement = document.getElementById('home-search-data');
-				if (!root || !dataElement || root.dataset.initialized === 'true') return;
+				if (!root || root.dataset.initialized === 'true') return;
 				root.dataset.initialized = 'true';
 				const input = root.querySelector<HTMLInputElement>('#home-search-input');
 				const results = root.querySelector<HTMLElement>('#home-search-results');
@@ -165,9 +184,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 				const status = root.querySelector<HTMLElement>('#home-search-status');
 				const browseButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-search-term]'));
 				if (!input || !results || !clearButton || !status) return;
-				type SearchItem = { title: string; description: string; labels: string[]; href: string };
-				let items: SearchItem[] = [];
-				try { items = JSON.parse(dataElement.textContent || '[]'); } catch { items = []; }
+				const items = readHomeItems();
 				const normalize = (value: string) => value
 					.toLocaleLowerCase('ar').normalize('NFKD')
 					.replace(/[\u064B-\u065F\u0670]/g, '').replace(/[أإآ]/g, 'ا')
@@ -195,7 +212,7 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 						if (title.includes(query)) score += 30;
 						if (labels.includes(query)) score += 15;
 						return { item, score };
-					}).filter((entry): entry is { item: SearchItem; score: number } => entry !== null)
+					}).filter((entry): entry is { item: HomeItem; score: number } => entry !== null)
 						.sort((a, b) => b.score - a.score).slice(0, 8);
 					results.replaceChildren();
 					if (matches.length === 0) {
@@ -254,9 +271,82 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 					if (event.target instanceof Node && !root.contains(event.target) && !(event.target instanceof Element && event.target.closest('[data-search-term]'))) closeResults();
 				});
 			};
-			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeHomeSearch, { once: true });
-			else initializeHomeSearch();
-			document.addEventListener('astro:page-load', initializeHomeSearch);
+
+			const initializeHomeFeed = () => {
+				const grid = document.querySelector<HTMLElement>('#home-latest-grid');
+				const select = document.querySelector<HTMLSelectElement>('#home-feed-size');
+				if (!grid || !select || grid.dataset.initialized === 'true') return;
+				grid.dataset.initialized = 'true';
+				const items = readHomeItems().slice(1);
+				const allowed = new Set([6, 12, 18]);
+				let limit = 6;
+				try {
+					const stored = Number.parseInt(localStorage.getItem('hakamiq-home-post-count') ?? '', 10);
+					if (allowed.has(stored)) limit = stored;
+				} catch {}
+				select.value = String(limit);
+
+				const createCard = (item: HomeItem) => {
+					const article = document.createElement('article');
+					article.className = 'post-card fui-card fui-card--interactive';
+					const link = document.createElement('a');
+					link.href = item.href;
+					link.setAttribute('aria-label', item.title);
+					const thumb = document.createElement('div');
+					thumb.className = 'post-thumb';
+					if (item.heroImageUrl) {
+						const image = document.createElement('img');
+						image.src = item.heroImageUrl;
+						image.alt = item.title;
+						image.loading = 'lazy';
+						image.decoding = 'async';
+						image.referrerPolicy = 'no-referrer';
+						thumb.append(image);
+					} else {
+						const placeholder = document.createElement('div');
+						placeholder.className = 'image-placeholder small';
+						placeholder.textContent = 'H';
+						thumb.append(placeholder);
+					}
+					const content = document.createElement('div');
+					content.className = 'post-card-content';
+					if (item.displayCategory) {
+						const category = document.createElement('span');
+						category.className = 'post-card-category';
+						category.textContent = item.displayCategory;
+						content.append(category);
+					}
+					const title = document.createElement('h2');
+					title.textContent = item.title;
+					content.append(title);
+					if (item.description) {
+						const description = document.createElement('p');
+						description.textContent = item.description;
+						content.append(description);
+					}
+					link.append(thumb, content);
+					article.append(link);
+					return article;
+				};
+
+				const render = () => grid.replaceChildren(...items.slice(0, limit).map(createCard));
+				select.addEventListener('change', () => {
+					const next = Number.parseInt(select.value, 10);
+					if (!allowed.has(next)) return;
+					limit = next;
+					try { localStorage.setItem('hakamiq-home-post-count', String(limit)); } catch {}
+					render();
+				});
+				if (limit !== 6) render();
+			};
+
+			const initializeHome = () => {
+				initializeHomeSearch();
+				initializeHomeFeed();
+			};
+			if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeHome, { once: true });
+			else initializeHome();
+			document.addEventListener('astro:page-load', initializeHome);
 		</script>
 	</body>
 </html>
@@ -307,6 +397,9 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 	.home-content-container { width: min(calc(100% - (var(--page-gutter) * 2)), 1160px); }
 	.section-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-160); margin-bottom: var(--spacing-160); }
 	.section-heading h2 { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); text-wrap: balance; }
+	.section-tools { display: flex; align-items: center; gap: var(--spacing-100); }
+	.home-feed-size { display: inline-flex; align-items: center; gap: var(--spacing-60); color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); }
+	.home-feed-size select { min-width: 68px; min-height: 34px; padding-inline: var(--spacing-80); border: var(--stroke-thin) solid var(--color-neutral-stroke-2); border-radius: var(--radius-medium); background: var(--color-neutral-background-1); color: var(--color-neutral-foreground-1); }
 	.section-action { flex: 0 0 auto; color: var(--color-neutral-foreground-3); }
 	.section-action:hover, .section-action:focus-visible { color: var(--color-brand-foreground-strong); }
 	.section-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
@@ -378,6 +471,9 @@ const browseTerms = ['PlayStation', 'Nintendo', 'Xbox', 'SEGA', 'PC'];
 		.browse-shortcuts::-webkit-scrollbar { display: none; }
 		.browse-shortcuts button { flex: 0 0 auto; min-height: 36px; }
 		.section-heading { gap: var(--spacing-80); }
+		.section-tools { gap: var(--spacing-60); }
+		.home-feed-size span { display: none; }
+		.home-feed-size select { min-width: 60px; min-height: 36px; }
 		.section-action span { display: none; }
 		.section-action { width: 36px; height: 36px; justify-content: center; padding: 0; }
 		.post-card > a { grid-template-columns: 124px minmax(0, 1fr); }
