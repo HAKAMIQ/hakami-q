@@ -70,11 +70,17 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 											) : (
 												<div class="image-placeholder">HAKAMIQ</div>
 											)}
+
+											{post.data.labels.length > 0 && (
+												<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
+											)}
+
+											<div class="post-title-overlay">
+												<h2>{post.data.title}</h2>
+											</div>
 										</div>
 
 										<div class="post-content">
-											{post.data.labels.length > 0 && <span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>}
-											<h2>{post.data.title}</h2>
 											<p>{post.data.description}</p>
 										</div>
 									</a>
@@ -152,17 +158,22 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 				imageWrap.append(placeholder);
 			}
 
-			const content = document.createElement('div');
-			content.className = 'post-content';
 			if (item.label) {
 				const label = document.createElement('span');
 				label.className = 'post-label fui-badge fui-badge--brand';
 				label.textContent = item.label;
-				content.append(label);
+				imageWrap.append(label);
 			}
+
+			const titleOverlay = document.createElement('div');
+			titleOverlay.className = 'post-title-overlay';
 			const title = document.createElement('h2');
 			title.textContent = item.title;
-			content.append(title);
+			titleOverlay.append(title);
+			imageWrap.append(titleOverlay);
+
+			const content = document.createElement('div');
+			content.className = 'post-content';
 			if (item.description) {
 				const description = document.createElement('p');
 				description.textContent = item.description;
@@ -291,8 +302,36 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		text-decoration: none;
 	}
 
-	.post-image { aspect-ratio: 16 / 9; overflow: hidden; background: var(--color-neutral-background-3); }
-	.post-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-slow) var(--curve-decelerate-mid); }
+	.post-image {
+		position: relative;
+		isolation: isolate;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: var(--color-neutral-background-3);
+	}
+
+	.post-image::after {
+		position: absolute;
+		z-index: 1;
+		inset: var(--hq-media-frame-inset);
+		border-radius: var(--hq-media-frame-inner-radius);
+		background: linear-gradient(
+			to top,
+			color-mix(in srgb, var(--color-neutral-background-1) 92%, transparent) 0%,
+			color-mix(in srgb, var(--color-neutral-background-1) 66%, transparent) 34%,
+			transparent 62%
+		);
+		content: '';
+		pointer-events: none;
+	}
+
+	.post-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
+	}
+
 	.post-card:hover .post-image img { transform: scale(1.02); }
 
 	.image-placeholder {
@@ -306,30 +345,51 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.post-content {
-		display: flex;
-		min-height: 164px;
-		flex: 1;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: var(--spacing-160);
+	.post-label {
+		position: absolute;
+		z-index: 3;
+		top: calc(var(--hq-media-frame-inset) + var(--spacing-100));
+		left: calc(var(--hq-media-frame-inset) + var(--spacing-100));
+		max-width: calc(100% - var(--spacing-240));
+		margin: 0;
+		box-shadow: var(--shadow-2);
 	}
 
-	.post-label { margin-bottom: var(--spacing-80); }
+	.post-title-overlay {
+		position: absolute;
+		z-index: 2;
+		right: calc(var(--hq-media-frame-inset) + var(--spacing-120));
+		bottom: calc(var(--hq-media-frame-inset) + var(--spacing-120));
+		width: min(88%, 560px);
+		text-align: right;
+	}
 
-	.post-content h2 {
+	.post-title-overlay h2 {
 		display: -webkit-box;
 		overflow: hidden;
-		font-size: var(--font-size-subtitle-2);
-		line-height: var(--line-height-subtitle-2);
+		margin: 0;
+		color: var(--color-neutral-foreground-on-brand);
+		font-size: var(--font-size-title-3);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-title-3);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
+		-webkit-text-stroke: 0.45px var(--color-neutral-background-1);
+		paint-order: stroke fill;
+	}
+
+	.post-content {
+		display: flex;
+		min-height: 112px;
+		flex: 1;
+		align-items: center;
+		padding: var(--spacing-160);
 	}
 
 	.post-content p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin-top: var(--spacing-80);
+		margin: 0;
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-body-1);
 		line-height: var(--line-height-body-1);
@@ -380,6 +440,7 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 
 	@media (max-width: 1180px) {
 		.blog-layout { grid-template-columns: 272px minmax(0, 1fr); gap: var(--spacing-160); }
+		.post-title-overlay h2 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
 	}
 
 	@media (max-width: 1023px) {
@@ -393,16 +454,25 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 	@media (max-width: 639px) {
 		.posts-section { padding-top: var(--spacing-160); }
 		.filter-status { align-items: flex-start; flex-direction: column; }
-		.posts-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
-		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
-		.post-image { height: 100%; min-height: 132px; aspect-ratio: auto; }
-		.post-content { min-height: 132px; padding: var(--spacing-120); }
-		.post-content p { display: none; }
-		.post-content h2 { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+		.posts-grid { grid-template-columns: 1fr; gap: var(--spacing-120); }
+		.post-card > a { display: flex; }
+		.post-image { aspect-ratio: 16 / 9; }
+		.post-title-overlay {
+			right: calc(var(--hq-media-frame-inset) + var(--spacing-100));
+			bottom: calc(var(--hq-media-frame-inset) + var(--spacing-100));
+			width: calc(100% - var(--spacing-240));
+		}
+		.post-title-overlay h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
+		.post-label {
+			top: calc(var(--hq-media-frame-inset) + var(--spacing-80));
+			left: calc(var(--hq-media-frame-inset) + var(--spacing-80));
+		}
+		.post-content { min-height: 96px; padding: var(--spacing-120); }
 		.posts-pagination .page-link { min-width: 40px; min-height: 40px; }
 	}
 
 	@media (max-width: 420px) {
-		.post-card > a { grid-template-columns: 96px minmax(0, 1fr); }
+		.post-title-overlay h2 { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
+		.post-content { min-height: 88px; }
 	}
 </style>
