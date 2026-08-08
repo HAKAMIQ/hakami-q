@@ -43,23 +43,7 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		<Header />
 
 		<main id="main-content" tabindex="-1">
-			<section class="page-hero">
-				<div class="site-container hero-inner">
-					<nav class="fui-breadcrumb" aria-label="مسار التنقل">
-						<ol>
-							<li><a href="/">الرئيسية</a></li>
-							<li aria-current="page">المقالات</li>
-						</ol>
-					</nav>
-
-					<div class="hero-copy">
-						<span class="page-eyebrow">مكتبة HAKAMIQ</span>
-						<h1>المقالات والشروحات</h1>
-						<p>شروحات المحاكيات وإعداد الألعاب وحلول المشاكل مرتبة من الأحدث إلى الأقدم.</p>
-						<strong class="fui-badge fui-badge--brand post-count" id="post-count" data-total={posts.length} aria-live="polite">{posts.length} مقال</strong>
-					</div>
-				</div>
-			</section>
+			<h1 class="sr-only">المقالات</h1>
 
 			<section class="posts-section" aria-label="قائمة المقالات">
 				<div id="category-data" data-categories={JSON.stringify(categoryNames)} hidden></div>
@@ -72,19 +56,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 						<div class="filter-status fui-card" id="filter-status" role="status" aria-live="polite" hidden>
 							<p><span>القسم الحالي</span><strong id="filter-name"></strong></p>
 							<a class="fui-link" href="/blog">عرض جميع المقالات</a>
-						</div>
-
-						<div class="listing-toolbar fui-card" aria-label="خيارات عرض المقالات">
-							<p id="listing-range" class="listing-range" aria-live="polite">عرض 1–{Math.min(DEFAULT_PAGE_SIZE, posts.length)} من {posts.length}</p>
-							<div class="page-size-field">
-								<label for="posts-per-page">عدد المقالات في الصفحة</label>
-								<select id="posts-per-page" class="fui-select" aria-describedby="page-size-help">
-									<option value="12" selected>12</option>
-									<option value="24">24</option>
-									<option value="36">36</option>
-								</select>
-								<span class="sr-only" id="page-size-help">يتم حفظ اختيارك على هذا الجهاز</span>
-							</div>
 						</div>
 
 						<p class="no-results fui-card" id="no-results" role="status" aria-live="polite" hidden>
@@ -140,14 +111,11 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		const grid = document.querySelector<HTMLElement>('#posts-grid');
 		const dataElement = document.querySelector<HTMLScriptElement>('#blog-post-data');
 		const categoryData = document.querySelector<HTMLElement>('#category-data');
-		const postCount = document.querySelector<HTMLElement>('#post-count');
 		const filterStatus = document.querySelector<HTMLElement>('#filter-status');
 		const filterName = document.querySelector<HTMLElement>('#filter-name');
 		const noResults = document.querySelector<HTMLElement>('#no-results');
-		const range = document.querySelector<HTMLElement>('#listing-range');
-		const pageSizeSelect = document.querySelector<HTMLSelectElement>('#posts-per-page');
 		const pagination = document.querySelector<HTMLElement>('#posts-pagination');
-		if (!grid || !dataElement || !categoryData || !postCount || !noResults || !range || !pageSizeSelect || !pagination) return;
+		if (!grid || !dataElement || !categoryData || !noResults || !pagination) return;
 		if (grid.dataset.paginationInitialized === 'true') return;
 		grid.dataset.paginationInitialized = 'true';
 
@@ -156,16 +124,8 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		const names = JSON.parse(categoryData.dataset.categories ?? '{}') as Record<string, string>;
 		const params = new URLSearchParams(window.location.search);
 		const selectedCategory = params.get('category')?.trim().toLowerCase() ?? '';
-		const allowedSizes = new Set([12, 24, 36]);
-		const requestedSize = Number.parseInt(params.get('perPage') ?? '', 10);
-		let storedSize = 12;
-		try {
-			const value = Number.parseInt(localStorage.getItem('hakamiq-posts-per-page') ?? '', 10);
-			if (allowedSizes.has(value)) storedSize = value;
-		} catch {}
-		let pageSize = allowedSizes.has(requestedSize) ? requestedSize : storedSize;
+		const pageSize = 12;
 		let currentPage = Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1);
-		pageSizeSelect.value = String(pageSize);
 
 		if (selectedCategory && names[selectedCategory]) {
 			if (filterStatus) filterStatus.hidden = false;
@@ -227,7 +187,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 			const next = new URLSearchParams();
 			if (selectedCategory && names[selectedCategory]) next.set('category', selectedCategory);
 			if (page > 1) next.set('page', String(page));
-			if (pageSize !== 12) next.set('perPage', String(pageSize));
 			const query = next.toString();
 			return query ? `/blog?${query}` : '/blog';
 		};
@@ -269,31 +228,18 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 			const filtered = selectedCategory && names[selectedCategory]
 				? items.filter((item) => item.categories.includes(selectedCategory))
 				: items;
-			const total = filtered.length;
-			const totalPages = Math.max(1, Math.ceil(total / pageSize));
+			const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
 			currentPage = Math.min(currentPage, totalPages);
 			const start = (currentPage - 1) * pageSize;
 			const visible = filtered.slice(start, start + pageSize);
 
 			grid.replaceChildren(...visible.map(createCard));
-			postCount.textContent = `${total} مقال`;
-			noResults.hidden = total !== 0;
-			if (total === 0) range.textContent = 'لا توجد مقالات للعرض';
-			else range.textContent = `عرض ${start + 1}–${Math.min(start + visible.length, total)} من ${total}`;
+			noResults.hidden = filtered.length !== 0;
 			renderPagination(totalPages);
 
 			const requestedPage = Number.parseInt(params.get('page') ?? '1', 10) || 1;
-			if (requestedPage !== currentPage) history.replaceState(null, '', buildUrl(currentPage));
+			if (requestedPage !== currentPage || params.has('perPage')) history.replaceState(null, '', buildUrl(currentPage));
 		};
-
-		pageSizeSelect.addEventListener('change', () => {
-			const nextSize = Number.parseInt(pageSizeSelect.value, 10);
-			if (!allowedSizes.has(nextSize)) return;
-			pageSize = nextSize;
-			currentPage = 1;
-			try { localStorage.setItem('hakamiq-posts-per-page', String(pageSize)); } catch {}
-			window.location.href = buildUrl(1);
-		});
 
 		render();
 	};
@@ -304,26 +250,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 </script>
 
 <style is:global>
-	.page-hero {
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-3);
-	}
-
-	.hero-inner { padding-block: var(--spacing-240) var(--spacing-320); }
-	.hero-copy { max-width: 760px; margin-top: var(--spacing-160); }
-
-	.page-eyebrow {
-		display: block;
-		margin-bottom: var(--spacing-40);
-		color: var(--color-brand-foreground);
-		font-size: var(--font-size-caption-1);
-		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-caption-1);
-	}
-
-	.hero-copy h1 { font-size: var(--font-size-title-1); line-height: var(--line-height-title-1); }
-	.hero-copy p { margin-top: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-	.post-count { margin-top: var(--spacing-120); }
 	.posts-section { padding-block: var(--spacing-240) var(--spacing-80); }
 
 	.blog-layout {
@@ -336,8 +262,7 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 	.posts-content { min-width: 0; grid-column: 2; }
 	.blog-layout .sidebar-region { min-width: 0; grid-column: 1; }
 
-	.filter-status,
-	.listing-toolbar {
+	.filter-status {
 		display: flex;
 		min-height: 44px;
 		align-items: center;
@@ -353,11 +278,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 
 	.filter-status p { display: flex; align-items: center; gap: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
 	.filter-status strong { color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
-	.listing-range { color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-
-	.page-size-field { display: flex; align-items: center; gap: var(--spacing-80); }
-	.page-size-field label { color: var(--color-neutral-foreground-2); font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); }
-	.page-size-field select { min-width: 76px; min-height: 36px; padding-inline: var(--spacing-80); border: var(--stroke-thin) solid var(--color-neutral-stroke-1); border-radius: var(--radius-medium); background: var(--color-neutral-background-1); color: var(--color-neutral-foreground-1); }
 
 	.no-results {
 		margin-bottom: var(--spacing-160);
@@ -488,13 +408,8 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 	}
 
 	@media (max-width: 639px) {
-		.hero-inner { padding-block: var(--spacing-160) var(--spacing-240); }
-		.hero-copy { margin-top: var(--spacing-120); }
-		.hero-copy h1 { font-size: var(--font-size-title-2); line-height: var(--line-height-title-2); }
 		.posts-section { padding-top: var(--spacing-160); }
-		.filter-status,
-		.listing-toolbar { align-items: flex-start; flex-direction: column; }
-		.page-size-field { width: 100%; justify-content: space-between; }
+		.filter-status { align-items: flex-start; flex-direction: column; }
 		.posts-grid { grid-template-columns: 1fr; gap: var(--spacing-100); }
 		.post-card > a { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
 		.post-image { height: 100%; min-height: 132px; aspect-ratio: auto; }

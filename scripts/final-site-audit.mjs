@@ -178,7 +178,10 @@ const blogHtml = await fs.readFile(blogFile, 'utf8');
 const initialCards = (blogHtml.match(/class=["'][^"']*\bpost-card\b[^"']*["']/gi) ?? []).length;
 if (initialCards > 12) pushError('/blog/', 'listing.initial-dom', `Blog initial DOM contains ${initialCards} cards; expected at most 12.`);
 if (!/id=["']posts-pagination["']/i.test(blogHtml)) pushError('/blog/', 'listing.pagination', 'Blog pagination container is missing.');
-if (!/id=["']posts-per-page["']/i.test(blogHtml)) pushError('/blog/', 'listing.page-size', 'Blog page-size selector is missing.');
+if (/id=["']posts-per-page["']/i.test(blogHtml)) pushError('/blog/', 'listing.no-page-size', 'Blog page-size selector must remain removed from the reader-facing UI.');
+if (/id=["']post-count["']/i.test(blogHtml)) pushError('/blog/', 'listing.no-total-count', 'Blog total article count must remain removed from the reader-facing UI.');
+if (/id=["']listing-range["']/i.test(blogHtml)) pushError('/blog/', 'listing.no-range-metrics', 'Blog listing range metrics must remain removed from the reader-facing UI.');
+if (/class=["'][^"']*\bpage-hero\b[^"']*["']/i.test(blogHtml)) pushError('/blog/', 'listing.no-intro-hero', 'Blog intro hero must remain removed.');
 
 stats.staticPages = stats.htmlPages - stats.articlePages - 2;
 const report = {

@@ -4,7 +4,6 @@ import {
 	categoryDefinitions,
 	categoryGroups,
 	formatArabicDate,
-	getPostCategories,
 	normalizeSearchText,
 } from '../../data/blog-taxonomy';
 
@@ -14,13 +13,6 @@ interface Props {
 
 const { posts } = Astro.props;
 const categoryBySlug = Object.fromEntries(categoryDefinitions.map((category) => [category.slug, category]));
-const categoryCounts = new Map<string, number>();
-
-for (const post of posts) {
-	for (const category of getPostCategories(post)) {
-		categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
-	}
-}
 
 const topicPriority = ['rpcs3', 'pcsx2', 'shadps4', 'yuzu', 'vita3k', 'xenia', 'cemu'];
 const highlightedPosts: BlogPostEntry[] = [];
@@ -96,14 +88,12 @@ const guidePost = posts.find((post) => {
 								<div class="fui-accordion__item category-group" data-category-group>
 									<button class="fui-accordion__header" type="button" aria-expanded="false" aria-controls={panelId} data-accordion-trigger data-category-search-text={normalizeSearchText(group.name)}>
 										<span>{group.name}</span>
-										<span class="fui-badge">{categoryCounts.get(group.slug) ?? 0}</span>
 										<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
 									</button>
 
 									<div class="fui-accordion__panel category-children" id={panelId} data-accordion-panel hidden>
 										<a class="category-link category-link-all" href={`/blog?category=${group.slug}`} data-category-link={group.slug} data-category-search-text={normalizeSearchText(`${group.name} جميع المقالات`)}>
 											<span>جميع مقالات {group.name}</span>
-											<strong class="fui-badge">{categoryCounts.get(group.slug) ?? 0}</strong>
 										</a>
 
 										{group.children.filter((slug) => slug !== group.slug).map((slug) => {
@@ -112,7 +102,6 @@ const guidePost = posts.find((post) => {
 											return (
 												<a class="category-link" href={`/blog?category=${category.slug}`} data-category-link={category.slug} data-category-search-text={normalizeSearchText(category.name)}>
 													<span>{category.name}</span>
-													<strong class="fui-badge">{categoryCounts.get(category.slug) ?? 0}</strong>
 												</a>
 											);
 										})}
@@ -391,7 +380,7 @@ const guidePost = posts.find((post) => {
 		display: flex;
 		min-height: 36px;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-start;
 		gap: var(--spacing-100);
 		padding: var(--spacing-80) var(--spacing-100);
 		border-radius: var(--radius-medium);
@@ -409,12 +398,6 @@ const guidePost = posts.find((post) => {
 		background: var(--color-brand-background-2);
 		box-shadow: inset -3px 0 var(--color-brand-stroke-1);
 		color: var(--color-neutral-foreground-1);
-	}
-
-	.category-link[aria-current='page'] .fui-badge {
-		border-color: var(--color-brand-stroke-2);
-		background: var(--color-brand-background-alpha);
-		color: var(--color-brand-foreground);
 	}
 
 	.category-link-all { font-weight: var(--font-weight-semibold); }
