@@ -12,5 +12,10 @@ export default defineConfig({
 	build: {
 		inlineStylesheets: 'never',
 	},
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => !new URL(page).pathname.startsWith('/admin'),
+		}),
+	],
 });
