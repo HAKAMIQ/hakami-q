@@ -61,15 +61,35 @@
 			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
-	/* Header typography stays readable across desktop widths. Do not collapse
-	 * primary navigation to Caption 2 (10px) at narrower desktop breakpoints. */
+	/* Keep the utility strip secondary, but make its content comfortably readable
+	 * at normal desktop viewing distances. */
 	.site-header.site-header .utility-inner {
 		min-height: 36px;
 	}
 
+	.site-header.site-header .social-links {
+		gap: var(--spacing-60);
+	}
+
+	.site-header.site-header .utility-links {
+		gap: var(--spacing-40);
+	}
+
+	.site-header.site-header .social-links a {
+		width: 32px;
+		height: 32px;
+	}
+
+	.site-header.site-header .social-links svg {
+		width: 16px;
+		height: 16px;
+	}
+
 	.site-header.site-header .utility-links a {
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
+		min-height: 32px;
+		padding-inline: var(--spacing-100);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
 	}
 
 	.site-header.site-header .brand-description {
@@ -168,10 +188,18 @@
 	/* Keep the full strip visible at standard desktop widths without scrolling.
 	 * Reduce spacing only; typography remains Body 1 for readability. */
 	@media (max-width: 1180px) {
+		.site-header.site-header .social-links {
+			gap: var(--spacing-40);
+		}
+
+		.site-header.site-header .utility-links {
+			gap: var(--spacing-20);
+		}
+
 		.site-header.site-header .utility-links a {
-			padding-inline: var(--spacing-40);
-			font-size: var(--font-size-caption-1);
-			line-height: var(--line-height-caption-1);
+			padding-inline: var(--spacing-60);
+			font-size: var(--font-size-body-1);
+			line-height: var(--line-height-body-1);
 		}
 
 		.site-header.site-header .brand-inner {
