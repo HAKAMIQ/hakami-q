@@ -14,6 +14,7 @@ const FETCH_ATTEMPTS = 3;
 const BLOGGER_URL_RE = /https:\/\/(?:blogger\.googleusercontent\.com|(?:\d+\.)?bp\.blogspot\.com|lh\d+\.googleusercontent\.com)\/[^\s"'<>\)]+/g;
 const BLOGGER_HOST_RE = /^(?:blogger\.googleusercontent\.com|(?:\d+\.)?bp\.blogspot\.com|lh\d+\.googleusercontent\.com)$/i;
 const SIZE_SEGMENT_RE = /^(?:s\d+|w\d+-h\d+)(?:-[A-Za-z0-9_-]+)*$/i;
+const FALLBACK_SIZE_SEGMENTS = ['s0', 's1600', 's1200', 's1024', 's800', 's640', 's480', 's320'];
 
 const report = {
   startedAt: new Date().toISOString(),
@@ -25,6 +26,7 @@ const report = {
   uniqueLocalFiles: 0,
   totalLocalBytes: 0,
   rewrittenFiles: 0,
+  failedImages: [],
   failures: [],
 };
 
@@ -78,6 +80,43 @@ function candidateScore(raw) {
   return 0;
 }
 
+function expandCandidateVariants(raw) {
+  const normalized = normalizeRemoteUrl(raw);
+  const variants = new Set([normalized]);
+
+  try {
+    const url = new URL(normalized);
+    const segments = url.pathname.split('/');
+    let sizeIndex = -1;
+    for (let index = segments.length - 2; index >= 0; index -= 1) {
+      if (SIZE_SEGMENT_RE.test(segments[index])) {
+        sizeIndex = index;
+        break;
+      }
+    }
+
+    if (sizeIndex >= 0) {
+      for (const size of FALLBACK_SIZE_SEGMENTS) {
+        const clone = new URL(url);
+        const cloneSegments = clone.pathname.split('/');
+        cloneSegments[sizeIndex] = size;
+        clone.pathname = cloneSegments.join('/');
+        variants.add(clone.toString());
+      }
+
+      const clone = new URL(url);
+      const cloneSegments = clone.pathname.split('/');
+      cloneSegments.splice(sizeIndex, 1);
+      clone.pathname = cloneSegments.join('/');
+      variants.add(clone.toString());
+    }
+  } catch {
+    // Keep the original candidate so the normal fetch path reports the error.
+  }
+
+  return [...variants];
+}
+
 function sniffRasterImage(buffer, contentType = '') {
   const type = contentType.split(';', 1)[0].trim().toLowerCase();
 
@@ -115,7 +154,7 @@ async function fetchWithRetry(url) {
       const response = await fetch(url, {
         redirect: 'follow',
         headers: {
-          'user-agent': 'HAKAMIQ-Blogger-Media-Migration/1.0',
+          'user-agent': 'HAKAMIQ-Blogger-Media-Migration/1.1',
           accept: 'image/avif,image/webp,image/png,image/jpeg,image/gif,image/bmp;q=0.9,*/*;q=0.1',
         },
         signal: AbortSignal.timeout(45_000),
@@ -137,7 +176,7 @@ async function fetchWithRetry(url) {
       return { buffer, imageType, finalUrl: response.url };
     } catch (error) {
       lastError = error;
-      if (attempt < FETCH_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, 750 * attempt));
+      if (attempt < FETCH_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
     }
   }
   throw lastError;
@@ -171,11 +210,12 @@ for (const file of files) {
     const key = canonicalImageKey(raw);
     let group = groups.get(key);
     if (!group) {
-      group = { key, references: new Set(), candidates: new Set() };
+      group = { key, references: new Set(), candidates: new Set(), files: new Set() };
       groups.set(key, group);
     }
     group.references.add(raw);
-    group.candidates.add(normalizeRemoteUrl(raw));
+    group.files.add(file);
+    for (const candidate of expandCandidateVariants(raw)) group.candidates.add(candidate);
   }
 }
 
@@ -199,6 +239,7 @@ await fs.mkdir(OUTPUT_ROOT, { recursive: true });
 
 const replacementByReference = new Map();
 const writtenHashes = new Map();
+const failedGroups = [];
 let totalBytes = 0;
 let cursor = 0;
 const groupList = [...groups.values()];
@@ -217,7 +258,9 @@ async function migrateGroup(group) {
       if (!writtenHashes.has(hash)) {
         const nextTotal = totalBytes + buffer.length;
         if (nextTotal > MAX_TOTAL_BYTES) {
-          throw new Error(`Total localized media would exceed ${formatMiB(MAX_TOTAL_BYTES)}; repository migration stopped before commit.`);
+          const fatal = new Error(`Total localized media would exceed ${formatMiB(MAX_TOTAL_BYTES)}; repository migration stopped before commit.`);
+          fatal.fatalMigration = true;
+          throw fatal;
         }
         const diskPath = path.join('public', ...relativePath.split('/'));
         await fs.mkdir(path.dirname(diskPath), { recursive: true });
@@ -231,11 +274,19 @@ async function migrateGroup(group) {
       report.downloadedCanonicalImages += 1;
       return;
     } catch (error) {
+      if (error?.fatalMigration) throw error;
       candidateErrors.push(`${candidate}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
-  throw new Error(`Unable to migrate ${group.key}. Tried ${candidates.length} source variant(s): ${candidateErrors.join(' | ')}`);
+  const failure = {
+    key: group.key,
+    files: [...group.files],
+    sourceReferences: [...group.references],
+    attempts: candidates.length,
+    errors: candidateErrors,
+  };
+  failedGroups.push(failure);
 }
 
 async function worker() {
@@ -245,7 +296,7 @@ async function worker() {
     if (index >= groupList.length) return;
     await migrateGroup(groupList[index]);
     if ((index + 1) % 50 === 0 || index + 1 === groupList.length) {
-      console.log(`Migrated ${index + 1}/${groupList.length} canonical images; unique local bytes: ${formatMiB(totalBytes)}.`);
+      console.log(`Processed ${index + 1}/${groupList.length} canonical images; downloaded ${report.downloadedCanonicalImages}; unique local bytes: ${formatMiB(totalBytes)}.`);
     }
   }
 }
@@ -256,12 +307,22 @@ try {
   report.failures.push(error instanceof Error ? error.message : String(error));
   report.uniqueLocalFiles = writtenHashes.size;
   report.totalLocalBytes = totalBytes;
-  await writeReport({ completedAt: new Date().toISOString() });
+  await writeReport({ completedAt: new Date().toISOString(), failedImages: failedGroups });
   throw error;
 }
 
 report.uniqueLocalFiles = writtenHashes.size;
 report.totalLocalBytes = totalBytes;
+report.failedImages = failedGroups;
+
+if (failedGroups.length) {
+  const message = `Migration stopped safely: ${failedGroups.length} canonical Blogger image(s) could not be recovered after exhausting known size variants. No article URLs were rewritten and no media commit will be created.`;
+  report.failures.push(message);
+  await writeReport({ completedAt: new Date().toISOString() });
+  console.error(message);
+  for (const failure of failedGroups.slice(0, 20)) console.error(`- ${failure.files.join(', ')} :: ${failure.key}`);
+  throw new Error(message);
+}
 
 for (const [file, originalContent] of fileContents) {
   let content = originalContent;
