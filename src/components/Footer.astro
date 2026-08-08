@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer class="site-footer" dir="rtl">
-	<div class="site-container footer-row">
+	<div class="site-container footer-row" dir="ltr">
 		<p class="footer-copyright" dir="ltr">
 			Copyright &copy;{today.getFullYear()} HAKAMIQ
 		</p>
@@ -17,29 +17,8 @@ const today = new Date();
 			<a href="/services">خدمة المحاكيات</a>
 			<a href="/disclaimer">إخلاء المسؤولية</a>
 		</nav>
-
-		<button class="footer-back-to-top" type="button" aria-label="العودة إلى أعلى الصفحة" title="العودة إلى أعلى الصفحة">
-			<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 12 4-4 4 4"></path></svg>
-		</button>
 	</div>
 </footer>
-
-<script>
-	const initializeFooterBackToTop = () => {
-		document.querySelectorAll<HTMLButtonElement>('.footer-back-to-top').forEach((button) => {
-			if (button.dataset.initialized === 'true') return;
-			button.dataset.initialized = 'true';
-			button.addEventListener('click', () => {
-				const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-				window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-			});
-		});
-	};
-
-	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeFooterBackToTop, { once: true });
-	else initializeFooterBackToTop();
-	document.addEventListener('astro:page-load', initializeFooterBackToTop);
-</script>
 
 <style>
 	.site-footer {
@@ -73,7 +52,7 @@ const today = new Date();
 		flex: 1 1 auto;
 		min-width: 0;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: var(--spacing-20);
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -81,7 +60,9 @@ const today = new Date();
 		white-space: nowrap;
 	}
 
-	.footer-links::-webkit-scrollbar { display: none; }
+	.footer-links::-webkit-scrollbar {
+		display: none;
+	}
 
 	.footer-links a {
 		display: inline-flex;
@@ -113,52 +94,15 @@ const today = new Date();
 		color: var(--color-neutral-foreground-1);
 	}
 
-	.footer-back-to-top {
-		display: grid;
-		width: 36px;
-		height: 36px;
-		flex: 0 0 36px;
-		place-items: center;
-		padding: 0;
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-		border-radius: 50%;
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-2);
-		cursor: pointer;
-		transition:
-			background var(--motion-duration-control) var(--curve-easy-ease),
-			border-color var(--motion-duration-control) var(--curve-easy-ease),
-			color var(--motion-duration-control) var(--curve-easy-ease),
-			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
-	}
-
-	.footer-back-to-top:hover {
-		border-color: var(--color-brand-stroke-1);
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-		box-shadow: var(--shadow-4);
-	}
-
-	.footer-back-to-top:focus-visible {
-		outline: 2px solid var(--color-brand-stroke-1);
-		outline-offset: 2px;
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.footer-back-to-top svg {
-		width: 16px;
-		height: 16px;
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.75;
-	}
-
 	@media (max-width: 1020px) {
-		.footer-row { gap: var(--spacing-80); }
-		.footer-links { justify-content: flex-start; }
+		.footer-row {
+			gap: var(--spacing-80);
+		}
+
+		.footer-links {
+			gap: 0;
+		}
+
 		.footer-links a {
 			padding-inline: var(--spacing-40);
 			font-size: var(--font-size-caption-2);
@@ -166,27 +110,29 @@ const today = new Date();
 	}
 
 	@media (max-width: 760px) {
-		.site-footer { margin-top: var(--spacing-120); }
+		.site-footer {
+			margin-top: var(--spacing-120);
+		}
+
 		.footer-row {
 			min-height: 52px;
 			gap: var(--spacing-40);
 		}
-		.footer-copyright { font-size: var(--font-size-caption-2); }
-		.footer-links { justify-content: flex-start; }
-		.footer-links a { padding-inline: var(--spacing-20); }
-		.footer-back-to-top {
-			width: 32px;
-			height: 32px;
-			flex-basis: 32px;
+
+		.footer-links a {
+			padding-inline: var(--spacing-20);
 		}
 	}
 
 	@media (pointer: coarse) {
-		.footer-links a { min-height: var(--control-height-touch); }
+		.footer-links a {
+			min-height: var(--control-height-touch);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.footer-links a,
-		.footer-back-to-top { transition: none; }
+		.footer-links a {
+			transition: none;
+		}
 	}
 </style>
