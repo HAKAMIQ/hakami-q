@@ -7,6 +7,7 @@
   },
   "scripts": {
     "blogger:independence": "node scripts/blogger-independence-quality.mjs",
+    "article:rendered-quality": "node scripts/article-rendered-quality.mjs --dist dist",
     "content:quality": "node scripts/content-quality.mjs",
     "content:quality:strict": "node scripts/content-quality.mjs --strict",
     "content:quality:report": "node scripts/content-quality.mjs --json reports/content-quality.json",
@@ -19,7 +20,7 @@
     "dev": "astro dev",
     "prebuild": "npm run blogger:independence && npm run content:quality && npm run ui:quality && npm run web:quality",
     "build": "astro build",
-    "postbuild": "npm run final:audit",
+    "postbuild": "npm run final:audit && npm run article:rendered-quality",
     "preview": "astro preview",
     "astro": "astro"
   },
