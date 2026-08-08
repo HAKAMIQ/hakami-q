@@ -4,7 +4,7 @@ description: 'يعتبر محاكي Vita3K المشروع الأول والأك�
 pubDate: '2026-04-06T03:24:00.003+03:00'
 updatedDate: '2026-04-06T03:28:29.051+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEgdj4baqRp9lgGlxzJTdE3gIO33HF7RIKjSe48janz0zu8zm1OhuFuXopNfKnuhlvoOQaTvrO8IHfS2Sr8euKoten2IF6rwwzKE9mJa0JpoyuNVPsa_Ts6f7OzB95ELmfN_EYSDNDrdmPBzizorCu06PB1MKyRFaU1IFVNKEruHSK_Ngx11Ur_7VfqhjxQ'
+heroImageUrl: '/media/blogger/65/65295c3d0bb590a753a20775e687b283f56af54f73048335a4f8f3ad19af17c5.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/04/vita3k-playstation-vita.html'
 labels: ["PlayStation","PSPVita"]
 ---
@@ -75,7 +75,7 @@ labels: ["PlayStation","PSPVita"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="https://vita3k.org/" target="_blank">
-                <img alt="Vita3K Emulator Logo" class="img-frame" src="https://blogger.googleusercontent.com/img/a/AVvXsEgdj4baqRp9lgGlxzJTdE3gIO33HF7RIKjSe48janz0zu8zm1OhuFuXopNfKnuhlvoOQaTvrO8IHfS2Sr8euKoten2IF6rwwzKE9mJa0JpoyuNVPsa_Ts6f7OzB95ELmfN_EYSDNDrdmPBzizorCu06PB1MKyRFaU1IFVNKEruHSK_Ngx11Ur_7VfqhjxQ" width="600" />
+                <img alt="Vita3K Emulator Logo" class="img-frame" src="/media/blogger/65/65295c3d0bb590a753a20775e687b283f56af54f73048335a4f8f3ad19af17c5.png" width="600" />
             </a>
         </div>
         <p>يعتبر محاكي <b><a href="https://vita3k.org/" target="_blank">Vita3K</a></b> المشروع الأول والأكثر طموحاً لمحاكاة جهاز PS Vita العريق. بفضل كونه مفتوح المصدر ومبنياً بجهود مجتمعية، نجح المحاكي في كسر حاجز المستحيل وتوفير الدعم لأنظمة ويندوز، لينكس، ماك، وبالأخص <b>أندرويد</b>.</p>

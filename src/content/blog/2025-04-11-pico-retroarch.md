@@ -4,7 +4,7 @@ description: 'طريقة تشغيل ألعاب SEGA Pico داخل RetroArch | ا
 pubDate: '2025-04-11T18:26:00.003+03:00'
 updatedDate: '2026-02-25T02:35:36.374+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz1aVCUbf61uB_OdLeYcBfptsLBqd7-6Yh_weGfTQ0kes62Lz_zfHeMz4qfEB_NF85nDHi2B842VpfkT01J9uHLsG1TgUja_OykVcDMtGNsXb4mxOE6hTE5MQyhUt49wwutyfTABqr2HgDh91-7oTfKcic8g3ny-J5duDtWxHKJkd2B5hPo8J3zi2aCxk/s320/images%20(1).png'
+heroImageUrl: '/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/pico-retroarch.html'
 labels: ["Pico","sega"]
 ---
@@ -62,8 +62,8 @@ labels: ["Pico","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz1aVCUbf61uB_OdLeYcBfptsLBqd7-6Yh_weGfTQ0kes62Lz_zfHeMz4qfEB_NF85nDHi2B842VpfkT01J9uHLsG1TgUja_OykVcDMtGNsXb4mxOE6hTE5MQyhUt49wwutyfTABqr2HgDh91-7oTfKcic8g3ny-J5duDtWxHKJkd2B5hPo8J3zi2aCxk/s1600/images%20(1).png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgz1aVCUbf61uB_OdLeYcBfptsLBqd7-6Yh_weGfTQ0kes62Lz_zfHeMz4qfEB_NF85nDHi2B842VpfkT01J9uHLsG1TgUja_OykVcDMtGNsXb4mxOE6hTE5MQyhUt49wwutyfTABqr2HgDh91-7oTfKcic8g3ny-J5duDtWxHKJkd2B5hPo8J3zi2aCxk/s320/images%20(1).png" width="195" />
+            <a href="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png">
+                <img class="img-frame" src="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png" width="195" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب SEGA Pico داخل RetroArch | الدليل التقني</h2>

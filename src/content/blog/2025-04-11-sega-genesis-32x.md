@@ -4,7 +4,7 @@ description: 'أفضل محاكيات Sega Genesis 32X للكمبيوتر وال
 pubDate: '2025-04-11T18:33:00.003+03:00'
 updatedDate: '2026-02-25T02:33:55.839+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJYwW0PcdqSHEBkU94nCsZIhIMbyO6viH1NjC7yrg_WQS4sy4lkr7pF3-2BXWpocauTrYZC6dYe7SC_8W0JK5X_6Z_CQwkWLSQxeTKLwYQ3TZqXkzvTXvULhyphenhyphenD0LwoGsA_nXf6H3u7eMMGddLNCh9XhdFNxfg4ZssVyI8oEfhiDCR0Db_XjQxpg6HGs1c/s320/91sDTFzts8L.jpg'
+heroImageUrl: '/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-genesis-32x.html'
 labels: ["Genesis32X","sega"]
 ---
@@ -84,8 +84,8 @@ labels: ["Genesis32X","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJYwW0PcdqSHEBkU94nCsZIhIMbyO6viH1NjC7yrg_WQS4sy4lkr7pF3-2BXWpocauTrYZC6dYe7SC_8W0JK5X_6Z_CQwkWLSQxeTKLwYQ3TZqXkzvTXvULhyphenhyphenD0LwoGsA_nXf6H3u7eMMGddLNCh9XhdFNxfg4ZssVyI8oEfhiDCR0Db_XjQxpg6HGs1c/s1600/91sDTFzts8L.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJYwW0PcdqSHEBkU94nCsZIhIMbyO6viH1NjC7yrg_WQS4sy4lkr7pF3-2BXWpocauTrYZC6dYe7SC_8W0JK5X_6Z_CQwkWLSQxeTKLwYQ3TZqXkzvTXvULhyphenhyphenD0LwoGsA_nXf6H3u7eMMGddLNCh9XhdFNxfg4ZssVyI8oEfhiDCR0Db_XjQxpg6HGs1c/s320/91sDTFzts8L.jpg" width="320" />
+            <a href="/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg">
+                <img class="img-frame" src="/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega Genesis 32X للكمبيوتر والجوال</h2>

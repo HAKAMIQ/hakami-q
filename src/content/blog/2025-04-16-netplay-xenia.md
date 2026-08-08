@@ -4,7 +4,7 @@ description: 'ما هو Netplay في محاكي Xenia؟ ثورة اللعب ال
 pubDate: '2025-04-16T22:35:00.005+03:00'
 updatedDate: '2026-02-24T06:16:19.509+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioRYaHBk0INjnBQBOwGDJZq0KzFjyy5ZY60uLHxDW22Av7lwFvNhZ14iD51XRbNzL1W2v2g2_Moh-sC2auLoMGvZIg1xLnWhyjnKx7iUfXr8Dk_MM68zHrxMGU1093Qh-1HAEaux6roBM2PKS9qQ5b5LC2FZqObCyqTZkmf9seCB8gu9OMSOWIkMBzXCk/s320/maxresdefault.jpg'
+heroImageUrl: '/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/netplay-xenia.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -116,8 +116,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioRYaHBk0INjnBQBOwGDJZq0KzFjyy5ZY60uLHxDW22Av7lwFvNhZ14iD51XRbNzL1W2v2g2_Moh-sC2auLoMGvZIg1xLnWhyjnKx7iUfXr8Dk_MM68zHrxMGU1093Qh-1HAEaux6roBM2PKS9qQ5b5LC2FZqObCyqTZkmf9seCB8gu9OMSOWIkMBzXCk/s1280/maxresdefault.jpg">
-                <img class="img-frame" alt="ما هو Netplay في محاكي Xenia؟" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioRYaHBk0INjnBQBOwGDJZq0KzFjyy5ZY60uLHxDW22Av7lwFvNhZ14iD51XRbNzL1W2v2g2_Moh-sC2auLoMGvZIg1xLnWhyjnKx7iUfXr8Dk_MM68zHrxMGU1093Qh-1HAEaux6roBM2PKS9qQ5b5LC2FZqObCyqTZkmf9seCB8gu9OMSOWIkMBzXCk/s320/maxresdefault.jpg" style="max-width: 450px;" />
+            <a href="/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg">
+                <img class="img-frame" alt="ما هو Netplay في محاكي Xenia؟" src="/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg" style="max-width: 450px;" />
             </a>
         </div>
         <h2>ما هو Netplay في محاكي Xenia؟ ثورة اللعب الجماعي للـ Xbox 360</h2>

@@ -4,7 +4,7 @@ description: 'مقارنة تحسينات الرسوم والأداء: Xenia ض�
 pubDate: '2025-04-17T01:02:00.009+03:00'
 updatedDate: '2026-02-24T06:05:26.025+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQcUU5Uxgb7W47sijTYypLVF8yQsNb0RVgg83K5Io43Ze0U6ZoUlzzwmxPMspReWuxCiGNlsEPF9UtHVgp0COTcOOuVhoLib2dQT3pYGgH9craw8dPH4byd5Ls_b4YxS9e-ni0zT7fWL9PSDMfTqrr4bLIRm-l_wah-pUPYKtmt9zQ1Pw9atq3Ch5TF2I/s320/29.png'
+heroImageUrl: '/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-fission.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -126,8 +126,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQcUU5Uxgb7W47sijTYypLVF8yQsNb0RVgg83K5Io43Ze0U6ZoUlzzwmxPMspReWuxCiGNlsEPF9UtHVgp0COTcOOuVhoLib2dQT3pYGgH9craw8dPH4byd5Ls_b4YxS9e-ni0zT7fWL9PSDMfTqrr4bLIRm-l_wah-pUPYKtmt9zQ1Pw9atq3Ch5TF2I/s1536/29.png">
-                <img class="img-frame" alt="Xenia vs Fission Comparison" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQcUU5Uxgb7W47sijTYypLVF8yQsNb0RVgg83K5Io43Ze0U6ZoUlzzwmxPMspReWuxCiGNlsEPF9UtHVgp0COTcOOuVhoLib2dQT3pYGgH9craw8dPH4byd5Ls_b4YxS9e-ni0zT7fWL9PSDMfTqrr4bLIRm-l_wah-pUPYKtmt9zQ1Pw9atq3Ch5TF2I/s320/29.png" style="max-width: 400px;" />
+            <a href="/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png">
+                <img class="img-frame" alt="Xenia vs Fission Comparison" src="/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png" style="max-width: 400px;" />
             </a>
         </div>
         <h2>مقارنة تحسينات الرسوم والأداء: Xenia ضد Fission</h2>

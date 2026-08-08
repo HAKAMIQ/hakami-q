@@ -4,7 +4,7 @@ description: 'دليل الألعاب المدعومة في Netplay على مح�
 pubDate: '2025-04-16T22:53:00.002+03:00'
 updatedDate: '2026-02-24T06:13:46.002+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggL3IFYElQPArpHm9PvoXZu2f7tyBP-FK_SsyBrGEn8xDF-O_swTjKqHtRCtbchFQ5B3Zh7eqirQ9bk2B5YehXVLvLVEUI5doWx0RyTnEYvrlfi9eN8zvze95i-4EOQFuHy633WZIaXEEGn69i738NQjViUXTWE7vX7cTmRok9IrghfQqTZNAUPu78pRA/s259/download.jfif'
+heroImageUrl: '/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/netplay-xenia_16.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -134,8 +134,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggL3IFYElQPArpHm9PvoXZu2f7tyBP-FK_SsyBrGEn8xDF-O_swTjKqHtRCtbchFQ5B3Zh7eqirQ9bk2B5YehXVLvLVEUI5doWx0RyTnEYvrlfi9eN8zvze95i-4EOQFuHy633WZIaXEEGn69i738NQjViUXTWE7vX7cTmRok9IrghfQqTZNAUPu78pRA/s1600/download.jfif">
-                <img class="img-frame" alt="Xenia Netplay Compatibility" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggL3IFYElQPArpHm9PvoXZu2f7tyBP-FK_SsyBrGEn8xDF-O_swTjKqHtRCtbchFQ5B3Zh7eqirQ9bk2B5YehXVLvLVEUI5doWx0RyTnEYvrlfi9eN8zvze95i-4EOQFuHy633WZIaXEEGn69i738NQjViUXTWE7vX7cTmRok9IrghfQqTZNAUPu78pRA/s259/download.jfif" style="max-width: 300px;" />
+            <a href="/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg">
+                <img class="img-frame" alt="Xenia Netplay Compatibility" src="/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg" style="max-width: 300px;" />
             </a>
         </div>
         <h2>دليل الألعاب المدعومة في Netplay على محاكي Xenia</h2>

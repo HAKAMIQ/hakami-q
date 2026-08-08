@@ -4,7 +4,7 @@ description: 'قائمة Debug في محاكي RPCS3 هي منطقة مخصصة 
 pubDate: '2025-04-14T01:37:00.005+03:00'
 updatedDate: '2026-02-25T00:07:09.484+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYowG_puFieRmLwLQ-dGwt9NXeQF0OZJZYniLpUkQ64n4Z9sU6qONHd_giQ49DPRIf4iG-GTimbJMXw875EqWqG7b9jL7ad9bZSMMUizxXeL0P_50SHJQCWq4thuszD3H2-LyZalTiw_COy0Cm07xUyMYZnOnU9z6eIjgUJXT4k_nCWSvWAP64f5GD8oM/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-debug-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -60,8 +60,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYowG_puFieRmLwLQ-dGwt9NXeQF0OZJZYniLpUkQ64n4Z9sU6qONHd_giQ49DPRIf4iG-GTimbJMXw875EqWqG7b9jL7ad9bZSMMUizxXeL0P_50SHJQCWq4thuszD3H2-LyZalTiw_COy0Cm07xUyMYZnOnU9z6eIjgUJXT4k_nCWSvWAP64f5GD8oM/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYowG_puFieRmLwLQ-dGwt9NXeQF0OZJZYniLpUkQ64n4Z9sU6qONHd_giQ49DPRIf4iG-GTimbJMXw875EqWqG7b9jL7ad9bZSMMUizxXeL0P_50SHJQCWq4thuszD3H2-LyZalTiw_COy0Cm07xUyMYZnOnU9z6eIjgUJXT4k_nCWSvWAP64f5GD8oM/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" width="320" />
+            <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
+                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>قائمة Debug في محاكي RPCS3 هي منطقة مخصصة للعمليات التقنية العميقة وتصحيح الأخطاء البرمجية. غالباً ما تكون مخفية وتحتاج لتفعيل يدوي لأنها تؤثر بشكل مباشر على سلوك المحاكاة وتوافقية الألعاب.</p>

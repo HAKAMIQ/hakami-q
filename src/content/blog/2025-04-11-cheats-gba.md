@@ -4,7 +4,7 @@ description: '🎮 الدليل الكامل لتفعيل أكواد الغش (C
 pubDate: '2025-04-11T01:05:00.003+03:00'
 updatedDate: '2026-02-25T03:40:04.394+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-DxKaDfWkWHNghuU84p1V4Z7P7QdyKJmrNaKPGxl56uSdeG3IypdObPv8qvfjh86aKOUemQ57i4HOYk3XbWKtOpKtkNiejRnWVKBjEeat-lo0aTYOPN9zZS3zL6flz9iMPkwN7dyhJ-XFeN5jDYPt5i-bv51-a3OEgJFDUyv-Ou4LOqDaLLWHqb7n98M/s320/hq720%20(1).jpg'
+heroImageUrl: '/media/blogger/59/59cd31b38898298dc922e9f46a56f197dae3976274f77fe4f907694f6215cfde.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/cheats-gba.html'
 labels: ["GBA","Nintendo"]
 ---
@@ -66,8 +66,8 @@ labels: ["GBA","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-DxKaDfWkWHNghuU84p1V4Z7P7QdyKJmrNaKPGxl56uSdeG3IypdObPv8qvfjh86aKOUemQ57i4HOYk3XbWKtOpKtkNiejRnWVKBjEeat-lo0aTYOPN9zZS3zL6flz9iMPkwN7dyhJ-XFeN5jDYPt5i-bv51-a3OEgJFDUyv-Ou4LOqDaLLWHqb7n98M/s686/hq720%20(1).jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-DxKaDfWkWHNghuU84p1V4Z7P7QdyKJmrNaKPGxl56uSdeG3IypdObPv8qvfjh86aKOUemQ57i4HOYk3XbWKtOpKtkNiejRnWVKBjEeat-lo0aTYOPN9zZS3zL6flz9iMPkwN7dyhJ-XFeN5jDYPt5i-bv51-a3OEgJFDUyv-Ou4LOqDaLLWHqb7n98M/s320/hq720%20(1).jpg" width="320" alt="تفعيل الغش في محاكيات GBA" />
+            <a href="/media/blogger/59/59cd31b38898298dc922e9f46a56f197dae3976274f77fe4f907694f6215cfde.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/59/59cd31b38898298dc922e9f46a56f197dae3976274f77fe4f907694f6215cfde.jpg" width="320" alt="تفعيل الغش في محاكيات GBA" />
             </a>
         </div>
         <h2 style="color: var(--xe-red); text-align: center;">🎮 الدليل الكامل لتفعيل أكواد الغش (Cheats) في محاكيات GBA</h2>

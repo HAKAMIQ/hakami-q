@@ -4,7 +4,7 @@ description: '🖥️ Commodore Amiga: أيقونة الإبداع الرقمي 
 pubDate: '2025-04-09T04:38:00.001+03:00'
 updatedDate: '2026-02-24T05:13:48.756+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcDmkN4tcncZjjainjQHdhu_ge1pBASwqcoIAn3-vusHaytRzeo6zXJvCPMDBcAKAgyoelKYn9OFb3LRpMQC2XynEk0sqLgCnUFdsxadCO7QUe-KxY3YE1p1pvbFs_QYT3OVHbeQ1i2RT6EXYgVyLnGexeoWpzyDbR8_tXSwP20AcwapqnzfOP67bSss0/s320/ddbry9o-a7a71bb6-c7f9-4b93-ae1b-0ce6e36f5b12.png'
+heroImageUrl: '/media/blogger/50/5026aba3fbd0ac0213c6ac52c3cc79d24a1affd2886e34d3b313c253de694759.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/commodoreamiga.html'
 labels: ["Atari","Commodore-AMIGA"]
 ---
@@ -108,8 +108,8 @@ labels: ["Atari","Commodore-AMIGA"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcDmkN4tcncZjjainjQHdhu_ge1pBASwqcoIAn3-vusHaytRzeo6zXJvCPMDBcAKAgyoelKYn9OFb3LRpMQC2XynEk0sqLgCnUFdsxadCO7QUe-KxY3YE1p1pvbFs_QYT3OVHbeQ1i2RT6EXYgVyLnGexeoWpzyDbR8_tXSwP20AcwapqnzfOP67bSss0/s878/ddbry9o-a7a71bb6-c7f9-4b93-ae1b-0ce6e36f5b12.png">
-                <img class="img-frame" alt="Commodore Amiga الأسطوري" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcDmkN4tcncZjjainjQHdhu_ge1pBASwqcoIAn3-vusHaytRzeo6zXJvCPMDBcAKAgyoelKYn9OFb3LRpMQC2XynEk0sqLgCnUFdsxadCO7QUe-KxY3YE1p1pvbFs_QYT3OVHbeQ1i2RT6EXYgVyLnGexeoWpzyDbR8_tXSwP20AcwapqnzfOP67bSss0/s320/ddbry9o-a7a71bb6-c7f9-4b93-ae1b-0ce6e36f5b12.png" />
+            <a href="/media/blogger/50/5026aba3fbd0ac0213c6ac52c3cc79d24a1affd2886e34d3b313c253de694759.png">
+                <img class="img-frame" alt="Commodore Amiga الأسطوري" src="/media/blogger/50/5026aba3fbd0ac0213c6ac52c3cc79d24a1affd2886e34d3b313c253de694759.png" />
             </a>
         </div>
         <h2>🖥️ Commodore Amiga: أيقونة الإبداع الرقمي الخالدة</h2>

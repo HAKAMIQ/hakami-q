@@ -4,7 +4,7 @@ description: 'طريقة تشغيل ألعاب Game Gear باستخدام RetroA
 pubDate: '2025-04-11T19:16:00.005+03:00'
 updatedDate: '2026-02-25T01:59:28.674+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvX6sAxfE2QqOiAhmJYFPjymjdpRqvzasHqm8yOWRbFZytYRi21Y1Fu87gcWV3zJzwiUxOBiArYul3igFYq9FGmcYEBAaeuKTgSZOVyFVNB5d5EKjysoISdtxYy0GGBemTwAUc-jkjaHHTWuurmIyBUdlkJ3yfuzylZRIyGVrH9gs1NgMYDuSS8UvAcNM/s320/images%20(8).jfif'
+heroImageUrl: '/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-gear-retroarch.html'
 labels: ["sega","Sega-GameGear"]
 ---
@@ -66,8 +66,8 @@ labels: ["sega","Sega-GameGear"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvX6sAxfE2QqOiAhmJYFPjymjdpRqvzasHqm8yOWRbFZytYRi21Y1Fu87gcWV3zJzwiUxOBiArYul3igFYq9FGmcYEBAaeuKTgSZOVyFVNB5d5EKjysoISdtxYy0GGBemTwAUc-jkjaHHTWuurmIyBUdlkJ3yfuzylZRIyGVrH9gs1NgMYDuSS8UvAcNM/s1600/images%20(8).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvX6sAxfE2QqOiAhmJYFPjymjdpRqvzasHqm8yOWRbFZytYRi21Y1Fu87gcWV3zJzwiUxOBiArYul3igFYq9FGmcYEBAaeuKTgSZOVyFVNB5d5EKjysoISdtxYy0GGBemTwAUc-jkjaHHTWuurmIyBUdlkJ3yfuzylZRIyGVrH9gs1NgMYDuSS8UvAcNM/s320/images%20(8).jfif" width="265" />
+            <a href="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg">
+                <img class="img-frame" src="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg" width="265" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب Game Gear باستخدام RetroArch</h2>

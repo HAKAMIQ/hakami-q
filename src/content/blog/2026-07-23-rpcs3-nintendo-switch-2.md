@@ -3,7 +3,7 @@ title: 'RPCS3 يكشف أفضل محاكيات Nintendo ويحذر من محاك
 description: '``` نشر حساب RPCS3 الرسمي قائمة سريعة بالمحاكيات المقترحة لتشغيل ألعاب أجهزة Nintendo على الكمبيوتر. القائمة تبدأ من أجهزة NES القديمة وتصل إلى Nintendo Switch ، مع تحذير مهم من أي…'
 pubDate: '2026-07-23T07:17:12.469+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_THuyWmeZUTlye8bFhqf_Gsv5rZFUmWCr33bC2Vt2DM4yuTVL8qhU_HxFV5Ak0nMBx2RK8d3zp2kM8rWnkzOCcmU2KXJi8ORlUddahZ09856dZDZMNrkYEq0b2PdJ2LmOO4Xur9DHpposqszcRVorKPKT6P50090IWhWGQgfH0KVUFdVtYqvC-D6P5gc/s320/Untitled-2.jpg'
+heroImageUrl: '/media/blogger/dc/dc78f12ac0d8da4c789aa748e6b4f396cb1c1f7bf56f6bf2009b0a8a2e77ac30.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/rpcs3-nintendo-switch-2.html'
 labels: ["articles","Nintendo","PC","PlayStation"]
 ---
@@ -183,7 +183,7 @@ labels: ["articles","Nintendo","PC","PlayStation"]
 <div class="orbital-full-wrapper">
 
 ```html
-<header class="tech-header"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_THuyWmeZUTlye8bFhqf_Gsv5rZFUmWCr33bC2Vt2DM4yuTVL8qhU_HxFV5Ak0nMBx2RK8d3zp2kM8rWnkzOCcmU2KXJi8ORlUddahZ09856dZDZMNrkYEq0b2PdJ2LmOO4Xur9DHpposqszcRVorKPKT6P50090IWhWGQgfH0KVUFdVtYqvC-D6P5gc/s628/Untitled-2.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="352" data-original-width="628" height="179" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_THuyWmeZUTlye8bFhqf_Gsv5rZFUmWCr33bC2Vt2DM4yuTVL8qhU_HxFV5Ak0nMBx2RK8d3zp2kM8rWnkzOCcmU2KXJi8ORlUddahZ09856dZDZMNrkYEq0b2PdJ2LmOO4Xur9DHpposqszcRVorKPKT6P50090IWhWGQgfH0KVUFdVtYqvC-D6P5gc/s320/Untitled-2.jpg" width="320" /></a></div></div><p>نشر حساب <code>RPCS3</code> الرسمي قائمة سريعة بالمحاكيات المقترحة
+<header class="tech-header"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/dc/dc78f12ac0d8da4c789aa748e6b4f396cb1c1f7bf56f6bf2009b0a8a2e77ac30.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="352" data-original-width="628" height="179" src="/media/blogger/dc/dc78f12ac0d8da4c789aa748e6b4f396cb1c1f7bf56f6bf2009b0a8a2e77ac30.jpg" width="320" /></a></div></div><p>نشر حساب <code>RPCS3</code> الرسمي قائمة سريعة بالمحاكيات المقترحة
         لتشغيل ألعاب أجهزة Nintendo على الكمبيوتر.
     </p>
 

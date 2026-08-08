@@ -4,7 +4,7 @@ description: '💡 وش فكرة MultiROM؟ بدل ما يكون عندك 10 م�
 pubDate: '2025-04-10T23:40:00.002+03:00'
 updatedDate: '2026-02-25T04:01:35.000+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir7ApW8CUz2cfGRVu1lqFhxHANu1ODBVPDduqbTOucH5Nhj-K87JKqXH0Af6cxo40LsLT-n_unYq7qs8bYbMsyiJGfqXaxOncm1OyWcXb1Kg4VGATC7J1Ko4tMwDvN5KIc0fDvupGg8bKrBkPuOtPAm516XaUJAN9Q254cyWLz0_x4rVxyovF1peAY4l8/s320/3ee302a6-7283-4faf-993c-6043c8ecdd8b.png'
+heroImageUrl: '/media/blogger/7e/7e22739c427c8b5265bbd783185e053910202ca9dd10abd04f68165f173d9d6d.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-multirom-diy.html'
 labels: ["Game Boy","Nintendo"]
 ---
@@ -82,8 +82,8 @@ labels: ["Game Boy","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir7ApW8CUz2cfGRVu1lqFhxHANu1ODBVPDduqbTOucH5Nhj-K87JKqXH0Af6cxo40LsLT-n_unYq7qs8bYbMsyiJGfqXaxOncm1OyWcXb1Kg4VGATC7J1Ko4tMwDvN5KIc0fDvupGg8bKrBkPuOtPAm516XaUJAN9Q254cyWLz0_x4rVxyovF1peAY4l8/s1536/3ee302a6-7283-4faf-993c-6043c8ecdd8b.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir7ApW8CUz2cfGRVu1lqFhxHANu1ODBVPDduqbTOucH5Nhj-K87JKqXH0Af6cxo40LsLT-n_unYq7qs8bYbMsyiJGfqXaxOncm1OyWcXb1Kg4VGATC7J1Ko4tMwDvN5KIc0fDvupGg8bKrBkPuOtPAm516XaUJAN9Q254cyWLz0_x4rVxyovF1peAY4l8/s320/3ee302a6-7283-4faf-993c-6043c8ecdd8b.png" width="320" alt="Game Boy MultiROM" />
+            <a href="/media/blogger/7e/7e22739c427c8b5265bbd783185e053910202ca9dd10abd04f68165f173d9d6d.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/7e/7e22739c427c8b5265bbd783185e053910202ca9dd10abd04f68165f173d9d6d.png" width="320" alt="Game Boy MultiROM" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">💡 وش فكرة MultiROM؟</h2>

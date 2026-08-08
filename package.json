@@ -6,7 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "sync:blogger-pages": "node scripts/sync-blogger-pages.mjs",
+    "blogger:independence": "node scripts/blogger-independence-quality.mjs",
     "content:quality": "node scripts/content-quality.mjs",
     "content:quality:strict": "node scripts/content-quality.mjs --strict",
     "content:quality:report": "node scripts/content-quality.mjs --json reports/content-quality.json",
@@ -15,9 +15,9 @@
     "web:quality": "node scripts/web-standards-quality.mjs",
     "final:audit": "node scripts/final-site-audit.mjs --dist dist",
     "final:audit:report": "node scripts/final-site-audit.mjs --dist dist --json reports/final-site-audit.json",
-    "predev": "npm run sync:blogger-pages",
+    "predev": "npm run blogger:independence",
     "dev": "astro dev",
-    "prebuild": "npm run sync:blogger-pages && npm run content:quality && npm run ui:quality && npm run web:quality",
+    "prebuild": "npm run blogger:independence && npm run content:quality && npm run ui:quality && npm run web:quality",
     "build": "astro build",
     "postbuild": "npm run final:audit",
     "preview": "astro preview",

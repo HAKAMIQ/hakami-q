@@ -4,7 +4,7 @@ description: 'الدليل التقني: تشغيل ألعاب Virtual Boy عب�
 pubDate: '2025-04-11T03:37:00.003+03:00'
 updatedDate: '2026-02-25T03:09:02.264+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVa-ZTbPPnsGLZQzJMu6e41IOYb4acx8ncpKw7lqSCJucJxVsWhgL87aJ5mVnau2HQnbYNu9G0Ai1bEN5IKjPthYoE2d4ZGkfUAmt5Bstwtazf0KG9GoNp_GGhg-Xp81P9TvNESv-GbEx9Sv3yFzuqa3lDaaILCX2XCnidtRZPgFlaMWK6qdcotowNYOg/s320/v4-460px-Use-Retroarch-Step-22.jpg'
+heroImageUrl: '/media/blogger/05/053e3dc282f6248adb6794c811d825348a1339e11aed413a7aeb50f33a5dbe62.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/virtual-boy-retroarch.html'
 labels: ["Nintendo","VirtualBoy"]
 ---
@@ -67,8 +67,8 @@ labels: ["Nintendo","VirtualBoy"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVa-ZTbPPnsGLZQzJMu6e41IOYb4acx8ncpKw7lqSCJucJxVsWhgL87aJ5mVnau2HQnbYNu9G0Ai1bEN5IKjPthYoE2d4ZGkfUAmt5Bstwtazf0KG9GoNp_GGhg-Xp81P9TvNESv-GbEx9Sv3yFzuqa3lDaaILCX2XCnidtRZPgFlaMWK6qdcotowNYOg/s1600/v4-460px-Use-Retroarch-Step-22.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVa-ZTbPPnsGLZQzJMu6e41IOYb4acx8ncpKw7lqSCJucJxVsWhgL87aJ5mVnau2HQnbYNu9G0Ai1bEN5IKjPthYoE2d4ZGkfUAmt5Bstwtazf0KG9GoNp_GGhg-Xp81P9TvNESv-GbEx9Sv3yFzuqa3lDaaILCX2XCnidtRZPgFlaMWK6qdcotowNYOg/s320/v4-460px-Use-Retroarch-Step-22.jpg" width="320" alt="RetroArch Virtual Boy" />
+            <a href="/media/blogger/05/053e3dc282f6248adb6794c811d825348a1339e11aed413a7aeb50f33a5dbe62.jpg">
+                <img class="img-frame" src="/media/blogger/05/053e3dc282f6248adb6794c811d825348a1339e11aed413a7aeb50f33a5dbe62.jpg" width="320" alt="RetroArch Virtual Boy" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">الدليل التقني: تشغيل ألعاب Virtual Boy عبر بيئة RetroArch</h2>

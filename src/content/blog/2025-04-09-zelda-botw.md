@@ -4,7 +4,7 @@ description: 'ألعاب نينتندو كانت دايم حصرية، بس ال
 pubDate: '2025-04-09T06:35:00.002+03:00'
 updatedDate: '2026-02-24T23:03:42.026+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEih2d9PCMDa0-jUlhU5BVW58eu4HIZcIK0_xd-W-3dy7bKIhYlFe22jSJPSomIw0SjW1xu2R2o8B0PHpaDBN4WpwLjJvhVVkZ2zTKDmjWnj7Ci23T4YVjZOKoyPfCIRyxDXR2YtCm-BgKejQuCBn613yeAOGoxIGT4HyMBhLE3QVfyotW8i2s0wZPTLTF4/s1280/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-botw.webp'
+heroImageUrl: '/media/blogger/35/35f58684855ae8035c8da3d9b8c0731bf7c4ffa50d9a3f0ba08fdc44e6a7f2b2.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/zelda-botw.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -163,7 +163,7 @@ labels: ["Nintendo","Wii-U"]
 <article class="hakamiq-cemu-wrapper">
 
     <div class="hakamiq-media-container">
-        <img class="hakamiq-main-img" alt="zelda cemu optimization" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEih2d9PCMDa0-jUlhU5BVW58eu4HIZcIK0_xd-W-3dy7bKIhYlFe22jSJPSomIw0SjW1xu2R2o8B0PHpaDBN4WpwLjJvhVVkZ2zTKDmjWnj7Ci23T4YVjZOKoyPfCIRyxDXR2YtCm-BgKejQuCBn613yeAOGoxIGT4HyMBhLE3QVfyotW8i2s0wZPTLTF4/s1280/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-botw.webp" loading="lazy" decoding="async" />
+        <img class="hakamiq-main-img" alt="zelda cemu optimization" src="/media/blogger/35/35f58684855ae8035c8da3d9b8c0731bf7c4ffa50d9a3f0ba08fdc44e6a7f2b2.jpg" loading="lazy" decoding="async" />
         
         <div class="hakamiq-video-wrapper">
             <iframe src="https://www.youtube.com/embed/2LcjF-pYjfU" allowfullscreen="allowfullscreen" loading="lazy" title="شرح تشغيل زيلدا على محاكي Cemu"></iframe>

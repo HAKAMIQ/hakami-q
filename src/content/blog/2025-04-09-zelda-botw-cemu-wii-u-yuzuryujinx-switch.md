@@ -4,7 +4,7 @@ description: 'Zelda BOTW على الكمبيوتر: مقارنة بين Cemu و 
 pubDate: '2025-04-09T06:31:00.003+03:00'
 updatedDate: '2026-02-24T23:44:21.068+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1xwnfIPkpOkAYC5e6Zp67D_7aDQ0NBA3B2oSmHbrsJZv8Um_O3AbI-ZOnnohH4t_pVvBAn15-qnuS9RPBxprRuI0ChNW4TjdnbBI6jx-QcKj2n6Aqz1dHU6WzPXS_2RqauLk5kJmgZXDx8ZdmPwqj7pWZVyAjdbQfhDQEq0hIOe9Vmn_OXAgJdMImWDg/s650/cemu-1.19.0.jpg'
+heroImageUrl: '/media/blogger/ae/aec5cabd6db7a15b000b4bb479624e78db4ebbe33efed81b1ff7d808be1c351d.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/zelda-botw-cemu-wii-u-yuzuryujinx-switch.html'
 labels: ["Nintendo","NS","Wii-U"]
 ---
@@ -200,7 +200,7 @@ labels: ["Nintendo","NS","Wii-U"]
         <h1 class="hakamiq-main-title">Zelda BOTW على الكمبيوتر: مقارنة بين Cemu و Yuzu و Ryujinx</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1xwnfIPkpOkAYC5e6Zp67D_7aDQ0NBA3B2oSmHbrsJZv8Um_O3AbI-ZOnnohH4t_pVvBAn15-qnuS9RPBxprRuI0ChNW4TjdnbBI6jx-QcKj2n6Aqz1dHU6WzPXS_2RqauLk5kJmgZXDx8ZdmPwqj7pWZVyAjdbQfhDQEq0hIOe9Vmn_OXAgJdMImWDg/s650/cemu-1.19.0.jpg" alt="Zelda Breath of the Wild Emulation Comparison" loading="lazy" decoding="async">
+            <img src="/media/blogger/ae/aec5cabd6db7a15b000b4bb479624e78db4ebbe33efed81b1ff7d808be1c351d.jpg" alt="Zelda Breath of the Wild Emulation Comparison" loading="lazy" decoding="async">
             <figcaption>أيهما يقدم أفضل تجربة لزيلدا على الحاسب؟ تحليل شامل للأداء والرسوم 🎮</figcaption>
         </figure>
     </header>

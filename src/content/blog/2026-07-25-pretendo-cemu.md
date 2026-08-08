@@ -4,7 +4,7 @@ description: 'Pretendo Network Cemu 2.6 Dumpling 2.7.2 Online Play شرح تجه
 pubDate: '2026-07-25T00:04:37.418+03:00'
 updatedDate: '2026-07-25T08:07:00.368+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisj8LuMAMn0qPbWP4hO5Rzw0ialgZQsOQm06Vkr3ErrIid2BzGImA4kU-OBZw4K3WKVde_0PEFeS4PSE9e_N5vn5Mqi0oUDf-eFKq_W_FZ83sLZAnmgt6lEU1adEYlPRcbQfGfX-m0puArOjYnRSFZKUrgJXfBPJXSRW0yH3qtbrJXaxsuKKnh7YGVwgM/s1600/lgvu65lgvu65lgvu.jpg'
+heroImageUrl: '/media/blogger/21/21246909ae7ddcaf40ec1db9191803df066d09bb64240cb4dda1171e5d9a4a17.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/pretendo-cemu.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -707,7 +707,7 @@ labels: ["Nintendo","Wii-U"]
         </p>
 </header>
 <figure class="cp-shot cp-cover">
-<button aria-label="عرض الصورة بحجمها الطبيعي" class="cp-image-viewer" data-full="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisj8LuMAMn0qPbWP4hO5Rzw0ialgZQsOQm06Vkr3ErrIid2BzGImA4kU-OBZw4K3WKVde_0PEFeS4PSE9e_N5vn5Mqi0oUDf-eFKq_W_FZ83sLZAnmgt6lEU1adEYlPRcbQfGfX-m0puArOjYnRSFZKUrgJXfBPJXSRW0yH3qtbrJXaxsuKKnh7YGVwgM/s1600/lgvu65lgvu65lgvu.jpg" type="button"><img alt="تشغيل Pretendo واللعب أونلاين على محاكي Cemu" loading="eager" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisj8LuMAMn0qPbWP4hO5Rzw0ialgZQsOQm06Vkr3ErrIid2BzGImA4kU-OBZw4K3WKVde_0PEFeS4PSE9e_N5vn5Mqi0oUDf-eFKq_W_FZ83sLZAnmgt6lEU1adEYlPRcbQfGfX-m0puArOjYnRSFZKUrgJXfBPJXSRW0yH3qtbrJXaxsuKKnh7YGVwgM/s1600/lgvu65lgvu65lgvu.jpg" /></button>
+<button aria-label="عرض الصورة بحجمها الطبيعي" class="cp-image-viewer" data-full="/media/blogger/21/21246909ae7ddcaf40ec1db9191803df066d09bb64240cb4dda1171e5d9a4a17.jpg" type="button"><img alt="تشغيل Pretendo واللعب أونلاين على محاكي Cemu" loading="eager" src="/media/blogger/21/21246909ae7ddcaf40ec1db9191803df066d09bb64240cb4dda1171e5d9a4a17.jpg" /></button>
 <p>تشغيل Pretendo Network داخل Cemu باستخدام ملفات PNID المستخرجة من جهاز Wii U.</p>
 </figure>
 <section class="cp-card">

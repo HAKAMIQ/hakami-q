@@ -4,7 +4,7 @@ description: '❄️ مشكلة كراش Black Ops على Xenia || الأسبا�
 pubDate: '2025-04-17T00:19:00.006+03:00'
 updatedDate: '2026-02-24T06:07:05.718+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDHeXczDUKr-IglszEa-P2YUSaJLyeNHh_neL45Uk9HlcWp2cxxSSi61O4ra5EaFessIz-7iPxAbwgKoK_U7_cktrsIA6iDAI4wcK77Sk5Xd8Htiflr1g_4tEvesrrqlTnESDb_AHyYes-ydb3sF8l-3pHth9nIWkgo5i83M4K6OGGY4eRKOvMUa1cVq4/s320/Screenshot%202025-04-17%20001949.png'
+heroImageUrl: '/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/call-of-duty-black-ops-xenia.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -123,8 +123,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDHeXczDUKr-IglszEa-P2YUSaJLyeNHh_neL45Uk9HlcWp2cxxSSi61O4ra5EaFessIz-7iPxAbwgKoK_U7_cktrsIA6iDAI4wcK77Sk5Xd8Htiflr1g_4tEvesrrqlTnESDb_AHyYes-ydb3sF8l-3pHth9nIWkgo5i83M4K6OGGY4eRKOvMUa1cVq4/s694/Screenshot%202025-04-17%20001949.png">
-                <img class="img-frame" alt="Black Ops Xenia Crash Fix" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDHeXczDUKr-IglszEa-P2YUSaJLyeNHh_neL45Uk9HlcWp2cxxSSi61O4ra5EaFessIz-7iPxAbwgKoK_U7_cktrsIA6iDAI4wcK77Sk5Xd8Htiflr1g_4tEvesrrqlTnESDb_AHyYes-ydb3sF8l-3pHth9nIWkgo5i83M4K6OGGY4eRKOvMUa1cVq4/s320/Screenshot%202025-04-17%20001949.png" style="max-width: 500px;" />
+            <a href="/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png">
+                <img class="img-frame" alt="Black Ops Xenia Crash Fix" src="/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png" style="max-width: 500px;" />
             </a>
         </div>
         <h2>❄️ مشكلة كراش Black Ops على Xenia || الأسباب والحلول</h2>

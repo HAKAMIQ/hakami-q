@@ -4,7 +4,7 @@ description: 'محاكي Xanite (Xbox / Xbox 360) — الحقيقة الكام�
 pubDate: '2025-08-20T00:31:00.008+03:00'
 updatedDate: '2026-02-24T05:03:55.464+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEjZcFvN7H_1PL2YUs5I7k_ZdRECqI_CZ68QFqiTocWvaPlpJz0yqTTxYbNzRclnzl4ubnAEPIKXx04MqnxnGz6Y03O68pSztkpAgfaXFEkinskr10LZJcs1f0lveD-uD8sob6ghO6LICc_yFkncoSqlWi_zePLTlTusgv6iqxfm1QagwEPjDid2ahQ-i4E'
+heroImageUrl: '/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/08/xanite-xbox-xbox-360.html'
 labels: ["ANDROID-EMU"]
 ---
@@ -87,8 +87,8 @@ labels: ["ANDROID-EMU"]
 
     <header class="alert-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjZcFvN7H_1PL2YUs5I7k_ZdRECqI_CZ68QFqiTocWvaPlpJz0yqTTxYbNzRclnzl4ubnAEPIKXx04MqnxnGz6Y03O68pSztkpAgfaXFEkinskr10LZJcs1f0lveD-uD8sob6ghO6LICc_yFkncoSqlWi_zePLTlTusgv6iqxfm1QagwEPjDid2ahQ-i4E">
-                <img alt="محاكي Xanite للأندرويد - حقيقة أم وهم؟" src="https://blogger.googleusercontent.com/img/a/AVvXsEjZcFvN7H_1PL2YUs5I7k_ZdRECqI_CZ68QFqiTocWvaPlpJz0yqTTxYbNzRclnzl4ubnAEPIKXx04MqnxnGz6Y03O68pSztkpAgfaXFEkinskr10LZJcs1f0lveD-uD8sob6ghO6LICc_yFkncoSqlWi_zePLTlTusgv6iqxfm1QagwEPjDid2ahQ-i4E" style="width:100%; max-width: 600px; border-radius: 15px;" />
+            <a href="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png">
+                <img alt="محاكي Xanite للأندرويد - حقيقة أم وهم؟" src="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
             </a>
         </div>
         <h1>محاكي Xanite (Xbox / Xbox 360) — الحقيقة الكاملة</h1>

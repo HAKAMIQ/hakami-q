@@ -3,7 +3,7 @@ title: 'اختراق نسخ Cemu 2.6 على Linux وسرقة مفاتيح GitHub
 description: 'رسالة التحذير المنشورة من أحد مطوري محاكي Cemu بعد اكتشاف الملفات المتأثرة. نشر أحد مطوري محاكي Cemu تحذيرًا أمنيًا بشأن تعرض بعض ملفات إصدار Cemu 2.6 المخصصة لنظام Linux للاختراق…'
 pubDate: '2026-07-21T20:15:24.326+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcwnXdwzbEb0wImdGIzpuyXC9kJ0hCQy4p4rUSOI5t4pQRCjFmY-pAH4i2D8zfdH36fp-AeP28WPqd1n-JPaWWvRmzc3vBrddF4MKaSobiE9ngwudWcASxWq-AHNK8lPZ3rMkMFn_ydw9RBp9_lozMrDQ6fNoCEi21ePM0rRMNmvDRZYixCh96ApYh5h8/s942/86251d78-add4-4202-afca-413eb68b575a.png'
+heroImageUrl: '/media/blogger/3e/3e492b04994f927e287cf6314cd8e8e4ec4a8ed14fb45824a709ccefb1c242ae.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/cemu-26-linux-github-ssh.html'
 labels: ["articles","Nintendo","Wii-U"]
 ---
@@ -407,9 +407,9 @@ labels: ["articles","Nintendo","Wii-U"]
 
         <div class="article-image">
 
-            <a class="image-link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcwnXdwzbEb0wImdGIzpuyXC9kJ0hCQy4p4rUSOI5t4pQRCjFmY-pAH4i2D8zfdH36fp-AeP28WPqd1n-JPaWWvRmzc3vBrddF4MKaSobiE9ngwudWcASxWq-AHNK8lPZ3rMkMFn_ydw9RBp9_lozMrDQ6fNoCEi21ePM0rRMNmvDRZYixCh96ApYh5h8/s942/86251d78-add4-4202-afca-413eb68b575a.png" rel="noopener noreferrer" target="_blank">
+            <a class="image-link" href="/media/blogger/3e/3e492b04994f927e287cf6314cd8e8e4ec4a8ed14fb45824a709ccefb1c242ae.png" rel="noopener noreferrer" target="_blank">
 
-                <img alt="تحذير أمني بشأن نسخ Cemu 2.6 على Linux" class="img-frame" height="543" loading="eager" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcwnXdwzbEb0wImdGIzpuyXC9kJ0hCQy4p4rUSOI5t4pQRCjFmY-pAH4i2D8zfdH36fp-AeP28WPqd1n-JPaWWvRmzc3vBrddF4MKaSobiE9ngwudWcASxWq-AHNK8lPZ3rMkMFn_ydw9RBp9_lozMrDQ6fNoCEi21ePM0rRMNmvDRZYixCh96ApYh5h8/s942/86251d78-add4-4202-afca-413eb68b575a.png" width="942" />
+                <img alt="تحذير أمني بشأن نسخ Cemu 2.6 على Linux" class="img-frame" height="543" loading="eager" src="/media/blogger/3e/3e492b04994f927e287cf6314cd8e8e4ec4a8ed14fb45824a709ccefb1c242ae.png" width="942" />
 
             </a>
 

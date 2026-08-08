@@ -4,7 +4,7 @@ description: 'Security Alert Gamers All Consoles Windows المشكلة ليست
 pubDate: '2026-07-25T05:54:51.777+03:00'
 updatedDate: '2026-07-25T07:56:15.119+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEg-cuoYTP8ElCs95-8C29mJ7yDYPxsDV-gkWfOMNpRxNVcFseZd4yHVqiRtcNJZlxqQ5E-PAHLK9_3JuTg_Rw7Ge15vyDuZtNZFj-QrOhKW_4DNvInQ3svANmUyqUL2JCdA7vIox2gNqmesuCG6eX9XRpRqZ2wV7DBxEwJM_yWZVkcSQsLKt-ch7KA9rTI'
+heroImageUrl: '/media/blogger/4a/4a2caadd4c92020f5ed7f84f23e53cab04e1bac2c6476d4fb1c3ad84549c921b.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/setupexe-nsp-xci.html'
 labels: ["articles"]
 ---
@@ -189,7 +189,7 @@ PlayStation وNintendo وXbox وSEGA وألعاب الكمبيوتر والمو�
 <span class="gd-inline">Secure Transfer</span>
 كانت جزءًا من تصميم الصفحة، وليست شهادة فحص مستقلة.</p>
 <figure class="gd-shot">
-<button aria-label="عرض الصورة بحجمها الطبيعي" class="gd-image-viewer" data-full="https://blogger.googleusercontent.com/img/a/AVvXsEg-cuoYTP8ElCs95-8C29mJ7yDYPxsDV-gkWfOMNpRxNVcFseZd4yHVqiRtcNJZlxqQ5E-PAHLK9_3JuTg_Rw7Ge15vyDuZtNZFj-QrOhKW_4DNvInQ3svANmUyqUL2JCdA7vIox2gNqmesuCG6eX9XRpRqZ2wV7DBxEwJM_yWZVkcSQsLKt-ch7KA9rTI" type="button"><img alt="صفحة التحميل المزيفة والنطاق العشوائي ومحتويات الملف في Windows" decoding="async" loading="eager" src="https://blogger.googleusercontent.com/img/a/AVvXsEg-cuoYTP8ElCs95-8C29mJ7yDYPxsDV-gkWfOMNpRxNVcFseZd4yHVqiRtcNJZlxqQ5E-PAHLK9_3JuTg_Rw7Ge15vyDuZtNZFj-QrOhKW_4DNvInQ3svANmUyqUL2JCdA7vIox2gNqmesuCG6eX9XRpRqZ2wV7DBxEwJM_yWZVkcSQsLKt-ch7KA9rTI" /></button>
+<button aria-label="عرض الصورة بحجمها الطبيعي" class="gd-image-viewer" data-full="/media/blogger/4a/4a2caadd4c92020f5ed7f84f23e53cab04e1bac2c6476d4fb1c3ad84549c921b.png" type="button"><img alt="صفحة التحميل المزيفة والنطاق العشوائي ومحتويات الملف في Windows" decoding="async" loading="eager" src="/media/blogger/4a/4a2caadd4c92020f5ed7f84f23e53cab04e1bac2c6476d4fb1c3ad84549c921b.png" /></button>
 <figcaption>لقطة الحالة الأصلية: نطاق عشوائي، صفحة تخزين غير معروفة، وملف ZIP باسم لعبة.</figcaption>
 </figure>
 <div class="gd-danger">الموقع قد يغيّر اسمه وشكله بالكامل خلال أيام. لا تحفظ شكل الصفحة؛ احفظ العلامات التي تكشفها.</div>
@@ -197,7 +197,7 @@ PlayStation وNintendo وXbox وSEGA وألعاب الكمبيوتر والمو�
 <section class="gd-card">
 <h3>فتح الأرشيف كشف الحقيقة</h3>
 <figure class="gd-shot">
-<button aria-label="عرض الصورة بحجمها الطبيعي" class="gd-image-viewer" data-full="https://blogger.googleusercontent.com/img/a/AVvXsEjiF5pLzxIWI_LCiuxx24SFZ4uYzxjNZbsDmLVQ8FOet0LyTd6Vrd8NULyDS7WmYBqjI-gh4dgXy3GYRWksflxSm5eRZel7_qEU3kXrpqY4JNoNZf0ENt7FiN2qiLSe37GZ5I__yppnJZKkPE3m6nHpW3OiXeXXy0uSdP5r7YH55YVMB9U1Q-MPRpxQQGs" type="button"><img alt="محتويات أرشيف مزيف تظهر Setup.exe وsetup.py ومجلدات data وlib وrenpy" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEjiF5pLzxIWI_LCiuxx24SFZ4uYzxjNZbsDmLVQ8FOet0LyTd6Vrd8NULyDS7WmYBqjI-gh4dgXy3GYRWksflxSm5eRZel7_qEU3kXrpqY4JNoNZf0ENt7FiN2qiLSe37GZ5I__yppnJZKkPE3m6nHpW3OiXeXXy0uSdP5r7YH55YVMB9U1Q-MPRpxQQGs" /></button>
+<button aria-label="عرض الصورة بحجمها الطبيعي" class="gd-image-viewer" data-full="/media/blogger/3c/3c4973a1caff54ac374b3b98526050f83a6670e7f4198d1df23404c822927dc3.png" type="button"><img alt="محتويات أرشيف مزيف تظهر Setup.exe وsetup.py ومجلدات data وlib وrenpy" decoding="async" loading="lazy" src="/media/blogger/3c/3c4973a1caff54ac374b3b98526050f83a6670e7f4198d1df23404c822927dc3.png" /></button>
 <figcaption>الموجود هو <span class="gd-inline">Setup.exe</span>،
 <span class="gd-inline">setup.py</span>،
 ومجلدات <span class="gd-inline">data / lib / renpy</span>؛ وليس ملف لعبة للكونسول.</figcaption>

@@ -4,7 +4,7 @@ description: '🖥️ طريقة تشغيل Commodore 64 على الكمبيوت
 pubDate: '2025-04-09T04:35:00.001+03:00'
 updatedDate: '2026-02-24T05:13:14.227+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0E2-z8qg-EwCOsqs-gvuaQwmywqa5kqHlnS3BrLvfSsqMArY7OQ4iCbSadesmIwqrlPLctparmEHIphtJQFcW9J2Oi-sQq5iJMbJGW6nT-IuliYsaIDWczHjpVPvoUbszlHlYdfEdldyRaQiW-iwiCnzOodMUpprXfCNv5d-NzJ6wYCJlN-NBZ02EMNs/s1600/images.jfif'
+heroImageUrl: '/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/commodore64-vice.html'
 labels: ["Commodore","Commodore64"]
 ---
@@ -107,8 +107,8 @@ labels: ["Commodore","Commodore64"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0E2-z8qg-EwCOsqs-gvuaQwmywqa5kqHlnS3BrLvfSsqMArY7OQ4iCbSadesmIwqrlPLctparmEHIphtJQFcW9J2Oi-sQq5iJMbJGW6nT-IuliYsaIDWczHjpVPvoUbszlHlYdfEdldyRaQiW-iwiCnzOodMUpprXfCNv5d-NzJ6wYCJlN-NBZ02EMNs/s275/images.jfif">
-                <img class="img-frame" alt="محاكي VICE للـ C64" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0E2-z8qg-EwCOsqs-gvuaQwmywqa5kqHlnS3BrLvfSsqMArY7OQ4iCbSadesmIwqrlPLctparmEHIphtJQFcW9J2Oi-sQq5iJMbJGW6nT-IuliYsaIDWczHjpVPvoUbszlHlYdfEdldyRaQiW-iwiCnzOodMUpprXfCNv5d-NzJ6wYCJlN-NBZ02EMNs/s1600/images.jfif" />
+            <a href="/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg">
+                <img class="img-frame" alt="محاكي VICE للـ C64" src="/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg" />
             </a>
         </div>
         <h1>🖥️ طريقة تشغيل Commodore 64 على الكمبيوتر باستخدام VICE</h1>

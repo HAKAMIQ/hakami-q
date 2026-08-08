@@ -4,7 +4,7 @@ description: 'جهاز Wii U: العبقري المظلوم الذي سبق عص
 pubDate: '2025-04-09T06:58:00.002+03:00'
 updatedDate: '2026-02-24T23:31:46.683+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH82hyphenhyphenagMRH8u-BIWQSj9lAat5r9-WdAsIyajjRphNWOTbmTg0_yxIwYNeQaYBYV9xFW-bSqt4syZ4-rA32EiInoVyATuiAINujwRJLMEK8pmojQWkS2th8G3PgzfqPyoB6f09Ge3Fte_EphRuNAsgMhFW78lVM24NiVIigNxJMM6TDwEiAwnsSfU8asM/s1268/multijugador-wii-u.jpg'
+heroImageUrl: '/media/blogger/32/324da9cc3789fa43aa0fba0f12986c7b17609d8a701fe68c35150729590b983c.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-wii-u.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -172,7 +172,7 @@ labels: ["Nintendo","Wii-U"]
         <h1 class="hakamiq-main-title">جهاز Wii U: العبقري المظلوم الذي سبق عصره!</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH82hyphenhyphenagMRH8u-BIWQSj9lAat5r9-WdAsIyajjRphNWOTbmTg0_yxIwYNeQaYBYV9xFW-bSqt4syZ4-rA32EiInoVyATuiAINujwRJLMEK8pmojQWkS2th8G3PgzfqPyoB6f09Ge3Fte_EphRuNAsgMhFW78lVM24NiVIigNxJMM6TDwEiAwnsSfU8asM/s1268/multijugador-wii-u.jpg" alt="ألعاب جماعية على جهاز نينتندو وي يو" loading="lazy" decoding="async">
+            <img src="/media/blogger/32/324da9cc3789fa43aa0fba0f12986c7b17609d8a701fe68c35150729590b983c.jpg" alt="ألعاب جماعية على جهاز نينتندو وي يو" loading="lazy" decoding="async">
             <figcaption>تجربة اللعب الجماعي في Wii U كانت فريدة ولم تتكرر حتى الآن 🎮</figcaption>
         </figure>
     </header>

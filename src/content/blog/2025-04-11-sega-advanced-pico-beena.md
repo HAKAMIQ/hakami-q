@@ -4,7 +4,7 @@ description: 'ما هو جهاز Sega Advanced Pico Beena؟ ولماذا لم ن
 pubDate: '2025-04-11T19:26:00.003+03:00'
 updatedDate: '2026-02-25T01:19:08.016+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtDql1bLJ8qdAzKZJdGOc0MX5a0TSZnRd6aYugBhH-ygnncaJXOAOs0dtLqNUfQJdFLEL3zKPivxSiqrA8JzPr8lZHoA8Lz-TOHyyUls-MXS8uzzXtiWuX94O-W_JAGIC8Dlz4tUjaWxDiCRHq4UoMdhr_hAKR0MDToUG0BH1mNJf0zvxiH74ASYO4iK8/s251/images%20(9).jfif'
+heroImageUrl: '/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-advanced-pico-beena.html'
 labels: ["sega","Sega-AdvancedPicoBeena"]
 ---
@@ -63,8 +63,8 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtDql1bLJ8qdAzKZJdGOc0MX5a0TSZnRd6aYugBhH-ygnncaJXOAOs0dtLqNUfQJdFLEL3zKPivxSiqrA8JzPr8lZHoA8Lz-TOHyyUls-MXS8uzzXtiWuX94O-W_JAGIC8Dlz4tUjaWxDiCRHq4UoMdhr_hAKR0MDToUG0BH1mNJf0zvxiH74ASYO4iK8/s1600/images%20(9).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtDql1bLJ8qdAzKZJdGOc0MX5a0TSZnRd6aYugBhH-ygnncaJXOAOs0dtLqNUfQJdFLEL3zKPivxSiqrA8JzPr8lZHoA8Lz-TOHyyUls-MXS8uzzXtiWuX94O-W_JAGIC8Dlz4tUjaWxDiCRHq4UoMdhr_hAKR0MDToUG0BH1mNJf0zvxiH74ASYO4iK8/s251/images%20(9).jfif" width="251" />
+            <a href="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg">
+                <img class="img-frame" src="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg" width="251" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">ما هو جهاز Sega Advanced Pico Beena؟ ولماذا لم نسمع به؟</h2>

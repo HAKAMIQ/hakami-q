@@ -4,7 +4,7 @@ description: '🎮 مقارنة أفضل محاكيات PS2 (PCSX2 vs Play! vs R
 pubDate: '2025-04-13T23:46:00.002+03:00'
 updatedDate: '2026-02-25T00:25:42.619+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjJgC1M2J-FA52ryy-OO5erR2avpWW_nTK6cqyTrWLvGkd1NnFePQa-6uATmUPj_2v0LAt7uP0o3i30fO7fLWq8P2GPxCIky_3xyTm2y4oZwATQ-dAJ3Cu3m-qrimwT53HUXsk1_OTQKM5f70E9YEeAH7SEatVe6rZReKZh2H5aq4ZOWmAgqrbmvLGAaQ/s320/maxresdefault%20(23).jpg'
+heroImageUrl: '/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/retro-glam.html'
 labels: ["PlayStation","PS2"]
 ---
@@ -57,8 +57,8 @@ labels: ["PlayStation","PS2"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjJgC1M2J-FA52ryy-OO5erR2avpWW_nTK6cqyTrWLvGkd1NnFePQa-6uATmUPj_2v0LAt7uP0o3i30fO7fLWq8P2GPxCIky_3xyTm2y4oZwATQ-dAJ3Cu3m-qrimwT53HUXsk1_OTQKM5f70E9YEeAH7SEatVe6rZReKZh2H5aq4ZOWmAgqrbmvLGAaQ/s1280/maxresdefault%20(23).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjJgC1M2J-FA52ryy-OO5erR2avpWW_nTK6cqyTrWLvGkd1NnFePQa-6uATmUPj_2v0LAt7uP0o3i30fO7fLWq8P2GPxCIky_3xyTm2y4oZwATQ-dAJ3Cu3m-qrimwT53HUXsk1_OTQKM5f70E9YEeAH7SEatVe6rZReKZh2H5aq4ZOWmAgqrbmvLGAaQ/s320/maxresdefault%20(23).jpg" width="320" />
+            <a href="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg">
+                <img class="img-frame" src="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); font-size: 28px;">🎮 مقارنة أفضل محاكيات PS2 (PCSX2 vs Play! vs RetroArch)</h2>

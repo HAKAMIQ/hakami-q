@@ -4,7 +4,7 @@ description: '🟦 تشغيل محاكي PPSSPP على Xbox (UWP) تخيل تش�
 pubDate: '2025-04-15T08:37:00.010+03:00'
 updatedDate: '2026-02-24T08:39:59.998+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_JY_FDPNv4lWqLO4OfaON8YkSOSH_JEtVzd7U5AmZsQeu_hNlNiljrBmN3hYVMfXUy7LVJx25OuWZyT8b_yI9YlCzkT9BbPd0oTatu6cgd_Ct7ljrL3ND404eCh9IKqDtezf92t5_E7Gyg-EkLQpT4wXDrAbCXLc-RK3KiLe6FRHqcRHpiH-3saIxD8I/s320/maxresdefault.jpg'
+heroImageUrl: '/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ppsspp-xbox-uwp.html'
 labels: ["PlayStation","psp"]
 ---
@@ -122,8 +122,8 @@ labels: ["PlayStation","psp"]
 <div class="xbox-emu-wrapper">
 
     <div style="text-align: center; margin-bottom: 35px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_JY_FDPNv4lWqLO4OfaON8YkSOSH_JEtVzd7U5AmZsQeu_hNlNiljrBmN3hYVMfXUy7LVJx25OuWZyT8b_yI9YlCzkT9BbPd0oTatu6cgd_Ct7ljrL3ND404eCh9IKqDtezf92t5_E7Gyg-EkLQpT4wXDrAbCXLc-RK3KiLe6FRHqcRHpiH-3saIxD8I/s1600/maxresdefault.jpg">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_JY_FDPNv4lWqLO4OfaON8YkSOSH_JEtVzd7U5AmZsQeu_hNlNiljrBmN3hYVMfXUy7LVJx25OuWZyT8b_yI9YlCzkT9BbPd0oTatu6cgd_Ct7ljrL3ND404eCh9IKqDtezf92t5_E7Gyg-EkLQpT4wXDrAbCXLc-RK3KiLe6FRHqcRHpiH-3saIxD8I/s320/maxresdefault.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10;" />
+        <a href="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg">
+            <img src="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10;" />
         </a>
     </div>
 

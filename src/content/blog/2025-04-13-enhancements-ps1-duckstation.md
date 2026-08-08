@@ -4,7 +4,7 @@ description: '🚀 كيف تحسن تجربة ألعاب PS1 باستخدام Du
 pubDate: '2025-04-13T22:05:00.005+03:00'
 updatedDate: '2026-02-25T00:35:18.934+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYJgsrN29Q-NbMXr5j3t2tWlWbL4afiFO1PHw-ve4k6kvJ2o3z9kf2fN_NaN0Jj5g4e6eJQHwwvdhbB9JSRQ0aYUmHTu-H_F6UdG4qVtYJ3i-2bYDH-A8ONMvJZ5z8nUPCVQVfDCti7C4bwHtGpUfDSt6cZlIYZsqtFBsZMav7YbTA3F-6lWQppeMQ8Co/s320/download%20(3).jfif'
+heroImageUrl: '/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/enhancements-ps1-duckstation.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -60,8 +60,8 @@ labels: ["PlayStation","PS1"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYJgsrN29Q-NbMXr5j3t2tWlWbL4afiFO1PHw-ve4k6kvJ2o3z9kf2fN_NaN0Jj5g4e6eJQHwwvdhbB9JSRQ0aYUmHTu-H_F6UdG4qVtYJ3i-2bYDH-A8ONMvJZ5z8nUPCVQVfDCti7C4bwHtGpUfDSt6cZlIYZsqtFBsZMav7YbTA3F-6lWQppeMQ8Co/s1600/download%20(3).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYJgsrN29Q-NbMXr5j3t2tWlWbL4afiFO1PHw-ve4k6kvJ2o3z9kf2fN_NaN0Jj5g4e6eJQHwwvdhbB9JSRQ0aYUmHTu-H_F6UdG4qVtYJ3i-2bYDH-A8ONMvJZ5z8nUPCVQVfDCti7C4bwHtGpUfDSt6cZlIYZsqtFBsZMav7YbTA3F-6lWQppeMQ8Co/s320/download%20(3).jfif" alt="DuckStation PS1 Enhancements Guide" />
+            <a href="/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg">
+                <img class="img-frame" src="/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg" alt="DuckStation PS1 Enhancements Guide" />
             </a>
         </div>
         <h1 style="color: var(--xe-blue); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;">🚀 كيف تحسن تجربة ألعاب PS1 باستخدام DuckStation؟</h1>

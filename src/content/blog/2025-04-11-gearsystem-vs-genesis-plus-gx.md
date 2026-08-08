@@ -4,7 +4,7 @@ description: 'مقارنة بين محاكيات Gearsystem vs Genesis Plus GX �
 pubDate: '2025-04-11T19:19:00.004+03:00'
 updatedDate: '2026-02-25T01:57:27.246+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTNXj46e5TrLjLXptBpVINiVkrTlAdRqa-zfOgK3c9tuZoMxLvluegBDaP9MJr9t-QdWzDEKmGTBzOBhCaRPKKaY94DvrDF8Uh0mePGksYoil3OOYidJbaEkt1Pkmpt-CLjyvwSKGdyRx2De9CW_CXn163f6_dBxjkQ_zz3V1kc92NnGSa3Nqv5r6kLLA/s320/68747470733a2f2f6269746275636b65742e6f72672f7265706f2f37416a45364d2f696d616765732f333536353238333239372d4d61696e4d656e752e706e67.png'
+heroImageUrl: '/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gearsystem-vs-genesis-plus-gx.html'
 labels: ["sega","Sega-GameGear"]
 ---
@@ -65,8 +65,8 @@ labels: ["sega","Sega-GameGear"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTNXj46e5TrLjLXptBpVINiVkrTlAdRqa-zfOgK3c9tuZoMxLvluegBDaP9MJr9t-QdWzDEKmGTBzOBhCaRPKKaY94DvrDF8Uh0mePGksYoil3OOYidJbaEkt1Pkmpt-CLjyvwSKGdyRx2De9CW_CXn163f6_dBxjkQ_zz3V1kc92NnGSa3Nqv5r6kLLA/s1600/68747470733a2f2f6269746275636b65742e6f72672f7265706f2f37416a45364d2f696d616765732f333536353238333239372d4d61696e4d656e752e706e67.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTNXj46e5TrLjLXptBpVINiVkrTlAdRqa-zfOgK3c9tuZoMxLvluegBDaP9MJr9t-QdWzDEKmGTBzOBhCaRPKKaY94DvrDF8Uh0mePGksYoil3OOYidJbaEkt1Pkmpt-CLjyvwSKGdyRx2De9CW_CXn163f6_dBxjkQ_zz3V1kc92NnGSa3Nqv5r6kLLA/s320/68747470733a2f2f6269746275636b65742e6f72672f7265706f2f37416a45364d2f696d616765732f333536353238333239372d4d61696e4d656e752e706e67.png" width="320" />
+            <a href="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png">
+                <img class="img-frame" src="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">مقارنة بين محاكيات Gearsystem vs Genesis Plus GX</h2>

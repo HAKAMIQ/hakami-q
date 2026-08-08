@@ -4,7 +4,7 @@ description: '💽 إدارة القرص الصلب، ملفات BIOS، وتحس
 pubDate: '2025-04-15T11:19:00.002+03:00'
 updatedDate: '2026-02-24T06:48:04.203+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFiHZrtAuJgaoYZZ7o_ZDWEwprYRgiUN87YJweW4EIaVR6D3-D5CJR2iytre6Rpbw8_m42LQWspJQjFPQJjxJ8GBU6_81BkZHjDZ0BUo1QuA-ranIyvEWLJV9qdIRoSdY7NgCUPQxuigoSCo4Vq5ILRn2fmzFvwgVXY_5p3lQM3DEu8UHvpr-Y3CBsI7Q/s320/5.png'
+heroImageUrl: '/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xemu-mcpx-bios-hdd.html'
 labels: ["Xbox","Xbox-Original"]
 ---
@@ -85,8 +85,8 @@ labels: ["Xbox","Xbox-Original"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFiHZrtAuJgaoYZZ7o_ZDWEwprYRgiUN87YJweW4EIaVR6D3-D5CJR2iytre6Rpbw8_m42LQWspJQjFPQJjxJ8GBU6_81BkZHjDZ0BUo1QuA-ranIyvEWLJV9qdIRoSdY7NgCUPQxuigoSCo4Vq5ILRn2fmzFvwgVXY_5p3lQM3DEu8UHvpr-Y3CBsI7Q/s1024/5.png">
-                <img class="img-frame" alt="xemu Tech Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFiHZrtAuJgaoYZZ7o_ZDWEwprYRgiUN87YJweW4EIaVR6D3-D5CJR2iytre6Rpbw8_m42LQWspJQjFPQJjxJ8GBU6_81BkZHjDZ0BUo1QuA-ranIyvEWLJV9qdIRoSdY7NgCUPQxuigoSCo4Vq5ILRn2fmzFvwgVXY_5p3lQM3DEu8UHvpr-Y3CBsI7Q/s320/5.png" style="max-width: 500px;" />
+            <a href="/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png">
+                <img class="img-frame" alt="xemu Tech Guide" src="/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png" style="max-width: 500px;" />
             </a>
         </div>
         <h2>💽 إدارة القرص الصلب، ملفات BIOS، وتحسين الأداء في xemu</h2>

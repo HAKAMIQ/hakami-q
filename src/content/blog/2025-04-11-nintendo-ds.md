@@ -4,7 +4,7 @@ description: '🎮 أقوى محاكيات نينتندو دي إس (DS) للك�
 pubDate: '2025-04-11T03:09:00.003+03:00'
 updatedDate: '2026-02-25T03:19:29.980+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipdUjQIZe5Eglzj23zOuFOOtl3NjpaL3HRwXsxXz9qllmUL7f-6PHAc8RFpmYMeIxldTjuDri4z6MBVphMunuqUK9C_HbEG5gxs7eiMiAtjtFFfInnTSNzadklt5bsotSqFoC7_HTvMTz0Sw_j2_Co7H2GViwXbZXfuLZKBRJ3wVZ4FM_dohBxRGGre4s/s320/best-nintendo-ds-emulators.jpg'
+heroImageUrl: '/media/blogger/3d/3d15ec2f09703439e1c3b76144fc5b79d39957832a7db8b43fdf35eaafc24389.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-ds.html'
 labels: ["N-DS","Nintendo"]
 ---
@@ -76,8 +76,8 @@ labels: ["N-DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipdUjQIZe5Eglzj23zOuFOOtl3NjpaL3HRwXsxXz9qllmUL7f-6PHAc8RFpmYMeIxldTjuDri4z6MBVphMunuqUK9C_HbEG5gxs7eiMiAtjtFFfInnTSNzadklt5bsotSqFoC7_HTvMTz0Sw_j2_Co7H2GViwXbZXfuLZKBRJ3wVZ4FM_dohBxRGGre4s/s1280/best-nintendo-ds-emulators.jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipdUjQIZe5Eglzj23zOuFOOtl3NjpaL3HRwXsxXz9qllmUL7f-6PHAc8RFpmYMeIxldTjuDri4z6MBVphMunuqUK9C_HbEG5gxs7eiMiAtjtFFfInnTSNzadklt5bsotSqFoC7_HTvMTz0Sw_j2_Co7H2GViwXbZXfuLZKBRJ3wVZ4FM_dohBxRGGre4s/s320/best-nintendo-ds-emulators.jpg" width="320" alt="أفضل محاكيات DS" />
+            <a href="/media/blogger/3d/3d15ec2f09703439e1c3b76144fc5b79d39957832a7db8b43fdf35eaafc24389.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/3d/3d15ec2f09703439e1c3b76144fc5b79d39957832a7db8b43fdf35eaafc24389.jpg" width="320" alt="أفضل محاكيات DS" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 أقوى محاكيات نينتندو دي إس (DS) للكمبيوتر والجوال</h2>

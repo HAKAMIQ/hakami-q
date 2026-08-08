@@ -4,7 +4,7 @@ description: 'أفضل محاكيات PlayStation 2 – PCSX2 و AetherSX2 وا�
 pubDate: '2025-04-13T02:12:00.002+03:00'
 updatedDate: '2026-02-24T09:50:59.179+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi32tZ2NL-e5e7AysTqAuujobKmnXZgU1ndT8-hNFgLzPFEB0RMnSiVmaB_JFXAFp2G-t12RWh_QckV8FH_mz3rgjhgvfBXK-E1BfvqW9CJhC0xnSFgvJv14enX4snPLA1fubz2RqVJIHXPXHvfOK8cxo_pXz1AQKJD46S87CQpeUtmU_TJWaEbcEM4bS4/s320/hq720%20(5).jpg'
+heroImageUrl: '/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/playstation-2-pcsx2-aethersx2.html'
 labels: ["PlayStation","PS2"]
 ---
@@ -119,8 +119,8 @@ labels: ["PlayStation","PS2"]
 <div class="hakamiq-ps2-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi32tZ2NL-e5e7AysTqAuujobKmnXZgU1ndT8-hNFgLzPFEB0RMnSiVmaB_JFXAFp2G-t12RWh_QckV8FH_mz3rgjhgvfBXK-E1BfvqW9CJhC0xnSFgvJv14enX4snPLA1fubz2RqVJIHXPXHvfOK8cxo_pXz1AQKJD46S87CQpeUtmU_TJWaEbcEM4bS4/s1600/hq720%20(5).jpg" target="_blank">
-            <img alt="PS2 Emulators - PCSX2 & AetherSX2" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi32tZ2NL-e5e7AysTqAuujobKmnXZgU1ndT8-hNFgLzPFEB0RMnSiVmaB_JFXAFp2G-t12RWh_QckV8FH_mz3rgjhgvfBXK-E1BfvqW9CJhC0xnSFgvJv14enX4snPLA1fubz2RqVJIHXPXHvfOK8cxo_pXz1AQKJD46S87CQpeUtmU_TJWaEbcEM4bS4/s320/hq720%20(5).jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+        <a href="/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg" target="_blank">
+            <img alt="PS2 Emulators - PCSX2 & AetherSX2" src="/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
         </a>
     </div>
 

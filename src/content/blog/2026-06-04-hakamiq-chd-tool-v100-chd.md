@@ -4,7 +4,7 @@ description: 'إطلاق Hakamiq CHD Tool v1.0.0 إطلاق Hakamiq CHD Tool v1.
 pubDate: '2026-06-04T19:42:30.166+03:00'
 updatedDate: '2026-06-04T23:18:37.306+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxncgD3FvtcQ4wAMWok4oXA9ZGr46tbFlREcpDwN6_o7B8Rkae1ZPk1rd2Y2y9wzRT0cN6liBSl7F_zy66LRhBauadHFpGgli1xef6CxEJwnA4PBd_WtXAT75usPmYd0kIm-oOVIzV5h24fVvfOnPyaCWoiNASOHvMp8sgxwc9WZFe6ckgFFbyK2eW4Sw/w400-h224/1.jpg'
+heroImageUrl: '/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/06/hakamiq-chd-tool-v100-chd.html'
 labels: ["PC"]
 ---
@@ -255,8 +255,8 @@ labels: ["PC"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxncgD3FvtcQ4wAMWok4oXA9ZGr46tbFlREcpDwN6_o7B8Rkae1ZPk1rd2Y2y9wzRT0cN6liBSl7F_zy66LRhBauadHFpGgli1xef6CxEJwnA4PBd_WtXAT75usPmYd0kIm-oOVIzV5h24fVvfOnPyaCWoiNASOHvMp8sgxwc9WZFe6ckgFFbyK2eW4Sw/s1376/1.jpg" imageanchor="1">
-            <img class="tech-header-img-center" border="0" data-original-height="768" data-original-width="1376" height="224" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxncgD3FvtcQ4wAMWok4oXA9ZGr46tbFlREcpDwN6_o7B8Rkae1ZPk1rd2Y2y9wzRT0cN6liBSl7F_zy66LRhBauadHFpGgli1xef6CxEJwnA4PBd_WtXAT75usPmYd0kIm-oOVIzV5h24fVvfOnPyaCWoiNASOHvMp8sgxwc9WZFe6ckgFFbyK2eW4Sw/w400-h224/1.jpg" width="400" />
+        <a href="/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg" imageanchor="1">
+            <img class="tech-header-img-center" border="0" data-original-height="768" data-original-width="1376" height="224" src="/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg" width="400" />
         </a>
         <h2>إطلاق Hakamiq CHD Tool v1.0.0 لإدارة وتحويل ملفات CHD على ويندوز</h2>
         <p>أُعلن اليوم عن إطلاق أول إصدار عام من <b>Hakamiq CHD Tool v1.0.0</b>، وهي أداة سطح مكتب لنظام Windows x64 مخصصة لتسهيل التعامل مع ملفات CHD وعمليات التحويل، والاستخراج، والتحقق، كبديل عملي ومنظم عن الاعتماد الكامل على أوامر <code>chdman</code> اليدوية.</p>
@@ -266,7 +266,7 @@ labels: ["PC"]
         <h3>ما هي فكرة برنامج Hakamiq CHD Tool؟</h3>
         <div class="separator-center">
             <a href="https://github.com/HAKAMIQ/HakamiqChdTool.App" target="_blank">
-                <img alt="Hakamiq CHD Tool Interface" class="img-frame" data-original-height="634" data-original-width="955" src="https://blogger.googleusercontent.com/img/a/AVvXsEj28QgR81CvxCKDAUcfyBphEsPtlfepjoK5B_E1Us15ruzWcb5Fx2tbHXGHcHek_07EjohxlRo5bQdaypJvEn5LCeJKwAc346aCfSF2Gcbw97pksbdhIqDFQF1ngefhf2cJJFWe2LmQwfXWvVbhZWsUYhS9Q-4iPAw6nz8iPrnOtdpc_1rMGStDV6jg5g8" />
+                <img alt="Hakamiq CHD Tool Interface" class="img-frame" data-original-height="634" data-original-width="955" src="/media/blogger/84/841aec21c2e6d41fb1364bfb3e810403ab36254a1c03d719c764ea1884dc3a1a.png" />
             </a>
         </div>
         <p>برنامج Hakamiq CHD Tool يعمل كواجهة رسومية منظمة مبنية حول أداة MAME chdman، ويهدف إلى تبسيط كافة المهام المتعلقة بملفات CHD. بدل كتابة أوامر يدوية معقدة في الطرفية، يمكن للمستخدم ببساطة إضافة الملفات إلى البرنامج، واختيار العملية المناسبة، ثم متابعة حالة المعالجة والتقدم والنتيجة النهائية من داخل قائمة معالجة واحدة وبشكل سلس.</p>
@@ -292,7 +292,7 @@ labels: ["PC"]
         <h3>لمن هذا البرنامج؟</h3>
         <div class="separator-center">
             <a href="https://github.com/HAKAMIQ/HakamiqChdTool.App" target="_blank">
-                <img alt="Hakamiq CHD Tool Usage" class="img-frame" data-original-height="639" data-original-width="914" src="https://blogger.googleusercontent.com/img/a/AVvXsEh97TwNajsjWlpVuJHFApZU4vY5Hj8CzFzR2qFbFDzHkuuDCU6ec3_X701yZDp758xPD_GKIDdV3ShOyCFweYbpImSWWCDuUjrBTa6Nk_pwh1S8souNx3N4edsSJlNbANKEhI856oic_y4f4sKNGuX2KGLUdSfVoKybfVO-hE4dY7ebhivNSW4sD3qnBJ8" />
+                <img alt="Hakamiq CHD Tool Usage" class="img-frame" data-original-height="639" data-original-width="914" src="/media/blogger/b5/b51f41e91ae80fe3f47ba653836431e173adc3a8820b69f3945bb26c67b2d540.png" />
             </a>
         </div>
         <p>البرنامج مناسب تماماً للمستخدمين الذين يتعاملون بكثرة مع ملفات CHD أو ملفات الأقراص ويريدون واجهة رسومية منظمة بدل الأوامر اليدوية. سيكون مفيداً جداً لمن يريد:</p>

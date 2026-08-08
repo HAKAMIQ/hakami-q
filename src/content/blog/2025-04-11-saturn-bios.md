@@ -4,7 +4,7 @@ description: '🎮 شرح تثبيت وتشغيل ألعاب Saturn مع ملف�
 pubDate: '2025-04-11T17:32:00.004+03:00'
 updatedDate: '2026-02-25T03:00:03.551+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90KRPyVvgfhVGy08dqDcyX92lIZDtKYUo8wbnvyfyoTootXz1wsVqiNDH5M2aG0zCeeRbeVqes__wccjvQzWHugRvA8ik8IAHks8NU3_4m6uirTR2rfQ7WJCZLS2k1i4N8p6WJ-NyPYfReWHWoudh32cB74eNt7T5nTnV-CU2kiCiGl7XOnsLPjfyZa8/s320/Sega-Saturn-Console-Set-Mk2.png'
+heroImageUrl: '/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/saturn-bios.html'
 labels: ["Saturn","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Saturn","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90KRPyVvgfhVGy08dqDcyX92lIZDtKYUo8wbnvyfyoTootXz1wsVqiNDH5M2aG0zCeeRbeVqes__wccjvQzWHugRvA8ik8IAHks8NU3_4m6uirTR2rfQ7WJCZLS2k1i4N8p6WJ-NyPYfReWHWoudh32cB74eNt7T5nTnV-CU2kiCiGl7XOnsLPjfyZa8/s1600/Sega-Saturn-Console-Set-Mk2.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj90KRPyVvgfhVGy08dqDcyX92lIZDtKYUo8wbnvyfyoTootXz1wsVqiNDH5M2aG0zCeeRbeVqes__wccjvQzWHugRvA8ik8IAHks8NU3_4m6uirTR2rfQ7WJCZLS2k1i4N8p6WJ-NyPYfReWHWoudh32cB74eNt7T5nTnV-CU2kiCiGl7XOnsLPjfyZa8/s320/Sega-Saturn-Console-Set-Mk2.png" width="250" />
+            <a href="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png">
+                <img class="img-frame" src="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png" width="250" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 شرح تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS</h2>

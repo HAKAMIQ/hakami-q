@@ -4,7 +4,7 @@ description: '🎮 RetroArch وتشغيل ألعاب SEGA - الأنوية وأ�
 pubDate: '2025-04-11T17:18:00.003+03:00'
 updatedDate: '2026-02-25T03:02:14.421+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirbmrJTTJzQ3JEvCtlnrSWoJcqLQxLjkMDRmHdtSZ9vcp872I4XSQ5g0_9MQtwWXtsAywrDAAoJYnPI1haCIvRniDtRduDXM2912LyR9VwQRx-HGrG3DLvhLlxMOq_t7A12HtR531NNr92hyphenhyphenEZxfMUcN4vYgdUW2uXbCHtmEHC2cBHGQ0hiaWmoshL93U/s320/hq720%20(1).jpg'
+heroImageUrl: '/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/retroarch-sega.html'
 labels: ["Dreamcast","Genesis-MegaDrive","Saturn","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Dreamcast","Genesis-MegaDrive","Saturn","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirbmrJTTJzQ3JEvCtlnrSWoJcqLQxLjkMDRmHdtSZ9vcp872I4XSQ5g0_9MQtwWXtsAywrDAAoJYnPI1haCIvRniDtRduDXM2912LyR9VwQRx-HGrG3DLvhLlxMOq_t7A12HtR531NNr92hyphenhyphenEZxfMUcN4vYgdUW2uXbCHtmEHC2cBHGQ0hiaWmoshL93U/s1600/hq720%20(1).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirbmrJTTJzQ3JEvCtlnrSWoJcqLQxLjkMDRmHdtSZ9vcp872I4XSQ5g0_9MQtwWXtsAywrDAAoJYnPI1haCIvRniDtRduDXM2912LyR9VwQRx-HGrG3DLvhLlxMOq_t7A12HtR531NNr92hyphenhyphenEZxfMUcN4vYgdUW2uXbCHtmEHC2cBHGQ0hiaWmoshL93U/s320/hq720%20(1).jpg" width="320" />
+            <a href="/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg">
+                <img class="img-frame" src="/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 RetroArch وتشغيل ألعاب SEGA - الأنوية وأفضل الإعدادات</h2>

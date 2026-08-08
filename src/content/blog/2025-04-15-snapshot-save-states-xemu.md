@@ -4,7 +4,7 @@ description: 'ميزة الحفظ السريع (أو Snapshots) تخلّيك ت�
 pubDate: '2025-04-15T13:05:00.004+03:00'
 updatedDate: '2026-02-24T06:36:33.070+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZpw78uyg-g_EliLxuKP_WbsuxCp_eSdefbRjrtnoZhL2-idcespIa-88zTo7ZhrBDoSWbHujQPkB6zTon1-yz_2jXvTc33q_AKP8rRDVXPljgdQmVvhrv8jEzMo8hV2ETtuW3MRAakgpVkFFlhU8jlFdc3Y3ayhjwnhkBPzEYoI7xiT8N4a2SVW_37YI/s320/13.png'
+heroImageUrl: '/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/snapshot-save-states-xemu.html'
 labels: ["Xbox","Xbox-Original"]
 ---
@@ -66,8 +66,8 @@ labels: ["Xbox","Xbox-Original"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZpw78uyg-g_EliLxuKP_WbsuxCp_eSdefbRjrtnoZhL2-idcespIa-88zTo7ZhrBDoSWbHujQPkB6zTon1-yz_2jXvTc33q_AKP8rRDVXPljgdQmVvhrv8jEzMo8hV2ETtuW3MRAakgpVkFFlhU8jlFdc3Y3ayhjwnhkBPzEYoI7xiT8N4a2SVW_37YI/s1024/13.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZpw78uyg-g_EliLxuKP_WbsuxCp_eSdefbRjrtnoZhL2-idcespIa-88zTo7ZhrBDoSWbHujQPkB6zTon1-yz_2jXvTc33q_AKP8rRDVXPljgdQmVvhrv8jEzMo8hV2ETtuW3MRAakgpVkFFlhU8jlFdc3Y3ayhjwnhkBPzEYoI7xiT8N4a2SVW_37YI/s320/13.png" width="320" />
+            <a href="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png">
+                <img class="img-frame" src="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png" width="320" />
             </a>
         </div>
         <p>ميزة الحفظ السريع (أو Snapshots) تخلّيك تحفظ تقدمك في أي لحظة من اللعب، بدون الحاجة لنقطة حفظ داخل اللعبة نفسها. ترجع تكمل من نفس الثانية اللي كنت واقف فيها، كأنك ما سكرت اللعبة أبدًا! 😍</p>
@@ -81,8 +81,8 @@ labels: ["Xbox","Xbox-Original"]
             <tbody>
                 <tr>
                     <td style="text-align: center;">
-                        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuR58uN8xdSIH-RFtkZbbqOXu3MsOxZqK7fsZyRMrYdjTKQn3BgdvFS1ITvAvJOeJiZ89Yr4DzCSwxG5846NWnJmvRhAqCnXWs5rS2UvZ7hfbQ7NjaFkz0bHg-QYJUlZx70wvpO09qXLkljrVicPWmMEX6SOQC8sY-8eLSyiDm_YY4Dchlkz-xVXrgEcA/s1308/snapshots-menu.png">
-                            <img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuR58uN8xdSIH-RFtkZbbqOXu3MsOxZqK7fsZyRMrYdjTKQn3BgdvFS1ITvAvJOeJiZ89Yr4DzCSwxG5846NWnJmvRhAqCnXWs5rS2UvZ7hfbQ7NjaFkz0bHg-QYJUlZx70wvpO09qXLkljrVicPWmMEX6SOQC8sY-8eLSyiDm_YY4Dchlkz-xVXrgEcA/s320/snapshots-menu.png" width="320" />
+                        <a href="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png">
+                            <img border="0" src="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png" width="320" />
                         </a>
                     </td>
                 </tr>

@@ -4,7 +4,7 @@ description: '🕹️ محاكيات PlayStation Vita: الدليل التقني
 pubDate: '2025-04-15T08:56:00.005+03:00'
 updatedDate: '2026-02-24T08:38:04.996+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXTQE-oycjhlZecmjDWMz4_n8CDxvGIyYmUpVXl718bX-_Jmxn1OKelcg7W5eKyKAPHMKGiGYfcfJGwdMlWn391Y8hyUmPQaf3auxabDfPoxqXJ1wD57GsluwRVIrofSvRAnmGjNrm5tbEHi9Q79ns3jdb5kT1gYyUkvCtjZTmPFIGH1otQLD83ySpLyE/s1600/download.jfif'
+heroImageUrl: '/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/playstation-vita.html'
 labels: ["PlayStation","PSPVita"]
 ---
@@ -107,8 +107,8 @@ labels: ["PlayStation","PSPVita"]
 <div class="v3k-full-guide">
 
     <div style="text-align: center; margin-bottom: 35px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXTQE-oycjhlZecmjDWMz4_n8CDxvGIyYmUpVXl718bX-_Jmxn1OKelcg7W5eKyKAPHMKGiGYfcfJGwdMlWn391Y8hyUmPQaf3auxabDfPoxqXJ1wD57GsluwRVIrofSvRAnmGjNrm5tbEHi9Q79ns3jdb5kT1gYyUkvCtjZTmPFIGH1otQLD83ySpLyE/s1600/download.jfif">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXTQE-oycjhlZecmjDWMz4_n8CDxvGIyYmUpVXl718bX-_Jmxn1OKelcg7W5eKyKAPHMKGiGYfcfJGwdMlWn391Y8hyUmPQaf3auxabDfPoxqXJ1wD57GsluwRVIrofSvRAnmGjNrm5tbEHi9Q79ns3jdb5kT1gYyUkvCtjZTmPFIGH1otQLD83ySpLyE/s1600/download.jfif" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg">
+            <img src="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

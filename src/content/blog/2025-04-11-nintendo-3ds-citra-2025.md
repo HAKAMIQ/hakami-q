@@ -4,7 +4,7 @@ description: '🔥 بعد سقوط Citra... من المتصدر في محاكا�
 pubDate: '2025-04-11T02:30:00.009+03:00'
 updatedDate: '2026-02-25T03:21:08.417+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf_1rzmwbHfh7SEF7j6_sEvQkoLZ-lTjdoCAsr316u8gnHG4jBre9ZytFom3yESQA3zeDXTvMx-FCV-o5RnIDB4cEQH_5EX32KYGS1EIstS_VDqsrHgr5Cl8iIFEy2hIf6zzW5yqcV9NKyv5YXdBd5DraGKdQ1qbuNj1yGNSxbvNnCAhyphenhyphenVE3fqkGErfRk/s320/Screenshot%202025-04-11%20023334.png'
+heroImageUrl: '/media/blogger/7a/7a9412f0c671f0e629c5971a0727087256aa9ba95ca897c176fbda298f5267a5.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-3ds-citra-2025.html'
 labels: ["N3DS","Nintendo"]
 ---
@@ -61,8 +61,8 @@ labels: ["N3DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf_1rzmwbHfh7SEF7j6_sEvQkoLZ-lTjdoCAsr316u8gnHG4jBre9ZytFom3yESQA3zeDXTvMx-FCV-o5RnIDB4cEQH_5EX32KYGS1EIstS_VDqsrHgr5Cl8iIFEy2hIf6zzW5yqcV9NKyv5YXdBd5DraGKdQ1qbuNj1yGNSxbvNnCAhyphenhyphenVE3fqkGErfRk/s749/Screenshot%202025-04-11%20023334.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf_1rzmwbHfh7SEF7j6_sEvQkoLZ-lTjdoCAsr316u8gnHG4jBre9ZytFom3yESQA3zeDXTvMx-FCV-o5RnIDB4cEQH_5EX32KYGS1EIstS_VDqsrHgr5Cl8iIFEy2hIf6zzW5yqcV9NKyv5YXdBd5DraGKdQ1qbuNj1yGNSxbvNnCAhyphenhyphenVE3fqkGErfRk/s320/Screenshot%202025-04-11%20023334.png" width="299" alt="بدائل محاكي Citra" />
+            <a href="/media/blogger/7a/7a9412f0c671f0e629c5971a0727087256aa9ba95ca897c176fbda298f5267a5.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/7a/7a9412f0c671f0e629c5971a0727087256aa9ba95ca897c176fbda298f5267a5.png" width="299" alt="بدائل محاكي Citra" />
             </a>
         </div>
         <h2 style="color: var(--xe-green); text-align: center;">🔥 بعد سقوط Citra... من المتصدر في محاكاة 3DS؟</h2>

@@ -4,7 +4,7 @@ description: 'تشغيل Beena على RetroArch – هل هو ممكن؟ وهل 
 pubDate: '2025-04-11T19:32:00.009+03:00'
 updatedDate: '2026-02-25T01:16:25.204+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHfxIna0Pz5-VPhUTyQk6lnb4GdSFu3WUpt-Y_iN1CoqGwsxCrmj5bNTFKkYzbVOfPT6Bfznp_9lzn-8Pbrylo-cEAul4Hd1Aj4NupI3erO3HhoZLjj82fjU6jWhsL7F6i4eD5eFUwXTzn4rwa3yXi4a0JNZQ0hBB9yCAOVr_u-X2Ev_Fbk6M1CbvQusw/s320/header.jpg'
+heroImageUrl: '/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/beena-retroarch.html'
 labels: ["sega","Sega-AdvancedPicoBeena"]
 ---
@@ -64,8 +64,8 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHfxIna0Pz5-VPhUTyQk6lnb4GdSFu3WUpt-Y_iN1CoqGwsxCrmj5bNTFKkYzbVOfPT6Bfznp_9lzn-8Pbrylo-cEAul4Hd1Aj4NupI3erO3HhoZLjj82fjU6jWhsL7F6i4eD5eFUwXTzn4rwa3yXi4a0JNZQ0hBB9yCAOVr_u-X2Ev_Fbk6M1CbvQusw/s460/header.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHfxIna0Pz5-VPhUTyQk6lnb4GdSFu3WUpt-Y_iN1CoqGwsxCrmj5bNTFKkYzbVOfPT6Bfznp_9lzn-8Pbrylo-cEAul4Hd1Aj4NupI3erO3HhoZLjj82fjU6jWhsL7F6i4eD5eFUwXTzn4rwa3yXi4a0JNZQ0hBB9yCAOVr_u-X2Ev_Fbk6M1CbvQusw/s320/header.jpg" width="320" />
+            <a href="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg">
+                <img class="img-frame" src="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">تشغيل Beena على RetroArch – هل هو ممكن؟ وهل يستحق؟</h2>

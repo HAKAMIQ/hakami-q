@@ -4,7 +4,7 @@ description: 'هل يجب استخدام النسخة الثابتة أم الت
 pubDate: '2025-04-13T23:14:00.008+03:00'
 updatedDate: '2026-02-25T00:26:58.114+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvYxcBcB15HZRV3ZGk_46LNxsKDof2t1vPY0TdPt7LhQtbNDvp7J0MSGY2E5tJrJR1fLaDEZZQXDBvjDzA2ZkQ5RzmZbNTBxiSIuNQW4yJLaHyi6LeUJ6W8FaZOCwTJmoqKOtLVsplEPZ-k7GrSqRa3svr-t5_ZCwftNsGNbH4oVRxxNpH8drAi29iBIE/s320/maxresdefault%20(22).jpg'
+heroImageUrl: '/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/pcsx2-windows-pcsx2-windows.html'
 labels: ["PlayStation","PS2"]
 ---
@@ -61,8 +61,8 @@ labels: ["PlayStation","PS2"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvYxcBcB15HZRV3ZGk_46LNxsKDof2t1vPY0TdPt7LhQtbNDvp7J0MSGY2E5tJrJR1fLaDEZZQXDBvjDzA2ZkQ5RzmZbNTBxiSIuNQW4yJLaHyi6LeUJ6W8FaZOCwTJmoqKOtLVsplEPZ-k7GrSqRa3svr-t5_ZCwftNsGNbH4oVRxxNpH8drAi29iBIE/s1280/maxresdefault%20(22).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvYxcBcB15HZRV3ZGk_46LNxsKDof2t1vPY0TdPt7LhQtbNDvp7J0MSGY2E5tJrJR1fLaDEZZQXDBvjDzA2ZkQ5RzmZbNTBxiSIuNQW4yJLaHyi6LeUJ6W8FaZOCwTJmoqKOtLVsplEPZ-k7GrSqRa3svr-t5_ZCwftNsGNbH4oVRxxNpH8drAi29iBIE/s320/maxresdefault%20(22).jpg" width="320" />
+            <a href="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg">
+                <img class="img-frame" src="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">هل يجب استخدام النسخة الثابتة أم التجريبية (Nightly)؟</h2>

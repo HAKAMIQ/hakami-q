@@ -4,7 +4,7 @@ description: 'لو كنت تستخدم Xenia Manager ، فهذا الدليل ب
 pubDate: '2025-04-16T17:00:00.004+03:00'
 updatedDate: '2026-02-24T06:23:15.585+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEzXecBe8H9ddJmGMmJcUJLooUmpeJZBmLPdmmaRGs7D4erHeqZu4nJY9DFfgtsPwfCfQYAZJUqkhPbinyDFmx2FFwPSa3yhG4XMvh9F0yras6nn1Usbnm69VSXNNgMjBD8HI284ffw2p16mJ67bt_Z0ym5cc1eo71ZbMO96De75-XPyDYBYV7u8FS8Tk/s320/22.png'
+heroImageUrl: '/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-manager.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -81,8 +81,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEzXecBe8H9ddJmGMmJcUJLooUmpeJZBmLPdmmaRGs7D4erHeqZu4nJY9DFfgtsPwfCfQYAZJUqkhPbinyDFmx2FFwPSa3yhG4XMvh9F0yras6nn1Usbnm69VSXNNgMjBD8HI284ffw2p16mJ67bt_Z0ym5cc1eo71ZbMO96De75-XPyDYBYV7u8FS8Tk/s1536/22.png">
-                <img class="img-frame" alt="إدارة الألعاب في Xenia Manager" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEzXecBe8H9ddJmGMmJcUJLooUmpeJZBmLPdmmaRGs7D4erHeqZu4nJY9DFfgtsPwfCfQYAZJUqkhPbinyDFmx2FFwPSa3yhG4XMvh9F0yras6nn1Usbnm69VSXNNgMjBD8HI284ffw2p16mJ67bt_Z0ym5cc1eo71ZbMO96De75-XPyDYBYV7u8FS8Tk/s320/22.png" style="max-width: 320px; margin: 0 auto;" />
+            <a href="/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png">
+                <img class="img-frame" alt="إدارة الألعاب في Xenia Manager" src="/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png" style="max-width: 320px; margin: 0 auto;" />
             </a>
         </div>
         <p>لو كنت تستخدم <strong>Xenia Manager</strong>، فهذا الدليل بيكون رفيقك، من أول إضافة اللعبة إلى تثبيت التحديثات والـ DLC، لين توصل لمرحلة التنظيف 😎</p>

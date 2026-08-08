@@ -4,7 +4,7 @@ description: 'ماذا يفعل خيار المزامنة العمودية؟ و�
 pubDate: '2026-01-09T11:00:00.004+03:00'
 updatedDate: '2026-02-24T04:08:02.238+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEgpYme-i-Re3NyY6nriMZrqUTstRoUySX_KvU4mAthCYF5_-ZB_U0ehiO0Ywv4v3uui8FyTc8xM4qdYBkAxTh86tqBO47dkAhLvcJ5GTY-9UH84s3ZB_RCXMapGzB70WNLKWozU_a8CHh3FM6ysZ4XqPtInEiSO516DTfskFxip0dp6Uxfk_sN_f0WMpgs'
+heroImageUrl: '/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/spduplicate-frames.html'
 labels: ["Nintendo","Wii"]
 ---
@@ -128,8 +128,8 @@ labels: ["Nintendo","Wii"]
 
     <header class="vs-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgpYme-i-Re3NyY6nriMZrqUTstRoUySX_KvU4mAthCYF5_-ZB_U0ehiO0Ywv4v3uui8FyTc8xM4qdYBkAxTh86tqBO47dkAhLvcJ5GTY-9UH84s3ZB_RCXMapGzB70WNLKWozU_a8CHh3FM6ysZ4XqPtInEiSO516DTfskFxip0dp6Uxfk_sN_f0WMpgs">
-                <img alt="شرح خيار V-Sync في إعدادات الألعاب - مدونة حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEgpYme-i-Re3NyY6nriMZrqUTstRoUySX_KvU4mAthCYF5_-ZB_U0ehiO0Ywv4v3uui8FyTc8xM4qdYBkAxTh86tqBO47dkAhLvcJ5GTY-9UH84s3ZB_RCXMapGzB70WNLKWozU_a8CHh3FM6ysZ4XqPtInEiSO516DTfskFxip0dp6Uxfk_sN_f0WMpgs" style="max-width:100%; height:auto;" />
+            <a href="/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png">
+                <img alt="شرح خيار V-Sync في إعدادات الألعاب - مدونة حكميك" src="/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png" style="max-width:100%; height:auto;" />
             </a>
         </div>
         <h2>ماذا يفعل خيار المزامنة العمودية؟ وهل يجب تفعيله؟</h2>
@@ -185,8 +185,8 @@ labels: ["Nintendo","Wii"]
     <section class="material-card">
         <h3>📊 تحليل التأثير: جهاز ضعيف vs جهاز قوي</h3>
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEiJ2L7S1Ew9xAF00XIcm1bLQi3Jn9fsJ_9tn0KKgSHynLk12ofOvFbi0EEONnIm6OtWKTuQzYg58xk0WIV2VW5X3Kg6dxir59McuF9UBNLlA7euWyhzG3mAb2WbX7h8sox1IgiroKeHO6VsOBXQCFVugDDBNHVjBaH9r1YbK-XO_UzFfUuYESKhaA9Vxz0">
-                <img alt="رسم بياني لتأثير V-Sync على الأداء" src="https://blogger.googleusercontent.com/img/a/AVvXsEiJ2L7S1Ew9xAF00XIcm1bLQi3Jn9fsJ_9tn0KKgSHynLk12ofOvFbi0EEONnIm6OtWKTuQzYg58xk0WIV2VW5X3Kg6dxir59McuF9UBNLlA7euWyhzG3mAb2WbX7h8sox1IgiroKeHO6VsOBXQCFVugDDBNHVjBaH9r1YbK-XO_UzFfUuYESKhaA9Vxz0" style="max-width:100%; border-radius:10px;" />
+            <a href="/media/blogger/3f/3f2e44afc16e5025f455d3d8e1337be398bf591b6bb02aa07ff976c67c940feb.png">
+                <img alt="رسم بياني لتأثير V-Sync على الأداء" src="/media/blogger/3f/3f2e44afc16e5025f455d3d8e1337be398bf591b6bb02aa07ff976c67c940feb.png" style="max-width:100%; border-radius:10px;" />
             </a>
         </div>
         <ul style="margin-top:20px;">

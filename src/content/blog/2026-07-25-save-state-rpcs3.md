@@ -4,7 +4,7 @@ description: 'RPCS3 Save State Multi-Slot SaveState Manager شرح إنشاء Sa
 pubDate: '2026-07-25T03:10:00.691+03:00'
 updatedDate: '2026-07-27T08:08:33.819+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjt4d1dhZWn8xQSafKo-Pmkj7b3nttokruTXP-T8slPh4LIaCPASwhLKF06NvNbx4pjPqF0kRu0Qf-w9wKgc2qBvzUOe1dXGS9N4Y1mRMHpMZ0YZ9rI0g_T-yGH_bIr303_FUTmlqR79QpWHwsVfPP5vJq3Y1wcKze_GWLYletJfYzodFsDCkwcdloHn0/s1600/52lecs52lecs52le.jpg'
+heroImageUrl: '/media/blogger/fd/fd2b1eef1f81358904ee5b48a217ee994570173354f1dd91f60e5a996d03a024.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/save-state-rpcs3.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -723,7 +723,7 @@ labels: ["PlayStation","PS3"]
 <div class="rpcs3-savestate-guide">
 <header class="ss-hero">
 <div class="ss-hero-media">
-<button aria-label="عرض الصورة بحجمها الطبيعي" class="ss-image-viewer" data-full="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjt4d1dhZWn8xQSafKo-Pmkj7b3nttokruTXP-T8slPh4LIaCPASwhLKF06NvNbx4pjPqF0kRu0Qf-w9wKgc2qBvzUOe1dXGS9N4Y1mRMHpMZ0YZ9rI0g_T-yGH_bIr303_FUTmlqR79QpWHwsVfPP5vJq3Y1wcKze_GWLYletJfYzodFsDCkwcdloHn0/s1600/52lecs52lecs52le.jpg" type="button"><img alt="شرح استخدام Save State في محاكي RPCS3" decoding="async" fetchpriority="high" height="893" loading="eager" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjt4d1dhZWn8xQSafKo-Pmkj7b3nttokruTXP-T8slPh4LIaCPASwhLKF06NvNbx4pjPqF0kRu0Qf-w9wKgc2qBvzUOe1dXGS9N4Y1mRMHpMZ0YZ9rI0g_T-yGH_bIr303_FUTmlqR79QpWHwsVfPP5vJq3Y1wcKze_GWLYletJfYzodFsDCkwcdloHn0/s1600/52lecs52lecs52le.jpg" width="1600" /></button>
+<button aria-label="عرض الصورة بحجمها الطبيعي" class="ss-image-viewer" data-full="/media/blogger/fd/fd2b1eef1f81358904ee5b48a217ee994570173354f1dd91f60e5a996d03a024.jpg" type="button"><img alt="شرح استخدام Save State في محاكي RPCS3" decoding="async" fetchpriority="high" height="893" loading="eager" src="/media/blogger/fd/fd2b1eef1f81358904ee5b48a217ee994570173354f1dd91f60e5a996d03a024.jpg" width="1600" /></button>
 </div>
 <div class="ss-badges">
 <span class="ss-badge">RPCS3 Save State</span>
@@ -865,7 +865,7 @@ labels: ["PlayStation","PS3"]
                     أو تسحب ملف Save State وتفلته داخل نافذة RPCS3.
                 </div>
 <div class="ss-step-media">
-<figure class="ss-shot"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEijnf84tnASAA9otbrzmAFwJap7Zut42pH2XjUcxqUdXAyl4lCMJrlhV4HtCyWyzpPj7qVpEJZXRBmoelqIMXG-6lXT2afxI_qvfcA1v6t0JKE_nr06gexjEo7UKvAZxujBhM9iwYoMCkDpEfoKLOT821RAmnrioTKUuDDEQF1fpRWBBmakYaxuLyUWk-g" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="455" data-original-width="287" height="240" src="https://blogger.googleusercontent.com/img/a/AVvXsEijnf84tnASAA9otbrzmAFwJap7Zut42pH2XjUcxqUdXAyl4lCMJrlhV4HtCyWyzpPj7qVpEJZXRBmoelqIMXG-6lXT2afxI_qvfcA1v6t0JKE_nr06gexjEo7UKvAZxujBhM9iwYoMCkDpEfoKLOT821RAmnrioTKUuDDEQF1fpRWBBmakYaxuLyUWk-g" width="151" /></a></div><br /><br /><p>
+<figure class="ss-shot"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="455" data-original-width="287" height="240" src="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" width="151" /></a></div><br /><br /><p>
                             صورة حقيقية من واجهة RPCS3 توضح Boot Savestate
                             وBoot Recent Savestate داخل قائمة File.
                         </p>

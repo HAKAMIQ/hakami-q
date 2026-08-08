@@ -4,7 +4,7 @@ description: 'تخيل أنك تلعب Call of Duty على الإكس بوكس،
 pubDate: '2025-04-16T17:33:00.004+03:00'
 updatedDate: '2026-02-24T06:19:15.868+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0joS6W4Nl6OL1e0MYc5h4Yvf6BVBW6fySUdNmaE164sePatttTJ5JtVKn8OxtgP1Z-OVNrjTIQviMlleqgCzK0UAUlalJ3obKsbetn2m_MPqZe5blOffCTTHrkblGcEFFp8082WkJByhZ6nIBIOcRP6z_f2cJ7VxBicxQCqSG-p9SK-msMt1E10X5hjI/s320/25.png'
+heroImageUrl: '/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/mousehook-xenia.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -119,8 +119,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0joS6W4Nl6OL1e0MYc5h4Yvf6BVBW6fySUdNmaE164sePatttTJ5JtVKn8OxtgP1Z-OVNrjTIQviMlleqgCzK0UAUlalJ3obKsbetn2m_MPqZe5blOffCTTHrkblGcEFFp8082WkJByhZ6nIBIOcRP6z_f2cJ7VxBicxQCqSG-p9SK-msMt1E10X5hjI/s1536/25.png">
-                <img class="img-frame" alt="ما هو Mousehook في Xenia؟" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0joS6W4Nl6OL1e0MYc5h4Yvf6BVBW6fySUdNmaE164sePatttTJ5JtVKn8OxtgP1Z-OVNrjTIQviMlleqgCzK0UAUlalJ3obKsbetn2m_MPqZe5blOffCTTHrkblGcEFFp8082WkJByhZ6nIBIOcRP6z_f2cJ7VxBicxQCqSG-p9SK-msMt1E10X5hjI/s320/25.png" style="max-width: 450px;" />
+            <a href="/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png">
+                <img class="img-frame" alt="ما هو Mousehook في Xenia؟" src="/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png" style="max-width: 450px;" />
             </a>
         </div>
         <p>تخيل أنك تلعب <strong>Call of Duty</strong> على الإكس بوكس، ولكن بإحساس الفأرة والكيبورد كأنك تعمل على البي سي... هذا بالضبط هو شغل <strong>Mousehook</strong> داخل محاكي Xenia 🔥</p>

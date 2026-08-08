@@ -4,7 +4,7 @@ description: 'الـ EEPROM هو شريحة صغيرة في جهاز Xbox الأ
 pubDate: '2025-04-15T13:49:00.004+03:00'
 updatedDate: '2026-02-24T23:55:07.241+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMClqbwIXk8YEg78V2YeIqF6PMDr0xbjaI57j-M58o4OC5oXRtYHVnj3kRH0vVmtSDnNSScR_1joqsAJqZb7GvjG12lGGOZRpqgfyWHyQCsjADrsVB9ejlWB-4YaDy5_ffYpPGwS2WdgC6jzBokgms4oWHU8wTfHvOrKVfWES25QhGTgm7SGlgu26Kk3Y/s320/14.png'
+heroImageUrl: '/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/eeprom-xemu.html'
 labels: ["Xbox","Xbox-Original"]
 ---
@@ -51,8 +51,8 @@ labels: ["Xbox","Xbox-Original"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMClqbwIXk8YEg78V2YeIqF6PMDr0xbjaI57j-M58o4OC5oXRtYHVnj3kRH0vVmtSDnNSScR_1joqsAJqZb7GvjG12lGGOZRpqgfyWHyQCsjADrsVB9ejlWB-4YaDy5_ffYpPGwS2WdgC6jzBokgms4oWHU8wTfHvOrKVfWES25QhGTgm7SGlgu26Kk3Y/s1536/14.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMClqbwIXk8YEg78V2YeIqF6PMDr0xbjaI57j-M58o4OC5oXRtYHVnj3kRH0vVmtSDnNSScR_1joqsAJqZb7GvjG12lGGOZRpqgfyWHyQCsjADrsVB9ejlWB-4YaDy5_ffYpPGwS2WdgC6jzBokgms4oWHU8wTfHvOrKVfWES25QhGTgm7SGlgu26Kk3Y/s320/14.png" width="320" />
+            <a href="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png">
+                <img class="img-frame" src="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png" width="320" />
             </a>
         </div>
         <p>الـ EEPROM هو شريحة صغيرة في جهاز Xbox الأصلي تحتوي على إعدادات النظام زي المنطقة، اللغة، نوع الإخراج، الصوت، والمزيد. في محاكي xemu يتم محاكاة هذه الشريحة باستخدام ملف يمكن تعديله بكل سهولة.</p>

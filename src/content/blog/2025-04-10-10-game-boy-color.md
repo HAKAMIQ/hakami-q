@@ -4,7 +4,7 @@ description: '🎮 مقدمة جهاز Game Boy Color ما كان مجرد تح�
 pubDate: '2025-04-10T23:00:00.003+03:00'
 updatedDate: '2025-04-17T23:30:15.843+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVlRkVpOHjVK4W84AfxNuKyniBe7OOPdhG8-ZWxA-4Vi6LPVMJPCP38HiLW6d4ZIeLt6-TZ5iBBUkmBmn5A--ZLiIEEAjblvir7BJuYvTwN52nMCE1717HwQif_OWsVf7pceY3q8wfAA0eRtuXdy264umDRkmDcnd8_qX6isoec7DkdKQekOan1QtnHow/s320/1502725629-gameboy-games.jpg'
+heroImageUrl: '/media/blogger/33/3355811d00366226bba110647cff72949b06989018a60c46edeadbf06b8953c5.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/10-game-boy-color.html'
 labels: ["GBC","Nintendo"]
 ---
@@ -12,7 +12,7 @@ labels: ["GBC","Nintendo"]
 <div class="post-body" style="background-color:#1e1e1e; color:#f4f4f4; font-family: 'Tajawal', sans-serif; padding: 20px; border-radius: 12px; line-height: 2; font-size: 16px;">
 
 <div style="text-align:center;">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVlRkVpOHjVK4W84AfxNuKyniBe7OOPdhG8-ZWxA-4Vi6LPVMJPCP38HiLW6d4ZIeLt6-TZ5iBBUkmBmn5A--ZLiIEEAjblvir7BJuYvTwN52nMCE1717HwQif_OWsVf7pceY3q8wfAA0eRtuXdy264umDRkmDcnd8_qX6isoec7DkdKQekOan1QtnHow/s320/1502725629-gameboy-games.jpg" alt="أفضل ألعاب GBC" style="width: 320px; border-radius: 10px; margin-bottom: 20px;" />
+  <img src="/media/blogger/33/3355811d00366226bba110647cff72949b06989018a60c46edeadbf06b8953c5.jpg" alt="أفضل ألعاب GBC" style="width: 320px; border-radius: 10px; margin-bottom: 20px;" />
 </div>
 
 <h2 style="color:#00ccff; text-align:center;">🎮 مقدمة</h2>

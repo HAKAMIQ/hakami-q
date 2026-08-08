@@ -4,7 +4,7 @@ description: 'إعدادات I/O في محاكي RPCS3 تتحكم في كيفي�
 pubDate: '2025-04-14T01:18:00.003+03:00'
 updatedDate: '2026-02-25T00:12:22.181+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1KDcWDPUzeEZBSXvvbMGahuyjF_0_MHmwPFTdxFuWri5a0GD9ZotZzoRzVoR26j8hGSP_EmjaNRUGJP4ch6cJT2w57124ySZPvwtfijJNTAEdrPQldGu0VlOo8xsyCheyg9unzuHBVK7JUGCYiNb0xPKXHCE1rNJ3zgw7_EG9G0x4x3zKfuS_3MwkCo0/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-io-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -60,8 +60,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1KDcWDPUzeEZBSXvvbMGahuyjF_0_MHmwPFTdxFuWri5a0GD9ZotZzoRzVoR26j8hGSP_EmjaNRUGJP4ch6cJT2w57124ySZPvwtfijJNTAEdrPQldGu0VlOo8xsyCheyg9unzuHBVK7JUGCYiNb0xPKXHCE1rNJ3zgw7_EG9G0x4x3zKfuS_3MwkCo0/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1KDcWDPUzeEZBSXvvbMGahuyjF_0_MHmwPFTdxFuWri5a0GD9ZotZzoRzVoR26j8hGSP_EmjaNRUGJP4ch6cJT2w57124ySZPvwtfijJNTAEdrPQldGu0VlOo8xsyCheyg9unzuHBVK7JUGCYiNb0xPKXHCE1rNJ3zgw7_EG9G0x4x3zKfuS_3MwkCo0/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" width="320" />
+            <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
+                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>إعدادات I/O في محاكي RPCS3 تتحكم في كيفية تفاعل الأجهزة الخارجية مثل لوحة المفاتيح، الفأرة، الكاميرا، والأدوات الموسيقية مع الألعاب. ضبط هذه الخيارات ضروري لتشغيل الطرفيات الخاصة ببعض الألعاب بشكل صحيح.</p>

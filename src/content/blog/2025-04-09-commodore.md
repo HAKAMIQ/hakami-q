@@ -4,7 +4,7 @@ description: 'Commodore 64: الأسطورة التي سبقت عمالقة ال
 pubDate: '2025-04-09T04:32:00.001+03:00'
 updatedDate: '2026-02-24T05:12:24.257+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPThh979blWgBEk5cr-aOSC4e18gTcWKiDwuuAjLFiMx370zVoFHs7X_C3HGqXKAbhmvgJRdd1i13aiKKhmt4nydr2Y-mSkG8owm7M1yxaOqb83MCxNSLSc8a1IOcu7QD408-ndD9EtgJ3AXUlQWXe8tDRxpPo2qIU5Yc4jt-98F20XyusrpYfPPpkC-w/s320/Commodore64.png'
+heroImageUrl: '/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/commodore.html'
 labels: ["Commodore"]
 ---
@@ -104,8 +104,8 @@ labels: ["Commodore"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPThh979blWgBEk5cr-aOSC4e18gTcWKiDwuuAjLFiMx370zVoFHs7X_C3HGqXKAbhmvgJRdd1i13aiKKhmt4nydr2Y-mSkG8owm7M1yxaOqb83MCxNSLSc8a1IOcu7QD408-ndD9EtgJ3AXUlQWXe8tDRxpPo2qIU5Yc4jt-98F20XyusrpYfPPpkC-w/s2000/Commodore64.png">
-                <img class="img-frame" alt="جهاز Commodore 64" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPThh979blWgBEk5cr-aOSC4e18gTcWKiDwuuAjLFiMx370zVoFHs7X_C3HGqXKAbhmvgJRdd1i13aiKKhmt4nydr2Y-mSkG8owm7M1yxaOqb83MCxNSLSc8a1IOcu7QD408-ndD9EtgJ3AXUlQWXe8tDRxpPo2qIU5Yc4jt-98F20XyusrpYfPPpkC-w/s320/Commodore64.png" />
+            <a href="/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png">
+                <img class="img-frame" alt="جهاز Commodore 64" src="/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png" />
             </a>
         </div>
         <h1>Commodore 64: الأسطورة التي سبقت عمالقة الألعاب</h1>

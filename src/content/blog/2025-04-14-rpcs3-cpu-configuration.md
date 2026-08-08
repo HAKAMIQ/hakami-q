@@ -4,7 +4,7 @@ description: 'المعالج هو "العقل" الذي يدير محاكي RPCS
 pubDate: '2025-04-14T01:02:00.005+03:00'
 updatedDate: '2026-02-25T00:15:17.319+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFPkg28or0OAX2vHPnGshq7T5G9hPFPxJScQM1geRX67JHDa8ayTMecJGlBmoZYujM2xENSxWRYOFeRuFcN6rmz7WUk7wELBAbwAGPzHmeJhNI5HDwWkds7B3AGjfOgeuZmPmDDiLI56PAJl3r2d_8Tgd3idfw-rCOKSvHRcjQi1Zu4UXcBm-eXp0GXug/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-cpu-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -60,8 +60,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFPkg28or0OAX2vHPnGshq7T5G9hPFPxJScQM1geRX67JHDa8ayTMecJGlBmoZYujM2xENSxWRYOFeRuFcN6rmz7WUk7wELBAbwAGPzHmeJhNI5HDwWkds7B3AGjfOgeuZmPmDDiLI56PAJl3r2d_8Tgd3idfw-rCOKSvHRcjQi1Zu4UXcBm-eXp0GXug/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFPkg28or0OAX2vHPnGshq7T5G9hPFPxJScQM1geRX67JHDa8ayTMecJGlBmoZYujM2xENSxWRYOFeRuFcN6rmz7WUk7wELBAbwAGPzHmeJhNI5HDwWkds7B3AGjfOgeuZmPmDDiLI56PAJl3r2d_8Tgd3idfw-rCOKSvHRcjQi1Zu4UXcBm-eXp0GXug/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" width="320" />
+            <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
+                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>المعالج هو "العقل" الذي يدير محاكي RPCS3، وبما أن معمارية PS3 معقدة، فإن ضبط إعدادات CPU هو العامل الأهم في تحقيق سرعة 60 إطاراً وثبات الصوت وتجنب التقطيع المفاجئ.</p>

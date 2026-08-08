@@ -4,7 +4,7 @@ description: 'تشمل القائمة جميع الألعاب المصنفة ر�
 pubDate: '2026-07-21T21:21:03.969+03:00'
 updatedDate: '2026-07-21T21:22:50.973+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEimVUUCXJ-xvk9h89u7iJFjcSYPNY5D7lmA7ak5HkclcEis3NCHUzYK4CaPs53LUcybrhB98AGV33ped329HBLJhRrXGgYvv9rJ_W8CjBxsfKtQYlgYhM89jIVr5q1yNxTN_XTLvSDxCpSjjbRnRhSl0kV6Eijc9OTmiZR-vam3cPl1sSmO5iXA7uK6PL0'
+heroImageUrl: '/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/shadps4-windows-2.html'
 labels: ["articles","PS4"]
 ---
@@ -228,7 +228,7 @@ labels: ["articles","PS4"]
 </style>
 <div class="shad-table-wrapper">
 <header class="shad-header">
-    <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEimVUUCXJ-xvk9h89u7iJFjcSYPNY5D7lmA7ak5HkclcEis3NCHUzYK4CaPs53LUcybrhB98AGV33ped329HBLJhRrXGgYvv9rJ_W8CjBxsfKtQYlgYhM89jIVr5q1yNxTN_XTLvSDxCpSjjbRnRhSl0kV6Eijc9OTmiZR-vam3cPl1sSmO5iXA7uK6PL0" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="369" data-original-width="738" height="160" src="https://blogger.googleusercontent.com/img/a/AVvXsEimVUUCXJ-xvk9h89u7iJFjcSYPNY5D7lmA7ak5HkclcEis3NCHUzYK4CaPs53LUcybrhB98AGV33ped329HBLJhRrXGgYvv9rJ_W8CjBxsfKtQYlgYhM89jIVr5q1yNxTN_XTLvSDxCpSjjbRnRhSl0kV6Eijc9OTmiZR-vam3cPl1sSmO5iXA7uK6PL0" width="320" /></a></div><p>
+    <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="369" data-original-width="738" height="160" src="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" width="320" /></a></div><p>
         تشمل القائمة جميع الألعاب المصنفة رسميًا ضمن <b>status-playable</b>
         على نظام Windows، مع تقسيمها حسب إصدار shadPS4 المستخدم في التقرير.
     </p>

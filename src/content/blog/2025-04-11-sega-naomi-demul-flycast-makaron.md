@@ -4,7 +4,7 @@ description: 'أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأ�
 pubDate: '2025-04-11T19:01:00.006+03:00'
 updatedDate: '2026-02-25T02:30:13.379+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5yH2xj-5xk7R16eQ2A6Tir3AL7Ndaq2MBbReYJMmaugq3gOESpfpu_2LKc69O1bHBStEGIEvXPpxtGL7qrJVOBAyKLgTEO_CNoYjmnOUjqLGooi4bdezdw5TR0vV50sY8a5SKMeujqDcz1H4xiEqdpI0qCwQCC54IuZ_iwDNFSuB3JTPWWgkK-FRCTY/s320/16014901.webp'
+heroImageUrl: '/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-naomi-demul-flycast-makaron.html'
 labels: ["sega","Sega-Naomi"]
 ---
@@ -75,8 +75,8 @@ labels: ["sega","Sega-Naomi"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5yH2xj-5xk7R16eQ2A6Tir3AL7Ndaq2MBbReYJMmaugq3gOESpfpu_2LKc69O1bHBStEGIEvXPpxtGL7qrJVOBAyKLgTEO_CNoYjmnOUjqLGooi4bdezdw5TR0vV50sY8a5SKMeujqDcz1H4xiEqdpI0qCwQCC54IuZ_iwDNFSuB3JTPWWgkK-FRCTY/s1600/16014901.webp">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5yH2xj-5xk7R16eQ2A6Tir3AL7Ndaq2MBbReYJMmaugq3gOESpfpu_2LKc69O1bHBStEGIEvXPpxtGL7qrJVOBAyKLgTEO_CNoYjmnOUjqLGooi4bdezdw5TR0vV50sY8a5SKMeujqDcz1H4xiEqdpI0qCwQCC54IuZ_iwDNFSuB3JTPWWgkK-FRCTY/s320/16014901.webp" width="226" />
+            <a href="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg">
+                <img class="img-frame" src="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg" width="226" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد</h2>

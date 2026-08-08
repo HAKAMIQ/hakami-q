@@ -4,7 +4,7 @@ description: 'الدليل الشامل: طريقة ربط يد التحكم ف�
 pubDate: '2025-04-11T17:37:00.003+03:00'
 updatedDate: '2026-02-25T02:57:39.902+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_zloAZ0ac59i32_dXQ633akjNlyMesjnpO1otxIdT-Y6DIMVchPcEQyz6gexvf05S2ZbgnbJTZBYTETtxY-jgcFXCedERmcNB8aFczlIs5WYfWIfo5LiU8jvkqJo2BiPFul0jwZ5hIZtWQyVPQWl3lneTLTnaIX1MOTnwe-wd4PFpJ-hjbUvjzA_pszE/s320/Exhibit020.jpg'
+heroImageUrl: '/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/dreamcast.html'
 labels: ["Dreamcast","sega"]
 ---
@@ -65,8 +65,8 @@ labels: ["Dreamcast","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_zloAZ0ac59i32_dXQ633akjNlyMesjnpO1otxIdT-Y6DIMVchPcEQyz6gexvf05S2ZbgnbJTZBYTETtxY-jgcFXCedERmcNB8aFczlIs5WYfWIfo5LiU8jvkqJo2BiPFul0jwZ5hIZtWQyVPQWl3lneTLTnaIX1MOTnwe-wd4PFpJ-hjbUvjzA_pszE/s1600/Exhibit020.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_zloAZ0ac59i32_dXQ633akjNlyMesjnpO1otxIdT-Y6DIMVchPcEQyz6gexvf05S2ZbgnbJTZBYTETtxY-jgcFXCedERmcNB8aFczlIs5WYfWIfo5LiU8jvkqJo2BiPFul0jwZ5hIZtWQyVPQWl3lneTLTnaIX1MOTnwe-wd4PFpJ-hjbUvjzA_pszE/s320/Exhibit020.jpg" width="267" />
+            <a href="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg">
+                <img class="img-frame" src="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg" width="267" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">الدليل الشامل: طريقة ربط يد التحكم في محاكيات Dreamcast</h2>

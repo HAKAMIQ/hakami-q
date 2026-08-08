@@ -4,7 +4,7 @@ description: 'شرح استخدام NAOMI داخل RetroArch (عبر نواة Fl
 pubDate: '2025-04-11T19:05:00.004+03:00'
 updatedDate: '2026-02-25T02:29:12.498+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBFM8OSVDgviA8gzsngl7zBbvY5KSHa3d0mBEYy-0XQo9V2_ArHbVNChOV7Dsy2OJp-xJUts4LiSbzseSW3cA1_ExUjqEAmFxW704G5nu53Qpsu5lOAOnAPcx6qrDytPVS3mlUaW6auha5t4BA2HCbprlFOGT-hSyCH_aYMB5nREco-_OwwPf7_HGFdng/s320/images%20(4).jfif'
+heroImageUrl: '/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/naomi-retroarch-flycast.html'
 labels: ["sega","Sega-Naomi"]
 ---
@@ -83,8 +83,8 @@ labels: ["sega","Sega-Naomi"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBFM8OSVDgviA8gzsngl7zBbvY5KSHa3d0mBEYy-0XQo9V2_ArHbVNChOV7Dsy2OJp-xJUts4LiSbzseSW3cA1_ExUjqEAmFxW704G5nu53Qpsu5lOAOnAPcx6qrDytPVS3mlUaW6auha5t4BA2HCbprlFOGT-hSyCH_aYMB5nREco-_OwwPf7_HGFdng/s1600/images%20(4).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBFM8OSVDgviA8gzsngl7zBbvY5KSHa3d0mBEYy-0XQo9V2_ArHbVNChOV7Dsy2OJp-xJUts4LiSbzseSW3cA1_ExUjqEAmFxW704G5nu53Qpsu5lOAOnAPcx6qrDytPVS3mlUaW6auha5t4BA2HCbprlFOGT-hSyCH_aYMB5nREco-_OwwPf7_HGFdng/s320/images%20(4).jfif" width="300" />
+            <a href="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg">
+                <img class="img-frame" src="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg" width="300" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">شرح استخدام NAOMI داخل RetroArch (عبر نواة Flycast)</h2>

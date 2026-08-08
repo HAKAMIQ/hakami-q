@@ -4,7 +4,7 @@ description: '🎮 ديمو وهومبرو PSP: ألعاب مجانية تشتغ
 pubDate: '2025-04-15T08:25:00.003+03:00'
 updatedDate: '2026-02-24T08:52:38.764+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggVOzTfGTiIe6x-SZJkHacmwwLxl0wOE7oFBZMNk2XJI8k_ca1oLiktV-NniBafZjyK0KOKoVnf5TyJTANy1xKSCEH4DOE5484rd3i1rgXH2wfOqlzkc_lodvHVfu9J9rnKOvyZsGk6ft4bcgfZw8v6LDTzKKAVgvswpeDVvbN2QyiGEAUMO4s5jnMJtw/s320/images%20(2).jfif'
+heroImageUrl: '/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/psp-ppsspp.html'
 labels: ["PlayStation","psp"]
 ---
@@ -112,8 +112,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-homebrew-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggVOzTfGTiIe6x-SZJkHacmwwLxl0wOE7oFBZMNk2XJI8k_ca1oLiktV-NniBafZjyK0KOKoVnf5TyJTANy1xKSCEH4DOE5484rd3i1rgXH2wfOqlzkc_lodvHVfu9J9rnKOvyZsGk6ft4bcgfZw8v6LDTzKKAVgvswpeDVvbN2QyiGEAUMO4s5jnMJtw/s1600/images%20(2).jfif">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggVOzTfGTiIe6x-SZJkHacmwwLxl0wOE7oFBZMNk2XJI8k_ca1oLiktV-NniBafZjyK0KOKoVnf5TyJTANy1xKSCEH4DOE5484rd3i1rgXH2wfOqlzkc_lodvHVfu9J9rnKOvyZsGk6ft4bcgfZw8v6LDTzKKAVgvswpeDVvbN2QyiGEAUMO4s5jnMJtw/s320/images%20(2).jfif" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg">
+            <img src="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

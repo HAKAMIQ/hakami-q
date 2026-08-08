@@ -4,7 +4,7 @@ description: '💾 الدليل الكامل لفهم صيغ ألعاب Nintendo
 pubDate: '2025-04-11T01:40:00.002+03:00'
 updatedDate: '2026-02-25T03:26:03.778+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGh9BR2NNjaWabRehhq1uUzGlpTXl88ZyaThNfoLdzrd_90wmgNRln1WjLREZsQQyDj8Cqi4gEBgnIVNLYXAD6_c_kcv8jnlz3oGgrkpcUXilDUgNzt0hJneYV1kOy-bb6SGxq_I4i8mpRORmn9kqiw-z66bCUQn9EMe78ZxOySeAtLpZAqIHSSjVSbCs/s320/4562_icon.png'
+heroImageUrl: '/media/blogger/7f/7f0f4ed47f193a57e9a2ab5603171c88ce283fa437464f51bc01b05446373ee7.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/3ds-cia-3ds-cci-cxi.html'
 labels: ["N3DS","Nintendo"]
 ---
@@ -72,8 +72,8 @@ labels: ["N3DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGh9BR2NNjaWabRehhq1uUzGlpTXl88ZyaThNfoLdzrd_90wmgNRln1WjLREZsQQyDj8Cqi4gEBgnIVNLYXAD6_c_kcv8jnlz3oGgrkpcUXilDUgNzt0hJneYV1kOy-bb6SGxq_I4i8mpRORmn9kqiw-z66bCUQn9EMe78ZxOySeAtLpZAqIHSSjVSbCs/s1536/4562_icon.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGh9BR2NNjaWabRehhq1uUzGlpTXl88ZyaThNfoLdzrd_90wmgNRln1WjLREZsQQyDj8Cqi4gEBgnIVNLYXAD6_c_kcv8jnlz3oGgrkpcUXilDUgNzt0hJneYV1kOy-bb6SGxq_I4i8mpRORmn9kqiw-z66bCUQn9EMe78ZxOySeAtLpZAqIHSSjVSbCs/s320/4562_icon.png" width="213" alt="شرح صيغ ألعاب 3DS" />
+            <a href="/media/blogger/7f/7f0f4ed47f193a57e9a2ab5603171c88ce283fa437464f51bc01b05446373ee7.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/7f/7f0f4ed47f193a57e9a2ab5603171c88ce283fa437464f51bc01b05446373ee7.png" width="213" alt="شرح صيغ ألعاب 3DS" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">💾 الدليل الكامل لفهم صيغ ألعاب Nintendo 3DS</h2>

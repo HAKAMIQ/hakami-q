@@ -4,7 +4,7 @@ description: 'تحذير أمني: اختراق ضخم يطال 29.8 مليون 
 pubDate: '2026-01-29T03:58:00.003+03:00'
 updatedDate: '2026-02-24T04:56:25.999+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEgv6mvYbABnrwtzWQZrQ5TZO4SGYskVlY6c7s-PO1eNu1MHQ962Ax-P_WsHWEuLPzPaq3L5b3EAIgNvEpt811fduYnGDYW0nxAgckAoeWMvj8L9x8n2Z_z1GmercDHuUpzp7pesvYgPDYQN4MXGZYuM10-v0M3tLXeJHPrPKHQhNlxNxDFdbSKjbwp-ZuU'
+heroImageUrl: '/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/soundcloud.html'
 labels: ["articles"]
 ---
@@ -105,8 +105,8 @@ labels: ["articles"]
 
     <header class="alert-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgv6mvYbABnrwtzWQZrQ5TZO4SGYskVlY6c7s-PO1eNu1MHQ962Ax-P_WsHWEuLPzPaq3L5b3EAIgNvEpt811fduYnGDYW0nxAgckAoeWMvj8L9x8n2Z_z1GmercDHuUpzp7pesvYgPDYQN4MXGZYuM10-v0M3tLXeJHPrPKHQhNlxNxDFdbSKjbwp-ZuU">
-                <img alt="Have I Been Pwned Alert" src="https://blogger.googleusercontent.com/img/a/AVvXsEgv6mvYbABnrwtzWQZrQ5TZO4SGYskVlY6c7s-PO1eNu1MHQ962Ax-P_WsHWEuLPzPaq3L5b3EAIgNvEpt811fduYnGDYW0nxAgckAoeWMvj8L9x8n2Z_z1GmercDHuUpzp7pesvYgPDYQN4MXGZYuM10-v0M3tLXeJHPrPKHQhNlxNxDFdbSKjbwp-ZuU" style="width:100%; max-width: 500px; border-radius: 10px;" />
+            <a href="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png">
+                <img alt="Have I Been Pwned Alert" src="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png" style="width:100%; max-width: 500px; border-radius: 10px;" />
             </a>
         </div>
         <h1>تحذير أمني: اختراق ضخم يطال 29.8 مليون حساب</h1>

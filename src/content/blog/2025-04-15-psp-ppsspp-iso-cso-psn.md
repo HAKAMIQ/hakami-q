@@ -4,7 +4,7 @@ description: '💿 كيف تحصل على ألعاب PSP لمحاكي PPSSPP؟ �
 pubDate: '2025-04-15T08:18:00.004+03:00'
 updatedDate: '2026-02-24T08:55:24.389+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTkflN8TppKgEbc9tzlba2uVsv2FLtjiompP_fh-zbekiwAMwbvTKLbg8qx_MIDjrHT98b4mExJRBG5M2j2bV2pQfsvobTHfu1xfHy-zaOd8uVkssrpRX3DEyIXzcg39JNcyOofRIXTbdVNfouZTgIS82pVTIsT56zJqB2aTjZ6QAt7IMS0jL7pc4jY3w/s320/4YN4O3sueiBI1HWOcE04.webp'
+heroImageUrl: '/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/psp-ppsspp-iso-cso-psn.html'
 labels: ["PlayStation","psp"]
 ---
@@ -108,8 +108,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-guide-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTkflN8TppKgEbc9tzlba2uVsv2FLtjiompP_fh-zbekiwAMwbvTKLbg8qx_MIDjrHT98b4mExJRBG5M2j2bV2pQfsvobTHfu1xfHy-zaOd8uVkssrpRX3DEyIXzcg39JNcyOofRIXTbdVNfouZTgIS82pVTIsT56zJqB2aTjZ6QAt7IMS0jL7pc4jY3w/s1600/4YN4O3sueiBI1HWOcE04.webp">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTkflN8TppKgEbc9tzlba2uVsv2FLtjiompP_fh-zbekiwAMwbvTKLbg8qx_MIDjrHT98b4mExJRBG5M2j2bV2pQfsvobTHfu1xfHy-zaOd8uVkssrpRX3DEyIXzcg39JNcyOofRIXTbdVNfouZTgIS82pVTIsT56zJqB2aTjZ6QAt7IMS0jL7pc4jY3w/s320/4YN4O3sueiBI1HWOcE04.webp" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg">
+            <img src="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

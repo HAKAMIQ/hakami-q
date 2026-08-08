@@ -4,7 +4,7 @@ description: 'إزالة محاكي Eden من متجر Google Play بعد 100 أ
 pubDate: '2025-10-21T14:57:00.007+03:00'
 updatedDate: '2026-02-24T04:00:32.414+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEiDMp4IrH2nuVj_YgQIUUFOpOaxJepr-zkGflbbBMFmjH9qndEJu7VDZyDYAqdQ5MJdDUqSyxNra5EDzUtlXhJuQvDaLYlc2MrCXxhsHKfq_9d1RUc2Zao_2odoOmH9Omx4cc-ECjo3L1t2tc0lAbfvMl6kE2XKPbgrNecnln6qmD2PNOE2jL8yc0bfY98'
+heroImageUrl: '/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/10/eden-switch-google-play-100.html'
 labels: ["articles","Nintendo"]
 ---
@@ -125,8 +125,8 @@ labels: ["articles","Nintendo"]
 <div class="eden-article">
 
     <div class="img-container">
-        <a href="https://blogger.googleusercontent.com/img/a/AVvXsEiDMp4IrH2nuVj_YgQIUUFOpOaxJepr-zkGflbbBMFmjH9qndEJu7VDZyDYAqdQ5MJdDUqSyxNra5EDzUtlXhJuQvDaLYlc2MrCXxhsHKfq_9d1RUc2Zao_2odoOmH9Omx4cc-ECjo3L1t2tc0lAbfvMl6kE2XKPbgrNecnln6qmD2PNOE2jL8yc0bfY98">
-            <img alt="إزالة محاكي Eden من متجر جوجل بلاي - أخبار المحاكيات حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEiDMp4IrH2nuVj_YgQIUUFOpOaxJepr-zkGflbbBMFmjH9qndEJu7VDZyDYAqdQ5MJdDUqSyxNra5EDzUtlXhJuQvDaLYlc2MrCXxhsHKfq_9d1RUc2Zao_2odoOmH9Omx4cc-ECjo3L1t2tc0lAbfvMl6kE2XKPbgrNecnln6qmD2PNOE2jL8yc0bfY98" style="width:100%; height:auto; display:block;" />
+        <a href="/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png">
+            <img alt="إزالة محاكي Eden من متجر جوجل بلاي - أخبار المحاكيات حكميك" src="/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png" style="width:100%; height:auto; display:block;" />
         </a>
     </div>
 

@@ -4,7 +4,7 @@ description: 'أرشيف حزم القوام (HD Textures) لمحاكي PCSX2 ت
 pubDate: '2026-01-21T15:46:00.002+03:00'
 updatedDate: '2026-02-24T04:52:16.022+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEjHx_4mLDK2EVkj1EZL1uaddyrEwqYHdQV5harlXVnUiT93Bk_AWoTTi5GdPv4gTA8VSf2Q6b6jFTUAzVO5JJMcSYhhN3P38xylaEfQrAdFwN8SrL4M2SlyzCnODlAYuz_16YPjwuL6lNRphMpCtWnhaR0Q9N3xZT9BS4jQGrVXWkIYHTZc7hbvRmnif24'
+heroImageUrl: '/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/hd-textures-ps2.html'
 labels: ["PlayStation","PS2"]
 ---
@@ -114,8 +114,8 @@ labels: ["PlayStation","PS2"]
 
     <header class="archive-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjHx_4mLDK2EVkj1EZL1uaddyrEwqYHdQV5harlXVnUiT93Bk_AWoTTi5GdPv4gTA8VSf2Q6b6jFTUAzVO5JJMcSYhhN3P38xylaEfQrAdFwN8SrL4M2SlyzCnODlAYuz_16YPjwuL6lNRphMpCtWnhaR0Q9N3xZT9BS4jQGrVXWkIYHTZc7hbvRmnif24">
-                <img alt="أرشيف حزم القوام PCSX2 - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEjHx_4mLDK2EVkj1EZL1uaddyrEwqYHdQV5harlXVnUiT93Bk_AWoTTi5GdPv4gTA8VSf2Q6b6jFTUAzVO5JJMcSYhhN3P38xylaEfQrAdFwN8SrL4M2SlyzCnODlAYuz_16YPjwuL6lNRphMpCtWnhaR0Q9N3xZT9BS4jQGrVXWkIYHTZc7hbvRmnif24" style="width:100%; max-width: 600px; border-radius: 10px;" />
+            <a href="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png">
+                <img alt="أرشيف حزم القوام PCSX2 - حكميك" src="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
         <h1>أرشيف حزم القوام (HD Textures) لمحاكي PCSX2</h1>

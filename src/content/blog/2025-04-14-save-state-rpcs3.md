@@ -4,7 +4,7 @@ description: '💾 التحليل التقني لميزة Save State في محا
 pubDate: '2025-04-14T02:03:00.003+03:00'
 updatedDate: '2026-02-24T09:43:10.605+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3_ZUt9dDsftYHIRb2DWWnIAKPyC24bpknX0gwSpSGuH2anR6dBzan0ajjG_PMPGtoWWxVHkocAgHFrFsmZkg2ZgDgBSUrgTlDth9F8g8LahxI5zFaVVM3cS0eLBB02A-Fd0jLNUyobtdovGNKUvDZByEPG6orFvQk1LEoz7z7h1qBG0mi9CCxFVBAZ_8/s320/maxresdefault%20(24).jpg'
+heroImageUrl: '/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/save-state-rpcs3.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -131,8 +131,8 @@ labels: ["PlayStation","PS3"]
 <div class="hakamiq-savestate-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3_ZUt9dDsftYHIRb2DWWnIAKPyC24bpknX0gwSpSGuH2anR6dBzan0ajjG_PMPGtoWWxVHkocAgHFrFsmZkg2ZgDgBSUrgTlDth9F8g8LahxI5zFaVVM3cS0eLBB02A-Fd0jLNUyobtdovGNKUvDZByEPG6orFvQk1LEoz7z7h1qBG0mi9CCxFVBAZ_8/s1600/maxresdefault%20(24).jpg">
-            <img alt="RPCS3 Save State Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3_ZUt9dDsftYHIRb2DWWnIAKPyC24bpknX0gwSpSGuH2anR6dBzan0ajjG_PMPGtoWWxVHkocAgHFrFsmZkg2ZgDgBSUrgTlDth9F8g8LahxI5zFaVVM3cS0eLBB02A-Fd0jLNUyobtdovGNKUvDZByEPG6orFvQk1LEoz7z7h1qBG0mi9CCxFVBAZ_8/s320/maxresdefault%20(24).jpg" width="320" style="border-radius: 12px;" />
+        <a href="/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg">
+            <img alt="RPCS3 Save State Guide" src="/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg" width="320" style="border-radius: 12px;" />
         </a>
     </div>
 

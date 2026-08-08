@@ -4,7 +4,7 @@ description: 'مرحباً بكم في هذا التقرير التقني الش
 pubDate: '2026-03-30T14:35:00.004+03:00'
 updatedDate: '2026-03-30T15:07:40.274+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnj1zWlSdzMoQIdLHmlAmrHrmqQdzvUdaYBXZ_Uet7yQc5rAy9cJvUJ36w5KMkabxIdd1qTlXsbY9_JUmcbFvqn3hgF1s-sEX3ffmEGG-V0d-PWRGidXqf5C-pfDu6qViXFbYajnxIqg-a1MfSaOG1Vm0x-YUDuCQQ8DYOuELLQiQw31lax_dp3D83ks/s1280/1.jpg'
+heroImageUrl: '/media/blogger/43/438157cbde6eee0ac5d4864c30f8e6a504d45770e148cdfcb588cf0bb295afd0.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/03/shadps4-windows.html'
 labels: ["PlayStation","PS4"]
 ---
@@ -127,8 +127,8 @@ labels: ["PlayStation","PS4"]
 
     <header class="tech-header">
         <div class="blog-image-container">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnj1zWlSdzMoQIdLHmlAmrHrmqQdzvUdaYBXZ_Uet7yQc5rAy9cJvUJ36w5KMkabxIdd1qTlXsbY9_JUmcbFvqn3hgF1s-sEX3ffmEGG-V0d-PWRGidXqf5C-pfDu6qViXFbYajnxIqg-a1MfSaOG1Vm0x-YUDuCQQ8DYOuELLQiQw31lax_dp3D83ks/s1280/1.jpg" target="_blank">
-                <img alt="محاكي shadPS4 للألعاب" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlnj1zWlSdzMoQIdLHmlAmrHrmqQdzvUdaYBXZ_Uet7yQc5rAy9cJvUJ36w5KMkabxIdd1qTlXsbY9_JUmcbFvqn3hgF1s-sEX3ffmEGG-V0d-PWRGidXqf5C-pfDu6qViXFbYajnxIqg-a1MfSaOG1Vm0x-YUDuCQQ8DYOuELLQiQw31lax_dp3D83ks/s1280/1.jpg" />
+            <a href="/media/blogger/43/438157cbde6eee0ac5d4864c30f8e6a504d45770e148cdfcb588cf0bb295afd0.jpg" target="_blank">
+                <img alt="محاكي shadPS4 للألعاب" src="/media/blogger/43/438157cbde6eee0ac5d4864c30f8e6a504d45770e148cdfcb588cf0bb295afd0.jpg" />
             </a>
         </div>
         <p style="font-size: 1.05em;">مرحباً بكم في هذا التقرير التقني الشامل .. إذا كنت من عشاق محاكيات الألعاب، فمن المؤكد أنك سمعت عن التطور المذهل الذي يشهده محاكي <code data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">shadPS4</code>. في هذا الموضوع ، نستعرض معكم التحديثات الأخيرة حتى عام 2026، مع قائمة كاملة تضم 109 لعبة قابلة للعب بشكل كامل (Playable) على أنظمة ويندوز.</p>

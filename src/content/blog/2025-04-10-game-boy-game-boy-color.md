@@ -4,7 +4,7 @@ description: '.🧠 ليه السؤال مهم؟ كثير ناس تخلط بين
 pubDate: '2025-04-10T23:07:00.002+03:00'
 updatedDate: '2025-04-10T23:07:50.981+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvJfWkNfSqArMlZGDc8628ILH6_pIGC5_lmvqq-D1QMuPYjB2pGfZV3UVbwf-Ch2Smh0GQscqVhcBHSFzumajWWWetGYxD7_v7rD3mKD4kWkUoXZQJWjPrrMl3CT2CjtszRLD6asuWF16f2VPDm3kbllvcEDb_qyRSkqFSJyJX50TDLWmpbJKP9WH-1Zc/s320/ac7e32b9-3dcb-4749-939c-1bec534e2a7f.png'
+heroImageUrl: '/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-game-boy-color.html'
 labels: ["Game Boy","GBC","Nintendo"]
 ---
@@ -38,7 +38,7 @@ labels: ["Game Boy","GBC","Nintendo"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvJfWkNfSqArMlZGDc8628ILH6_pIGC5_lmvqq-D1QMuPYjB2pGfZV3UVbwf-Ch2Smh0GQscqVhcBHSFzumajWWWetGYxD7_v7rD3mKD4kWkUoXZQJWjPrrMl3CT2CjtszRLD6asuWF16f2VPDm3kbllvcEDb_qyRSkqFSJyJX50TDLWmpbJKP9WH-1Zc/s1024/ac7e32b9-3dcb-4749-939c-1bec534e2a7f.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvJfWkNfSqArMlZGDc8628ILH6_pIGC5_lmvqq-D1QMuPYjB2pGfZV3UVbwf-Ch2Smh0GQscqVhcBHSFzumajWWWetGYxD7_v7rD3mKD4kWkUoXZQJWjPrrMl3CT2CjtszRLD6asuWF16f2VPDm3kbllvcEDb_qyRSkqFSJyJX50TDLWmpbJKP9WH-1Zc/s320/ac7e32b9-3dcb-4749-939c-1bec534e2a7f.png" width="320" /></a></div><h2>.🧠 ليه السؤال مهم؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" width="320" /></a></div><h2>.🧠 ليه السؤال مهم؟</h2>
 <p>
 كثير ناس تخلط بين ألعاب <strong>GB</strong> و <strong>GBC</strong>، وبعضهم يحمّل لعبة GBC على محاكي GB ويقول "ليش ما اشتغلت؟" 😅  
 فلازم نوضح الفرق بين الجهازين، سواء من ناحية الشكل، القدرات، أو التوافق.

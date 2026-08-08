@@ -4,7 +4,7 @@ description: 'شروحات برامج التحميل وإعدادات الأدا
 pubDate: '2026-01-23T23:57:00.005+03:00'
 updatedDate: '2026-02-24T04:55:49.640+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEibZCs3-82ct_KYg6HAkUbR9RgFdXsogVKWIgfRLfFLC3tjw9eu4pHiw9k7z0r96MloZQt33S4rUw3XP-w7ob9_9i1Rb__LrLB_h9C_zRjj2sBul2eyEGeE9-2JqBxAtKZnECFTizrWIG4cNL8XkjHWIm0q0t7eCRVtlokxCW7D-P6VBD-Jmx7XA7hT-mg'
+heroImageUrl: '/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/jdownloader-jdownloader-myrient.html'
 labels: ["articles"]
 ---
@@ -101,8 +101,8 @@ labels: ["articles"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEibZCs3-82ct_KYg6HAkUbR9RgFdXsogVKWIgfRLfFLC3tjw9eu4pHiw9k7z0r96MloZQt33S4rUw3XP-w7ob9_9i1Rb__LrLB_h9C_zRjj2sBul2eyEGeE9-2JqBxAtKZnECFTizrWIG4cNL8XkjHWIm0q0t7eCRVtlokxCW7D-P6VBD-Jmx7XA7hT-mg">
-                <img alt="دليل برامج تحميل Myrient - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEibZCs3-82ct_KYg6HAkUbR9RgFdXsogVKWIgfRLfFLC3tjw9eu4pHiw9k7z0r96MloZQt33S4rUw3XP-w7ob9_9i1Rb__LrLB_h9C_zRjj2sBul2eyEGeE9-2JqBxAtKZnECFTizrWIG4cNL8XkjHWIm0q0t7eCRVtlokxCW7D-P6VBD-Jmx7XA7hT-mg" style="width:100%; max-width: 650px; border-radius: 15px;" />
+            <a href="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png">
+                <img alt="دليل برامج تحميل Myrient - حكميك" src="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png" style="width:100%; max-width: 650px; border-radius: 15px;" />
             </a>
         </div>
         <h1>شروحات برامج التحميل وإعدادات الأداء الأقصى</h1>
@@ -127,7 +127,7 @@ labels: ["articles"]
             <div class="h-alert" style="border-color: var(--m-indigo); background: rgba(99, 102, 241, 0.1);">
                 ⚠️ <strong>إلزامي:</strong> اضبط <b>"عدد الاتصالات" (Connections)</b> على رقم <b>1</b> فقط. زيادة العدد ستؤدي لهبوط السرعة فوراً لـ 10 KB/s.
             </div>
-            <img class="img-frame" alt="إعدادات الاتصالات في IDM" src="https://blogger.googleusercontent.com/img/a/AVvXsEiw2B7Xf2DBmgpQ36B8-Jv_b1aF5ZrNddZwSn35cLMIzGflCI79WROnjX1-vAgV5WA28GPzKGNNjw9efsVSTDWWvJ76m5sCwTJ2yI5ZME9wQ4-3EFV0946wDOgGwPJFFStZNiq69aYwo-JUy63zImRSJxEhds4q7v-DrrA_qVWslK8SHPC5No3j2I8YZtk" width="400" />
+            <img class="img-frame" alt="إعدادات الاتصالات في IDM" src="/media/blogger/f4/f4936a72e48879ec36bd5e72ce02924c6e09455e004e0cc9bbedbb8b74582364.png" width="400" />
         </div>
     </section>
 

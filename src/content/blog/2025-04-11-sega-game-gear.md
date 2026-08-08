@@ -4,7 +4,7 @@ description: 'أفضل محاكيات Sega Game Gear للكمبيوتر والأ
 pubDate: '2025-04-11T19:14:00.005+03:00'
 updatedDate: '2026-02-25T02:19:42.704+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGm8krD7l0ZhjjhMM_VSRXhMA8QcXb55DPZsWWpqBEKE4orybG9rzw7zV7Fh8pLX27dlymmLJEYsSOrXTQWtm4LmCTkSDbbZPnHia4rdJjNIm9f9TE6GkbgsOCDIQdaQfpRemuJumzc2nOPTuVL1pZY0AsEMh7Auu5n4gXRXbk9Ln1iIVkP8wbRdgAPP4/s320/images%20(7).jfif'
+heroImageUrl: '/media/blogger/c6/c65c234165ab7395e684625ce1a2ada42ecfbc2ca2952b7ddcbdc08823577c0d.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-game-gear.html'
 labels: ["sega","Sega-GameGear"]
 ---
@@ -65,8 +65,8 @@ labels: ["sega","Sega-GameGear"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGm8krD7l0ZhjjhMM_VSRXhMA8QcXb55DPZsWWpqBEKE4orybG9rzw7zV7Fh8pLX27dlymmLJEYsSOrXTQWtm4LmCTkSDbbZPnHia4rdJjNIm9f9TE6GkbgsOCDIQdaQfpRemuJumzc2nOPTuVL1pZY0AsEMh7Auu5n4gXRXbk9Ln1iIVkP8wbRdgAPP4/s1600/images%20(7).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGm8krD7l0ZhjjhMM_VSRXhMA8QcXb55DPZsWWpqBEKE4orybG9rzw7zV7Fh8pLX27dlymmLJEYsSOrXTQWtm4LmCTkSDbbZPnHia4rdJjNIm9f9TE6GkbgsOCDIQdaQfpRemuJumzc2nOPTuVL1pZY0AsEMh7Auu5n4gXRXbk9Ln1iIVkP8wbRdgAPP4/s320/images%20(7).jfif" width="289" />
+            <a href="/media/blogger/c6/c65c234165ab7395e684625ce1a2ada42ecfbc2ca2952b7ddcbdc08823577c0d.jpg">
+                <img class="img-frame" src="/media/blogger/c6/c65c234165ab7395e684625ce1a2ada42ecfbc2ca2952b7ddcbdc08823577c0d.jpg" width="289" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega Game Gear للكمبيوتر والأندرويد</h2>

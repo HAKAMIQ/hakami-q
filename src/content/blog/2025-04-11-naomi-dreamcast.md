@@ -4,7 +4,7 @@ description: 'هل يتفوق نظام NAOMI على Dreamcast؟ مقارنة ت�
 pubDate: '2025-04-11T19:11:00.005+03:00'
 updatedDate: '2026-02-25T02:20:08.199+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij8Zq4UiCrlLX-RJjmakWmnVSqRe9M2pkVt4bXO2MdC929-OZKzISA-NRRqTD88uRU9LYAyKpQKqXo0v5oazpJ97Yq_EsnFDL3nbc0zocxRS1EmfuZi5vRVsSql0UVPwQDSnCjhltK-0x1gWYSrj1Ba3zD0xfqFBomLWI7ItY4uySroeYHLWib5YRwt-w/s320/hqdefault%20(1).jpg'
+heroImageUrl: '/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/naomi-dreamcast.html'
 labels: ["Dreamcast","Sega-Naomi"]
 ---
@@ -63,8 +63,8 @@ labels: ["Dreamcast","Sega-Naomi"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij8Zq4UiCrlLX-RJjmakWmnVSqRe9M2pkVt4bXO2MdC929-OZKzISA-NRRqTD88uRU9LYAyKpQKqXo0v5oazpJ97Yq_EsnFDL3nbc0zocxRS1EmfuZi5vRVsSql0UVPwQDSnCjhltK-0x1gWYSrj1Ba3zD0xfqFBomLWI7ItY4uySroeYHLWib5YRwt-w/s1600/hqdefault%20(1).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij8Zq4UiCrlLX-RJjmakWmnVSqRe9M2pkVt4bXO2MdC929-OZKzISA-NRRqTD88uRU9LYAyKpQKqXo0v5oazpJ97Yq_EsnFDL3nbc0zocxRS1EmfuZi5vRVsSql0UVPwQDSnCjhltK-0x1gWYSrj1Ba3zD0xfqFBomLWI7ItY4uySroeYHLWib5YRwt-w/s320/hqdefault%20(1).jpg" width="320" />
+            <a href="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg">
+                <img class="img-frame" src="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">هل يتفوق نظام NAOMI على Dreamcast؟ مقارنة تقنية</h2>

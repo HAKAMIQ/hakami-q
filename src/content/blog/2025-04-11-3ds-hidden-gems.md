@@ -4,7 +4,7 @@ description: '🎮 كنوز نينتندو: أفضل ألعاب 3DS المنسي
 pubDate: '2025-04-11T02:07:00.002+03:00'
 updatedDate: '2026-02-25T03:28:34.151+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtc1j3jOa2Mhu9Sb-nBLqPEtBaaBfHJrVbBvZkmuZan-SQa-PS5S1KkTsTFGmD3Tm0uT0S75ibKOVWK-IX69DfFsMPW4TQXQGCaY6YGqFBDj_P2qCHxq_MiaqkEbHv-HsdeAVO0ioi4aFHjNsVNIjqa_FJdP0mKPJ7EXzydqhf1tSvKKXGdqUdrdS4zDI/s320/3DS%20%D8%A7%D9%84%D9%85%D9%86%D8%B3%D9%8A%D8%A9%20-%20%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%AD%D9%83%D9%85%D9%8A%D9%83%20.png'
+heroImageUrl: '/media/blogger/a7/a740d4161f026f4d6fe92c26969a8be0b5ac2a679757fe530a1e4f905458afe3.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/3ds-hidden-gems.html'
 labels: ["N3DS","Nintendo"]
 ---
@@ -67,8 +67,8 @@ labels: ["N3DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtc1j3jOa2Mhu9Sb-nBLqPEtBaaBfHJrVbBvZkmuZan-SQa-PS5S1KkTsTFGmD3Tm0uT0S75ibKOVWK-IX69DfFsMPW4TQXQGCaY6YGqFBDj_P2qCHxq_MiaqkEbHv-HsdeAVO0ioi4aFHjNsVNIjqa_FJdP0mKPJ7EXzydqhf1tSvKKXGdqUdrdS4zDI/s1536/3DS%20%D8%A7%D9%84%D9%85%D9%86%D8%B3%D9%8A%D8%A9%20-%20%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%AD%D9%83%D9%85%D9%8A%D9%83%20.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtc1j3jOa2Mhu9Sb-nBLqPEtBaaBfHJrVbBvZkmuZan-SQa-PS5S1KkTsTFGmD3Tm0uT0S75ibKOVWK-IX69DfFsMPW4TQXQGCaY6YGqFBDj_P2qCHxq_MiaqkEbHv-HsdeAVO0ioi4aFHjNsVNIjqa_FJdP0mKPJ7EXzydqhf1tSvKKXGdqUdrdS4zDI/s320/3DS%20%D8%A7%D9%84%D9%85%D9%86%D8%B3%D9%8A%D8%A9%20-%20%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D8%AD%D9%83%D9%85%D9%8A%D9%83%20.png" width="213" alt="ألعاب 3DS المنسية" />
+            <a href="/media/blogger/a7/a740d4161f026f4d6fe92c26969a8be0b5ac2a679757fe530a1e4f905458afe3.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/a7/a740d4161f026f4d6fe92c26969a8be0b5ac2a679757fe530a1e4f905458afe3.png" width="213" alt="ألعاب 3DS المنسية" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 كنوز نينتندو: أفضل ألعاب 3DS المنسية (Hidden Gems)</h2>

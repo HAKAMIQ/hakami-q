@@ -4,7 +4,7 @@ description: 'محاكي Deecy v0.6.0: تجربة دريم كاست المتطو
 pubDate: '2026-04-06T03:35:00.001+03:00'
 updatedDate: '2026-04-06T03:35:46.007+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEi1tmrrBrFrtIwERflClsgPoixyQJfhuiD6xiBztQnjmX3ecQ22_cc-59LdqRARM0d7IOcwqzEyOLTmi11GbCO_s8Ahw7peGPu55K3fVITPwOiE_1m0rQYriITsY6pqkONjaWeoEME39S4lTLv9lwNxZwSa9-Z5H6JroYuoX9qhlvufaVrA91htyZOlvlA'
+heroImageUrl: '/media/blogger/7c/7cebfca11823334c50c58db115cb4497a1e7ddf65ad7aae8f3fd3fba82dea86e.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/04/deecy-v060-sega-dreamcast-zig.html'
 labels: ["Dreamcast","sega"]
 ---
@@ -63,8 +63,8 @@ labels: ["Dreamcast","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEi1tmrrBrFrtIwERflClsgPoixyQJfhuiD6xiBztQnjmX3ecQ22_cc-59LdqRARM0d7IOcwqzEyOLTmi11GbCO_s8Ahw7peGPu55K3fVITPwOiE_1m0rQYriITsY6pqkONjaWeoEME39S4lTLv9lwNxZwSa9-Z5H6JroYuoX9qhlvufaVrA91htyZOlvlA" target="_blank">
-                <img alt="إطلاق تحديث Deecy v0.6.0" class="img-frame" src="https://blogger.googleusercontent.com/img/a/AVvXsEi1tmrrBrFrtIwERflClsgPoixyQJfhuiD6xiBztQnjmX3ecQ22_cc-59LdqRARM0d7IOcwqzEyOLTmi11GbCO_s8Ahw7peGPu55K3fVITPwOiE_1m0rQYriITsY6pqkONjaWeoEME39S4lTLv9lwNxZwSa9-Z5H6JroYuoX9qhlvufaVrA91htyZOlvlA" width="600" />
+            <a href="/media/blogger/7c/7cebfca11823334c50c58db115cb4497a1e7ddf65ad7aae8f3fd3fba82dea86e.png" target="_blank">
+                <img alt="إطلاق تحديث Deecy v0.6.0" class="img-frame" src="/media/blogger/7c/7cebfca11823334c50c58db115cb4497a1e7ddf65ad7aae8f3fd3fba82dea86e.png" width="600" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">محاكي Deecy v0.6.0: تجربة دريم كاست المتطورة بلغة Zig</h2>

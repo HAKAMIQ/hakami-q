@@ -4,7 +4,7 @@ description: 'الدليل التقني: أفضل محاكيات نظام Virtua
 pubDate: '2025-04-11T03:33:00.002+03:00'
 updatedDate: '2026-02-25T03:10:04.177+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuGT5wRnCoe-X5Jc73dSp0bZpsOPG2ECjg3mIv9V2EW2gLAFcHvjHHhYLgiVAZ63zQhWdSjfqWeWSIot46_JarkHqXs0V_kmy7Gm9NS1YhDR_3lmU48vMshVDC00fawxFodK3q5et2Lo3-SkmogsDRaGEe_qOBOu2tTF7XWi3czSpr-fvRvIEHEwOwkRA/s320/maxresdefault%20(2).jpg'
+heroImageUrl: '/media/blogger/63/63e0eaca6b630cf73dffeed70c4e2c79da7956ba16b490af720715e7d4116b64.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/virtual-boy.html'
 labels: ["Nintendo","VirtualBoy"]
 ---
@@ -67,8 +67,8 @@ labels: ["Nintendo","VirtualBoy"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuGT5wRnCoe-X5Jc73dSp0bZpsOPG2ECjg3mIv9V2EW2gLAFcHvjHHhYLgiVAZ63zQhWdSjfqWeWSIot46_JarkHqXs0V_kmy7Gm9NS1YhDR_3lmU48vMshVDC00fawxFodK3q5et2Lo3-SkmogsDRaGEe_qOBOu2tTF7XWi3czSpr-fvRvIEHEwOwkRA/s1600/maxresdefault%20(2).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuGT5wRnCoe-X5Jc73dSp0bZpsOPG2ECjg3mIv9V2EW2gLAFcHvjHHhYLgiVAZ63zQhWdSjfqWeWSIot46_JarkHqXs0V_kmy7Gm9NS1YhDR_3lmU48vMshVDC00fawxFodK3q5et2Lo3-SkmogsDRaGEe_qOBOu2tTF7XWi3czSpr-fvRvIEHEwOwkRA/s320/maxresdefault%20(2).jpg" width="320" alt="Virtual Boy Emulation" />
+            <a href="/media/blogger/63/63e0eaca6b630cf73dffeed70c4e2c79da7956ba16b490af720715e7d4116b64.jpg">
+                <img class="img-frame" src="/media/blogger/63/63e0eaca6b630cf73dffeed70c4e2c79da7956ba16b490af720715e7d4116b64.jpg" width="320" alt="Virtual Boy Emulation" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">الدليل التقني: أفضل محاكيات نظام Virtual Boy للحواسيب والهواتف الذكية</h2>

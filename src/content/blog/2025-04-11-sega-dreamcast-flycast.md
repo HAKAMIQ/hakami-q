@@ -4,7 +4,7 @@ description: '🎮 تشغيل ألعاب SEGA Dreamcast بجودة عالية ع
 pubDate: '2025-04-11T17:14:00.001+03:00'
 updatedDate: '2026-02-25T03:03:11.925+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA43puuTXAJyXXaLSBrGx3oaXa-G5xjHzIpl1pu8glBPiNLwaHnkGAsVtJA3QXuCNpANu1hkvlQEOtmk29SS_aiiVbaDRZNAak1r4w4jHwwOwXxC66HiZf3tuBkFaN1Db1RiqGmCCST7wYX9Cv0HzAjvt6IPEQVffB7Z2SXXtx_D8oCXFd_fKAHdi0B1A/s320/hqdefault.jpg'
+heroImageUrl: '/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-dreamcast-flycast.html'
 labels: ["Dreamcast","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Dreamcast","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA43puuTXAJyXXaLSBrGx3oaXa-G5xjHzIpl1pu8glBPiNLwaHnkGAsVtJA3QXuCNpANu1hkvlQEOtmk29SS_aiiVbaDRZNAak1r4w4jHwwOwXxC66HiZf3tuBkFaN1Db1RiqGmCCST7wYX9Cv0HzAjvt6IPEQVffB7Z2SXXtx_D8oCXFd_fKAHdi0B1A/s1600/hqdefault.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA43puuTXAJyXXaLSBrGx3oaXa-G5xjHzIpl1pu8glBPiNLwaHnkGAsVtJA3QXuCNpANu1hkvlQEOtmk29SS_aiiVbaDRZNAak1r4w4jHwwOwXxC66HiZf3tuBkFaN1Db1RiqGmCCST7wYX9Cv0HzAjvt6IPEQVffB7Z2SXXtx_D8oCXFd_fKAHdi0B1A/s320/hqdefault.jpg" width="320" />
+            <a href="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg">
+                <img class="img-frame" src="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 تشغيل ألعاب SEGA Dreamcast بجودة عالية عبر محاكي Flycast</h2>

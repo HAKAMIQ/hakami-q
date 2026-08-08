@@ -4,7 +4,7 @@ description: '🎮 المحاكيات الأونلاين - رجعة للأساط
 pubDate: '2025-04-17T14:16:00.001+03:00'
 updatedDate: '2026-02-24T05:43:12.948+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYyCYUH3Ga4cKvu5fus0Pzk91Kz6WPqc77a1mCs9y_R9pZBwDpqQu6Hi9pKJMstw-BW8nzMNGslmWuFw8vEhnJGa_WOMKySpVrK33Q8CuJRzdaPRFVIuXfdR5NnDW4wBb7Fhcerx2evjXrItuKdgEvdzYI7pBtt6ZbTANQDQ9Xh_mc_PSbb65QV8HcI74/s320/1.png'
+heroImageUrl: '/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/virtual-consoles.html'
 labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES","SNES"]
 ---
@@ -142,8 +142,8 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
 
     <header class="arcade-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYyCYUH3Ga4cKvu5fus0Pzk91Kz6WPqc77a1mCs9y_R9pZBwDpqQu6Hi9pKJMstw-BW8nzMNGslmWuFw8vEhnJGa_WOMKySpVrK33Q8CuJRzdaPRFVIuXfdR5NnDW4wBb7Fhcerx2evjXrItuKdgEvdzYI7pBtt6ZbTANQDQ9Xh_mc_PSbb65QV8HcI74/s1536/1.png">
-                <img class="img-frame" alt="المحاكيات الأونلاين - Virtual Consoles" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYyCYUH3Ga4cKvu5fus0Pzk91Kz6WPqc77a1mCs9y_R9pZBwDpqQu6Hi9pKJMstw-BW8nzMNGslmWuFw8vEhnJGa_WOMKySpVrK33Q8CuJRzdaPRFVIuXfdR5NnDW4wBb7Fhcerx2evjXrItuKdgEvdzYI7pBtt6ZbTANQDQ9Xh_mc_PSbb65QV8HcI74/s320/1.png" style="max-width: 500px;" />
+            <a href="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png">
+                <img class="img-frame" alt="المحاكيات الأونلاين - Virtual Consoles" src="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png" style="max-width: 500px;" />
             </a>
         </div>
         <h1>🎮 المحاكيات الأونلاين - رجعة للأساطير القديمة بدون تحميل</h1>

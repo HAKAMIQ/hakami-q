@@ -12,10 +12,13 @@ name: Fluent UI Quality
       - "package-lock.json"
       - "public/**"
       - "src/content.config.ts"
+      - "src/content/**"
+      - "src/data/blogger-pages.json"
       - "src/components/**"
       - "src/layouts/**"
       - "src/pages/**"
       - "src/styles/**"
+      - "scripts/blogger-independence-quality.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -30,10 +33,13 @@ name: Fluent UI Quality
       - "package-lock.json"
       - "public/**"
       - "src/content.config.ts"
+      - "src/content/**"
+      - "src/data/blogger-pages.json"
       - "src/components/**"
       - "src/layouts/**"
       - "src/pages/**"
       - "src/styles/**"
+      - "scripts/blogger-independence-quality.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -62,6 +68,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Guard Blogger independence
+        run: npm run blogger:independence
 
       - name: Evaluate all article sources
         run: npm run content:quality:report

@@ -4,7 +4,7 @@ description: 'الدليل الشامل لميزة حفظ الحالة (Save Sta
 pubDate: '2026-01-19T04:35:00.004+03:00'
 updatedDate: '2026-02-24T04:40:13.629+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEjf1HIi78Nc2ARWRFVmJAQaSUfuJhi4EF4slE8HpZAHwmrbfe_Hod-OONjc2og9X4DWiQD64BIuNZnSROCdey3os1pMLuisXzbWZszrPHc338Bi29QZyK3TiG62isFzQ_k8VPerQxERf3iRUzCvSzpn4yACczNKqs-kPEXHYeduk2qB5Ll7AiprMZDT-SA'
+heroImageUrl: '/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/save-state.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -85,8 +85,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="main-header">
         <div class="separator" style="clear: both; text-align: center; margin-bottom: 20px;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjf1HIi78Nc2ARWRFVmJAQaSUfuJhi4EF4slE8HpZAHwmrbfe_Hod-OONjc2og9X4DWiQD64BIuNZnSROCdey3os1pMLuisXzbWZszrPHc338Bi29QZyK3TiG62isFzQ_k8VPerQxERf3iRUzCvSzpn4yACczNKqs-kPEXHYeduk2qB5Ll7AiprMZDT-SA">
-                <img alt="ميزة Save State في محاكي RPCS3" src="https://blogger.googleusercontent.com/img/a/AVvXsEjf1HIi78Nc2ARWRFVmJAQaSUfuJhi4EF4slE8HpZAHwmrbfe_Hod-OONjc2og9X4DWiQD64BIuNZnSROCdey3os1pMLuisXzbWZszrPHc338Bi29QZyK3TiG62isFzQ_k8VPerQxERf3iRUzCvSzpn4yACczNKqs-kPEXHYeduk2qB5Ll7AiprMZDT-SA" style="width:100%; max-width: 650px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);" />
+            <a href="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png">
+                <img alt="ميزة Save State في محاكي RPCS3" src="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png" style="width:100%; max-width: 650px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);" />
             </a>
         </div>
         <h1>الدليل الشامل لميزة حفظ الحالة (Save State) في RPCS3</h1>
@@ -138,8 +138,8 @@ labels: ["PlayStation","PS3"]
         </div>
 
         <div class="separator" style="clear: both; text-align: center; margin-top: 25px;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjf8u7drdA-_nn_2hvVxJVqmQmZ4NOh8RYMdFPohRsgLtkdc9vHfC8AktSULYQyIPv9oa14liaCy0ySjqH_zWy8NgKpd6zjS7JUxLQ2UoI7cNSIu8I2JIpXTP9vC7XMw8kxi8eGSvEy9jBsV7zX1jvWgKxKLFViCJkFFC-n9sFPVn4csIEP5sP21aRf7Yk">
-                <img alt="قائمة تحميل Save State في RPCS3" src="https://blogger.googleusercontent.com/img/a/AVvXsEjf8u7drdA-_nn_2hvVxJVqmQmZ4NOh8RYMdFPohRsgLtkdc9vHfC8AktSULYQyIPv9oa14liaCy0ySjqH_zWy8NgKpd6zjS7JUxLQ2UoI7cNSIu8I2JIpXTP9vC7XMw8kxi8eGSvEy9jBsV7zX1jvWgKxKLFViCJkFFC-n9sFPVn4csIEP5sP21aRf7Yk" class="img-frame" width="400" />
+            <a href="/media/blogger/e7/e7f09697ea2f637af5da8ddd860d79d385e5d24eb4a075b9b02feaf3f7fa8e00.png">
+                <img alt="قائمة تحميل Save State في RPCS3" src="/media/blogger/e7/e7f09697ea2f637af5da8ddd860d79d385e5d24eb4a075b9b02feaf3f7fa8e00.png" class="img-frame" width="400" />
             </a>
             <p style="font-size: 12px; color: #777;">لقطة شاشة توضح خيار التحميل من القائمة المختصرة.</p>
         </div>
