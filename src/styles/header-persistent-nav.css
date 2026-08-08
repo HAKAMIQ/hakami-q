@@ -205,6 +205,20 @@
 		color: var(--color-neutral-foreground-1);
 	}
 
+	/* Keep transient menus alive while the pointer or keyboard focus is actually
+	 * inside their owning menu. This is a native CSS safety net for the JS
+	 * open/close state and prevents a link click from visually collapsing the
+	 * flyout before the browser completes the normal navigation. */
+	.site-header .menu-group:hover > .menu-panel,
+	.site-header .menu-group:focus-within > .menu-panel,
+	.site-header .submenu-group:hover > .submenu-panel,
+	.site-header .submenu-group:focus-within > .submenu-panel {
+		opacity: 1;
+		visibility: visible;
+		transform: translate(0);
+		pointer-events: auto;
+	}
+
 	/* Compact desktop: keep type size stable; only tighten horizontal rhythm. */
 	@media (max-width: 1180px) {
 		.site-header.site-header .social-links {
