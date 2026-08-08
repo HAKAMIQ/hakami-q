@@ -418,7 +418,7 @@ const menuGroups: MenuGroup[] = [
 
 	.utility-inner {
 		display: flex;
-		min-height: 32px;
+		min-height: 40px;
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--spacing-160);
@@ -431,7 +431,7 @@ const menuGroups: MenuGroup[] = [
 		align-items: center;
 	}
 
-	.social-links { gap: var(--spacing-20); }
+	.social-links { gap: var(--spacing-40); }
 	.utility-links { gap: var(--spacing-20); direction: rtl; }
 
 	.social-links a,
@@ -445,15 +445,16 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.social-links a {
-		width: 28px;
-		height: 28px;
+		width: 32px;
+		height: 32px;
 	}
 
 	.utility-links a {
-		min-height: 28px;
+		min-height: 32px;
 		padding-inline: var(--spacing-80);
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-body-1);
 		white-space: nowrap;
 	}
 
@@ -466,8 +467,8 @@ const menuGroups: MenuGroup[] = [
 	}
 
 	.social-links svg {
-		width: 14px;
-		height: 14px;
+		width: 16px;
+		height: 16px;
 		fill: none;
 		stroke: currentColor;
 		stroke-linecap: round;
@@ -734,13 +735,22 @@ const menuGroups: MenuGroup[] = [
 	.submenu-group.opens-start > .submenu-trigger svg { transform: rotate(180deg); }
 
 	@media (max-width: 1180px) and (min-width: 1024px) {
-		.utility-links a { padding-inline: var(--spacing-40); font-size: var(--font-size-caption-2); }
+		.utility-links a {
+			padding-inline: var(--spacing-60);
+			font-size: var(--font-size-body-1);
+			font-weight: var(--font-weight-semibold);
+			line-height: var(--line-height-body-1);
+		}
 		.brand-inner { min-height: 80px; }
 		.brand { width: 180px; }
 		.brand img { height: 64px; }
 		.brand-description { max-width: 520px; font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
 		.menu-direct,
-		.menu-parent-link { font-size: var(--font-size-caption-2); }
+		.menu-parent-link {
+			font-size: var(--font-size-body-1);
+			font-weight: var(--font-weight-semibold);
+			line-height: var(--line-height-body-1);
+		}
 		.menu-direct { padding-inline: var(--spacing-80); }
 		.menu-parent-link { padding-inline: var(--spacing-80) var(--spacing-40); }
 	}
