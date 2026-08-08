@@ -63,40 +63,40 @@ const searchItems = posts.map((post) => ({
 
 			<section class="home-news-section" aria-label="واجهة المقالات">
 				<div class="site-container home-shell">
-					<div class="home-toolbar">
-						<div class="home-search" data-home-search>
-							<div class="home-search-field">
-								<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
-								<input
-									id="home-search-input"
-									type="search"
-									placeholder="ابحث في المقالات"
-									autocomplete="off"
-									spellcheck="false"
-									aria-label="بحث في المقالات"
-									aria-controls="home-search-results"
-									aria-describedby="home-search-help"
-									aria-expanded="false"
-								/>
-								<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
-									<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
-								</button>
-							</div>
-							<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
-							<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
-							<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
-						</div>
-
-						<a class="all-posts-top" href="/blog">
-							<span>كل المقالات</span>
-							<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
-						</a>
-					</div>
-
 					<div class="home-editorial-grid">
 						<section class="top-stories" aria-labelledby="top-stories-title">
-							<div class="section-heading section-heading--compact">
+							<div class="section-heading section-heading--compact top-stories-heading">
 								<h2 id="top-stories-title">المقالات الرئيسية</h2>
+
+								<div class="home-toolbar">
+									<div class="home-search" data-home-search>
+										<div class="home-search-field">
+											<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"></circle><path d="m13 13 4 4"></path></svg>
+											<input
+												id="home-search-input"
+												type="search"
+												placeholder="ابحث في المقالات"
+												autocomplete="off"
+												spellcheck="false"
+												aria-label="بحث في المقالات"
+												aria-controls="home-search-results"
+												aria-describedby="home-search-help"
+												aria-expanded="false"
+											/>
+											<button class="home-search-clear" type="button" aria-label="مسح البحث" title="مسح البحث" hidden>
+												<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 6 8 8M14 6l-8 8"></path></svg>
+											</button>
+										</div>
+										<p class="sr-only" id="home-search-help">اكتب حرفين على الأقل للبحث في العناوين والتصنيفات والملخصات</p>
+										<div class="home-search-results" id="home-search-results" aria-label="نتائج البحث" hidden></div>
+										<p class="sr-only" id="home-search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+									</div>
+
+									<a class="all-posts-top" href="/blog">
+										<span>كل المقالات</span>
+										<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15 10H5m4-4-4 4 4 4"></path></svg>
+									</a>
+								</div>
 							</div>
 
 							<div class="featured-grid">
@@ -375,18 +375,19 @@ const searchItems = posts.map((post) => ({
 
 <style>
 	.home-page { background: var(--color-neutral-background-4); }
-	.home-news-section { padding-block: var(--spacing-200) var(--spacing-400); }
+	.home-news-section { padding-block: var(--spacing-160) var(--spacing-400); }
 	.home-shell { width: min(calc(100% - (var(--page-gutter) * 2)), 1380px); }
 
 	.home-toolbar {
 		display: flex;
+		min-width: 0;
+		flex: 1;
 		align-items: center;
 		justify-content: flex-end;
-		gap: var(--spacing-100);
-		margin-bottom: var(--spacing-160);
+		gap: var(--spacing-80);
 	}
 
-	.home-search { position: relative; z-index: 30; width: min(360px, 42vw); }
+	.home-search { position: relative; z-index: 30; width: min(320px, 34vw); }
 	.home-search-field {
 		display: flex;
 		min-height: 40px;
@@ -430,7 +431,7 @@ const searchItems = posts.map((post) => ({
 		font-weight: var(--font-weight-semibold);
 		text-decoration: none;
 	}
-	.all-posts-top { min-height: 40px; padding-inline: var(--spacing-120); }
+	.all-posts-top { min-height: 40px; flex: 0 0 auto; padding-inline: var(--spacing-120); }
 	.all-posts-button { min-width: 230px; min-height: 44px; padding-inline: var(--spacing-160); }
 	.all-posts-top:hover,
 	.all-posts-top:focus-visible,
@@ -450,7 +451,6 @@ const searchItems = posts.map((post) => ({
 	.home-picks {
 		display: flex;
 		min-width: 0;
-		min-height: 540px;
 		flex-direction: column;
 	}
 
@@ -465,13 +465,15 @@ const searchItems = posts.map((post) => ({
 		padding-bottom: var(--spacing-80);
 		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 	}
+	.top-stories-heading { min-height: 58px; align-items: center; }
+	.top-stories-heading > h2 { flex: 0 0 auto; }
 	.section-heading h2,
 	.picks-heading h2 { margin: 0; font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
 	.section-label { display: block; margin-bottom: var(--spacing-20); color: var(--color-brand-foreground-strong); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); }
 
 	.featured-grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1.7fr) minmax(260px, .9fr);
+		grid-template-columns: minmax(0, 1.55fr) minmax(290px, .95fr);
 		gap: var(--spacing-120);
 		flex: 1;
 		align-items: stretch;
@@ -484,7 +486,7 @@ const searchItems = posts.map((post) => ({
 		background: var(--color-neutral-background-2);
 		box-shadow: var(--shadow-4);
 	}
-	.feature-card > a { display: flex; height: 100%; flex-direction: column; color: inherit; text-decoration: none; }
+	.feature-card > a { display: flex; height: 100%; min-height: 0; flex-direction: column; color: inherit; text-decoration: none; }
 	.feature-media-frame,
 	.pick-media-frame,
 	.row-media-frame {
@@ -493,7 +495,7 @@ const searchItems = posts.map((post) => ({
 		border-radius: var(--radius-large);
 		background: var(--color-neutral-background-5);
 	}
-	.feature-media-frame { aspect-ratio: 16 / 9; margin: var(--spacing-80) var(--spacing-80) 0; }
+	.feature-media-frame { min-height: 220px; flex: 1; margin: var(--spacing-80) var(--spacing-80) 0; }
 	.feature-media-viewport,
 	.pick-media-viewport,
 	.row-media-viewport { width: 100%; height: 100%; overflow: hidden; }
@@ -508,9 +510,9 @@ const searchItems = posts.map((post) => ({
 		inset: 0;
 		background: linear-gradient(
 			to top,
-			color-mix(in srgb, var(--color-neutral-background-5) 94%, transparent) 0%,
-			color-mix(in srgb, var(--color-neutral-background-5) 58%, transparent) 48%,
-			transparent 80%
+			color-mix(in srgb, var(--color-neutral-background-5) 86%, transparent) 0%,
+			color-mix(in srgb, var(--color-neutral-background-5) 42%, transparent) 46%,
+			transparent 76%
 		);
 		pointer-events: none;
 	}
@@ -534,13 +536,15 @@ const searchItems = posts.map((post) => ({
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-subtitle-1);
 		text-align: start;
-		text-shadow: 0 1px 2px var(--color-neutral-background-5), 0 2px 10px var(--color-neutral-background-5);
+		text-shadow:
+			0 1px 2px color-mix(in srgb, var(--color-neutral-background-5) 72%, transparent),
+			0 2px 6px color-mix(in srgb, var(--color-neutral-background-5) 62%, transparent);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
 	}
 	.feature-card--primary .feature-image-title { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
-	.feature-copy { display: flex; min-height: 112px; flex: 1; flex-direction: column; padding: var(--spacing-120) var(--spacing-160) var(--spacing-160); }
-	.feature-copy p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+	.feature-copy { display: flex; min-height: 88px; flex: 0 0 auto; flex-direction: column; padding: var(--spacing-100) var(--spacing-160) var(--spacing-120); }
+	.feature-copy p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 	.story-category {
 		display: inline-flex;
 		width: fit-content;
@@ -569,14 +573,14 @@ const searchItems = posts.map((post) => ({
 	.pick-card a {
 		display: grid;
 		height: 100%;
-		grid-template-columns: 32px minmax(0, 1fr) 84px;
+		grid-template-columns: 28px minmax(0, 1fr) 84px;
 		align-items: center;
 		gap: var(--spacing-80);
 		padding-block: var(--spacing-80);
 		color: inherit;
 		text-decoration: none;
 	}
-	.pick-rank { color: var(--color-neutral-foreground-4); font-size: var(--font-size-subtitle-1); font-weight: var(--font-weight-semibold); }
+	.pick-rank { color: var(--color-neutral-foreground-4); font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); }
 	.pick-copy { min-width: 0; }
 	.pick-copy h3 { display: -webkit-box; overflow: hidden; margin: var(--spacing-40) 0 0; font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 	.pick-media-frame { width: 84px; aspect-ratio: 4 / 3; }
@@ -632,8 +636,9 @@ const searchItems = posts.map((post) => ({
 
 	@media (max-width: 1180px) {
 		.home-editorial-grid { grid-template-columns: minmax(0, 1fr) 290px; }
-		.featured-grid { grid-template-columns: minmax(0, 1.45fr) minmax(230px, .9fr); }
-		.pick-card a { grid-template-columns: 28px minmax(0, 1fr) 72px; }
+		.featured-grid { grid-template-columns: minmax(0, 1.35fr) minmax(260px, .95fr); }
+		.home-search { width: min(280px, 30vw); }
+		.pick-card a { grid-template-columns: 26px minmax(0, 1fr) 72px; }
 		.pick-media-frame { width: 72px; }
 	}
 
@@ -642,6 +647,7 @@ const searchItems = posts.map((post) => ({
 		.top-stories,
 		.home-picks { min-height: 0; }
 		.home-picks { margin-top: var(--spacing-160); }
+		.home-search { width: min(340px, 44vw); }
 		.picks-list { grid-template-rows: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-80); }
 		.pick-card { border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha); border-radius: var(--radius-large); }
 		.pick-card:last-child { border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha); }
@@ -650,11 +656,12 @@ const searchItems = posts.map((post) => ({
 	}
 
 	@media (max-width: 700px) {
-		.home-news-section { padding-top: var(--spacing-160); }
-		.home-toolbar { align-items: stretch; flex-direction: column; }
-		.home-search { width: 100%; }
-		.all-posts-top { align-self: flex-start; }
+		.home-news-section { padding-top: var(--spacing-120); }
+		.top-stories-heading { align-items: stretch; flex-direction: column; }
+		.home-toolbar { width: 100%; }
+		.home-search { width: auto; flex: 1; }
 		.featured-grid { grid-template-columns: 1fr; }
+		.feature-media-frame { min-height: 210px; aspect-ratio: 16 / 9; flex: none; }
 		.feature-card--primary .feature-image-title { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
 		.feature-copy { min-height: 0; }
 		.picks-list,
@@ -668,9 +675,12 @@ const searchItems = posts.map((post) => ({
 	}
 
 	@media (max-width: 440px) {
+		.home-toolbar { align-items: stretch; flex-direction: column; }
+		.home-search,
+		.all-posts-top { width: 100%; }
 		.feature-category { inset-block-start: var(--spacing-80); inset-inline-end: var(--spacing-80); }
 		.feature-image-title { inset-inline: var(--spacing-100); inset-block-end: var(--spacing-100); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-		.pick-card a { grid-template-columns: 26px minmax(0, 1fr) 68px; }
+		.pick-card a { grid-template-columns: 24px minmax(0, 1fr) 68px; }
 		.pick-media-frame { width: 68px; }
 		.article-row > a { grid-template-columns: 108px minmax(0, 1fr); padding: var(--spacing-60); }
 		.row-media-frame { width: 108px; }
