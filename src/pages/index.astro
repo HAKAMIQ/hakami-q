@@ -119,17 +119,14 @@ const searchItems = posts.map((post) => ({
 														) : (
 															<div class="home-image-placeholder" aria-hidden="true">H</div>
 														)}
+														<span class="feature-image-scrim" aria-hidden="true"></span>
+														{category && <span class="story-category feature-category">{category}</span>}
+														<h3 class="feature-image-title">{post.data.title}</h3>
 													</div>
 												</div>
 
 												<div class="feature-copy">
-													<div class="feature-meta">
-														<span class="feature-ribbon">{index === 0 ? 'الرئيسي' : 'التالي'}</span>
-														{category && <span class="story-category">{category}</span>}
-													</div>
-													<h3>{post.data.title}</h3>
 													{post.data.description && <p>{post.data.description}</p>}
-													<span class="feature-read-more" aria-hidden="true">اقرأ المقال</span>
 												</div>
 											</a>
 										</article>
@@ -500,13 +497,50 @@ const searchItems = posts.map((post) => ({
 	.feature-media-viewport,
 	.pick-media-viewport,
 	.row-media-viewport { width: 100%; height: 100%; overflow: hidden; }
+	.feature-media-viewport { position: relative; }
 	.feature-media-viewport img,
 	.pick-media-viewport img,
 	.row-media-viewport img,
 	.library-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-	.feature-copy { display: flex; flex: 1; flex-direction: column; padding: var(--spacing-140, var(--spacing-120)) var(--spacing-160) var(--spacing-160); }
-	.feature-meta { display: flex; flex-wrap: wrap; gap: var(--spacing-60); }
-	.feature-ribbon,
+	.feature-image-scrim {
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		background: linear-gradient(
+			to top,
+			color-mix(in srgb, var(--color-neutral-background-5) 94%, transparent) 0%,
+			color-mix(in srgb, var(--color-neutral-background-5) 58%, transparent) 48%,
+			transparent 80%
+		);
+		pointer-events: none;
+	}
+	.feature-category {
+		position: absolute;
+		z-index: 2;
+		inset-block-start: var(--spacing-100);
+		inset-inline-end: var(--spacing-100);
+		box-shadow: var(--shadow-2);
+	}
+	.feature-image-title {
+		position: absolute;
+		z-index: 2;
+		inset-inline: var(--spacing-120);
+		inset-block-end: var(--spacing-120);
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-subtitle-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-subtitle-1);
+		text-align: start;
+		text-shadow: 0 1px 2px var(--color-neutral-background-5), 0 2px 10px var(--color-neutral-background-5);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
+	.feature-card--primary .feature-image-title { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
+	.feature-copy { display: flex; min-height: 112px; flex: 1; flex-direction: column; padding: var(--spacing-120) var(--spacing-160) var(--spacing-160); }
+	.feature-copy p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 	.story-category {
 		display: inline-flex;
 		width: fit-content;
@@ -520,10 +554,6 @@ const searchItems = posts.map((post) => ({
 		font-weight: var(--font-weight-semibold);
 	}
 	.story-category.compact { min-height: 20px; padding-inline: var(--spacing-60); font-size: var(--font-size-caption-2); }
-	.feature-copy h3 { margin: var(--spacing-100) 0 0; font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
-	.feature-card--primary .feature-copy h3 { font-size: var(--font-size-title-3); line-height: var(--line-height-title-3); }
-	.feature-copy p { display: -webkit-box; overflow: hidden; margin: var(--spacing-80) 0 0; color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-	.feature-read-more { margin-top: auto; padding-top: var(--spacing-120); color: var(--color-brand-foreground-strong); font-size: var(--font-size-caption-1); font-weight: var(--font-weight-semibold); }
 
 	.home-picks {
 		padding: var(--spacing-120);
@@ -625,7 +655,8 @@ const searchItems = posts.map((post) => ({
 		.home-search { width: 100%; }
 		.all-posts-top { align-self: flex-start; }
 		.featured-grid { grid-template-columns: 1fr; }
-		.feature-card--primary .feature-copy h3 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
+		.feature-card--primary .feature-image-title { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
+		.feature-copy { min-height: 0; }
 		.picks-list,
 		.library-grid,
 		.explore-grid { grid-template-columns: 1fr; }
@@ -637,6 +668,8 @@ const searchItems = posts.map((post) => ({
 	}
 
 	@media (max-width: 440px) {
+		.feature-category { inset-block-start: var(--spacing-80); inset-inline-end: var(--spacing-80); }
+		.feature-image-title { inset-inline: var(--spacing-100); inset-block-end: var(--spacing-100); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
 		.pick-card a { grid-template-columns: 26px minmax(0, 1fr) 68px; }
 		.pick-media-frame { width: 68px; }
 		.article-row > a { grid-template-columns: 108px minmax(0, 1fr); padding: var(--spacing-60); }
