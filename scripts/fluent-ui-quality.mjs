@@ -109,8 +109,11 @@ requireText(files.home, source.home, 'id="home-search-input"', 'home.search', 'H
 
 requireText(files.blog, source.blog, 'const DEFAULT_PAGE_SIZE = 12;', 'listing.default-page-size', 'Blog listing must retain a bounded default page size.');
 requireText(files.blog, source.blog, 'const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);', 'listing.initial-slice', 'Initial blog DOM must contain only the bounded first page.');
-requireText(files.blog, source.blog, 'id="posts-per-page"', 'listing.page-size-control', 'Blog listing must keep the 12/24/36 page-size control.');
 requireText(files.blog, source.blog, 'id="posts-pagination"', 'listing.pagination', 'Blog listing must keep pagination navigation.');
+forbidText(files.blog, source.blog, 'id="posts-per-page"', 'listing.no-page-size-control', 'Do not expose page-size controls that do not help the reader consume content.');
+forbidText(files.blog, source.blog, 'id="post-count"', 'listing.no-total-count', 'Do not expose total article-count metrics in the reader-facing listing.');
+forbidText(files.blog, source.blog, 'id="listing-range"', 'listing.no-range-metrics', 'Do not expose internal listing-range metrics to readers.');
+forbidText(files.blog, source.blog, 'class="page-hero"', 'listing.no-intro-hero', 'Do not reintroduce the removed blog intro/marketing hero.');
 forbidText(files.blog, source.blog, '{postItems.map(', 'listing.no-full-dom', 'Do not render the entire post collection into the listing DOM.');
 
 forbidText(files.footer, source.footer, 'hakamiq-logo', 'footer.no-logo', 'Do not reintroduce the footer logo.');
