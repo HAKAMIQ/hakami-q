@@ -10,6 +10,7 @@ name: Fluent UI Quality
       - "convert-blogger-live-to-astro.ps1"
       - "package.json"
       - "package-lock.json"
+      - "functions/**"
       - "public/**"
       - "src/content.config.ts"
       - "src/content/**"
@@ -32,6 +33,7 @@ name: Fluent UI Quality
       - "convert-blogger-live-to-astro.ps1"
       - "package.json"
       - "package-lock.json"
+      - "functions/**"
       - "public/**"
       - "src/content.config.ts"
       - "src/content/**"
@@ -85,6 +87,9 @@ jobs:
 
       - name: Evaluate Web Components principles
         run: npm run web:quality
+
+      - name: Validate article publisher function
+        run: node --check 'functions/api/admin/[[path]].js'
 
       - name: Validate Astro production build
         run: npx astro build
