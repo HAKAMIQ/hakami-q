@@ -198,13 +198,7 @@ const searchItems = posts.map((post) => ({
 					</section>
 
 					{libraryPosts.length > 0 && (
-						<section class="library-section" aria-labelledby="library-title">
-							<div class="section-heading">
-								<div>
-									<span class="section-label">قراءة أعمق</span>
-									<h2 id="library-title">من مكتبة HAKAMIQ</h2>
-								</div>
-							</div>
+						<section class="library-section" aria-label="مقالات إضافية">
 							<div class="library-grid">
 								{libraryPosts.map((post) => {
 									const category = getDisplayCategory(post.data.labels);
@@ -586,8 +580,8 @@ const searchItems = posts.map((post) => ({
 	.pick-media-frame { width: 84px; aspect-ratio: 4 / 3; }
 
 	.latest-section,
-	.library-section,
 	.explore-section { margin-top: var(--spacing-280); }
+	.library-section { margin-top: var(--spacing-160); }
 	.latest-rows {
 		display: grid;
 		gap: 0;
