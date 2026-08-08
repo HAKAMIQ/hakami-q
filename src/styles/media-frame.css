@@ -1,0 +1,113 @@
+/* HAKAMIQ unified media framing.
+ * Content imagery gets one restrained visual contract across home, listings,
+ * articles and static pages. UI/brand imagery outside <main> is intentionally
+ * excluded. Add data-hq-media-unframed to a deliberate content exception.
+ */
+
+:root {
+	--hq-media-frame-radius: var(--radius-xlarge);
+	--hq-media-frame-inner-radius: var(--radius-large);
+	--hq-media-frame-inset: 3px;
+	--hq-media-frame-border: var(--color-neutral-stroke-2);
+	--hq-media-frame-surface: var(--color-neutral-background-1);
+	--hq-media-frame-shadow: var(--shadow-2);
+}
+
+/* Default contract for standalone content images. */
+main img:not([data-hq-media-unframed]) {
+	box-sizing: border-box;
+	padding: var(--hq-media-frame-inset) !important;
+	border: var(--stroke-thin) solid var(--hq-media-frame-border) !important;
+	border-radius: var(--hq-media-frame-radius) !important;
+	background: var(--hq-media-frame-surface) !important;
+	box-shadow: var(--hq-media-frame-shadow) !important;
+}
+
+/* Card thumbnails already have structural wrappers. Frame the wrapper instead
+ * so object-fit/cropping remains untouched and the border never becomes heavy. */
+main :where(
+	.feature-media-frame,
+	.pick-media-frame,
+	.row-media-frame,
+	.library-media,
+	.post-image
+) {
+	box-sizing: border-box;
+	padding: var(--hq-media-frame-inset) !important;
+	overflow: hidden !important;
+	border: var(--stroke-thin) solid var(--hq-media-frame-border) !important;
+	border-radius: var(--hq-media-frame-radius) !important;
+	background: var(--hq-media-frame-surface) !important;
+	box-shadow: var(--hq-media-frame-shadow) !important;
+	transition:
+		border-color var(--motion-duration-control) var(--curve-easy-ease),
+		box-shadow var(--motion-duration-control) var(--curve-easy-ease);
+}
+
+/* The inner viewport owns the crop. Its radius is slightly smaller than the
+ * outer shell, which keeps the 3px inset visually even at every corner. */
+main :where(
+	.feature-media-viewport,
+	.pick-media-viewport,
+	.row-media-viewport
+) {
+	overflow: hidden !important;
+	border-radius: var(--hq-media-frame-inner-radius) !important;
+}
+
+/* Prevent double borders/padding inside an already framed media shell. */
+main :where(
+	.feature-media-frame,
+	.pick-media-frame,
+	.row-media-frame,
+	.library-media,
+	.post-image
+) img {
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: var(--hq-media-frame-inner-radius) !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+/* Keep placeholders visually identical to real images. */
+main :where(
+	.feature-media-frame,
+	.pick-media-frame,
+	.row-media-frame,
+	.library-media,
+	.post-image
+) :where(.home-image-placeholder, .image-placeholder) {
+	border-radius: var(--hq-media-frame-inner-radius) !important;
+}
+
+/* Interactive cards get only a restrained state change; no neon/glow effect. */
+main a:hover :where(
+	.feature-media-frame,
+	.pick-media-frame,
+	.row-media-frame,
+	.library-media,
+	.post-image
+),
+main a:focus-visible :where(
+	.feature-media-frame,
+	.pick-media-frame,
+	.row-media-frame,
+	.library-media,
+	.post-image
+) {
+	border-color: var(--color-neutral-stroke-1-hover) !important;
+	box-shadow: var(--shadow-4) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	main :where(
+		.feature-media-frame,
+		.pick-media-frame,
+		.row-media-frame,
+		.library-media,
+		.post-image
+	) {
+		transition: none;
+	}
+}
