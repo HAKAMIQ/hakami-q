@@ -4,7 +4,7 @@ description: 'دليل Quickstart الكامل لتشغيل ألعاب Xbox 360 
 pubDate: '2025-04-15T19:51:00.002+03:00'
 updatedDate: '2026-02-24T06:29:34.276+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgytsAZCFeXH5v1DeXODHGgckCQyPNEY6AOqdZRJa0lOCPQEvxADyBDBgMXzQg93wSIrQjHpRPhMXbGuHnkwUusBbSloZhe6HUfejOZwX6_kehbIinALt-nMC4N2I5fbgNXt00SPr7Otz1zj-JXC4z0CdsL1QsGxJGEFBGyB2ke45lD26luFqgN3cFq9FE/s320/18.png'
+heroImageUrl: '/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-canary.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -105,8 +105,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgytsAZCFeXH5v1DeXODHGgckCQyPNEY6AOqdZRJa0lOCPQEvxADyBDBgMXzQg93wSIrQjHpRPhMXbGuHnkwUusBbSloZhe6HUfejOZwX6_kehbIinALt-nMC4N2I5fbgNXt00SPr7Otz1zj-JXC4z0CdsL1QsGxJGEFBGyB2ke45lD26luFqgN3cFq9FE/s1536/18.png">
-                <img class="img-frame" alt="Xenia Canary Quickstart" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgytsAZCFeXH5v1DeXODHGgckCQyPNEY6AOqdZRJa0lOCPQEvxADyBDBgMXzQg93wSIrQjHpRPhMXbGuHnkwUusBbSloZhe6HUfejOZwX6_kehbIinALt-nMC4N2I5fbgNXt00SPr7Otz1zj-JXC4z0CdsL1QsGxJGEFBGyB2ke45lD26luFqgN3cFq9FE/s320/18.png" style="max-width: 500px;" />
+            <a href="/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png">
+                <img class="img-frame" alt="Xenia Canary Quickstart" src="/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png" style="max-width: 500px;" />
             </a>
         </div>
         <h2>دليل Quickstart الكامل لتشغيل ألعاب Xbox 360 عبر محاكي Xenia Canary</h2>

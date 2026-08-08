@@ -4,7 +4,7 @@ description: '🗜️ ضغط ألعاب PSP - وفر مساحة بدون ما ت
 pubDate: '2025-04-15T08:23:00.003+03:00'
 updatedDate: '2026-02-24T08:53:26.144+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg72AjzAZTcti8mdjMKkFSRffMWNfBb6VvLk4AhmfEa1Eexukg_qAL9psIJ2y640QutWS414qh7qxVgrN56HscCPgj0lMSyU-fBdpNDX0CTWK2N6aMzfE64J5CIZQhEgNFbCUTN-GM1Qsx6unZvFjeHYbNuRCzMOaNfuEQn2hOuK0mZ7mbOrXWNwN5CNPI/s320/images%20(1).jfif'
+heroImageUrl: '/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/psp-iso-cso-chd.html'
 labels: ["PlayStation","psp"]
 ---
@@ -132,8 +132,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-compress-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg72AjzAZTcti8mdjMKkFSRffMWNfBb6VvLk4AhmfEa1Eexukg_qAL9psIJ2y640QutWS414qh7qxVgrN56HscCPgj0lMSyU-fBdpNDX0CTWK2N6aMzfE64J5CIZQhEgNFbCUTN-GM1Qsx6unZvFjeHYbNuRCzMOaNfuEQn2hOuK0mZ7mbOrXWNwN5CNPI/s1600/images%20(1).jfif">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg72AjzAZTcti8mdjMKkFSRffMWNfBb6VvLk4AhmfEa1Eexukg_qAL9psIJ2y640QutWS414qh7qxVgrN56HscCPgj0lMSyU-fBdpNDX0CTWK2N6aMzfE64J5CIZQhEgNFbCUTN-GM1Qsx6unZvFjeHYbNuRCzMOaNfuEQn2hOuK0mZ7mbOrXWNwN5CNPI/s320/images%20(1).jfif" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto;" />
+        <a href="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg">
+            <img src="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto;" />
         </a>
     </div>
 

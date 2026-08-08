@@ -4,7 +4,7 @@ description: 'Xenia Manager: الأداة الأقوى لإدارة محاكي �
 pubDate: '2025-04-16T16:07:00.001+03:00'
 updatedDate: '2026-02-24T06:24:38.624+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZpEtNb_its0x2f5Bgis6mvVYc681AGfCnrOnT98kQHT2OryovOM6jNXDxWFmVKeSf2-T1sdYWk8jPwy2_s-8mgkFDA5lqNWDtcv_9JDLnpX07htMSE4OQZLRFvTCR0GbXQPVjpAaJkKeFxpngRdog_wz5FeEGknq9EveKXbQABOPoSm8fpf0PQH2ZI_4/s320/20.png'
+heroImageUrl: '/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-manager-xenia.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -129,8 +129,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZpEtNb_its0x2f5Bgis6mvVYc681AGfCnrOnT98kQHT2OryovOM6jNXDxWFmVKeSf2-T1sdYWk8jPwy2_s-8mgkFDA5lqNWDtcv_9JDLnpX07htMSE4OQZLRFvTCR0GbXQPVjpAaJkKeFxpngRdog_wz5FeEGknq9EveKXbQABOPoSm8fpf0PQH2ZI_4/s1536/20.png">
-                <img class="img-frame" alt="Xenia Manager Header" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZpEtNb_its0x2f5Bgis6mvVYc681AGfCnrOnT98kQHT2OryovOM6jNXDxWFmVKeSf2-T1sdYWk8jPwy2_s-8mgkFDA5lqNWDtcv_9JDLnpX07htMSE4OQZLRFvTCR0GbXQPVjpAaJkKeFxpngRdog_wz5FeEGknq9EveKXbQABOPoSm8fpf0PQH2ZI_4/s320/20.png" style="max-width: 500px; margin: 0 auto;" />
+            <a href="/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png">
+                <img class="img-frame" alt="Xenia Manager Header" src="/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png" style="max-width: 500px; margin: 0 auto;" />
             </a>
         </div>
         <h2>Xenia Manager: الأداة الأقوى لإدارة محاكي الإكس بوكس 360</h2>
@@ -165,26 +165,26 @@ labels: ["Xbox","Xbox360"]
         <h3 style="color: var(--xe-pink);">🖼️ صور من واجهة البرنامج</h3>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0tLbR0eco2zFp_BbNqEXSripPVWBk97ZJ8ALdeW9IBSbjxnrZYgDSBVXWeozvHS3W21hn2yuj98Ft2-ZM8OPwMca0YE970HEKxQWAFuayZSZartJKtd1S7XqHQO6t5TvplPVwrEvOSJV0urlSajTBpt6nkoyAfSUO9rTHvQt_95Sa9IvgE4s3eEoEfVI/s500/1.%20Welcome.png">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0tLbR0eco2zFp_BbNqEXSripPVWBk97ZJ8ALdeW9IBSbjxnrZYgDSBVXWeozvHS3W21hn2yuj98Ft2-ZM8OPwMca0YE970HEKxQWAFuayZSZartJKtd1S7XqHQO6t5TvplPVwrEvOSJV0urlSajTBpt6nkoyAfSUO9rTHvQt_95Sa9IvgE4s3eEoEfVI/s320/1.%20Welcome.png" alt="Xenia Welcome" />
+                <a href="/media/blogger/71/711c80abc5255b5648a64ab71972c24f2167fae95f7b7c1f57f7bc9148b38b48.png">
+                    <img src="/media/blogger/71/711c80abc5255b5648a64ab71972c24f2167fae95f7b7c1f57f7bc9148b38b48.png" alt="Xenia Welcome" />
                 </a>
                 <span>صورة ترحيبية عند التشغيل</span>
             </div>
             <div class="gallery-item">
-                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOIx5F94_2PtKwv3hDUsp_E_dHXsmiGjNdNxK2Qy_A-m2E6UUr0RbxNQ664h_OPYZUMLI6QA9aqju5n2PuJFIIWdg_Ie44fQ-h9z0arJTrXqOFTJvjEyksExQtjwi9mJD6KkW8fuuDhdXEFmpKjN7i9B_HCr04lLMVqSiWPfwa1cxBZQksTZu_1ubzZ5E/s885/2.%20Home%20with%20games.png">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOIx5F94_2PtKwv3hDUsp_E_dHXsmiGjNdNxK2Qy_A-m2E6UUr0RbxNQ664h_OPYZUMLI6QA9aqju5n2PuJFIIWdg_Ie44fQ-h9z0arJTrXqOFTJvjEyksExQtjwi9mJD6KkW8fuuDhdXEFmpKjN7i9B_HCr04lLMVqSiWPfwa1cxBZQksTZu_1ubzZ5E/s320/2.%20Home%20with%20games.png" alt="Games Library" />
+                <a href="/media/blogger/da/dafbccbeb4aba150974092a02dc38530b98a221b1810fc2fe69387a868e56396.png">
+                    <img src="/media/blogger/da/dafbccbeb4aba150974092a02dc38530b98a221b1810fc2fe69387a868e56396.png" alt="Games Library" />
                 </a>
                 <span>مكتبة الألعاب المنظمة</span>
             </div>
             <div class="gallery-item">
-                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJWu6znkwP7hjx7en3sBFwc2sE0GZgT7PAEh255gu7FUjGha5aqd6iQAxBGYaijfdGYeGZW3aX5Z42obBKgo4SYKO7fw9FoEJlnwmniBDXgeAbKDgR6aIFxTS1tPLhHXbLnaF7gMe259WJUMk081Kj7_bQgaoTlMxFAxRGJjNDrhTcsttwAEKhP3Jkwi8/s885/3.%20Xenia%20Settings.gif">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJWu6znkwP7hjx7en3sBFwc2sE0GZgT7PAEh255gu7FUjGha5aqd6iQAxBGYaijfdGYeGZW3aX5Z42obBKgo4SYKO7fw9FoEJlnwmniBDXgeAbKDgR6aIFxTS1tPLhHXbLnaF7gMe259WJUMk081Kj7_bQgaoTlMxFAxRGJjNDrhTcsttwAEKhP3Jkwi8/s320/3.%20Xenia%20Settings.gif" alt="Xenia Settings" />
+                <a href="/media/blogger/11/11000cf16e95060b1d3848bc2b07a954ecd841966cf7a129c2fea0737ac731fc.gif">
+                    <img src="/media/blogger/11/11000cf16e95060b1d3848bc2b07a954ecd841966cf7a129c2fea0737ac731fc.gif" alt="Xenia Settings" />
                 </a>
                 <span>واجهة إعدادات Xenia</span>
             </div>
             <div class="gallery-item">
-                <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHkHBadYqbzUWdlr-HUHZx1AG22ROcz1tELDeS_eu7AXRrAEgjYDS7RXFHODzUS0tp7EJK8qPLwSIje2sfaelR1ZZY6PmWYQKOaw-jgA_bcDplO5ka8qfnhvTY2Lhmf0xT_W5B08__ZzMwWSe9lj9BRkktQiyDUivzHaOoXBgl7i7Mz5iSHcJq9_K71qc/s885/4.%20Xenia%20Manager%20Settings.png">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHkHBadYqbzUWdlr-HUHZx1AG22ROcz1tELDeS_eu7AXRrAEgjYDS7RXFHODzUS0tp7EJK8qPLwSIje2sfaelR1ZZY6PmWYQKOaw-jgA_bcDplO5ka8qfnhvTY2Lhmf0xT_W5B08__ZzMwWSe9lj9BRkktQiyDUivzHaOoXBgl7i7Mz5iSHcJq9_K71qc/s320/4.%20Xenia%20Manager%20Settings.png" alt="Manager Settings" />
+                <a href="/media/blogger/75/75ef2fba82c85e493cbc55b9e6ea02d8fb3329d7a3a2aea8c986faae70902553.png">
+                    <img src="/media/blogger/75/75ef2fba82c85e493cbc55b9e6ea02d8fb3329d7a3a2aea8c986faae70902553.png" alt="Manager Settings" />
                 </a>
                 <span>إعدادات خاصة بـ Xenia Manager</span>
             </div>

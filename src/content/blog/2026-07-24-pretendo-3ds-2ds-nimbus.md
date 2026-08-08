@@ -4,7 +4,7 @@ description: 'Pretendo Network Nimbus v2.1.1 Luma3DS 13.4 3DS / 2DS Family شر�
 pubDate: '2026-07-24T22:47:46.473+03:00'
 updatedDate: '2026-07-25T08:09:36.387+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlvLzNyq62CYSorEW9qp6CFE-1zG3rp51UVKhyphenhyphencvVug0RTg_PIzjQ3rn3p93dykrernLsSe63BobsXI27fdk1l1Heg7cPk3PDcKNPzdzuZX6-7jTIT6N6fwjONn8J7WuoWJWFjaldhtK3I4rVYFSUYVNQNn1ckWnYwbaHvx_5aevmVtQvwd2R4UcgD5mY/s1600/6ps5ec6ps5ec6ps5.jpg'
+heroImageUrl: '/media/blogger/2e/2e93912629ba5077795d445e5a25efbada0f598138e4b3e9b3ade48ea6f20f18.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/pretendo-3ds-2ds-nimbus.html'
 labels: ["N3DS","Nintendo"]
 ---
@@ -723,7 +723,7 @@ labels: ["N3DS","Nintendo"]
         </p>
 </header>
 <figure class="p3-shot p3-cover">
-<button aria-label="عرض الصورة بحجمها الطبيعي" class="hakamiq-image-viewer" data-full="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlvLzNyq62CYSorEW9qp6CFE-1zG3rp51UVKhyphenhyphencvVug0RTg_PIzjQ3rn3p93dykrernLsSe63BobsXI27fdk1l1Heg7cPk3PDcKNPzdzuZX6-7jTIT6N6fwjONn8J7WuoWJWFjaldhtK3I4rVYFSUYVNQNn1ckWnYwbaHvx_5aevmVtQvwd2R4UcgD5mY/s2752/6ps5ec6ps5ec6ps5.jpg" data-original="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlvLzNyq62CYSorEW9qp6CFE-1zG3rp51UVKhyphenhyphencvVug0RTg_PIzjQ3rn3p93dykrernLsSe63BobsXI27fdk1l1Heg7cPk3PDcKNPzdzuZX6-7jTIT6N6fwjONn8J7WuoWJWFjaldhtK3I4rVYFSUYVNQNn1ckWnYwbaHvx_5aevmVtQvwd2R4UcgD5mY/s1600/6ps5ec6ps5ec6ps5.jpg" type="button"><img alt="تشغيل Pretendo على أجهزة Nintendo 3DS و2DS باستخدام Nimbus" loading="eager" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlvLzNyq62CYSorEW9qp6CFE-1zG3rp51UVKhyphenhyphencvVug0RTg_PIzjQ3rn3p93dykrernLsSe63BobsXI27fdk1l1Heg7cPk3PDcKNPzdzuZX6-7jTIT6N6fwjONn8J7WuoWJWFjaldhtK3I4rVYFSUYVNQNn1ckWnYwbaHvx_5aevmVtQvwd2R4UcgD5mY/s1600/6ps5ec6ps5ec6ps5.jpg" /></button>
+<button aria-label="عرض الصورة بحجمها الطبيعي" class="hakamiq-image-viewer" data-full="/media/blogger/2e/2e93912629ba5077795d445e5a25efbada0f598138e4b3e9b3ade48ea6f20f18.jpg" data-original="/media/blogger/2e/2e93912629ba5077795d445e5a25efbada0f598138e4b3e9b3ade48ea6f20f18.jpg" type="button"><img alt="تشغيل Pretendo على أجهزة Nintendo 3DS و2DS باستخدام Nimbus" loading="eager" src="/media/blogger/2e/2e93912629ba5077795d445e5a25efbada0f598138e4b3e9b3ade48ea6f20f18.jpg" /></button>
 <p>تشغيل Pretendo Network على أجهزة 3DS و2DS باستخدام تطبيق Nimbus.</p>
 </figure>
 <section class="p3-card">

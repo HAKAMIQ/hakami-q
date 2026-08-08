@@ -4,7 +4,7 @@ description: 'المكتبة الشاملة لملفات BIOS و Firmware - ني
 pubDate: '2026-02-24T10:00:00.004+03:00'
 updatedDate: '2026-03-05T01:15:36.513+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM9xwHMON2wICrvcJq51VnDnQx0NBJUYPOyjrGrU52zr7jYGug9faxpg_gH6UfUnhEy_wpqx1_3_GvqPkZJlusiKcjeS87_gFGkO_cl0lp3A4CtB4fCZTXph6zLrW6ObilJhA1qs8oVjdRuuFAL1MnrmRbzDh_sRzQ_tURqDTSKeepJ8eVZNLUmnaSfxg/s320/image.jpg'
+heroImageUrl: '/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/02/bios-firmware.html'
 labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
 ---
@@ -217,7 +217,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
     <header>
         <h2 class="hakamiq-header-title">المكتبة الشاملة لملفات BIOS و Firmware - نينتندو (Nintendo)</h2>
         
-        <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM9xwHMON2wICrvcJq51VnDnQx0NBJUYPOyjrGrU52zr7jYGug9faxpg_gH6UfUnhEy_wpqx1_3_GvqPkZJlusiKcjeS87_gFGkO_cl0lp3A4CtB4fCZTXph6zLrW6ObilJhA1qs8oVjdRuuFAL1MnrmRbzDh_sRzQ_tURqDTSKeepJ8eVZNLUmnaSfxg/s1381/image.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="760" data-original-width="1381" height="176" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM9xwHMON2wICrvcJq51VnDnQx0NBJUYPOyjrGrU52zr7jYGug9faxpg_gH6UfUnhEy_wpqx1_3_GvqPkZJlusiKcjeS87_gFGkO_cl0lp3A4CtB4fCZTXph6zLrW6ObilJhA1qs8oVjdRuuFAL1MnrmRbzDh_sRzQ_tURqDTSKeepJ8eVZNLUmnaSfxg/s320/image.jpg" width="320" /></a></div><br /><div style="text-align: center;"><br /></div>
+        <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="760" data-original-width="1381" height="176" src="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" width="320" /></a></div><br /><div style="text-align: center;"><br /></div>
 
         <p>هل قمت بتحميل محاكي لتستعيد ذكريات الطفولة، لكنك فوجئت بشاشة سوداء أو رسالة خطأ "Missing BIOS"؟ المحاكي هو مجرد "جسد" للجهاز، ولكي يعمل، يحتاج إلى "الروح" وهي ملفات النظام الأصلية. بدون هذه الملفات، لن تتمكن المحاكيات من تشغيل الألعاب بدقة، أو حفظ التقدم، أو حتى الإقلاع في الأجهزة الحديثة مثل Switch و Wii U.</p>
     </header>

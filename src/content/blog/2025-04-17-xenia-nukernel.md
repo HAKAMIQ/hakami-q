@@ -4,7 +4,7 @@ description: 'لو كنت من النوع اللي يحب يجرب كل شيء �
 pubDate: '2025-04-17T00:10:00.005+03:00'
 updatedDate: '2026-02-24T06:11:22.600+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcFRFr_MjVmwisC-_uOEnicI2V-pYHx-px1A0Trd5qdEjTj5zNz-jA_-28uvHj4OTAJSt9KyM5x7dlaLHGMvAqLU2usDdbap3wpO7S6g5gLd32AI9z_6kqYTi80VordyXu46Cs8dGaNM2bJGQnJDpmCjO-oYaeb4sNmn4ifwAfSO1g2BTeH8W7Dq1iX1o/s1600/Screenshot%202025-04-17%20001150.png'
+heroImageUrl: '/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-nukernel.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -100,8 +100,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcFRFr_MjVmwisC-_uOEnicI2V-pYHx-px1A0Trd5qdEjTj5zNz-jA_-28uvHj4OTAJSt9KyM5x7dlaLHGMvAqLU2usDdbap3wpO7S6g5gLd32AI9z_6kqYTi80VordyXu46Cs8dGaNM2bJGQnJDpmCjO-oYaeb4sNmn4ifwAfSO1g2BTeH8W7Dq1iX1o/s1600/Screenshot%202025-04-17%20001150.png">
-                <img class="img-frame" alt="Xenia Nukernel Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcFRFr_MjVmwisC-_uOEnicI2V-pYHx-px1A0Trd5qdEjTj5zNz-jA_-28uvHj4OTAJSt9KyM5x7dlaLHGMvAqLU2usDdbap3wpO7S6g5gLd32AI9z_6kqYTi80VordyXu46Cs8dGaNM2bJGQnJDpmCjO-oYaeb4sNmn4ifwAfSO1g2BTeH8W7Dq1iX1o/s1600/Screenshot%202025-04-17%20001150.png" style="max-width: 320px; margin: 0 auto;" />
+            <a href="/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png">
+                <img class="img-frame" alt="Xenia Nukernel Guide" src="/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png" style="max-width: 320px; margin: 0 auto;" />
             </a>
         </div>
         <p>لو كنت من النوع اللي يحب يجرب كل شيء قبل الناس، ويغامر حتى لو كان الثمن كراش وانفجار في الأداء... فمرحبًا بك في <span style="color: var(--nu-orange); font-weight: bold;">Xenia Nukernel</span>، النسخة التجريبية المثيرة للجدل من محاكي Xbox 360 الشهير!</p>

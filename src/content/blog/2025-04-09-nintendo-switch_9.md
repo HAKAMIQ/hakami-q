@@ -4,14 +4,14 @@ description: 'كلنا نعرف Switch، لكن ترا وراه أسرار كث�
 pubDate: '2025-04-09T14:12:00.001+03:00'
 updatedDate: '2025-04-17T23:28:04.221+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6XXKAPL6ZpIUo0g74GYTMa_0kN0aBljuid8rWhbYTeLUhZa6ZwnVG5ptF-XjhhKJK1Fgnfz21O1I85DeXb0S_jdz6PL_FTmT5YE_YwQQKWLrpnFZ-vfoDqRwqv6B9vBQTZafR61t2t4iC7RFKoMeiBFNaLOZCCsn7RbqwfgSzVKf3pfKHn9qtFnJda2k/s320/nintendo-switch-sales-HD-scaled-1.jpg'
+heroImageUrl: '/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-switch_9.html'
 labels: ["Nintendo","NS"]
 ---
 
 <div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
 
-<h2 style="text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6XXKAPL6ZpIUo0g74GYTMa_0kN0aBljuid8rWhbYTeLUhZa6ZwnVG5ptF-XjhhKJK1Fgnfz21O1I85DeXb0S_jdz6PL_FTmT5YE_YwQQKWLrpnFZ-vfoDqRwqv6B9vBQTZafR61t2t4iC7RFKoMeiBFNaLOZCCsn7RbqwfgSzVKf3pfKHn9qtFnJda2k/s2560/nintendo-switch-sales-HD-scaled-1.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1440" data-original-width="2560" height="180" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6XXKAPL6ZpIUo0g74GYTMa_0kN0aBljuid8rWhbYTeLUhZa6ZwnVG5ptF-XjhhKJK1Fgnfz21O1I85DeXb0S_jdz6PL_FTmT5YE_YwQQKWLrpnFZ-vfoDqRwqv6B9vBQTZafR61t2t4iC7RFKoMeiBFNaLOZCCsn7RbqwfgSzVKf3pfKHn9qtFnJda2k/s320/nintendo-switch-sales-HD-scaled-1.jpg" width="320" /></a></div></h2><p>كلنا نعرف Switch، لكن ترا وراه أسرار كثيرة مخفية في النظام، التحكم، وحتى القطع الداخلية!  
+<h2 style="text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1440" data-original-width="2560" height="180" src="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" width="320" /></a></div></h2><p>كلنا نعرف Switch، لكن ترا وراه أسرار كثيرة مخفية في النظام، التحكم، وحتى القطع الداخلية!  
 في هذا الموضوع بنكشف <strong>أغرب وأذكى الخفايا</strong> اللي تخلي جهازك Switch كأنه عنده شخصية خاصة فيه! 🎮👇</p>
 
 ---

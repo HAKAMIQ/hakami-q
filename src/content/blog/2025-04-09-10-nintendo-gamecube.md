@@ -4,7 +4,7 @@ description: 'أقوى 10 ألعاب على Nintendo GameCube: جواهر الم
 pubDate: '2025-04-09T05:32:00.001+03:00'
 updatedDate: '2026-02-24T23:48:59.996+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAheGZ9SAIN4SZJEqLQu6MqOpacXn_ItOmrsfNYT0XQtOtGZAKk4TkDWLyEma30FTGuogYGqZO6wEj4qnWGRy2bQa0O-RYjbYJgxx2nZqQOIJP4mAjaeBxmUvyll5AJPmsLV4-2Gp0uSDONqFyUq5cFoFKhJcc3rMPeI-9By6v_T_eaLh-Kmw0dHxLpEg/s940/Best-Nintendo-Gamecube-games-5681416.jpg'
+heroImageUrl: '/media/blogger/dd/dd4fb1c7d011d0a2b012da3e741ca147fe934732062bc64bd907c6a6dc689996.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/10-nintendo-gamecube.html'
 labels: ["GameCube","Nintendo"]
 ---
@@ -156,7 +156,7 @@ labels: ["GameCube","Nintendo"]
         <h1 class="hakamiq-main-title">أقوى 10 ألعاب على Nintendo GameCube: جواهر المكعب الأرجواني</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAheGZ9SAIN4SZJEqLQu6MqOpacXn_ItOmrsfNYT0XQtOtGZAKk4TkDWLyEma30FTGuogYGqZO6wEj4qnWGRy2bQa0O-RYjbYJgxx2nZqQOIJP4mAjaeBxmUvyll5AJPmsLV4-2Gp0uSDONqFyUq5cFoFKhJcc3rMPeI-9By6v_T_eaLh-Kmw0dHxLpEg/s940/Best-Nintendo-Gamecube-games-5681416.jpg" alt="أفضل ألعاب نينتندو جيم كيوب" loading="lazy" decoding="async">
+            <img src="/media/blogger/dd/dd4fb1c7d011d0a2b012da3e741ca147fe934732062bc64bd907c6a6dc689996.jpg" alt="أفضل ألعاب نينتندو جيم كيوب" loading="lazy" decoding="async">
             <figcaption>Nintendo GameCube احتضن بعضاً من أعظم الابتكارات في تاريخ الألعاب التي ما زالت تُلعب حتى اليوم 🎮</figcaption>
         </figure>
     </header>

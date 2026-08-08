@@ -4,7 +4,7 @@ description: 'Cemu Graphic Packs: الدليل الهندسي الكامل لع�
 pubDate: '2025-08-26T11:24:00.003+03:00'
 updatedDate: '2026-02-24T05:00:48.178+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8N1X1k9OFIpTI-qrmmeEd9xcpVHfXJCd8-Gqe3CeQe3_DhTXPNUneAAmgQmWL64GEIO7qO9zEj36z687yI_zSMHt9CggobbGEZlFSfKEQ4I08xtXhtFDbaxccfW9S0txciKvmKnNvhLC2VDDwUJ3y2E76TklyUVxB73o4mrjSY9u35-1j2A2PZJzqk2E/s320/98a1aa73-7dd4-45fb-bd96-772f23c097f9.png'
+heroImageUrl: '/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/08/graphic-packs-cemu.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -85,8 +85,8 @@ labels: ["Nintendo","Wii-U"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8N1X1k9OFIpTI-qrmmeEd9xcpVHfXJCd8-Gqe3CeQe3_DhTXPNUneAAmgQmWL64GEIO7qO9zEj36z687yI_zSMHt9CggobbGEZlFSfKEQ4I08xtXhtFDbaxccfW9S0txciKvmKnNvhLC2VDDwUJ3y2E76TklyUVxB73o4mrjSY9u35-1j2A2PZJzqk2E/s1536/98a1aa73-7dd4-45fb-bd96-772f23c097f9.png">
-                <img alt="Cemu Graphic Packs Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8N1X1k9OFIpTI-qrmmeEd9xcpVHfXJCd8-Gqe3CeQe3_DhTXPNUneAAmgQmWL64GEIO7qO9zEj36z687yI_zSMHt9CggobbGEZlFSfKEQ4I08xtXhtFDbaxccfW9S0txciKvmKnNvhLC2VDDwUJ3y2E76TklyUVxB73o4mrjSY9u35-1j2A2PZJzqk2E/s320/98a1aa73-7dd4-45fb-bd96-772f23c097f9.png" width="213" style="border-radius: 10px;" />
+            <a href="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png">
+                <img alt="Cemu Graphic Packs Guide" src="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png" width="213" style="border-radius: 10px;" />
             </a>
         </div>
         <h1>Cemu Graphic Packs: الدليل الهندسي الكامل لعام 2026</h1>
@@ -105,7 +105,7 @@ labels: ["Nintendo","Wii-U"]
             <li>اضغط على زر <b>Download latest community graphic packs</b> في الأسفل.</li>
             <li>بعد انتهاء التحميل، فعّل الإعدادات التي تناسب قوة جهازك.</li>
         </ol>
-        <img class="img-frame" alt="واجهة تحميل الحزم في Cemu" src="https://blogger.googleusercontent.com/img/a/AVvXsEgu0g1PkVkJJ27SBnMaRNoDnxFRFVpzE5QMLNedE4p4q0rKQKE-Vvt480yc7Ft4YzCnZ_chg9ESZhXB1JuJEqzFkMAhX19Wb1oNWQ0C4761NKDNsfkH9YEm3wNFp8Q1YEqGBE2A0AkAdjNwnySwK8srn6tbVkSjFB4IBh40hK7nZolz-3wDGASuLUdOVHM" width="400" />
+        <img class="img-frame" alt="واجهة تحميل الحزم في Cemu" src="/media/blogger/4d/4d6988edb9f9c97b77afb14e5fdd845ff7a31fbd791390a4d16638e27f3a179c.png" width="400" />
     </section>
 
     <section class="tech-card" style="border-right-color: var(--cemu-blue);">
@@ -117,8 +117,8 @@ labels: ["Nintendo","Wii-U"]
             <li>فك ضغط الملف الجديد وانقل المجلدات إلى نفس المسار.</li>
         </ol>
         <div style="display: flex; gap: 10px; justify-content: center;">
-            <img class="img-frame" alt="مجلد حزم القوام" src="https://blogger.googleusercontent.com/img/a/AVvXsEijO0CSPlNH1eyAJtNbfq1I0IiYd0Muiqopi2MD2K1GtvM5yID8-gE1SB_LhN-IFhFMLvZWlHjimnEw9La9Pvkx1Z_ml25HAfiaB0xBYHfPq_bvm-KNGtX2Kq7tZ44wcyUVi8mLNUXTy22T8hmilZbd_B9ZVIjI9ICn4ASwTovj3lSQh2B7JwQYlliKgrY" width="200" />
-            <img class="img-frame" alt="هيكل المجلدات" src="https://blogger.googleusercontent.com/img/a/AVvXsEh2bBfWP_KUoqx9Ua0NHvzI9HcVG4oAhU7vI6atLSJNXd5H-Mcqb2JyFXkaAG9DgqYu-RJpspyHqRXCqxf1zAnbF1oqXjr0vO9QmQlSQf3xCEug3jNtNWsl5c0en-RrhxSSvYWpZENk_GWiPvlGAUftUXjANuc3m5nsaVChEx04uZmudJMTUzJx9Dzq0mI" width="150" />
+            <img class="img-frame" alt="مجلد حزم القوام" src="/media/blogger/71/7142eb23d0a47c8881c64c6340900cb18f4c7b81e94d99af9108ed5b48ae607f.png" width="200" />
+            <img class="img-frame" alt="هيكل المجلدات" src="/media/blogger/b1/b1697676bd310c95532aee9469e0e33a2f38c05dafc463d7922f3ab60c85a374.png" width="150" />
         </div>
     </section>
 

@@ -4,7 +4,7 @@ description: '🎮 أفضل محاكيات Sega Genesis (Mega Drive) للكمب�
 pubDate: '2025-04-11T03:54:00.007+03:00'
 updatedDate: '2026-02-25T03:04:39.160+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXptnxx9J82zISM-ZDMHaVKr3M9BSSEFHtlYuaAVSE-6TvM9UCA5P_FzFIZ3XqbNthlG5PJ3V8v4aP0-FmSgjssd7hKuUFnmZkU6DN7GNOK0UsHLoC2IAtppcEpx6z4OGiLXMlds7j7QhllN4PcNQJFMdUvi8hFd_ng1A8k2OHNP64EM9ZSR9jlPvxxS4/s320/71Gazu+IX5L.jpg'
+heroImageUrl: '/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-genesis-mega-drive.html'
 labels: ["Genesis-MegaDrive","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Genesis-MegaDrive","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXptnxx9J82zISM-ZDMHaVKr3M9BSSEFHtlYuaAVSE-6TvM9UCA5P_FzFIZ3XqbNthlG5PJ3V8v4aP0-FmSgjssd7hKuUFnmZkU6DN7GNOK0UsHLoC2IAtppcEpx6z4OGiLXMlds7j7QhllN4PcNQJFMdUvi8hFd_ng1A8k2OHNP64EM9ZSR9jlPvxxS4/s2560/71Gazu+IX5L.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXptnxx9J82zISM-ZDMHaVKr3M9BSSEFHtlYuaAVSE-6TvM9UCA5P_FzFIZ3XqbNthlG5PJ3V8v4aP0-FmSgjssd7hKuUFnmZkU6DN7GNOK0UsHLoC2IAtppcEpx6z4OGiLXMlds7j7QhllN4PcNQJFMdUvi8hFd_ng1A8k2OHNP64EM9ZSR9jlPvxxS4/s320/71Gazu+IX5L.jpg" width="320" />
+            <a href="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg">
+                <img class="img-frame" src="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 أفضل محاكيات Sega Genesis (Mega Drive) للكمبيوتر والجوال</h2>

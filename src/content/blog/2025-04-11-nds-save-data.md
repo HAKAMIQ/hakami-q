@@ -4,7 +4,7 @@ description: '🧩 كيف تدمج ملفات ألعاب NDS مع ملفات ا�
 pubDate: '2025-04-11T03:19:00.003+03:00'
 updatedDate: '2026-02-25T03:17:48.436+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigLsAV3I_QI59-7fBmyoXp7acKqoO7PCuyOHwo8_knff5JT0NpPbrrPmKMg27HYV8XnehilukL1aPmGf8pIuxFRH11qvvg6RXGKjwilmuzG4l_5hzo7Uii7l-hVukazh8Get_pTGlDnwtqtxJOT3BX7QfoJQ1qX50W_0oKdHyC_7twhJb1AqiDRg6YqTw/s320/maxresdefault%20(1).jpg'
+heroImageUrl: '/media/blogger/01/0174eb47b5d726bf90a3c4e3f4414e06f94630c3de03668a926bf156b864eea0.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nds-save-data.html'
 labels: ["N-DS","Nintendo"]
 ---
@@ -65,8 +65,8 @@ labels: ["N-DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigLsAV3I_QI59-7fBmyoXp7acKqoO7PCuyOHwo8_knff5JT0NpPbrrPmKMg27HYV8XnehilukL1aPmGf8pIuxFRH11qvvg6RXGKjwilmuzG4l_5hzo7Uii7l-hVukazh8Get_pTGlDnwtqtxJOT3BX7QfoJQ1qX50W_0oKdHyC_7twhJb1AqiDRg6YqTw/s1280/maxresdefault%20(1).jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigLsAV3I_QI59-7fBmyoXp7acKqoO7PCuyOHwo8_knff5JT0NpPbrrPmKMg27HYV8XnehilukL1aPmGf8pIuxFRH11qvvg6RXGKjwilmuzG4l_5hzo7Uii7l-hVukazh8Get_pTGlDnwtqtxJOT3BX7QfoJQ1qX50W_0oKdHyC_7twhJb1AqiDRg6YqTw/s320/maxresdefault%20(1).jpg" width="320" alt="شرح دمج الحفظ مع اللعبة" />
+            <a href="/media/blogger/01/0174eb47b5d726bf90a3c4e3f4414e06f94630c3de03668a926bf156b864eea0.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/01/0174eb47b5d726bf90a3c4e3f4414e06f94630c3de03668a926bf156b864eea0.jpg" width="320" alt="شرح دمج الحفظ مع اللعبة" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🧩 كيف تدمج ملفات ألعاب NDS مع ملفات الحفظ (Save Data)؟</h2>

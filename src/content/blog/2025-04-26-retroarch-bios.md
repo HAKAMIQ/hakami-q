@@ -4,7 +4,7 @@ description: '📦 متابعة من الجزء الأول: إعداد وترك�
 pubDate: '2025-04-26T02:53:00.007+03:00'
 updatedDate: '2025-05-07T00:55:07.137+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5FPcOZIY8WhN78vTHe81EqTKLkmRX07xhAn6BSIfsGyHKYdx-9qq5_h73k0dpCJPggAyYIvvxQ3EDFo8Voyflkr8MhPYy8wk7FD9eFDh0DYUE3JbpQNtGrLfkUTtuMB_TFrdCJQk5xZj2rZWf2ZgvH35kx9137jpfF38WR4wPzOx-oUM4mSDOmn8pFd4/s320/18.png'
+heroImageUrl: '/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/retroarch-bios.html'
 labels: ["MultiEmu","RetroArch"]
 ---
@@ -58,7 +58,7 @@ a:hover {
    
 </style>
 
-<div class="box">&nbsp;📦 متابعة من الجزء الأول: إعداد وتركيب ملفات BIOS والأنوية في RetroArch</div><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5FPcOZIY8WhN78vTHe81EqTKLkmRX07xhAn6BSIfsGyHKYdx-9qq5_h73k0dpCJPggAyYIvvxQ3EDFo8Voyflkr8MhPYy8wk7FD9eFDh0DYUE3JbpQNtGrLfkUTtuMB_TFrdCJQk5xZj2rZWf2ZgvH35kx9137jpfF38WR4wPzOx-oUM4mSDOmn8pFd4/s1024/18.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5FPcOZIY8WhN78vTHe81EqTKLkmRX07xhAn6BSIfsGyHKYdx-9qq5_h73k0dpCJPggAyYIvvxQ3EDFo8Voyflkr8MhPYy8wk7FD9eFDh0DYUE3JbpQNtGrLfkUTtuMB_TFrdCJQk5xZj2rZWf2ZgvH35kx9137jpfF38WR4wPzOx-oUM4mSDOmn8pFd4/s320/18.png" width="320" /></a></div><p>بعد الانتهاء من <a href="https://hakamiq1.blogspot.com/2025/04/retroarch-install.html">الجزء الأول</a> من سلسلة RetroArch والذي شرحت فيه خطوات التثبيت وتحميل الأنوية، ننتقل الآن إلى المرحلة التالية التي تحل أغلب المشاكل الشائعة.</p>
+<div class="box">&nbsp;📦 متابعة من الجزء الأول: إعداد وتركيب ملفات BIOS والأنوية في RetroArch</div><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" width="320" /></a></div><p>بعد الانتهاء من <a href="https://hakamiq1.blogspot.com/2025/04/retroarch-install.html">الجزء الأول</a> من سلسلة RetroArch والذي شرحت فيه خطوات التثبيت وتحميل الأنوية، ننتقل الآن إلى المرحلة التالية التي تحل أغلب المشاكل الشائعة.</p>
 
 <p>في هذا الدليل سنغطي:</p>
 <ul>

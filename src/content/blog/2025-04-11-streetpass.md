@@ -4,7 +4,7 @@ description: '📡 وش سالفة خاصية StreetPass في الـ 3DS؟ خا�
 pubDate: '2025-04-11T02:12:00.004+03:00'
 updatedDate: '2026-02-25T03:22:04.133+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ-BjYEKzjpyOhdndImV72ov3DowA89AvT4aXRHs3y9-p0-CAAAzqt3i57s5BhGvgVtPGDEly6z6pChJgbtvhjqFKeARbaEmPe8WRT6MjbBEIFCSvBbroxLgld_DmeNzt2M25FrBZnoWn86HbcZ09aXPvksByChGtWGsFc9CkkrROqrjR0rLdOu_ZFHjc/s320/StreetPass%20.png'
+heroImageUrl: '/media/blogger/2b/2ba34cae6d9c1bfdd5e682c268f9c4e7ff19a0a866500d6a695b66ab0569a5d9.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/streetpass.html'
 labels: ["N3DS","Nintendo"]
 ---
@@ -56,8 +56,8 @@ labels: ["N3DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ-BjYEKzjpyOhdndImV72ov3DowA89AvT4aXRHs3y9-p0-CAAAzqt3i57s5BhGvgVtPGDEly6z6pChJgbtvhjqFKeARbaEmPe8WRT6MjbBEIFCSvBbroxLgld_DmeNzt2M25FrBZnoWn86HbcZ09aXPvksByChGtWGsFc9CkkrROqrjR0rLdOu_ZFHjc/s1536/StreetPass%20.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ-BjYEKzjpyOhdndImV72ov3DowA89AvT4aXRHs3y9-p0-CAAAzqt3i57s5BhGvgVtPGDEly6z6pChJgbtvhjqFKeARbaEmPe8WRT6MjbBEIFCSvBbroxLgld_DmeNzt2M25FrBZnoWn86HbcZ09aXPvksByChGtWGsFc9CkkrROqrjR0rLdOu_ZFHjc/s320/StreetPass%20.png" width="213" alt="خاصية StreetPass" />
+            <a href="/media/blogger/2b/2ba34cae6d9c1bfdd5e682c268f9c4e7ff19a0a866500d6a695b66ab0569a5d9.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/2b/2ba34cae6d9c1bfdd5e682c268f9c4e7ff19a0a866500d6a695b66ab0569a5d9.png" width="213" alt="خاصية StreetPass" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">📡 وش سالفة خاصية StreetPass في الـ 3DS؟</h2>

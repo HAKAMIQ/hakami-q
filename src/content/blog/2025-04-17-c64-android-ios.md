@@ -4,7 +4,7 @@ description: 'أفضل محاكيات Commodore 64 على الجوال (Android 
 pubDate: '2025-04-17T01:56:00.003+03:00'
 updatedDate: '2026-02-24T05:52:36.338+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1D24Nez6zN77E_yhI7mylf2lOvKeE5naXegJwGMBjQLppGr-foii-ZC_qkD3WJHh_fv2HAXCx7DYRLwVRY9_qbMcmmRLPjs6u1LKQHMIkdg6k_bB-9CykQFIONrbnMHaCZ-92yNfLZNDortMtH23Ib4DIKWpMg4rxE4sQnWtoxnOfS7z5Mre6HUB6Kiw/s320/1.png'
+heroImageUrl: '/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/c64-android-ios.html'
 labels: ["Commodore","Commodore-AMIGA"]
 ---
@@ -144,8 +144,8 @@ labels: ["Commodore","Commodore-AMIGA"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1D24Nez6zN77E_yhI7mylf2lOvKeE5naXegJwGMBjQLppGr-foii-ZC_qkD3WJHh_fv2HAXCx7DYRLwVRY9_qbMcmmRLPjs6u1LKQHMIkdg6k_bB-9CykQFIONrbnMHaCZ-92yNfLZNDortMtH23Ib4DIKWpMg4rxE4sQnWtoxnOfS7z5Mre6HUB6Kiw/s1024/1.png">
-                <img class="img-frame" alt="أفضل محاكيات C64 للجوال" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1D24Nez6zN77E_yhI7mylf2lOvKeE5naXegJwGMBjQLppGr-foii-ZC_qkD3WJHh_fv2HAXCx7DYRLwVRY9_qbMcmmRLPjs6u1LKQHMIkdg6k_bB-9CykQFIONrbnMHaCZ-92yNfLZNDortMtH23Ib4DIKWpMg4rxE4sQnWtoxnOfS7z5Mre6HUB6Kiw/s320/1.png" style="max-width: 450px;" />
+            <a href="/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png">
+                <img class="img-frame" alt="أفضل محاكيات C64 للجوال" src="/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png" style="max-width: 450px;" />
             </a>
         </div>
         <h2>أفضل محاكيات Commodore 64 على الجوال (Android & iOS)</h2>

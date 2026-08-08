@@ -4,7 +4,7 @@ description: 'مقارنة محاكيات PS1: DuckStation مقابل Mednafen �
 pubDate: '2025-04-13T21:43:00.008+03:00'
 updatedDate: '2026-02-25T00:40:37.409+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6kc1QgGh-H8mrIUbjk6AYqvsX41owqQKNz4cphZPneHVa4anzeAqC2gd2yrj5HhkiAgesKpZGHxv7yEQo3Spe93YTUgHCEupn-7oXYYMeipIcdyDayNi_-tGkfrnaO_TDR_Pj0LQ3a_lJK9vfejCcRbnjVrQul1Xj-Dprn0QB3uTGTNMp_A8w9DiFcl0/s320/newlogo.png'
+heroImageUrl: '/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ps1-duckstation-mednafen.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -65,8 +65,8 @@ labels: ["PlayStation","PS1"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6kc1QgGh-H8mrIUbjk6AYqvsX41owqQKNz4cphZPneHVa4anzeAqC2gd2yrj5HhkiAgesKpZGHxv7yEQo3Spe93YTUgHCEupn-7oXYYMeipIcdyDayNi_-tGkfrnaO_TDR_Pj0LQ3a_lJK9vfejCcRbnjVrQul1Xj-Dprn0QB3uTGTNMp_A8w9DiFcl0/s696/newlogo.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6kc1QgGh-H8mrIUbjk6AYqvsX41owqQKNz4cphZPneHVa4anzeAqC2gd2yrj5HhkiAgesKpZGHxv7yEQo3Spe93YTUgHCEupn-7oXYYMeipIcdyDayNi_-tGkfrnaO_TDR_Pj0LQ3a_lJK9vfejCcRbnjVrQul1Xj-Dprn0QB3uTGTNMp_A8w9DiFcl0/s320/newlogo.png" width="320" />
+            <a href="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png">
+                <img class="img-frame" src="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">مقارنة محاكيات PS1: DuckStation مقابل Mednafen</h2>

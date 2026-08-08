@@ -4,7 +4,7 @@ description: '🔥 آخر تطورات محاكي RPCSX UI-Android 🔥 تقري
 pubDate: '2025-05-25T04:49:00.009+03:00'
 updatedDate: '2026-02-24T05:38:23.715+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8prNmgnNISPrzpfqdniJhMJsBIWeKfswKpmv3vOlEmdmPei64on27ZP9JD1f9ZAyaMSfVt6MIZWZzHC8m9iCavAWI-7k3DCYeb0z4nhEbDYWoIhXLFlwAQu7gl6dgNBGaeiNt-PBj74FBC0yeoRrgeWp6ETM6Rl1AjcZI4-iNpTy6eb02o8mzU0yy0hI/s1600/download.png'
+heroImageUrl: '/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/05/rpcsx-ui-android.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -133,8 +133,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="royal-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8prNmgnNISPrzpfqdniJhMJsBIWeKfswKpmv3vOlEmdmPei64on27ZP9JD1f9ZAyaMSfVt6MIZWZzHC8m9iCavAWI-7k3DCYeb0z4nhEbDYWoIhXLFlwAQu7gl6dgNBGaeiNt-PBj74FBC0yeoRrgeWp6ETM6Rl1AjcZI4-iNpTy6eb02o8mzU0yy0hI/s318/download.png">
-                <img class="img-frame" alt="RPCSX UI Android Logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8prNmgnNISPrzpfqdniJhMJsBIWeKfswKpmv3vOlEmdmPei64on27ZP9JD1f9ZAyaMSfVt6MIZWZzHC8m9iCavAWI-7k3DCYeb0z4nhEbDYWoIhXLFlwAQu7gl6dgNBGaeiNt-PBj74FBC0yeoRrgeWp6ETM6Rl1AjcZI4-iNpTy6eb02o8mzU0yy0hI/s1600/download.png" style="max-width: 250px; margin-bottom: 0;" />
+            <a href="/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png">
+                <img class="img-frame" alt="RPCSX UI Android Logo" src="/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png" style="max-width: 250px; margin-bottom: 0;" />
             </a>
         </div>
         <h2>🔥 آخر تطورات محاكي RPCSX UI-Android 🔥</h2>

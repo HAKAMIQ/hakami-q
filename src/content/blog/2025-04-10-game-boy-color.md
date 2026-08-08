@@ -4,12 +4,12 @@ description: 'وش سالفة GBC؟ بعد ما عشنا على الأبيض و�
 pubDate: '2025-04-10T22:45:00.002+03:00'
 updatedDate: '2025-04-10T22:45:14.431+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfiarLEs6T35ZotTna7cvoHbMeomFHSu4ZBlkp8iowTVqCP4Ilns4ibghLevJvvLntjfFm5Equt5tQtTr94Mjy1VRCtQYnO0HMLW1zizLJqGgy3VVxXko7Auw_sZTmwX-alPuXFmG9cjGSa4y7A2OS0wZhnZl2MrGmnL6p243nHmD8dGYXfawk7quiJdQ/s320/a2d24b5f6d9301a413330723401d1432_icon.png'
+heroImageUrl: '/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-color.html'
 labels: ["GBC","Nintendo"]
 ---
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfiarLEs6T35ZotTna7cvoHbMeomFHSu4ZBlkp8iowTVqCP4Ilns4ibghLevJvvLntjfFm5Equt5tQtTr94Mjy1VRCtQYnO0HMLW1zizLJqGgy3VVxXko7Auw_sZTmwX-alPuXFmG9cjGSa4y7A2OS0wZhnZl2MrGmnL6p243nHmD8dGYXfawk7quiJdQ/s512/a2d24b5f6d9301a413330723401d1432_icon.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="512" data-original-width="512" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfiarLEs6T35ZotTna7cvoHbMeomFHSu4ZBlkp8iowTVqCP4Ilns4ibghLevJvvLntjfFm5Equt5tQtTr94Mjy1VRCtQYnO0HMLW1zizLJqGgy3VVxXko7Auw_sZTmwX-alPuXFmG9cjGSa4y7A2OS0wZhnZl2MrGmnL6p243nHmD8dGYXfawk7quiJdQ/s320/a2d24b5f6d9301a413330723401d1432_icon.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="512" data-original-width="512" height="320" src="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
 <p>بعد ما عشنا على الأبيض والأسود سنين، قررت نينتندو تفكنا وتنزل جهاز ملوّن! <strong>Game Boy Color</strong> نزل عام 1998، وكان حرفيًا صدمة لعيوننا الصغيرة وقتها 😍</p>
 <p>صار كل شيء ينور: بوكيمون بالألوان، زيلدا ترقص، وماريو يلبس أحمر صح 😂</p>
 

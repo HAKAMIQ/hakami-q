@@ -4,7 +4,7 @@ description: 'إعداد RetroArch لتشغيل أساطير Nintendo NES دلي
 pubDate: '2025-04-09T04:48:00.002+03:00'
 updatedDate: '2026-02-24T05:16:34.289+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfwSPOsqMgtO1Y2envpwxHyOsGtH5xh_8GnUguBfRAOvy_qFb1L1sjwWHY-w51KzJGQy-8f-K7LpIjEq9Zviu_vaik-P-aChyphenhyphenr52T2WNkEgDFOJ0hZuraXjHl3ArbjHjB0u_Pbe9I-DSyxiE8VQvaV3nUXOuGQgSZ8KR1X8a28oP1mTxyEuauaHP2ED3E/w400-h81/RetroArch_logo.png'
+heroImageUrl: '/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nes-retroarch.html'
 labels: ["Nintendo","Nintendo-NES"]
 ---
@@ -132,8 +132,8 @@ labels: ["Nintendo","Nintendo-NES"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfwSPOsqMgtO1Y2envpwxHyOsGtH5xh_8GnUguBfRAOvy_qFb1L1sjwWHY-w51KzJGQy-8f-K7LpIjEq9Zviu_vaik-P-aChyphenhyphenr52T2WNkEgDFOJ0hZuraXjHl3ArbjHjB0u_Pbe9I-DSyxiE8VQvaV3nUXOuGQgSZ8KR1X8a28oP1mTxyEuauaHP2ED3E/s1200/RetroArch_logo.png">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfwSPOsqMgtO1Y2envpwxHyOsGtH5xh_8GnUguBfRAOvy_qFb1L1sjwWHY-w51KzJGQy-8f-K7LpIjEq9Zviu_vaik-P-aChyphenhyphenr52T2WNkEgDFOJ0hZuraXjHl3ArbjHjB0u_Pbe9I-DSyxiE8VQvaV3nUXOuGQgSZ8KR1X8a28oP1mTxyEuauaHP2ED3E/w400-h81/RetroArch_logo.png" alt="RetroArch Logo" style="max-width: 300px;" />
+            <a href="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png">
+                <img src="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png" alt="RetroArch Logo" style="max-width: 300px;" />
             </a>
         </div>
         <h1>إعداد RetroArch لتشغيل أساطير Nintendo NES</h1>

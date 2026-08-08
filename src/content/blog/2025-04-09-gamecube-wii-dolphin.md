@@ -4,7 +4,7 @@ description: '🔷 محاكي Dolphin: تجربة GameCube و Wii بدقة 1080p
 pubDate: '2025-04-09T00:04:00.016+03:00'
 updatedDate: '2026-02-24T03:57:07.022+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtX-x0zO8onIq9Wj3Kiq9QbewQReFif3nVBP_kaNa7GbyAtt2tf_UIM3D9GfdexmuhpA9JEK2NOYJVyLfWlv6um3sHJ_YRY0wBGvxlOwQhI5FmNTzuj8L46fguAX8DNHkz1wQHAx4zs6SgJ7doDw1okCEnqKV3NJIGTSe9ovbXtDvDSFpyEcCm1nz2qtM/w320-h320/2.png'
+heroImageUrl: '/media/blogger/c1/c1f0f68f76a0874738bea3ecf4515b687e11385f1ea501927c653cb3f3295dc2.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gamecube-wii-dolphin.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -123,8 +123,8 @@ labels: ["Nintendo","Wii-U"]
 <div class="hakamiq-guide">
 
     <div class="separator" style="clear: both; text-align: center;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtX-x0zO8onIq9Wj3Kiq9QbewQReFif3nVBP_kaNa7GbyAtt2tf_UIM3D9GfdexmuhpA9JEK2NOYJVyLfWlv6um3sHJ_YRY0wBGvxlOwQhI5FmNTzuj8L46fguAX8DNHkz1wQHAx4zs6SgJ7doDw1okCEnqKV3NJIGTSe9ovbXtDvDSFpyEcCm1nz2qtM/s1024/2.png">
-            <img alt="تشغيل ألعاب GameCube و Wii على Dolphin - مدونة حكميك" class="post-img" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtX-x0zO8onIq9Wj3Kiq9QbewQReFif3nVBP_kaNa7GbyAtt2tf_UIM3D9GfdexmuhpA9JEK2NOYJVyLfWlv6um3sHJ_YRY0wBGvxlOwQhI5FmNTzuj8L46fguAX8DNHkz1wQHAx4zs6SgJ7doDw1okCEnqKV3NJIGTSe9ovbXtDvDSFpyEcCm1nz2qtM/w320-h320/2.png" width="320" />
+        <a href="/media/blogger/c1/c1f0f68f76a0874738bea3ecf4515b687e11385f1ea501927c653cb3f3295dc2.png">
+            <img alt="تشغيل ألعاب GameCube و Wii على Dolphin - مدونة حكميك" class="post-img" height="320" src="/media/blogger/c1/c1f0f68f76a0874738bea3ecf4515b687e11385f1ea501927c653cb3f3295dc2.png" width="320" />
         </a>
     </div>
 

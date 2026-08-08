@@ -4,7 +4,7 @@ description: 'Nintendo Wii: الثورة التي غيرت مفهوم الألع
 pubDate: '2025-04-09T05:47:00.002+03:00'
 updatedDate: '2026-02-24T23:45:23.592+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBo87XWIvFOZD9JHeY55l-bLrA1TzEBY_lj7Iu2cRH1CfFSGn6emcuUJsM4wjVyPNjpt91Qe71VbyYWtWxIcBKrVueKFo-x8G0Sw-NymTk87RIJ3ggSZrBx4hkXVgGfvXv9rx_8dYwPES1OlQD0grSfH5Fdpa11UTJa7DUVjFIgUBMOxZrLtvfb1TsijA/s1200/1200px-Wii.png'
+heroImageUrl: '/media/blogger/21/212cb989a31536537d8e0c236faf8f0802826ac3550b9c805442f87c585f9b67.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-wii.html'
 labels: ["Nintendo","Wii"]
 ---
@@ -164,7 +164,7 @@ labels: ["Nintendo","Wii"]
         <h1 class="hakamiq-main-title">Nintendo Wii: الثورة التي غيرت مفهوم الألعاب للأبد</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBo87XWIvFOZD9JHeY55l-bLrA1TzEBY_lj7Iu2cRH1CfFSGn6emcuUJsM4wjVyPNjpt91Qe71VbyYWtWxIcBKrVueKFo-x8G0Sw-NymTk87RIJ3ggSZrBx4hkXVgGfvXv9rx_8dYwPES1OlQD0grSfH5Fdpa11UTJa7DUVjFIgUBMOxZrLtvfb1TsijA/s1200/1200px-Wii.png" alt="جهاز نينتندو وي" loading="lazy" decoding="async">
+            <img src="/media/blogger/21/212cb989a31536537d8e0c236faf8f0802826ac3550b9c805442f87c585f9b67.png" alt="جهاز نينتندو وي" loading="lazy" decoding="async">
             <figcaption>Nintendo Wii: الجهاز الذي جعل الجميع يمارسون الرياضة وهم يلعبون في غرف معيشتهم 🏃‍♂️</figcaption>
         </figure>
     </header>

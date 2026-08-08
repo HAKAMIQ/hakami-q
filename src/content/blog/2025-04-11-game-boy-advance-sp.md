@@ -4,7 +4,7 @@ description: '🕹️ الدليل الشامل لجهاز Game Boy Advance SP �
 pubDate: '2025-04-11T01:13:00.001+03:00'
 updatedDate: '2026-02-25T03:31:08.053+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZmQWyvDZTKSTA63dZ-oqLErFZ178OfJpboT-NJGEhXlZ82O3QcY1fAsaLYAyx0jfQ3fJB3zM3k8TmVoRnuvdgDWGKi4f2apQQvgZnri5hrN_gtD_yWb159PgR7oazXyL5snq5eBQK9y7iKCGpPsMqYtoTq4l2i2mbXjlR-qWheRiqv0EwIO-xFXOuCwg/s320/Game-Boy-Advance-SP-Mk1-Blue.png'
+heroImageUrl: '/media/blogger/11/117b481584caf56a124ee94d22dad79bbe9bbb5b120f5cffbc045fd331c40e10.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-advance-sp.html'
 labels: ["GBASP","Nintendo"]
 ---
@@ -66,8 +66,8 @@ labels: ["GBASP","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZmQWyvDZTKSTA63dZ-oqLErFZ178OfJpboT-NJGEhXlZ82O3QcY1fAsaLYAyx0jfQ3fJB3zM3k8TmVoRnuvdgDWGKi4f2apQQvgZnri5hrN_gtD_yWb159PgR7oazXyL5snq5eBQK9y7iKCGpPsMqYtoTq4l2i2mbXjlR-qWheRiqv0EwIO-xFXOuCwg/s2580/Game-Boy-Advance-SP-Mk1-Blue.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZmQWyvDZTKSTA63dZ-oqLErFZ178OfJpboT-NJGEhXlZ82O3QcY1fAsaLYAyx0jfQ3fJB3zM3k8TmVoRnuvdgDWGKi4f2apQQvgZnri5hrN_gtD_yWb159PgR7oazXyL5snq5eBQK9y7iKCGpPsMqYtoTq4l2i2mbXjlR-qWheRiqv0EwIO-xFXOuCwg/s320/Game-Boy-Advance-SP-Mk1-Blue.png" width="318" alt="جهاز Game Boy Advance SP" />
+            <a href="/media/blogger/11/117b481584caf56a124ee94d22dad79bbe9bbb5b120f5cffbc045fd331c40e10.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/11/117b481584caf56a124ee94d22dad79bbe9bbb5b120f5cffbc045fd331c40e10.png" width="318" alt="جهاز Game Boy Advance SP" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🕹️ الدليل الشامل لجهاز Game Boy Advance SP</h2>

@@ -4,7 +4,7 @@ description: 'كيف تجهز ملفات BIOS لتشغيل ألعاب Genesis 32
 pubDate: '2025-04-11T18:50:00.006+03:00'
 updatedDate: '2026-02-25T02:32:11.339+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSLvjXc3tapSlTRGeiYClX6g3-ecR8HzlMllz7nSUfa6gBdrq0KdQ72dnDuwtdZo8aJfE1N3x_0NBUV5Hd7X41WOhgUd-AZAw6HQIRTMa_0u_ye8toz3_FzVyTwGPkxXbCgCzvNT55Oo-TPxw_EH12KJp9gnQtk8ZzwmGJnYuC66RpP_vYuBZscaGTsEU/s317/images%20(2).jfif'
+heroImageUrl: '/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/bios-genesis-32x.html'
 labels: ["Genesis32X","sega"]
 ---
@@ -72,8 +72,8 @@ labels: ["Genesis32X","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSLvjXc3tapSlTRGeiYClX6g3-ecR8HzlMllz7nSUfa6gBdrq0KdQ72dnDuwtdZo8aJfE1N3x_0NBUV5Hd7X41WOhgUd-AZAw6HQIRTMa_0u_ye8toz3_FzVyTwGPkxXbCgCzvNT55Oo-TPxw_EH12KJp9gnQtk8ZzwmGJnYuC66RpP_vYuBZscaGTsEU/s1600/images%20(2).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSLvjXc3tapSlTRGeiYClX6g3-ecR8HzlMllz7nSUfa6gBdrq0KdQ72dnDuwtdZo8aJfE1N3x_0NBUV5Hd7X41WOhgUd-AZAw6HQIRTMa_0u_ye8toz3_FzVyTwGPkxXbCgCzvNT55Oo-TPxw_EH12KJp9gnQtk8ZzwmGJnYuC66RpP_vYuBZscaGTsEU/s317/images%20(2).jfif" width="317" />
+            <a href="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg">
+                <img class="img-frame" src="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg" width="317" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">كيف تجهز ملفات BIOS لتشغيل ألعاب Genesis 32X بدون مشاكل؟</h2>

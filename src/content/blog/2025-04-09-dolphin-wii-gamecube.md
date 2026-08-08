@@ -4,7 +4,7 @@ description: 'الدليل الشامل لمحاكي Dolphin: تشغيل ألع�
 pubDate: '2025-04-09T06:14:00.003+03:00'
 updatedDate: '2026-02-24T23:28:26.929+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpDzVjfRc9uG4nbO2zjshrGg3q9ob-KrCviFmnY5kFPioyZBZiCg5SL5hS9GshyphenhyphenLRqdV_2Q7T19VXk1eO_GVMyYLJmhZgOFQSdY9XJqEBu7rXI1axJ0BpjiDNMs-U4ZGe5VG2LTSqM4qxbnU6fk3h-Y1xNkQeeWMXdotxta2h7B_QqNgtLeLjewKo575A/s686/hq720%20(1).jpg'
+heroImageUrl: '/media/blogger/18/18601447fa2cebfd60d6ee0bc956cd3bf38ec8a48f53adacafc87a4a146b1ff8.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/dolphin-wii-gamecube.html'
 labels: ["GameCube","Nintendo","Wii"]
 ---
@@ -186,7 +186,7 @@ labels: ["GameCube","Nintendo","Wii"]
         <h1 class="hakamiq-main-title">الدليل الشامل لمحاكي Dolphin: تشغيل ألعاب Wii و GameCube</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpDzVjfRc9uG4nbO2zjshrGg3q9ob-KrCviFmnY5kFPioyZBZiCg5SL5hS9GshyphenhyphenLRqdV_2Q7T19VXk1eO_GVMyYLJmhZgOFQSdY9XJqEBu7rXI1axJ0BpjiDNMs-U4ZGe5VG2LTSqM4qxbnU6fk3h-Y1xNkQeeWMXdotxta2h7B_QqNgtLeLjewKo575A/s686/hq720%20(1).jpg" alt="Dolphin Emulator Guide" loading="lazy" decoding="async">
+            <img src="/media/blogger/18/18601447fa2cebfd60d6ee0bc956cd3bf38ec8a48f53adacafc87a4a146b1ff8.jpg" alt="Dolphin Emulator Guide" loading="lazy" decoding="async">
             <figcaption>أفضل وأقوى بيئة لتشغيل روائع نينتندو الكلاسيكية بدقة عالية 🐬</figcaption>
         </figure>
     </header>

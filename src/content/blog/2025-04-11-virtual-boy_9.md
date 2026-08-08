@@ -4,7 +4,7 @@ description: 'تحليل تقني: جهاز Virtual Boy من نينتندو وت
 pubDate: '2025-04-11T03:43:00.005+03:00'
 updatedDate: '2026-02-25T03:07:21.257+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBhLqMQz2vCGWEX9nlPJFsiaT6gwmxl0CijbYKCYBpmUbMg1I-1G9QjNShr0LEetgky-zfuZo4lLp7BuQk1LOjttmRaX8TOuBIBpZz8kiKrYpoEPhe4GYRpfzNS4t-V-17F1UBqBNci482wqlacRCUlNQL6niTJ7JnAClVvV_suBX0ddRpTmShJmPBGDI/s320/s-l1200.jpg'
+heroImageUrl: '/media/blogger/8d/8d9c19460eb02ac8af1368b793f3dd507f0b89afcc2d5d9dca1952a4d080684a.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/virtual-boy_9.html'
 labels: ["Nintendo","VirtualBoy"]
 ---
@@ -67,8 +67,8 @@ labels: ["Nintendo","VirtualBoy"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBhLqMQz2vCGWEX9nlPJFsiaT6gwmxl0CijbYKCYBpmUbMg1I-1G9QjNShr0LEetgky-zfuZo4lLp7BuQk1LOjttmRaX8TOuBIBpZz8kiKrYpoEPhe4GYRpfzNS4t-V-17F1UBqBNci482wqlacRCUlNQL6niTJ7JnAClVvV_suBX0ddRpTmShJmPBGDI/s1600/s-l1200.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBhLqMQz2vCGWEX9nlPJFsiaT6gwmxl0CijbYKCYBpmUbMg1I-1G9QjNShr0LEetgky-zfuZo4lLp7BuQk1LOjttmRaX8TOuBIBpZz8kiKrYpoEPhe4GYRpfzNS4t-V-17F1UBqBNci482wqlacRCUlNQL6niTJ7JnAClVvV_suBX0ddRpTmShJmPBGDI/s320/s-l1200.jpg" width="240" alt="Nintendo Virtual Boy" />
+            <a href="/media/blogger/8d/8d9c19460eb02ac8af1368b793f3dd507f0b89afcc2d5d9dca1952a4d080684a.jpg">
+                <img class="img-frame" src="/media/blogger/8d/8d9c19460eb02ac8af1368b793f3dd507f0b89afcc2d5d9dca1952a4d080684a.jpg" width="240" alt="Nintendo Virtual Boy" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">تحليل تقني: جهاز Virtual Boy من نينتندو وتحديات تقنية العرض المجسم</h2>

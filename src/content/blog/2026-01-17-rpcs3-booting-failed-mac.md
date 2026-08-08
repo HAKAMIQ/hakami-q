@@ -4,7 +4,7 @@ description: 'إصلاح خطأ "The selected file is invalid" في RPCS3 دلي
 pubDate: '2026-01-17T12:39:00.002+03:00'
 updatedDate: '2026-02-24T04:13:57.643+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEhRCZSafgoS_gGeabmCL1WpwVKJbzcz-yj5OzdrbawZ5fDQOwk_fSAT-5f2B1qFvjvtlA97PiQnwkeT7ao4Ssyk9k90iSBmtC6akXNvCrLbxwGeJJaGYiJp7twqylgGRtNB8Z6GbGCRqkm__gGfOFfy7gqr3V7nbjZeQV0s28vwrv9VnigysIioRFJRTT0'
+heroImageUrl: '/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/rpcs3-booting-failed-mac.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -113,8 +113,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="fix-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEhRCZSafgoS_gGeabmCL1WpwVKJbzcz-yj5OzdrbawZ5fDQOwk_fSAT-5f2B1qFvjvtlA97PiQnwkeT7ao4Ssyk9k90iSBmtC6akXNvCrLbxwGeJJaGYiJp7twqylgGRtNB8Z6GbGCRqkm__gGfOFfy7gqr3V7nbjZeQV0s28vwrv9VnigysIioRFJRTT0">
-                <img alt="إصلاح خطأ تشغيل RPCS3 على الماك - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEhRCZSafgoS_gGeabmCL1WpwVKJbzcz-yj5OzdrbawZ5fDQOwk_fSAT-5f2B1qFvjvtlA97PiQnwkeT7ao4Ssyk9k90iSBmtC6akXNvCrLbxwGeJJaGYiJp7twqylgGRtNB8Z6GbGCRqkm__gGfOFfy7gqr3V7nbjZeQV0s28vwrv9VnigysIioRFJRTT0" style="width:100%; max-width: 600px; border-radius: 10px;" />
+            <a href="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png">
+                <img alt="إصلاح خطأ تشغيل RPCS3 على الماك - حكميك" src="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
         <h1>إصلاح خطأ "The selected file is invalid" في RPCS3</h1>

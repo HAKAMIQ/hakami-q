@@ -4,7 +4,7 @@ description: 'تشغيل ألعاب PS1 بجرافيكس HD عبر محاكي Du
 pubDate: '2025-04-13T02:06:00.009+03:00'
 updatedDate: '2026-02-24T09:52:04.815+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnCj-lcwfY63dhzKh9AFBzZZLG5w450vGxxmevf_WoBEvFyNfPi3BsRWvNk8KBbkctS0eQ_wpO4OFwRugnbAqSmQqVC7uNWGO69SkVMFhJlfpmFcU_9ZJI2WRk7pzAVKbYNWrZrOTT4Pu_nUPGxdS59VskKmTXeXSKkVQTK9iGUdM7ZAtsiqOyJtw7cbg/s320/maxresdefault%20(9).jpg'
+heroImageUrl: '/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ps1-hd-duckstation.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -102,8 +102,8 @@ labels: ["PlayStation","PS1"]
 <div class="hakamiq-hd-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnCj-lcwfY63dhzKh9AFBzZZLG5w450vGxxmevf_WoBEvFyNfPi3BsRWvNk8KBbkctS0eQ_wpO4OFwRugnbAqSmQqVC7uNWGO69SkVMFhJlfpmFcU_9ZJI2WRk7pzAVKbYNWrZrOTT4Pu_nUPGxdS59VskKmTXeXSKkVQTK9iGUdM7ZAtsiqOyJtw7cbg/s1600/maxresdefault%20(9).jpg" target="_blank">
-            <img alt="PS1 HD Graphics DuckStation Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnCj-lcwfY63dhzKh9AFBzZZLG5w450vGxxmevf_WoBEvFyNfPi3BsRWvNk8KBbkctS0eQ_wpO4OFwRugnbAqSmQqVC7uNWGO69SkVMFhJlfpmFcU_9ZJI2WRk7pzAVKbYNWrZrOTT4Pu_nUPGxdS59VskKmTXeXSKkVQTK9iGUdM7ZAtsiqOyJtw7cbg/s320/maxresdefault%20(9).jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+        <a href="/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg" target="_blank">
+            <img alt="PS1 HD Graphics DuckStation Guide" src="/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
         </a>
     </div>
 

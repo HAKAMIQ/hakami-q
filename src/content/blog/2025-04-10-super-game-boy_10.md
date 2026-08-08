@@ -4,7 +4,7 @@ description: '🕹️ وش هو Super Game Boy (SGB)؟ SGB هو محول كان 
 pubDate: '2025-04-10T23:31:00.002+03:00'
 updatedDate: '2025-04-10T23:31:47.161+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHD2AvbipXccjJ9SuuiWKktIkCGr43OC1u_G0RlOFiwh8ccmJhawa6fqkRmCOaZKrkT1xjyp_lM1Q4l5FLrEgxhhtoH1cf2eMep4kmmKzx9WcxeHhKEMM5IxuluHGAHo9_CEYDkdphumqV70kXMhciTMiw_dirxK85wKJ_I7qK7x-QPe0N4Z8UilZOsxg/s320/7b9e3029-a46d-406c-ac0c-2c402e7b3dee.png'
+heroImageUrl: '/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/super-game-boy_10.html'
 labels: ["Nintendo","SGB"]
 ---
@@ -44,7 +44,7 @@ labels: ["Nintendo","SGB"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHD2AvbipXccjJ9SuuiWKktIkCGr43OC1u_G0RlOFiwh8ccmJhawa6fqkRmCOaZKrkT1xjyp_lM1Q4l5FLrEgxhhtoH1cf2eMep4kmmKzx9WcxeHhKEMM5IxuluHGAHo9_CEYDkdphumqV70kXMhciTMiw_dirxK85wKJ_I7qK7x-QPe0N4Z8UilZOsxg/s1024/7b9e3029-a46d-406c-ac0c-2c402e7b3dee.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHD2AvbipXccjJ9SuuiWKktIkCGr43OC1u_G0RlOFiwh8ccmJhawa6fqkRmCOaZKrkT1xjyp_lM1Q4l5FLrEgxhhtoH1cf2eMep4kmmKzx9WcxeHhKEMM5IxuluHGAHo9_CEYDkdphumqV70kXMhciTMiw_dirxK85wKJ_I7qK7x-QPe0N4Z8UilZOsxg/s320/7b9e3029-a46d-406c-ac0c-2c402e7b3dee.png" width="320" /></a></div><h2>🕹️ وش هو Super Game Boy (SGB)؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" width="320" /></a></div><h2>🕹️ وش هو Super Game Boy (SGB)؟</h2>
 <p>
 <code>SGB</code> هو محول كان يُستخدم على جهاز Super Nintendo لتشغيل ألعاب Game Boy على التلفزيون مع ألوان وإطارات وأحياناً مزايا صوتية إضافية.
 </p>

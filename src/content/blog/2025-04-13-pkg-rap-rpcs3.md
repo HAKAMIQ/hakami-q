@@ -4,7 +4,7 @@ description: 'كيفية تشغيل الألعاب عبر ملفات PKG و RAP 
 pubDate: '2025-04-13T02:48:00.005+03:00'
 updatedDate: '2026-02-25T00:55:11.877+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAaLeeojpZ6vq78FhCJqsNVSwGC6GnvP6OgiPLo6-c3YFWQ6EFm8PGQ4ZYhYDTGvFP_EIs4jQKMddzylawM35YktoWv4oBdhdvoIfm5RlbcoH8ZtZ_N6iJu9OAMUlhsZdxia_p3EQnxpQ0vedhXRQtdBpvtomuR2M6l9jW9KeuTu3tgPllmbwwMlj_wDs/s320/sddefault%20(1).jpg'
+heroImageUrl: '/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/pkg-rap-rpcs3.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -67,8 +67,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAaLeeojpZ6vq78FhCJqsNVSwGC6GnvP6OgiPLo6-c3YFWQ6EFm8PGQ4ZYhYDTGvFP_EIs4jQKMddzylawM35YktoWv4oBdhdvoIfm5RlbcoH8ZtZ_N6iJu9OAMUlhsZdxia_p3EQnxpQ0vedhXRQtdBpvtomuR2M6l9jW9KeuTu3tgPllmbwwMlj_wDs/s640/sddefault%20(1).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAaLeeojpZ6vq78FhCJqsNVSwGC6GnvP6OgiPLo6-c3YFWQ6EFm8PGQ4ZYhYDTGvFP_EIs4jQKMddzylawM35YktoWv4oBdhdvoIfm5RlbcoH8ZtZ_N6iJu9OAMUlhsZdxia_p3EQnxpQ0vedhXRQtdBpvtomuR2M6l9jW9KeuTu3tgPllmbwwMlj_wDs/s320/sddefault%20(1).jpg" width="320" />
+            <a href="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg">
+                <img class="img-frame" src="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">كيفية تشغيل الألعاب عبر ملفات PKG و RAP على محاكي RPCS3</h2>

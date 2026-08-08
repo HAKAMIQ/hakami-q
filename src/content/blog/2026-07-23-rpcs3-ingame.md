@@ -4,7 +4,7 @@ description: '``` ممكن تشغل لعبة على RPCS3 وتنهيها بال�
 pubDate: '2026-07-23T07:13:06.235+03:00'
 updatedDate: '2026-07-23T07:13:06.236+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH7pMHoCgXMUmxDI1d_Qd8mBEFbcvEou-JRssiSbZUyifuGNWid82QHYo_Dv3xj-GL1yrG1RpURCKugxavXSlyVzYbOIbuHk_m_rljfn9Pn-xkp1azk9V2rAnfXlmFurNzaapJ18fKtMK4a7EtwKi6kL9N6Zyd9hC0PB7QQsIZ52_oK-5EY8rgVDbHh-0/s320/Untitled-1.jpg'
+heroImageUrl: '/media/blogger/49/49b7de66ce0b61e384a326735cbb69eaa6eeef9d33ca5d759ba2f0466e328a66.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/rpcs3-ingame.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -184,7 +184,7 @@ labels: ["PlayStation","PS3"]
 <div class="orbital-full-wrapper">
 
 ```html
-<header class="tech-header"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH7pMHoCgXMUmxDI1d_Qd8mBEFbcvEou-JRssiSbZUyifuGNWid82QHYo_Dv3xj-GL1yrG1RpURCKugxavXSlyVzYbOIbuHk_m_rljfn9Pn-xkp1azk9V2rAnfXlmFurNzaapJ18fKtMK4a7EtwKi6kL9N6Zyd9hC0PB7QQsIZ52_oK-5EY8rgVDbHh-0/s662/Untitled-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="533" data-original-width="662" height="258" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH7pMHoCgXMUmxDI1d_Qd8mBEFbcvEou-JRssiSbZUyifuGNWid82QHYo_Dv3xj-GL1yrG1RpURCKugxavXSlyVzYbOIbuHk_m_rljfn9Pn-xkp1azk9V2rAnfXlmFurNzaapJ18fKtMK4a7EtwKi6kL9N6Zyd9hC0PB7QQsIZ52_oK-5EY8rgVDbHh-0/s320/Untitled-1.jpg" width="320" /></a></div><br />
+<header class="tech-header"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/49/49b7de66ce0b61e384a326735cbb69eaa6eeef9d33ca5d759ba2f0466e328a66.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="533" data-original-width="662" height="258" src="/media/blogger/49/49b7de66ce0b61e384a326735cbb69eaa6eeef9d33ca5d759ba2f0466e328a66.jpg" width="320" /></a></div><br />
     </div>
 
     <p>ممكن تشغل لعبة على <code>RPCS3</code> وتنهيها بالكامل وبعدها تدخل

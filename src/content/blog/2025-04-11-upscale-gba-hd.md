@@ -4,7 +4,7 @@ description: '🔄 الدليل التقني: رفع دقة ألعاب GBA إل�
 pubDate: '2025-04-11T01:03:00.001+03:00'
 updatedDate: '2026-02-25T03:42:20.660+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcZNTPGYdmwA5sA1B0xILEjkF-iHH6e9oRlmBjBa8rzlbu0J44iMjtMoEudafc4ZDdAlvmFOa1FGzsjq2qcDuS6uY-tyDTkJWgKp5EcFCwE-aSvhyphenhyphenz4-7M8n4W5j8AEouPBipGYDoNtsC0JI3yrwf_6FpJ6ZZFQze4UAc6qMn_1xN_auRkT8FZreSOmCc/s320/maxresdefault%20(1).jpg'
+heroImageUrl: '/media/blogger/c8/c85d8b617ba07c1a49af2a637c4be9257131be20b496de29724beddf6505629e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/upscale-gba-hd.html'
 labels: ["GBA","Nintendo"]
 ---
@@ -65,8 +65,8 @@ labels: ["GBA","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcZNTPGYdmwA5sA1B0xILEjkF-iHH6e9oRlmBjBa8rzlbu0J44iMjtMoEudafc4ZDdAlvmFOa1FGzsjq2qcDuS6uY-tyDTkJWgKp5EcFCwE-aSvhyphenhyphenz4-7M8n4W5j8AEouPBipGYDoNtsC0JI3yrwf_6FpJ6ZZFQze4UAc6qMn_1xN_auRkT8FZreSOmCc/s1280/maxresdefault%20(1).jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcZNTPGYdmwA5sA1B0xILEjkF-iHH6e9oRlmBjBa8rzlbu0J44iMjtMoEudafc4ZDdAlvmFOa1FGzsjq2qcDuS6uY-tyDTkJWgKp5EcFCwE-aSvhyphenhyphenz4-7M8n4W5j8AEouPBipGYDoNtsC0JI3yrwf_6FpJ6ZZFQze4UAc6qMn_1xN_auRkT8FZreSOmCc/s320/maxresdefault%20(1).jpg" width="320" alt="تحسين دقة GBA" />
+            <a href="/media/blogger/c8/c85d8b617ba07c1a49af2a637c4be9257131be20b496de29724beddf6505629e.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/c8/c85d8b617ba07c1a49af2a637c4be9257131be20b496de29724beddf6505629e.jpg" width="320" alt="تحسين دقة GBA" />
             </a>
         </div>
         <h2 style="color: var(--xe-teal); text-align: center;">🔄 الدليل التقني: رفع دقة ألعاب GBA إلى أعلى دقة HD</h2>

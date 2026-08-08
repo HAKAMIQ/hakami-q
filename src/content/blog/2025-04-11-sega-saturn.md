@@ -4,7 +4,7 @@ description: '🎮 محاكيات Sega Saturn - هل فعلاً تحتاج جه�
 pubDate: '2025-04-11T17:08:00.006+03:00'
 updatedDate: '2026-02-25T03:03:54.495+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5GxexqdAYNwETL6UoWj3w9_txla2-es59rBgxshjmboXjG-1fEPEJC2cG4XvZEwZgixEUOoUOGuU8oNRsPn9svhADEsTV50zkNrZnd0NGcf1SANZ8iWOuKHxfRpREb_nc1BJ_282jkC6rnLcjf8FmoMUsPYIHwyjZlqwd3P6nt8y727_4KZEBpiO8zw/s320/7ab2c344fb2b7e39074ee4297e392a321b28364020666a2807f2d03b984954b3_600.webp'
+heroImageUrl: '/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-saturn.html'
 labels: ["Saturn","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Saturn","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5GxexqdAYNwETL6UoWj3w9_txla2-es59rBgxshjmboXjG-1fEPEJC2cG4XvZEwZgixEUOoUOGuU8oNRsPn9svhADEsTV50zkNrZnd0NGcf1SANZ8iWOuKHxfRpREb_nc1BJ_282jkC6rnLcjf8FmoMUsPYIHwyjZlqwd3P6nt8y727_4KZEBpiO8zw/s1600/7ab2c344fb2b7e39074ee4297e392a321b28364020666a2807f2d03b984954b3_600.webp">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl5GxexqdAYNwETL6UoWj3w9_txla2-es59rBgxshjmboXjG-1fEPEJC2cG4XvZEwZgixEUOoUOGuU8oNRsPn9svhADEsTV50zkNrZnd0NGcf1SANZ8iWOuKHxfRpREb_nc1BJ_282jkC6rnLcjf8FmoMUsPYIHwyjZlqwd3P6nt8y727_4KZEBpiO8zw/s320/7ab2c344fb2b7e39074ee4297e392a321b28364020666a2807f2d03b984954b3_600.webp" width="320" />
+            <a href="/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg">
+                <img class="img-frame" src="/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 محاكيات Sega Saturn - هل فعلاً تحتاج جهاز قوي؟</h2>

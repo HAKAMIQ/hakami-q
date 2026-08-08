@@ -4,7 +4,7 @@ description: 'قائمة بأقوى ألعاب SEGA NAOMI التي يجب علي
 pubDate: '2025-04-11T19:07:00.003+03:00'
 updatedDate: '2026-02-25T02:22:28.646+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9ji7Lgto7DHxZdt2XGTKfIkgsOrfxukqIFJKvSsO4VezXLJLi2A9pzdtPr6bkrwnREg0OulL6U7LNwTp4gqm1GlMgNy2mwXupqrLFmk2vSM4o8cen33wWXRY0vVu1JFn2ZrZhA2AFNGBh4PNfH3AExkzpUE276VoDeHcwKJZ9hdcUmcowbg9M3u_mCb4/s320/images%20(5).jfif'
+heroImageUrl: '/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-naomi.html'
 labels: ["sega","Sega-Naomi"]
 ---
@@ -64,8 +64,8 @@ labels: ["sega","Sega-Naomi"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9ji7Lgto7DHxZdt2XGTKfIkgsOrfxukqIFJKvSsO4VezXLJLi2A9pzdtPr6bkrwnREg0OulL6U7LNwTp4gqm1GlMgNy2mwXupqrLFmk2vSM4o8cen33wWXRY0vVu1JFn2ZrZhA2AFNGBh4PNfH3AExkzpUE276VoDeHcwKJZ9hdcUmcowbg9M3u_mCb4/s1600/images%20(5).jfif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9ji7Lgto7DHxZdt2XGTKfIkgsOrfxukqIFJKvSsO4VezXLJLi2A9pzdtPr6bkrwnREg0OulL6U7LNwTp4gqm1GlMgNy2mwXupqrLFmk2vSM4o8cen33wWXRY0vVu1JFn2ZrZhA2AFNGBh4PNfH3AExkzpUE276VoDeHcwKJZ9hdcUmcowbg9M3u_mCb4/s320/images%20(5).jfif" width="297" />
+            <a href="/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg">
+                <img class="img-frame" src="/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg" width="297" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">قائمة بأقوى ألعاب SEGA NAOMI التي يجب عليك تجربتها</h2>

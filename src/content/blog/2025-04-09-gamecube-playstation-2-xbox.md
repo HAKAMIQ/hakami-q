@@ -4,7 +4,7 @@ description: 'حرب الأجهزة السادسة: عندما تواجه GameCu
 pubDate: '2025-04-09T05:29:00.001+03:00'
 updatedDate: '2026-02-24T23:49:41.773+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLCOaIuKd_2ka42eH6dvwW7P5LseVP3UtyOAnlkEJb580vzjWfBVB_6YmM_6OFhdbNyHwk8SrBruc_cR4xj84h3t18xinnNrtOftxa0Hci-zP4eJHuJKXyykOt6D0w_HGK3EgkI515QZVDu1rjhYDj3lW19MEFIMkRQfjPQF6GUeNJ7uec-zDBE9bvo7Y/s686/hq720.jpg'
+heroImageUrl: '/media/blogger/fc/fc2cb16898b17f8176d1e630fdfdb10d61a44211f154a87e4d64a6f62cae1f99.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gamecube-playstation-2-xbox.html'
 labels: ["GameCube","Nintendo"]
 ---
@@ -169,7 +169,7 @@ labels: ["GameCube","Nintendo"]
         <h1 class="hakamiq-main-title">حرب الأجهزة السادسة: عندما تواجه GameCube و PS2 و Xbox!</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLCOaIuKd_2ka42eH6dvwW7P5LseVP3UtyOAnlkEJb580vzjWfBVB_6YmM_6OFhdbNyHwk8SrBruc_cR4xj84h3t18xinnNrtOftxa0Hci-zP4eJHuJKXyykOt6D0w_HGK3EgkI515QZVDu1rjhYDj3lW19MEFIMkRQfjPQF6GUeNJ7uec-zDBE9bvo7Y/s686/hq720.jpg" alt="مقارنة بين جيم كيوب وبلايستيشن 2 واكس بوكس" loading="lazy" decoding="async">
+            <img src="/media/blogger/fc/fc2cb16898b17f8176d1e630fdfdb10d61a44211f154a87e4d64a6f62cae1f99.jpg" alt="مقارنة بين جيم كيوب وبلايستيشن 2 واكس بوكس" loading="lazy" decoding="async">
             <figcaption>بداية الألفينات شهدت أقوى صراع تقني في تاريخ صناعة الألعاب بين نينتندو وسوني ومايكروسوفت 🎮</figcaption>
         </figure>
     </header>

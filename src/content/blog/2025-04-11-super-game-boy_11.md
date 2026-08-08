@@ -4,7 +4,7 @@ description: '🖼️ وش هو إطار Super Game Boy؟ الإطار (Border) 
 pubDate: '2025-04-11T00:22:00.003+03:00'
 updatedDate: '2026-02-25T03:57:02.261+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfK_sJ9hgw6qpTI0ivQJUPs5rQJeUrvh-SlQ0IQYWtJG9ZUnZFPIMZwQ_Fhndy1giaoUaBpGYZ-yNnzW49R2bjfYGL3mwXz3CKAy8WRMPk6iXliXD191ta_3mES_kfFF1pXpCOIsBPkUgkgHbjHdIG34ovplIqTn8I6O48Jd2-f_2k5e9rOy-Dcl2-9mI/s320/ac7e32b9-3dcb-4749-1bec534e2a7f.png'
+heroImageUrl: '/media/blogger/ab/ab4a72c60b11811686764f2202cb1a0e283a588f2172fe260c10303c84d1b801.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/super-game-boy_11.html'
 labels: ["Nintendo","SGB"]
 ---
@@ -67,8 +67,8 @@ labels: ["Nintendo","SGB"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfK_sJ9hgw6qpTI0ivQJUPs5rQJeUrvh-SlQ0IQYWtJG9ZUnZFPIMZwQ_Fhndy1giaoUaBpGYZ-yNnzW49R2bjfYGL3mwXz3CKAy8WRMPk6iXliXD191ta_3mES_kfFF1pXpCOIsBPkUgkgHbjHdIG34ovplIqTn8I6O48Jd2-f_2k5e9rOy-Dcl2-9mI/s1536/ac7e32b9-3dcb-4749-1bec534e2a7f.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfK_sJ9hgw6qpTI0ivQJUPs5rQJeUrvh-SlQ0IQYWtJG9ZUnZFPIMZwQ_Fhndy1giaoUaBpGYZ-yNnzW49R2bjfYGL3mwXz3CKAy8WRMPk6iXliXD191ta_3mES_kfFF1pXpCOIsBPkUgkgHbjHdIG34ovplIqTn8I6O48Jd2-f_2k5e9rOy-Dcl2-9mI/s320/ac7e32b9-3dcb-4749-1bec534e2a7f.png" width="320" alt="Super Game Boy Border" />
+            <a href="/media/blogger/ab/ab4a72c60b11811686764f2202cb1a0e283a588f2172fe260c10303c84d1b801.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/ab/ab4a72c60b11811686764f2202cb1a0e283a588f2172fe260c10303c84d1b801.png" width="320" alt="Super Game Boy Border" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🖼️ وش هو إطار Super Game Boy؟</h2>

@@ -4,7 +4,7 @@ description: 'حروب الـ 16 بت: Nintendo SNES ضد Sega Mega Drive تحل
 pubDate: '2025-04-09T04:56:00.003+03:00'
 updatedDate: '2026-02-24T05:19:07.404+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtsnANu1Fd_8QthwGlHGqjrlyxcgGMyvV81AeBC4_a___v6UJIxeT1dbmXAV2CseKs40YzbrXaQFOlDdfz1Hn5NgiJSuGssQJ5bmGGFMsBrhNulM_Hz-KmbwNfvbMmWK2QNaA95e5TOc44fzFLkh2FiF5yoSyuQFpg-KvCeNd6eDtqMh86ii4dOvc-bk/w400-h173/WgO8HKZ.jpg'
+heroImageUrl: '/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/snes-sega-mega-drive.html'
 labels: ["Nintendo","SNES"]
 ---
@@ -101,8 +101,8 @@ labels: ["Nintendo","SNES"]
 
     <header class="battle-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtsnANu1Fd_8QthwGlHGqjrlyxcgGMyvV81AeBC4_a___v6UJIxeT1dbmXAV2CseKs40YzbrXaQFOlDdfz1Hn5NgiJSuGssQJ5bmGGFMsBrhNulM_Hz-KmbwNfvbMmWK2QNaA95e5TOc44fzFLkh2FiF5yoSyuQFpg-KvCeNd6eDtqMh86ii4dOvc-bk/s1024/WgO8HKZ.jpg">
-                <img class="img-frame" alt="Nintendo SNES vs Sega Mega Drive" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtsnANu1Fd_8QthwGlHGqjrlyxcgGMyvV81AeBC4_a___v6UJIxeT1dbmXAV2CseKs40YzbrXaQFOlDdfz1Hn5NgiJSuGssQJ5bmGGFMsBrhNulM_Hz-KmbwNfvbMmWK2QNaA95e5TOc44fzFLkh2FiF5yoSyuQFpg-KvCeNd6eDtqMh86ii4dOvc-bk/w400-h173/WgO8HKZ.jpg" />
+            <a href="/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg">
+                <img class="img-frame" alt="Nintendo SNES vs Sega Mega Drive" src="/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg" />
             </a>
         </div>
         <h1>حروب الـ 16 بت: Nintendo SNES ضد Sega Mega Drive</h1>

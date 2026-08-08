@@ -4,7 +4,7 @@ description: 'مقارنة نهائية بين Yuzu و Ryujinx من تجربة �
 pubDate: '2025-04-17T12:41:00.006+03:00'
 updatedDate: '2026-02-24T05:44:19.038+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfqbra6I44oP-LgtMM-GMV-eAVOXXCzFge7SB40ybPxZsBZndIBXs8PD6mKWcpipd3Ns7ErUwzkfi56bsHGDBuSwvHx94trcK4flf2S-iM38eDEtiw-keory_s-VD5zS4U2yT-4Et0Otc4r_wt46ZzICX_GuhWoNaKzWKGQENDU_qpRPFnQfsxg-ekchM/s320/1.png'
+heroImageUrl: '/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/yuzu-ryujinx.html'
 labels: ["Nintendo","NS"]
 ---
@@ -122,8 +122,8 @@ labels: ["Nintendo","NS"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfqbra6I44oP-LgtMM-GMV-eAVOXXCzFge7SB40ybPxZsBZndIBXs8PD6mKWcpipd3Ns7ErUwzkfi56bsHGDBuSwvHx94trcK4flf2S-iM38eDEtiw-keory_s-VD5zS4U2yT-4Et0Otc4r_wt46ZzICX_GuhWoNaKzWKGQENDU_qpRPFnQfsxg-ekchM/s1024/1.png">
-                <img class="img-frame" alt="Yuzu vs Ryujinx Emulator Comparison" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfqbra6I44oP-LgtMM-GMV-eAVOXXCzFge7SB40ybPxZsBZndIBXs8PD6mKWcpipd3Ns7ErUwzkfi56bsHGDBuSwvHx94trcK4flf2S-iM38eDEtiw-keory_s-VD5zS4U2yT-4Et0Otc4r_wt46ZzICX_GuhWoNaKzWKGQENDU_qpRPFnQfsxg-ekchM/s320/1.png" style="max-width: 500px;" />
+            <a href="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png">
+                <img class="img-frame" alt="Yuzu vs Ryujinx Emulator Comparison" src="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png" style="max-width: 500px;" />
             </a>
         </div>
         <h1>مقارنة نهائية بين Yuzu و Ryujinx من تجربة شخصية 🎮</h1>

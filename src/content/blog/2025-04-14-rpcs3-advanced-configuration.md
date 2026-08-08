@@ -4,7 +4,7 @@ description: '⚙️ جدول إعدادات Advanced Configuration في محا�
 pubDate: '2025-04-14T01:42:00.001+03:00'
 updatedDate: '2026-02-25T00:03:19.808+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTBzECibm3hwGxlZ31P-nLgB_8z218hasBw_W5KvdAvew1DmW6pFBEz3RNWQv4BayLdOy2TnC2OnBiwEFYP7utJWKAa-rrbWQwEkKd5M8fEoMqj01aAVxdOFksKVFHBEhusrr6P3xelgbaHn6l0EJRcwfMhURA8OXnGgwoj_EAnix0TaaESgjjpfic298/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-advanced-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -146,7 +146,7 @@ labels: ["PlayStation","PS3"]
         <h1 class="hakamiq-main-title">⚙️ جدول إعدادات Advanced Configuration في محاكي RPCS3</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTBzECibm3hwGxlZ31P-nLgB_8z218hasBw_W5KvdAvew1DmW6pFBEz3RNWQv4BayLdOy2TnC2OnBiwEFYP7utJWKAa-rrbWQwEkKd5M8fEoMqj01aAVxdOFksKVFHBEhusrr6P3xelgbaHn6l0EJRcwfMhURA8OXnGgwoj_EAnix0TaaESgjjpfic298/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" alt="RPCS3 Advanced Configuration Icon" loading="lazy" decoding="async">
+            <img src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" alt="RPCS3 Advanced Configuration Icon" loading="lazy" decoding="async">
             <figcaption>دليل حكميك الشامل لكل خيارات التعديل المتقدمة في محاكي RPCS3 🛠️</figcaption>
         </figure>
     </header>

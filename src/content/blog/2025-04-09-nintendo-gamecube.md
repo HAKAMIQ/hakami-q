@@ -4,7 +4,7 @@ description: 'Nintendo GameCube: المكعب الذي خسر السوق وفا�
 pubDate: '2025-04-09T05:22:00.002+03:00'
 updatedDate: '2026-02-24T05:24:40.606+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqJwJhid_n1DsvDAuIm8Gk79LNqW1Z9sJfPvNZ_T5D1abZ4CR2SZpLU5lubDSIK993adYcDJUln3cSAzzdrOXVQ2AF-25mX97puwICDh3Kp1-E_rw1fJ3mBj1uQrGx7Z9vNXgeatMS97YPUBGrlxC2zoyOguqBvIQuU6-AW8fDBWPENyqilQosqQ4FiRk/s1600/images%20(3).jfif'
+heroImageUrl: '/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-gamecube.html'
 labels: ["GameCube","Nintendo"]
 ---
@@ -115,8 +115,8 @@ labels: ["GameCube","Nintendo"]
 
     <header class="doc-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqJwJhid_n1DsvDAuIm8Gk79LNqW1Z9sJfPvNZ_T5D1abZ4CR2SZpLU5lubDSIK993adYcDJUln3cSAzzdrOXVQ2AF-25mX97puwICDh3Kp1-E_rw1fJ3mBj1uQrGx7Z9vNXgeatMS97YPUBGrlxC2zoyOguqBvIQuU6-AW8fDBWPENyqilQosqQ4FiRk/s300/images%20(3).jfif">
-                <img class="img-frame" alt="Nintendo GameCube Console" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqJwJhid_n1DsvDAuIm8Gk79LNqW1Z9sJfPvNZ_T5D1abZ4CR2SZpLU5lubDSIK993adYcDJUln3cSAzzdrOXVQ2AF-25mX97puwICDh3Kp1-E_rw1fJ3mBj1uQrGx7Z9vNXgeatMS97YPUBGrlxC2zoyOguqBvIQuU6-AW8fDBWPENyqilQosqQ4FiRk/s1600/images%20(3).jfif" style="max-width: 250px;" />
+            <a href="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg">
+                <img class="img-frame" alt="Nintendo GameCube Console" src="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg" style="max-width: 250px;" />
             </a>
         </div>
         <h1>Nintendo GameCube: المكعب الذي خسر السوق وفاز بالتاريخ</h1>

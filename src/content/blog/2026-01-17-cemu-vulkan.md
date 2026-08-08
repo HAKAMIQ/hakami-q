@@ -4,7 +4,7 @@ description: 'دليل القضاء على التقطيع: لماذا نفضل V
 pubDate: '2026-01-17T15:59:00.007+03:00'
 updatedDate: '2026-02-24T04:18:12.937+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEiwK2OU7k3qk3LEOJgIiRr4gCL1Nz6sO4k2IqmelfsgvaBSOS48PP8utZRSLHAy0JgOooh8vk6ElmicXygCFgPssYkspMRAY2AAbl6f_H2Zc8Qw2ELH__55tIEVj3KT8cVAdy6_WD4pCelIvZCa1B9aWA0d6EBLQO_aFYCY5WndldIx5b-dduS8AEvpuuQ'
+heroImageUrl: '/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/cemu-vulkan.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -111,8 +111,8 @@ labels: ["Nintendo","Wii-U"]
 
     <header class="v-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEiwK2OU7k3qk3LEOJgIiRr4gCL1Nz6sO4k2IqmelfsgvaBSOS48PP8utZRSLHAy0JgOooh8vk6ElmicXygCFgPssYkspMRAY2AAbl6f_H2Zc8Qw2ELH__55tIEVj3KT8cVAdy6_WD4pCelIvZCa1B9aWA0d6EBLQO_aFYCY5WndldIx5b-dduS8AEvpuuQ">
-                <img alt="أداء Vulkan في محاكي Cemu - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEiwK2OU7k3qk3LEOJgIiRr4gCL1Nz6sO4k2IqmelfsgvaBSOS48PP8utZRSLHAy0JgOooh8vk6ElmicXygCFgPssYkspMRAY2AAbl6f_H2Zc8Qw2ELH__55tIEVj3KT8cVAdy6_WD4pCelIvZCa1B9aWA0d6EBLQO_aFYCY5WndldIx5b-dduS8AEvpuuQ" style="width:100%; max-width: 600px; border-radius: 10px;" />
+            <a href="/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png">
+                <img alt="أداء Vulkan في محاكي Cemu - حكميك" src="/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
         <h2>دليل القضاء على التقطيع: لماذا نفضل Vulkan في Cemu؟</h2>
@@ -129,8 +129,8 @@ labels: ["Nintendo","Wii-U"]
 
         <div style="text-align: center;">
             <p style="font-size: 14px; color: #666;">🔽 الفيديو يوضح سلاسة لعبة Breath of the Wild مع تفعيل الخاصية:</p>
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin1Adzmxtld-yrakLBwI6O4rD87heYLJwRsZIR834WtvQntCJ0z61MWxkfPtPCzttNjewvt91gHGOeQDSz-dxInTFtXV0nuKldqjEGDNLkP4YGpPCrFZU3t896gxe9dklXzRU3FCi6CfK-i_AFpQzYCkKGN22USmxKAnSeEfrGDw4DQjDSUM13rF1RqoE/s640/async.gif">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin1Adzmxtld-yrakLBwI6O4rD87heYLJwRsZIR834WtvQntCJ0z61MWxkfPtPCzttNjewvt91gHGOeQDSz-dxInTFtXV0nuKldqjEGDNLkP4YGpPCrFZU3t896gxe9dklXzRU3FCi6CfK-i_AFpQzYCkKGN22USmxKAnSeEfrGDw4DQjDSUM13rF1RqoE/s320/async.gif" alt="Zelda BOTW Async Compile Demo" />
+            <a href="/media/blogger/10/102c1f3d2f58eab41aa7b876da74255f18f1b05f119b845a68d4894bddbc16cf.gif">
+                <img class="img-frame" src="/media/blogger/10/102c1f3d2f58eab41aa7b876da74255f18f1b05f119b845a68d4894bddbc16cf.gif" alt="Zelda BOTW Async Compile Demo" />
             </a>
         </div>
     </section>

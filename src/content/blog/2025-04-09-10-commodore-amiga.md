@@ -4,7 +4,7 @@ description: 'أفضل 10 ألعاب على Commodore Amiga لا تزال ممت
 pubDate: '2025-04-09T04:40:00.001+03:00'
 updatedDate: '2026-02-24T05:14:35.652+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD2MYYjMioKhbAOR0yCKWoo3b9Mw8Va3dBmFCRQGNTwQXSUP4P8IlVWSXv2B01mOOKzqoTbosqshBBqsUh9uylZI4-5A7TJ8z_gJUNi37o5bkH2KxgkGkN5eKB4KtzckEHPyHL1xUorj6dX0_IKvEAKLc2pxALDkMtJlY4CvFhTmywxbFfyHvCPEvTEh4/s320/fightinspirit_v1.2_aga-230609-160129.webp'
+heroImageUrl: '/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/10-commodore-amiga.html'
 labels: ["Commodore","Commodore-AMIGA"]
 ---
@@ -119,8 +119,8 @@ labels: ["Commodore","Commodore-AMIGA"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD2MYYjMioKhbAOR0yCKWoo3b9Mw8Va3dBmFCRQGNTwQXSUP4P8IlVWSXv2B01mOOKzqoTbosqshBBqsUh9uylZI4-5A7TJ8z_gJUNi37o5bkH2KxgkGkN5eKB4KtzckEHPyHL1xUorj6dX0_IKvEAKLc2pxALDkMtJlY4CvFhTmywxbFfyHvCPEvTEh4/s816/fightinspirit_v1.2_aga-230609-160129.webp">
-                <img class="img-frame" alt="Best Amiga Games - HAKAMIQ" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD2MYYjMioKhbAOR0yCKWoo3b9Mw8Va3dBmFCRQGNTwQXSUP4P8IlVWSXv2B01mOOKzqoTbosqshBBqsUh9uylZI4-5A7TJ8z_gJUNi37o5bkH2KxgkGkN5eKB4KtzckEHPyHL1xUorj6dX0_IKvEAKLc2pxALDkMtJlY4CvFhTmywxbFfyHvCPEvTEh4/s320/fightinspirit_v1.2_aga-230609-160129.webp" />
+            <a href="/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg">
+                <img class="img-frame" alt="Best Amiga Games - HAKAMIQ" src="/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg" />
             </a>
         </div>
         <h1>أفضل 10 ألعاب على Commodore Amiga لا تزال ممتعة في 2026</h1>

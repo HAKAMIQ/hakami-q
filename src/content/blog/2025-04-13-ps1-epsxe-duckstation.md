@@ -4,7 +4,7 @@ description: '🎮 مقارنة محاكيات PS1: من ePSXe إلى DuckStatio
 pubDate: '2025-04-13T22:10:00.007+03:00'
 updatedDate: '2026-02-25T00:24:19.050+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjUrMZY6yGJPKDy9AedJVuSrhCqPnmT-PMDJliHdszyNnVP4AdFU4kxJ1ijZTFw3PXcHYotvQk7YrV9X83P6f9xvGqf6WOXfUTZoEMzdYYeSWx0a5bC3PLqFVr-88jAGSD_RzrXwWsj5CYJUG-Sg65OvHn82carQPFV8HUQJc2GLkv5uZnxMg_u6PtYAw/s320/unnamed.png'
+heroImageUrl: '/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ps1-epsxe-duckstation.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -66,8 +66,8 @@ labels: ["PlayStation","PS1"]
     <section class="section-card">
         <h3 style="color: var(--xe-red);">1. ePSXe: المحاكي الكلاسيكي القديم</h3>
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjUrMZY6yGJPKDy9AedJVuSrhCqPnmT-PMDJliHdszyNnVP4AdFU4kxJ1ijZTFw3PXcHYotvQk7YrV9X83P6f9xvGqf6WOXfUTZoEMzdYYeSWx0a5bC3PLqFVr-88jAGSD_RzrXwWsj5CYJUG-Sg65OvHn82carQPFV8HUQJc2GLkv5uZnxMg_u6PtYAw/s512/unnamed.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjUrMZY6yGJPKDy9AedJVuSrhCqPnmT-PMDJliHdszyNnVP4AdFU4kxJ1ijZTFw3PXcHYotvQk7YrV9X83P6f9xvGqf6WOXfUTZoEMzdYYeSWx0a5bC3PLqFVr-88jAGSD_RzrXwWsj5CYJUG-Sg65OvHn82carQPFV8HUQJc2GLkv5uZnxMg_u6PtYAw/s320/unnamed.png" width="320" />
+            <a href="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png">
+                <img class="img-frame" src="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png" width="320" />
             </a>
         </div>
         <p>يعتبر <strong>ePSXe</strong> الأب الروحي لمحاكاة PS1، أطلق عام 2000 واعتمد على نظام "البلجنز" (Plugins). رغم تاريخه العريق، إلا أنه بدأ يواجه صعوبات في التوافق مع أنظمة ويندوز الحديثة.</p>
@@ -81,8 +81,8 @@ labels: ["PlayStation","PS1"]
     <section class="section-card">
         <h3 style="color: var(--xe-blue);">2. DuckStation: ثورة المحاكاة الحديثة</h3>
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmzISziCFo-Etgbo1C4tO4xRq84nU0WVecvRH0xNe9XTXozDufjANQu47zchvjt7LkJ2nE_ONe7s29e-W3cwOzweVNVWXQY3nat6wgtO3uALqz_3_rNHbVa7cyNEvx_uLHWsqtafuxrwaKqViJW__5k7IYsjb-zCmgpgFhpFe3wbFDuT7F88ubMAlSHbU/s920/38edd7d5a7535016c8f914a7a871ad0d.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmzISziCFo-Etgbo1C4tO4xRq84nU0WVecvRH0xNe9XTXozDufjANQu47zchvjt7LkJ2nE_ONe7s29e-W3cwOzweVNVWXQY3nat6wgtO3uALqz_3_rNHbVa7cyNEvx_uLHWsqtafuxrwaKqViJW__5k7IYsjb-zCmgpgFhpFe3wbFDuT7F88ubMAlSHbU/s320/38edd7d5a7535016c8f914a7a871ad0d.png" width="320" />
+            <a href="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png">
+                <img class="img-frame" src="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png" width="320" />
             </a>
         </div>
         <p>بالمقابل، يمثل <strong>DuckStation</strong> الجيل الجديد. يركز على سهولة الاستخدام، السرعة، والدقة العالية جداً، مما يجعله المحاكي رقم 1 حالياً لمعظم اللاعبين.</p>

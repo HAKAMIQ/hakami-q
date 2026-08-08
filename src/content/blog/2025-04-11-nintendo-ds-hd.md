@@ -4,7 +4,7 @@ description: '⏳ كيف تخلي ألعاب Nintendo DS تشتغل بجودة H
 pubDate: '2025-04-11T03:29:00.004+03:00'
 updatedDate: '2026-02-25T03:16:27.955+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKHjNPHnqGLjYsZLWwzW_IegRF5CLy58_R6IIwV-jtYud4xCBSsRTfSB8J2zMF7wQ9XO_nptuYN7G-Dq_Sr43QE1DJy6N5kYrIyDrXGXbN_CJIdrYT48vMuNzvmKmKhbRJj0JxEfzS9nNpuahQqkRpqs67KUEIfjUwO11ke0rnGHJFGkLx240Lp6_UPBQ/s320/4kOqAIF.jpg'
+heroImageUrl: '/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-ds-hd.html'
 labels: ["N-DS","Nintendo"]
 ---
@@ -65,8 +65,8 @@ labels: ["N-DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKHjNPHnqGLjYsZLWwzW_IegRF5CLy58_R6IIwV-jtYud4xCBSsRTfSB8J2zMF7wQ9XO_nptuYN7G-Dq_Sr43QE1DJy6N5kYrIyDrXGXbN_CJIdrYT48vMuNzvmKmKhbRJj0JxEfzS9nNpuahQqkRpqs67KUEIfjUwO11ke0rnGHJFGkLx240Lp6_UPBQ/s2048/4kOqAIF.jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKHjNPHnqGLjYsZLWwzW_IegRF5CLy58_R6IIwV-jtYud4xCBSsRTfSB8J2zMF7wQ9XO_nptuYN7G-Dq_Sr43QE1DJy6N5kYrIyDrXGXbN_CJIdrYT48vMuNzvmKmKhbRJj0JxEfzS9nNpuahQqkRpqs67KUEIfjUwO11ke0rnGHJFGkLx240Lp6_UPBQ/s320/4kOqAIF.jpg" width="320" alt="صورة توضيحية لجودة المحاكي" />
+            <a href="/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg" width="320" alt="صورة توضيحية لجودة المحاكي" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">⏳ كيف تخلي ألعاب Nintendo DS تشتغل بجودة HD</h2>

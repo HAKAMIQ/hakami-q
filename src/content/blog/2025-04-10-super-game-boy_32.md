@@ -4,7 +4,7 @@ description: '🎮 وش هو Super Game Boy؟ (تذكير سريع) هو محو�
 pubDate: '2025-04-10T23:45:00.003+03:00'
 updatedDate: '2026-02-25T04:00:35.242+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigjGTBzDAHNIqeC2sDTA86F022pVLb5Yti9Rxc7xLXLt06ZAps0R2d-364T9cFl7Q1WUZ2OmBwt_ypnvYRI9loDtCEHp0dVLIQ24ta0ARR5HQtbaTJNk4vzHZ8cJNz7wLJHhInrM0qhJFV9tWFiquWqzpNBxyY6cw6tOVI-w17db9P3uCjHDZnJIyaL8U/s320/454545.png'
+heroImageUrl: '/media/blogger/c0/c01e1f6a91eff853fae24cdf951156ef66f59e2377be8c08043ccabf3089eb2a.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/super-game-boy_32.html'
 labels: ["Nintendo","SGB"]
 ---
@@ -79,8 +79,8 @@ labels: ["Nintendo","SGB"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigjGTBzDAHNIqeC2sDTA86F022pVLb5Yti9Rxc7xLXLt06ZAps0R2d-364T9cFl7Q1WUZ2OmBwt_ypnvYRI9loDtCEHp0dVLIQ24ta0ARR5HQtbaTJNk4vzHZ8cJNz7wLJHhInrM0qhJFV9tWFiquWqzpNBxyY6cw6tOVI-w17db9P3uCjHDZnJIyaL8U/s1024/454545.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigjGTBzDAHNIqeC2sDTA86F022pVLb5Yti9Rxc7xLXLt06ZAps0R2d-364T9cFl7Q1WUZ2OmBwt_ypnvYRI9loDtCEHp0dVLIQ24ta0ARR5HQtbaTJNk4vzHZ8cJNz7wLJHhInrM0qhJFV9tWFiquWqzpNBxyY6cw6tOVI-w17db9P3uCjHDZnJIyaL8U/s320/454545.png" width="320" alt="Super Game Boy Secrets" />
+            <a href="/media/blogger/c0/c01e1f6a91eff853fae24cdf951156ef66f59e2377be8c08043ccabf3089eb2a.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/c0/c01e1f6a91eff853fae24cdf951156ef66f59e2377be8c08043ccabf3089eb2a.png" width="320" alt="Super Game Boy Secrets" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش هو Super Game Boy؟ (تذكير سريع)</h2>

@@ -4,7 +4,7 @@ description: 'إعدادات GPU هي القلب النابض لأداء الم�
 pubDate: '2025-04-14T01:12:00.005+03:00'
 updatedDate: '2026-02-25T00:13:55.717+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiMsHM8t4IcoLmScBaqMA84Pb0Hc-XcfFLKur7r4k2yjhyphenhyphenWCVRu28FTud2L589c6YYBjOULzT4nWgGZ7eVH_H5G8R5zlp_yoHZ5jJDaQ5kx3O2NSzswi5qAy2KOXV4EV7bkV-PW9uXltkzyYXM7V1lsyet_W2DGA7B3bm7YO2SwPkr4DKE62SRhLowRh4/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-gpu-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -59,8 +59,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiMsHM8t4IcoLmScBaqMA84Pb0Hc-XcfFLKur7r4k2yjhyphenhyphenWCVRu28FTud2L589c6YYBjOULzT4nWgGZ7eVH_H5G8R5zlp_yoHZ5jJDaQ5kx3O2NSzswi5qAy2KOXV4EV7bkV-PW9uXltkzyYXM7V1lsyet_W2DGA7B3bm7YO2SwPkr4DKE62SRhLowRh4/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiMsHM8t4IcoLmScBaqMA84Pb0Hc-XcfFLKur7r4k2yjhyphenhyphenWCVRu28FTud2L589c6YYBjOULzT4nWgGZ7eVH_H5G8R5zlp_yoHZ5jJDaQ5kx3O2NSzswi5qAy2KOXV4EV7bkV-PW9uXltkzyYXM7V1lsyet_W2DGA7B3bm7YO2SwPkr4DKE62SRhLowRh4/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" width="320" />
+            <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
+                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>إعدادات GPU هي القلب النابض لأداء المحاكي، حيث تحدد جودة الصورة وسلاسة الحركة. ضبط هذه الخيارات بشكل صحيح يمكن أن يحول اللعبة من تجربة بطيئة إلى تجربة سينمائية مذهلة بدقة عالية.</p>

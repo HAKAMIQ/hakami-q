@@ -4,7 +4,7 @@ description: '🎮 أفضل محاكيات SEGA Saturn (Yaba Sanshiro & Kronos) 
 pubDate: '2025-04-11T17:29:00.002+03:00'
 updatedDate: '2026-02-25T03:00:48.536+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhei4HHE9ZMB8Qh5MxSMCYvzp3Er5AOtC8c0uOaYCveYYlKcY0-BkxY42BgwkcRqmZY4S57g4DlLsCr4pRhkm3mtQA9RmOKksKjiGXEdBpqYLz91WBEUsRDzqynFL0GpWPJuJRRMSayZlA1ksZ3KX9nkRa71YrqAA5Zg9g-VrWC1YnJOkm3GYSqAqT3oxw/s320/Screenshot%202025-04-11%20173003.png'
+heroImageUrl: '/media/blogger/ce/ce5bb24cdfe2487481ba3bf02c997572ca8d5782891b1399e33f2a10474dde19.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/sega-saturn-yaba-sanshiro-kronos.html'
 labels: ["Saturn","sega"]
 ---
@@ -66,8 +66,8 @@ labels: ["Saturn","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhei4HHE9ZMB8Qh5MxSMCYvzp3Er5AOtC8c0uOaYCveYYlKcY0-BkxY42BgwkcRqmZY4S57g4DlLsCr4pRhkm3mtQA9RmOKksKjiGXEdBpqYLz91WBEUsRDzqynFL0GpWPJuJRRMSayZlA1ksZ3KX9nkRa71YrqAA5Zg9g-VrWC1YnJOkm3GYSqAqT3oxw/s1600/Screenshot%202025-04-11%20173003.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhei4HHE9ZMB8Qh5MxSMCYvzp3Er5AOtC8c0uOaYCveYYlKcY0-BkxY42BgwkcRqmZY4S57g4DlLsCr4pRhkm3mtQA9RmOKksKjiGXEdBpqYLz91WBEUsRDzqynFL0GpWPJuJRRMSayZlA1ksZ3KX9nkRa71YrqAA5Zg9g-VrWC1YnJOkm3GYSqAqT3oxw/s320/Screenshot%202025-04-11%20173003.png" width="320" />
+            <a href="/media/blogger/ce/ce5bb24cdfe2487481ba3bf02c997572ca8d5782891b1399e33f2a10474dde19.png">
+                <img class="img-frame" src="/media/blogger/ce/ce5bb24cdfe2487481ba3bf02c997572ca8d5782891b1399e33f2a10474dde19.png" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 أفضل محاكيات SEGA Saturn (Yaba Sanshiro & Kronos)</h2>

@@ -4,14 +4,14 @@ description: '🎮 ما هو محاكي RetroArch؟ يعتبر RetroArch الو�
 pubDate: '2025-04-10T22:47:00.003+03:00'
 updatedDate: '2026-02-24T03:49:48.545+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVek2OI9g5LkepcRflyVuaV0pajsscJVxuDBalHap4v_n179i7yvihj5IDa__tkqk-GmN3_xI4wwES6aVgKvUDMSoZdB60CawdPH9kgEOS5IxWLpFihTdk0bKLcA82IG6Aio4xvDu0_LsrDWkGQHb1_8k5B2mRkT2_KtEne6dCk7IdA9fwfcm0kCsUXuk/s320/sddefault.jpg'
+heroImageUrl: '/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gbc-retroarch.html'
 labels: ["GBC","Nintendo"]
 ---
 
 <div class="separator" style="clear: both; text-align: center;">
-    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVek2OI9g5LkepcRflyVuaV0pajsscJVxuDBalHap4v_n179i7yvihj5IDa__tkqk-GmN3_xI4wwES6aVgKvUDMSoZdB60CawdPH9kgEOS5IxWLpFihTdk0bKLcA82IG6Aio4xvDu0_LsrDWkGQHb1_8k5B2mRkT2_KtEne6dCk7IdA9fwfcm0kCsUXuk/s640/sddefault.jpg" style="margin-left: 1em; margin-right: 1em;">
-        <img alt="شرح تشغيل ألعاب Game Boy Color على RetroArch - مدونة حكميك" border="0" data-original-height="480" data-original-width="640" height="240" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVek2OI9g5LkepcRflyVuaV0pajsscJVxuDBalHap4v_n179i7yvihj5IDa__tkqk-GmN3_xI4wwES6aVgKvUDMSoZdB60CawdPH9kgEOS5IxWLpFihTdk0bKLcA82IG6Aio4xvDu0_LsrDWkGQHb1_8k5B2mRkT2_KtEne6dCk7IdA9fwfcm0kCsUXuk/s320/sddefault.jpg" title="دليل محاكي GBC" width="320" />
+    <a href="/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg" style="margin-left: 1em; margin-right: 1em;">
+        <img alt="شرح تشغيل ألعاب Game Boy Color على RetroArch - مدونة حكميك" border="0" data-original-height="480" data-original-width="640" height="240" src="/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg" title="دليل محاكي GBC" width="320" />
     </a>
 </div>
 

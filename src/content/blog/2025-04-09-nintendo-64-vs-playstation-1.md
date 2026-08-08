@@ -4,7 +4,7 @@ description: 'مواجهة الجيل الخامس: Nintendo 64 ضد PlayStation
 pubDate: '2025-04-09T05:09:00.001+03:00'
 updatedDate: '2026-02-24T05:22:25.269+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaLwM8y8Sd_c9vXXTR6Cc74Ois2q7rxnSpOZzCX9wOhg1O9cb28YfJwXejMBtabfp4F5kjyp-uXUrLFi6fayoNl1Oimp2k21y1RYJ1wqjDj8Ue1g1N29XRUBIDzCUwhyq-8ZYRYIyUveO5G6_5cdoYBLvOwiuAQwYVbcen-6INhfSUgpRjwyRmh-s-vUY/s320/maxresdefault.jpg'
+heroImageUrl: '/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-64-vs-playstation-1.html'
 labels: ["N64","Nintendo"]
 ---
@@ -138,8 +138,8 @@ labels: ["N64","Nintendo"]
 
     <header class="battle-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaLwM8y8Sd_c9vXXTR6Cc74Ois2q7rxnSpOZzCX9wOhg1O9cb28YfJwXejMBtabfp4F5kjyp-uXUrLFi6fayoNl1Oimp2k21y1RYJ1wqjDj8Ue1g1N29XRUBIDzCUwhyq-8ZYRYIyUveO5G6_5cdoYBLvOwiuAQwYVbcen-6INhfSUgpRjwyRmh-s-vUY/s1280/maxresdefault.jpg">
-                <img class="img-frame" alt="Nintendo 64 vs PlayStation 1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaLwM8y8Sd_c9vXXTR6Cc74Ois2q7rxnSpOZzCX9wOhg1O9cb28YfJwXejMBtabfp4F5kjyp-uXUrLFi6fayoNl1Oimp2k21y1RYJ1wqjDj8Ue1g1N29XRUBIDzCUwhyq-8ZYRYIyUveO5G6_5cdoYBLvOwiuAQwYVbcen-6INhfSUgpRjwyRmh-s-vUY/s320/maxresdefault.jpg" style="max-width: 450px;" />
+            <a href="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg">
+                <img class="img-frame" alt="Nintendo 64 vs PlayStation 1" src="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg" style="max-width: 450px;" />
             </a>
         </div>
         <h1>مواجهة الجيل الخامس: Nintendo 64 ضد PlayStation 1</h1>

@@ -4,12 +4,12 @@ description: '🤔 ليه نسوي مقارنة؟ كلنا نحب Game Boy، ب�
 pubDate: '2025-04-10T22:32:00.005+03:00'
 updatedDate: '2025-04-10T22:32:41.130+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFRH3adV6Cj0NsoYiA_qSi6EIaILaW-GO2tyViRaLTVDSVaaSBZ8dmbv2bWxrA8_d8YKpHDb4sr3nKMI4ZSnDo1yTQESqbO1s24U7BPDRyAXvU9e2xFxsJytJl-_1rfBCaCI9wZAycWLaFQ0EV_p3SHb5AjMGRdJQWppqj-5jiwiSQwRQuIoPYWuwQmx0/s320/BGB%20VS%20SameBoy%20VS%20mGBA.png'
+heroImageUrl: '/media/blogger/b5/b57087d43fac424475356d8af1f41456da0b752c562dcb03e2bba6d1d4b1ec6a.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/bgb-sameboy-mgba.html'
 labels: ["Game Boy","Nintendo"]
 ---
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFRH3adV6Cj0NsoYiA_qSi6EIaILaW-GO2tyViRaLTVDSVaaSBZ8dmbv2bWxrA8_d8YKpHDb4sr3nKMI4ZSnDo1yTQESqbO1s24U7BPDRyAXvU9e2xFxsJytJl-_1rfBCaCI9wZAycWLaFQ0EV_p3SHb5AjMGRdJQWppqj-5jiwiSQwRQuIoPYWuwQmx0/s1024/BGB%20VS%20SameBoy%20VS%20mGBA.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFRH3adV6Cj0NsoYiA_qSi6EIaILaW-GO2tyViRaLTVDSVaaSBZ8dmbv2bWxrA8_d8YKpHDb4sr3nKMI4ZSnDo1yTQESqbO1s24U7BPDRyAXvU9e2xFxsJytJl-_1rfBCaCI9wZAycWLaFQ0EV_p3SHb5AjMGRdJQWppqj-5jiwiSQwRQuIoPYWuwQmx0/s320/BGB%20VS%20SameBoy%20VS%20mGBA.png" width="320" /></a></div><br /><h2>🤔 ليه نسوي مقارنة؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/b5/b57087d43fac424475356d8af1f41456da0b752c562dcb03e2bba6d1d4b1ec6a.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/b5/b57087d43fac424475356d8af1f41456da0b752c562dcb03e2bba6d1d4b1ec6a.png" width="320" /></a></div><br /><h2>🤔 ليه نسوي مقارنة؟</h2>
 <p>كلنا نحب Game Boy، بس لما تجي تسأل: "وش أحسن محاكي؟" تلقى اللي يقول BGB، واللي يقول SameBoy، والثالث يقول mGBA لأنه فيه كل شي... الزبدة؟ أنا حكميك، وجاي أقولك الفاصل الحقيقي 💣</p>
 
 <hr />

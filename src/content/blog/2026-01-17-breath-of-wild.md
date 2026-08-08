@@ -4,7 +4,7 @@ description: 'دليل تحسين أداء Breath of the Wild (Optimizing Guide)
 pubDate: '2026-01-17T22:49:00.006+03:00'
 updatedDate: '2026-02-24T04:19:27.588+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEgiQuBWw0bKHROmV31Yuk7itjMTTOZl2tIQe-JqW2sPO4PhC8CKavtSO0xvrjdvwKkXtCpo6HAcLkxvoEkLT40O2jFebVISDlp-GbDzA-23fNAU8O5jMRwXAaFVXHZJrDx5qkNGK9hI3TwzLD0nAJd4Acq4SWJrYjZx1WxoB4Rmtj0a0dDIpStx1OnAVPQ'
+heroImageUrl: '/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/breath-of-wild.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -112,8 +112,8 @@ labels: ["Nintendo","Wii-U"]
 
     <header class="guide-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgiQuBWw0bKHROmV31Yuk7itjMTTOZl2tIQe-JqW2sPO4PhC8CKavtSO0xvrjdvwKkXtCpo6HAcLkxvoEkLT40O2jFebVISDlp-GbDzA-23fNAU8O5jMRwXAaFVXHZJrDx5qkNGK9hI3TwzLD0nAJd4Acq4SWJrYjZx1WxoB4Rmtj0a0dDIpStx1OnAVPQ">
-                <img alt="تحسين أداء Zelda BOTW على Cemu" src="https://blogger.googleusercontent.com/img/a/AVvXsEgiQuBWw0bKHROmV31Yuk7itjMTTOZl2tIQe-JqW2sPO4PhC8CKavtSO0xvrjdvwKkXtCpo6HAcLkxvoEkLT40O2jFebVISDlp-GbDzA-23fNAU8O5jMRwXAaFVXHZJrDx5qkNGK9hI3TwzLD0nAJd4Acq4SWJrYjZx1WxoB4Rmtj0a0dDIpStx1OnAVPQ" style="width:100%; max-width: 600px; border-radius: 10px;" />
+            <a href="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png">
+                <img alt="تحسين أداء Zelda BOTW على Cemu" src="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
         <h1>دليل تحسين أداء Breath of the Wild (Optimizing Guide)</h1>

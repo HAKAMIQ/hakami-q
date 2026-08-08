@@ -4,7 +4,7 @@ description: 'لا يوجد شعور أقهر من أن تنهي نصف اللع
 pubDate: '2025-04-16T17:13:00.003+03:00'
 updatedDate: '2026-02-24T06:20:21.576+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-ohjuvPClR50lmmgf0NtsJddWyoZ22r2tg4dkY36x4gLVmiEPv8d0PwNBqP7E_z2ib24GlyA66nnzWavZ_JkVWS2eKGXKQ76JWUQlZJUNsF6odxGuzF0QZcyOr1-SYpw_G8NLTyogI1vmcRp_AGTRGW9uGTgGpf4KdYO8G0Nvnbc_zMHjDYBypAx2jjc/s320/24.png'
+heroImageUrl: '/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/save-files-xenia.html'
 labels: ["Xbox360","Xbox-Original"]
 ---
@@ -101,8 +101,8 @@ labels: ["Xbox360","Xbox-Original"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-ohjuvPClR50lmmgf0NtsJddWyoZ22r2tg4dkY36x4gLVmiEPv8d0PwNBqP7E_z2ib24GlyA66nnzWavZ_JkVWS2eKGXKQ76JWUQlZJUNsF6odxGuzF0QZcyOr1-SYpw_G8NLTyogI1vmcRp_AGTRGW9uGTgGpf4KdYO8G0Nvnbc_zMHjDYBypAx2jjc/s1024/24.png">
-                <img class="img-frame" alt="Save Files Management Xenia" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-ohjuvPClR50lmmgf0NtsJddWyoZ22r2tg4dkY36x4gLVmiEPv8d0PwNBqP7E_z2ib24GlyA66nnzWavZ_JkVWS2eKGXKQ76JWUQlZJUNsF6odxGuzF0QZcyOr1-SYpw_G8NLTyogI1vmcRp_AGTRGW9uGTgGpf4KdYO8G0Nvnbc_zMHjDYBypAx2jjc/s320/24.png" style="max-width: 450px;" />
+            <a href="/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png">
+                <img class="img-frame" alt="Save Files Management Xenia" src="/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png" style="max-width: 450px;" />
             </a>
         </div>
         <p>لا يوجد شعور أقهر من أن تنهي نصف اللعبة وتضيع تخزينتك... ولكن لا تقلق، في Xenia تستطيع حفظ واسترجاع ملفات الحفظ بكل سهولة! سنشرح هنا كيف تستورد تخزينات جاهزة أو تصدّر تخزينتك الخاصة للاحتياط 🔄.</p>

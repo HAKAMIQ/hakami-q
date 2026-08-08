@@ -4,7 +4,7 @@ description: 'دليل إعداد ملف config لـ Netplay في Xenia Canary �
 pubDate: '2025-04-16T23:12:00.003+03:00'
 updatedDate: '2026-02-24T06:13:07.138+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYt7WmMBgUAPA7Mzv-Qg3h2AKQSjAHB4P_WorrUNnw4m0Fi5chUtgt-nOsCcFoHjpzugiuqk95KWDYxLUraImq_QWrSosf8LOsidC-RbVWKw0GW0a8Lw45Z5aXNMahpMo99gCMaOXXvqcUrdpyU68qFcAGaMppexEQCe1Hi4alFc6kCzE9qNwAwyK4VzM/s320/28.png'
+heroImageUrl: '/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/config-netplay-xenia-canary.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -112,8 +112,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYt7WmMBgUAPA7Mzv-Qg3h2AKQSjAHB4P_WorrUNnw4m0Fi5chUtgt-nOsCcFoHjpzugiuqk95KWDYxLUraImq_QWrSosf8LOsidC-RbVWKw0GW0a8Lw45Z5aXNMahpMo99gCMaOXXvqcUrdpyU68qFcAGaMppexEQCe1Hi4alFc6kCzE9qNwAwyK4VzM/s1024/28.png">
-                <img class="img-frame" alt="Xenia Canary Netplay Config Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYt7WmMBgUAPA7Mzv-Qg3h2AKQSjAHB4P_WorrUNnw4m0Fi5chUtgt-nOsCcFoHjpzugiuqk95KWDYxLUraImq_QWrSosf8LOsidC-RbVWKw0GW0a8Lw45Z5aXNMahpMo99gCMaOXXvqcUrdpyU68qFcAGaMppexEQCe1Hi4alFc6kCzE9qNwAwyK4VzM/s320/28.png" style="max-width: 450px;" />
+            <a href="/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png">
+                <img class="img-frame" alt="Xenia Canary Netplay Config Guide" src="/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png" style="max-width: 450px;" />
             </a>
         </div>
         <h2>دليل إعداد ملف config لـ Netplay في Xenia Canary</h2>

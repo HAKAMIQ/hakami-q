@@ -4,7 +4,7 @@ description: 'طريقة تشغيل ألعاب PS2 بصيغة ISO و BIN/CUE ع�
 pubDate: '2025-04-13T02:13:00.004+03:00'
 updatedDate: '2026-02-24T09:50:05.251+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYoQTXyp1Z7t4RY3voX3V2Zlnco_8tNss-P0TAYgHtnsK9Y0AIwtsfLTa9rXjjtGcpcbe3V5AUl7aupVIoDmRdZzUVyLkqFAFYFU74pB93MU7JRMgC76zAMMvALmjTsxnLITPyyLlIFeZjVrQe5N_b-vRSkRaxPlCxCe0IuHZMd5x3GRFXfNAkyD6TdZk/s320/maxresdefault%20(11).jpg'
+heroImageUrl: '/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ps2-iso-bincue.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -119,8 +119,8 @@ labels: ["PlayStation","PS1"]
 <div class="hakamiq-iso-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYoQTXyp1Z7t4RY3voX3V2Zlnco_8tNss-P0TAYgHtnsK9Y0AIwtsfLTa9rXjjtGcpcbe3V5AUl7aupVIoDmRdZzUVyLkqFAFYFU74pB93MU7JRMgC76zAMMvALmjTsxnLITPyyLlIFeZjVrQe5N_b-vRSkRaxPlCxCe0IuHZMd5x3GRFXfNAkyD6TdZk/s1600/maxresdefault%20(11).jpg" target="_blank">
-            <img alt="PS2 ISO and BIN/CUE Booting Guide" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYoQTXyp1Z7t4RY3voX3V2Zlnco_8tNss-P0TAYgHtnsK9Y0AIwtsfLTa9rXjjtGcpcbe3V5AUl7aupVIoDmRdZzUVyLkqFAFYFU74pB93MU7JRMgC76zAMMvALmjTsxnLITPyyLlIFeZjVrQe5N_b-vRSkRaxPlCxCe0IuHZMd5x3GRFXfNAkyD6TdZk/s320/maxresdefault%20(11).jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+        <a href="/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg" target="_blank">
+            <img alt="PS2 ISO and BIN/CUE Booting Guide" src="/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
         </a>
     </div>
 

@@ -4,7 +4,7 @@ description: '🎮 كيف تبدأ في محاكيات PlayStation؟ دليل ا
 pubDate: '2025-04-13T01:02:00.003+03:00'
 updatedDate: '2026-02-25T01:04:08.883+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdUJ2G2vlByT-9yKHVPp2_d5PcreBaob4WXoT4OBDW4tc2M4-7CdFyW3jGk3HhhxyMZKO7NIdMW4HB7LBJm14OZY2F8QhA29Bxcg6fxJ8z_WIb5OXoPM94P5qZp5YFDiU3BP4Nu7Gqdmz5JjZqOPu6AbeG4jZmAawlvFhCsIOLpifEfh4qbl4BHyqyj50/s320/hq720%20(3).jpg'
+heroImageUrl: '/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/playstation.html'
 labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
 ---
@@ -65,8 +65,8 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdUJ2G2vlByT-9yKHVPp2_d5PcreBaob4WXoT4OBDW4tc2M4-7CdFyW3jGk3HhhxyMZKO7NIdMW4HB7LBJm14OZY2F8QhA29Bxcg6fxJ8z_WIb5OXoPM94P5qZp5YFDiU3BP4Nu7Gqdmz5JjZqOPu6AbeG4jZmAawlvFhCsIOLpifEfh4qbl4BHyqyj50/s1600/hq720%20(3).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdUJ2G2vlByT-9yKHVPp2_d5PcreBaob4WXoT4OBDW4tc2M4-7CdFyW3jGk3HhhxyMZKO7NIdMW4HB7LBJm14OZY2F8QhA29Bxcg6fxJ8z_WIb5OXoPM94P5qZp5YFDiU3BP4Nu7Gqdmz5JjZqOPu6AbeG4jZmAawlvFhCsIOLpifEfh4qbl4BHyqyj50/s320/hq720%20(3).jpg" width="320" />
+            <a href="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg">
+                <img class="img-frame" src="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين الشامل</h2>

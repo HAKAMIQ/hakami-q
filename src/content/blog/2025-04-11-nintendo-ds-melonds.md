@@ -4,7 +4,7 @@ description: '🎮 شرح تشغيل ألعاب Nintendo DS باستخدام م�
 pubDate: '2025-04-11T03:14:00.004+03:00'
 updatedDate: '2026-02-25T03:18:56.546+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2-pD5FpmrZRB66QLICNkTBmob5gA6hPRF6deT3jEf0qd9UWmY9wvVC23SXwAhR59nC1XJJIKLwY8-LDrOed8bSuDTda32ZtyNtJlMi6XIu6eFFOyq7GsOaC1jA2hQdXlUp3zPFro9Qb--Jw6gVF6I_diL2HmULcwdlHY5zeqsFA0mLavFGTla1DPud4g/s320/maxresdefault.jpg'
+heroImageUrl: '/media/blogger/f6/f6b889c966c70ff2e191c512d4809afda311bf25a687e5116a060b2f3fdc1900.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-ds-melonds.html'
 labels: ["N-DS","Nintendo"]
 ---
@@ -70,8 +70,8 @@ labels: ["N-DS","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2-pD5FpmrZRB66QLICNkTBmob5gA6hPRF6deT3jEf0qd9UWmY9wvVC23SXwAhR59nC1XJJIKLwY8-LDrOed8bSuDTda32ZtyNtJlMi6XIu6eFFOyq7GsOaC1jA2hQdXlUp3zPFro9Qb--Jw6gVF6I_diL2HmULcwdlHY5zeqsFA0mLavFGTla1DPud4g/s1280/maxresdefault.jpg" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2-pD5FpmrZRB66QLICNkTBmob5gA6hPRF6deT3jEf0qd9UWmY9wvVC23SXwAhR59nC1XJJIKLwY8-LDrOed8bSuDTda32ZtyNtJlMi6XIu6eFFOyq7GsOaC1jA2hQdXlUp3zPFro9Qb--Jw6gVF6I_diL2HmULcwdlHY5zeqsFA0mLavFGTla1DPud4g/s320/maxresdefault.jpg" width="320" alt="محاكي melonDS" />
+            <a href="/media/blogger/f6/f6b889c966c70ff2e191c512d4809afda311bf25a687e5116a060b2f3fdc1900.jpg" target="_blank">
+                <img class="img-frame" src="/media/blogger/f6/f6b889c966c70ff2e191c512d4809afda311bf25a687e5116a060b2f3fdc1900.jpg" width="320" alt="محاكي melonDS" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 شرح تشغيل ألعاب Nintendo DS باستخدام محاكي melonDS</h2>

@@ -4,7 +4,7 @@ description: 'قائمة محدثة وشاملة بجميع ألعاب Xbox 360 
 pubDate: '2025-04-16T20:47:00.003+03:00'
 updatedDate: '2026-02-24T06:18:16.180+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAWSBVFIKplYM7MZtJdYBzotCEUqp6F6JjnSAeGF3zLvRNO-tM6KTkCRApdLRXuCSFGkys7VpM3jX6S4tR61omCOJmMcOOAdYNF2EHu0PM59txNH7ZqlEUIp5onyySaV1ZdaMP_jx5Yl3BzwIjvctFcEu4FFZ43-_2nlya7n_K9F2snOZQm_cP_Msz98Y/s320/hq720.jpg'
+heroImageUrl: '/media/blogger/9e/9eb0976c5cb3f07038f2f2e83206bb3329530143c36a94a05fd0cc04a6a97194.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/mousehook-xenia_16.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -101,8 +101,8 @@ labels: ["Xbox","Xbox360"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAWSBVFIKplYM7MZtJdYBzotCEUqp6F6JjnSAeGF3zLvRNO-tM6KTkCRApdLRXuCSFGkys7VpM3jX6S4tR61omCOJmMcOOAdYNF2EHu0PM59txNH7ZqlEUIp5onyySaV1ZdaMP_jx5Yl3BzwIjvctFcEu4FFZ43-_2nlya7n_K9F2snOZQm_cP_Msz98Y/s1600/hq720.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAWSBVFIKplYM7MZtJdYBzotCEUqp6F6JjnSAeGF3zLvRNO-tM6KTkCRApdLRXuCSFGkys7VpM3jX6S4tR61omCOJmMcOOAdYNF2EHu0PM59txNH7ZqlEUIp5onyySaV1ZdaMP_jx5Yl3BzwIjvctFcEu4FFZ43-_2nlya7n_K9F2snOZQm_cP_Msz98Y/s320/hq720.jpg" alt="Mousehook Games Xbox 360" />
+            <a href="/media/blogger/9e/9eb0976c5cb3f07038f2f2e83206bb3329530143c36a94a05fd0cc04a6a97194.jpg">
+                <img class="img-frame" src="/media/blogger/9e/9eb0976c5cb3f07038f2f2e83206bb3329530143c36a94a05fd0cc04a6a97194.jpg" alt="Mousehook Games Xbox 360" />
             </a>
         </div>
         <p>قائمة محدثة وشاملة بجميع ألعاب Xbox 360 اللي تشتغل مع ميزة <strong>Mousehook</strong>، وتشمل حالة الدعم والملاحظات الفنية.</p>

@@ -4,7 +4,7 @@ description: 'دليل تشغيل ألعاب GameCube على الحاسوب بم
 pubDate: '2025-04-09T05:26:00.002+03:00'
 updatedDate: '2026-02-24T23:50:27.610+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjePqom2Axqgb7H0PJGXVx3b32mH-K-FaRJGo6F3jiCS7TyAPTKxkhGJQnsApBBFmb1igKbbDL3OPCcigThRIz9cV-CANue-fv1HOtvFRCP1ve5msL_Vaq3UaP20TsaRyYUaE6LvASxT7HId2z5LNblwoJFZwzPYvFctTLcNlnOKh2_cYTx8QZKW79klGQ/s1600/images%20(4).jfif'
+heroImageUrl: '/media/blogger/ac/ac86ed9fe1f8e31c080b498723ee706c03d29a79456d3950c44595c8b8ac889d.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gamecube-dolphin.html'
 labels: ["GameCube","Nintendo"]
 ---
@@ -187,7 +187,7 @@ labels: ["GameCube","Nintendo"]
         <h1 class="hakamiq-main-title">دليل تشغيل ألعاب GameCube على الحاسوب بمحاكي Dolphin</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjePqom2Axqgb7H0PJGXVx3b32mH-K-FaRJGo6F3jiCS7TyAPTKxkhGJQnsApBBFmb1igKbbDL3OPCcigThRIz9cV-CANue-fv1HOtvFRCP1ve5msL_Vaq3UaP20TsaRyYUaE6LvASxT7HId2z5LNblwoJFZwzPYvFctTLcNlnOKh2_cYTx8QZKW79klGQ/s1600/images%20(4).jfif" alt="Dolphin Emulator GameCube" loading="lazy" decoding="async">
+            <img src="/media/blogger/ac/ac86ed9fe1f8e31c080b498723ee706c03d29a79456d3950c44595c8b8ac889d.jpg" alt="Dolphin Emulator GameCube" loading="lazy" decoding="async">
             <figcaption>استمتع بروائع الجيم كيوب بدقة عالية وثبات تام عبر أقوى محاكي في التاريخ 🐬</figcaption>
         </figure>
     </header>

@@ -4,7 +4,7 @@ description: 'وش يعني محاكي بلايستيشن؟ وهل يشتغل ع
 pubDate: '2025-04-13T01:06:00.005+03:00'
 updatedDate: '2026-02-25T00:57:49.368+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkM5D6pySl4qBFco7PrjcRLwXJ0z1meSKmMYbEo4y04GA6tqDvSAHdcdAN8zl5CzPDnjKbNenxBQqr0GLDTMBtAQeZXUynmUmeEXvNvhxjuMQJ1mOOa7WB2gD-mqArKb0DHioaqDQcDq-qgZ4LILGKngg_WtsXsiGYTIy-oV6EjzhhERlZfDF4INweyAo/s320/Bios_Logo.jpg'
+heroImageUrl: '/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/emulator-bios.html'
 labels: ["articles","PlayStation"]
 ---
@@ -64,8 +64,8 @@ labels: ["articles","PlayStation"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkM5D6pySl4qBFco7PrjcRLwXJ0z1meSKmMYbEo4y04GA6tqDvSAHdcdAN8zl5CzPDnjKbNenxBQqr0GLDTMBtAQeZXUynmUmeEXvNvhxjuMQJ1mOOa7WB2gD-mqArKb0DHioaqDQcDq-qgZ4LILGKngg_WtsXsiGYTIy-oV6EjzhhERlZfDF4INweyAo/s500/Bios_Logo.jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkM5D6pySl4qBFco7PrjcRLwXJ0z1meSKmMYbEo4y04GA6tqDvSAHdcdAN8zl5CzPDnjKbNenxBQqr0GLDTMBtAQeZXUynmUmeEXvNvhxjuMQJ1mOOa7WB2gD-mqArKb0DHioaqDQcDq-qgZ4LILGKngg_WtsXsiGYTIy-oV6EjzhhERlZfDF4INweyAo/s320/Bios_Logo.jpg" width="320" />
+            <a href="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg">
+                <img class="img-frame" src="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">وش يعني محاكي بلايستيشن؟ وهل يشتغل على أي جهاز؟</h2>

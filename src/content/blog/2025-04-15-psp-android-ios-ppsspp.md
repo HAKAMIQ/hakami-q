@@ -4,7 +4,7 @@ description: '📲 طريقة نقل ألعاب PSP إلى الجوال (Android
 pubDate: '2025-04-15T08:27:00.002+03:00'
 updatedDate: '2026-02-24T08:51:37.609+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPIgXs5wrqPJ9Pku91CZXpEz-IkkZrohCpG-m8e5Fo3qBwPjg_M_Bv4j_0ctLmTwiRC20CeWGPz8VsdRTG5yKh36mp5j9keuQwAghCAh09v8ucxHbBNKWWEbbc5iz_LGLTq69L7jpokqjaVY5dkog1czcY8wMAI-epVuKbf15UlHlYGHnh-pve5tuLxbU/s320/hq720%20(1).jpg'
+heroImageUrl: '/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/psp-android-ios-ppsspp.html'
 labels: ["PlayStation","psp"]
 ---
@@ -117,8 +117,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-sync-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPIgXs5wrqPJ9Pku91CZXpEz-IkkZrohCpG-m8e5Fo3qBwPjg_M_Bv4j_0ctLmTwiRC20CeWGPz8VsdRTG5yKh36mp5j9keuQwAghCAh09v8ucxHbBNKWWEbbc5iz_LGLTq69L7jpokqjaVY5dkog1czcY8wMAI-epVuKbf15UlHlYGHnh-pve5tuLxbU/s686/hq720%20(1).jpg">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPIgXs5wrqPJ9Pku91CZXpEz-IkkZrohCpG-m8e5Fo3qBwPjg_M_Bv4j_0ctLmTwiRC20CeWGPz8VsdRTG5yKh36mp5j9keuQwAghCAh09v8ucxHbBNKWWEbbc5iz_LGLTq69L7jpokqjaVY5dkog1czcY8wMAI-epVuKbf15UlHlYGHnh-pve5tuLxbU/s320/hq720%20(1).jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg">
+            <img src="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

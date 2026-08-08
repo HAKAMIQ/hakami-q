@@ -4,7 +4,7 @@ description: 'دليل احتراف محاكاة Game Boy بدقة 2026 تشغي
 pubDate: '2026-01-19T06:29:00.004+03:00'
 updatedDate: '2026-02-24T04:42:07.832+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEj0xY7QivVrWmHcj0AwlcfEx1_KK-m1q8OsudHKnqjXQEbVZO8RmT6s2TXm68Kug26L-I6x9h4L88PO0ACtngY4rQuGkQICEu1CDZcF8YpmBDxSOYmVyK47oW0hAMQ1CJ-p5M1Q6p9SY2PFVJRxtO0LwLCv8JqM3AHBl6MlUGViHSy6eUF417PpKYTmeTg'
+heroImageUrl: '/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/gambatte-game-boy-classic-color.html'
 labels: ["GBC","Nintendo"]
 ---
@@ -122,8 +122,8 @@ labels: ["GBC","Nintendo"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEj0xY7QivVrWmHcj0AwlcfEx1_KK-m1q8OsudHKnqjXQEbVZO8RmT6s2TXm68Kug26L-I6x9h4L88PO0ACtngY4rQuGkQICEu1CDZcF8YpmBDxSOYmVyK47oW0hAMQ1CJ-p5M1Q6p9SY2PFVJRxtO0LwLCv8JqM3AHBl6MlUGViHSy6eUF417PpKYTmeTg">
-                <img alt="محاكي Gambatte - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEj0xY7QivVrWmHcj0AwlcfEx1_KK-m1q8OsudHKnqjXQEbVZO8RmT6s2TXm68Kug26L-I6x9h4L88PO0ACtngY4rQuGkQICEu1CDZcF8YpmBDxSOYmVyK47oW0hAMQ1CJ-p5M1Q6p9SY2PFVJRxtO0LwLCv8JqM3AHBl6MlUGViHSy6eUF417PpKYTmeTg" style="width:100%; max-width: 600px; border-radius: 15px;" />
+            <a href="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png">
+                <img alt="محاكي Gambatte - حكميك" src="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
             </a>
         </div>
         <h1>دليل احتراف محاكاة Game Boy بدقة 2026</h1>
@@ -142,8 +142,8 @@ labels: ["GBC","Nintendo"]
         <h3>📥 دليل التثبيت (Installation)</h3>
         <p>البرنامج مستقل (Standalone)؛ لا يحتاج لعملية تثبيت. فقط قم بفك الضغط عن ملف ZIP وضعه في مجلد <b>Documents</b> لضمان صلاحيات الكتابة الكاملة.</p>
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgmVLfM7mvxIXEy89j6HVv5q2EDHYBKRU6l13p1DHNBdtnuTHQnSjk7ICPkqkvrljP_j0nbdRtVx-Z6hpvbCsVWzLj2Nu5H_P2aRL6r-qC3T4hlQZ0nxoU5m3vMYj8aw6824GymIMVzaVZfp2w_in9o4AUMUIpa8_J1Iq6qYA13gZOckd1uout3Sk0-2Ns">
-                <img alt="تشغيل محاكي Gambatte" src="https://blogger.googleusercontent.com/img/a/AVvXsEgmVLfM7mvxIXEy89j6HVv5q2EDHYBKRU6l13p1DHNBdtnuTHQnSjk7ICPkqkvrljP_j0nbdRtVx-Z6hpvbCsVWzLj2Nu5H_P2aRL6r-qC3T4hlQZ0nxoU5m3vMYj8aw6824GymIMVzaVZfp2w_in9o4AUMUIpa8_J1Iq6qYA13gZOckd1uout3Sk0-2Ns" width="200" />
+            <a href="/media/blogger/d2/d2689b2248f42b477a1012e2443bce69e7ecee423128f9feba5b42de3dfdd3b0.png">
+                <img alt="تشغيل محاكي Gambatte" src="/media/blogger/d2/d2689b2248f42b477a1012e2443bce69e7ecee423128f9feba5b42de3dfdd3b0.png" width="200" />
             </a>
         </div>
     </section>
@@ -151,7 +151,7 @@ labels: ["GBC","Nintendo"]
     <section class="tech-card">
         <h3>🎮 ضبط أجهزة التحكم</h3>
         <p>اذهب إلى <code>Settings -> Input</code>. ستظهر لك نافذة التعيين:</p>
-        <img class="img-frame" alt="إعدادات التحكم في Gambatte" src="https://blogger.googleusercontent.com/img/a/AVvXsEhLt735TexaLxnVf6ljpFrMoVO30o37aIO3aIOLM8Y-tlDQCJRZUWbJ9D1oKOecrFBylJ0ydyYFHN7WicfZnKRTeUIuKp8oD0Sf63YqGH0kIQ3QWP-ZpMnnFp_6pduNxZ8HvRDVcjbuBjoNZfXICacFnxBL_9yX51FI9pEU043kUZjnUJUgpr094_00bxk" width="400" />
+        <img class="img-frame" alt="إعدادات التحكم في Gambatte" src="/media/blogger/bf/bf204035645b5b5fdd65e6d32cf6642df75387c761928c15bce1e341a7ead7fe.png" width="400" />
         <div class="h-tip">
             💡 <strong>طريقة ذكية:</strong> اضغط على حقل <b>Up</b> ثم اضغط الزر المطلوب في يد التحكم؛ سيقوم المحاكي تلقائياً بالانتقال للزر التالي (Down, Left...) لتسريع العملية.
         </div>
@@ -160,7 +160,7 @@ labels: ["GBC","Nintendo"]
     <section class="tech-card" style="border-right-color: var(--g-emerald);">
         <h3>📂 تحميل وتشغيل الألعاب</h3>
         <p>استخدم الاختصار <code>Ctrl + O</code> لاختيار ملف اللعبة. بمجرد الاختيار، ستبدأ المغامرة فوراً بدقة كاملة.</p>
-        <img class="img-frame" alt="قائمة فتح الألعاب" src="https://blogger.googleusercontent.com/img/a/AVvXsEhy7YhRhsQgKPDOUmsRmqi9Qnn_QPszCV8t-XwmDPYf2ijSBdjh67nIIUi8sdv7HTs7RXHMX1kRgagx6SMKx_SeIriyxHaCt9e0DpppmrwGWDWkf3I8PDsqu7xlSwLmy4aNOf5IHEDi7pavsN3hAOGA8MoWHYim4AZRVaCS9cB7KGmE06bxoKT02TyBP3U" width="320" />
+        <img class="img-frame" alt="قائمة فتح الألعاب" src="/media/blogger/18/18f6caca520cad108c7c6c995cb45de2b7748ca40ff8e24ffb8d23b5e3a804d8.png" width="320" />
     </section>
 
     <section class="tech-card" style="border-right-color: var(--g-blue);">
@@ -203,7 +203,7 @@ labels: ["GBC","Nintendo"]
         <div class="h-alert" style="background: #fdf2f2; border-color: var(--g-rose);">
             ⚠️ <strong>ملاحظة:</strong> إذا كان كود Game Shark مكوناً من 6 أرقام فقط، أضف <b>"01"</b> في بدايته ليقبله البرنامج.
         </div>
-        <img class="img-frame" alt="إضافة الأكواد في Gambatte" src="https://blogger.googleusercontent.com/img/a/AVvXsEgK6QwBJl6FJ9VOrethsQf2KUqLtA6753m3CFxhxwesldNez7YSuXn1QCpsYEz8XH4gp8PoZRDgBAfLxd6vEBx36TLtz1oCzXngbqhqhghHh92EEX_OUErvRqbq7UYBHbyfM4q2knWWQEn8yVL5HHVHecQwxwNRBbevMyzuOAhsFGfsB2dASG16LTSEPFk" width="300" />
+        <img class="img-frame" alt="إضافة الأكواد في Gambatte" src="/media/blogger/0f/0f357d88870731dad570f08a64f744799707477524b6f58c2beb306fc6e5b8ad.png" width="300" />
     </section>
 
     <footer style="background: var(--h-bg); color: white; padding: 30px; border-radius: 20px; text-align: center;">

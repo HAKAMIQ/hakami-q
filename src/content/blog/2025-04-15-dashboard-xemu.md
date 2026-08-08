@@ -4,7 +4,7 @@ description: '🧩 إعداد واجهة Dashboard الرسمية والبديل
 pubDate: '2025-04-15T11:47:00.003+03:00'
 updatedDate: '2026-02-24T06:39:47.689+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8mt_9YLKYOkadaT4elIKo8RXbsYXFGckSeMvRzxVdhslcUNhRrlhwj00JkBjNTipFQuZI31k1JZvDszg96xzCw0-DkbOAJUJRq3UVCN6_O1BBtc0G-2QfqqeqLmJWmdfmj42QzC0uoB_JucCQAiMn_vsgpJZZ_akd4z7xJjsqDn1nu9tIlyxZtI99b0s/s320/01.png'
+heroImageUrl: '/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/dashboard-xemu.html'
 labels: ["Xbox","Xbox-Original"]
 ---
@@ -82,8 +82,8 @@ labels: ["Xbox","Xbox-Original"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8mt_9YLKYOkadaT4elIKo8RXbsYXFGckSeMvRzxVdhslcUNhRrlhwj00JkBjNTipFQuZI31k1JZvDszg96xzCw0-DkbOAJUJRq3UVCN6_O1BBtc0G-2QfqqeqLmJWmdfmj42QzC0uoB_JucCQAiMn_vsgpJZZ_akd4z7xJjsqDn1nu9tIlyxZtI99b0s/s1024/01.png">
-                <img class="img-frame" alt="Xbox Dashboard in xemu" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8mt_9YLKYOkadaT4elIKo8RXbsYXFGckSeMvRzxVdhslcUNhRrlhwj00JkBjNTipFQuZI31k1JZvDszg96xzCw0-DkbOAJUJRq3UVCN6_O1BBtc0G-2QfqqeqLmJWmdfmj42QzC0uoB_JucCQAiMn_vsgpJZZ_akd4z7xJjsqDn1nu9tIlyxZtI99b0s/s320/01.png" style="max-width: 500px; margin: 0 auto;" />
+            <a href="/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png">
+                <img class="img-frame" alt="Xbox Dashboard in xemu" src="/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png" style="max-width: 500px; margin: 0 auto;" />
             </a>
         </div>
         <h2>🧩 إعداد واجهة Dashboard الرسمية والبديلة في محاكي xemu</h2>

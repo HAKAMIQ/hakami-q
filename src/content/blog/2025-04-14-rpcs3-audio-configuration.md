@@ -4,7 +4,7 @@ description: 'إعدادات الصوت في RPCS3 مسؤولة عن جودة و
 pubDate: '2025-04-14T01:15:00.005+03:00'
 updatedDate: '2026-02-25T00:13:11.986+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicByva2-OOSAn_bnkjQ5fP-hLxfWxxXMCL3JQ052o63Jv_uExP7pZXbbREFkhmvAamn3VXAt7XQ2MOO55gymbRF9rdC5eNqBJ-tScRufyW8Vwg6ZRqMv_wr42kyBlkV69tXQRR6PxqdZeSGmaC_veN-_aZIaSeGZLTeZWtbeOpkl7ClSQMNTRAgUYFcTo/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png'
+heroImageUrl: '/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/rpcs3-audio-configuration.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -60,8 +60,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicByva2-OOSAn_bnkjQ5fP-hLxfWxxXMCL3JQ052o63Jv_uExP7pZXbbREFkhmvAamn3VXAt7XQ2MOO55gymbRF9rdC5eNqBJ-tScRufyW8Vwg6ZRqMv_wr42kyBlkV69tXQRR6PxqdZeSGmaC_veN-_aZIaSeGZLTeZWtbeOpkl7ClSQMNTRAgUYFcTo/s400/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicByva2-OOSAn_bnkjQ5fP-hLxfWxxXMCL3JQ052o63Jv_uExP7pZXbbREFkhmvAamn3VXAt7XQ2MOO55gymbRF9rdC5eNqBJ-tScRufyW8Vwg6ZRqMv_wr42kyBlkV69tXQRR6PxqdZeSGmaC_veN-_aZIaSeGZLTeZWtbeOpkl7ClSQMNTRAgUYFcTo/s320/rpcs3___icon_by_blagoicons_ddg7o8z-400t.png" width="320" />
+            <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
+                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>إعدادات الصوت في RPCS3 مسؤولة عن جودة ونقاء المخرجات الصوتية للألعاب. ضبط هذه الخيارات يضمن تجربة خالية من التقطيع (Audio Crackling) وتوافقية تامة مع مختلف أنظمة الصوت الخارجية والمايكروفونات.</p>

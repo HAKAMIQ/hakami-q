@@ -4,7 +4,7 @@ description: '💾 حفظ البيانات والتخزين في PPSSPP على A
 pubDate: '2025-04-15T08:30:00.002+03:00'
 updatedDate: '2026-02-24T08:46:22.557+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPu8yhHjn-TB7CnvgSPNjtqUPFZmihBF9d4TEDCSFk5OcMJ46u9-QdQzrEBuJ3vH66KFwc3bFUsXVpzF6QOAize1bOcB6agP6Bz8dONCwBQqfGFeaxavM2Y3OgXMt_R29Izt6bkxXgv8zFbTCQ23pv2kNhfLzsGAtaCKVyNJyosiQIIi-_kVJYT9HCPsA/s320/sddefault.jpg'
+heroImageUrl: '/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/ppsspp-android.html'
 labels: ["PlayStation","psp"]
 ---
@@ -119,8 +119,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-storage-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPu8yhHjn-TB7CnvgSPNjtqUPFZmihBF9d4TEDCSFk5OcMJ46u9-QdQzrEBuJ3vH66KFwc3bFUsXVpzF6QOAize1bOcB6agP6Bz8dONCwBQqfGFeaxavM2Y3OgXMt_R29Izt6bkxXgv8zFbTCQ23pv2kNhfLzsGAtaCKVyNJyosiQIIi-_kVJYT9HCPsA/s1600/sddefault.jpg">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPu8yhHjn-TB7CnvgSPNjtqUPFZmihBF9d4TEDCSFk5OcMJ46u9-QdQzrEBuJ3vH66KFwc3bFUsXVpzF6QOAize1bOcB6agP6Bz8dONCwBQqfGFeaxavM2Y3OgXMt_R29Izt6bkxXgv8zFbTCQ23pv2kNhfLzsGAtaCKVyNJyosiQIIi-_kVJYT9HCPsA/s320/sddefault.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg">
+            <img src="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

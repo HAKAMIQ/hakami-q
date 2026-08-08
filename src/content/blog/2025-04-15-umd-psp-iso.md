@@ -4,7 +4,7 @@ description: '📤 كيف تسحب ألعاب PSP من قرص UMD وتحولها
 pubDate: '2025-04-15T08:22:00.001+03:00'
 updatedDate: '2026-02-24T08:54:28.400+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUTbnbQouhDx984HV39xDv4Y5b7cnYZaIW-McTF0W57PN4FQhUDXNIDb6G2MDu3y3CPT9j-3f7-RdApYuyrH-VAIrxdtvwuUN5u6lI8cUSN02yxfbHDngU7PK_97mtX3bv6Fq6sp2ATXkGweHzcUNd9PsnxNeQiXk7sYGn3UTKA5wY9opYFJlHc_fSJO8/s320/hq720.jpg'
+heroImageUrl: '/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/umd-psp-iso.html'
 labels: ["PlayStation","psp"]
 ---
@@ -135,8 +135,8 @@ labels: ["PlayStation","psp"]
 <div class="hakamiq-umd-wrapper">
 
     <div style="text-align: center; margin-bottom: 30px;">
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUTbnbQouhDx984HV39xDv4Y5b7cnYZaIW-McTF0W57PN4FQhUDXNIDb6G2MDu3y3CPT9j-3f7-RdApYuyrH-VAIrxdtvwuUN5u6lI8cUSN02yxfbHDngU7PK_97mtX3bv6Fq6sp2ATXkGweHzcUNd9PsnxNeQiXk7sYGn3UTKA5wY9opYFJlHc_fSJO8/s1600/hq720.jpg">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUTbnbQouhDx984HV39xDv4Y5b7cnYZaIW-McTF0W57PN4FQhUDXNIDb6G2MDu3y3CPT9j-3f7-RdApYuyrH-VAIrxdtvwuUN5u6lI8cUSN02yxfbHDngU7PK_97mtX3bv6Fq6sp2ATXkGweHzcUNd9PsnxNeQiXk7sYGn3UTKA5wY9opYFJlHc_fSJO8/s320/hq720.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+        <a href="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg">
+            <img src="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

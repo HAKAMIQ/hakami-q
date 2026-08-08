@@ -4,7 +4,7 @@ description: 'تشمل هذه الصفحة الألعاب المصنفة رسم�
 pubDate: '2026-07-21T21:29:32.173+03:00'
 updatedDate: '2026-07-21T21:29:32.174+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEhypnnZv_BISj-qYtZjSn_AQTJ3RvmJvN1_j5VxATjQFy_Qkzv7Je-lJ-BWJLqAwtQEC9CIa8-svqwn9i0AtgSGRVLQ0LtO6JoQawgsSGJh_TQbI09nNvXLFJgt9lNlLaaoKMiZsHrMHOWL_Wse4FQVDLgf3Os0bPiMU1mi0tAMpToGHExFkN3yrdocMdA'
+heroImageUrl: '/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/07/shadps4-windows-ingame.html'
 labels: ["articles","PlayStation","PS4"]
 ---
@@ -238,7 +238,7 @@ labels: ["articles","PlayStation","PS4"]
 </style>
 <div class="shad-table-wrapper">
 <header class="shad-header">
-    <h2><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhypnnZv_BISj-qYtZjSn_AQTJ3RvmJvN1_j5VxATjQFy_Qkzv7Je-lJ-BWJLqAwtQEC9CIa8-svqwn9i0AtgSGRVLQ0LtO6JoQawgsSGJh_TQbI09nNvXLFJgt9lNlLaaoKMiZsHrMHOWL_Wse4FQVDLgf3Os0bPiMU1mi0tAMpToGHExFkN3yrdocMdA" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="71" data-original-width="233" height="98" src="https://blogger.googleusercontent.com/img/a/AVvXsEhypnnZv_BISj-qYtZjSn_AQTJ3RvmJvN1_j5VxATjQFy_Qkzv7Je-lJ-BWJLqAwtQEC9CIa8-svqwn9i0AtgSGRVLQ0LtO6JoQawgsSGJh_TQbI09nNvXLFJgt9lNlLaaoKMiZsHrMHOWL_Wse4FQVDLgf3Os0bPiMU1mi0tAMpToGHExFkN3yrdocMdA" width="320" /></a></div></h2>
+    <h2><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="71" data-original-width="233" height="98" src="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" width="320" /></a></div></h2>
     <p>
         تشمل هذه الصفحة الألعاب المصنفة رسميًا ضمن <b>status-ingame</b>
         على نظام Windows، ومقسمة حسب إصدار shadPS4 المستخدم في التقرير.

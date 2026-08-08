@@ -4,7 +4,7 @@ description: 'دليل تشغيل Systemlink في محاكي Xenia ميزة Syst
 pubDate: '2025-04-16T23:27:00.009+03:00'
 updatedDate: '2026-02-24T06:10:54.285+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6JVlpUQ8OYwFzCl3yQ4J-GKB0tAKOWmbVR6eHz5OD-_WY8NMt7B6bJFG7mC-JtULaBG6DaMIn_4ut2jCvmlXh9dsT8i0KNu1Vag1hWW9DRu1gEiV9QNw_vx7o1N9K_DqkdPlnvE1reHU0JA8F5m5PLVyvLdpOWh95IkIAtJ8k9pBxk4d6ldmA1y7Gue4/s320/Screenshot%202025-04-16%20232746.png'
+heroImageUrl: '/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/systemlink-xenia.html'
 labels: []
 ---
@@ -86,8 +86,8 @@ labels: []
 
     <header style="text-align: center;">
         <div class="img-container">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6JVlpUQ8OYwFzCl3yQ4J-GKB0tAKOWmbVR6eHz5OD-_WY8NMt7B6bJFG7mC-JtULaBG6DaMIn_4ut2jCvmlXh9dsT8i0KNu1Vag1hWW9DRu1gEiV9QNw_vx7o1N9K_DqkdPlnvE1reHU0JA8F5m5PLVyvLdpOWh95IkIAtJ8k9pBxk4d6ldmA1y7Gue4/s613/Screenshot%202025-04-16%20232746.png">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6JVlpUQ8OYwFzCl3yQ4J-GKB0tAKOWmbVR6eHz5OD-_WY8NMt7B6bJFG7mC-JtULaBG6DaMIn_4ut2jCvmlXh9dsT8i0KNu1Vag1hWW9DRu1gEiV9QNw_vx7o1N9K_DqkdPlnvE1reHU0JA8F5m5PLVyvLdpOWh95IkIAtJ8k9pBxk4d6ldmA1y7Gue4/s320/Screenshot%202025-04-16%20232746.png" alt="شرح تشغيل Systemlink في محاكي Xenia" loading="lazy">
+            <a href="/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png">
+                <img src="/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png" alt="شرح تشغيل Systemlink في محاكي Xenia" loading="lazy">
             </a>
         </div>
         <h2 style="color: var(--xenia-cyan);">دليل تشغيل Systemlink في محاكي Xenia</h2>
@@ -113,17 +113,17 @@ labels: []
             <li>حمّل برنامج <strong style="color: var(--xenia-gold);">Radmin VPN</strong> وثبّته، ثم ادخل على نفس الشبكة مع صديقك (Join Network).</li>
             <li>افتح Xenia واذهب إلى <code>Netplay → Network Mode → LAN/Systemlink</code>.
                 <div class="img-container">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRHSR4R58xizd26NyfELa3t8UmK7WT7RwEC-sGIqVHqNLgseK40ztE_GdHXnUYpJEw-a1DqxV_-oyEZdTGdCzqpg1N3GK4S4suqVncpCxAXKVdNL9In-YCaBMkxwmU_7sB7glv_sQRXJmppGE79u01kKRHyxJv29XzLqf_uaKg1duSs758Esp-rP_jxSE/s320/Screenshot%202025-04-16%20231821.png" alt="إعدادات الشبكة في Xenia" loading="lazy">
+                    <img src="/media/blogger/f1/f1463cd5ba072fc21cfbb79d1c5196dca818e6787219c539586e2fe94b3ba5a5.png" alt="إعدادات الشبكة في Xenia" loading="lazy">
                 </div>
             </li>
             <li>من <code>Network Interfaces</code> اختر <strong>Radmin VPN</strong>.
                 <div class="img-container">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqEd-VgTzRzB9rsPhGDhSCr9VcaRZIKqil5HHKYWCtDb2NeKf00Thc_20xEUAg9gLew43x4cCU20oL-rHLpo1ZEvxwVtMVDbmoPAHUDqSEbrqysq5A5RBsWD20PnxcF1FKyEdThZvvCHtGmUuPhdSX5Nu23NEMb9Z1_RCkpr1o6mYwVnxwUK2kdroSJvM/s320/Screenshot%202025-04-16%20231933.png" alt="اختيار واجهة الشبكة" loading="lazy">
+                    <img src="/media/blogger/d2/d279f4eea554dd06fb6c2b381a78d2356c13156ae24b2d00d5128e4312c7de7f.png" alt="اختيار واجهة الشبكة" loading="lazy">
                 </div>
             </li>
             <li>تأكد من الحالة من خلال <code>Netplay → Status</code> للتأكد أن كل شيء يعمل.
                 <div class="img-container">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIwNhyphenhyphen4-FWqIOrd1dsXQywJygqZyf2ITiv1AB7J-tNW94EPLuO45n82ScJ8WPPimzNP9aaY-rTUVpNcVB8cbiZ2QNFlGe85Xh6LgI1XggM4PDEAtsBlDAHqVG7RIdrHeCw-ojtq6cqdqqXRW3DJnPKBijSjxQsx6T84jhHTaliLmX0ihT3REMKOe-EmTs/s320/Screenshot%202025-04-16%20231905.png" alt="فحص حالة الاتصال" loading="lazy">
+                    <img src="/media/blogger/26/263a126e766b52604381d1018b8197f5b0b28f6b151a07ab5948c0b9bee15c17.png" alt="فحص حالة الاتصال" loading="lazy">
                 </div>
             </li>
         </ol>

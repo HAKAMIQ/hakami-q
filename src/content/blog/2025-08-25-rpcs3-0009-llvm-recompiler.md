@@ -4,7 +4,7 @@ description: '🕹️ RPCS3 0.0.0.9: التحديث التاريخي (إعادة
 pubDate: '2025-08-25T09:25:00.002+03:00'
 updatedDate: '2026-02-24T05:02:18.381+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWtlkAppPQBKOuXSmlxU9RFgHX6fLlhtrqsSJ3BPEop_RVmHLFE4oPgDLn64-r5tahlVypie7FIwzi5FcaLx3zK_QvaePZGL58ALiRbhlCdnTD3B6kfIfAvokYxY3r4hTWyw7twJ5oJtKxLCQYxiHzO7QlnX_tvd1vrYsDBtL6TjCjMjWm52HjWF_8h9g/w400-h70/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202025-08-25%20092423.png'
+heroImageUrl: '/media/blogger/69/69887352e74403c0cb7304ed51dbbaebd8eff91ffac596076470a6c01595b209.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/08/rpcs3-0009-llvm-recompiler.html'
 labels: ["PlayStation","PS3"]
 ---
@@ -98,8 +98,8 @@ labels: ["PlayStation","PS3"]
 
     <header class="hero-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWtlkAppPQBKOuXSmlxU9RFgHX6fLlhtrqsSJ3BPEop_RVmHLFE4oPgDLn64-r5tahlVypie7FIwzi5FcaLx3zK_QvaePZGL58ALiRbhlCdnTD3B6kfIfAvokYxY3r4hTWyw7twJ5oJtKxLCQYxiHzO7QlnX_tvd1vrYsDBtL6TjCjMjWm52HjWF_8h9g/s332/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202025-08-25%20092423.png">
-                <img alt="شعار RPCS3 التاريخي" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWtlkAppPQBKOuXSmlxU9RFgHX6fLlhtrqsSJ3BPEop_RVmHLFE4oPgDLn64-r5tahlVypie7FIwzi5FcaLx3zK_QvaePZGL58ALiRbhlCdnTD3B6kfIfAvokYxY3r4hTWyw7twJ5oJtKxLCQYxiHzO7QlnX_tvd1vrYsDBtL6TjCjMjWm52HjWF_8h9g/w400-h70/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202025-08-25%20092423.png" style="max-width: 400px;" />
+            <a href="/media/blogger/69/69887352e74403c0cb7304ed51dbbaebd8eff91ffac596076470a6c01595b209.png">
+                <img alt="شعار RPCS3 التاريخي" src="/media/blogger/69/69887352e74403c0cb7304ed51dbbaebd8eff91ffac596076470a6c01595b209.png" style="max-width: 400px;" />
             </a>
         </div>
         <h2>🕹️ RPCS3 0.0.0.9: التحديث التاريخي (إعادة الولادة)</h2>

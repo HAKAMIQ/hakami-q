@@ -4,7 +4,7 @@ description: '📘 المقدمة هذا الدليل التعليمي موجّ�
 pubDate: '2025-12-13T03:02:00.005+03:00'
 updatedDate: '2026-02-24T04:03:27.510+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEi5EMPAXvIhPJgre3Scs2BRXITGze8a7wLXdvgecOVEOXPjOMeUrtzTJRBLvCXpvva1muzm6sFzfU3i4CNeplYMA-Ii58cSKgwW80L2rS238LLiukT7Ba8GV5rnwa4dxfx4c1Xp-EK4SEuFUR5fw7dnTkKW-qOPFg9txjs-qmruMSyPGQjhW3U8cFU3aAw'
+heroImageUrl: '/media/blogger/6e/6eab2b65bbea02e9f11c853b85cd84d9c088a8eeeacd3fe608fd2890c2448d92.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/12/shad-ps4-qt-launcher.html'
 labels: ["PlayStation","PS4"]
 ---
@@ -141,7 +141,7 @@ labels: ["PlayStation","PS4"]
 
     <header class="chapter-header">📘 المقدمة</header>
     <section class="chapter-card">
-        <img class="guide-img" alt="شرح محاكي shadPS4 Qt Launcher - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEi5EMPAXvIhPJgre3Scs2BRXITGze8a7wLXdvgecOVEOXPjOMeUrtzTJRBLvCXpvva1muzm6sFzfU3i4CNeplYMA-Ii58cSKgwW80L2rS238LLiukT7Ba8GV5rnwa4dxfx4c1Xp-EK4SEuFUR5fw7dnTkKW-qOPFg9txjs-qmruMSyPGQjhW3U8cFU3aAw" />
+        <img class="guide-img" alt="شرح محاكي shadPS4 Qt Launcher - حكميك" src="/media/blogger/6e/6eab2b65bbea02e9f11c853b85cd84d9c088a8eeeacd3fe608fd2890c2448d92.png" />
         <p>هذا الدليل التعليمي موجّه لكل من يرغب في تجربة محاكي <strong>shadPS4</strong> وتشغيل ألعاب <strong>PlayStation 4</strong> على الحاسوب بأسلوب منظم وواضح. نعتمد هنا على الواجهة الرسمية <strong>shadps4-qtlauncher</strong> لأنها الأكثر استقراراً وتطوراً حالياً.</p>
         
         <div class="h-alert">
@@ -184,7 +184,7 @@ labels: ["PlayStation","PS4"]
             <li>ثبت مكتبة <strong>Visual C++ 2022</strong> (ضروري جداً لعمل المحاكي على ويندوز).</li>
             <li>استخدم تبويب <strong>Version Manager</strong> داخل اللانشر لجلب آخر التحديثات تلقائياً.</li>
         </ul>
-        <img class="guide-img" alt="واجهة Version Manager في shadPS4" src="https://blogger.googleusercontent.com/img/a/AVvXsEjwU8AcPXjT2ngXCGhZAViABrV7Dx1VcaC6tyfdzn9oylWxW-TS0DA5s6WBYfNJ3Z7bJtPlzmyyxTLGLiICpLeSQdSW9wv5L40pV10bIst2ruAhtsybrf8D5RaXSUv4G-Ieqq8VvkZsYKgR8PYJoWLvsHd-gWlrL_rn3flgfoyCJXr0XMHmFWyaRPmW92A" />
+        <img class="guide-img" alt="واجهة Version Manager في shadPS4" src="/media/blogger/35/3527592f33d09a81c8662dadb407cd10768d1c627a486bef6531becc20cc2b34.png" />
     </section>
 
     <header class="chapter-header">⚙️ الفصل الثالث – إعدادات المحاكي</header>
@@ -197,7 +197,7 @@ labels: ["PlayStation","PS4"]
                 <li><strong>FSR:</strong> فعله لتحسين الأداء ورفع "انتر ريزلوشن" الصورة.</li>
             </ul>
         </div>
-        <img class="guide-img" alt="إعدادات الجرافيك في Qt Launcher" src="https://blogger.googleusercontent.com/img/a/AVvXsEggsjrJJgZyYxOd--vLzvDzTrWilotHi2lii5pZ39UBV3zIPBs2_Sr37rjZrtjDo_6qbqne5E4tFOsy0zTDlnGTnKyZntKdz3yt7XWk6bf894hPLP5v1Dit2eLRAtbjYeL4YruWtpjgXdB_FfSBuOlQSGNrSTiERsjk61ijWXQMt1Mnh4IuA4Yjq-4r3vQ" />
+        <img class="guide-img" alt="إعدادات الجرافيك في Qt Launcher" src="/media/blogger/e3/e39c984a9fdb2cfa948529c89fd10524eceb6c1e0cef1da09fa4bf9b4fda7a13.png" />
     </section>
 
     <header class="chapter-header">🧰 الفصل الرابع – الاختصارات والأدوات</header>

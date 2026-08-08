@@ -4,7 +4,7 @@ description: 'أفضل محاكي لتشغيل ألعاب Beena على الكم�
 pubDate: '2025-04-11T19:28:00.006+03:00'
 updatedDate: '2026-02-25T01:17:49.613+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_RNZClKf8LeCXRXFXtgQiQLIRyFLss4NtDENYMiAr33Je82v7j9yQM4E5AJPV-tn3Xk9OTCFODA-AkekrDT1OhmUuANtmiXw8MflC2WGQPJtilhqKGIeZFhqy0LlmQ7tI4k0hpPk2A06nAWKjZeJEqu3Yr92wnR7u38OTaNvaX_y0O6Pq8dJJd9HbQI8/s320/Untitled1.png.8426ad17f377f748ff38d90dbf4833ca.png'
+heroImageUrl: '/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/beena-openemu-forks.html'
 labels: ["sega","Sega-AdvancedPicoBeena"]
 ---
@@ -64,8 +64,8 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_RNZClKf8LeCXRXFXtgQiQLIRyFLss4NtDENYMiAr33Je82v7j9yQM4E5AJPV-tn3Xk9OTCFODA-AkekrDT1OhmUuANtmiXw8MflC2WGQPJtilhqKGIeZFhqy0LlmQ7tI4k0hpPk2A06nAWKjZeJEqu3Yr92wnR7u38OTaNvaX_y0O6Pq8dJJd9HbQI8/s1600/Untitled1.png.8426ad17f377f748ff38d90dbf4833ca.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_RNZClKf8LeCXRXFXtgQiQLIRyFLss4NtDENYMiAr33Je82v7j9yQM4E5AJPV-tn3Xk9OTCFODA-AkekrDT1OhmUuANtmiXw8MflC2WGQPJtilhqKGIeZFhqy0LlmQ7tI4k0hpPk2A06nAWKjZeJEqu3Yr92wnR7u38OTaNvaX_y0O6Pq8dJJd9HbQI8/s320/Untitled1.png.8426ad17f377f748ff38d90dbf4833ca.png" width="320" />
+            <a href="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png">
+                <img class="img-frame" src="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكي لتشغيل ألعاب Beena على الكمبيوتر (OpenEmu + forks)</h2>

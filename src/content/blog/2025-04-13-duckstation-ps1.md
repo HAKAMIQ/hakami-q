@@ -4,7 +4,7 @@ description: 'DuckStation: الدليل الشامل لأقوى محاكي PS1 D
 pubDate: '2025-04-13T22:37:00.006+03:00'
 updatedDate: '2026-02-25T00:33:32.604+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKLFH_9M5cKr_y_8F2zP_OSfL4jj5hlBrysw5HALuAW2ES5Jzr-cWsPeZTwIiNokS3JOS2SCZEtphu4Ks4wi-sgH4TME2JP1qs4_gipEWPZPegi6zDrnsMi7UQQQFY2mws7dVA3S4GzRey5r73OYMGWIBUZbMjdp6NhZMdwekahFMS9MaudiG1tfDRx8c/s320/1.png'
+heroImageUrl: '/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/duckstation-ps1.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -66,8 +66,8 @@ labels: ["PlayStation","PS1"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKLFH_9M5cKr_y_8F2zP_OSfL4jj5hlBrysw5HALuAW2ES5Jzr-cWsPeZTwIiNokS3JOS2SCZEtphu4Ks4wi-sgH4TME2JP1qs4_gipEWPZPegi6zDrnsMi7UQQQFY2mws7dVA3S4GzRey5r73OYMGWIBUZbMjdp6NhZMdwekahFMS9MaudiG1tfDRx8c/s1024/1.png">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKLFH_9M5cKr_y_8F2zP_OSfL4jj5hlBrysw5HALuAW2ES5Jzr-cWsPeZTwIiNokS3JOS2SCZEtphu4Ks4wi-sgH4TME2JP1qs4_gipEWPZPegi6zDrnsMi7UQQQFY2mws7dVA3S4GzRey5r73OYMGWIBUZbMjdp6NhZMdwekahFMS9MaudiG1tfDRx8c/s320/1.png" alt="DuckStation Logo" />
+            <a href="/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png">
+                <img class="img-frame" src="/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png" alt="DuckStation Logo" />
             </a>
         </div>
         <h1 style="color: var(--xe-blue); font-size: 28px; font-weight: 900;">DuckStation: الدليل الشامل لأقوى محاكي PS1</h1>
@@ -88,7 +88,7 @@ labels: ["PlayStation","PS1"]
     <section class="section-card">
         <h3>⚙️ المواصفات والإمكانيات التقنية</h3>
         <div class="separator" style="clear: both; text-align: center;">
-            <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi94dSVW2yaUkWjD9OAVbLCA95Wvpz7giu8kA82SsQPqjhkylURNmYFXuVR6vVZHeAd47Kig6qOHc_ifgBMIriCEPaFq1YF91QiOKSAtjXALpIRVFu8dVWL8cskGLJfaADPyfKi7fTcpKZtuUu3aa9Xod_3SWs0bXzEhzpuzT9SxwX4t8g7GWt9fmPPxOU/s1600/(Left)%20Normal%20(Right)%20PGXP%20Mode.gif" alt="PGXP Comparison" width="320" />
+            <img class="img-frame" src="/media/blogger/4d/4de0997621d969894e646843875c90b8b2392ee04216b5de250c9559d61f07d7.gif)%20Normal%20(Right)%20PGXP%20Mode.gif" alt="PGXP Comparison" width="320" />
         </div>
         <div class="table-container">
             <table>

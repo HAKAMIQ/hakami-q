@@ -4,7 +4,7 @@ description: '🎮 وش هو Super Game Boy؟ الـ Super Game Boy هو محو�
 pubDate: '2025-04-10T23:12:00.002+03:00'
 updatedDate: '2025-04-10T23:12:38.279+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwEKr4Ln6jS3Fm7mf_VH_u7yeERzr2-gqZXzK4Ezq3S5rJWSBmwPxM1dHz7n_dRczK2aEnJPvx097-0dTRhf2FjeZcLRkC7Sq4Y_o6McpsnOefWK7tPZsB9sdkPLE_cgfXQwNujkhHrWICpc9LBGXZDU0lWxQVe1vkcLwnPp-JSlV3Vo-ibVZOTOnNMzQ/s320/hq720.jpg'
+heroImageUrl: '/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/super-game-boy.html'
 labels: ["Nintendo","SGB"]
 ---
@@ -38,7 +38,7 @@ labels: ["Nintendo","SGB"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwEKr4Ln6jS3Fm7mf_VH_u7yeERzr2-gqZXzK4Ezq3S5rJWSBmwPxM1dHz7n_dRczK2aEnJPvx097-0dTRhf2FjeZcLRkC7Sq4Y_o6McpsnOefWK7tPZsB9sdkPLE_cgfXQwNujkhHrWICpc9LBGXZDU0lWxQVe1vkcLwnPp-JSlV3Vo-ibVZOTOnNMzQ/s686/hq720.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="386" data-original-width="686" height="180" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwEKr4Ln6jS3Fm7mf_VH_u7yeERzr2-gqZXzK4Ezq3S5rJWSBmwPxM1dHz7n_dRczK2aEnJPvx097-0dTRhf2FjeZcLRkC7Sq4Y_o6McpsnOefWK7tPZsB9sdkPLE_cgfXQwNujkhHrWICpc9LBGXZDU0lWxQVe1vkcLwnPp-JSlV3Vo-ibVZOTOnNMzQ/s320/hq720.jpg" width="320" /></a></div><h2>🎮 وش هو Super Game Boy؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="386" data-original-width="686" height="180" src="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" width="320" /></a></div><h2>🎮 وش هو Super Game Boy؟</h2>
 <p>
 الـ <strong>Super Game Boy</strong> هو محول رسمي من نينتندو صدر سنة 1994، يركب على جهاز <strong>Super Nintendo</strong> (SNES) ويسمح لك تلعب ألعاب <strong>Game Boy</strong> على التلفزيون!
 </p>

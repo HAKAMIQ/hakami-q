@@ -4,7 +4,7 @@ description: 'Native Version • No Emulation Tomb Raider (2013) تصل رسمي
 pubDate: '2025-12-18T03:11:00.003+03:00'
 updatedDate: '2026-02-24T04:05:57.536+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEjNfIz6OTx_3HzIqFoIjPdfGsTZ_beMyJVyeEjLo5bG-aoeG7RCo3yXNLOqrF3bgmBqmHval4j7phItdavNJVPgnikcwqyNpHw37awUFn5UwM911wNbXR2kbVHEj3CzCgr-6epiOD6n-tqpBO83hifj7rYNCcy7OwVPQcXXH_VFcYE1aPITHmfe2QYO0yU'
+heroImageUrl: '/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/12/tomb-raider.html'
 labels: ["articles"]
 ---
@@ -118,8 +118,8 @@ labels: ["articles"]
     </header>
 
     <div class="img-frame">
-        <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjNfIz6OTx_3HzIqFoIjPdfGsTZ_beMyJVyeEjLo5bG-aoeG7RCo3yXNLOqrF3bgmBqmHval4j7phItdavNJVPgnikcwqyNpHw37awUFn5UwM911wNbXR2kbVHEj3CzCgr-6epiOD6n-tqpBO83hifj7rYNCcy7OwVPQcXXH_VFcYE1aPITHmfe2QYO0yU">
-            <img alt="لعبة Tomb Raider 2013 لارا كروفت نسخة الأندرويد الرسمية" src="https://blogger.googleusercontent.com/img/a/AVvXsEjNfIz6OTx_3HzIqFoIjPdfGsTZ_beMyJVyeEjLo5bG-aoeG7RCo3yXNLOqrF3bgmBqmHval4j7phItdavNJVPgnikcwqyNpHw37awUFn5UwM911wNbXR2kbVHEj3CzCgr-6epiOD6n-tqpBO83hifj7rYNCcy7OwVPQcXXH_VFcYE1aPITHmfe2QYO0yU" style="width:100%; height:auto; display:block;" />
+        <a href="/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png">
+            <img alt="لعبة Tomb Raider 2013 لارا كروفت نسخة الأندرويد الرسمية" src="/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png" style="width:100%; height:auto; display:block;" />
         </a>
     </div>
 

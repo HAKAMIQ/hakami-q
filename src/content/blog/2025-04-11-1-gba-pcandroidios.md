@@ -4,7 +4,7 @@ description: '🎮 وش أفضل محاكي لـ GBA؟ كل واحد يقولك 
 pubDate: '2025-04-11T00:58:00.003+03:00'
 updatedDate: '2026-02-25T03:54:30.587+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8AQ5zyEZXBD8SUtlAoINC-X3PlSJDEAAH4_j4ZXypAuXoEWM62hVVbnOr9QWOUdDOUuq-uAURst2krOyhpFF2wo5aRl5JPJPJWTnQlslZK7RBydtwiOzmSxM9QVj5ej3na09d0ZRuPjNchQTmwV2Q3ZSwK50dX_DVcSc_QK9M2Fudeg7HFaoMq7rYkkg/s320/d4e39e55-85e0-4ce6-9462-5880f1b5de7f.png'
+heroImageUrl: '/media/blogger/60/609ef235b3e2f9d4e631d4f657d70c07d2cdbcf11b3c16da4095f0ed1334d607.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/1-gba-pcandroidios.html'
 labels: ["GBA","Nintendo"]
 ---
@@ -67,8 +67,8 @@ labels: ["GBA","Nintendo"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8AQ5zyEZXBD8SUtlAoINC-X3PlSJDEAAH4_j4ZXypAuXoEWM62hVVbnOr9QWOUdDOUuq-uAURst2krOyhpFF2wo5aRl5JPJPJWTnQlslZK7RBydtwiOzmSxM9QVj5ej3na09d0ZRuPjNchQTmwV2Q3ZSwK50dX_DVcSc_QK9M2Fudeg7HFaoMq7rYkkg/s1536/d4e39e55-85e0-4ce6-9462-5880f1b5de7f.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8AQ5zyEZXBD8SUtlAoINC-X3PlSJDEAAH4_j4ZXypAuXoEWM62hVVbnOr9QWOUdDOUuq-uAURst2krOyhpFF2wo5aRl5JPJPJWTnQlslZK7RBydtwiOzmSxM9QVj5ej3na09d0ZRuPjNchQTmwV2Q3ZSwK50dX_DVcSc_QK9M2Fudeg7HFaoMq7rYkkg/s320/d4e39e55-85e0-4ce6-9462-5880f1b5de7f.png" width="320" alt="GBA Emulators" />
+            <a href="/media/blogger/60/609ef235b3e2f9d4e631d4f657d70c07d2cdbcf11b3c16da4095f0ed1334d607.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/60/609ef235b3e2f9d4e631d4f657d70c07d2cdbcf11b3c16da4095f0ed1334d607.png" width="320" alt="GBA Emulators" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش أفضل محاكي لـ GBA؟</h2>

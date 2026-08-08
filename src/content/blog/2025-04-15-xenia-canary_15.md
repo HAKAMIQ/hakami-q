@@ -4,7 +4,7 @@ description: 'الدليل الاحترافي لتعديل إعدادات Xenia 
 pubDate: '2025-04-15T23:16:00.004+03:00'
 updatedDate: '2026-02-24T23:52:54.555+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibPOBqtQyQoXQjLO81T1ro2OcTBJ19WZAs-Hiw_DZDNCGnBkl4w8bOaNP_i3AhIhGbPB67IO5EcMqoBBZVD8tYd1ocUs5VjjVolcLmSjyl2-d6Buw6o8u5HqHqaB21zedJJI3qJwK5R-eikMsvUhE_qKywR3qeRSStb-nVh_y2_BnG_GB29K-aEG0A3cQ/s1024/19.png'
+heroImageUrl: '/media/blogger/fe/fe2a27cf770ae9ea23abd25778decb823966d3c00cf61230429a3023f3f6815f.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/xenia-canary_15.html'
 labels: ["Xbox","Xbox360"]
 ---
@@ -174,7 +174,7 @@ labels: ["Xbox","Xbox360"]
         <h1 class="hakamiq-main-title">الدليل الاحترافي لتعديل إعدادات Xenia Canary</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibPOBqtQyQoXQjLO81T1ro2OcTBJ19WZAs-Hiw_DZDNCGnBkl4w8bOaNP_i3AhIhGbPB67IO5EcMqoBBZVD8tYd1ocUs5VjjVolcLmSjyl2-d6Buw6o8u5HqHqaB21zedJJI3qJwK5R-eikMsvUhE_qKywR3qeRSStb-nVh_y2_BnG_GB29K-aEG0A3cQ/s1024/19.png" alt="Xenia Canary Settings Guide" loading="lazy" decoding="async">
+            <img src="/media/blogger/fe/fe2a27cf770ae9ea23abd25778decb823966d3c00cf61230429a3023f3f6815f.png" alt="Xenia Canary Settings Guide" loading="lazy" decoding="async">
             <figcaption>تعديل ملف Config هو المفتاح السحري لرفع أداء ألعاب Xbox 360 إلى أقصى حد 🚀</figcaption>
         </figure>
     </header>

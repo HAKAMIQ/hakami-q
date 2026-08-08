@@ -4,7 +4,7 @@ description: 'مقارنة تقنية | Kega Fusion vs Genesis Plus GX vs PicoDr
 pubDate: '2025-04-11T18:53:00.004+03:00'
 updatedDate: '2026-02-25T02:31:52.673+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnXhJnQsxkJ6G1kG7BT2rcqe416BbtXRZZ87uyfoQDK6oR8MiIQkhFNW2gQ1k10SVNc7xnCuGM86Fky2Sxw8uWiov1bH4oWCRyn53qsvslRcECDEe8shXg9hVNDNE-TsSePA8oBMmHaoRmBz-rzlEg_nWvLzpdQ7DkR9G3os8p_8EdePIe5CoxhdEjcr0/s320/maxresdefault%20(4).jpg'
+heroImageUrl: '/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/kega-fusion-genesis-plus-gx-picodrive.html'
 labels: ["Genesis32X","sega"]
 ---
@@ -70,8 +70,8 @@ labels: ["Genesis32X","sega"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnXhJnQsxkJ6G1kG7BT2rcqe416BbtXRZZ87uyfoQDK6oR8MiIQkhFNW2gQ1k10SVNc7xnCuGM86Fky2Sxw8uWiov1bH4oWCRyn53qsvslRcECDEe8shXg9hVNDNE-TsSePA8oBMmHaoRmBz-rzlEg_nWvLzpdQ7DkR9G3os8p_8EdePIe5CoxhdEjcr0/s1600/maxresdefault%20(4).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnXhJnQsxkJ6G1kG7BT2rcqe416BbtXRZZ87uyfoQDK6oR8MiIQkhFNW2gQ1k10SVNc7xnCuGM86Fky2Sxw8uWiov1bH4oWCRyn53qsvslRcECDEe8shXg9hVNDNE-TsSePA8oBMmHaoRmBz-rzlEg_nWvLzpdQ7DkR9G3os8p_8EdePIe5CoxhdEjcr0/s320/maxresdefault%20(4).jpg" width="320" />
+            <a href="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg">
+                <img class="img-frame" src="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">مقارنة تقنية | Kega Fusion vs Genesis Plus GX vs PicoDrive</h2>

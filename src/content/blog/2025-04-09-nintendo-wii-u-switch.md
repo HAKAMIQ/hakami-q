@@ -4,7 +4,7 @@ description: 'جهاز Wii U: القصة الكاملة للمظلوم الذي 
 pubDate: '2025-04-09T06:17:00.002+03:00'
 updatedDate: '2026-02-24T23:26:14.020+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiq2agKex8SMV2id3By5NOjmqq9HbUsvTv7yd7DwdTvEKhaIufd0RALiFSHCq0nJW3NP5UqAN7fMG20ToEiX4lQ728NxBiydBPBs4VTdfg_bJKHFJ0G6Hkd1zZz07YiczK4UR78DPzOAU9FhDZI0BPbpRZ6iebG00H5YCDiuElSH0q8kFYC73Yn4qkQw_A/s894/61qaQ06OMrL._AC_UF894,1000_QL80_.jpg'
+heroImageUrl: '/media/blogger/be/be6ebf2412ca543f4603b1f51f88d9f674275369da55bf698813414cab1f06e9.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-wii-u-switch.html'
 labels: ["Nintendo","Wii-U"]
 ---
@@ -183,7 +183,7 @@ labels: ["Nintendo","Wii-U"]
         <h1 class="hakamiq-main-title">جهاز Wii U: القصة الكاملة للمظلوم الذي مهد الطريق</h1>
         
         <figure class="hakamiq-smart-figure">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiq2agKex8SMV2id3By5NOjmqq9HbUsvTv7yd7DwdTvEKhaIufd0RALiFSHCq0nJW3NP5UqAN7fMG20ToEiX4lQ728NxBiydBPBs4VTdfg_bJKHFJ0G6Hkd1zZz07YiczK4UR78DPzOAU9FhDZI0BPbpRZ6iebG00H5YCDiuElSH0q8kFYC73Yn4qkQw_A/s894/61qaQ06OMrL._AC_UF894,1000_QL80_.jpg" alt="Nintendo Wii U Console GamePad" loading="lazy" decoding="async">
+            <img src="/media/blogger/be/be6ebf2412ca543f4603b1f51f88d9f674275369da55bf698813414cab1f06e9.jpg" alt="Nintendo Wii U Console GamePad" loading="lazy" decoding="async">
             <figcaption>جهاز Wii U مع الـ GamePad الذي كان بمثابة المختبر الأول لنجاح السويتش 🎮</figcaption>
         </figure>
     </header>

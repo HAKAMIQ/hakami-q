@@ -4,7 +4,7 @@ description: '📱 محاكاة PlayStation 1 على الأجهزة المحمو
 pubDate: '2025-04-13T22:13:00.002+03:00'
 updatedDate: '2026-02-25T00:24:58.475+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1-bo5wCyTkQQB0h6kGxxNAYvSBUB7jikfcS28FYqeOEHJO0-ugvq2mADSZV4_NoRXX6HkWG5hA45pcVtlJ7L_v_JLRH0BDZOWfl2i0DJK0_TAPI68FczijGjyqdTD0gPyBkyjnpXqnqBH1e2DykfNu1tW-1ax6U0Hp7kRLxRaan8H7JEu6EkdF1Rbae4/s320/maxresdefault%20(21).jpg'
+heroImageUrl: '/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/playstation-1-androidios.html'
 labels: ["PlayStation","PS1"]
 ---
@@ -55,8 +55,8 @@ labels: ["PlayStation","PS1"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1-bo5wCyTkQQB0h6kGxxNAYvSBUB7jikfcS28FYqeOEHJO0-ugvq2mADSZV4_NoRXX6HkWG5hA45pcVtlJ7L_v_JLRH0BDZOWfl2i0DJK0_TAPI68FczijGjyqdTD0gPyBkyjnpXqnqBH1e2DykfNu1tW-1ax6U0Hp7kRLxRaan8H7JEu6EkdF1Rbae4/s1280/maxresdefault%20(21).jpg">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1-bo5wCyTkQQB0h6kGxxNAYvSBUB7jikfcS28FYqeOEHJO0-ugvq2mADSZV4_NoRXX6HkWG5hA45pcVtlJ7L_v_JLRH0BDZOWfl2i0DJK0_TAPI68FczijGjyqdTD0gPyBkyjnpXqnqBH1e2DykfNu1tW-1ax6U0Hp7kRLxRaan8H7JEu6EkdF1Rbae4/s320/maxresdefault%20(21).jpg" width="320" />
+            <a href="/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg">
+                <img class="img-frame" src="/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">📱 محاكاة PlayStation 1 على الأجهزة المحمولة</h2>

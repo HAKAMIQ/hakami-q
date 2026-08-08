@@ -4,7 +4,7 @@ description: 'The Spriters Resource: الكنز الأعظم لأصول ألعا
 pubDate: '2026-01-20T03:40:00.003+03:00'
 updatedDate: '2026-02-24T04:48:38.868+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEgXJWFPjpLRE2dOrOWKLnBUuO0rvxglQpWSUT3G6d_nYgF5h29qIpFAEmSLWuxSfk4cFr-CvVh_1bHywDWKIQ8Lek3Gi62z5pI2ByWJsLh9bcvuR3aPf3nRqIoEnmeZACptikFmtjK5jSV8OiwfxfhZlLKPe-fw2ag_aoiNtHYrL4ZIyCWTBomOf6Ye38E'
+heroImageUrl: '/media/blogger/c1/c1fe963b0be31e76eddb6ebe53c81deb59d355cdda3920f29e9d9578df71afc8.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2026/01/spriters-resource.html'
 labels: ["articles"]
 ---
@@ -134,8 +134,8 @@ labels: ["articles"]
 
     <header class="hero-section">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgXJWFPjpLRE2dOrOWKLnBUuO0rvxglQpWSUT3G6d_nYgF5h29qIpFAEmSLWuxSfk4cFr-CvVh_1bHywDWKIQ8Lek3Gi62z5pI2ByWJsLh9bcvuR3aPf3nRqIoEnmeZACptikFmtjK5jSV8OiwfxfhZlLKPe-fw2ag_aoiNtHYrL4ZIyCWTBomOf6Ye38E">
-                <img alt="The Spriters Resource - حكميك" src="https://blogger.googleusercontent.com/img/a/AVvXsEgXJWFPjpLRE2dOrOWKLnBUuO0rvxglQpWSUT3G6d_nYgF5h29qIpFAEmSLWuxSfk4cFr-CvVh_1bHywDWKIQ8Lek3Gi62z5pI2ByWJsLh9bcvuR3aPf3nRqIoEnmeZACptikFmtjK5jSV8OiwfxfhZlLKPe-fw2ag_aoiNtHYrL4ZIyCWTBomOf6Ye38E" style="width:100%; max-width: 700px; border-radius: 15px;" />
+            <a href="/media/blogger/c1/c1fe963b0be31e76eddb6ebe53c81deb59d355cdda3920f29e9d9578df71afc8.png">
+                <img alt="The Spriters Resource - حكميك" src="/media/blogger/c1/c1fe963b0be31e76eddb6ebe53c81deb59d355cdda3920f29e9d9578df71afc8.png" style="width:100%; max-width: 700px; border-radius: 15px;" />
             </a>
         </div>
         <h1>The Spriters Resource: الكنز الأعظم لأصول ألعاب الفيديو</h1>
@@ -145,7 +145,7 @@ labels: ["articles"]
     <section class="archive-card">
         <h2>🏛️ ما هو The Spriters Resource؟</h2>
         <p>ببساطة، هو <b>الأرشيف الأضخم عالمياً</b> لكل ما يتعلق بجرافيكس الألعاب. يعتمد الموقع على مجتمع مذهل من "المستخرجين" (Rippers) الذين يقومون بسحب الصور والأصوات والمجسمات من ملفات الألعاب الأصلية وتنظيمها للجميع مجاناً.</p>
-        <img class="img-frame" alt="واجهة موقع Spriters Resource" src="https://blogger.googleusercontent.com/img/a/AVvXsEhE1evH1wZCT1lnJZj-2-cOWs3KDrO777KnHFqJ1bFI02Nxkbph_vBvmoTUqjrzdXs5zZs4ItELs4kaOrgh2xPL05wCOQggz_mfOW370JXxHGBbV-fNyTKRMJUpP4X_GWzg3HBy_KVXQ5Trh6Q8C2NDMvIjamRT2ze778o7xFjLReFWPk0WRVFE9rjbFLY" width="400" />
+        <img class="img-frame" alt="واجهة موقع Spriters Resource" src="/media/blogger/34/34b9633a3671ec4eab5b2fef3301c6ac5252c7a345d7ced4cdff82d857038778.png" width="400" />
     </section>
 
     <section class="archive-card" style="border-right-color: var(--s-amber);">
@@ -170,7 +170,7 @@ labels: ["articles"]
         </div>
         
         <div style="text-align: center; margin-top: 25px;">
-            <img alt="تصنيفات الأجهزة في الموقع" src="https://blogger.googleusercontent.com/img/a/AVvXsEhedzpo0AzmMFSw0VnxjC9BvWucSKAmUX4K29UHDundb3BfW-0hyC44Am7KRqya8MhQO-fX-87utSuiNBIjxJQjSVqTOcMvq8Jz1n3QfSr2Yo16B1nBXnmKvEz4nq2w8V_Exmy1nGuyZAntzJZLKcFQd4VFQ0fr1hE5T4Zm2AP6pKKueDkGyQdj40P-U8Y" width="180" style="border-radius: 10px;" />
+            <img alt="تصنيفات الأجهزة في الموقع" src="/media/blogger/58/5861436250dcefceb6ad46b9a9c48ce814922a07cb1436fc67ae83c6a9a4bfae.png" width="180" style="border-radius: 10px;" />
         </div>
     </section>
 

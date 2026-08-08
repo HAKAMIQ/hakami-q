@@ -4,7 +4,7 @@ description: '🎮 وش يعني "تحف مخفية"؟ يعني ألعاب GB ك
 pubDate: '2025-04-11T00:03:00.006+03:00'
 updatedDate: '2026-02-25T03:59:31.540+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1ya_SaVPqkdW0FOza2rtFKwPYFySPnNsoaS_BjXxcmyJZi3F8ROuA31jLwE7ESbA_iiIvKHPjKUNXkNYaov8ypL5Mpq1zGPu5JR7NkAc7MnezKqHJTO5cgAi1wluhoJwxsWdp1W0ufTiO-DBJVNM9VMrRYWpwqnfiGBOYsyxrCpx2C_FpsEcJ9QWFr2Y/s320/Screenshot%202025-04-11%20000331.png'
+heroImageUrl: '/media/blogger/ac/ac99bd589ae0cdae07698c1dfcc033ffe232b812805de363dcd7e9ade7ef890b.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/04/top-10-game-boy-super-game-boy.html'
 labels: ["Game Boy","Nintendo","SGB"]
 ---
@@ -79,8 +79,8 @@ labels: ["Game Boy","Nintendo","SGB"]
 
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
-            <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1ya_SaVPqkdW0FOza2rtFKwPYFySPnNsoaS_BjXxcmyJZi3F8ROuA31jLwE7ESbA_iiIvKHPjKUNXkNYaov8ypL5Mpq1zGPu5JR7NkAc7MnezKqHJTO5cgAi1wluhoJwxsWdp1W0ufTiO-DBJVNM9VMrRYWpwqnfiGBOYsyxrCpx2C_FpsEcJ9QWFr2Y/s553/Screenshot%202025-04-11%20000331.png" target="_blank">
-                <img class="img-frame" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1ya_SaVPqkdW0FOza2rtFKwPYFySPnNsoaS_BjXxcmyJZi3F8ROuA31jLwE7ESbA_iiIvKHPjKUNXkNYaov8ypL5Mpq1zGPu5JR7NkAc7MnezKqHJTO5cgAi1wluhoJwxsWdp1W0ufTiO-DBJVNM9VMrRYWpwqnfiGBOYsyxrCpx2C_FpsEcJ9QWFr2Y/s320/Screenshot%202025-04-11%20000331.png" width="217" alt="Top 10 SGB Games" />
+            <a href="/media/blogger/ac/ac99bd589ae0cdae07698c1dfcc033ffe232b812805de363dcd7e9ade7ef890b.png" target="_blank">
+                <img class="img-frame" src="/media/blogger/ac/ac99bd589ae0cdae07698c1dfcc033ffe232b812805de363dcd7e9ade7ef890b.png" width="217" alt="Top 10 SGB Games" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش يعني "تحف مخفية"؟</h2>

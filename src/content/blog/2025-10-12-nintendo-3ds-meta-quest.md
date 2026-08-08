@@ -4,7 +4,7 @@ description: '🕶️ CitraVR (Beta) - تشغيل ألعاب 3DS على Quest Ci
 pubDate: '2025-10-12T15:25:00.005+03:00'
 updatedDate: '2026-02-24T03:52:21.321+03:00'
 heroImage: '../../assets/blog-placeholder-1.jpg'
-heroImageUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEhb7KXLmw641dHwMp2N31BKhJ7699oTY44Qm7OWuxF4lffSeRTg_VHtSDUJ2j5mG64St5b728Dz2q58naudipjR1qc2wqLT0bkKeIhTyGuf1AzbOU1iecpCpklR4V4zVsWU2NeYQN-fXXnUlXq8fHO8ZFvAd4VG3nwwq50OBJ7wj0t7fUpDW6JSP821DQA'
+heroImageUrl: '/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png'
 originalUrl: 'https://hakamiq1.blogspot.com/2025/10/nintendo-3ds-meta-quest.html'
 labels: ["articles"]
 ---
@@ -101,8 +101,8 @@ labels: ["articles"]
 <div class="hakamiq-post-container">
 
     <div class="separator" style="clear: both; text-align: center;">
-        <a href="https://blogger.googleusercontent.com/img/a/AVvXsEhb7KXLmw641dHwMp2N31BKhJ7699oTY44Qm7OWuxF4lffSeRTg_VHtSDUJ2j5mG64St5b728Dz2q58naudipjR1qc2wqLT0bkKeIhTyGuf1AzbOU1iecpCpklR4V4zVsWU2NeYQN-fXXnUlXq8fHO8ZFvAd4VG3nwwq50OBJ7wj0t7fUpDW6JSP821DQA" style="margin-left: 1em; margin-right: 1em;">
-            <img class="main-post-image" alt="شعار محاكي CitraVR لتشغيل ألعاب نينتندو 3DS على نظارات كويست" title="CitraVR Banner" src="https://blogger.googleusercontent.com/img/a/AVvXsEhb7KXLmw641dHwMp2N31BKhJ7699oTY44Qm7OWuxF4lffSeRTg_VHtSDUJ2j5mG64St5b728Dz2q58naudipjR1qc2wqLT0bkKeIhTyGuf1AzbOU1iecpCpklR4V4zVsWU2NeYQN-fXXnUlXq8fHO8ZFvAd4VG3nwwq50OBJ7wj0t7fUpDW6JSP821DQA" width="640" height="159" />
+        <a href="/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png" style="margin-left: 1em; margin-right: 1em;">
+            <img class="main-post-image" alt="شعار محاكي CitraVR لتشغيل ألعاب نينتندو 3DS على نظارات كويست" title="CitraVR Banner" src="/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png" width="640" height="159" />
         </a>
     </div>
 
