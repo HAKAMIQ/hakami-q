@@ -19,6 +19,7 @@ name: Fluent UI Quality
       - "src/pages/**"
       - "src/styles/**"
       - "scripts/blogger-independence-quality.mjs"
+      - "scripts/article-rendered-quality.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -40,6 +41,7 @@ name: Fluent UI Quality
       - "src/pages/**"
       - "src/styles/**"
       - "scripts/blogger-independence-quality.mjs"
+      - "scripts/article-rendered-quality.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -86,6 +88,9 @@ jobs:
 
       - name: Validate Astro production build
         run: npx astro build
+
+      - name: Audit rendered article compatibility
+        run: npm run article:rendered-quality
 
       - name: Audit rendered pages, articles and links
         run: npm run final:audit:report
