@@ -1,0 +1,581 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import SkipLink from '../../components/SkipLink.astro';
+import '../../styles/admin-editor.css';
+
+const posts = await getCollection('blog');
+const labelCounts = new Map<string, number>();
+for (const post of posts) {
+	for (const label of post.data.labels ?? []) {
+		const value = label.trim();
+		if (!value) continue;
+		labelCounts.set(value, (labelCounts.get(value) ?? 0) + 1);
+	}
+}
+
+const commonLabels = [...labelCounts.entries()]
+	.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ar'))
+	.slice(0, 24)
+	.map(([label]) => label);
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead
+			title="إدارة المقالات | HAKAMIQ"
+			description="محرر HAKAMIQ الخاص لإنشاء ونشر المقالات."
+		/>
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+
+		<main id="main-content" tabindex="-1" class="admin-main">
+			<div class="admin-shell">
+				<header class="admin-heading">
+					<div class="admin-heading-copy">
+						<p class="admin-kicker">HAKAMIQ PUBLISHER</p>
+						<h1>إنشاء مقال جديد</h1>
+						<p>اكتب المقال ونسّقه وارفع صوره ثم انشره مباشرة إلى مكتبة الموقع.</p>
+					</div>
+					<span id="admin-status" class="admin-status" aria-live="polite">جاري التحقق…</span>
+				</header>
+
+				<section id="login-panel" class="admin-panel admin-login" aria-labelledby="login-title" hidden>
+					<h2 id="login-title">تسجيل دخول الإدارة</h2>
+					<p>هذه الصفحة خاصة بإدارة محتوى HAKAMIQ.</p>
+					<form id="login-form">
+						<div class="admin-field">
+							<label for="admin-password">كلمة المرور</label>
+							<input
+								id="admin-password"
+								class="admin-input"
+								type="password"
+								autocomplete="current-password"
+								required
+							/>
+						</div>
+						<div class="admin-login-actions">
+							<button class="admin-button admin-button-primary" type="submit">دخول</button>
+						</div>
+						<p id="login-feedback" class="admin-feedback admin-hidden" role="status"></p>
+					</form>
+				</section>
+
+				<section id="editor-app" class="admin-editor-layout" aria-label="محرر المقال" hidden>
+					<div class="admin-panel admin-editor-panel">
+						<div class="admin-section-title">
+							<h2>بيانات المقال</h2>
+							<button id="logout-button" class="admin-button admin-button-danger" type="button">تسجيل الخروج</button>
+						</div>
+
+						<div class="admin-meta-grid">
+							<div class="admin-form-grid">
+								<div class="admin-field admin-field-wide">
+									<label for="article-title">عنوان المقال</label>
+									<input id="article-title" class="admin-input" type="text" maxlength="180" required />
+								</div>
+
+								<div class="admin-field admin-field-wide">
+									<label for="article-description">وصف مختصر</label>
+									<textarea id="article-description" class="admin-textarea" maxlength="360" required></textarea>
+									<p class="admin-field-help">يظهر في محركات البحث وبطاقات المقالات، ولا يُكرر داخل جسم المقال.</p>
+								</div>
+
+								<div class="admin-field">
+									<label for="article-slug">رابط المقال Slug</label>
+									<input id="article-slug" class="admin-input" type="text" dir="ltr" inputmode="url" maxlength="100" required />
+									<p class="admin-field-help">حروف إنجليزية صغيرة وأرقام وشرطة فقط.</p>
+								</div>
+
+								<div class="admin-field">
+									<label for="article-labels">التصنيفات</label>
+									<input id="article-labels" class="admin-input" type="text" placeholder="PlayStation, PCSX2" maxlength="300" />
+									<p class="admin-field-help">افصل بين التصنيفات بفاصلة.</p>
+								</div>
+
+								<div class="admin-field admin-field-wide">
+									<span class="admin-field-label">تصنيفات مستخدمة</span>
+									<div class="admin-chip-list" aria-label="تصنيفات مقترحة">
+										{commonLabels.map((label) => (
+											<button class="admin-chip" type="button" data-label={label}>{label}</button>
+										))}
+									</div>
+								</div>
+
+								<div class="admin-field admin-field-wide">
+									<label for="hero-image">صورة الغلاف</label>
+									<input id="hero-image" class="admin-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+									<p class="admin-field-help">PNG أو JPG أو WebP أو GIF، وبحد أقصى 6 ميجابايت.</p>
+									<img id="hero-preview" class="admin-hero-preview admin-hidden" alt="معاينة صورة غلاف المقال" />
+								</div>
+							</div>
+						</div>
+
+						<div class="admin-section-title">
+							<h2>محتوى المقال</h2>
+							<span id="draft-status" class="admin-status">لم يُحفظ بعد</span>
+						</div>
+
+						<div class="admin-toolbar" role="toolbar" aria-label="أدوات تنسيق المقال">
+							<button class="admin-tool" type="button" data-command="formatBlock" data-value="h2" aria-label="عنوان رئيسي داخل المقال">H2</button>
+							<button class="admin-tool" type="button" data-command="formatBlock" data-value="h3" aria-label="عنوان فرعي">H3</button>
+							<button class="admin-tool" type="button" data-command="bold" aria-label="خط عريض"><strong>B</strong></button>
+							<button class="admin-tool" type="button" data-command="italic" aria-label="خط مائل"><em>I</em></button>
+							<button class="admin-tool" type="button" data-command="insertUnorderedList" aria-label="قائمة نقطية">• قائمة</button>
+							<button class="admin-tool" type="button" data-command="insertOrderedList" aria-label="قائمة مرقمة">1. قائمة</button>
+							<button class="admin-tool" type="button" data-command="formatBlock" data-value="blockquote" aria-label="اقتباس">اقتباس</button>
+							<button id="code-button" class="admin-tool" type="button" aria-label="كتلة كود">كود</button>
+							<button id="link-button" class="admin-tool" type="button" aria-label="إضافة رابط">رابط</button>
+							<button id="image-button" class="admin-tool" type="button" aria-label="إضافة صورة داخل المقال">صورة</button>
+							<button id="youtube-button" class="admin-tool" type="button" aria-label="إضافة فيديو يوتيوب">YouTube</button>
+							<button class="admin-tool" type="button" data-command="removeFormat" aria-label="إزالة التنسيق">مسح التنسيق</button>
+						</div>
+
+						<input id="inline-image-input" class="admin-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+						<div
+							id="article-editor"
+							class="admin-rich-editor"
+							contenteditable="true"
+							role="textbox"
+							aria-multiline="true"
+							aria-label="نص المقال"
+							data-placeholder="ابدأ كتابة المقال هنا…"
+						></div>
+
+						<div class="admin-publish-row">
+							<p class="admin-publish-note">النشر ينشئ Commit واحدًا للمقال وصوره ثم يبدأ Cloudflare Pages إعادة بناء الموقع تلقائيًا.</p>
+							<div class="admin-actions">
+								<button id="clear-draft-button" class="admin-button" type="button">مقال جديد</button>
+								<button id="publish-button" class="admin-button admin-button-primary" type="button">نشر المقال</button>
+							</div>
+						</div>
+						<p id="publish-feedback" class="admin-feedback admin-hidden" role="status"></p>
+					</div>
+
+					<aside class="admin-panel admin-preview-panel" aria-labelledby="preview-heading">
+						<div class="admin-section-title">
+							<h2 id="preview-heading">معاينة مباشرة</h2>
+						</div>
+						<h3 id="preview-title" class="admin-preview-title">عنوان المقال</h3>
+						<p id="preview-description" class="admin-preview-description">الوصف المختصر سيظهر هنا.</p>
+						<div id="preview-body" class="admin-preview-body"></div>
+					</aside>
+				</section>
+			</div>
+		</main>
+
+		<Footer />
+
+		<script>
+			const API_ROOT = '/api/admin';
+			const DRAFT_KEY = 'hakamiq-article-editor-draft-v1';
+			const MAX_IMAGE_BYTES = 6 * 1024 * 1024;
+
+			const loginPanel = document.querySelector('#login-panel');
+			const editorApp = document.querySelector('#editor-app');
+			const adminStatus = document.querySelector('#admin-status');
+			const loginForm = document.querySelector('#login-form');
+			const passwordInput = document.querySelector('#admin-password');
+			const loginFeedback = document.querySelector('#login-feedback');
+			const logoutButton = document.querySelector('#logout-button');
+			const titleInput = document.querySelector('#article-title');
+			const descriptionInput = document.querySelector('#article-description');
+			const slugInput = document.querySelector('#article-slug');
+			const labelsInput = document.querySelector('#article-labels');
+			const heroInput = document.querySelector('#hero-image');
+			const heroPreview = document.querySelector('#hero-preview');
+			const editor = document.querySelector('#article-editor');
+			const previewTitle = document.querySelector('#preview-title');
+			const previewDescription = document.querySelector('#preview-description');
+			const previewBody = document.querySelector('#preview-body');
+			const draftStatus = document.querySelector('#draft-status');
+			const publishButton = document.querySelector('#publish-button');
+			const publishFeedback = document.querySelector('#publish-feedback');
+			const clearDraftButton = document.querySelector('#clear-draft-button');
+			const imageButton = document.querySelector('#image-button');
+			const inlineImageInput = document.querySelector('#inline-image-input');
+			const linkButton = document.querySelector('#link-button');
+			const youtubeButton = document.querySelector('#youtube-button');
+			const codeButton = document.querySelector('#code-button');
+
+			let heroDataUrl = '';
+			let slugTouched = false;
+			let draftTimer = 0;
+
+			function setStatus(text, state = '') {
+				adminStatus.textContent = text;
+				adminStatus.dataset.state = state;
+			}
+
+			function setFeedback(element, message, kind = '') {
+				element.textContent = message;
+				element.dataset.kind = kind;
+				element.classList.toggle('admin-hidden', !message);
+			}
+
+			function showAuthenticated(isAuthenticated) {
+				loginPanel.hidden = isAuthenticated;
+				editorApp.hidden = !isAuthenticated;
+				setStatus(isAuthenticated ? 'متصل بالإدارة' : 'يلزم تسجيل الدخول', isAuthenticated ? 'ready' : '');
+				if (isAuthenticated) restoreDraft();
+			}
+
+			async function api(path, options = {}) {
+				const response = await fetch(`${API_ROOT}/${path}`, {
+					credentials: 'same-origin',
+					headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+					...options,
+				});
+				const payload = await response.json().catch(() => ({}));
+				if (!response.ok) {
+					const error = new Error(payload.error || 'تعذر إكمال الطلب.');
+					error.status = response.status;
+					throw error;
+				}
+				return payload;
+			}
+
+			async function checkSession() {
+				try {
+					const payload = await api('session', { method: 'GET' });
+					showAuthenticated(Boolean(payload.authenticated));
+				} catch {
+					showAuthenticated(false);
+					setStatus('تعذر الوصول إلى خدمة الإدارة', 'error');
+				}
+			}
+
+			loginForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				setFeedback(loginFeedback, 'جاري التحقق…');
+				try {
+					await api('login', {
+						method: 'POST',
+						body: JSON.stringify({ password: passwordInput.value }),
+					});
+					passwordInput.value = '';
+					setFeedback(loginFeedback, '');
+					showAuthenticated(true);
+				} catch (error) {
+					setFeedback(loginFeedback, error.message, 'error');
+				}
+			});
+
+			logoutButton.addEventListener('click', async () => {
+				try { await api('logout', { method: 'POST', body: '{}' }); } catch {}
+				showAuthenticated(false);
+			});
+
+			const arabicSlugMap = {
+				'ا':'a','أ':'a','إ':'a','آ':'a','ب':'b','ت':'t','ث':'th','ج':'j','ح':'h','خ':'kh',
+				'د':'d','ذ':'th','ر':'r','ز':'z','س':'s','ش':'sh','ص':'s','ض':'d','ط':'t','ظ':'z',
+				'ع':'a','غ':'gh','ف':'f','ق':'q','ك':'k','ل':'l','م':'m','ن':'n','ه':'h','ة':'h',
+				'و':'w','ؤ':'w','ي':'y','ى':'y','ئ':'y','ء':''
+			};
+
+			function makeSlug(value) {
+				const transliterated = [...value.normalize('NFKC')]
+					.map((char) => arabicSlugMap[char] ?? char)
+					.join('');
+				const result = transliterated
+					.toLowerCase()
+					.normalize('NFKD')
+					.replace(/[\u0300-\u036f\u064b-\u065f\u0670]/g, '')
+					.replace(/[^a-z0-9]+/g, '-')
+					.replace(/^-+|-+$/g, '')
+					.replace(/-{2,}/g, '-')
+					.slice(0, 90);
+				if (result) return result;
+				const now = new Date();
+				return `article-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
+			}
+
+			titleInput.addEventListener('input', () => {
+				if (!slugTouched) slugInput.value = makeSlug(titleInput.value);
+				updatePreview();
+				scheduleDraftSave();
+			});
+			slugInput.addEventListener('input', () => {
+				slugTouched = true;
+				slugInput.value = slugInput.value.toLowerCase().replace(/[^a-z0-9-]/g, '').replace(/-{2,}/g, '-');
+				scheduleDraftSave();
+			});
+			descriptionInput.addEventListener('input', () => { updatePreview(); scheduleDraftSave(); });
+			labelsInput.addEventListener('input', scheduleDraftSave);
+			editor.addEventListener('input', () => { updatePreview(); scheduleDraftSave(); });
+
+			document.querySelectorAll('[data-command]').forEach((button) => {
+				button.addEventListener('click', () => {
+					editor.focus();
+					document.execCommand(button.dataset.command, false, button.dataset.value || null);
+					updatePreview();
+					scheduleDraftSave();
+				});
+			});
+
+			document.querySelectorAll('[data-label]').forEach((button) => {
+				button.addEventListener('click', () => {
+					const values = labelsInput.value.split(',').map((value) => value.trim()).filter(Boolean);
+					if (!values.some((value) => value.toLocaleLowerCase('en') === button.dataset.label.toLocaleLowerCase('en'))) {
+						values.push(button.dataset.label);
+						labelsInput.value = values.join(', ');
+						scheduleDraftSave();
+					}
+				});
+			});
+
+			linkButton.addEventListener('click', () => {
+				const url = window.prompt('أدخل الرابط الكامل:');
+				if (!url) return;
+				if (!/^(https?:\/\/|\/|#|mailto:)/i.test(url)) {
+					window.alert('استخدم رابطًا يبدأ بـ https:// أو / أو # أو mailto:');
+					return;
+				}
+				editor.focus();
+				document.execCommand('createLink', false, url);
+				updatePreview();
+				scheduleDraftSave();
+			});
+
+			codeButton.addEventListener('click', () => {
+				editor.focus();
+				document.execCommand('formatBlock', false, 'pre');
+				updatePreview();
+				scheduleDraftSave();
+			});
+
+			function escapeAttribute(value) {
+				return String(value)
+					.replaceAll('&', '&amp;')
+					.replaceAll('"', '&quot;')
+					.replaceAll('<', '&lt;')
+					.replaceAll('>', '&gt;');
+			}
+
+			function fileToDataUrl(file) {
+				return new Promise((resolve, reject) => {
+					const reader = new FileReader();
+					reader.onload = () => resolve(String(reader.result || ''));
+					reader.onerror = () => reject(new Error('تعذر قراءة الصورة.'));
+					reader.readAsDataURL(file);
+				});
+			}
+
+			function validateImage(file) {
+				if (!file) return;
+				if (!['image/png', 'image/jpeg', 'image/webp', 'image/gif'].includes(file.type)) throw new Error('صيغة الصورة غير مدعومة.');
+				if (file.size > MAX_IMAGE_BYTES) throw new Error('حجم الصورة يتجاوز 6 ميجابايت.');
+			}
+
+			heroInput.addEventListener('change', async () => {
+				const file = heroInput.files?.[0];
+				if (!file) {
+					heroDataUrl = '';
+					heroPreview.classList.add('admin-hidden');
+					return;
+				}
+				try {
+					validateImage(file);
+					heroDataUrl = await fileToDataUrl(file);
+					heroPreview.src = heroDataUrl;
+					heroPreview.classList.remove('admin-hidden');
+				} catch (error) {
+					heroInput.value = '';
+					heroDataUrl = '';
+					window.alert(error.message);
+				}
+			});
+
+			imageButton.addEventListener('click', () => inlineImageInput.click());
+			inlineImageInput.addEventListener('change', async () => {
+				const file = inlineImageInput.files?.[0];
+				inlineImageInput.value = '';
+				if (!file) return;
+				try {
+					validateImage(file);
+					const dataUrl = await fileToDataUrl(file);
+					const alt = window.prompt('وصف الصورة للقارئ ومحركات البحث:', file.name.replace(/\.[^.]+$/, '')) || 'صورة توضيحية';
+					editor.focus();
+					document.execCommand(
+						'insertHTML',
+						false,
+						`<figure><img src="${dataUrl}" alt="${escapeAttribute(alt)}"><figcaption></figcaption></figure><p><br></p>`,
+					);
+					updatePreview();
+					scheduleDraftSave();
+				} catch (error) {
+					window.alert(error.message);
+				}
+			});
+
+			function getYouTubeEmbedUrl(value) {
+				try {
+					const url = new URL(value);
+					let id = '';
+					if (url.hostname === 'youtu.be') id = url.pathname.slice(1).split('/')[0];
+					else if (url.hostname.endsWith('youtube.com')) {
+						if (url.pathname === '/watch') id = url.searchParams.get('v') || '';
+						else if (url.pathname.startsWith('/shorts/')) id = url.pathname.split('/')[2] || '';
+						else if (url.pathname.startsWith('/embed/')) id = url.pathname.split('/')[2] || '';
+					}
+					return /^[A-Za-z0-9_-]{6,20}$/.test(id) ? `https://www.youtube-nocookie.com/embed/${id}` : '';
+				} catch { return ''; }
+			}
+
+			youtubeButton.addEventListener('click', () => {
+				const url = window.prompt('ألصق رابط فيديو YouTube:');
+				if (!url) return;
+				const embedUrl = getYouTubeEmbedUrl(url);
+				if (!embedUrl) {
+					window.alert('رابط YouTube غير صالح.');
+					return;
+				}
+				editor.focus();
+				document.execCommand(
+					'insertHTML',
+					false,
+					`<iframe src="${embedUrl}" title="فيديو YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p><br></p>`,
+				);
+				updatePreview();
+				scheduleDraftSave();
+			});
+
+			function updatePreview() {
+				previewTitle.textContent = titleInput.value.trim() || 'عنوان المقال';
+				previewDescription.textContent = descriptionInput.value.trim() || 'الوصف المختصر سيظهر هنا.';
+				previewBody.innerHTML = editor.innerHTML;
+			}
+
+			function draftPayload() {
+				return {
+					title: titleInput.value,
+					description: descriptionInput.value,
+					slug: slugInput.value,
+					labels: labelsInput.value,
+					body: editor.innerHTML,
+				};
+			}
+
+			function scheduleDraftSave() {
+				window.clearTimeout(draftTimer);
+				draftStatus.textContent = 'تغييرات غير محفوظة';
+				draftTimer = window.setTimeout(saveDraft, 600);
+			}
+
+			function saveDraft() {
+				try {
+					localStorage.setItem(DRAFT_KEY, JSON.stringify(draftPayload()));
+					draftStatus.textContent = 'محفوظ محليًا';
+					draftStatus.dataset.state = 'ready';
+				} catch {
+					draftStatus.textContent = 'المسودة كبيرة للحفظ المحلي';
+					draftStatus.dataset.state = 'error';
+				}
+			}
+
+			function restoreDraft() {
+				let draft;
+				try { draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null'); } catch { draft = null; }
+				if (!draft) {
+					updatePreview();
+					return;
+				}
+				titleInput.value = draft.title || '';
+				descriptionInput.value = draft.description || '';
+				slugInput.value = draft.slug || '';
+				labelsInput.value = draft.labels || '';
+				editor.innerHTML = draft.body || '';
+				slugTouched = Boolean(draft.slug);
+				draftStatus.textContent = 'تم استرجاع المسودة المحلية';
+				draftStatus.dataset.state = 'ready';
+				updatePreview();
+			}
+
+			function clearEditor(confirmFirst = true) {
+				if (confirmFirst && !window.confirm('مسح المقال الحالي والبدء بمقال جديد؟')) return;
+				localStorage.removeItem(DRAFT_KEY);
+				titleInput.value = '';
+				descriptionInput.value = '';
+				slugInput.value = '';
+				labelsInput.value = '';
+				editor.innerHTML = '';
+				heroInput.value = '';
+				heroDataUrl = '';
+				heroPreview.removeAttribute('src');
+				heroPreview.classList.add('admin-hidden');
+				slugTouched = false;
+				draftStatus.textContent = 'لم يُحفظ بعد';
+				draftStatus.dataset.state = '';
+				setFeedback(publishFeedback, '');
+				updatePreview();
+				titleInput.focus();
+			}
+
+			clearDraftButton.addEventListener('click', () => clearEditor(true));
+
+			function validateArticle() {
+				const title = titleInput.value.trim();
+				const description = descriptionInput.value.trim();
+				const slug = slugInput.value.trim();
+				const body = editor.innerHTML.trim();
+				if (title.length < 5) throw new Error('اكتب عنوانًا واضحًا للمقال.');
+				if (description.length < 20) throw new Error('الوصف المختصر قصير جدًا.');
+				if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Slug غير صالح. استخدم حروفًا إنجليزية صغيرة وأرقامًا وشرطة فقط.');
+				if (!body || editor.textContent.trim().length < 20) throw new Error('محتوى المقال قصير جدًا.');
+				const labels = [...new Set(labelsInput.value.split(',').map((value) => value.trim()).filter(Boolean))].slice(0, 12);
+				return { title, description, slug, body, labels };
+			}
+
+			publishButton.addEventListener('click', async () => {
+				let article;
+				try { article = validateArticle(); }
+				catch (error) {
+					setFeedback(publishFeedback, error.message, 'error');
+					return;
+				}
+
+				if (!window.confirm(`نشر المقال الآن؟\n\n${article.title}`)) return;
+				publishButton.disabled = true;
+				publishButton.textContent = 'جاري النشر…';
+				setFeedback(publishFeedback, 'يتم تجهيز المقال والصور وإنشاء Commit واحد في GitHub…');
+
+				try {
+					const payload = await api('publish', {
+						method: 'POST',
+						body: JSON.stringify({
+							title: article.title,
+							description: article.description,
+							slug: article.slug,
+							labels: article.labels,
+							bodyHtml: article.body,
+							heroDataUrl: heroDataUrl || null,
+						}),
+					});
+					localStorage.removeItem(DRAFT_KEY);
+					setFeedback(
+						publishFeedback,
+						`تم نشر المصدر بنجاح. المسار: ${payload.articlePath}. سيظهر المقال بعد اكتمال نشر Cloudflare Pages.`,
+						'success',
+					);
+					draftStatus.textContent = 'تم النشر';
+					draftStatus.dataset.state = 'ready';
+				} catch (error) {
+					if (error.status === 401) showAuthenticated(false);
+					setFeedback(publishFeedback, error.message, 'error');
+				} finally {
+					publishButton.disabled = false;
+					publishButton.textContent = 'نشر المقال';
+				}
+			});
+
+			try { document.execCommand('defaultParagraphSeparator', false, 'p'); } catch {}
+			checkSession();
+		</script>
+	</body>
+</html>
