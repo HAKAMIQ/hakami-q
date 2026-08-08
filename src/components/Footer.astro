@@ -3,38 +3,14 @@ const today = new Date();
 ---
 
 <footer class="site-footer" dir="rtl">
-	<div class="site-container footer-primary">
-		<nav class="footer-links" aria-label="روابط الموقع">
-			<a href="/blog">المقالات</a>
-			<a href="/services">خدمة المحاكيات</a>
-			<a href="/about">من نحن</a>
-			<a href="/contact">اتصل بنا</a>
+	<div class="site-container footer-row">
+		<nav class="footer-legal" aria-label="الروابط القانونية">
 			<a href="/privacy">سياسة الخصوصية</a>
 			<a href="/terms">اتفاقية الاستخدام</a>
 			<a href="/disclaimer">إخلاء المسؤولية</a>
 		</nav>
 
-		<nav class="footer-social" aria-label="الشبكات الاجتماعية" dir="ltr">
-			<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube، يفتح في علامة تبويب جديدة" title="YouTube — علامة تبويب جديدة">
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
-			</a>
-			<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord، يفتح في علامة تبويب جديدة" title="Discord — علامة تبويب جديدة">
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
-			</a>
-			<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram، يفتح في علامة تبويب جديدة" title="Telegram — علامة تبويب جديدة">
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
-			</a>
-		</nav>
-	</div>
-
-	<div class="footer-divider" aria-hidden="true"></div>
-
-	<div class="site-container footer-bottom">
-		<p>&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
-		<a class="footer-rss" href="/rss.xml" aria-label="خلاصة RSS">
-			<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="1.5"></circle><path d="M5 11a8 8 0 0 1 8 8"></path><path d="M5 5a14 14 0 0 1 14 14"></path></svg>
-			<span>RSS</span>
-		</a>
+		<p class="footer-copyright">&copy; {today.getFullYear()} HAKAMIQ جميع الحقوق محفوظة</p>
 	</div>
 </footer>
 
@@ -46,147 +22,91 @@ const today = new Date();
 		color: var(--color-neutral-foreground-3);
 	}
 
-	.footer-primary,
-	.footer-bottom,
-	.footer-divider {
-		width: min(calc(100% - (var(--page-gutter) * 2)), 1120px);
-		margin-inline: auto;
-	}
-
-	.footer-primary,
-	.footer-bottom {
+	.footer-row {
 		display: flex;
+		min-height: 52px;
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--spacing-240);
 	}
 
-	.footer-primary {
-		min-height: 56px;
-		padding-block: var(--spacing-100);
-	}
-
-	.footer-links {
+	.footer-legal {
 		display: flex;
 		min-width: 0;
-		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--spacing-20);
 	}
 
-	.footer-links a,
-	.footer-rss,
-	.footer-social a {
+	.footer-legal a {
+		display: inline-flex;
+		min-height: 32px;
+		align-items: center;
+		padding-inline: var(--spacing-80);
 		border-radius: var(--radius-medium);
 		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
 		text-decoration: none;
+		white-space: nowrap;
 		transition:
 			background var(--motion-duration-control) var(--curve-easy-ease),
 			color var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
-	.footer-links a {
-		display: inline-flex;
-		min-height: 32px;
-		align-items: center;
-		padding-inline: var(--spacing-80);
+	.footer-legal a:hover,
+	.footer-legal a:focus-visible {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.footer-copyright {
+		flex: 0 0 auto;
+		margin: 0;
+		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-caption-1);
 		line-height: var(--line-height-caption-1);
 		white-space: nowrap;
 	}
 
-	.footer-social {
-		display: flex;
-		flex: 0 0 auto;
-		align-items: center;
-		gap: var(--spacing-20);
-	}
-
-	.footer-social a {
-		display: grid;
-		width: 32px;
-		height: 32px;
-		place-items: center;
-	}
-
-	.footer-social svg,
-	.footer-rss svg {
-		width: var(--icon-size-small);
-		height: var(--icon-size-small);
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.5;
-	}
-
-	.footer-social a:first-child svg path:first-child { fill: currentColor; stroke: none; }
-	.footer-social a:first-child svg path:last-child { fill: var(--color-neutral-background-3); stroke: none; }
-
-	.footer-links a:hover,
-	.footer-links a:focus-visible,
-	.footer-social a:hover,
-	.footer-social a:focus-visible,
-	.footer-rss:hover,
-	.footer-rss:focus-visible {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.footer-divider {
-		height: var(--stroke-thin);
-		background: var(--color-neutral-stroke-alpha);
-	}
-
-	.footer-bottom {
-		min-height: 44px;
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
-	}
-
-	.footer-bottom p { color: var(--color-neutral-foreground-3); }
-
-	.footer-rss {
-		display: inline-flex;
-		min-height: 32px;
-		align-items: center;
-		gap: var(--spacing-60);
-		padding-inline: var(--spacing-80);
-	}
-
 	@media (max-width: 760px) {
-		.footer-primary {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: var(--spacing-80);
-			padding-block: var(--spacing-160);
+		.footer-row {
+			gap: var(--spacing-120);
+		}
+
+		.footer-legal {
+			gap: 0;
+		}
+
+		.footer-legal a {
+			padding-inline: var(--spacing-40);
 		}
 	}
 
-	@media (max-width: 479px) {
-		.site-footer { margin-top: var(--spacing-400); }
-
-		.footer-links a {
-			min-height: 40px;
-			padding-inline: var(--spacing-100);
+	@media (max-width: 560px) {
+		.footer-row {
+			min-height: 72px;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-block: var(--spacing-80);
+			text-align: center;
 		}
 
-		.footer-bottom {
-			min-height: 60px;
-			flex-direction: column;
+		.footer-legal {
+			width: 100%;
 			justify-content: center;
-			gap: var(--spacing-20);
-			text-align: center;
+			flex-wrap: wrap;
 		}
 	}
 
 	@media (pointer: coarse) {
-		.footer-links a,
-		.footer-social a,
-		.footer-rss {
+		.footer-legal a {
 			min-height: var(--control-height-touch);
 		}
+	}
 
-		.footer-social a { width: var(--control-height-touch); }
+	@media (prefers-reduced-motion: reduce) {
+		.footer-legal a {
+			transition: none;
+		}
 	}
 </style>
