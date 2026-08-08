@@ -1,0 +1,351 @@
+/* HAKAMIQ article compatibility layer.
+ *
+ * Imported Blogger articles intentionally keep their semantic HTML and useful
+ * layout rules, but they no longer own the site's palette, typography or media
+ * framing. This contract is applied to every BlogPost through
+ * data-hq-article-compat and is deliberately stronger than legacy article CSS.
+ */
+
+#main-content [data-hq-article-compat] {
+	--hq-article-reading-width: var(--reading-width);
+	--hq-article-media-width: var(--content-width);
+	isolation: isolate;
+	color: var(--color-neutral-foreground-2) !important;
+	background: var(--color-transparent-background) !important;
+	font-family: var(--font-family-base) !important;
+	font-size: var(--font-size-reading);
+	line-height: var(--line-height-reading);
+	text-align: start;
+}
+
+#main-content [data-hq-article-compat],
+#main-content [data-hq-article-compat] * {
+	box-sizing: border-box;
+}
+
+/* Legacy themes frequently set a custom font on every descendant. Keep the
+ * site type system authoritative, while restoring monospace where it matters. */
+#main-content [data-hq-article-compat] :where(*) {
+	font-family: inherit !important;
+}
+
+#main-content [data-hq-article-compat] :where(pre, code, kbd, samp) {
+	font-family: var(--font-family-monospace) !important;
+}
+
+/* Top-level Blogger wrappers are layout containers, not page canvases. Their
+ * old white/blue/gradient backgrounds are neutralized so they cannot fight the
+ * site's dark Fluent surface. */
+#main-content [data-hq-article-compat] > :where(div, article, main),
+#main-content [data-hq-article-compat] :where([class*='wrapper'], [class*='container']) {
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	background-color: var(--color-transparent-background) !important;
+	background-image: none !important;
+	color: inherit !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(section, aside, header, footer) {
+	max-width: 100% !important;
+	background-image: none !important;
+	color: inherit !important;
+}
+
+/* Common legacy content blocks become one restrained Fluent surface. The
+ * class matching is intentionally article-scoped and covers the naming styles
+ * used by the imported archive (card/box/panel/step/tip/note/etc.). */
+#main-content [data-hq-article-compat] :where(
+	[class*='card'],
+	[class*='box'],
+	[class*='panel'],
+	[class*='step'],
+	[class*='tip'],
+	[class*='note'],
+	[class*='notice'],
+	[class*='alert'],
+	[class*='requirement'],
+	[class*='feature']
+) {
+	background-color: var(--color-neutral-background-2) !important;
+	background-image: none !important;
+	border-color: var(--color-neutral-stroke-3) !important;
+	color: var(--color-neutral-foreground-2) !important;
+	box-shadow: none !important;
+}
+
+/* Hero/intro blocks retain hierarchy without carrying an imported palette. */
+#main-content [data-hq-article-compat] :where(
+	[class*='hero-header'],
+	[class*='hero-section'],
+	[class*='intro-box'],
+	[class*='intro-card']
+) {
+	padding: clamp(var(--spacing-160), 3vw, var(--spacing-320)) !important;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-3) !important;
+	border-radius: var(--radius-xlarge) !important;
+	background-color: var(--color-neutral-background-3) !important;
+	background-image: none !important;
+	color: var(--color-neutral-foreground-1) !important;
+	box-shadow: none !important;
+}
+
+/* Text contrast is owned by the site, not by per-post Blogger themes. Reset
+ * both foreground and text-level background paint so white-on-white,
+ * dark-on-dark and colored highlight blocks cannot survive the migration. */
+#main-content [data-hq-article-compat] :where(
+	p,
+	li,
+	dt,
+	dd,
+	summary,
+	label,
+	address,
+	font,
+	span,
+	em,
+	i
+) {
+	background-color: var(--color-transparent-background) !important;
+	background-image: none !important;
+	color: inherit !important;
+	text-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(h1, h2, h3, h4, h5, h6) {
+	background-color: var(--color-transparent-background) !important;
+	background-image: none !important;
+	color: var(--color-neutral-foreground-1) !important;
+	text-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(strong, b) {
+	background-color: var(--color-transparent-background) !important;
+	color: var(--color-neutral-foreground-1) !important;
+}
+
+#main-content [data-hq-article-compat] :where(small, figcaption, .muted, [class*='muted']) {
+	color: var(--color-neutral-foreground-3) !important;
+}
+
+#main-content [data-hq-article-compat] :where(mark) {
+	padding-inline: var(--spacing-40);
+	border-radius: var(--radius-small);
+	background: var(--color-brand-background-alpha) !important;
+	color: var(--color-neutral-foreground-1) !important;
+}
+
+#main-content [data-hq-article-compat] :where(a) {
+	background-color: var(--color-transparent-background) !important;
+	background-image: none !important;
+	color: var(--color-brand-foreground-link) !important;
+	text-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(a:hover, a:focus-visible) {
+	color: var(--color-brand-foreground-link-hover) !important;
+}
+
+/* Normalize legacy download/action links into the same Fluent control. */
+#main-content [data-hq-article-compat] :where(
+	button,
+	a[role='button'],
+	a[download],
+	a[class*='btn'],
+	a[class*='button']
+) {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-80);
+	min-height: var(--control-height-medium);
+	padding: var(--spacing-80) var(--spacing-160) !important;
+	border: var(--stroke-thin) solid var(--color-brand-stroke-2) !important;
+	border-radius: var(--radius-medium) !important;
+	background: var(--color-brand-background) !important;
+	color: var(--color-neutral-foreground-on-brand) !important;
+	box-shadow: none !important;
+	font-weight: var(--font-weight-semibold) !important;
+	line-height: var(--line-height-body-1) !important;
+	text-decoration: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(
+	button,
+	a[role='button'],
+	a[download],
+	a[class*='btn'],
+	a[class*='button']
+):hover {
+	background: var(--color-brand-background-hover) !important;
+	color: var(--color-neutral-foreground-on-brand) !important;
+}
+
+/* Code, quotes and tables get deterministic dark surfaces and readable text. */
+#main-content [data-hq-article-compat] :where(code):not(pre code) {
+	padding: var(--spacing-20) var(--spacing-60) !important;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-3) !important;
+	border-radius: var(--radius-medium) !important;
+	background: var(--color-neutral-background-3) !important;
+	color: var(--color-neutral-foreground-1) !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(pre) {
+	max-width: 100% !important;
+	padding: var(--spacing-160) !important;
+	overflow: auto;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-3) !important;
+	border-radius: var(--radius-large) !important;
+	background: var(--color-neutral-background-5) !important;
+	color: var(--color-neutral-foreground-1) !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(pre code) {
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	color: inherit !important;
+}
+
+#main-content [data-hq-article-compat] :where(blockquote) {
+	border-color: var(--color-neutral-stroke-2) !important;
+	border-inline-start-color: var(--color-brand-stroke-1) !important;
+	background: var(--color-neutral-background-3) !important;
+	color: var(--color-neutral-foreground-2) !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(table) {
+	border-color: var(--color-neutral-stroke-2) !important;
+	background: var(--color-neutral-background-2) !important;
+	color: var(--color-neutral-foreground-2) !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(th) {
+	background: var(--color-neutral-background-1) !important;
+	color: var(--color-neutral-foreground-1) !important;
+}
+
+#main-content [data-hq-article-compat] :where(td) {
+	background: var(--color-transparent-background) !important;
+	color: var(--color-neutral-foreground-2) !important;
+}
+
+#main-content [data-hq-article-compat] :where(hr) {
+	border: 0 !important;
+	border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha) !important;
+	background: transparent !important;
+}
+
+/* Media contract: preserve the source aspect ratio, never upscale small images,
+ * never overflow the reading surface, and always use one HAKAMIQ frame. */
+#main-content [data-hq-article-compat] :where(img):not([data-hq-media-unframed]) {
+	display: block !important;
+	inline-size: auto !important;
+	width: auto !important;
+	max-inline-size: min(100%, var(--hq-article-media-width)) !important;
+	max-width: min(100%, var(--hq-article-media-width)) !important;
+	block-size: auto !important;
+	height: auto !important;
+	margin: clamp(var(--spacing-160), 2vw, var(--spacing-240)) auto !important;
+	padding: var(--hq-media-frame-inset) !important;
+	object-fit: contain !important;
+	border: var(--stroke-thin) solid var(--hq-media-frame-border) !important;
+	border-radius: var(--hq-media-frame-radius) !important;
+	background: var(--hq-media-frame-surface) !important;
+	box-shadow: var(--hq-media-frame-shadow) !important;
+}
+
+#main-content [data-hq-article-compat] :where(figure, .separator, .tr-caption-container) {
+	width: min(100%, var(--hq-article-media-width)) !important;
+	max-width: 100% !important;
+	margin: clamp(var(--spacing-160), 2vw, var(--spacing-240)) auto !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(figure, .separator, .tr-caption-container) img {
+	margin-block: 0 !important;
+}
+
+#main-content [data-hq-article-compat] a:has(> img) {
+	display: block !important;
+	width: fit-content !important;
+	max-width: 100% !important;
+	margin-inline: auto !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+}
+
+#main-content [data-hq-article-compat] :where(iframe, video) {
+	display: block !important;
+	width: min(100%, var(--hq-article-media-width)) !important;
+	max-width: 100% !important;
+	height: auto;
+	margin: var(--spacing-240) auto !important;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-2) !important;
+	border-radius: var(--radius-large) !important;
+	background: var(--color-neutral-background-5) !important;
+	box-shadow: none !important;
+}
+
+/* Keep semantic status cues, but use them as a restrained border rather than
+ * importing an entire post-specific color scheme. */
+#main-content [data-hq-article-compat] :where([class*='warning'], [class*='alert']) {
+	border-inline-start-color: var(--color-status-warning-border) !important;
+}
+
+#main-content [data-hq-article-compat] :where([class*='danger'], [class*='error']) {
+	border-inline-start-color: var(--color-status-danger-border) !important;
+}
+
+#main-content [data-hq-article-compat] :where([class*='success'], [class*='tip']) {
+	border-inline-start-color: var(--color-status-success-border) !important;
+}
+
+@media (max-width: 639px) {
+	#main-content [data-hq-article-compat] {
+		--hq-article-media-width: 100%;
+	}
+
+	#main-content [data-hq-article-compat] :where(
+		[class*='card'],
+		[class*='box'],
+		[class*='panel'],
+		[class*='step'],
+		[class*='tip'],
+		[class*='note'],
+		[class*='notice'],
+		[class*='alert'],
+		[class*='requirement'],
+		[class*='feature']
+	) {
+		max-width: 100% !important;
+		padding: var(--spacing-140, 14px) !important;
+		border-radius: var(--radius-medium) !important;
+	}
+
+	#main-content [data-hq-article-compat] :where(img):not([data-hq-media-unframed]) {
+		max-width: 100% !important;
+		margin-block: var(--spacing-140, 14px) !important;
+		border-radius: var(--radius-large) !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#main-content [data-hq-article-compat],
+	#main-content [data-hq-article-compat] * {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
+}
