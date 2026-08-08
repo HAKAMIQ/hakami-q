@@ -3,7 +3,6 @@ import type { BlogPostEntry } from '../../data/blog-taxonomy';
 import {
 	categoryDefinitions,
 	categoryGroups,
-	formatArabicDate,
 	normalizeSearchText,
 } from '../../data/blog-taxonomy';
 
@@ -135,7 +134,7 @@ const guidePost = posts.find((post) => {
 				<div class="fui-card__body list-body">
 					<ul class="latest-posts fui-list">
 						{latestPosts.map((post) => (
-							<li><a href={`/blog/${post.id}/`}><span>{post.data.title}</span><time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time></a></li>
+							<li><a href={`/blog/${post.id}/`}><span>{post.data.title}</span></a></li>
 						))}
 					</ul>
 				</div>
@@ -445,8 +444,6 @@ const guidePost = posts.find((post) => {
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 	}
-
-	.latest-posts time { color: var(--color-neutral-foreground-3); font-size: var(--font-size-caption-2); line-height: var(--line-height-caption-2); }
 
 	.guide-card { display: block; overflow: hidden; color: var(--color-neutral-foreground-2); text-decoration: none; }
 	.guide-card:focus-visible { box-shadow: var(--focus-ring); }
