@@ -8,6 +8,7 @@ type MenuItem = {
 type MenuGroup = {
 	label: string;
 	slug: string;
+	iconPath: string;
 	items?: MenuItem[];
 };
 
@@ -15,8 +16,9 @@ const categoryHref = (slug: string) => `/blog?category=${encodeURIComponent(slug
 
 const menuGroups: MenuGroup[] = [
 	{
-		label: 'Nintendo',
+		label: 'نينتندو',
 		slug: 'nintendo',
+		iconPath: 'M7 7.5h10a2.5 2.5 0 0 1 2.5 2.5v4A2.5 2.5 0 0 1 17 16.5H7A2.5 2.5 0 0 1 4.5 14v-4A2.5 2.5 0 0 1 7 7.5Zm2 2v5m6-3.5h.01m2 2h.01',
 		items: [
 			{ label: 'Nintendo Switch', slug: 'nintendo-switch' },
 			{ label: 'Wii U', slug: 'wii-u' },
@@ -40,8 +42,9 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'PlayStation',
+		label: 'بلايستيشن',
 		slug: 'playstation',
+		iconPath: 'M8.2 5.2v11.6m0-11.6c2.7.2 5.2.8 5.2 3.2 0 1.8-1.5 2.8-3.7 2.8m0 3.3 3.4-1.1c2.4-.7 4-.3 4.2.5.2.9-1.1 1.8-3.4 2.5l-5.4 1.7m-2.9-.5-2.7.8c-1.9.6-3.4.3-3.6-.4-.2-.7.9-1.4 2.8-2l3.5-1.1',
 		items: [
 			{ label: 'PlayStation 1 - PS1', slug: 'ps1' },
 			{ label: 'PlayStation 2 - PS2', slug: 'ps2' },
@@ -59,16 +62,18 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'Xbox',
+		label: 'إكس بوكس',
 		slug: 'xbox',
+		iconPath: 'M5.4 7.1c1.8-1.6 4-2.6 6.6-2.6s4.8 1 6.6 2.6M6.8 18.2c1.6-3.3 3.3-5.9 5.2-7.8 1.9 1.9 3.6 4.5 5.2 7.8M8.4 6.1 12 10.4l3.6-4.3',
 		items: [
 			{ label: 'Original Xbox - OG Xbox', slug: 'original-xbox' },
 			{ label: 'Xbox 360 - X360', slug: 'xbox-360' },
 		],
 	},
 	{
-		label: 'Sega',
+		label: 'سيجا',
 		slug: 'sega',
+		iconPath: 'M4.5 8.2c2.2-2.2 5-3.4 8.1-3.4 2.2 0 4.3.6 6 1.8M5.4 12h13.2M5.4 15.8h8.3c2.5 0 4.2-1.1 4.8-3.8M6 18.8h7.6',
 		items: [
 			{ label: 'Mega Drive / Genesis', slug: 'genesis' },
 			{ label: 'Sega Saturn', slug: 'saturn' },
@@ -80,8 +85,9 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'Other consoles',
+		label: 'أجهزة أخرى',
 		slug: 'other-consoles',
+		iconPath: 'M7.5 8h9A3.5 3.5 0 0 1 20 11.5v2A3.5 3.5 0 0 1 16.5 17h-9A3.5 3.5 0 0 1 4 13.5v-2A3.5 3.5 0 0 1 7.5 8Zm1 2v5m-2.5-2.5h5m4-1.5h.01m2 2h.01',
 		items: [
 			{
 				label: 'Atari',
@@ -106,108 +112,120 @@ const menuGroups: MenuGroup[] = [
 		],
 	},
 	{
-		label: 'Multi-system',
+		label: 'متعدد الأنظمة',
 		slug: 'multi-system',
+		iconPath: 'm12 3 7 4-7 4-7-4 7-4Zm-7 8 7 4 7-4m-14 4 7 4 7-4',
 		items: [
 			{ label: 'RetroArch', slug: 'retroarch' },
 			{ label: 'RetroBat', slug: 'retrobat' },
 			{ label: 'LaunchBox', slug: 'launchbox' },
 		],
 	},
-	{ label: 'PC', slug: 'pc' },
+	{
+		label: 'PC',
+		slug: 'pc',
+		iconPath: 'M5 5.5h14v10H5v-10Zm4 13h6m-3-3v3',
+	},
 ];
 ---
 
 <header class="site-header" data-site-header>
 	<div class="utility-bar">
 		<div class="site-container utility-inner">
-			<nav class="social-links" aria-label="الشبكات الاجتماعية" dir="ltr">
-				<a href="https://www.youtube.com/@HAKAMIQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube، يفتح في علامة تبويب جديدة" title="YouTube — علامة تبويب جديدة">
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.1a3 3 0 0 0-2.1-2.1C17.1 5.5 12 5.5 12 5.5S6.9 5.5 5.1 6A3 3 0 0 0 3 8.1 31 31 0 0 0 2.5 12 31 31 0 0 0 3 15.9 3 3 0 0 0 5.1 18c1.8.5 6.9.5 6.9.5s5.1 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-3.9 31 31 0 0 0-.5-3.9Z"></path><path d="m10 9 5 3-5 3Z"></path></svg>
+			<p class="hq-welcome">
+				<span>مرحباً بك في <strong>HAKAMIQ</strong></span>
+				<span class="hq-welcome-divider" aria-hidden="true"></span>
+				<span>وجهتك العربية لعالم الألعاب والمحاكاة</span>
+			</p>
+
+			<nav class="utility-links" aria-label="أدوات الموقع">
+				<button class="utility-action" type="button" data-header-search>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="m15 15 4.5 4.5"></path></svg>
+					<span>بحث</span>
+				</button>
+				<span class="utility-status" title="الموقع يستخدم المظهر الداكن">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 15.5A7.5 7.5 0 0 1 8.5 5 7.5 7.5 0 1 0 19 15.5Z"></path></svg>
+					<span>المظهر الداكن</span>
+				</span>
+				<a class="utility-action" href="/rss.xml" aria-label="خلاصة التحديثات RSS">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5a14 14 0 0 1 14 14M5 10a9 9 0 0 1 9 9"></path><circle cx="6" cy="18" r="1"></circle></svg>
+					<span>التحديثات</span>
 				</a>
-				<a href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="Discord، يفتح في علامة تبويب جديدة" title="Discord — علامة تبويب جديدة">
+				<a class="utility-action" href="https://discord.gg/WqgRrmAKpC" target="_blank" rel="noopener noreferrer" aria-label="مجتمع HAKAMIQ على Discord، يفتح في علامة تبويب جديدة">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 7.2a11 11 0 0 1 7.6 0M7 17c3.3 2 6.7 2 10 0M6.2 8.2C4.7 10.3 4 12.8 4 15.5c1.7 1.4 3.5 2.3 5.4 2.7l1-1.4M17.8 8.2c1.5 2.1 2.2 4.6 2.2 7.3-1.7 1.4-3.5 2.3-5.4 2.7l-1-1.4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle></svg>
-				</a>
-				<a href="https://t.me/hakamiq0" target="_blank" rel="noopener noreferrer" aria-label="Telegram، يفتح في علامة تبويب جديدة" title="Telegram — علامة تبويب جديدة">
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15-5.2-3.9-2.7 2.6.4-4.8L18 7.2 8.5 12l-4.2-1.4Z"></path></svg>
+					<span>Discord</span>
 				</a>
 			</nav>
-
-			<nav class="utility-links" aria-label="روابط المعلومات">
-				<a href="/">الصفحة الرئيسية</a>
-				<a href="/privacy">سياسة الخصوصية</a>
-				<a href="/terms">اتفاقية الاستخدام</a>
-				<a href="/contact">اتصل بنا</a>
-				<a href="/about">من نحن</a>
-				<a href="/services">خدمة المحاكيات</a>
-			</nav>
-		</div>
-	</div>
-
-	<div class="brand-surface">
-		<div class="site-container brand-inner">
-			<a class="brand" href="/" aria-label="HAKAMIQ - الصفحة الرئيسية">
-				<img src="/hakamiq-logo.svg" width="500" height="241" alt="HAKAMIQ" />
-			</a>
-
-			<p class="brand-description">شروحات عربية عملية لتشغيل المحاكيات وإعداد الألعاب وحل المشاكل على الكمبيوتر وأجهزة الألعاب</p>
-
-			<button class="mobile-menu-toggle fui-button fui-button--secondary" type="button" aria-label="الأقسام" aria-expanded="false" aria-controls="primary-menu">
-				<span>الأقسام</span>
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-			</button>
 		</div>
 	</div>
 
 	<nav class="main-nav" aria-label="أقسام HAKAMIQ">
 		<div class="site-container nav-inner">
-			<div class="menu-bar" id="primary-menu" dir="ltr">
-				<a class="home-menu-link" href="/" aria-label="الصفحة الرئيسية" title="الصفحة الرئيسية">
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>
-					<span class="home-menu-text">الرئيسية</span>
+			<div class="hq-nav-shell">
+				<a class="brand" href="/" aria-label="HAKAMIQ - الصفحة الرئيسية">
+					<span class="brand-word">HAKAMIQ</span>
+					<svg class="brand-gamepad" viewBox="0 0 48 32" aria-hidden="true">
+						<path d="M13 8h22c4 0 7 3 8 7l2 8c.6 2.5-2 4.5-4 2.8l-6-5.3H13l-6 5.3C5 27.5 2.4 25.5 3 23l2-8c1-4 4-7 8-7Z"></path>
+						<path d="M13 13v7m-3.5-3.5h7M33.5 14.5h.01M37 18h.01"></path>
+					</svg>
 				</a>
 
-				{menuGroups.map((group) => {
-					const panelId = `nav-panel-${group.slug}`;
-					return group.items ? (
-						<div class="menu-group" data-menu-group>
-							<button class="menu-trigger" type="button" aria-expanded="false" aria-controls={panelId}>
-								<span>{group.label}</span>
-								<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
-							</button>
+				<button class="mobile-menu-toggle" type="button" aria-label="الأقسام" aria-expanded="false" aria-controls="primary-menu">
+					<span>الأقسام</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+				</button>
 
-							<div class="menu-panel" id={panelId} data-menu-panel>
-								<div class="menu-surface" aria-label={group.label}>
-									<div class="menu-list">
-										{group.items.map((item) => {
-											const submenuId = `nav-submenu-${group.slug}-${item.slug}`;
-											return item.children ? (
-												<div class="submenu-group" data-submenu-group>
-													<button class="submenu-trigger" type="button" aria-expanded="false" aria-controls={submenuId} aria-label={`عرض ${item.label}`}>
-														<span>{item.label}</span>
-														<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"></path></svg>
-													</button>
+				<div class="menu-bar" id="primary-menu">
+					<a class="home-menu-link" href="/" aria-label="الصفحة الرئيسية" title="الصفحة الرئيسية">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>
+						<span class="home-menu-text">الرئيسية</span>
+					</a>
 
-													<div class="submenu-panel" id={submenuId} data-submenu-panel>
-														<div class="submenu-surface" aria-label={item.label}>
-															{item.children.map((child) => (
-																<a href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>
-															))}
+					{menuGroups.map((group) => {
+						const panelId = `nav-panel-${group.slug}`;
+						return group.items ? (
+							<div class="menu-group" data-menu-group>
+								<button class="menu-trigger" type="button" aria-expanded="false" aria-controls={panelId}>
+									<svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={group.iconPath}></path></svg>
+									<span>{group.label}</span>
+									<svg class="menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
+								</button>
+
+								<div class="menu-panel" id={panelId} data-menu-panel>
+									<div class="menu-surface" aria-label={group.label}>
+										<div class="menu-list">
+											{group.items.map((item) => {
+												const submenuId = `nav-submenu-${group.slug}-${item.slug}`;
+												return item.children ? (
+													<div class="submenu-group" data-submenu-group>
+														<button class="submenu-trigger" type="button" aria-expanded="false" aria-controls={submenuId} aria-label={`عرض ${item.label}`}>
+															<span>{item.label}</span>
+															<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6"></path></svg>
+														</button>
+														<div class="submenu-panel" id={submenuId} data-submenu-panel>
+															<div class="submenu-surface" aria-label={item.label}>
+																{item.children.map((child) => (
+																	<a href={categoryHref(child.slug)} data-category={child.slug}>{child.label}</a>
+																))}
+															</div>
 														</div>
 													</div>
-												</div>
-											) : (
-												<a href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
-											);
-										})}
+												) : (
+													<a href={categoryHref(item.slug)} data-category={item.slug}>{item.label}</a>
+												);
+											})}
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					) : (
-						<a class="menu-direct" href={categoryHref(group.slug)} data-category={group.slug}>{group.label}</a>
-					);
-				})}
+						) : (
+							<a class="menu-direct" href={categoryHref(group.slug)} data-category={group.slug}>
+								<svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={group.iconPath}></path></svg>
+								<span>{group.label}</span>
+							</a>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -224,7 +242,7 @@ const menuGroups: MenuGroup[] = [
 		const topMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-menu-group]'));
 		const nestedMenus = Array.from(header.querySelectorAll<HTMLElement>('[data-submenu-group]'));
 		const timers = new WeakMap<HTMLElement, number>();
-		const closeDelay = 160;
+		const closeDelay = 140;
 		const viewportGap = 12;
 
 		const clearTimer = (menu: HTMLElement) => {
@@ -260,11 +278,7 @@ const menuGroups: MenuGroup[] = [
 			const panel = menu.querySelector<HTMLElement>(':scope > [data-submenu-panel]');
 			if (!panel) return;
 			panel.classList.remove('open-start');
-			menu.classList.remove('opens-start');
-			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) {
-				panel.classList.add('open-start');
-				menu.classList.add('opens-start');
-			}
+			if (panel.getBoundingClientRect().right > window.innerWidth - viewportGap) panel.classList.add('open-start');
 		};
 
 		const openTopMenu = (menu: HTMLElement) => {
@@ -328,25 +342,6 @@ const menuGroups: MenuGroup[] = [
 
 		for (const menu of nestedMenus) {
 			const trigger = menu.querySelector<HTMLButtonElement>(':scope > .submenu-trigger');
-			menu.addEventListener('pointerenter', () => {
-				if (!desktop.matches) return;
-				clearTimer(menu);
-				openNestedMenu(menu);
-			});
-			menu.addEventListener('pointerleave', (event) => {
-				if (!desktop.matches) return;
-				const next = event.relatedTarget;
-				if (next instanceof Node && menu.contains(next)) return;
-				scheduleClose(menu, true);
-			});
-			menu.addEventListener('focusin', () => {
-				if (desktop.matches) openNestedMenu(menu);
-			});
-			menu.addEventListener('focusout', () => {
-				window.setTimeout(() => {
-					if (!menu.contains(document.activeElement)) scheduleClose(menu, true);
-				}, 0);
-			});
 			trigger?.addEventListener('click', (event) => {
 				event.stopPropagation();
 				const willOpen = !menu.classList.contains('is-open');
@@ -365,6 +360,16 @@ const menuGroups: MenuGroup[] = [
 			}
 		});
 
+		header.querySelector<HTMLButtonElement>('[data-header-search]')?.addEventListener('click', () => {
+			const homeSearch = document.querySelector<HTMLInputElement>('#home-search-input');
+			if (homeSearch) {
+				homeSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				window.setTimeout(() => homeSearch.focus(), 240);
+				return;
+			}
+			window.location.href = '/blog';
+		});
+
 		header.querySelectorAll<HTMLAnchorElement>('.menu-bar a').forEach((link) => link.addEventListener('click', closeAll));
 		document.addEventListener('pointerdown', (event) => {
 			if (event.target instanceof Node && !header.contains(event.target)) closeAll();
@@ -378,10 +383,6 @@ const menuGroups: MenuGroup[] = [
 			restoreTarget?.focus();
 		});
 		desktop.addEventListener('change', closeAll);
-		window.addEventListener('resize', () => {
-			for (const menu of topMenus) if (menu.classList.contains('is-open')) positionTopPanel(menu);
-			for (const menu of nestedMenus) if (menu.classList.contains('is-open')) positionSubmenu(menu);
-		});
 
 		if (window.location.pathname === '/') {
 			header.querySelector<HTMLAnchorElement>('.home-menu-link')?.setAttribute('aria-current', 'page');
@@ -402,456 +403,3 @@ const menuGroups: MenuGroup[] = [
 	else initializeHeader();
 	document.addEventListener('astro:page-load', initializeHeader);
 </script>
-
-<style>
-	.site-header {
-		position: relative;
-		z-index: 1000;
-		overflow: visible;
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-3);
-		box-shadow: var(--shadow-4);
-	}
-
-	.utility-bar {
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-4);
-	}
-
-	.utility-inner {
-		display: flex;
-		min-height: 32px;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--spacing-160);
-		direction: ltr;
-	}
-
-	.social-links,
-	.utility-links {
-		display: flex;
-		align-items: center;
-	}
-
-	.social-links { gap: var(--spacing-20); }
-	.utility-links { gap: var(--spacing-20); direction: rtl; }
-
-	.social-links a,
-	.utility-links a {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: var(--radius-medium);
-		color: var(--color-neutral-foreground-3);
-		text-decoration: none;
-	}
-
-	.social-links a {
-		width: 28px;
-		height: 28px;
-	}
-
-	.utility-links a {
-		min-height: 28px;
-		padding-inline: var(--spacing-80);
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
-		white-space: nowrap;
-	}
-
-	.social-links a:hover,
-	.utility-links a:hover,
-	.social-links a:focus-visible,
-	.utility-links a:focus-visible {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.social-links svg {
-		width: 14px;
-		height: 14px;
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.5;
-	}
-
-	.social-links a:first-child svg path:first-child { fill: currentColor; stroke: none; }
-	.social-links a:first-child svg path:last-child { fill: var(--color-neutral-background-4); stroke: none; }
-
-	.brand-surface { background: var(--color-neutral-background-2); }
-
-	.brand-inner {
-		display: grid;
-		min-height: 88px;
-		grid-template-columns: auto minmax(260px, 1fr);
-		align-items: center;
-		gap: clamp(var(--spacing-240), 5vw, var(--spacing-560));
-		direction: ltr;
-	}
-
-	.brand {
-		display: inline-flex;
-		width: clamp(180px, 18vw, 214px);
-		align-items: center;
-		text-decoration: none;
-	}
-
-	.brand img {
-		width: 100%;
-		height: 72px;
-		object-fit: contain;
-		object-position: left center;
-	}
-
-	.brand-description {
-		max-width: 680px;
-		justify-self: end;
-		direction: rtl;
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		text-align: right;
-	}
-
-	.mobile-menu-toggle { display: none; }
-
-	.main-nav {
-		position: relative;
-		z-index: 30;
-		overflow: visible;
-		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-		background: var(--color-neutral-background-3);
-	}
-
-	.nav-inner {
-		position: relative;
-		min-height: 48px;
-		overflow: visible;
-	}
-
-	.menu-bar {
-		display: flex;
-		width: 100%;
-		min-height: 48px;
-		align-items: center;
-		gap: var(--spacing-20);
-		overflow: visible;
-	}
-
-	.home-menu-link,
-	.menu-direct,
-	.menu-trigger {
-		display: inline-flex;
-		min-height: 40px;
-		align-items: center;
-		justify-content: center;
-		gap: var(--spacing-60);
-		box-sizing: border-box;
-		border: var(--stroke-thin) solid transparent;
-		border-radius: var(--radius-medium);
-		background: transparent;
-		color: var(--color-neutral-foreground-2);
-		font: inherit;
-		font-size: var(--font-size-caption-1);
-		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-caption-1);
-		text-decoration: none;
-		white-space: nowrap;
-		cursor: pointer;
-		transition:
-			background var(--motion-duration-control) var(--curve-easy-ease),
-			border-color var(--motion-duration-control) var(--curve-easy-ease),
-			color var(--motion-duration-control) var(--curve-easy-ease),
-			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
-	}
-
-	.home-menu-link { width: 40px; padding: 0; }
-	.home-menu-text { display: none; }
-	.menu-direct,
-	.menu-trigger { padding-inline: var(--spacing-120); }
-
-	.home-menu-link:hover,
-	.menu-direct:hover,
-	.menu-trigger:hover,
-	.home-menu-link:focus-visible,
-	.menu-direct:focus-visible,
-	.menu-trigger:focus-visible,
-	.menu-group.is-open > .menu-trigger {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.home-menu-link[aria-current='page'],
-	.menu-direct.is-active,
-	.menu-trigger.has-active-child {
-		background: var(--color-brand-background-2);
-		box-shadow: inset 0 -2px var(--color-brand-stroke-1);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.home-menu-link svg,
-	.menu-chevron,
-	.submenu-trigger svg,
-	.mobile-menu-toggle svg {
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 1.5;
-	}
-
-	.home-menu-link svg { width: 18px; height: 18px; }
-	.menu-chevron { width: 14px; height: 14px; transition: transform var(--motion-duration-control) var(--curve-easy-ease); }
-	.menu-group { position: relative; flex: 0 0 auto; }
-	.menu-group.is-open > .menu-trigger .menu-chevron { transform: rotate(180deg); }
-
-	.menu-panel,
-	.submenu-panel {
-		direction: ltr;
-		text-align: left;
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-		transition:
-			opacity var(--motion-duration-control) var(--curve-easy-ease),
-			transform var(--motion-duration-control) var(--motion-ease-enter),
-			visibility var(--motion-duration-control) var(--curve-easy-ease);
-	}
-
-	.menu-panel {
-		position: absolute;
-		top: calc(100% - 2px);
-		left: 0;
-		width: min(288px, calc(100vw - 24px));
-		padding-top: var(--spacing-60);
-		transform: translateY(-4px);
-		z-index: 220;
-	}
-
-	.menu-panel.align-end { left: auto; right: 0; }
-
-	.menu-surface,
-	.submenu-surface {
-		padding: var(--spacing-60);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-		border-radius: var(--radius-xlarge);
-		background: var(--material-acrylic-fallback);
-		box-shadow: var(--shadow-16);
-	}
-
-	@supports (backdrop-filter: blur(1px)) {
-		.menu-surface,
-		.submenu-surface {
-			background: var(--material-acrylic);
-			backdrop-filter: blur(var(--material-acrylic-blur)) saturate(1.08);
-		}
-	}
-
-	.menu-list { display: grid; gap: 0; }
-
-	.menu-list > a,
-	.submenu-trigger,
-	.submenu-surface > a {
-		display: flex;
-		min-height: 36px;
-		align-items: center;
-		box-sizing: border-box;
-		padding: var(--spacing-80) var(--spacing-100);
-		border: 0;
-		border-radius: var(--radius-medium);
-		background: transparent;
-		color: var(--color-neutral-foreground-2);
-		font: inherit;
-		font-size: var(--font-size-body-1);
-		font-weight: var(--font-weight-regular);
-		line-height: var(--line-height-body-1);
-		text-align: left;
-		text-decoration: none;
-	}
-
-	.menu-list > a:hover,
-	.submenu-trigger:hover,
-	.submenu-surface > a:hover,
-	.menu-list > a:focus-visible,
-	.submenu-trigger:focus-visible,
-	.submenu-surface > a:focus-visible {
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.menu-list > a.is-active,
-	.submenu-surface > a.is-active {
-		background: var(--color-brand-background-2);
-		box-shadow: inset 2px 0 var(--color-brand-stroke-1);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.menu-group.is-open > .menu-panel,
-	.submenu-group.is-open > .submenu-panel {
-		opacity: 1;
-		visibility: visible;
-		transform: translate(0);
-		pointer-events: auto;
-	}
-
-	.submenu-group { position: relative; }
-	.submenu-trigger { width: 100%; justify-content: space-between; gap: var(--spacing-120); cursor: pointer; }
-	.submenu-trigger svg { width: 16px; height: 16px; flex: 0 0 auto; transition: transform var(--motion-duration-control) var(--curve-easy-ease); }
-
-	.submenu-panel {
-		position: absolute;
-		top: -6px;
-		left: 100%;
-		width: min(272px, calc(100vw - 24px));
-		padding-left: var(--spacing-60);
-		transform: translateX(-4px);
-		z-index: 240;
-	}
-
-	.submenu-panel.open-start {
-		left: auto;
-		right: 100%;
-		padding-right: var(--spacing-60);
-		padding-left: 0;
-		transform: translateX(4px);
-	}
-
-	.submenu-group.opens-start > .submenu-trigger svg { transform: rotate(180deg); }
-
-	@media (max-width: 1180px) and (min-width: 1024px) {
-		.utility-links a { padding-inline: var(--spacing-40); font-size: var(--font-size-caption-2); }
-		.brand-inner { min-height: 80px; }
-		.brand { width: 180px; }
-		.brand img { height: 64px; }
-		.brand-description { max-width: 520px; font-size: var(--font-size-caption-1); line-height: var(--line-height-caption-1); }
-		.menu-direct,
-		.menu-trigger { padding-inline: var(--spacing-80); font-size: var(--font-size-caption-2); }
-	}
-
-	@media (max-width: 1023px) {
-		.utility-bar { display: none; }
-
-		.brand-inner {
-			min-height: 64px;
-			grid-template-columns: auto 1fr auto;
-			gap: var(--spacing-120);
-		}
-
-		.brand { width: 146px; }
-		.brand img { height: 54px; }
-		.brand-description { display: none; }
-
-		.mobile-menu-toggle {
-			display: inline-flex;
-			grid-column: 3;
-			min-height: 40px;
-			justify-self: end;
-			gap: var(--spacing-80);
-		}
-
-		.mobile-menu-toggle svg { width: 18px; height: 18px; }
-
-		.main-nav,
-		.nav-inner {
-			position: static;
-			min-height: 0;
-			border: 0;
-			background: transparent;
-		}
-
-		.menu-bar {
-			position: absolute;
-			top: 100%;
-			inset-inline: var(--spacing-120);
-			display: none;
-			min-height: 0;
-			max-height: calc(100dvh - 88px);
-			grid-template-columns: 1fr;
-			overflow-y: auto;
-			overscroll-behavior: contain;
-			padding: var(--spacing-80);
-			border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
-			border-radius: var(--radius-xlarge);
-			background: var(--material-solid-raised);
-			box-shadow: var(--shadow-28);
-			z-index: 300;
-		}
-
-		.site-header.mobile-open .menu-bar { display: grid; }
-
-		.home-menu-link,
-		.menu-direct,
-		.menu-trigger {
-			width: 100%;
-			min-height: 44px;
-			justify-content: space-between;
-			padding-inline: var(--spacing-120);
-			font-size: var(--font-size-body-1);
-			text-align: left;
-		}
-
-		.home-menu-link { justify-content: flex-start; gap: var(--spacing-100); }
-		.home-menu-text { display: inline; }
-		.menu-group { width: 100%; }
-
-		.menu-panel,
-		.submenu-panel,
-		.menu-panel.align-end,
-		.submenu-panel.open-start {
-			position: static;
-			display: none;
-			width: auto;
-			padding: 0 0 var(--spacing-40) var(--spacing-120);
-			opacity: 1;
-			visibility: visible;
-			transform: none;
-			pointer-events: auto;
-		}
-
-		.menu-group.is-open > .menu-panel,
-		.submenu-group.is-open > .submenu-panel { display: block; }
-
-		.menu-surface,
-		.submenu-surface {
-			padding: var(--spacing-40);
-			border-color: var(--color-neutral-stroke-alpha);
-			border-radius: var(--radius-large);
-			background: var(--color-neutral-background-2);
-			box-shadow: none;
-			backdrop-filter: none;
-		}
-
-		.submenu-group.opens-start > .submenu-trigger svg { transform: none; }
-		.submenu-group.is-open > .submenu-trigger svg { transform: rotate(90deg); }
-	}
-
-	@media (max-width: 479px) {
-		.brand-inner { min-height: 60px; }
-		.brand { width: 132px; }
-		.brand img { height: 50px; }
-		.mobile-menu-toggle span { display: none; }
-		.mobile-menu-toggle { width: 40px; padding: 0; }
-		.menu-bar { inset-inline: var(--spacing-80); }
-	}
-
-	@media (pointer: coarse) {
-		.social-links a,
-		.home-menu-link,
-		.menu-direct,
-		.menu-trigger,
-		.menu-list > a,
-		.submenu-trigger,
-		.submenu-surface > a {
-			min-height: var(--control-height-touch);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.menu-panel,
-		.submenu-panel,
-		.menu-chevron,
-		.submenu-trigger svg { transition: none; }
-	}
-</style>
