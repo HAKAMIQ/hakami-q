@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import SkipLink from '../../components/SkipLink.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import { categoryNames, formatArabicDate, getPostCategories } from '../../data/blog-taxonomy';
+import { categoryNames, getPostCategories } from '../../data/blog-taxonomy';
 
 const DEFAULT_PAGE_SIZE = 12;
 const posts = (await getCollection('blog')).sort(
@@ -25,8 +25,6 @@ const postData = postItems.map(({ post, categories }) => ({
 	heroImageUrl: post.data.heroImageUrl ?? '',
 	label: post.data.labels[0] ?? '',
 	categories,
-	dateIso: post.data.pubDate.toISOString(),
-	dateText: formatArabicDate(post.data.pubDate),
 }));
 
 const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
@@ -78,7 +76,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 											{post.data.labels.length > 0 && <span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>}
 											<h2>{post.data.title}</h2>
 											<p>{post.data.description}</p>
-											<time datetime={post.data.pubDate.toISOString()}>{formatArabicDate(post.data.pubDate)}</time>
 										</div>
 									</a>
 								</article>
@@ -103,8 +100,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		heroImageUrl: string;
 		label: string;
 		categories: string[];
-		dateIso: string;
-		dateText: string;
 	};
 
 	const initializeBlogPagination = () => {
@@ -173,10 +168,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 				description.textContent = item.description;
 				content.append(description);
 			}
-			const time = document.createElement('time');
-			time.dateTime = item.dateIso;
-			time.textContent = item.dateText;
-			content.append(time);
 
 			link.append(imageWrap, content);
 			article.append(link);
@@ -344,14 +335,6 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 		line-height: var(--line-height-body-1);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
-	}
-
-	.post-content time {
-		margin-top: auto;
-		padding-top: var(--spacing-120);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-caption-1);
-		line-height: var(--line-height-caption-1);
 	}
 
 	.posts-pagination {
