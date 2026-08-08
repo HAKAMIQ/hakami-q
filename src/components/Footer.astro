@@ -3,9 +3,9 @@ const today = new Date();
 ---
 
 <footer class="site-footer" dir="rtl">
-	<div class="site-container footer-row" dir="ltr">
-		<p class="footer-copyright">
-			<span class="copyright-latin" dir="ltr">Copyright &copy;{today.getFullYear()} HAKAMIQ</span>
+	<div class="site-container footer-row">
+		<p class="footer-copyright" dir="ltr">
+			Copyright &copy;{today.getFullYear()} HAKAMIQ
 		</p>
 
 		<nav class="footer-links" aria-label="روابط الفوتر" dir="rtl">
@@ -44,38 +44,44 @@ const today = new Date();
 <style>
 	.site-footer {
 		margin-top: var(--spacing-480);
-		border-top: var(--stroke-thin) solid var(--color-brand-stroke-1);
-		background: var(--color-neutral-background-3);
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		background: var(--color-neutral-background-2);
 		color: var(--color-neutral-foreground-3);
 	}
 
 	.footer-row {
 		display: grid;
-		min-height: 52px;
+		min-height: 56px;
 		grid-template-columns: auto minmax(0, 1fr) auto;
 		align-items: center;
 		gap: var(--spacing-160);
+		direction: ltr;
 	}
 
 	.footer-copyright {
+		grid-column: 3;
+		justify-self: end;
 		margin: 0;
+		unicode-bidi: isolate;
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-caption-2);
-		font-weight: var(--font-weight-semibold);
+		font-weight: var(--font-weight-regular);
 		line-height: var(--line-height-caption-2);
 		white-space: nowrap;
 	}
 
-	.copyright-latin { unicode-bidi: isolate; }
-
 	.footer-links {
+		grid-column: 2;
 		display: flex;
 		min-width: 0;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: center;
 		gap: var(--spacing-20);
-		overflow: hidden;
+		overflow-x: auto;
+		scrollbar-width: none;
 	}
+
+	.footer-links::-webkit-scrollbar { display: none; }
 
 	.footer-links a {
 		display: inline-flex;
@@ -94,35 +100,49 @@ const today = new Date();
 			color var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
-	.footer-links a:hover,
+	.footer-links a:hover {
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
 	.footer-links a:focus-visible {
+		outline: 2px solid var(--color-brand-stroke-1);
+		outline-offset: 2px;
 		background: var(--color-subtle-background-hover);
 		color: var(--color-neutral-foreground-1);
 	}
 
 	.footer-back-to-top {
+		grid-column: 1;
 		display: grid;
 		width: 36px;
 		height: 36px;
 		place-items: center;
 		padding: 0;
-		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-1);
 		border-radius: 50%;
-		background: var(--color-brand-background-1);
-		color: var(--color-neutral-foreground-on-brand);
-		box-shadow: var(--shadow-4);
+		background: var(--color-neutral-background-3);
+		color: var(--color-neutral-foreground-2);
 		cursor: pointer;
 		transition:
 			background var(--motion-duration-control) var(--curve-easy-ease),
-			box-shadow var(--motion-duration-control) var(--curve-easy-ease),
-			transform var(--motion-duration-control) var(--curve-easy-ease);
+			border-color var(--motion-duration-control) var(--curve-easy-ease),
+			color var(--motion-duration-control) var(--curve-easy-ease),
+			box-shadow var(--motion-duration-control) var(--curve-easy-ease);
 	}
 
-	.footer-back-to-top:hover,
+	.footer-back-to-top:hover {
+		border-color: var(--color-neutral-stroke-1-hover);
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+		box-shadow: var(--shadow-4);
+	}
+
 	.footer-back-to-top:focus-visible {
-		background: var(--color-brand-background-1-hover);
-		box-shadow: var(--shadow-8);
-		transform: translateY(-1px);
+		outline: 2px solid var(--color-brand-stroke-1);
+		outline-offset: 2px;
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
 	}
 
 	.footer-back-to-top svg {
@@ -137,32 +157,36 @@ const today = new Date();
 
 	@media (max-width: 1020px) {
 		.footer-row { gap: var(--spacing-80); }
-		.footer-links { gap: 0; }
+		.footer-links { justify-content: flex-start; }
 		.footer-links a { padding-inline: var(--spacing-40); font-size: var(--font-size-caption-2); }
-		.footer-copyright { font-size: var(--font-size-caption-2); }
 	}
 
 	@media (max-width: 760px) {
 		.footer-row {
-			min-height: 76px;
-			grid-template-columns: 1fr auto;
-			grid-template-areas:
-				"links top"
-				"copyright top";
+			min-height: 84px;
+			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-rows: auto auto;
 			gap: var(--spacing-40) var(--spacing-100);
 			padding-block: var(--spacing-80);
 		}
 
-		.footer-links {
-			grid-area: links;
-			justify-content: flex-start;
-			overflow-x: auto;
-			scrollbar-width: none;
+		.footer-copyright {
+			grid-column: 2;
+			grid-row: 2;
+			justify-self: end;
 		}
 
-		.footer-links::-webkit-scrollbar { display: none; }
-		.footer-copyright { grid-area: copyright; }
-		.footer-back-to-top { grid-area: top; align-self: center; }
+		.footer-links {
+			grid-column: 1 / -1;
+			grid-row: 1;
+			justify-content: flex-start;
+		}
+
+		.footer-back-to-top {
+			grid-column: 1;
+			grid-row: 2;
+			justify-self: start;
+		}
 	}
 
 	@media (pointer: coarse) {
@@ -173,7 +197,5 @@ const today = new Date();
 	@media (prefers-reduced-motion: reduce) {
 		.footer-links a,
 		.footer-back-to-top { transition: none; }
-		.footer-back-to-top:hover,
-		.footer-back-to-top:focus-visible { transform: none; }
 	}
 </style>
