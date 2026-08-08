@@ -181,7 +181,6 @@ const guidePost = posts.find((post) => {
 		const empty = region.querySelector<HTMLElement>('[data-category-empty]');
 		const selectedCategory = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
 		let lastFocused: HTMLElement | null = null;
-		let activeGroup: HTMLElement | undefined;
 
 		if (!sidebar) return;
 
@@ -195,6 +194,8 @@ const guidePost = posts.find((post) => {
 			for (const group of groups) if (group !== except) setGroupOpen(group, false);
 		};
 
+		closeGroups();
+
 		for (const group of groups) {
 			const trigger = group.querySelector<HTMLButtonElement>('[data-accordion-trigger]');
 			trigger?.addEventListener('click', () => {
@@ -206,11 +207,7 @@ const guidePost = posts.find((post) => {
 
 		if (selectedCategory) {
 			const activeLink = region.querySelector<HTMLAnchorElement>(`[data-category-link="${CSS.escape(selectedCategory)}"]`);
-			if (activeLink) {
-				activeLink.setAttribute('aria-current', 'page');
-				activeGroup = activeLink.closest<HTMLElement>('[data-category-group]') ?? undefined;
-				if (activeGroup) setGroupOpen(activeGroup, true);
-			}
+			activeLink?.setAttribute('aria-current', 'page');
 		}
 
 		const filterCategories = () => {
@@ -236,10 +233,7 @@ const guidePost = posts.find((post) => {
 				if (term) setGroupOpen(group, visible);
 			}
 
-			if (!term) {
-				closeGroups(activeGroup);
-				if (activeGroup) setGroupOpen(activeGroup, true);
-			}
+			if (!term) closeGroups();
 			if (empty) empty.hidden = visibleGroups > 0;
 		};
 
@@ -375,6 +369,7 @@ const guidePost = posts.find((post) => {
 
 	.category-search { margin-bottom: var(--spacing-120); }
 	.category-children { display: grid; gap: var(--spacing-20); padding: var(--spacing-20) 0 var(--spacing-80) var(--spacing-80); }
+	.category-children[hidden] { display: none; }
 
 	.category-link {
 		display: flex;
