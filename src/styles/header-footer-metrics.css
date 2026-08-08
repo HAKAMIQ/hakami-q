@@ -1,0 +1,38 @@
+/* Match the top utility strip metrics to the footer without adding group boxes. */
+
+@media (min-width: 1024px) {
+	.site-header.site-header .utility-inner {
+		min-height: 56px;
+		gap: var(--spacing-160);
+	}
+
+	.site-header.site-header .social-links,
+	.site-header.site-header .utility-links {
+		gap: var(--spacing-20);
+	}
+
+	.site-header.site-header .social-links a {
+		width: 32px;
+		height: 32px;
+	}
+
+	.site-header.site-header .social-links svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.site-header.site-header .utility-links a {
+		min-height: 32px;
+		padding-inline: var(--spacing-80);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-caption-1);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-header .social-links a,
+	.site-header .utility-links a {
+		transition: none;
+	}
+}
