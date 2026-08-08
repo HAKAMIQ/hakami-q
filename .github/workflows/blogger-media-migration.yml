@@ -42,6 +42,9 @@ jobs:
           BLOGGER_MEDIA_MAX_FILES: 12000
           BLOGGER_MEDIA_CONCURRENCY: 6
 
+      - name: Normalize localized legacy image links
+        run: node scripts/normalize-localized-blogger-links.mjs
+
       - name: Validate production build
         run: npm run build
 
