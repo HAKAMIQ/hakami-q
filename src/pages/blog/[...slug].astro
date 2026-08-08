@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import '../../styles/article-content-compat.css';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -14,6 +15,7 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const rawBody = post.body ?? '';
+const ARTICLE_STYLE_SCOPE_MARKER = '/* HAKAMIQ_ARTICLE_SCOPE */';
 
 function decodeEntities(value: string) {
 	return value
@@ -74,6 +76,31 @@ function removeDuplicateArticleHeading(html: string, title: string) {
 	return result;
 }
 
+function scopeLegacyStyleBlocks(html: string) {
+	return html.replace(/<style\b([^>]*)>([\s\S]*?)<\/style>/gi, (full, attributes = '', css = '') => {
+		const source = String(css);
+		if (source.includes('HAKAMIQ_ARTICLE_SCOPE')) return full;
+
+		// Imported themes may use :root variables and broad selectors such as p,
+		// h2 or code. Keep those rules useful inside the article without allowing
+		// them to restyle the site header, navigation or footer. Legacy !important
+		// flags are intentionally softened so the site compatibility contract can
+		// guarantee contrast and media sizing.
+		const scopedCss = source
+			.replace(/\s*!important\b/gi, '')
+			.replace(/:root\b/gi, ':scope');
+
+		return `<style${attributes}>\n${ARTICLE_STYLE_SCOPE_MARKER}\n@scope (.article-content) {\n${scopedCss.trim()}\n}\n</style>`;
+	});
+}
+
+function softenInlineLegacyPriorities(html: string) {
+	return html.replace(/\bstyle\s*=\s*(["'])([\s\S]*?)\1/gi, (_full, quote, declaration) => {
+		const softened = String(declaration).replace(/\s*!important\b/gi, '');
+		return `style=${quote}${softened}${quote}`;
+	});
+}
+
 function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 	let result = html.replace(/^\s*---\s*$/gm, '<hr />');
 
@@ -123,6 +150,9 @@ function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 		return tag.replace(relMatch[0], `rel=${relMatch[1]}${[...tokens].join(' ')}${relMatch[1]}`);
 	});
 
+	result = scopeLegacyStyleBlocks(result);
+	result = softenInlineLegacyPriorities(result);
+
 	return result;
 }
 
@@ -133,5 +163,7 @@ const renderedBody = normalizeLegacyArticleMarkup(
 ---
 
 <BlogPost {...post.data}>
-	<Fragment set:html={renderedBody} />
+	<div class="article-compat-root" data-hq-article-compat="v1">
+		<Fragment set:html={renderedBody} />
+	</div>
 </BlogPost>
