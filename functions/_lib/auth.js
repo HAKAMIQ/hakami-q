@@ -2,7 +2,7 @@ const encoder = new TextEncoder();
 const AUTH_COOKIE = 'hq_session';
 const LEGACY_ADMIN_COOKIE = 'hq_admin';
 const SESSION_SECONDS = 7 * 24 * 60 * 60;
-const PBKDF2_ITERATIONS = 210000;
+const PBKDF2_ITERATIONS = 600000;
 const PASSWORD_BYTES = 32;
 const SALT_BYTES = 16;
 
