@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import ArticleDiscovery from '../../components/ArticleDiscovery.astro';
 import ArticleSeo from '../../components/ArticleSeo.astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import '../../styles/article-content-compat.css';
@@ -15,6 +16,9 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 const rawBody = post.body ?? '';
 const ARTICLE_STYLE_SCOPE_MARKER = '/* HAKAMIQ_ARTICLE_SCOPE */';
 
@@ -168,4 +172,5 @@ const renderedBody = normalizeLegacyArticleMarkup(
 	<div class="article-compat-root" data-hq-article-compat="v1">
 		<Fragment set:html={renderedBody} />
 	</div>
+	<ArticleDiscovery post={post} posts={allPosts} />
 </BlogPost>
