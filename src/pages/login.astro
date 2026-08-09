@@ -33,8 +33,9 @@ import '../styles/account-system.css';
 							<label for="password">كلمة المرور</label>
 							<input id="password" class="account-input" type="password" maxlength="128" autocomplete="current-password" required />
 						</div>
+						<div id="turnstile-slot" class="account-turnstile" aria-label="التحقق الأمني"></div>
 						<div class="account-actions">
-							<button id="submit-button" class="account-button account-button--primary" type="submit">دخول</button>
+							<button id="submit-button" class="account-button account-button--primary" type="submit" disabled>دخول</button>
 						</div>
 						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
@@ -49,6 +50,7 @@ import '../styles/account-system.css';
 			const password = document.querySelector<HTMLInputElement>('#password');
 			const feedback = document.querySelector<HTMLElement>('#feedback');
 			const submit = document.querySelector<HTMLButtonElement>('#submit-button');
+			const turnstileSlot = document.querySelector<HTMLElement>('#turnstile-slot');
 
 			function show(message: string, kind = '') {
 				if (!feedback) return;
@@ -57,28 +59,69 @@ import '../styles/account-system.css';
 				feedback.classList.toggle('account-hidden', !message);
 			}
 
+			function safeNextPath() {
+				const requested = new URLSearchParams(window.location.search).get('next');
+				if (!requested) return '/account';
+				try {
+					const target = new URL(requested, window.location.origin);
+					if (target.origin !== window.location.origin) return '/account';
+					return `${target.pathname}${target.search}${target.hash}`;
+				} catch {
+					return '/account';
+				}
+			}
+
+			async function initializeSecurity() {
+				try {
+					const response = await fetch('/api/auth/config', { credentials: 'same-origin' });
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر تهيئة التحقق الأمني.');
+					if (!payload.turnstileSitekey || !turnstileSlot) throw new Error('التحقق الأمني غير مهيأ بعد.');
+					turnstileSlot.classList.add('cf-turnstile');
+					turnstileSlot.dataset.sitekey = payload.turnstileSitekey;
+					turnstileSlot.dataset.action = 'login';
+					const script = document.createElement('script');
+					script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+					script.async = true;
+					script.defer = true;
+					script.addEventListener('load', () => { if (submit) submit.disabled = false; }, { once: true });
+					script.addEventListener('error', () => show('تعذر تحميل التحقق الأمني.', 'error'), { once: true });
+					document.head.append(script);
+				} catch (error) {
+					show(error instanceof Error ? error.message : 'تعذر تهيئة التحقق الأمني.', 'error');
+				}
+			}
+
 			form?.addEventListener('submit', async (event) => {
 				event.preventDefault();
-				if (!identifier || !password || !submit) return;
+				if (!identifier || !password || !submit || !form) return;
 				show('');
+				const token = form.querySelector<HTMLInputElement>('input[name="cf-turnstile-response"]')?.value || '';
+				if (!token) {
+					show('أكمل التحقق الأمني ثم أعد المحاولة.', 'error');
+					return;
+				}
 				submit.disabled = true;
 				try {
 					const response = await fetch('/api/auth/login', {
 						method: 'POST',
 						credentials: 'same-origin',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ identifier: identifier.value, password: password.value }),
+						body: JSON.stringify({ identifier: identifier.value, password: password.value, turnstileToken: token }),
 					});
 					const payload = await response.json().catch(() => ({}));
 					if (!response.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول.');
-					const next = new URLSearchParams(window.location.search).get('next');
-					window.location.href = next && next.startsWith('/') && !next.startsWith('//') ? next : '/account';
+					window.location.assign(safeNextPath());
 				} catch (error) {
 					show(error instanceof Error ? error.message : 'تعذر تسجيل الدخول.', 'error');
+					const api = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
+					api?.reset();
 				} finally {
 					submit.disabled = false;
 				}
 			});
+
+			initializeSecurity();
 		</script>
 	</body>
 </html>
