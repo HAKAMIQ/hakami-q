@@ -1,0 +1,291 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import SkipLink from '../../components/SkipLink.astro';
+import '../../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="إدارة المستخدمين | HAKAMIQ" description="إدارة حسابات وصلاحيات مستخدمي HAKAMIQ." />
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell account-shell--wide">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ACCESS CONTROL</p>
+					<h1>إدارة المستخدمين</h1>
+					<p id="page-status">جاري التحقق من الصلاحيات…</p>
+				</header>
+
+				<section id="bootstrap-card" class="account-card account-hidden" aria-labelledby="bootstrap-title">
+					<h2 id="bootstrap-title">إنشاء حساب المدير الأول</h2>
+					<p>هذه الخطوة تعمل مرة واحدة فقط. سجّل الدخول أولًا من <a href="/admin">لوحة إدارة المقالات الحالية</a> في نفس المتصفح، ثم أنشئ حساب المدير.</p>
+					<form id="bootstrap-form" class="account-form">
+						<div class="account-grid">
+							<div class="account-field">
+								<label for="bootstrap-username">اسم المستخدم</label>
+								<input id="bootstrap-username" class="account-input" type="text" minlength="3" maxlength="32" autocomplete="username" required />
+							</div>
+							<div class="account-field">
+								<label for="bootstrap-email">البريد الإلكتروني</label>
+								<input id="bootstrap-email" class="account-input" type="email" maxlength="254" autocomplete="email" required />
+							</div>
+							<div class="account-field">
+								<label for="bootstrap-password">كلمة المرور</label>
+								<input id="bootstrap-password" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required />
+							</div>
+							<div class="account-field">
+								<label for="bootstrap-confirm">تأكيد كلمة المرور</label>
+								<input id="bootstrap-confirm" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required />
+							</div>
+						</div>
+						<div class="account-actions">
+							<button id="bootstrap-button" class="account-button account-button--primary" type="submit">إنشاء المدير الأول</button>
+						</div>
+						<p id="bootstrap-feedback" class="account-feedback account-hidden" role="status"></p>
+					</form>
+				</section>
+
+				<section id="access-card" class="account-card account-hidden">
+					<h2>لا توجد صلاحية إدارة</h2>
+					<p>سجّل الدخول بحساب مشرف أو مدير للمتابعة.</p>
+					<div class="account-actions">
+						<a class="account-button account-button--primary" href="/login?next=/admin/users">تسجيل الدخول</a>
+						<a class="account-button" href="/account">حسابي</a>
+					</div>
+				</section>
+
+				<section id="users-card" class="account-card account-hidden" aria-labelledby="users-title">
+					<div class="users-toolbar">
+						<div>
+							<h2 id="users-title">الحسابات</h2>
+							<p id="actor-label" class="account-help"></p>
+						</div>
+						<button id="refresh-button" class="account-button" type="button">تحديث</button>
+					</div>
+					<p id="users-feedback" class="account-feedback account-hidden" role="status"></p>
+					<div class="users-table-wrap">
+						<table class="users-table">
+							<thead>
+								<tr>
+									<th>المستخدم</th>
+									<th>البريد</th>
+									<th>الصلاحية</th>
+									<th>الحالة</th>
+									<th>تاريخ التسجيل</th>
+									<th>الإجراء</th>
+								</tr>
+							</thead>
+							<tbody id="users-body"></tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+		</main>
+		<Footer />
+
+		<script>
+			type AccountUser = {
+				id: string;
+				username: string;
+				email?: string;
+				role: 'user' | 'moderator' | 'admin';
+				status: 'active' | 'suspended';
+				createdAt: string;
+			};
+
+			let actor: AccountUser | null = null;
+			const pageStatus = document.querySelector<HTMLElement>('#page-status');
+			const bootstrapCard = document.querySelector<HTMLElement>('#bootstrap-card');
+			const accessCard = document.querySelector<HTMLElement>('#access-card');
+			const usersCard = document.querySelector<HTMLElement>('#users-card');
+			const usersBody = document.querySelector<HTMLTableSectionElement>('#users-body');
+			const usersFeedback = document.querySelector<HTMLElement>('#users-feedback');
+			const actorLabel = document.querySelector<HTMLElement>('#actor-label');
+			const refreshButton = document.querySelector<HTMLButtonElement>('#refresh-button');
+			const bootstrapForm = document.querySelector<HTMLFormElement>('#bootstrap-form');
+			const bootstrapFeedback = document.querySelector<HTMLElement>('#bootstrap-feedback');
+			const bootstrapButton = document.querySelector<HTMLButtonElement>('#bootstrap-button');
+
+			const roleNames: Record<string, string> = { user: 'مستخدم', moderator: 'مشرف', admin: 'مدير' };
+			const statusNames: Record<string, string> = { active: 'نشط', suspended: 'موقوف' };
+
+			function feedback(element: HTMLElement | null, message: string, kind = '') {
+				if (!element) return;
+				element.textContent = message;
+				element.dataset.kind = kind;
+				element.classList.toggle('account-hidden', !message);
+			}
+
+			async function api(path: string, options: RequestInit = {}) {
+				const response = await fetch(`/api/auth/${path}`, {
+					credentials: 'same-origin',
+					headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+					...options,
+				});
+				const payload = await response.json().catch(() => ({}));
+				if (!response.ok) throw new Error(payload.error || 'تعذر تنفيذ الطلب.');
+				return payload;
+			}
+
+			function cell(text = '') {
+				const td = document.createElement('td');
+				td.textContent = text;
+				return td;
+			}
+
+			function renderUsers(users: AccountUser[]) {
+				if (!usersBody || !actor) return;
+				usersBody.replaceChildren();
+				for (const user of users) {
+					const row = document.createElement('tr');
+					row.append(cell(user.username));
+					row.append(cell(user.email || '—'));
+
+					const roleCell = document.createElement('td');
+					if (actor.role === 'admin') {
+						const select = document.createElement('select');
+						select.className = 'account-select';
+						select.setAttribute('aria-label', `صلاحية ${user.username}`);
+						for (const value of ['user', 'moderator', 'admin'] as const) {
+							const option = document.createElement('option');
+							option.value = value;
+							option.textContent = roleNames[value];
+							option.selected = user.role === value;
+							select.append(option);
+						}
+						select.disabled = user.id === actor.id;
+						select.addEventListener('change', async () => {
+							const previous = user.role;
+							try {
+								await api('user-role', { method: 'POST', body: JSON.stringify({ userId: user.id, role: select.value }) });
+								feedback(usersFeedback, `تم تحديث صلاحية ${user.username}.`, 'success');
+								await loadUsers();
+							} catch (error) {
+								select.value = previous;
+								feedback(usersFeedback, error instanceof Error ? error.message : 'تعذر تحديث الصلاحية.', 'error');
+							}
+						});
+						roleCell.append(select);
+					} else {
+						roleCell.textContent = roleNames[user.role] || user.role;
+					}
+					row.append(roleCell);
+
+					const statusCell = document.createElement('td');
+					const badge = document.createElement('span');
+					badge.className = 'status-badge';
+					badge.dataset.status = user.status;
+					badge.textContent = statusNames[user.status] || user.status;
+					statusCell.append(badge);
+					row.append(statusCell);
+					row.append(cell(new Date(user.createdAt).toLocaleDateString('ar-SA')));
+
+					const actionCell = document.createElement('td');
+					const canChangeStatus = user.id !== actor.id && (
+						(actor.role === 'admin' && user.role !== 'admin') ||
+						(actor.role === 'moderator' && user.role === 'user')
+					);
+					if (canChangeStatus) {
+						const button = document.createElement('button');
+						button.className = `account-button${user.status === 'active' ? ' account-button--danger' : ''}`;
+						button.type = 'button';
+						button.textContent = user.status === 'active' ? 'إيقاف' : 'تفعيل';
+						button.addEventListener('click', async () => {
+							button.disabled = true;
+							try {
+								const nextStatus = user.status === 'active' ? 'suspended' : 'active';
+								await api('user-status', { method: 'POST', body: JSON.stringify({ userId: user.id, status: nextStatus }) });
+								feedback(usersFeedback, `تم تحديث حالة ${user.username}.`, 'success');
+								await loadUsers();
+							} catch (error) {
+								feedback(usersFeedback, error instanceof Error ? error.message : 'تعذر تحديث الحالة.', 'error');
+								button.disabled = false;
+							}
+						});
+						actionCell.append(button);
+					} else {
+						actionCell.textContent = '—';
+					}
+					row.append(actionCell);
+					usersBody.append(row);
+				}
+			}
+
+			async function loadUsers() {
+				feedback(usersFeedback, 'جاري تحميل المستخدمين…');
+				try {
+					const payload = await api('users');
+					actor = payload.actor;
+					if (actorLabel && actor) actorLabel.textContent = `متصل كـ ${roleNames[actor.role] || actor.role}: ${actor.username}`;
+					renderUsers(payload.users || []);
+					feedback(usersFeedback, '');
+				} catch (error) {
+					feedback(usersFeedback, error instanceof Error ? error.message : 'تعذر تحميل المستخدمين.', 'error');
+				}
+			}
+
+			async function initialize() {
+				try {
+					const session = await api('session');
+					if (session.authenticated && ['moderator', 'admin'].includes(session.user?.role)) {
+						actor = session.user;
+						if (pageStatus) pageStatus.textContent = 'إدارة الحسابات والصلاحيات.';
+						usersCard?.classList.remove('account-hidden');
+						await loadUsers();
+						return;
+					}
+					const bootstrap = await api('bootstrap-status');
+					if (bootstrap.needsBootstrap) {
+						if (pageStatus) pageStatus.textContent = 'يلزم إنشاء حساب المدير الأول.';
+						bootstrapCard?.classList.remove('account-hidden');
+					} else {
+						if (pageStatus) pageStatus.textContent = 'يلزم تسجيل الدخول بحساب إداري.';
+						accessCard?.classList.remove('account-hidden');
+					}
+				} catch (error) {
+					if (pageStatus) pageStatus.textContent = error instanceof Error ? error.message : 'تعذر تهيئة إدارة المستخدمين.';
+					accessCard?.classList.remove('account-hidden');
+				}
+			}
+
+			bootstrapForm?.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				const username = document.querySelector<HTMLInputElement>('#bootstrap-username');
+				const email = document.querySelector<HTMLInputElement>('#bootstrap-email');
+				const password = document.querySelector<HTMLInputElement>('#bootstrap-password');
+				const confirm = document.querySelector<HTMLInputElement>('#bootstrap-confirm');
+				if (!username || !email || !password || !confirm || !bootstrapButton) return;
+				if (password.value !== confirm.value) {
+					feedback(bootstrapFeedback, 'كلمتا المرور غير متطابقتين.', 'error');
+					return;
+				}
+				bootstrapButton.disabled = true;
+				try {
+					const payload = await api('bootstrap-admin', {
+						method: 'POST',
+						body: JSON.stringify({ username: username.value, email: email.value, password: password.value }),
+					});
+					actor = payload.user;
+					bootstrapCard?.classList.add('account-hidden');
+					usersCard?.classList.remove('account-hidden');
+					if (pageStatus) pageStatus.textContent = 'تم إنشاء المدير الأول.';
+					await loadUsers();
+				} catch (error) {
+					feedback(bootstrapFeedback, error instanceof Error ? error.message : 'تعذر إنشاء المدير الأول.', 'error');
+				} finally {
+					bootstrapButton.disabled = false;
+				}
+			});
+
+			refreshButton?.addEventListener('click', loadUsers);
+			initialize();
+		</script>
+	</body>
+</html>

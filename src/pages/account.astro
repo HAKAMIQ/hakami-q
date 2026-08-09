@@ -1,0 +1,121 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
+import '../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="حسابي | HAKAMIQ" description="إدارة حساب HAKAMIQ." />
+		<meta name="robots" content="noindex,nofollow" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
+					<h1>حسابي</h1>
+					<p id="account-intro">جاري التحقق من الجلسة…</p>
+				</header>
+
+				<section id="account-card" class="account-card account-hidden" aria-labelledby="account-title">
+					<h2 id="account-title">بيانات الحساب</h2>
+					<dl class="account-summary">
+						<div><dt>اسم المستخدم</dt><dd id="account-username">—</dd></div>
+						<div><dt>البريد الإلكتروني</dt><dd id="account-email">—</dd></div>
+						<div><dt>الصلاحية</dt><dd id="account-role">—</dd></div>
+						<div><dt>الحالة</dt><dd id="account-status">—</dd></div>
+					</dl>
+					<div class="account-actions">
+						<a id="moderation-link" class="account-button account-hidden" href="/admin/users">إدارة المستخدمين</a>
+						<button id="logout-button" class="account-button account-button--danger" type="button">تسجيل الخروج</button>
+					</div>
+					<p id="feedback" class="account-feedback account-hidden" role="status"></p>
+				</section>
+
+				<section id="guest-card" class="account-card account-hidden">
+					<h2>يلزم تسجيل الدخول</h2>
+					<p>لا توجد جلسة حساب نشطة.</p>
+					<div class="account-actions">
+						<a class="account-button account-button--primary" href="/login?next=/account">تسجيل الدخول</a>
+						<a class="account-button" href="/register">إنشاء حساب</a>
+					</div>
+				</section>
+			</div>
+		</main>
+		<Footer />
+
+		<script>
+			const intro = document.querySelector<HTMLElement>('#account-intro');
+			const card = document.querySelector<HTMLElement>('#account-card');
+			const guest = document.querySelector<HTMLElement>('#guest-card');
+			const username = document.querySelector<HTMLElement>('#account-username');
+			const email = document.querySelector<HTMLElement>('#account-email');
+			const role = document.querySelector<HTMLElement>('#account-role');
+			const status = document.querySelector<HTMLElement>('#account-status');
+			const moderation = document.querySelector<HTMLElement>('#moderation-link');
+			const logout = document.querySelector<HTMLButtonElement>('#logout-button');
+			const feedback = document.querySelector<HTMLElement>('#feedback');
+
+			const roleLabel: Record<string, string> = { user: 'مستخدم', moderator: 'مشرف', admin: 'مدير' };
+			const statusLabel: Record<string, string> = { active: 'نشط', suspended: 'موقوف' };
+
+			function showFeedback(message: string, kind = '') {
+				if (!feedback) return;
+				feedback.textContent = message;
+				feedback.dataset.kind = kind;
+				feedback.classList.toggle('account-hidden', !message);
+			}
+
+			async function loadSession() {
+				try {
+					const response = await fetch('/api/auth/session', { credentials: 'same-origin' });
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر التحقق من الحساب.');
+					if (!payload.authenticated) {
+						if (intro) intro.textContent = 'لم تسجل الدخول بعد.';
+						guest?.classList.remove('account-hidden');
+						return;
+					}
+					const user = payload.user || {};
+					if (intro) intro.textContent = `مرحبًا ${user.username || ''}`;
+					if (username) username.textContent = user.username || '—';
+					if (email) email.textContent = user.email || '—';
+					if (role) role.textContent = roleLabel[user.role] || user.role || '—';
+					if (status) status.textContent = statusLabel[user.status] || user.status || '—';
+					if (user.role === 'moderator' || user.role === 'admin') moderation?.classList.remove('account-hidden');
+					card?.classList.remove('account-hidden');
+				} catch (error) {
+					if (intro) intro.textContent = 'تعذر تحميل الحساب.';
+					guest?.classList.remove('account-hidden');
+					console.error(error);
+				}
+			}
+
+			logout?.addEventListener('click', async () => {
+				logout.disabled = true;
+				showFeedback('');
+				try {
+					const response = await fetch('/api/auth/logout', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: '{}',
+					});
+					if (!response.ok) throw new Error('تعذر تسجيل الخروج.');
+					window.location.href = '/login';
+				} catch (error) {
+					showFeedback(error instanceof Error ? error.message : 'تعذر تسجيل الخروج.', 'error');
+					logout.disabled = false;
+				}
+			});
+
+			loadSession();
+		</script>
+	</body>
+</html>

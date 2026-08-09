@@ -1,0 +1,260 @@
+.account-main {
+	min-height: 55vh;
+	padding: 48px 16px 72px;
+}
+
+.account-shell {
+	width: min(760px, 100%);
+	margin: 0 auto;
+}
+
+.account-shell--wide {
+	width: min(1180px, 100%);
+}
+
+.account-card {
+	background: var(--color-neutral-background-2);
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 12px;
+	padding: 24px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.account-card + .account-card {
+	margin-top: 20px;
+}
+
+.account-heading {
+	margin-bottom: 24px;
+}
+
+.account-heading h1,
+.account-card h2 {
+	margin: 0 0 8px;
+	color: var(--color-neutral-foreground-1);
+}
+
+.account-heading p,
+.account-card p {
+	color: var(--color-neutral-foreground-2);
+}
+
+.account-kicker {
+	margin: 0 0 8px;
+	color: var(--color-brand-100) !important;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+}
+
+.account-form {
+	display: grid;
+	gap: 16px;
+}
+
+.account-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.account-field {
+	display: grid;
+	gap: 7px;
+}
+
+.account-field label,
+.account-field-label {
+	font-weight: 600;
+	color: var(--color-neutral-foreground-1);
+}
+
+.account-input,
+.account-select {
+	width: 100%;
+	min-height: 42px;
+	box-sizing: border-box;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 6px;
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+	padding: 8px 12px;
+	font: inherit;
+}
+
+.account-input:focus,
+.account-select:focus {
+	outline: 2px solid var(--color-brand-100);
+	outline-offset: 2px;
+}
+
+.account-help {
+	margin: 0;
+	font-size: 0.88rem;
+	color: var(--color-neutral-foreground-3) !important;
+}
+
+.account-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+}
+
+.account-button {
+	min-height: 40px;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 6px;
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+	padding: 8px 16px;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.account-button:hover {
+	background: var(--color-neutral-background-1-hover);
+}
+
+.account-button--primary {
+	border-color: var(--color-brand-80);
+	background: var(--color-brand-80);
+	color: #fff;
+}
+
+.account-button--primary:hover {
+	background: var(--color-brand-90);
+}
+
+.account-button--danger {
+	border-color: #c94f5f;
+	color: #ffd8dd;
+}
+
+.account-button:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.account-feedback {
+	margin: 14px 0 0;
+	padding: 10px 12px;
+	border-radius: 6px;
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-2);
+}
+
+.account-feedback[data-kind='error'] {
+	border: 1px solid #c94f5f;
+	color: #ffd8dd;
+}
+
+.account-feedback[data-kind='success'] {
+	border: 1px solid #4e9c6b;
+	color: #d8ffe5;
+}
+
+.account-hidden {
+	display: none !important;
+}
+
+.account-links {
+	margin-top: 18px;
+	color: var(--color-neutral-foreground-2);
+}
+
+.account-links a {
+	color: var(--color-brand-110);
+}
+
+.account-summary {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin: 20px 0;
+}
+
+.account-summary div {
+	background: var(--color-neutral-background-1);
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 8px;
+	padding: 12px;
+}
+
+.account-summary dt {
+	color: var(--color-neutral-foreground-3);
+	font-size: 0.82rem;
+}
+
+.account-summary dd {
+	margin: 4px 0 0;
+	color: var(--color-neutral-foreground-1);
+	font-weight: 600;
+}
+
+.users-toolbar {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 18px;
+}
+
+.users-table-wrap {
+	overflow-x: auto;
+}
+
+.users-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 760px;
+}
+
+.users-table th,
+.users-table td {
+	padding: 12px 10px;
+	border-bottom: 1px solid var(--color-neutral-stroke-1);
+	text-align: right;
+	vertical-align: middle;
+}
+
+.users-table th {
+	color: var(--color-neutral-foreground-2);
+	font-size: 0.86rem;
+}
+
+.users-table td {
+	color: var(--color-neutral-foreground-1);
+}
+
+.role-badge,
+.status-badge {
+	display: inline-flex;
+	align-items: center;
+	min-height: 24px;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 999px;
+	padding: 2px 8px;
+	font-size: 0.82rem;
+}
+
+.status-badge[data-status='suspended'] {
+	border-color: #c94f5f;
+	color: #ffd8dd;
+}
+
+@media (max-width: 720px) {
+	.account-main {
+		padding: 28px 12px 48px;
+	}
+
+	.account-card {
+		padding: 18px;
+	}
+
+	.account-grid,
+	.account-summary {
+		grid-template-columns: 1fr;
+	}
+}
