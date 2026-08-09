@@ -5,7 +5,7 @@ import { onRequest as apiMiddleware } from '../functions/api/admin/_middleware.j
 const now = new Date().toISOString();
 const future = new Date(Date.now() + 60 * 60 * 1000).toISOString();
 
-function makeDb({ admins = 1, sessionUser = null, limitRow = null } = {}) {
+function makeDb({ admins = 1, sessionUser = null, limitRow = null, mfaEnabled = false, mfaVerified = false } = {}) {
 	return {
 		prepare(sql) {
 			const statement = {
@@ -17,11 +17,13 @@ function makeDb({ admins = 1, sessionUser = null, limitRow = null } = {}) {
 				async first() {
 					if (sql.includes("COUNT(*) AS count FROM users WHERE role = 'admin'")) return { count: admins };
 					if (sql.includes('FROM sessions s') && sql.includes('JOIN users u')) return sessionUser;
+					if (sql.includes('SELECT enabled_at FROM mfa_totp')) return mfaEnabled ? { enabled_at: now } : null;
+					if (sql.includes('FROM mfa_session_assurance a')) return mfaVerified ? { verified_at: now } : null;
 					if (sql.includes('FROM legacy_admin_login_limits')) return limitRow;
 					return null;
 				},
 				async run() {
-					return { success: true };
+					return { success: true, meta: { changes: 1 } };
 				},
 			};
 			return statement;
@@ -83,7 +85,28 @@ async function nextOk() {
 {
 	const response = await pageMiddleware({
 		request: request('/admin', { accountCookie: true }),
-		env: makeEnv({ admins: 1, sessionUser: user('admin') }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: false }),
+		next: nextOk,
+	});
+	assert.equal(response.status, 302);
+	assert.match(response.headers.get('location') || '', /\/account\?security=setup$/);
+}
+
+{
+	const response = await pageMiddleware({
+		request: request('/admin', { accountCookie: true }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: true, mfaVerified: false }),
+		next: nextOk,
+	});
+	assert.equal(response.status, 302);
+	assert.match(response.headers.get('location') || '', /\/login\?next=%2Fadmin/);
+	assert.match(response.headers.get('set-cookie') || '', /hq_session=/);
+}
+
+{
+	const response = await pageMiddleware({
+		request: request('/admin', { accountCookie: true }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: true, mfaVerified: true }),
 		next: nextOk,
 	});
 	assert.equal(response.status, 200);
@@ -94,10 +117,10 @@ async function nextOk() {
 {
 	const response = await pageMiddleware({
 		request: request('/admin/users', { accountCookie: true }),
-		env: makeEnv({ admins: 1, sessionUser: user('moderator') }),
+		env: makeEnv({ admins: 1, sessionUser: user('moderator'), mfaEnabled: true, mfaVerified: true }),
 		next: nextOk,
 	});
-	assert.equal(response.status, 200, 'moderators must retain user-management access');
+	assert.equal(response.status, 200, 'MFA-verified moderators must retain user-management access');
 	assert.doesNotMatch(response.headers.get('set-cookie') || '', /hq_admin=/);
 }
 
@@ -113,13 +136,25 @@ async function nextOk() {
 {
 	const response = await apiMiddleware({
 		request: request('/api/admin/session', { accountCookie: true }),
-		env: makeEnv({ admins: 1, sessionUser: user('admin') }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: false }),
+		next: nextOk,
+	});
+	assert.equal(response.status, 403);
+	const payload = await response.json();
+	assert.equal(payload.mfaSetupRequired, true);
+}
+
+{
+	const response = await apiMiddleware({
+		request: request('/api/admin/session', { accountCookie: true }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: true, mfaVerified: true }),
 		next: nextOk,
 	});
 	assert.equal(response.status, 200);
 	const payload = await response.json();
 	assert.equal(payload.authenticated, true);
 	assert.equal(payload.accountAuth, true);
+	assert.equal(payload.mfaVerified, true);
 	assert.match(response.headers.get('set-cookie') || '', /hq_admin=/);
 }
 
@@ -127,7 +162,7 @@ async function nextOk() {
 	let called = false;
 	const response = await apiMiddleware({
 		request: request('/api/admin/publish', { method: 'POST', accountCookie: true }),
-		env: makeEnv({ admins: 1, sessionUser: user('admin') }),
+		env: makeEnv({ admins: 1, sessionUser: user('admin'), mfaEnabled: true, mfaVerified: true }),
 		next: async () => {
 			called = true;
 			return new Response(null, { status: 204 });
@@ -140,7 +175,7 @@ async function nextOk() {
 {
 	const response = await apiMiddleware({
 		request: request('/api/admin/publish', { method: 'POST', accountCookie: true }),
-		env: makeEnv({ admins: 1, sessionUser: user('moderator') }),
+		env: makeEnv({ admins: 1, sessionUser: user('moderator'), mfaEnabled: true, mfaVerified: true }),
 		next: nextOk,
 	});
 	assert.equal(response.status, 403);
