@@ -18,6 +18,7 @@ $WranglerEnvBackup = @{
     WRANGLER_WRITE_LOGS = $env:WRANGLER_WRITE_LOGS
     WRANGLER_LOG = $env:WRANGLER_LOG
     WRANGLER_LOG_SANITIZE = $env:WRANGLER_LOG_SANITIZE
+    CI = $env:CI
 }
 
 function Restore-EnvironmentVariable {
@@ -152,13 +153,20 @@ try {
     Invoke-NativeChecked 'npx' @('--yes', $WranglerVersion, 'pages', 'secret', 'list', '--project-name', $ProjectName, '--env', 'production')
 
     Write-Host "`n=== PRODUCTION D1 ===" -ForegroundColor Cyan
-    $dbList = Get-ResultItems (Invoke-WranglerJson @('d1', 'list', '--json'))
+    $dbList = @(Get-ResultItems (Invoke-WranglerJson @('d1', 'list', '--json')))
     $db = @($dbList | Where-Object { $_.name -eq $DatabaseName } | Select-Object -First 1)
 
     if ($db.Count -eq 0) {
         Write-Host "Creating D1 database '$DatabaseName'..."
-        Invoke-NativeChecked 'npx' @('--yes', $WranglerVersion, 'd1', 'create', $DatabaseName, '--location', $DatabaseLocation)
-        $dbList = Get-ResultItems (Invoke-WranglerJson @('d1', 'list', '--json'))
+        $previousCi = $env:CI
+        try {
+            $env:CI = 'true'
+            Invoke-NativeChecked 'npx' @('--yes', $WranglerVersion, 'd1', 'create', $DatabaseName, '--location', $DatabaseLocation)
+        }
+        finally {
+            Restore-EnvironmentVariable 'CI' $previousCi
+        }
+        $dbList = @(Get-ResultItems (Invoke-WranglerJson @('d1', 'list', '--json')))
         $db = @($dbList | Where-Object { $_.name -eq $DatabaseName } | Select-Object -First 1)
     }
 
@@ -173,41 +181,42 @@ try {
     Invoke-NativeChecked 'npx' @('--yes', $WranglerVersion, 'd1', 'execute', $DatabaseName, '--remote', '--file', $MigrationPath, '--yes')
 
     Write-Host 'Verifying auth tables...'
-    $tableCheck = Get-ResultItems (Invoke-WranglerJson @(
+    $tableCheck = @(Get-ResultItems (Invoke-WranglerJson @(
         'd1', 'execute', $DatabaseName,
         '--remote',
         '--command', "SELECT name FROM sqlite_schema WHERE type='table' AND name IN ('users','sessions') ORDER BY name;",
         '--json'
-    ))
+    )))
     $tableJson = $tableCheck | ConvertTo-Json -Depth 10
     if ($tableJson -notmatch 'users' -or $tableJson -notmatch 'sessions') {
         throw 'D1 verification did not find both users and sessions tables.'
     }
 
     Write-Host "`n=== TURNSTILE ===" -ForegroundColor Cyan
-    $widgetList = Get-ResultItems (Invoke-WranglerJson @('turnstile', 'widget', 'list', '--json'))
+    $widgetList = @(Get-ResultItems (Invoke-WranglerJson @('turnstile', 'widget', 'list', '--json')))
     $existingWidget = @($widgetList | Where-Object { $_.name -eq $WidgetName } | Select-Object -First 1)
 
     if ($existingWidget.Count -eq 0) {
         Write-Host "Creating Turnstile widget '$WidgetName' for '$ProductionDomain'..."
-        $createdWidget = Get-ResultItems (Invoke-WranglerJson @(
+        $createdWidget = @(Get-ResultItems (Invoke-WranglerJson @(
             'turnstile', 'widget', 'create', $WidgetName,
             '--domain', $ProductionDomain,
             '--mode', 'managed',
             '--json'
-        ) -Sensitive)
-        if ($createdWidget.Count -ne 1) { throw 'Turnstile widget creation did not return one widget.' }
+        ) -Sensitive))
+        if ($createdWidget.Count -ne 1) { throw 'Turnstile widget creation did not return exactly one widget.' }
         $siteKey = Get-FirstPropertyValue $createdWidget[0] @('sitekey', 'site_key')
     }
     else {
+        Write-Host "Using existing Turnstile widget '$WidgetName'."
         $siteKey = Get-FirstPropertyValue $existingWidget[0] @('sitekey', 'site_key')
     }
 
     if (-not $siteKey) { throw 'Turnstile sitekey was not returned.' }
     $siteKey = [string]$siteKey
 
-    $widgetDetails = Get-ResultItems (Invoke-WranglerJson @('turnstile', 'widget', 'get', $siteKey, '--json') -Sensitive)
-    if ($widgetDetails.Count -ne 1) { throw 'Unable to read Turnstile widget details.' }
+    $widgetDetails = @(Get-ResultItems (Invoke-WranglerJson @('turnstile', 'widget', 'get', $siteKey, '--json') -Sensitive))
+    if ($widgetDetails.Count -ne 1) { throw 'Unable to read exactly one Turnstile widget.' }
     $widget = $widgetDetails[0]
 
     $resolvedSiteKey = Get-FirstPropertyValue $widget @('sitekey', 'site_key')
@@ -280,4 +289,5 @@ finally {
     Restore-EnvironmentVariable 'WRANGLER_WRITE_LOGS' $WranglerEnvBackup.WRANGLER_WRITE_LOGS
     Restore-EnvironmentVariable 'WRANGLER_LOG' $WranglerEnvBackup.WRANGLER_LOG
     Restore-EnvironmentVariable 'WRANGLER_LOG_SANITIZE' $WranglerEnvBackup.WRANGLER_LOG_SANITIZE
+    Restore-EnvironmentVariable 'CI' $WranglerEnvBackup.CI
 }
