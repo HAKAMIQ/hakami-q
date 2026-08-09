@@ -1,0 +1,101 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
+import '../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="إنشاء حساب | HAKAMIQ" description="أنشئ حسابك في مجتمع HAKAMIQ." />
+		<meta name="robots" content="noindex,follow" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
+					<h1>إنشاء حساب</h1>
+					<p>استخدم بيانات حقيقية يمكنك تذكرها. الحساب يبدأ بصلاحية مستخدم عادي.</p>
+				</header>
+				<section class="account-card" aria-labelledby="register-title">
+					<h2 id="register-title">بيانات الحساب</h2>
+					<form id="register-form" class="account-form">
+						<div class="account-field">
+							<label for="username">اسم المستخدم</label>
+							<input id="username" class="account-input" type="text" minlength="3" maxlength="32" autocomplete="username" required />
+							<p class="account-help">من 3 إلى 32 حرفًا. الحروف والأرقام والنقطة والشرطة والشرطة السفلية مسموحة.</p>
+						</div>
+						<div class="account-field">
+							<label for="email">البريد الإلكتروني</label>
+							<input id="email" class="account-input" type="email" maxlength="254" autocomplete="email" required />
+						</div>
+						<div class="account-grid">
+							<div class="account-field">
+								<label for="password">كلمة المرور</label>
+								<input id="password" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required />
+							</div>
+							<div class="account-field">
+								<label for="password-confirm">تأكيد كلمة المرور</label>
+								<input id="password-confirm" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required />
+							</div>
+						</div>
+						<div class="account-actions">
+							<button id="submit-button" class="account-button account-button--primary" type="submit">إنشاء الحساب</button>
+						</div>
+						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
+					</form>
+					<p class="account-links">لديك حساب؟ <a href="/login">تسجيل الدخول</a></p>
+				</section>
+			</div>
+		</main>
+		<Footer />
+		<script>
+			const form = document.querySelector<HTMLFormElement>('#register-form');
+			const username = document.querySelector<HTMLInputElement>('#username');
+			const email = document.querySelector<HTMLInputElement>('#email');
+			const password = document.querySelector<HTMLInputElement>('#password');
+			const confirm = document.querySelector<HTMLInputElement>('#password-confirm');
+			const feedback = document.querySelector<HTMLElement>('#feedback');
+			const submit = document.querySelector<HTMLButtonElement>('#submit-button');
+
+			function show(message: string, kind = '') {
+				if (!feedback) return;
+				feedback.textContent = message;
+				feedback.dataset.kind = kind;
+				feedback.classList.toggle('account-hidden', !message);
+			}
+
+			form?.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				show('');
+				if (!username || !email || !password || !confirm || !submit) return;
+				if (password.value !== confirm.value) {
+					show('كلمتا المرور غير متطابقتين.', 'error');
+					return;
+				}
+				submit.disabled = true;
+				try {
+					const response = await fetch('/api/auth/register', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ username: username.value, email: email.value, password: password.value }),
+					});
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر إنشاء الحساب.');
+					show('تم إنشاء الحساب بنجاح.', 'success');
+					window.location.href = '/account';
+				} catch (error) {
+					show(error instanceof Error ? error.message : 'تعذر إنشاء الحساب.', 'error');
+				} finally {
+					submit.disabled = false;
+				}
+			});
+		</script>
+	</body>
+</html>
