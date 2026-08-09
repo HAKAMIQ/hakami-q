@@ -15,7 +15,15 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !new URL(page).pathname.startsWith('/admin'),
+			filter: (page) => {
+				const pathname = new URL(page).pathname;
+				return ![
+					'/admin',
+					'/account',
+					'/login',
+					'/register',
+				].some((route) => pathname === route || pathname.startsWith(`${route}/`));
+			},
 		}),
 	],
 });
