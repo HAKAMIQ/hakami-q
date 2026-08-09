@@ -1,3 +1,130 @@
 ---
-// Static blog pagination route.
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import BlogSidebar from '../../../components/fluent/BlogSidebar.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import SkipLink from '../../../components/SkipLink.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import '../../../styles/blog-listing-page.css';
+
+const PAGE_SIZE = 12;
+
+export async function getStaticPaths() {
+	const posts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+	const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+
+	return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+		const page = index + 2;
+		return {
+			params: { page: String(page) },
+			props: { page, totalPages },
+		};
+	});
+}
+
+interface Props {
+	page: number;
+	totalPages: number;
+}
+
+const { page, totalPages } = Astro.props;
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const start = (page - 1) * PAGE_SIZE;
+const visiblePosts = posts.slice(start, start + PAGE_SIZE);
+const pageHref = (targetPage: number) => targetPage <= 1 ? '/blog/' : `/blog/page/${targetPage}/`;
+const visiblePageNumbers = Array.from(new Set([1, page - 1, page, page + 1, totalPages]))
+	.filter((targetPage) => targetPage >= 1 && targetPage <= totalPages)
+	.sort((a, b) => a - b);
+const pageTitle = `المقالات - الصفحة ${page} | ${SITE_TITLE}`;
+const pageDescription = `${SITE_DESCRIPTION} تصفح الصفحة ${page} من أرشيف المقالات.`;
 ---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title={pageTitle} description={pageDescription} canonicalPath={`/blog/page/${page}/`} />
+		<link rel="prev" href={new URL(pageHref(page - 1), Astro.site ?? Astro.url)} />
+		{page < totalPages && <link rel="next" href={new URL(pageHref(page + 1), Astro.site ?? Astro.url)} />}
+	</head>
+
+	<body>
+		<SkipLink />
+		<Header />
+
+		<main id="main-content" tabindex="-1">
+			<h1 class="sr-only">المقالات - الصفحة {page}</h1>
+
+			<section class="posts-section" aria-label={`قائمة المقالات - الصفحة ${page}`}>
+				<div class="site-container blog-layout">
+					<BlogSidebar posts={posts} />
+
+					<div class="posts-content">
+						<div class="posts-grid" id="posts-grid">
+							{visiblePosts.map((post) => {
+								const imageSrc = post.data.heroImageUrl ?? post.data.heroImage?.src;
+								return (
+									<article class="post-card fui-card fui-card--interactive">
+										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
+											<div class="post-image">
+												{imageSrc ? (
+													<img src={imageSrc} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+												) : (
+													<div class="image-placeholder">HAKAMIQ</div>
+												)}
+
+												{post.data.labels.length > 0 && (
+													<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
+												)}
+
+												<div class="post-title-overlay">
+													<h2>{post.data.title}</h2>
+												</div>
+											</div>
+
+											<div class="post-content">
+												<p>{post.data.description}</p>
+											</div>
+										</a>
+									</article>
+								);
+							})}
+						</div>
+
+						<nav class="posts-pagination" aria-label="صفحات المقالات">
+							<a class="page-link" href={pageHref(page - 1)} rel="prev" aria-label="الصفحة السابقة">السابق</a>
+							{visiblePageNumbers.map((targetPage, index) => {
+								const previous = visiblePageNumbers[index - 1];
+								return (
+									<>
+										{previous && targetPage - previous > 1 && <span class="page-ellipsis" aria-hidden="true">…</span>}
+										<a class="page-link" href={pageHref(targetPage)} aria-current={targetPage === page ? 'page' : undefined} aria-label={`الصفحة ${targetPage}`}>
+											{targetPage}
+										</a>
+									</>
+								);
+							})}
+							{page < totalPages && <a class="page-link" href={pageHref(page + 1)} rel="next" aria-label="الصفحة التالية">التالي</a>}
+						</nav>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<script>
+	const category = new URLSearchParams(window.location.search).get('category')?.trim().toLowerCase();
+	if (category) {
+		const categoryLink = document.querySelector<HTMLAnchorElement>(`[data-category-link="${CSS.escape(category)}"]`);
+		if (categoryLink?.dataset.categoryLink) {
+			window.location.replace(`/blog/category/${encodeURIComponent(categoryLink.dataset.categoryLink)}/`);
+		}
+	}
+</script>
