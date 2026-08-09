@@ -23,20 +23,27 @@ jobs:
           URL='https://security-privileged-totp-mfa.hakami-q.pages.dev/api/mfa-runtime-diagnostic'
           code=''
           body=''
+          ready='false'
           for attempt in $(seq 1 60); do
             tmp="$(mktemp)"
             code="$(curl --silent --show-error --max-time 30 --output "$tmp" --write-out '%{http_code}' "$URL" || true)"
             body="$(cat "$tmp")"
             rm -f "$tmp"
-            if [ "$code" = '200' ]; then
+            if [ "$code" = '200' ] && printf '%s' "$body" | grep -Fq '"ok":'; then
+              ready='true'
+              echo "Current MFA preview is ready (attempt $attempt)."
               break
             fi
-            if [ "$code" = '500' ]; then
+            if [ "$code" = '500' ] && printf '%s' "$body" | grep -Fq '"ok":false'; then
               echo "Diagnostic failed: $body"
               exit 1
             fi
             sleep 5
           done
+          if [ "$ready" != 'true' ]; then
+            echo "MFA diagnostic endpoint did not become ready in time. Last HTTP=$code"
+            exit 1
+          fi
           echo "HTTP=$code"
           echo "BODY=$body"
           node -e '
