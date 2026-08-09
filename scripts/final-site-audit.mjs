@@ -5,7 +5,7 @@ const root = process.cwd();
 const distArg = process.argv.indexOf('--dist');
 const jsonArg = process.argv.indexOf('--json');
 const dist = path.resolve(root, distArg >= 0 ? process.argv[distArg + 1] : 'dist');
-const reportPath = jsonArg >= 0 ? path.resolve(root, process.argv[jsonArg + 1]) : null;
+const reportPath = jsonArg >= 0 ? path.resolve(root, jsonArg >= 0 ? process.argv[jsonArg + 1] : 'reports/final-site-audit.json') : null;
 
 const errors = [];
 const warnings = [];
@@ -66,8 +66,12 @@ function hasAttribute(tag, name) {
 	return new RegExp(`\\b${name}\\s*=`, 'i').test(tag);
 }
 
+function isGoogleVerificationFile(file) {
+	return /^google[a-z0-9_-]+\.html$/i.test(path.basename(file));
+}
+
 const allFiles = await walk(dist);
-const htmlFiles = allFiles.filter((file) => file.endsWith('.html'));
+const htmlFiles = allFiles.filter((file) => file.endsWith('.html') && !isGoogleVerificationFile(file));
 const outputPaths = new Set();
 const routes = new Set();
 
