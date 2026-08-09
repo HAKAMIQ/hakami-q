@@ -1,7 +1,6 @@
 import { requireAuthDb } from './auth.js';
 
 const encoder = new TextEncoder();
-const decoder = new TextDecoder();
 const BASE32_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 const TOTP_PERIOD_SECONDS = 30;
 const TOTP_DIGITS = 6;
@@ -11,7 +10,7 @@ const LOGIN_CHALLENGE_MAX_ATTEMPTS = 5;
 const SETUP_SECONDS = 10 * 60;
 const RECOVERY_CODE_COUNT = 10;
 const RECOVERY_CODE_BYTES = 8;
-let schemaReady = false;
+const schemaReadyDatabases = new WeakSet();
 
 export class MfaError extends Error {
 	constructor(message, status = 400, code = 'mfa_error') {
@@ -154,8 +153,8 @@ async function sha256Text(value) {
 }
 
 async function ensureSchema(env) {
-	if (schemaReady) return;
 	const db = requireAuthDb(env);
+	if (schemaReadyDatabases.has(db)) return;
 	await db.prepare(`
 		CREATE TABLE IF NOT EXISTS mfa_totp (
 			user_id TEXT PRIMARY KEY,
@@ -199,7 +198,7 @@ async function ensureSchema(env) {
 	`).run();
 	await db.prepare('CREATE INDEX IF NOT EXISTS idx_mfa_login_challenges_expires_at ON mfa_login_challenges(expires_at)').run();
 	await db.prepare('CREATE INDEX IF NOT EXISTS idx_mfa_recovery_codes_user_unused ON mfa_recovery_codes(user_id, used_at)').run();
-	schemaReady = true;
+	schemaReadyDatabases.add(db);
 }
 
 export async function ensureMfaSchema(env) {
@@ -338,14 +337,14 @@ export async function confirmTotpSetup(env, user, code) {
 	const now = new Date().toISOString();
 	await db.prepare(`
 		INSERT INTO mfa_totp (user_id, secret_ciphertext, secret_nonce, last_used_step, enabled_at, updated_at)
-		VALUES (?, ?, ?, NULL, ?, ?)
+		VALUES (?, ?, ?, ?, ?, ?)
 		ON CONFLICT(user_id) DO UPDATE SET
 			secret_ciphertext = excluded.secret_ciphertext,
 			secret_nonce = excluded.secret_nonce,
-			last_used_step = NULL,
+			last_used_step = excluded.last_used_step,
 			enabled_at = excluded.enabled_at,
 			updated_at = excluded.updated_at
-	`).bind(user.id, pending.secret_ciphertext, pending.secret_nonce, now, now).run();
+	`).bind(user.id, pending.secret_ciphertext, pending.secret_nonce, matched, now, now).run();
 	await db.prepare('DELETE FROM mfa_totp_pending WHERE user_id = ?').bind(user.id).run();
 	const recoveryCodes = await replaceRecoveryCodes(env, user.id);
 	await db.prepare('DELETE FROM sessions WHERE user_id = ?').bind(user.id).run();
