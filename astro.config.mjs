@@ -7,7 +7,7 @@ import { defineConfig } from 'astro/config';
 // Fluent UI Web Components emphasizes lightweight, standards-based output.
 // Keep the static Astro result compact and make shared CSS cacheable across pages.
 export default defineConfig({
-	site: 'https://hakamiq.pages.dev',
+	site: 'https://hakamiq-site.pages.dev',
 	compressHTML: true,
 	build: {
 		inlineStylesheets: 'never',
