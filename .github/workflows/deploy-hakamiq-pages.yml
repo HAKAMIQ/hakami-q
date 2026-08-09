@@ -93,6 +93,31 @@ jobs:
             exit 1
           fi
 
+      - name: Sync optional admin secrets
+        if: steps.cloudflare.outputs.ready == 'true'
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ADMIN_SESSION_SECRET: ${{ secrets.ADMIN_SESSION_SECRET }}
+          GITHUB_CONTENT_TOKEN: ${{ secrets.GITHUB_CONTENT_TOKEN }}
+        run: |
+          set -euo pipefail
+          sync_secret() {
+            local key="$1"
+            local value="$2"
+            if [[ -z "$value" ]]; then
+              echo "${key} is not configured in GitHub Secrets; leaving it unset on the new Pages project."
+              return 0
+            fi
+            printf '%s' "$value" | npx --yes wrangler@4 pages secret put "$key" --project-name "${CLOUDFLARE_PAGES_PROJECT}" >/dev/null
+            echo "Synced ${key} to Cloudflare Pages."
+          }
+
+          sync_secret ADMIN_PASSWORD "$ADMIN_PASSWORD"
+          sync_secret ADMIN_SESSION_SECRET "$ADMIN_SESSION_SECRET"
+          sync_secret GITHUB_CONTENT_TOKEN "$GITHUB_CONTENT_TOKEN"
+
       - name: Deploy site and Pages Functions
         if: steps.cloudflare.outputs.ready == 'true'
         shell: bash
