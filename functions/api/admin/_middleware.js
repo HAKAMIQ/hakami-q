@@ -5,6 +5,8 @@ import {
 	requireAuthDb,
 	requireSameOriginPost,
 } from '../../_lib/auth.js';
+import { isMfaEnabled } from '../../_lib/mfa.js';
+import { isCurrentSessionMfaVerified } from '../../_lib/mfa-session.js';
 
 const encoder = new TextEncoder();
 const LEGACY_COOKIE = 'hq_admin';
@@ -156,6 +158,24 @@ async function recordLegacyLoginResult(rateContext, responseStatus) {
 	`).bind(new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString()).run();
 }
 
+async function requireAdminMfa(request, env, user) {
+	if (!(await isMfaEnabled(env, user.id))) {
+		return json({
+			error: 'يلزم تفعيل التحقق بخطوتين قبل استخدام صلاحيات الإدارة.',
+			mfaSetupRequired: true,
+			setupUrl: '/account?security=setup',
+		}, 403);
+	}
+	if (!(await isCurrentSessionMfaVerified(request, env))) {
+		return json({
+			error: 'يلزم تسجيل دخول مكتمل بالتحقق بخطوتين.',
+			mfaRequired: true,
+			loginUrl: '/login?next=/admin',
+		}, 401);
+	}
+	return null;
+}
+
 async function handleCutoverRequest(context, action) {
 	const { request, env } = context;
 	const user = await getAuthenticatedUser(request, env);
@@ -170,8 +190,10 @@ async function handleCutoverRequest(context, action) {
 	if (action === 'session' && request.method === 'GET') {
 		if (!user) return json({ authenticated: false, accountAuth: true, loginUrl: '/login?next=/admin' });
 		if (user.role !== 'admin') return json({ authenticated: false, accountAuth: true, error: 'لا تملك صلاحية إدارة المقالات.' }, 403);
+		const mfaError = await requireAdminMfa(request, env, user);
+		if (mfaError) return mfaError;
 		return json(
-			{ authenticated: true, accountAuth: true, user: { id: user.id, username: user.username, role: user.role } },
+			{ authenticated: true, accountAuth: true, mfaVerified: true, user: { id: user.id, username: user.username, role: user.role } },
 			200,
 			{ 'Set-Cookie': await compatibilityCookie(env) },
 		);
@@ -189,6 +211,8 @@ async function handleCutoverRequest(context, action) {
 	if (action === 'publish') {
 		if (!user) return json({ error: 'يلزم تسجيل الدخول بحساب المدير.', loginUrl: '/login?next=/admin' }, 401);
 		if (user.role !== 'admin') return json({ error: 'لا تملك صلاحية نشر المقالات.' }, 403);
+		const mfaError = await requireAdminMfa(request, env, user);
+		if (mfaError) return mfaError;
 		return context.next();
 	}
 

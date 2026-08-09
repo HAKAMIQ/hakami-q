@@ -1,4 +1,11 @@
-import { getAuthenticatedUser, requireAuthDb } from '../_lib/auth.js';
+import {
+	clearSessionCookie,
+	destroySession,
+	getAuthenticatedUser,
+	requireAuthDb,
+} from '../_lib/auth.js';
+import { isMfaEnabled, requiresMfaRole } from '../_lib/mfa.js';
+import { isCurrentSessionMfaVerified } from '../_lib/mfa-session.js';
 
 const encoder = new TextEncoder();
 const LEGACY_COOKIE = 'hq_admin';
@@ -27,16 +34,33 @@ async function signLegacyCompatibilityCookie(env) {
 	return `${LEGACY_COOKIE}=${expires}.${encoded}; Path=/; Max-Age=${LEGACY_COMPAT_SECONDS}; HttpOnly; Secure; SameSite=Strict`;
 }
 
-function loginRedirect(request) {
+function redirect(location, setCookie = '') {
+	const headers = new Headers({
+		Location: location,
+		'Cache-Control': 'no-store, private',
+		'X-Frame-Options': 'DENY',
+		'Referrer-Policy': 'no-referrer',
+	});
+	if (setCookie) headers.append('Set-Cookie', setCookie);
+	return new Response(null, { status: 302, headers });
+}
+
+function loginRedirect(request, clearCookie = false) {
 	const url = new URL(request.url);
 	const next = `${url.pathname}${url.search}`;
 	const target = new URL('/login', url.origin);
 	target.searchParams.set('next', next);
-	return Response.redirect(target.toString(), 302);
+	return redirect(target.toString(), clearCookie ? clearSessionCookie() : '');
+}
+
+function setupRedirect(request) {
+	const target = new URL('/account', request.url);
+	target.searchParams.set('security', 'setup');
+	return redirect(target.toString());
 }
 
 function forbiddenRedirect(request) {
-	return Response.redirect(new URL('/account', request.url).toString(), 302);
+	return redirect(new URL('/account', request.url).toString());
 }
 
 function securedResponse(response, compatibilityCookie = '') {
@@ -65,6 +89,14 @@ export async function onRequest(context) {
 			? user.role === 'moderator' || user.role === 'admin'
 			: user.role === 'admin';
 		if (!allowed) return forbiddenRedirect(request);
+
+		if (requiresMfaRole(user.role)) {
+			if (!(await isMfaEnabled(env, user.id))) return setupRedirect(request);
+			if (!(await isCurrentSessionMfaVerified(request, env))) {
+				await destroySession(request, env);
+				return loginRedirect(request, true);
+			}
+		}
 
 		const compatibilityCookie = user.role === 'admin'
 			? await signLegacyCompatibilityCookie(env)
