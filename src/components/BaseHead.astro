@@ -21,10 +21,19 @@ interface Props {
 }
 
 const siteURL = Astro.site ?? Astro.url;
-const inferredType =
-	Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/'
-		? 'article'
-		: 'website';
+const pathname = Astro.url.pathname;
+const isBlogArchiveRoute =
+	pathname === '/blog/' ||
+	pathname.startsWith('/blog/category/') ||
+	pathname.startsWith('/blog/page/');
+const inferredType = pathname.startsWith('/blog/') && !isBlogArchiveRoute ? 'article' : 'website';
+const noIndexRoutes = ['/admin', '/account', '/login', '/register'];
+const shouldNoIndex = noIndexRoutes.some(
+	(route) => pathname === route || pathname === `${route}/` || pathname.startsWith(`${route}/`),
+);
+const robotsContent = shouldNoIndex
+	? 'noindex,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1'
+	: 'max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 const inheritedSocialImage = (Astro.locals as { seoImage?: ImageMetadata | string }).seoImage;
 const {
 	title,
@@ -57,7 +66,7 @@ const websiteSchemaJson = JSON.stringify(websiteSchema).replace(/</g, '\\u003c')
 <meta name="application-name" content="HAKAMIQ" />
 <meta name="apple-mobile-web-app-title" content="HAKAMIQ" />
 <meta name="google-site-verification" content="XtigMu7Eoi7r0s5KVr8hpRRJGqcFmQisyEVfBjZKKjE" />
-<meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+<meta name="robots" content={robotsContent} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="alternate icon" href="/favicon.ico" />
 <link rel="mask-icon" href="/favicon.svg" color="#d71047" />
