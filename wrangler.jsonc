@@ -18,8 +18,18 @@
       }
     },
     "production": {
-      "d1_databases": [],
-      "vars": {}
+      "d1_databases": [
+        {
+          "binding": "AUTH_DB",
+          "database_name": "hakami-q-auth",
+          "database_id": "64ea9669-bdfb-4329-bdd6-bab0803c6de2"
+        }
+      ],
+      "vars": {
+        "TURNSTILE_SITEKEY": "0x4AAAAAAELLaYZP_eTDico5",
+        "TURNSTILE_HOSTNAMES": "hakami-q.pages.dev",
+        "REGISTRATION_CLOSED": "1"
+      }
     }
   }
 }
