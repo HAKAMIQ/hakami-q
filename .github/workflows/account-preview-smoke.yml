@@ -1,0 +1,58 @@
+name: Account Preview Smoke
+
+on:
+  pull_request:
+    paths:
+      - 'functions/_lib/auth.js'
+      - 'functions/api/auth/**'
+      - 'migrations/**'
+      - 'src/pages/login.astro'
+      - 'src/pages/register.astro'
+      - 'src/pages/account.astro'
+      - 'src/pages/admin/users.astro'
+      - 'src/styles/account-system.css'
+      - 'wrangler.jsonc'
+      - '.github/workflows/account-preview-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preview-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Cloudflare preview and verify runtime bindings
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://feature-users-and-roles.hakami-q.pages.dev'
+          expected_sitekey='1x00000000000000000000AA'
+          config=''
+
+          for attempt in $(seq 1 48); do
+            config="$(curl --silent --show-error --fail --max-time 10 "$BASE/api/auth/config" 2>/dev/null || true)"
+            if printf '%s' "$config" | grep -Fq "$expected_sitekey"; then
+              echo "Preview config is current (attempt $attempt)."
+              break
+            fi
+            if [ "$attempt" -eq 48 ]; then
+              echo "Preview did not expose the expected auth configuration in time."
+              echo "Last response: $config"
+              exit 1
+            fi
+            sleep 5
+          done
+
+          bootstrap="$(curl --silent --show-error --fail --max-time 10 "$BASE/api/auth/bootstrap-status")"
+          session="$(curl --silent --show-error --fail --max-time 10 "$BASE/api/auth/session")"
+
+          node -e '
+            const config = JSON.parse(process.argv[1]);
+            const bootstrap = JSON.parse(process.argv[2]);
+            const session = JSON.parse(process.argv[3]);
+            if (config.turnstileSitekey !== "1x00000000000000000000AA") throw new Error("Turnstile preview sitekey mismatch");
+            if (typeof bootstrap.needsBootstrap !== "boolean") throw new Error("AUTH_DB bootstrap query failed");
+            if (session.authenticated !== false) throw new Error("Unexpected authenticated preview session");
+            console.log("AUTH PREVIEW SMOKE: PASS");
+            console.log(`needsBootstrap=${bootstrap.needsBootstrap}`);
+          ' "$config" "$bootstrap" "$session"
