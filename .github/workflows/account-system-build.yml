@@ -11,6 +11,8 @@ on:
       - 'src/pages/account.astro'
       - 'src/pages/admin/users.astro'
       - 'src/styles/account-system.css'
+      - 'scripts/setup-auth-production.ps1'
+      - 'wrangler.jsonc'
       - '.github/workflows/account-system-build.yml'
 
 permissions:
@@ -36,6 +38,21 @@ jobs:
         run: |
           node --check functions/_lib/auth.js
           node --check 'functions/api/auth/[[path]].js'
+
+      - name: Check PowerShell provisioning syntax
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path 'scripts/setup-auth-production.ps1'),
+            [ref]$tokens,
+            [ref]$errors
+          ) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.Message }
+            exit 1
+          }
 
       - name: Build site
         run: npm run build
