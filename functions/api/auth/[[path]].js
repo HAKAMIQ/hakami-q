@@ -254,6 +254,6 @@ export async function onRequest(context) {
 	} catch (error) {
 		if (error instanceof AuthError) return json({ error: error.message }, error.status);
 		console.error('HAKAMIQ auth function failure', error);
-		return json({ error: 'حدث خطأ داخلي أثناء معالجة الحساب.', 500 });
+		return json({ error: 'حدث خطأ داخلي أثناء معالجة الحساب.' }, 500);
 	}
 }
