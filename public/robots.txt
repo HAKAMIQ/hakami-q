@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hakami-q.pages.dev/sitemap-index.xml
