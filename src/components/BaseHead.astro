@@ -17,15 +17,23 @@ interface Props {
 	description: string;
 	image?: ImageMetadata | string;
 	type?: 'website' | 'article';
+	canonicalPath?: string;
 }
 
 const siteURL = Astro.site ?? Astro.url;
-const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const inferredType =
 	Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/'
 		? 'article'
 		: 'website';
-const { title, description, image = FallbackImage, type = inferredType } = Astro.props;
+const {
+	title,
+	description,
+	image = FallbackImage,
+	type = inferredType,
+	canonicalPath = Astro.url.pathname,
+} = Astro.props;
+const normalizedCanonicalPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
+const canonicalURL = new URL(normalizedCanonicalPath, siteURL);
 const imageURL =
 	typeof image === 'string'
 		? new URL(image, siteURL)
