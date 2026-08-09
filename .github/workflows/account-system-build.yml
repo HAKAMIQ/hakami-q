@@ -1,0 +1,41 @@
+name: Account System Build
+
+on:
+  pull_request:
+    paths:
+      - 'functions/_lib/auth.js'
+      - 'functions/api/auth/**'
+      - 'migrations/**'
+      - 'src/pages/login.astro'
+      - 'src/pages/register.astro'
+      - 'src/pages/account.astro'
+      - 'src/pages/admin/users.astro'
+      - 'src/styles/account-system.css'
+      - '.github/workflows/account-system-build.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Pages Functions syntax
+        run: |
+          node --check functions/_lib/auth.js
+          node --check 'functions/api/auth/[[path]].js'
+
+      - name: Build site
+        run: npm run build
