@@ -6,7 +6,7 @@ on:
     paths:
       - 'functions/_lib/mfa.js'
       - 'functions/_lib/mfa-session.js'
-      - 'functions/api/mfa/runtime-diagnostic.js'
+      - 'functions/api/mfa-runtime-diagnostic.js'
       - '.github/workflows/mfa-runtime-diagnostic.yml'
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          URL='https://security-privileged-totp-mfa.hakami-q.pages.dev/api/mfa/runtime-diagnostic'
+          URL='https://security-privileged-totp-mfa.hakami-q.pages.dev/api/mfa-runtime-diagnostic'
           code=''
           body=''
           for attempt in $(seq 1 60); do
@@ -48,5 +48,6 @@ jobs:
             if (data.recoverySingleUse !== true) throw new Error("Recovery-code single-use failed");
             if (data.challengeVerified !== true) throw new Error("MFA login challenge failed");
             if (data.sessionAssurance !== true) throw new Error("MFA session assurance failed");
+            if (data.privilegedSessionHours !== 8) throw new Error("Privileged session lifetime mismatch");
             console.log("MFA CLOUDFLARE RUNTIME: PASS");
           ' "$code" "$body"
