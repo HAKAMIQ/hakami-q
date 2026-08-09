@@ -4,9 +4,12 @@ on:
   pull_request:
     paths:
       - 'functions/_lib/auth.js'
+      - 'functions/_lib/mfa.js'
+      - 'functions/_lib/mfa-session.js'
       - 'functions/admin/**'
       - 'functions/api/admin/**'
       - 'functions/api/auth/**'
+      - 'functions/api/mfa/**'
       - 'migrations/**'
       - 'src/pages/login.astro'
       - 'src/pages/register.astro'
@@ -15,6 +18,7 @@ on:
       - 'src/styles/account-system.css'
       - 'scripts/admin-cutover-self-test.mjs'
       - 'scripts/auth-password-self-test.mjs'
+      - 'scripts/mfa-self-test.mjs'
       - 'scripts/setup-auth-production.ps1'
       - 'wrangler.jsonc'
       - '.github/workflows/account-system-build.yml'
@@ -41,13 +45,20 @@ jobs:
       - name: Check Pages Functions syntax
         run: |
           node --check functions/_lib/auth.js
+          node --check functions/_lib/mfa.js
+          node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
           node --check functions/api/admin/_middleware.js
+          node --check functions/api/auth/_middleware.js
           node --check 'functions/api/admin/[[path]].js'
           node --check 'functions/api/auth/[[path]].js'
+          node --check 'functions/api/mfa/[[path]].js'
 
       - name: Verify password hashing
         run: node scripts/auth-password-self-test.mjs
+
+      - name: Verify TOTP implementation
+        run: node scripts/mfa-self-test.mjs
 
       - name: Verify admin account cutover
         run: node scripts/admin-cutover-self-test.mjs
