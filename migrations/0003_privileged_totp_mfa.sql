@@ -41,8 +41,19 @@ CREATE TABLE IF NOT EXISTS mfa_session_assurance (
     FOREIGN KEY (token_hash) REFERENCES sessions(token_hash) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS auth_login_limits (
+    client_key TEXT PRIMARY KEY,
+    attempts INTEGER NOT NULL DEFAULT 0,
+    window_started TEXT NOT NULL,
+    blocked_until TEXT,
+    updated_at TEXT NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_mfa_login_challenges_expires_at
     ON mfa_login_challenges(expires_at);
 
 CREATE INDEX IF NOT EXISTS idx_mfa_recovery_codes_user_unused
     ON mfa_recovery_codes(user_id, used_at);
+
+CREATE INDEX IF NOT EXISTS idx_auth_login_limits_updated_at
+    ON auth_login_limits(updated_at);
