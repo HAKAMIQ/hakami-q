@@ -40,8 +40,12 @@ function canonicalHref(html) {
 	return html.match(/<link\b(?=[^>]*\brel=["']canonical["'])(?=[^>]*\bhref=["']([^"']+)["'])[^>]*>/i)?.[1] ?? null;
 }
 
+function isGoogleVerificationFile(file) {
+	return /^google[a-z0-9_-]+\.html$/i.test(path.basename(file));
+}
+
 const allFiles = await walk(dist);
-const htmlFiles = allFiles.filter((file) => file.endsWith('.html'));
+const htmlFiles = allFiles.filter((file) => file.endsWith('.html') && !isGoogleVerificationFile(file));
 
 const robotsPath = path.join(dist, 'robots.txt');
 let robots = '';
