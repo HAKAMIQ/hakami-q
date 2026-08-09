@@ -20,7 +20,7 @@ import {
 	verifyPassword,
 } from '../../_lib/auth.js';
 
-const DUMMY_PASSWORD_HASH = 'pbkdf2-sha256$600000$jMzY-0UC_utVNpgxPMBJ8w$9AIJcXR9gaD7Iiv2Xetc9OJ0W9syk5C5IPvniCnNJxQ';
+const DUMMY_PASSWORD_HASH = 'pbkdf2-sha256-hmac-pepper-v1$100000$AAAAAAAAAAAAAAAAAAAAAA$AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 const JSON_HEADERS = {
@@ -114,7 +114,7 @@ async function createUser(env, input, role = 'user') {
 	if (duplicate) throw new AuthError('تعذر إنشاء الحساب بهذه البيانات.', 409);
 	const id = crypto.randomUUID();
 	const now = new Date().toISOString();
-	const passwordHash = await hashPassword(input.password);
+	const passwordHash = await hashPassword(input.password, env);
 	try {
 		await db.prepare(`
 			INSERT INTO users (
@@ -170,14 +170,14 @@ async function login(request, env) {
 		LIMIT 1
 	`).bind(key, key).first();
 	if (!row) {
-		await verifyPassword(password, DUMMY_PASSWORD_HASH);
+		await verifyPassword(password, DUMMY_PASSWORD_HASH, env);
 		return json({ error: 'بيانات تسجيل الدخول غير صحيحة.' }, 401);
 	}
 	if (row.status !== 'active') return json({ error: 'هذا الحساب غير متاح حاليًا.' }, 403);
 	if (row.locked_until && Date.parse(row.locked_until) > Date.now()) {
 		return json({ error: 'تم إيقاف محاولات تسجيل الدخول مؤقتًا. حاول لاحقًا.' }, 429);
 	}
-	const valid = await verifyPassword(password, row.password_hash);
+	const valid = await verifyPassword(password, row.password_hash, env);
 	if (!valid) {
 		const failures = Number(row.failed_login_count || 0) + 1;
 		const shouldLock = failures >= 8;
