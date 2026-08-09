@@ -1,4 +1,4 @@
-const REPOSITORY = 'HAKAMIQ/web';
+const REPOSITORY = 'HAKAMIQ/hakami-q';
 const BRANCH = 'main';
 const SESSION_COOKIE = 'hq_admin';
 const SESSION_SECONDS = 8 * 60 * 60;
