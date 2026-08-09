@@ -25,10 +25,11 @@ const inferredType =
 	Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/'
 		? 'article'
 		: 'website';
+const inheritedSocialImage = (Astro.locals as { seoImage?: ImageMetadata | string }).seoImage;
 const {
 	title,
 	description,
-	image = FallbackImage,
+	image = inheritedSocialImage ?? FallbackImage,
 	type = inferredType,
 	canonicalPath = Astro.url.pathname,
 } = Astro.props;
