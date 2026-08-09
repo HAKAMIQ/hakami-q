@@ -1,0 +1,56 @@
+.account-secret {
+	display: block;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 6px;
+	background: var(--color-neutral-background-1);
+	color: var(--color-neutral-foreground-1);
+	padding: 12px;
+	font-size: 0.95rem;
+	letter-spacing: 0.08em;
+	user-select: all;
+}
+
+.account-recovery {
+	margin-top: 18px;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 8px;
+	background: var(--color-neutral-background-1);
+	padding: 16px;
+}
+
+.account-recovery h3 {
+	margin: 0 0 8px;
+	color: var(--color-neutral-foreground-1);
+}
+
+.account-recovery p {
+	margin: 0 0 14px;
+}
+
+.account-recovery-codes {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.account-recovery-codes code {
+	display: block;
+	border: 1px solid var(--color-neutral-stroke-1);
+	border-radius: 6px;
+	padding: 9px 10px;
+	text-align: center;
+	background: var(--color-neutral-background-2);
+	color: var(--color-neutral-foreground-1);
+	font-size: 0.92rem;
+	letter-spacing: 0.04em;
+	user-select: all;
+}
+
+@media (max-width: 560px) {
+	.account-recovery-codes {
+		grid-template-columns: 1fr;
+	}
+}
