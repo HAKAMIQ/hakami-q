@@ -1,0 +1,42 @@
+name: PBKDF2 Preview Diagnostic
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'functions/api/auth/hash-diagnostic.js'
+      - '.github/workflows/pbkdf2-diagnostic.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for preview and call diagnostic
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://diagnose-auth-pbkdf2.hakami-q.pages.dev/api/auth/hash-diagnostic'
+          body=''
+          code=''
+          for attempt in $(seq 1 48); do
+            tmp="$(mktemp)"
+            code="$(curl --silent --show-error --max-time 20 --output "$tmp" --write-out '%{http_code}' "$URL" || true)"
+            body="$(cat "$tmp")"
+            rm -f "$tmp"
+            if [ "$code" != '404' ] && [ "$code" != '000' ]; then
+              break
+            fi
+            sleep 5
+          done
+          echo "HTTP=$code"
+          echo "BODY=$body"
+          node -e '
+            const code = Number(process.argv[1]);
+            const data = JSON.parse(process.argv[2]);
+            if (![200,500].includes(code)) throw new Error(`Unexpected HTTP ${code}`);
+            if (typeof data.ok !== "boolean") throw new Error("Diagnostic response missing ok flag");
+            console.log(JSON.stringify(data));
+          ' "$code" "$body"
