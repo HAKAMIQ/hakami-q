@@ -39,6 +39,20 @@ import '../styles/account-system.css';
 						</div>
 						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
+
+					<form id="mfa-form" class="account-form account-hidden" autocomplete="one-time-code">
+						<p class="account-help">هذا الحساب إداري ومحمي بالتحقق بخطوتين. أدخل رمز تطبيق المصادقة المكوّن من 6 أرقام، أو أحد رموز الاسترداد.</p>
+						<div class="account-field">
+							<label for="mfa-code">رمز التحقق</label>
+							<input id="mfa-code" class="account-input" type="text" inputmode="text" maxlength="20" autocomplete="one-time-code" required />
+						</div>
+						<div class="account-actions">
+							<button id="mfa-submit" class="account-button account-button--primary" type="submit">تحقق ودخول</button>
+							<button id="mfa-cancel" class="account-button" type="button">رجوع</button>
+						</div>
+						<p id="mfa-feedback" class="account-feedback account-hidden" role="status"></p>
+					</form>
+
 					<p class="account-links">ليس لديك حساب؟ <a href="/register">إنشاء حساب</a></p>
 				</section>
 			</div>
@@ -51,12 +65,22 @@ import '../styles/account-system.css';
 			const feedback = document.querySelector<HTMLElement>('#feedback');
 			const submit = document.querySelector<HTMLButtonElement>('#submit-button');
 			const turnstileSlot = document.querySelector<HTMLElement>('#turnstile-slot');
+			const mfaForm = document.querySelector<HTMLFormElement>('#mfa-form');
+			const mfaCode = document.querySelector<HTMLInputElement>('#mfa-code');
+			const mfaSubmit = document.querySelector<HTMLButtonElement>('#mfa-submit');
+			const mfaCancel = document.querySelector<HTMLButtonElement>('#mfa-cancel');
+			const mfaFeedback = document.querySelector<HTMLElement>('#mfa-feedback');
+			let mfaToken = '';
+
+			function showOn(element: HTMLElement | null, message: string, kind = '') {
+				if (!element) return;
+				element.textContent = message;
+				element.dataset.kind = kind;
+				element.classList.toggle('account-hidden', !message);
+			}
 
 			function show(message: string, kind = '') {
-				if (!feedback) return;
-				feedback.textContent = message;
-				feedback.dataset.kind = kind;
-				feedback.classList.toggle('account-hidden', !message);
+				showOn(feedback, message, kind);
 			}
 
 			function safeNextPath() {
@@ -69,6 +93,31 @@ import '../styles/account-system.css';
 				} catch {
 					return '/account';
 				}
+			}
+
+			function resetTurnstile() {
+				const api = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
+				api?.reset();
+			}
+
+			function enterMfaStep(token: string) {
+				mfaToken = token;
+				if (password) password.value = '';
+				show('');
+				form?.classList.add('account-hidden');
+				mfaForm?.classList.remove('account-hidden');
+				showOn(mfaFeedback, 'أدخل رمز التحقق لإكمال تسجيل الدخول.');
+				mfaCode?.focus();
+			}
+
+			function leaveMfaStep() {
+				mfaToken = '';
+				if (mfaCode) mfaCode.value = '';
+				showOn(mfaFeedback, '');
+				mfaForm?.classList.add('account-hidden');
+				form?.classList.remove('account-hidden');
+				resetTurnstile();
+				password?.focus();
 			}
 
 			async function initializeSecurity() {
@@ -111,16 +160,52 @@ import '../styles/account-system.css';
 					});
 					const payload = await response.json().catch(() => ({}));
 					if (!response.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول.');
+					if (response.status === 202 && payload.mfaRequired && payload.mfaToken) {
+						enterMfaStep(String(payload.mfaToken));
+						return;
+					}
 					window.location.assign(safeNextPath());
 				} catch (error) {
 					show(error instanceof Error ? error.message : 'تعذر تسجيل الدخول.', 'error');
-					const api = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
-					api?.reset();
+					resetTurnstile();
 				} finally {
 					submit.disabled = false;
 				}
 			});
 
+			mfaForm?.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				if (!mfaToken || !mfaCode || !mfaSubmit) return;
+				const code = mfaCode.value.trim();
+				if (!code) {
+					showOn(mfaFeedback, 'أدخل رمز التحقق.', 'error');
+					return;
+				}
+				mfaSubmit.disabled = true;
+				showOn(mfaFeedback, 'جاري التحقق…');
+				try {
+					const response = await fetch('/api/mfa/verify-login', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ mfaToken, code }),
+					});
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر التحقق من الرمز.');
+					mfaToken = '';
+					window.location.assign(safeNextPath());
+				} catch (error) {
+					showOn(mfaFeedback, error instanceof Error ? error.message : 'تعذر التحقق من الرمز.', 'error');
+					if (mfaCode) {
+						mfaCode.value = '';
+						mfaCode.focus();
+					}
+				} finally {
+					mfaSubmit.disabled = false;
+				}
+			});
+
+			mfaCancel?.addEventListener('click', leaveMfaStep);
 			initializeSecurity();
 		</script>
 	</body>
