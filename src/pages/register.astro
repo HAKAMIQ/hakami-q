@@ -44,8 +44,9 @@ import '../styles/account-system.css';
 								<input id="password-confirm" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required />
 							</div>
 						</div>
+						<div id="turnstile-slot" class="account-turnstile" aria-label="التحقق الأمني"></div>
 						<div class="account-actions">
-							<button id="submit-button" class="account-button account-button--primary" type="submit">إنشاء الحساب</button>
+							<button id="submit-button" class="account-button account-button--primary" type="submit" disabled>إنشاء الحساب</button>
 						</div>
 						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
@@ -62,6 +63,7 @@ import '../styles/account-system.css';
 			const confirm = document.querySelector<HTMLInputElement>('#password-confirm');
 			const feedback = document.querySelector<HTMLElement>('#feedback');
 			const submit = document.querySelector<HTMLButtonElement>('#submit-button');
+			const turnstileSlot = document.querySelector<HTMLElement>('#turnstile-slot');
 
 			function show(message: string, kind = '') {
 				if (!feedback) return;
@@ -70,12 +72,42 @@ import '../styles/account-system.css';
 				feedback.classList.toggle('account-hidden', !message);
 			}
 
+			async function initializeSecurity() {
+				try {
+					const response = await fetch('/api/auth/config', { credentials: 'same-origin' });
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر تهيئة التحقق الأمني.');
+					if (payload.registrationClosed) {
+						show('التسجيل متوقف مؤقتًا.', 'error');
+						return;
+					}
+					if (!payload.turnstileSitekey || !turnstileSlot) throw new Error('التحقق الأمني غير مهيأ بعد.');
+					turnstileSlot.classList.add('cf-turnstile');
+					turnstileSlot.dataset.sitekey = payload.turnstileSitekey;
+					turnstileSlot.dataset.action = 'register';
+					const script = document.createElement('script');
+					script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+					script.async = true;
+					script.defer = true;
+					script.addEventListener('load', () => { if (submit) submit.disabled = false; }, { once: true });
+					script.addEventListener('error', () => show('تعذر تحميل التحقق الأمني.', 'error'), { once: true });
+					document.head.append(script);
+				} catch (error) {
+					show(error instanceof Error ? error.message : 'تعذر تهيئة التحقق الأمني.', 'error');
+				}
+			}
+
 			form?.addEventListener('submit', async (event) => {
 				event.preventDefault();
 				show('');
-				if (!username || !email || !password || !confirm || !submit) return;
+				if (!username || !email || !password || !confirm || !submit || !form) return;
 				if (password.value !== confirm.value) {
 					show('كلمتا المرور غير متطابقتين.', 'error');
+					return;
+				}
+				const token = form.querySelector<HTMLInputElement>('input[name="cf-turnstile-response"]')?.value || '';
+				if (!token) {
+					show('أكمل التحقق الأمني ثم أعد المحاولة.', 'error');
 					return;
 				}
 				submit.disabled = true;
@@ -84,18 +116,22 @@ import '../styles/account-system.css';
 						method: 'POST',
 						credentials: 'same-origin',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ username: username.value, email: email.value, password: password.value }),
+						body: JSON.stringify({ username: username.value, email: email.value, password: password.value, turnstileToken: token }),
 					});
 					const payload = await response.json().catch(() => ({}));
 					if (!response.ok) throw new Error(payload.error || 'تعذر إنشاء الحساب.');
 					show('تم إنشاء الحساب بنجاح.', 'success');
-					window.location.href = '/account';
+					window.location.assign('/account');
 				} catch (error) {
 					show(error instanceof Error ? error.message : 'تعذر إنشاء الحساب.', 'error');
+					const api = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
+					api?.reset();
 				} finally {
 					submit.disabled = false;
 				}
 			});
+
+			initializeSecurity();
 		</script>
 	</body>
 </html>
