@@ -20,6 +20,9 @@ import {
 	verifyPassword,
 } from '../../_lib/auth.js';
 
+const DUMMY_PASSWORD_HASH = 'pbkdf2-sha256$600000$jMzY-0UC_utVNpgxPMBJ8w$9AIJcXR9gaD7Iiv2Xetc9OJ0W9syk5C5IPvniCnNJxQ';
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
 const JSON_HEADERS = {
 	'Content-Type': 'application/json; charset=utf-8',
 	'Cache-Control': 'no-store, private',
@@ -59,16 +62,37 @@ function registrationInput(payload) {
 	return { username, email, password };
 }
 
+async function verifyTurnstile(request, env, token, expectedAction) {
+	if (!env.TURNSTILE_SECRET_KEY) throw new AuthError('خدمة التحقق الأمني غير مهيأة بعد.', 503);
+	const value = String(token || '');
+	if (!value || value.length > 2048) throw new AuthError('أكمل التحقق الأمني ثم أعد المحاولة.', 400);
+
+	const body = new FormData();
+	body.set('secret', env.TURNSTILE_SECRET_KEY);
+	body.set('response', value);
+	body.set('idempotency_key', crypto.randomUUID());
+	const remoteIp = request.headers.get('CF-Connecting-IP');
+	if (remoteIp) body.set('remoteip', remoteIp);
+
+	let response;
+	try {
+		response = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body });
+	} catch {
+		throw new AuthError('تعذر الوصول إلى خدمة التحقق الأمني. حاول لاحقًا.', 503);
+	}
+	if (!response.ok) throw new AuthError('تعذر التحقق من الطلب حاليًا. حاول لاحقًا.', 503);
+	const result = await response.json().catch(() => null);
+	if (!result?.success) throw new AuthError('فشل التحقق الأمني. أعد المحاولة.', 403);
+	if (result.action && result.action !== expectedAction) throw new AuthError('فشل التحقق الأمني للطلب.', 403);
+}
+
 async function createUser(env, input, role = 'user') {
 	const db = requireAuthDb(env);
 	const key = usernameKey(input.username);
 	const duplicate = await db.prepare(
-		'SELECT id, username_key, email_key FROM users WHERE username_key = ? OR email_key = ? LIMIT 1'
+		'SELECT id FROM users WHERE username_key = ? OR email_key = ? LIMIT 1'
 	).bind(key, input.email).first();
-	if (duplicate) {
-		if (duplicate.username_key === key) throw new AuthError('اسم المستخدم مستخدم بالفعل.', 409);
-		throw new AuthError('البريد الإلكتروني مستخدم بالفعل.', 409);
-	}
+	if (duplicate) throw new AuthError('تعذر إنشاء الحساب بهذه البيانات.', 409);
 	const id = crypto.randomUUID();
 	const now = new Date().toISOString();
 	const passwordHash = await hashPassword(input.password);
@@ -81,17 +105,26 @@ async function createUser(env, input, role = 'user') {
 		`).bind(id, input.username, key, input.email, input.email, passwordHash, role, now, now).run();
 	} catch (error) {
 		console.error('auth create user failed', error);
-		throw new AuthError('تعذر إنشاء الحساب. قد يكون اسم المستخدم أو البريد مستخدمًا.', 409);
+		throw new AuthError('تعذر إنشاء الحساب بهذه البيانات.', 409);
 	}
 	return db.prepare(
 		'SELECT id, username, email, role, status, created_at FROM users WHERE id = ? LIMIT 1'
 	).bind(id).first();
 }
 
+async function config(env) {
+	return json({
+		turnstileSitekey: String(env.TURNSTILE_SITEKEY || ''),
+		registrationClosed: env.REGISTRATION_CLOSED === '1',
+	});
+}
+
 async function register(request, env) {
 	requireSameOriginPost(request);
 	if (env.REGISTRATION_CLOSED === '1') throw new AuthError('التسجيل متوقف مؤقتًا.', 403);
-	const input = registrationInput(await readJson(request, 'بيانات التسجيل غير صالحة.'));
+	const payload = await readJson(request, 'بيانات التسجيل غير صالحة.');
+	await verifyTurnstile(request, env, payload?.turnstileToken, 'register');
+	const input = registrationInput(payload);
 	const row = await createUser(env, input, 'user');
 	const session = await createSession(env, row.id);
 	return json(
@@ -105,6 +138,7 @@ async function login(request, env) {
 	requireSameOriginPost(request);
 	const db = requireAuthDb(env);
 	const payload = await readJson(request, 'بيانات تسجيل الدخول غير صالحة.');
+	await verifyTurnstile(request, env, payload?.turnstileToken, 'login');
 	const identifier = String(payload?.identifier || '').trim().normalize('NFKC');
 	const password = String(payload?.password || '');
 	if (!identifier || !password || password.length > 128) return json({ error: 'بيانات تسجيل الدخول غير صحيحة.' }, 401);
@@ -116,8 +150,11 @@ async function login(request, env) {
 		WHERE username_key = ? OR email_key = ?
 		LIMIT 1
 	`).bind(key, key).first();
-	if (!row) return json({ error: 'بيانات تسجيل الدخول غير صحيحة.' }, 401);
-	if (row.status !== 'active') return json({ error: 'هذا الحساب موقوف.' }, 403);
+	if (!row) {
+		await verifyPassword(password, DUMMY_PASSWORD_HASH);
+		return json({ error: 'بيانات تسجيل الدخول غير صحيحة.' }, 401);
+	}
+	if (row.status !== 'active') return json({ error: 'هذا الحساب غير متاح حاليًا.' }, 403);
 	if (row.locked_until && Date.parse(row.locked_until) > Date.now()) {
 		return json({ error: 'تم إيقاف محاولات تسجيل الدخول مؤقتًا. حاول لاحقًا.' }, 429);
 	}
@@ -134,11 +171,11 @@ async function login(request, env) {
 	await db.prepare(
 		'UPDATE users SET failed_login_count = 0, locked_until = NULL, updated_at = ? WHERE id = ?'
 	).bind(new Date().toISOString(), row.id).run();
-	const session = await createSession(env, row.id);
+	const accountSession = await createSession(env, row.id);
 	return json(
-		{ authenticated: true, user: publicUser(row, true), expiresAt: session.expiresAt.toISOString() },
+		{ authenticated: true, user: publicUser(row, true), expiresAt: accountSession.expiresAt.toISOString() },
 		200,
-		{ 'Set-Cookie': sessionCookie(session.token) },
+		{ 'Set-Cookie': sessionCookie(accountSession.token) },
 	);
 }
 
@@ -241,6 +278,7 @@ export async function onRequest(context) {
 	const { request, env } = context;
 	const action = getAction(request);
 	try {
+		if (action === 'config' && request.method === 'GET') return await config(env);
 		if (action === 'session' && request.method === 'GET') return await session(request, env);
 		if (action === 'bootstrap-status' && request.method === 'GET') return await bootstrapStatus(env);
 		if (action === 'users' && request.method === 'GET') return await listUsers(request, env);
