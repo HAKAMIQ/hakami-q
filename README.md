@@ -1,2 +1,2 @@
-# web
+# hakami-q
 HAKAMIQ website

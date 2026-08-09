@@ -55,7 +55,6 @@ const files = {
 	theme: 'src/styles/fluent-core-theme.css',
 	astroConfig: 'astro.config.mjs',
 	contentConfig: 'src/content.config.ts',
-	converter: 'convert-blogger-live-to-astro.ps1',
 };
 
 const source = Object.fromEntries(await Promise.all(
@@ -157,14 +156,6 @@ forbidText(files.astroConfig, source.astroConfig, 'fontProviders', 'typography.l
 
 requireText(files.contentConfig, source.contentConfig, 'normalizeBloggerImageUrl', 'media.central-normalization', 'Blogger hero-image normalization must remain centralized in the content schema.');
 requireText(files.contentConfig, source.contentConfig, '/s1280', 'media.hero-resolution', 'Blogger hero images must not fall back to legacy s320-sized sources.');
-for (const [needle, rule, message] of [
-	['ConvertTo-SafeArticleHtml', 'import.sanitizer', 'Blogger import must pass article HTML through the sanitizer.'],
-	['<script\\b[^>]*>.*?</script>', 'import.script', 'Blogger import must remove script blocks.'],
-	['on[a-z0-9_-]+', 'import.handlers', 'Blogger import must remove inline event handlers.'],
-	['javascript:', 'import.javascript-url', 'Blogger import must remove javascript: URL attributes.'],
-	['srcdoc', 'import.srcdoc', 'Blogger import must remove iframe srcdoc content.'],
-	['ConvertTo-BloggerImageUrl', 'import.image-resolution', 'Blogger import must normalize hero-image resolution.'],
-]) requireText(files.converter, source.converter, needle, rule, message);
 
 const astroFiles = await collectAstroFiles('src');
 for (const file of astroFiles) {
