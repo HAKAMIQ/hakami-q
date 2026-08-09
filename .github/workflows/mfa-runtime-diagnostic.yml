@@ -1,0 +1,52 @@
+name: MFA Runtime Diagnostic
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'functions/_lib/mfa.js'
+      - 'functions/_lib/mfa-session.js'
+      - 'functions/api/mfa/runtime-diagnostic.js'
+      - '.github/workflows/mfa-runtime-diagnostic.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Cloudflare preview and exercise MFA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://security-privileged-totp-mfa.hakami-q.pages.dev/api/mfa/runtime-diagnostic'
+          code=''
+          body=''
+          for attempt in $(seq 1 60); do
+            tmp="$(mktemp)"
+            code="$(curl --silent --show-error --max-time 30 --output "$tmp" --write-out '%{http_code}' "$URL" || true)"
+            body="$(cat "$tmp")"
+            rm -f "$tmp"
+            if [ "$code" = '200' ]; then
+              break
+            fi
+            if [ "$code" = '500' ]; then
+              echo "Diagnostic failed: $body"
+              exit 1
+            fi
+            sleep 5
+          done
+          echo "HTTP=$code"
+          echo "BODY=$body"
+          node -e '
+            const code = Number(process.argv[1]);
+            const data = JSON.parse(process.argv[2]);
+            if (code !== 200) throw new Error(`Unexpected HTTP ${code}`);
+            if (data.ok !== true) throw new Error("MFA runtime diagnostic did not pass");
+            if (data.totpEnabled !== true) throw new Error("TOTP enrollment failed");
+            if (data.recoverySingleUse !== true) throw new Error("Recovery-code single-use failed");
+            if (data.challengeVerified !== true) throw new Error("MFA login challenge failed");
+            if (data.sessionAssurance !== true) throw new Error("MFA session assurance failed");
+            console.log("MFA CLOUDFLARE RUNTIME: PASS");
+          ' "$code" "$body"
