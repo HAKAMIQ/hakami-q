@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { SITE_TITLE } from '../consts';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	heroImageUrl,
+	labels = [],
+} = Astro.props;
+
+const siteURL = Astro.site ?? Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const homeURL = new URL('/', siteURL).href;
+const blogURL = new URL('/blog/', siteURL).href;
+const imageURL = heroImageUrl
+	? new URL(heroImageUrl, siteURL).href
+	: heroImage
+		? new URL(heroImage.src, siteURL).href
+		: undefined;
+
+const organization = {
+	'@type': 'Organization',
+	name: SITE_TITLE,
+	url: homeURL,
+};
+
+const articleSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	url: canonicalURL.href,
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': canonicalURL.href,
+	},
+	datePublished: pubDate.toISOString(),
+	dateModified: (updatedDate ?? pubDate).toISOString(),
+	inLanguage: 'ar',
+	author: organization,
+	publisher: organization,
+	...(imageURL ? { image: [imageURL] } : {}),
+	...(labels.length > 0 ? { keywords: labels.join(', ') } : {}),
+};
+
+const breadcrumbSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'الرئيسية',
+			item: homeURL,
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'المقالات',
+			item: blogURL,
+		},
+		{
+			'@type': 'ListItem',
+			position: 3,
+			name: title,
+			item: canonicalURL.href,
+		},
+	],
+};
+
+const serializeJsonLd = (value: unknown) =>
+	JSON.stringify(value).replace(/</g, '\\u003c');
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(articleSchema)}></script>
+<script type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)}></script>
