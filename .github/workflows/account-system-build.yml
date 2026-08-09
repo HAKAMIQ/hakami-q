@@ -17,6 +17,7 @@ on:
       - 'src/pages/admin/**'
       - 'src/styles/account-system.css'
       - 'scripts/admin-cutover-self-test.mjs'
+      - 'scripts/auth-login-middleware-self-test.mjs'
       - 'scripts/auth-password-self-test.mjs'
       - 'scripts/mfa-self-test.mjs'
       - 'scripts/setup-auth-production.ps1'
@@ -59,6 +60,9 @@ jobs:
 
       - name: Verify TOTP implementation
         run: node scripts/mfa-self-test.mjs
+
+      - name: Verify login middleware
+        run: node scripts/auth-login-middleware-self-test.mjs
 
       - name: Verify admin account cutover
         run: node scripts/admin-cutover-self-test.mjs
