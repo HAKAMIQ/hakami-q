@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import ArticleSeo from '../../components/ArticleSeo.astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import '../../styles/article-content-compat.css';
 
@@ -163,6 +164,7 @@ const renderedBody = normalizeLegacyArticleMarkup(
 ---
 
 <BlogPost {...post.data}>
+	<ArticleSeo {...post.data} />
 	<div class="article-compat-root" data-hq-article-compat="v1">
 		<Fragment set:html={renderedBody} />
 	</div>
