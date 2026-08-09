@@ -6,34 +6,25 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import SkipLink from '../../components/SkipLink.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import { categoryNames, getPostCategories } from '../../data/blog-taxonomy';
+import '../../styles/blog-listing-page.css';
 
-const DEFAULT_PAGE_SIZE = 12;
+const PAGE_SIZE = 12;
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
-const postItems = posts.map((post) => ({
-	post,
-	categories: getPostCategories(post),
-}));
-
-const postData = postItems.map(({ post, categories }) => ({
-	title: post.data.title,
-	description: post.data.description,
-	href: `/blog/${post.id}/`,
-	heroImageUrl: post.data.heroImageUrl ?? '',
-	label: post.data.labels[0] ?? '',
-	categories,
-}));
-
-const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
+const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+const visiblePosts = posts.slice(0, PAGE_SIZE);
+const pageHref = (page: number) => page <= 1 ? '/blog/' : `/blog/page/${page}/`;
+const visiblePageNumbers = Array.from(new Set([1, 2, 3, totalPages]))
+	.filter((page) => page >= 1 && page <= totalPages)
+	.sort((a, b) => a - b);
 ---
 
 <!doctype html>
 <html lang="ar" dir="rtl">
 	<head>
-		<BaseHead title={`المقالات | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`المقالات | ${SITE_TITLE}`} description={SITE_DESCRIPTION} canonicalPath="/blog/" />
+		{totalPages > 1 && <link rel="next" href={new URL(pageHref(2), Astro.site ?? Astro.url)} />}
 	</head>
 
 	<body>
@@ -44,51 +35,57 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 			<h1 class="sr-only">المقالات</h1>
 
 			<section class="posts-section" aria-label="قائمة المقالات">
-				<div id="category-data" data-categories={JSON.stringify(categoryNames)} hidden></div>
-				<script id="blog-post-data" type="application/json" set:html={JSON.stringify(postData).replace(/</g, '\\u003c')}></script>
-
 				<div class="site-container blog-layout">
 					<BlogSidebar posts={posts} />
 
 					<div class="posts-content">
-						<div class="filter-status fui-card" id="filter-status" role="status" aria-live="polite" hidden>
-							<p><span>القسم الحالي</span><strong id="filter-name"></strong></p>
-							<a class="fui-link" href="/blog">عرض جميع المقالات</a>
-						</div>
-
-						<p class="no-results fui-card" id="no-results" role="status" aria-live="polite" hidden>
-							لا توجد مقالات مطابقة لهذا القسم حاليًا.
-						</p>
-
 						<div class="posts-grid" id="posts-grid">
-							{initialItems.map(({ post }) => (
-								<article class="post-card fui-card fui-card--interactive">
-									<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
-										<div class="post-image">
-											{post.data.heroImageUrl ? (
-												<img src={post.data.heroImageUrl} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-											) : (
-												<div class="image-placeholder">HAKAMIQ</div>
-											)}
+							{visiblePosts.map((post) => {
+								const imageSrc = post.data.heroImageUrl ?? post.data.heroImage?.src;
+								return (
+									<article class="post-card fui-card fui-card--interactive">
+										<a href={`/blog/${post.id}/`} aria-label={post.data.title}>
+											<div class="post-image">
+												{imageSrc ? (
+													<img src={imageSrc} alt={post.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+												) : (
+													<div class="image-placeholder">HAKAMIQ</div>
+												)}
 
-											{post.data.labels.length > 0 && (
-												<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
-											)}
+												{post.data.labels.length > 0 && (
+													<span class="post-label fui-badge fui-badge--brand">{post.data.labels[0]}</span>
+												)}
 
-											<div class="post-title-overlay">
-												<h2>{post.data.title}</h2>
+												<div class="post-title-overlay">
+													<h2>{post.data.title}</h2>
+												</div>
 											</div>
-										</div>
 
-										<div class="post-content">
-											<p>{post.data.description}</p>
-										</div>
-									</a>
-								</article>
-							))}
+											<div class="post-content">
+												<p>{post.data.description}</p>
+											</div>
+										</a>
+									</article>
+								);
+							})}
 						</div>
 
-						<nav class="posts-pagination" id="posts-pagination" aria-label="صفحات المقالات"></nav>
+						{totalPages > 1 && (
+							<nav class="posts-pagination" aria-label="صفحات المقالات">
+								{visiblePageNumbers.map((page, index) => {
+									const previous = visiblePageNumbers[index - 1];
+									return (
+										<>
+											{previous && page - previous > 1 && <span class="page-ellipsis" aria-hidden="true">…</span>}
+											<a class="page-link" href={pageHref(page)} aria-current={page === 1 ? 'page' : undefined} aria-label={`الصفحة ${page}`}>
+												{page}
+											</a>
+										</>
+									);
+								})}
+								<a class="page-link" href={pageHref(2)} rel="next" aria-label="الصفحة التالية">التالي</a>
+							</nav>
+						)}
 					</div>
 				</div>
 			</section>
@@ -99,380 +96,16 @@ const initialItems = postItems.slice(0, DEFAULT_PAGE_SIZE);
 </html>
 
 <script>
-	type BlogListItem = {
-		title: string;
-		description: string;
-		href: string;
-		heroImageUrl: string;
-		label: string;
-		categories: string[];
-	};
+	const params = new URLSearchParams(window.location.search);
+	const category = params.get('category')?.trim().toLowerCase();
+	const requestedPage = Number.parseInt(params.get('page') ?? '1', 10);
 
-	const initializeBlogPagination = () => {
-		const grid = document.querySelector<HTMLElement>('#posts-grid');
-		const dataElement = document.querySelector<HTMLScriptElement>('#blog-post-data');
-		const categoryData = document.querySelector<HTMLElement>('#category-data');
-		const filterStatus = document.querySelector<HTMLElement>('#filter-status');
-		const filterName = document.querySelector<HTMLElement>('#filter-name');
-		const noResults = document.querySelector<HTMLElement>('#no-results');
-		const pagination = document.querySelector<HTMLElement>('#posts-pagination');
-		if (!grid || !dataElement || !categoryData || !noResults || !pagination) return;
-		if (grid.dataset.paginationInitialized === 'true') return;
-		grid.dataset.paginationInitialized = 'true';
-
-		let items: BlogListItem[] = [];
-		try { items = JSON.parse(dataElement.textContent || '[]'); } catch { items = []; }
-		const names = JSON.parse(categoryData.dataset.categories ?? '{}') as Record<string, string>;
-		const params = new URLSearchParams(window.location.search);
-		const selectedCategory = params.get('category')?.trim().toLowerCase() ?? '';
-		const pageSize = 12;
-		let currentPage = Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1);
-
-		if (selectedCategory && names[selectedCategory]) {
-			if (filterStatus) filterStatus.hidden = false;
-			if (filterName) filterName.textContent = names[selectedCategory];
+	if (category) {
+		const categoryLink = document.querySelector<HTMLAnchorElement>(`[data-category-link="${CSS.escape(category)}"]`);
+		if (categoryLink?.dataset.categoryLink) {
+			window.location.replace(`/blog/category/${encodeURIComponent(categoryLink.dataset.categoryLink)}/`);
 		}
-
-		const createCard = (item: BlogListItem) => {
-			const article = document.createElement('article');
-			article.className = 'post-card fui-card fui-card--interactive';
-
-			const link = document.createElement('a');
-			link.href = item.href;
-			link.setAttribute('aria-label', item.title);
-
-			const imageWrap = document.createElement('div');
-			imageWrap.className = 'post-image';
-			if (item.heroImageUrl) {
-				const image = document.createElement('img');
-				image.src = item.heroImageUrl;
-				image.alt = item.title;
-				image.loading = 'lazy';
-				image.decoding = 'async';
-				image.referrerPolicy = 'no-referrer';
-				imageWrap.append(image);
-			} else {
-				const placeholder = document.createElement('div');
-				placeholder.className = 'image-placeholder';
-				placeholder.textContent = 'HAKAMIQ';
-				imageWrap.append(placeholder);
-			}
-
-			if (item.label) {
-				const label = document.createElement('span');
-				label.className = 'post-label fui-badge fui-badge--brand';
-				label.textContent = item.label;
-				imageWrap.append(label);
-			}
-
-			const titleOverlay = document.createElement('div');
-			titleOverlay.className = 'post-title-overlay';
-			const title = document.createElement('h2');
-			title.textContent = item.title;
-			titleOverlay.append(title);
-			imageWrap.append(titleOverlay);
-
-			const content = document.createElement('div');
-			content.className = 'post-content';
-			if (item.description) {
-				const description = document.createElement('p');
-				description.textContent = item.description;
-				content.append(description);
-			}
-
-			link.append(imageWrap, content);
-			article.append(link);
-			return article;
-		};
-
-		const buildUrl = (page: number) => {
-			const next = new URLSearchParams();
-			if (selectedCategory && names[selectedCategory]) next.set('category', selectedCategory);
-			if (page > 1) next.set('page', String(page));
-			const query = next.toString();
-			return query ? `/blog?${query}` : '/blog';
-		};
-
-		const appendPageLink = (label: string, page: number, current = false, ariaLabel?: string) => {
-			const link = document.createElement('a');
-			link.className = 'page-link';
-			link.href = buildUrl(page);
-			link.textContent = label;
-			if (ariaLabel) link.setAttribute('aria-label', ariaLabel);
-			if (current) link.setAttribute('aria-current', 'page');
-			pagination.append(link);
-		};
-
-		const renderPagination = (totalPages: number) => {
-			pagination.replaceChildren();
-			pagination.hidden = totalPages <= 1;
-			if (totalPages <= 1) return;
-
-			if (currentPage > 1) appendPageLink('السابق', currentPage - 1, false, 'الصفحة السابقة');
-			const pages = new Set<number>([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
-			const visiblePages = [...pages].filter((page) => page >= 1 && page <= totalPages).sort((a, b) => a - b);
-			let previous = 0;
-			for (const page of visiblePages) {
-				if (previous && page - previous > 1) {
-					const ellipsis = document.createElement('span');
-					ellipsis.className = 'page-ellipsis';
-					ellipsis.textContent = '…';
-					ellipsis.setAttribute('aria-hidden', 'true');
-					pagination.append(ellipsis);
-				}
-				appendPageLink(String(page), page, page === currentPage, `الصفحة ${page}`);
-				previous = page;
-			}
-			if (currentPage < totalPages) appendPageLink('التالي', currentPage + 1, false, 'الصفحة التالية');
-		};
-
-		const render = () => {
-			const filtered = selectedCategory && names[selectedCategory]
-				? items.filter((item) => item.categories.includes(selectedCategory))
-				: items;
-			const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-			currentPage = Math.min(currentPage, totalPages);
-			const start = (currentPage - 1) * pageSize;
-			const visible = filtered.slice(start, start + pageSize);
-
-			grid.replaceChildren(...visible.map(createCard));
-			noResults.hidden = filtered.length !== 0;
-			renderPagination(totalPages);
-
-			const requestedPage = Number.parseInt(params.get('page') ?? '1', 10) || 1;
-			if (requestedPage !== currentPage || params.has('perPage')) history.replaceState(null, '', buildUrl(currentPage));
-		};
-
-		render();
-	};
-
-	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeBlogPagination, { once: true });
-	else initializeBlogPagination();
-	document.addEventListener('astro:page-load', initializeBlogPagination);
+	} else if (Number.isFinite(requestedPage) && requestedPage > 1) {
+		window.location.replace(`/blog/page/${requestedPage}/`);
+	}
 </script>
-
-<style is:global>
-	.posts-section { padding-block: var(--spacing-240) var(--spacing-80); }
-
-	.blog-layout {
-		display: grid;
-		grid-template-columns: 288px minmax(0, 1fr);
-		gap: var(--spacing-240);
-		align-items: start;
-	}
-
-	.posts-content { min-width: 0; grid-column: 2; }
-	.blog-layout .sidebar-region { min-width: 0; grid-column: 1; }
-
-	.filter-status {
-		display: flex;
-		min-height: 44px;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--spacing-120);
-		margin-bottom: var(--spacing-120);
-		padding: var(--spacing-80) var(--spacing-120);
-	}
-
-	.filter-status[hidden],
-	.no-results[hidden],
-	.posts-pagination[hidden] { display: none; }
-
-	.filter-status p { display: flex; align-items: center; gap: var(--spacing-80); color: var(--color-neutral-foreground-3); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-	.filter-status strong { color: var(--color-neutral-foreground-1); font-weight: var(--font-weight-semibold); }
-
-	.no-results {
-		margin-bottom: var(--spacing-160);
-		padding: var(--spacing-240);
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		text-align: center;
-	}
-
-	.posts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-160); }
-	.post-card { min-width: 0; overflow: hidden; }
-
-	.post-card > a {
-		display: flex;
-		height: 100%;
-		min-width: 0;
-		flex-direction: column;
-		color: inherit;
-		text-decoration: none;
-	}
-
-	.post-image {
-		position: relative;
-		isolation: isolate;
-		aspect-ratio: 16 / 9;
-		overflow: hidden;
-		background: var(--color-neutral-background-3);
-	}
-
-	.post-image::after {
-		position: absolute;
-		z-index: 1;
-		inset: var(--hq-media-frame-inset);
-		border-radius: var(--hq-media-frame-inner-radius);
-		background: linear-gradient(
-			to top,
-			color-mix(in srgb, var(--color-neutral-background-1) 92%, transparent) 0%,
-			color-mix(in srgb, var(--color-neutral-background-1) 66%, transparent) 34%,
-			transparent 62%
-		);
-		content: '';
-		pointer-events: none;
-	}
-
-	.post-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
-	}
-
-	.post-card:hover .post-image img { transform: scale(1.02); }
-
-	.image-placeholder {
-		display: grid;
-		width: 100%;
-		height: 100%;
-		place-items: center;
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-4);
-		font-size: var(--font-size-subtitle-2);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.post-label {
-		position: absolute;
-		z-index: 3;
-		top: calc(var(--hq-media-frame-inset) + var(--spacing-100));
-		left: calc(var(--hq-media-frame-inset) + var(--spacing-100));
-		max-width: calc(100% - var(--spacing-240));
-		margin: 0;
-		box-shadow: var(--shadow-2);
-	}
-
-	.post-title-overlay {
-		position: absolute;
-		z-index: 2;
-		right: calc(var(--hq-media-frame-inset) + var(--spacing-120));
-		bottom: calc(var(--hq-media-frame-inset) + var(--spacing-120));
-		width: min(88%, 560px);
-		text-align: right;
-	}
-
-	.post-title-overlay h2 {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0;
-		color: var(--color-neutral-foreground-on-brand);
-		font-size: var(--font-size-title-3);
-		font-weight: var(--font-weight-bold);
-		line-height: var(--line-height-title-3);
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		-webkit-text-stroke: 0.45px var(--color-neutral-background-1);
-		paint-order: stroke fill;
-	}
-
-	.post-content {
-		display: flex;
-		min-height: 112px;
-		flex: 1;
-		align-items: center;
-		padding: var(--spacing-160);
-	}
-
-	.post-content p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0;
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.posts-pagination {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: var(--spacing-60);
-		margin-top: var(--spacing-240);
-		padding-block: var(--spacing-80);
-		flex-wrap: wrap;
-	}
-
-	.posts-pagination .page-link {
-		display: inline-flex;
-		min-width: 36px;
-		min-height: 36px;
-		align-items: center;
-		justify-content: center;
-		padding-inline: var(--spacing-100);
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-medium);
-		background: var(--color-subtle-background);
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-	}
-
-	.posts-pagination .page-link:hover,
-	.posts-pagination .page-link:focus-visible {
-		border-color: var(--color-neutral-stroke-1-hover);
-		background: var(--color-subtle-background-hover);
-		color: var(--color-neutral-foreground-1);
-	}
-
-	.posts-pagination .page-link[aria-current='page'] {
-		border-color: var(--color-brand-stroke-1);
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground-strong);
-	}
-
-	.posts-pagination .page-ellipsis { padding-inline: var(--spacing-40); color: var(--color-neutral-foreground-4); }
-
-	@media (max-width: 1180px) {
-		.blog-layout { grid-template-columns: 272px minmax(0, 1fr); gap: var(--spacing-160); }
-		.post-title-overlay h2 { font-size: var(--font-size-subtitle-1); line-height: var(--line-height-subtitle-1); }
-	}
-
-	@media (max-width: 1023px) {
-		.blog-layout { grid-template-columns: 1fr; }
-		.posts-content,
-		.blog-layout .sidebar-region { grid-column: 1; }
-		.blog-layout .sidebar-region { grid-row: 1; }
-		.posts-content { grid-row: 2; }
-	}
-
-	@media (max-width: 639px) {
-		.posts-section { padding-top: var(--spacing-160); }
-		.filter-status { align-items: flex-start; flex-direction: column; }
-		.posts-grid { grid-template-columns: 1fr; gap: var(--spacing-120); }
-		.post-card > a { display: flex; }
-		.post-image { aspect-ratio: 16 / 9; }
-		.post-title-overlay {
-			right: calc(var(--hq-media-frame-inset) + var(--spacing-100));
-			bottom: calc(var(--hq-media-frame-inset) + var(--spacing-100));
-			width: calc(100% - var(--spacing-240));
-		}
-		.post-title-overlay h2 { font-size: var(--font-size-subtitle-2); line-height: var(--line-height-subtitle-2); }
-		.post-label {
-			top: calc(var(--hq-media-frame-inset) + var(--spacing-80));
-			left: calc(var(--hq-media-frame-inset) + var(--spacing-80));
-		}
-		.post-content { min-height: 96px; padding: var(--spacing-120); }
-		.posts-pagination .page-link { min-width: 40px; min-height: 40px; }
-	}
-
-	@media (max-width: 420px) {
-		.post-title-overlay h2 { font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-		.post-content { min-height: 88px; }
-	}
-</style>
