@@ -1,0 +1,197 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { categoryDefinitions, formatArabicDate, getPostCategories } from '../data/blog-taxonomy';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+	posts: CollectionEntry<'blog'>[];
+}
+
+const { post, posts } = Astro.props;
+const currentCategories = getPostCategories(post);
+const primaryCategory =
+	categoryDefinitions.find(
+		(category) => currentCategories.includes(category.slug) && (category.parents?.length ?? 0) > 0,
+	) ?? categoryDefinitions.find((category) => currentCategories.includes(category.slug));
+
+const relatedPosts = posts
+	.filter((candidate) => candidate.id !== post.id)
+	.map((candidate) => {
+		const candidateCategories = getPostCategories(candidate);
+		const overlap = candidateCategories.filter((slug) => currentCategories.includes(slug)).length;
+		return { candidate, overlap };
+	})
+	.filter(({ overlap }) => overlap > 0)
+	.sort(
+		(a, b) =>
+			b.overlap - a.overlap ||
+			b.candidate.data.pubDate.valueOf() - a.candidate.data.pubDate.valueOf(),
+	)
+	.slice(0, 4)
+	.map(({ candidate }) => candidate);
+
+const chronologicalPosts = [...posts].sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const currentIndex = chronologicalPosts.findIndex((candidate) => candidate.id === post.id);
+const newerPost = currentIndex > 0 ? chronologicalPosts[currentIndex - 1] : null;
+const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length - 1
+	? chronologicalPosts[currentIndex + 1]
+	: null;
+---
+
+<section class="article-discovery" aria-labelledby="article-discovery-title">
+	<header class="article-discovery__header">
+		<div>
+			<span>استكشف المزيد</span>
+			<h2 id="article-discovery-title">تابع القراءة</h2>
+		</div>
+		{primaryCategory && (
+			<a class="article-discovery__category" href={`/blog/category/${primaryCategory.slug}/`}>
+				جميع مقالات {primaryCategory.name}
+			</a>
+		)}
+	</header>
+
+	{relatedPosts.length > 0 && (
+		<div class="article-discovery__grid">
+			{relatedPosts.map((related) => (
+				<a class="article-discovery__card" href={`/blog/${related.id}/`}>
+					<span class="article-discovery__date">{formatArabicDate(related.data.pubDate)}</span>
+					<strong>{related.data.title}</strong>
+					<p>{related.data.description}</p>
+				</a>
+			))}
+		</div>
+	)}
+
+	{(newerPost || olderPost) && (
+		<nav class="article-discovery__sequence" aria-label="التنقل بين المقالات">
+			{newerPost ? (
+				<a href={`/blog/${newerPost.id}/`} rel="prev">
+					<span>المقال الأحدث</span>
+					<strong>{newerPost.data.title}</strong>
+				</a>
+			) : <span></span>}
+			{olderPost && (
+				<a href={`/blog/${olderPost.id}/`} rel="next">
+					<span>المقال الأقدم</span>
+					<strong>{olderPost.data.title}</strong>
+				</a>
+			)}
+		</nav>
+	)}
+</section>
+
+<style>
+	.article-discovery {
+		width: min(100%, 1040px);
+		max-width: 1040px;
+		margin: clamp(var(--spacing-320), 5vw, var(--spacing-520)) auto 0;
+		padding-top: clamp(var(--spacing-200), 3vw, var(--spacing-320));
+		border-top: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.article-discovery__header {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		gap: var(--spacing-160);
+		margin-bottom: var(--spacing-200);
+	}
+
+	.article-discovery__header span,
+	.article-discovery__date,
+	.article-discovery__sequence span {
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+		line-height: var(--line-height-caption-1);
+	}
+
+	.article-discovery__header h2 {
+		margin: var(--spacing-40) 0 0;
+		padding: 0;
+		border: 0;
+		font-size: var(--font-size-title-2);
+	}
+
+	.article-discovery__category {
+		color: var(--color-brand-foreground-link);
+		font-size: var(--font-size-body-1);
+		text-decoration: none;
+	}
+
+	.article-discovery__category:hover,
+	.article-discovery__category:focus-visible {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.article-discovery__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-120);
+	}
+
+	.article-discovery__card,
+	.article-discovery__sequence a {
+		display: block;
+		min-width: 0;
+		padding: var(--spacing-160);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		color: var(--color-neutral-foreground-1);
+		text-decoration: none;
+	}
+
+	.article-discovery__card:hover,
+	.article-discovery__card:focus-visible,
+	.article-discovery__sequence a:hover,
+	.article-discovery__sequence a:focus-visible {
+		border-color: var(--color-neutral-stroke-1);
+		background: var(--color-neutral-background-2-hover);
+	}
+
+	.article-discovery__card strong,
+	.article-discovery__sequence strong {
+		display: block;
+		margin-top: var(--spacing-60);
+		line-height: 1.55;
+		text-wrap: balance;
+	}
+
+	.article-discovery__card p {
+		margin: var(--spacing-80) 0 0;
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+
+	.article-discovery__sequence {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-120);
+		margin-top: var(--spacing-160);
+	}
+
+	@media (max-width: 700px) {
+		.article-discovery__header {
+			align-items: start;
+			flex-direction: column;
+		}
+
+		.article-discovery__grid,
+		.article-discovery__sequence {
+			grid-template-columns: 1fr;
+		}
+
+		.article-discovery__sequence > span:empty {
+			display: none;
+		}
+	}
+</style>
