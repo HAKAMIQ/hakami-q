@@ -1,6 +1,5 @@
 import {
 	AuthError,
-	createSession,
 	getAuthenticatedUser,
 	publicUser,
 	requireAuthDb,
@@ -21,8 +20,8 @@ import {
 } from '../../_lib/mfa.js';
 import {
 	clearAccountSessionCookieHeader,
+	createMfaVerifiedSession,
 	isCurrentSessionMfaVerified,
-	markSessionMfaVerified,
 } from '../../_lib/mfa-session.js';
 
 const JSON_HEADERS = {
@@ -110,15 +109,7 @@ async function verifyLogin(request, env) {
 	if (!requiresMfaRole(user.role)) {
 		throw new MfaError('لم يعد هذا الحساب يتطلب تحققًا إداريًا إضافيًا. سجل الدخول من جديد.', 409, 'mfa_role_changed');
 	}
-	const accountSession = await createSession(env, user.id);
-	try {
-		await markSessionMfaVerified(env, accountSession.token);
-	} catch (error) {
-		const db = requireAuthDb(env);
-		await db.prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at = ?')
-			.bind(user.id, accountSession.expiresAt.toISOString()).run();
-		throw error;
-	}
+	const accountSession = await createMfaVerifiedSession(env, user.id);
 	return json(
 		{
 			authenticated: true,
@@ -127,7 +118,7 @@ async function verifyLogin(request, env) {
 			expiresAt: accountSession.expiresAt.toISOString(),
 		},
 		200,
-		{ 'Set-Cookie': sessionCookie(accountSession.token) },
+		{ 'Set-Cookie': sessionCookie(accountSession.token, accountSession.maxAgeSeconds) },
 	);
 }
 
