@@ -11,10 +11,15 @@
           "database_name": "hakami-q-auth-preview",
           "database_id": "7e846299-bcd8-4c5d-9865-fe9f3c286ae4"
         }
-      ]
+      ],
+      "vars": {
+        "TURNSTILE_SITEKEY": "1x00000000000000000000AA",
+        "TURNSTILE_SECRET_KEY": "1x0000000000000000000000000000000AA"
+      }
     },
     "production": {
-      "d1_databases": []
+      "d1_databases": [],
+      "vars": {}
     }
   }
 }
