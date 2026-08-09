@@ -1,8 +1,9 @@
-import { requireAuthDb } from '../../_lib/auth.js';
+import { getAuthenticatedUser, requireAuthDb } from '../../_lib/auth.js';
 import { createMfaLoginChallenge, isMfaEnabled, requiresMfaRole } from '../../_lib/mfa.js';
 import {
 	accountSessionTokenFromSetCookie,
 	clearAccountSessionCookieHeader,
+	isCurrentSessionMfaVerified,
 	revokeAccountSessionToken,
 } from '../../_lib/mfa-session.js';
 
@@ -144,9 +145,48 @@ async function recordLoginResult(context, status) {
 	}
 }
 
+async function guardPrivilegedAccountApi(request, env, action) {
+	const minimumRole = action === 'user-role' ? 'admin' : 'moderator';
+	const user = await getAuthenticatedUser(request, env);
+	if (!user) return json({ error: 'يلزم تسجيل الدخول.' }, 401);
+
+	const rank = { user: 0, moderator: 1, admin: 2 };
+	if ((rank[user.role] ?? -1) < (rank[minimumRole] ?? 99)) {
+		return json({ error: 'لا تملك الصلاحية المطلوبة.' }, 403);
+	}
+	if (!(await isMfaEnabled(env, user.id))) {
+		return json({
+			error: 'يلزم تفعيل التحقق بخطوتين قبل استخدام صلاحيات إدارة المستخدمين.',
+			mfaSetupRequired: true,
+			setupUrl: '/account?security=setup',
+		}, 403);
+	}
+	if (!(await isCurrentSessionMfaVerified(request, env))) {
+		return json({
+			error: 'يلزم تسجيل دخول مكتمل بالتحقق بخطوتين.',
+			mfaRequired: true,
+			loginUrl: '/login?next=/admin/users',
+		}, 401);
+	}
+	return null;
+}
+
 export async function onRequest(context) {
 	const { request, env } = context;
-	if (request.method !== 'POST' || actionFrom(request) !== 'login') {
+	const action = actionFrom(request);
+
+	if (action === 'users' || action === 'user-role' || action === 'user-status') {
+		try {
+			const blocked = await guardPrivilegedAccountApi(request, env, action);
+			if (blocked) return blocked;
+		} catch (error) {
+			console.error('HAKAMIQ privileged account API guard failure', error);
+			return json({ error: 'تعذر التحقق من حماية الحساب الإداري حاليًا.' }, 503);
+		}
+		return context.next();
+	}
+
+	if (request.method !== 'POST' || action !== 'login') {
 		return context.next();
 	}
 
