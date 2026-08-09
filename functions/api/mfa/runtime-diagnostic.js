@@ -1,4 +1,4 @@
-import { createSession, requireAuthDb } from '../../_lib/auth.js';
+import { requireAuthDb } from '../../_lib/auth.js';
 import {
 	confirmTotpSetup,
 	createMfaLoginChallenge,
@@ -10,8 +10,8 @@ import {
 	verifyMfaLoginChallenge,
 } from '../../_lib/mfa.js';
 import {
+	createMfaVerifiedSession,
 	isSessionMfaVerified,
-	markSessionMfaVerified,
 	revokeAccountSessionToken,
 } from '../../_lib/mfa-session.js';
 
@@ -116,8 +116,8 @@ export async function onRequestGet({ env }) {
 		const challengedUser = await verifyMfaLoginChallenge(env, challenge.token, nextWindowCode);
 		if (challengedUser.id !== userId) throw new Error('MFA challenge user mismatch.');
 
-		const session = await createSession(env, userId);
-		await markSessionMfaVerified(env, session.token);
+		const session = await createMfaVerifiedSession(env, userId);
+		if (session.maxAgeSeconds !== 8 * 60 * 60) throw new Error('Privileged session lifetime is not 8 hours.');
 		const assured = await isSessionMfaVerified(env, session.token);
 		if (!assured) throw new Error('MFA session assurance check failed.');
 		await revokeAccountSessionToken(env, session.token);
@@ -131,6 +131,7 @@ export async function onRequestGet({ env }) {
 			recoverySingleUse: recoveryFirst && !recoveryReplay,
 			challengeVerified: challengedUser.id === userId,
 			sessionAssurance: assured && !assuredAfterRevoke,
+			privilegedSessionHours: session.maxAgeSeconds / 3600,
 		});
 	} catch (error) {
 		return json({
