@@ -10,9 +10,10 @@ interface Props {
 	lang: 'ar' | 'en';
 	dir: 'rtl' | 'ltr';
 	content: string;
+	canonicalPath: string;
 }
 
-const { title, description, lang, dir, content } = Astro.props;
+const { title, description, lang, dir, content, canonicalPath } = Astro.props;
 
 function decodeEntities(value: string) {
 	return value
@@ -78,7 +79,7 @@ const renderedContent = normalizeImportedPageMarkup(content, title, lang);
 <!doctype html>
 <html lang={lang} dir={dir}>
 	<head>
-		<BaseHead title={`${title} | HAKAMIQ`} description={description} />
+		<BaseHead title={`${title} | HAKAMIQ`} description={description} canonicalPath={canonicalPath} />
 	</head>
 	<body>
 		<SkipLink label={lang === 'ar' ? 'تخطي إلى المحتوى' : 'Skip to content'} />
