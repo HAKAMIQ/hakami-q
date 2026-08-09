@@ -25,6 +25,7 @@ name: Fluent UI Quality
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
       - "scripts/web-standards-quality.mjs"
+      - "scripts/seo-quality.mjs"
       - "scripts/final-site-audit.mjs"
       - ".github/workflows/fluent-ui-quality.yml"
   pull_request:
@@ -48,6 +49,7 @@ name: Fluent UI Quality
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
       - "scripts/web-standards-quality.mjs"
+      - "scripts/seo-quality.mjs"
       - "scripts/final-site-audit.mjs"
       - ".github/workflows/fluent-ui-quality.yml"
 
@@ -93,6 +95,9 @@ jobs:
 
       - name: Validate Astro production build
         run: npx astro build
+
+      - name: Validate search metadata and sitemap
+        run: npm run seo:quality
 
       - name: Audit rendered article compatibility
         run: npm run article:rendered-quality
