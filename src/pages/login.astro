@@ -1,0 +1,84 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
+import '../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="تسجيل الدخول | HAKAMIQ" description="تسجيل الدخول إلى حساب HAKAMIQ." />
+		<meta name="robots" content="noindex,follow" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
+					<h1>تسجيل الدخول</h1>
+					<p>استخدم اسم المستخدم أو البريد الإلكتروني.</p>
+				</header>
+				<section class="account-card" aria-labelledby="login-title">
+					<h2 id="login-title">دخول الحساب</h2>
+					<form id="login-form" class="account-form">
+						<div class="account-field">
+							<label for="identifier">اسم المستخدم أو البريد الإلكتروني</label>
+							<input id="identifier" class="account-input" type="text" maxlength="254" autocomplete="username" required />
+						</div>
+						<div class="account-field">
+							<label for="password">كلمة المرور</label>
+							<input id="password" class="account-input" type="password" maxlength="128" autocomplete="current-password" required />
+						</div>
+						<div class="account-actions">
+							<button id="submit-button" class="account-button account-button--primary" type="submit">دخول</button>
+						</div>
+						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
+					</form>
+					<p class="account-links">ليس لديك حساب؟ <a href="/register">إنشاء حساب</a></p>
+				</section>
+			</div>
+		</main>
+		<Footer />
+		<script>
+			const form = document.querySelector<HTMLFormElement>('#login-form');
+			const identifier = document.querySelector<HTMLInputElement>('#identifier');
+			const password = document.querySelector<HTMLInputElement>('#password');
+			const feedback = document.querySelector<HTMLElement>('#feedback');
+			const submit = document.querySelector<HTMLButtonElement>('#submit-button');
+
+			function show(message: string, kind = '') {
+				if (!feedback) return;
+				feedback.textContent = message;
+				feedback.dataset.kind = kind;
+				feedback.classList.toggle('account-hidden', !message);
+			}
+
+			form?.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				if (!identifier || !password || !submit) return;
+				show('');
+				submit.disabled = true;
+				try {
+					const response = await fetch('/api/auth/login', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ identifier: identifier.value, password: password.value }),
+					});
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول.');
+					const next = new URLSearchParams(window.location.search).get('next');
+					window.location.href = next && next.startsWith('/') && !next.startsWith('//') ? next : '/account';
+				} catch (error) {
+					show(error instanceof Error ? error.message : 'تعذر تسجيل الدخول.', 'error');
+				} finally {
+					submit.disabled = false;
+				}
+			});
+		</script>
+	</body>
+</html>
