@@ -34,24 +34,33 @@ async function signLegacyCompatibilityCookie(env) {
 	return `${LEGACY_COOKIE}=${expires}.${encoded}; Path=/; Max-Age=${LEGACY_COMPAT_SECONDS}; HttpOnly; Secure; SameSite=Strict`;
 }
 
+function redirect(location, setCookie = '') {
+	const headers = new Headers({
+		Location: location,
+		'Cache-Control': 'no-store, private',
+		'X-Frame-Options': 'DENY',
+		'Referrer-Policy': 'no-referrer',
+	});
+	if (setCookie) headers.append('Set-Cookie', setCookie);
+	return new Response(null, { status: 302, headers });
+}
+
 function loginRedirect(request, clearCookie = false) {
 	const url = new URL(request.url);
 	const next = `${url.pathname}${url.search}`;
 	const target = new URL('/login', url.origin);
 	target.searchParams.set('next', next);
-	const response = Response.redirect(target.toString(), 302);
-	if (clearCookie) response.headers.append('Set-Cookie', clearSessionCookie());
-	return response;
+	return redirect(target.toString(), clearCookie ? clearSessionCookie() : '');
 }
 
 function setupRedirect(request) {
 	const target = new URL('/account', request.url);
 	target.searchParams.set('security', 'setup');
-	return Response.redirect(target.toString(), 302);
+	return redirect(target.toString());
 }
 
 function forbiddenRedirect(request) {
-	return Response.redirect(new URL('/account', request.url).toString(), 302);
+	return redirect(new URL('/account', request.url).toString());
 }
 
 function securedResponse(response, compatibilityCookie = '') {
