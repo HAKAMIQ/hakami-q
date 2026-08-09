@@ -2,9 +2,11 @@ const encoder = new TextEncoder();
 const AUTH_COOKIE = 'hq_session';
 const LEGACY_ADMIN_COOKIE = 'hq_admin';
 const SESSION_SECONDS = 7 * 24 * 60 * 60;
-const PBKDF2_ITERATIONS = 600000;
+const PBKDF2_ITERATIONS = 100000;
 const PASSWORD_BYTES = 32;
 const SALT_BYTES = 16;
+const PASSWORD_SCHEME = 'pbkdf2-sha256-hmac-pepper-v1';
+const PASSWORD_PEPPER_DOMAIN = encoder.encode('HAKAMIQ_PASSWORD_HASH_V1\0');
 
 export class AuthError extends Error {
 	constructor(message, status = 400) {
@@ -71,6 +73,12 @@ function constantTimeBytesEqual(left, right) {
 	return difference === 0;
 }
 
+function requirePasswordPepper(env) {
+	const secret = String(env.AUTH_PASSWORD_PEPPER || env.ADMIN_SESSION_SECRET || '');
+	if (secret.length < 32) throw new AuthError('خدمة حماية كلمات المرور غير مهيأة بعد.', 503);
+	return secret;
+}
+
 async function derivePassword(password, salt, iterations = PBKDF2_ITERATIONS) {
 	const material = await crypto.subtle.importKey(
 		'raw',
@@ -86,24 +94,44 @@ async function derivePassword(password, salt, iterations = PBKDF2_ITERATIONS) {
 	);
 }
 
-export async function hashPassword(password) {
+async function pepperDerived(secret, derived) {
+	const key = await crypto.subtle.importKey(
+		'raw',
+		encoder.encode(secret),
+		{ name: 'HMAC', hash: 'SHA-256' },
+		false,
+		['sign'],
+	);
+	const derivedBytes = new Uint8Array(derived);
+	const message = new Uint8Array(PASSWORD_PEPPER_DOMAIN.byteLength + derivedBytes.byteLength);
+	message.set(PASSWORD_PEPPER_DOMAIN, 0);
+	message.set(derivedBytes, PASSWORD_PEPPER_DOMAIN.byteLength);
+	return crypto.subtle.sign('HMAC', key, message);
+}
+
+export async function hashPassword(password, env) {
+	const pepper = requirePasswordPepper(env);
 	const salt = new Uint8Array(SALT_BYTES);
 	crypto.getRandomValues(salt);
 	const derived = await derivePassword(password, salt);
-	return `pbkdf2-sha256$${PBKDF2_ITERATIONS}$${bytesToBase64Url(salt)}$${bytesToBase64Url(derived)}`;
+	const protectedHash = await pepperDerived(pepper, derived);
+	return `${PASSWORD_SCHEME}$${PBKDF2_ITERATIONS}$${bytesToBase64Url(salt)}$${bytesToBase64Url(protectedHash)}`;
 }
 
-export async function verifyPassword(password, encoded) {
+export async function verifyPassword(password, encoded, env) {
+	const pepper = requirePasswordPepper(env);
 	const [scheme, iterationsText, saltText, expectedText, extra] = String(encoded || '').split('$');
-	if (scheme !== 'pbkdf2-sha256' || !iterationsText || !saltText || !expectedText || extra) return false;
+	if (scheme !== PASSWORD_SCHEME || !iterationsText || !saltText || !expectedText || extra) return false;
 	const iterations = Number(iterationsText);
-	if (!Number.isInteger(iterations) || iterations < 100000 || iterations > 1000000) return false;
+	if (!Number.isInteger(iterations) || iterations !== PBKDF2_ITERATIONS) return false;
 	try {
 		const salt = base64UrlToBytes(saltText);
 		const expected = base64UrlToBytes(expectedText);
-		const actual = await derivePassword(password, salt, iterations);
+		const derived = await derivePassword(password, salt, iterations);
+		const actual = await pepperDerived(pepper, derived);
 		return constantTimeBytesEqual(actual, expected);
-	} catch {
+	} catch (error) {
+		if (error instanceof AuthError) throw error;
 		return false;
 	}
 }
