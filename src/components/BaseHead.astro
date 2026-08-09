@@ -21,7 +21,11 @@ interface Props {
 
 const siteURL = Astro.site ?? Astro.url;
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
-const { title, description, image = FallbackImage, type = 'website' } = Astro.props;
+const inferredType =
+	Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/'
+		? 'article'
+		: 'website';
+const { title, description, image = FallbackImage, type = inferredType } = Astro.props;
 const imageURL =
 	typeof image === 'string'
 		? new URL(image, siteURL)
@@ -34,6 +38,7 @@ const websiteSchema = {
 	url: new URL('/', siteURL).href,
 	inLanguage: 'ar',
 };
+const websiteSchemaJson = JSON.stringify(websiteSchema).replace(/</g, '\\u003c');
 ---
 
 <meta charset="utf-8" />
@@ -66,4 +71,6 @@ const websiteSchema = {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+{Astro.url.pathname === '/' && (
+	<script type="application/ld+json" set:html={websiteSchemaJson}></script>
+)}
