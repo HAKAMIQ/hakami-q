@@ -62,6 +62,15 @@ function registrationInput(payload) {
 	return { username, email, password };
 }
 
+function expectedTurnstileHostnames(env) {
+	return new Set(
+		String(env.TURNSTILE_HOSTNAMES || '')
+			.split(',')
+			.map((hostname) => hostname.trim().toLowerCase())
+			.filter(Boolean),
+	);
+}
+
 async function verifyTurnstile(request, env, token, expectedAction) {
 	if (!env.TURNSTILE_SECRET_KEY) throw new AuthError('خدمة التحقق الأمني غير مهيأة بعد.', 503);
 	const value = String(token || '');
@@ -76,14 +85,24 @@ async function verifyTurnstile(request, env, token, expectedAction) {
 
 	let response;
 	try {
-		response = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body });
+		response = await fetch(TURNSTILE_VERIFY_URL, {
+			method: 'POST',
+			body,
+			signal: AbortSignal.timeout(10000),
+		});
 	} catch {
 		throw new AuthError('تعذر الوصول إلى خدمة التحقق الأمني. حاول لاحقًا.', 503);
 	}
 	if (!response.ok) throw new AuthError('تعذر التحقق من الطلب حاليًا. حاول لاحقًا.', 503);
 	const result = await response.json().catch(() => null);
 	if (!result?.success) throw new AuthError('فشل التحقق الأمني. أعد المحاولة.', 403);
-	if (result.action && result.action !== expectedAction) throw new AuthError('فشل التحقق الأمني للطلب.', 403);
+	if (result.action !== expectedAction) throw new AuthError('فشل التحقق الأمني للطلب.', 403);
+
+	const hostnames = expectedTurnstileHostnames(env);
+	if (hostnames.size > 0) {
+		const hostname = String(result.hostname || '').trim().toLowerCase();
+		if (!hostname || !hostnames.has(hostname)) throw new AuthError('فشل التحقق من مصدر الطلب.', 403);
+	}
 }
 
 async function createUser(env, input, role = 'user') {
