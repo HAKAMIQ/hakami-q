@@ -15,6 +15,8 @@
     "content:quality": "node scripts/content-quality.mjs",
     "content:quality:strict": "node scripts/content-quality.mjs --strict",
     "content:quality:report": "node scripts/content-quality.mjs --json reports/content-quality.json",
+    "security:audit": "node scripts/security-audit.mjs --strict",
+    "security:audit:report": "node scripts/security-audit.mjs --json reports/security-audit.json",
     "ui:quality": "node scripts/fluent-ui-quality.mjs",
     "ui:quality:report": "node scripts/fluent-ui-quality.mjs --json reports/fluent-ui-quality.json",
     "web:quality": "node scripts/web-standards-quality.mjs",
