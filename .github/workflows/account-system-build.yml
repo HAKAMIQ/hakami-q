@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'functions/_lib/auth.js'
+      - 'functions/_lib/member-audit.js'
       - 'functions/_lib/mfa.js'
       - 'functions/_lib/mfa-session.js'
       - 'functions/admin/**'
@@ -28,6 +29,7 @@ on:
   pull_request:
     paths:
       - 'functions/_lib/auth.js'
+      - 'functions/_lib/member-audit.js'
       - 'functions/_lib/mfa.js'
       - 'functions/_lib/mfa-session.js'
       - 'functions/admin/**'
@@ -70,6 +72,7 @@ jobs:
       - name: Check Pages Functions syntax
         run: |
           node --check functions/_lib/auth.js
+          node --check functions/_lib/member-audit.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
