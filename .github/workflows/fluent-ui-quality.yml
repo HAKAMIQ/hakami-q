@@ -86,11 +86,9 @@ jobs:
           npm run security:audit:report
           npm run security:audit
 
-      - name: Validate auth and MFA syntax
+      - name: Validate admin auth and MFA syntax
         run: |
           node --check functions/_lib/auth.js
-          node --check functions/_lib/google-auth.js
-          node --check functions/_lib/member-audit.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
@@ -98,19 +96,15 @@ jobs:
           node --check functions/api/auth/_middleware.js
           node --check 'functions/api/admin/[[path]].js'
           node --check 'functions/api/auth/[[path]].js'
-          node --check 'functions/api/google/[[path]].js'
           node --check 'functions/api/mfa/[[path]].js'
 
       - name: Verify password hashing
         run: node scripts/auth-password-self-test.mjs
 
-      - name: Verify Google identity validation
-        run: node scripts/google-auth-self-test.mjs
-
       - name: Verify TOTP implementation
         run: node scripts/mfa-self-test.mjs
 
-      - name: Verify login and privileged middleware
+      - name: Verify admin login middleware
         run: node scripts/auth-login-middleware-self-test.mjs
 
       - name: Verify admin account cutover
