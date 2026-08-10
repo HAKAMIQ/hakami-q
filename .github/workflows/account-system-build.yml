@@ -1,6 +1,30 @@
 name: Account System Build
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'functions/_lib/auth.js'
+      - 'functions/_lib/mfa.js'
+      - 'functions/_lib/mfa-session.js'
+      - 'functions/admin/**'
+      - 'functions/api/admin/**'
+      - 'functions/api/auth/**'
+      - 'functions/api/mfa/**'
+      - 'migrations/**'
+      - 'src/pages/login.astro'
+      - 'src/pages/register.astro'
+      - 'src/pages/account.astro'
+      - 'src/pages/admin/**'
+      - 'src/styles/account-system.css'
+      - 'scripts/admin-cutover-self-test.mjs'
+      - 'scripts/auth-login-middleware-self-test.mjs'
+      - 'scripts/auth-password-self-test.mjs'
+      - 'scripts/mfa-self-test.mjs'
+      - 'scripts/setup-auth-production.ps1'
+      - 'wrangler.jsonc'
+      - '.github/workflows/account-system-build.yml'
   pull_request:
     paths:
       - 'functions/_lib/auth.js'
@@ -32,10 +56,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           cache: npm
