@@ -6,29 +6,31 @@ name: Content Source Cleanup
     branches:
       - main
     paths:
+      - "src/content/blog/**"
+      - "scripts/content-source-cleanup.mjs"
+      - "scripts/content-legacy-markup-cleanup.mjs"
+      - "scripts/content-quality.mjs"
+      - ".github/workflows/content-source-cleanup.yml"
+  pull_request:
+    paths:
+      - "src/content/blog/**"
       - "scripts/content-source-cleanup.mjs"
       - "scripts/content-legacy-markup-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - ".github/workflows/content-source-cleanup.yml"
 
 permissions:
-  contents: write
-
-concurrency:
-  group: content-source-cleanup-main
-  cancel-in-progress: false
+  contents: read
 
 jobs:
   normalize:
-    name: Normalize migrated article sources
+    name: Validate migrated article sources
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
@@ -39,80 +41,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Record baseline content quality
-        run: npm run content:quality:report
-
-      - name: Record source integrity baseline
-        shell: bash
-        run: |
-          set -euo pipefail
-          media_refs="$(grep -Roh '/media/blogger/' src/content/blog | wc -l | tr -d ' ')"
-          image_tags="$(grep -Rioh '<img\b' src/content/blog | wc -l | tr -d ' ')"
-          echo "HQ_MEDIA_REFS_BEFORE=$media_refs" >> "$GITHUB_ENV"
-          echo "HQ_IMAGE_TAGS_BEFORE=$image_tags" >> "$GITHUB_ENV"
-          echo "Baseline: media_refs=$media_refs image_tags=$image_tags"
-
-      - name: Normalize article source files
-        run: npm run content:cleanup
-
-      - name: Clean legacy visual markup
-        run: npm run content:legacy-cleanup
-
-      - name: Verify source cleanup is idempotent
+      - name: Require normalized article sources
         run: npm run content:cleanup:check
 
-      - name: Verify legacy cleanup is idempotent
+      - name: Require clean legacy markup
         run: npm run content:legacy-cleanup:check
 
       - name: Require clean source quality
         run: npm run content:quality:strict
 
-      - name: Guard source media integrity
-        shell: bash
-        run: |
-          set -euo pipefail
-          media_refs="$(grep -Roh '/media/blogger/' src/content/blog | wc -l | tr -d ' ')"
-          image_tags="$(grep -Rioh '<img\b' src/content/blog | wc -l | tr -d ' ')"
-          echo "After cleanup: media_refs=$media_refs image_tags=$image_tags"
-          if [[ "$media_refs" != "$HQ_MEDIA_REFS_BEFORE" || "$image_tags" != "$HQ_IMAGE_TAGS_BEFORE" ]]; then
-            echo "Source media integrity changed unexpectedly."
-            exit 1
-          fi
-
-      - name: Guard cleanup write scope
-        shell: bash
-        run: |
-          set -euo pipefail
-          changed="$(git diff --name-only)"
-          if [[ -z "$changed" ]]; then
-            echo "No source changes were required."
-            exit 0
-          fi
-
-          unexpected="$(printf '%s\n' "$changed" | grep -v '^src/content/blog/' || true)"
-          if [[ -n "$unexpected" ]]; then
-            echo "Cleanup modified files outside src/content/blog/:"
-            printf '%s\n' "$unexpected"
-            exit 1
-          fi
-
-          echo "Cleanup write scope is valid."
-
       - name: Validate production build and rendered output
         run: npm run build
-
-      - name: Commit normalized article sources
-        shell: bash
-        run: |
-          set -euo pipefail
-          if git diff --quiet -- src/content/blog; then
-            echo "Nothing to commit."
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/blog
-          git diff --cached --stat
-          git commit -m "chore(content): clean migrated article markup [skip ci]"
-          git push origin HEAD:main
