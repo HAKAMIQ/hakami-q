@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { categoryDefinitions, formatArabicDate, getPostCategories } from '../data/blog-taxonomy';
+import { categoryDefinitions, getPostCategories } from '../data/blog-taxonomy';
 import ArticleShare from './ArticleShare.astro';
 
 interface Props {
@@ -58,13 +58,24 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 
 	{relatedPosts.length > 0 && (
 		<div class="article-discovery__grid">
-			{relatedPosts.map((related) => (
-				<a class="article-discovery__card" href={`/blog/${related.id}/`}>
-					<span class="article-discovery__date">{formatArabicDate(related.data.pubDate)}</span>
-					<strong>{related.data.title}</strong>
-					<p>{related.data.description}</p>
-				</a>
-			))}
+			{relatedPosts.map((related) => {
+				const image = related.data.heroImageUrl ?? related.data.heroImage?.src;
+				return (
+					<a class="article-discovery__card" href={`/blog/${related.id}/`} aria-label={`قراءة مقال: ${related.data.title}`}>
+						<div class="article-discovery__media">
+							{image ? (
+								<img src={image} alt={related.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+							) : (
+								<div class="article-discovery__placeholder" aria-hidden="true">HAKAMIQ</div>
+							)}
+							<span class="article-discovery__scrim" aria-hidden="true"></span>
+							{primaryCategory && <span class="article-discovery__label">{primaryCategory.name}</span>}
+							<strong class="article-discovery__title">{related.data.title}</strong>
+						</div>
+						<div class="article-discovery__copy"><p>{related.data.description}</p></div>
+					</a>
+				);
+			})}
 		</div>
 	)}
 
@@ -104,7 +115,6 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 	}
 
 	.article-discovery__header span,
-	.article-discovery__date,
 	.article-discovery__sequence span {
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-caption-1);
@@ -136,7 +146,123 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 		gap: var(--spacing-120);
 	}
 
-	.article-discovery__card,
+	.article-discovery__card {
+		display: flex;
+		min-width: 0;
+		overflow: hidden;
+		flex-direction: column;
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		color: var(--color-neutral-foreground-1);
+		text-decoration: none;
+	}
+
+	.article-discovery__card:hover,
+	.article-discovery__card:focus-visible {
+		border-color: var(--color-neutral-stroke-1);
+		background: var(--color-neutral-background-2-hover);
+	}
+
+	.article-discovery__media {
+		position: relative;
+		isolation: isolate;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: var(--color-neutral-background-3);
+	}
+
+	.article-discovery__media img,
+	.article-discovery__placeholder {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.article-discovery__media img {
+		object-fit: cover;
+		object-position: center;
+		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
+	}
+
+	.article-discovery__card:hover .article-discovery__media img {
+		transform: scale(1.02);
+	}
+
+	.article-discovery__placeholder {
+		display: grid;
+		place-items: center;
+		color: var(--color-neutral-foreground-4);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.article-discovery__scrim {
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.5) 38%, transparent 72%);
+		pointer-events: none;
+	}
+
+	.article-discovery__label {
+		position: absolute;
+		z-index: 2;
+		top: var(--spacing-100);
+		left: var(--spacing-100);
+		max-width: calc(100% - var(--spacing-200));
+		padding: 4px var(--spacing-100);
+		border-radius: var(--radius-circular);
+		background: color-mix(in srgb, var(--color-neutral-background-1) 86%, transparent);
+		color: var(--color-brand-foreground-link);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		backdrop-filter: blur(8px);
+	}
+
+	.article-discovery__title {
+		position: absolute;
+		z-index: 2;
+		right: var(--spacing-120);
+		bottom: var(--spacing-120);
+		left: var(--spacing-120);
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0;
+		color: #fff;
+		font-size: var(--font-size-subtitle-1);
+		line-height: 1.5;
+		text-align: right;
+		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+		text-wrap: balance;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.article-discovery__copy {
+		padding: var(--spacing-140);
+	}
+
+	.article-discovery__copy p {
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0;
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		line-height: var(--line-height-body-1);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.article-discovery__sequence {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-120);
+		margin-top: var(--spacing-160);
+	}
+
 	.article-discovery__sequence a {
 		display: block;
 		min-width: 0;
@@ -148,38 +274,17 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 		text-decoration: none;
 	}
 
-	.article-discovery__card:hover,
-	.article-discovery__card:focus-visible,
 	.article-discovery__sequence a:hover,
 	.article-discovery__sequence a:focus-visible {
 		border-color: var(--color-neutral-stroke-1);
 		background: var(--color-neutral-background-2-hover);
 	}
 
-	.article-discovery__card strong,
 	.article-discovery__sequence strong {
 		display: block;
 		margin-top: var(--spacing-60);
 		line-height: 1.55;
 		text-wrap: balance;
-	}
-
-	.article-discovery__card p {
-		margin: var(--spacing-80) 0 0;
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
-
-	.article-discovery__sequence {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: var(--spacing-120);
-		margin-top: var(--spacing-160);
 	}
 
 	@media (max-width: 700px) {
