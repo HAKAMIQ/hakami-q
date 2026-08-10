@@ -99,12 +99,23 @@ function protectLiteralBlocks(body) {
   };
 }
 
+function containsEmbeddedMedia(value = '') {
+  return /<(?:img|picture|figure|iframe|video|audio|source|svg)\b/i.test(value);
+}
+
+function preserveMarkupWithoutText(value = '') {
+  return value.replace(/(^|>)([^<]+)(?=<|$)/g, (_full, prefix, text) => {
+    return `${prefix}${/^\s*$/.test(text) ? text : ''}`;
+  });
+}
+
 function cleanBody(body, articleTitle) {
   const titleNormalized = normalize(articleTitle);
   const protectedBody = protectLiteralBlocks(body);
   let value = protectedBody.text;
   const stats = {
     duplicateTitleHeadingsRemoved: 0,
+    duplicateTitleHeadingsMediaPreserved: 0,
     bodyH1Converted: 0,
     imageAltAdded: 0,
   };
@@ -112,6 +123,10 @@ function cleanBody(body, articleTitle) {
   if (titleNormalized) {
     value = value.replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi, (full, _level, inner) => {
       if (normalize(inner) !== titleNormalized) return full;
+      if (containsEmbeddedMedia(inner)) {
+        stats.duplicateTitleHeadingsMediaPreserved += 1;
+        return preserveMarkupWithoutText(inner);
+      }
       stats.duplicateTitleHeadingsRemoved += 1;
       return '';
     });
@@ -149,6 +164,7 @@ const totals = {
   files: 0,
   changedFiles: 0,
   duplicateTitleHeadingsRemoved: 0,
+  duplicateTitleHeadingsMediaPreserved: 0,
   bodyH1Converted: 0,
   imageAltAdded: 0,
 };
@@ -166,6 +182,7 @@ for (const file of await walk(contentRoot)) {
 
   totals.changedFiles += 1;
   totals.duplicateTitleHeadingsRemoved += cleaned.stats.duplicateTitleHeadingsRemoved;
+  totals.duplicateTitleHeadingsMediaPreserved += cleaned.stats.duplicateTitleHeadingsMediaPreserved;
   totals.bodyH1Converted += cleaned.stats.bodyH1Converted;
   totals.imageAltAdded += cleaned.stats.imageAltAdded;
   changedFiles.push(path.relative(root, file).replaceAll(path.sep, '/'));
@@ -177,6 +194,7 @@ const mode = writeChanges ? 'write' : checkOnly ? 'check' : 'preview';
 console.log(
   `Content source cleanup (${mode}): ${totals.files} files | ${totals.changedFiles} changed | ` +
   `${totals.duplicateTitleHeadingsRemoved} duplicate title heading(s) removed | ` +
+  `${totals.duplicateTitleHeadingsMediaPreserved} duplicate title heading(s) stripped while preserving embedded media | ` +
   `${totals.bodyH1Converted} body H1 heading(s) normalized | ${totals.imageAltAdded} missing alt attribute(s) added.`,
 );
 
