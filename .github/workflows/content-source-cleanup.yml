@@ -7,6 +7,7 @@ name: Content Source Cleanup
       - main
     paths:
       - "scripts/content-source-cleanup.mjs"
+      - "scripts/content-legacy-markup-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - ".github/workflows/content-source-cleanup.yml"
 
@@ -54,8 +55,14 @@ jobs:
       - name: Normalize article source files
         run: npm run content:cleanup
 
-      - name: Verify cleanup is idempotent
+      - name: Clean legacy visual markup
+        run: npm run content:legacy-cleanup
+
+      - name: Verify source cleanup is idempotent
         run: npm run content:cleanup:check
+
+      - name: Verify legacy cleanup is idempotent
+        run: npm run content:legacy-cleanup:check
 
       - name: Require clean source quality
         run: npm run content:quality:strict
@@ -107,5 +114,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/content/blog
           git diff --cached --stat
-          git commit -m "chore(content): normalize migrated article sources [skip ci]"
+          git commit -m "chore(content): clean migrated article markup [skip ci]"
           git push origin HEAD:main
