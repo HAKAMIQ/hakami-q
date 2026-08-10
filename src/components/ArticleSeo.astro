@@ -2,7 +2,14 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE_TITLE } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'];
+type PrimaryCategory = {
+	slug: string;
+	name: string;
+};
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	primaryCategory?: PrimaryCategory | null;
+};
 
 const {
 	title,
@@ -12,12 +19,16 @@ const {
 	heroImage,
 	heroImageUrl,
 	labels = [],
+	primaryCategory = null,
 } = Astro.props;
 
 const siteURL = Astro.site ?? Astro.url;
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const homeURL = new URL('/', siteURL).href;
 const blogURL = new URL('/blog/', siteURL).href;
+const categoryURL = primaryCategory
+	? new URL(`/blog/category/${primaryCategory.slug}/`, siteURL).href
+	: null;
 const imageURL = heroImageUrl
 	? new URL(heroImageUrl, siteURL).href
 	: heroImage
@@ -47,31 +58,42 @@ const articleSchema = {
 	publisher: organization,
 	...(imageURL ? { image: [imageURL] } : {}),
 	...(labels.length > 0 ? { keywords: labels.join(', ') } : {}),
+	...(primaryCategory ? { articleSection: primaryCategory.name } : {}),
 };
+
+const breadcrumbItems = [
+	{
+		'@type': 'ListItem',
+		position: 1,
+		name: 'الرئيسية',
+		item: homeURL,
+	},
+	{
+		'@type': 'ListItem',
+		position: 2,
+		name: 'المقالات',
+		item: blogURL,
+	},
+	...(primaryCategory && categoryURL
+		? [{
+			'@type': 'ListItem',
+			position: 3,
+			name: primaryCategory.name,
+			item: categoryURL,
+		}]
+		: []),
+	{
+		'@type': 'ListItem',
+		position: primaryCategory ? 4 : 3,
+		name: title,
+		item: canonicalURL.href,
+	},
+];
 
 const breadcrumbSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
-	itemListElement: [
-		{
-			'@type': 'ListItem',
-			position: 1,
-			name: 'الرئيسية',
-			item: homeURL,
-		},
-		{
-			'@type': 'ListItem',
-			position: 2,
-			name: 'المقالات',
-			item: blogURL,
-		},
-		{
-			'@type': 'ListItem',
-			position: 3,
-			name: title,
-			item: canonicalURL.href,
-		},
-	],
+	itemListElement: breadcrumbItems,
 };
 
 const serializeJsonLd = (value: unknown) =>
