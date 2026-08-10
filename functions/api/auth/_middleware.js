@@ -146,7 +146,7 @@ async function recordLoginResult(context, status) {
 }
 
 async function guardPrivilegedAccountApi(request, env, action) {
-	const minimumRole = action === 'user-role' ? 'admin' : 'moderator';
+	const minimumRole = action === 'user-role' || action === 'audit-log' ? 'admin' : 'moderator';
 	const user = await getAuthenticatedUser(request, env);
 	if (!user) return json({ error: 'يلزم تسجيل الدخول.' }, 401);
 
@@ -175,7 +175,7 @@ export async function onRequest(context) {
 	const { request, env } = context;
 	const action = actionFrom(request);
 
-	if (action === 'users' || action === 'user-role' || action === 'user-status') {
+	if (['users', 'audit-log', 'user-role', 'user-status', 'user-unlock'].includes(action)) {
 		try {
 			const blocked = await guardPrivilegedAccountApi(request, env, action);
 			if (blocked) return blocked;
