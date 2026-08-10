@@ -1,0 +1,209 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section
+	class="article-share"
+	aria-labelledby="article-share-title"
+	data-article-share
+	data-share-title={title}
+	data-share-description={description}
+>
+	<div class="article-share__copy">
+		<span>مشاركة المقال</span>
+		<h2 id="article-share-title">شارك المحتوى بصيغة مناسبة لكل منصة</h2>
+		<p>يُرسل عنوان المقال وملخصًا قصيرًا ورابط HAKAMIQ المباشر بدون نصوص طويلة أو مزعجة.</p>
+	</div>
+
+	<div class="article-share__actions" role="group" aria-label="خيارات مشاركة المقال">
+		<button type="button" data-share-action="native">مشاركة</button>
+		<button type="button" data-share-action="whatsapp">WhatsApp</button>
+		<button type="button" data-share-action="telegram">Telegram</button>
+		<button type="button" data-share-action="discord">Discord</button>
+		<button type="button" data-share-action="x">X</button>
+		<button type="button" data-share-action="facebook">Facebook</button>
+		<button type="button" data-share-action="copy">نسخ الرابط</button>
+	</div>
+
+	<p class="article-share__status" role="status" aria-live="polite"></p>
+</section>
+
+<script>
+	function truncateShareText(value, maxLength) {
+		const text = String(value || '').replace(/\s+/g, ' ').trim();
+		if (text.length <= maxLength) return text;
+		return `${text.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
+	}
+
+	async function copyShareText(text) {
+		if (navigator.clipboard?.writeText) {
+			await navigator.clipboard.writeText(text);
+			return;
+		}
+		const textarea = document.createElement('textarea');
+		textarea.value = text;
+		textarea.setAttribute('readonly', '');
+		textarea.style.position = 'fixed';
+		textarea.style.opacity = '0';
+		document.body.append(textarea);
+		textarea.select();
+		document.execCommand('copy');
+		textarea.remove();
+	}
+
+	function openShareWindow(url) {
+		const opened = window.open(url, '_blank', 'noopener,noreferrer,width=720,height=720');
+		if (opened) opened.opener = null;
+	}
+
+	for (const root of document.querySelectorAll('[data-article-share]')) {
+		if (!(root instanceof HTMLElement)) continue;
+		const title = root.dataset.shareTitle?.trim() || document.title;
+		const description = root.dataset.shareDescription?.trim() || '';
+		const status = root.querySelector('.article-share__status');
+		const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href');
+		const articleUrl = canonical || window.location.href;
+
+		const setStatus = (message) => {
+			if (status instanceof HTMLElement) status.textContent = message;
+		};
+
+		const genericText = `${title}\n\n${truncateShareText(description, 180)}\n\nاقرأ المقال كاملًا على HAKAMIQ:\n${articleUrl}`;
+		const whatsappText = `*${title}*\n\n${truncateShareText(description, 220)}\n\nاقرأ الشرح كاملًا على HAKAMIQ:\n${articleUrl}`;
+		const telegramText = `${title}\n\n${truncateShareText(description, 180)}\n\nHAKAMIQ — اقرأ التفاصيل:`;
+		const discordText = `**${title}**\n${truncateShareText(description, 220)}\n\n🔗 **اقرأ المقال على HAKAMIQ:**\n${articleUrl}`;
+		const xText = truncateShareText(`${title} — HAKAMIQ`, 220);
+
+		root.addEventListener('click', async (event) => {
+			const button = event.target instanceof Element ? event.target.closest('[data-share-action]') : null;
+			if (!(button instanceof HTMLButtonElement)) return;
+			const action = button.dataset.shareAction;
+			setStatus('');
+
+			try {
+				if (action === 'native') {
+					if (navigator.share) {
+						await navigator.share({ title, text: truncateShareText(description, 180), url: articleUrl });
+						setStatus('تم فتح خيارات المشاركة المتاحة على جهازك.');
+					} else {
+						await copyShareText(genericText);
+						setStatus('المشاركة المباشرة غير متاحة في هذا المتصفح، تم نسخ نص المشاركة بدلًا منها.');
+					}
+					return;
+				}
+
+				if (action === 'whatsapp') {
+					openShareWindow(`https://wa.me/?text=${encodeURIComponent(whatsappText)}`);
+					return;
+				}
+
+				if (action === 'telegram') {
+					openShareWindow(`https://t.me/share/url?url=${encodeURIComponent(articleUrl)}&text=${encodeURIComponent(telegramText)}`);
+					return;
+				}
+
+				if (action === 'discord') {
+					await copyShareText(discordText);
+					setStatus('تم نسخ صيغة Discord؛ الصقها مباشرة في القناة أو المحادثة.');
+					return;
+				}
+
+				if (action === 'x') {
+					openShareWindow(`https://twitter.com/intent/tweet?text=${encodeURIComponent(xText)}&url=${encodeURIComponent(articleUrl)}`);
+					return;
+				}
+
+				if (action === 'facebook') {
+					openShareWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`);
+					return;
+				}
+
+				if (action === 'copy') {
+					await copyShareText(articleUrl);
+					setStatus('تم نسخ رابط المقال.');
+				}
+			} catch (error) {
+				if (error instanceof DOMException && error.name === 'AbortError') return;
+				setStatus('تعذرت المشاركة من المتصفح الحالي. جرّب نسخ الرابط.');
+			}
+		});
+	}
+</script>
+
+<style>
+	.article-share {
+		width: min(100%, 1040px);
+		max-width: 1040px;
+		margin: clamp(var(--spacing-280), 4vw, var(--spacing-440)) auto 0;
+		padding: clamp(var(--spacing-160), 2vw, var(--spacing-220));
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+	}
+
+	.article-share__copy > span {
+		color: var(--color-brand-foreground-link);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.article-share__copy h2 {
+		margin: var(--spacing-40) 0 var(--spacing-60);
+		padding: 0;
+		border: 0;
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-subtitle-1);
+		line-height: 1.45;
+	}
+
+	.article-share__copy p {
+		margin: 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-body-1);
+		line-height: 1.7;
+	}
+
+	.article-share__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-80);
+		margin-top: var(--spacing-140);
+	}
+
+	.article-share__actions button {
+		min-height: 38px;
+		padding: 0 var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-medium);
+		background: var(--color-subtle-background);
+		color: var(--color-neutral-foreground-1);
+		font: inherit;
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	.article-share__actions button:hover,
+	.article-share__actions button:focus-visible {
+		border-color: var(--color-brand-stroke-1);
+		background: var(--color-subtle-background-hover);
+	}
+
+	.article-share__status {
+		min-height: 1.4em;
+		margin: var(--spacing-80) 0 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+	}
+
+	@media (max-width: 640px) {
+		.article-share__actions button {
+			flex: 1 1 calc(50% - var(--spacing-80));
+		}
+	}
+</style>
