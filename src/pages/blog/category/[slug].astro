@@ -7,7 +7,6 @@ import SkipLink from '../../../components/SkipLink.astro';
 import { SITE_TITLE } from '../../../consts';
 import {
 	categoryDefinitions,
-	formatArabicDate,
 	getPostCategories,
 	type CategoryDefinition,
 } from '../../../data/blog-taxonomy';
@@ -38,8 +37,8 @@ const cardPosts = posts.map((post) => ({
 	id: post.id,
 	title: post.data.title,
 	description: post.data.description,
-	date: formatArabicDate(post.data.pubDate),
 	image: post.data.heroImageUrl ?? post.data.heroImage?.src ?? '',
+	category: category.name,
 }));
 const initialPosts = cardPosts.slice(0, DEFAULT_PAGE_SIZE);
 const initialTotalPages = Math.max(1, Math.ceil(cardPosts.length / DEFAULT_PAGE_SIZE));
@@ -149,21 +148,28 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					</div>
 
 					<div class="category-grid" id="category-grid">
-						{initialPosts.map((post) => (
+						{initialPosts.map((post, index) => (
 							<article class="category-card">
-								<a href={`/blog/${post.id}/`}>
+								<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.title}`}>
 									<div class="category-card__media">
 										{post.image ? (
-											<img src={post.image} alt={post.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+											<img
+												src={post.image}
+												alt={post.title}
+												loading={index === 0 ? 'eager' : 'lazy'}
+												decoding="async"
+												fetchpriority={index === 0 ? 'high' : undefined}
+												referrerpolicy="no-referrer"
+											/>
 										) : (
 											<div class="category-card__placeholder" aria-hidden="true">HAKAMIQ</div>
 										)}
+										<span class="category-card__scrim" aria-hidden="true"></span>
+										<span class="category-card__label">{post.category}</span>
+										<div class="category-card__title"><h3>{post.title}</h3></div>
 									</div>
 									<div class="category-card__body">
-										<span class="category-card__date">{post.date}</span>
-										<h3>{post.title}</h3>
 										<p>{post.description}</p>
-										<span class="category-card__action">قراءة المقال</span>
 									</div>
 								</a>
 							</article>
@@ -235,6 +241,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				article.className = 'category-card';
 				const link = document.createElement('a');
 				link.href = `/blog/${post.id}/`;
+				link.setAttribute('aria-label', `قراءة مقال: ${post.title}`);
 
 				const media = document.createElement('div');
 				media.className = 'category-card__media';
@@ -251,19 +258,24 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					media.append(makePlaceholder());
 				}
 
-				const body = document.createElement('div');
-				body.className = 'category-card__body';
-				const date = document.createElement('span');
-				date.className = 'category-card__date';
-				date.textContent = post.date;
+				const scrim = document.createElement('span');
+				scrim.className = 'category-card__scrim';
+				scrim.setAttribute('aria-hidden', 'true');
+				const label = document.createElement('span');
+				label.className = 'category-card__label';
+				label.textContent = post.category || 'مقالات';
+				const titleWrap = document.createElement('div');
+				titleWrap.className = 'category-card__title';
 				const title = document.createElement('h3');
 				title.textContent = post.title;
+				titleWrap.append(title);
+				media.append(scrim, label, titleWrap);
+
+				const body = document.createElement('div');
+				body.className = 'category-card__body';
 				const description = document.createElement('p');
 				description.textContent = post.description;
-				const action = document.createElement('span');
-				action.className = 'category-card__action';
-				action.textContent = 'قراءة المقال';
-				body.append(date, title, description, action);
+				body.append(description);
 				link.append(media, body);
 				article.append(link);
 				return article;
@@ -412,7 +424,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	}
 
 	.category-eyebrow,
-	.category-card__date,
 	.category-range,
 	.category-page-size__hint {
 		color: var(--color-neutral-foreground-3);
@@ -508,6 +519,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: var(--spacing-160);
+		align-items: stretch;
 	}
 
 	.category-card {
@@ -516,6 +528,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 		border-radius: var(--radius-large);
 		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-2);
 	}
 
 	.category-card > a {
@@ -535,71 +548,113 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 	.category-card__media {
 		position: relative;
+		isolation: isolate;
 		width: 100%;
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
 		background: var(--color-neutral-background-3);
 	}
 
-	.category-card__media img {
+	.category-card__media img,
+	.category-card__placeholder {
 		display: block;
 		width: 100%;
 		height: 100%;
+	}
+
+	.category-card__media img {
 		object-fit: cover;
 		object-position: center;
 		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
 	}
 
 	.category-card:hover .category-card__media img {
-		transform: scale(1.025);
+		transform: scale(1.02);
 	}
 
 	.category-card__placeholder {
 		display: grid;
-		width: 100%;
-		height: 100%;
 		place-items: center;
+		background: var(--color-neutral-background-3);
 		color: var(--color-neutral-foreground-4);
 		font-size: var(--font-size-subtitle-2);
 		font-weight: var(--font-weight-semibold);
 	}
 
+	.category-card__scrim {
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		background: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.86) 0%,
+			rgba(0, 0, 0, 0.58) 34%,
+			rgba(0, 0, 0, 0.12) 66%,
+			transparent 100%
+		);
+		pointer-events: none;
+	}
+
+	.category-card__label {
+		position: absolute;
+		z-index: 2;
+		top: var(--spacing-100);
+		left: var(--spacing-100);
+		max-width: calc(100% - var(--spacing-200));
+		padding: 4px var(--spacing-100);
+		border: var(--stroke-thin) solid color-mix(in srgb, var(--color-brand-stroke-1) 70%, transparent);
+		border-radius: var(--radius-circular);
+		background: color-mix(in srgb, var(--color-neutral-background-1) 86%, transparent);
+		color: var(--color-brand-foreground-link);
+		font-size: var(--font-size-caption-1);
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.25;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		backdrop-filter: blur(8px);
+	}
+
+	.category-card__title {
+		position: absolute;
+		z-index: 2;
+		right: var(--spacing-140);
+		bottom: var(--spacing-140);
+		left: var(--spacing-140);
+		text-align: right;
+	}
+
+	.category-card__title h3 {
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0;
+		color: #fff;
+		font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+		font-weight: var(--font-weight-bold);
+		line-height: 1.45;
+		text-wrap: balance;
+		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
 	.category-card__body {
 		display: flex;
-		min-height: 210px;
+		min-height: 104px;
 		flex: 1;
-		flex-direction: column;
+		align-items: center;
 		padding: var(--spacing-140);
 	}
 
-	.category-card h3 {
+	.category-card__body p {
 		display: -webkit-box;
 		overflow: hidden;
-		margin: var(--spacing-60) 0 var(--spacing-80);
-		color: var(--color-neutral-foreground-1);
-		font-size: var(--font-size-subtitle-2);
-		line-height: 1.5;
-		text-wrap: balance;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.category-card p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0 0 var(--spacing-120);
+		margin: 0;
 		color: var(--color-neutral-foreground-2);
 		font-size: var(--font-size-body-1);
-		line-height: 1.7;
+		line-height: 1.75;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-	}
-
-	.category-card__action {
-		margin-top: auto;
-		color: var(--color-brand-foreground-link);
-		font-size: var(--font-size-body-1);
-		font-weight: var(--font-weight-semibold);
+		-webkit-line-clamp: 3;
 	}
 
 	.category-pagination {
@@ -668,7 +723,9 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		}
 
 		.category-grid { grid-template-columns: 1fr; }
-		.category-card__body { min-height: 0; }
+		.category-card__body { min-height: 88px; }
+		.category-card__title { right: var(--spacing-120); bottom: var(--spacing-120); left: var(--spacing-120); }
+		.category-card__title h3 { font-size: var(--font-size-subtitle-2); }
 		.category-page-link { min-width: 42px; min-height: 42px; }
 	}
 </style>
