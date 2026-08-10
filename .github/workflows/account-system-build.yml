@@ -1,4 +1,4 @@
-name: Account System Build
+name: Admin Security Build
 
 on:
   push:
@@ -6,57 +6,41 @@ on:
       - main
     paths:
       - 'functions/_lib/auth.js'
-      - 'functions/_lib/google-auth.js'
-      - 'functions/_lib/member-audit.js'
       - 'functions/_lib/mfa.js'
       - 'functions/_lib/mfa-session.js'
       - 'functions/admin/**'
       - 'functions/api/admin/**'
       - 'functions/api/auth/**'
-      - 'functions/api/google/**'
       - 'functions/api/mfa/**'
       - 'migrations/**'
       - 'src/pages/login.astro'
-      - 'src/pages/register.astro'
-      - 'src/pages/account.astro'
-      - 'src/pages/account/**'
       - 'src/pages/admin/**'
       - 'src/styles/account-system.css'
-      - 'src/styles/google-auth.css'
+      - 'src/styles/admin-editor.css'
       - 'scripts/admin-cutover-self-test.mjs'
       - 'scripts/auth-login-middleware-self-test.mjs'
       - 'scripts/auth-password-self-test.mjs'
-      - 'scripts/google-auth-self-test.mjs'
       - 'scripts/mfa-self-test.mjs'
-      - 'scripts/setup-auth-production.ps1'
       - 'wrangler.jsonc'
       - '.github/workflows/account-system-build.yml'
   pull_request:
     paths:
       - 'functions/_lib/auth.js'
-      - 'functions/_lib/google-auth.js'
-      - 'functions/_lib/member-audit.js'
       - 'functions/_lib/mfa.js'
       - 'functions/_lib/mfa-session.js'
       - 'functions/admin/**'
       - 'functions/api/admin/**'
       - 'functions/api/auth/**'
-      - 'functions/api/google/**'
       - 'functions/api/mfa/**'
       - 'migrations/**'
       - 'src/pages/login.astro'
-      - 'src/pages/register.astro'
-      - 'src/pages/account.astro'
-      - 'src/pages/account/**'
       - 'src/pages/admin/**'
       - 'src/styles/account-system.css'
-      - 'src/styles/google-auth.css'
+      - 'src/styles/admin-editor.css'
       - 'scripts/admin-cutover-self-test.mjs'
       - 'scripts/auth-login-middleware-self-test.mjs'
       - 'scripts/auth-password-self-test.mjs'
-      - 'scripts/google-auth-self-test.mjs'
       - 'scripts/mfa-self-test.mjs'
-      - 'scripts/setup-auth-production.ps1'
       - 'wrangler.jsonc'
       - '.github/workflows/account-system-build.yml'
 
@@ -79,11 +63,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check Pages Functions syntax
+      - name: Check admin security syntax
         run: |
           node --check functions/_lib/auth.js
-          node --check functions/_lib/google-auth.js
-          node --check functions/_lib/member-audit.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
@@ -91,38 +73,19 @@ jobs:
           node --check functions/api/auth/_middleware.js
           node --check 'functions/api/admin/[[path]].js'
           node --check 'functions/api/auth/[[path]].js'
-          node --check 'functions/api/google/[[path]].js'
           node --check 'functions/api/mfa/[[path]].js'
 
       - name: Verify password hashing
         run: node scripts/auth-password-self-test.mjs
 
-      - name: Verify Google identity validation
-        run: node scripts/google-auth-self-test.mjs
-
       - name: Verify TOTP implementation
         run: node scripts/mfa-self-test.mjs
 
-      - name: Verify login middleware
+      - name: Verify admin login middleware
         run: node scripts/auth-login-middleware-self-test.mjs
 
-      - name: Verify admin account cutover
+      - name: Verify admin cutover
         run: node scripts/admin-cutover-self-test.mjs
-
-      - name: Check PowerShell provisioning syntax
-        shell: pwsh
-        run: |
-          $tokens = $null
-          $errors = $null
-          [System.Management.Automation.Language.Parser]::ParseFile(
-            (Resolve-Path 'scripts/setup-auth-production.ps1'),
-            [ref]$tokens,
-            [ref]$errors
-          ) | Out-Null
-          if ($errors.Count -gt 0) {
-            $errors | ForEach-Object { Write-Error $_.Message }
-            exit 1
-          }
 
       - name: Build site
         run: npm run build
