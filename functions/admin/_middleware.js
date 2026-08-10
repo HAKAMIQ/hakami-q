@@ -1,10 +1,5 @@
-import {
-	clearSessionCookie,
-	destroySession,
-	getAuthenticatedUser,
-	requireAuthDb,
-} from '../_lib/auth.js';
-import { isMfaEnabled, requiresMfaRole } from '../_lib/mfa.js';
+import { clearSessionCookie, destroySession, getAuthenticatedUser, requireAuthDb } from '../_lib/auth.js';
+import { isMfaEnabled } from '../_lib/mfa.js';
 import { isCurrentSessionMfaVerified } from '../_lib/mfa-session.js';
 
 const encoder = new TextEncoder();
@@ -20,13 +15,7 @@ async function adminCount(env) {
 async function signLegacyCompatibilityCookie(env) {
 	if (!env.ADMIN_SESSION_SECRET) return '';
 	const expires = Math.floor(Date.now() / 1000) + LEGACY_COMPAT_SECONDS;
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(env.ADMIN_SESSION_SECRET),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign'],
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(env.ADMIN_SESSION_SECRET), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
 	const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(`admin:${expires}`));
 	let binary = '';
 	for (const byte of new Uint8Array(signature)) binary += String.fromCharCode(byte);
@@ -35,32 +24,20 @@ async function signLegacyCompatibilityCookie(env) {
 }
 
 function redirect(location, setCookie = '') {
-	const headers = new Headers({
-		Location: location,
-		'Cache-Control': 'no-store, private',
-		'X-Frame-Options': 'DENY',
-		'Referrer-Policy': 'no-referrer',
-	});
+	const headers = new Headers({ Location: location, 'Cache-Control': 'no-store, private', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'no-referrer' });
 	if (setCookie) headers.append('Set-Cookie', setCookie);
 	return new Response(null, { status: 302, headers });
 }
 
 function loginRedirect(request, clearCookie = false) {
 	const url = new URL(request.url);
-	const next = `${url.pathname}${url.search}`;
 	const target = new URL('/login', url.origin);
-	target.searchParams.set('next', next);
+	target.searchParams.set('next', `${url.pathname}${url.search}`);
 	return redirect(target.toString(), clearCookie ? clearSessionCookie() : '');
 }
 
-function setupRedirect(request) {
-	const target = new URL('/account', request.url);
-	target.searchParams.set('security', 'setup');
-	return redirect(target.toString());
-}
-
-function forbiddenRedirect(request) {
-	return redirect(new URL('/account', request.url).toString());
+function securityRedirect(request) {
+	return redirect(new URL('/admin/security', request.url).toString());
 }
 
 function securedResponse(response, compatibilityCookie = '') {
@@ -76,41 +53,32 @@ function securedResponse(response, compatibilityCookie = '') {
 export async function onRequest(context) {
 	const { request, env } = context;
 	try {
-		if ((await adminCount(env)) === 0) {
-			return securedResponse(await context.next());
-		}
-
+		if ((await adminCount(env)) === 0) return securedResponse(await context.next());
 		const user = await getAuthenticatedUser(request, env);
 		if (!user) return loginRedirect(request);
-
-		const pathname = new URL(request.url).pathname.replace(/\/+$/, '') || '/';
-		const isUserManagement = pathname === '/admin/users';
-		const allowed = isUserManagement
-			? user.role === 'moderator' || user.role === 'admin'
-			: user.role === 'admin';
-		if (!allowed) return forbiddenRedirect(request);
-
-		if (requiresMfaRole(user.role)) {
-			if (!(await isMfaEnabled(env, user.id))) return setupRedirect(request);
-			if (!(await isCurrentSessionMfaVerified(request, env))) {
-				await destroySession(request, env);
-				return loginRedirect(request, true);
-			}
+		if (user.role !== 'admin') {
+			await destroySession(request, env);
+			return loginRedirect(request, true);
 		}
 
-		const compatibilityCookie = user.role === 'admin'
-			? await signLegacyCompatibilityCookie(env)
-			: '';
-		return securedResponse(await context.next(), compatibilityCookie);
+		const pathname = new URL(request.url).pathname.replace(/\/+$/, '') || '/admin';
+		const securityPage = pathname === '/admin/security';
+		const mfaEnabled = await isMfaEnabled(env, user.id);
+		if (!mfaEnabled) {
+			if (!securityPage) return securityRedirect(request);
+			return securedResponse(await context.next());
+		}
+		if (!(await isCurrentSessionMfaVerified(request, env))) {
+			await destroySession(request, env);
+			return loginRedirect(request, true);
+		}
+
+		return securedResponse(await context.next(), await signLegacyCompatibilityCookie(env));
 	} catch (error) {
 		console.error('HAKAMIQ admin page middleware failure', error);
 		return new Response('خدمة الإدارة غير متاحة مؤقتًا.', {
 			status: 503,
-			headers: {
-				'Content-Type': 'text/plain; charset=utf-8',
-				'Cache-Control': 'no-store, private',
-				'X-Frame-Options': 'DENY',
-			},
+			headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store, private', 'X-Frame-Options': 'DENY' },
 		});
 	}
 }
