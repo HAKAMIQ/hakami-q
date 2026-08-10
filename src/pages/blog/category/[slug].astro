@@ -12,6 +12,8 @@ import {
 	type CategoryDefinition,
 } from '../../../data/blog-taxonomy';
 
+const DEFAULT_PAGE_SIZE = 5;
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 
@@ -31,6 +33,17 @@ const { category } = Astro.props;
 const posts = (await getCollection('blog'))
 	.filter((post) => getPostCategories(post).includes(category.slug))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const cardPosts = posts.map((post) => ({
+	id: post.id,
+	title: post.data.title,
+	description: post.data.description,
+	date: formatArabicDate(post.data.pubDate),
+	image: post.data.heroImageUrl ?? post.data.heroImage?.src ?? '',
+}));
+const initialPosts = cardPosts.slice(0, DEFAULT_PAGE_SIZE);
+const initialTotalPages = Math.max(1, Math.ceil(cardPosts.length / DEFAULT_PAGE_SIZE));
+const serializedPosts = JSON.stringify(cardPosts).replace(/</g, '\\u003c');
 
 const description = `شروحات وأدلة ومقالات HAKAMIQ حول ${category.name}، مع أحدث مواضيع المحاكيات والإعدادات والتحديثات المرتبطة بهذا القسم.`;
 const siteURL = Astro.site ?? Astro.url;
@@ -96,29 +109,259 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					<strong class="category-count">{posts.length} مقال</strong>
 				</header>
 
-				<section aria-labelledby="category-posts-title">
+				<section aria-labelledby="category-posts-title" data-category-list>
 					<div class="category-section-heading">
-						<h2 id="category-posts-title">مقالات {category.name}</h2>
+						<div>
+							<h2 id="category-posts-title">مقالات {category.name}</h2>
+							<p id="category-range" class="category-range" aria-live="polite">
+								{cardPosts.length > 0 ? `عرض 1–${Math.min(DEFAULT_PAGE_SIZE, cardPosts.length)} من ${cardPosts.length}` : 'لا توجد مقالات'}
+							</p>
+						</div>
 						<a href="/blog/">عرض جميع المقالات</a>
 					</div>
 
-					<div class="category-grid">
-						{posts.map((post) => (
+					<div class="category-list-toolbar">
+						<form id="category-page-size-form" class="category-page-size" method="get">
+							<label for="category-page-size">عدد المقالات في الصفحة</label>
+							<input
+								id="category-page-size"
+								name="perPage"
+								type="number"
+								min="5"
+								max="100"
+								step="1"
+								value={DEFAULT_PAGE_SIZE}
+								list="category-page-size-options"
+								inputmode="numeric"
+							/>
+							<datalist id="category-page-size-options">
+								<option value="5"></option>
+								<option value="7"></option>
+								<option value="10"></option>
+								<option value="20"></option>
+								<option value="30"></option>
+								<option value="50"></option>
+								<option value="100"></option>
+							</datalist>
+							<button type="submit">تطبيق</button>
+						</form>
+						<span class="category-page-size__hint">من 5 إلى 100، وتُحفظ رغبتك للأقسام الأخرى.</span>
+					</div>
+
+					<div class="category-grid" id="category-grid">
+						{initialPosts.map((post) => (
 							<article class="category-card">
 								<a href={`/blog/${post.id}/`}>
-									<span class="category-card__date">{formatArabicDate(post.data.pubDate)}</span>
-									<h3>{post.data.title}</h3>
-									<p>{post.data.description}</p>
-									<span class="category-card__action">قراءة المقال</span>
+									<div class="category-card__media">
+										{post.image ? (
+											<img src={post.image} alt={post.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+										) : (
+											<div class="category-card__placeholder" aria-hidden="true">HAKAMIQ</div>
+										)}
+									</div>
+									<div class="category-card__body">
+										<span class="category-card__date">{post.date}</span>
+										<h3>{post.title}</h3>
+										<p>{post.description}</p>
+										<span class="category-card__action">قراءة المقال</span>
+									</div>
 								</a>
 							</article>
 						))}
 					</div>
+
+					<nav id="category-pagination" class="category-pagination" aria-label="صفحات القسم" hidden={initialTotalPages <= 1}></nav>
 				</section>
 			</div>
 		</main>
 
+		<script is:inline id="category-post-data" type="application/json" set:html={serializedPosts}></script>
 		<Footer />
+
+		<script>
+			const DEFAULT_SIZE = 5;
+			const MIN_SIZE = 5;
+			const MAX_SIZE = 100;
+			const STORAGE_KEY = 'hakamiq-category-page-size-v1';
+			const dataElement = document.querySelector('#category-post-data');
+			const grid = document.querySelector('#category-grid');
+			const pagination = document.querySelector('#category-pagination');
+			const rangeLabel = document.querySelector('#category-range');
+			const sizeForm = document.querySelector('#category-page-size-form');
+			const sizeInput = document.querySelector('#category-page-size');
+			const heading = document.querySelector('#category-posts-title');
+
+			let items = [];
+			try { items = JSON.parse(dataElement?.textContent || '[]'); } catch { items = []; }
+
+			function clampSize(value) {
+				const parsed = Number.parseInt(String(value || ''), 10);
+				if (!Number.isFinite(parsed)) return DEFAULT_SIZE;
+				return Math.min(MAX_SIZE, Math.max(MIN_SIZE, parsed));
+			}
+
+			function storedSize() {
+				try { return clampSize(localStorage.getItem(STORAGE_KEY) || DEFAULT_SIZE); }
+				catch { return DEFAULT_SIZE; }
+			}
+
+			function urlState() {
+				const params = new URLSearchParams(window.location.search);
+				const explicitSize = params.get('perPage');
+				const size = explicitSize ? clampSize(explicitSize) : storedSize();
+				const rawPage = Number.parseInt(params.get('page') || '1', 10);
+				return { size, page: Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1 };
+			}
+
+			function categoryUrl(page, size) {
+				const url = new URL(window.location.href);
+				url.searchParams.delete('page');
+				url.searchParams.delete('perPage');
+				if (page > 1) url.searchParams.set('page', String(page));
+				if (size !== DEFAULT_SIZE) url.searchParams.set('perPage', String(size));
+				return `${url.pathname}${url.search}`;
+			}
+
+			function makePlaceholder() {
+				const placeholder = document.createElement('div');
+				placeholder.className = 'category-card__placeholder';
+				placeholder.setAttribute('aria-hidden', 'true');
+				placeholder.textContent = 'HAKAMIQ';
+				return placeholder;
+			}
+
+			function makeCard(post) {
+				const article = document.createElement('article');
+				article.className = 'category-card';
+				const link = document.createElement('a');
+				link.href = `/blog/${post.id}/`;
+
+				const media = document.createElement('div');
+				media.className = 'category-card__media';
+				if (post.image) {
+					const image = document.createElement('img');
+					image.src = post.image;
+					image.alt = post.title;
+					image.loading = 'lazy';
+					image.decoding = 'async';
+					image.referrerPolicy = 'no-referrer';
+					image.addEventListener('error', () => image.replaceWith(makePlaceholder()), { once: true });
+					media.append(image);
+				} else {
+					media.append(makePlaceholder());
+				}
+
+				const body = document.createElement('div');
+				body.className = 'category-card__body';
+				const date = document.createElement('span');
+				date.className = 'category-card__date';
+				date.textContent = post.date;
+				const title = document.createElement('h3');
+				title.textContent = post.title;
+				const description = document.createElement('p');
+				description.textContent = post.description;
+				const action = document.createElement('span');
+				action.className = 'category-card__action';
+				action.textContent = 'قراءة المقال';
+				body.append(date, title, description, action);
+				link.append(media, body);
+				article.append(link);
+				return article;
+			}
+
+			function paginationTokens(current, total) {
+				if (total <= 7) return Array.from({ length: total }, (_, index) => index + 1);
+				const pages = new Set([1, total, current - 1, current, current + 1]);
+				const sorted = [...pages].filter((page) => page >= 1 && page <= total).sort((a, b) => a - b);
+				const tokens = [];
+				for (let index = 0; index < sorted.length; index += 1) {
+					if (index > 0 && sorted[index] - sorted[index - 1] > 1) tokens.push('ellipsis');
+					tokens.push(sorted[index]);
+				}
+				return tokens;
+			}
+
+			function renderPagination(page, size, totalPages) {
+				if (!(pagination instanceof HTMLElement)) return;
+				pagination.replaceChildren();
+				pagination.hidden = totalPages <= 1;
+				if (totalPages <= 1) return;
+
+				const addLink = (label, targetPage, current = false, rel = '') => {
+					const link = document.createElement('a');
+					link.className = 'category-page-link';
+					link.href = categoryUrl(targetPage, size);
+					link.textContent = label;
+					link.dataset.page = String(targetPage);
+					if (current) link.setAttribute('aria-current', 'page');
+					if (rel) link.rel = rel;
+					pagination.append(link);
+				};
+
+				if (page > 1) addLink('السابق', page - 1, false, 'prev');
+				for (const token of paginationTokens(page, totalPages)) {
+					if (token === 'ellipsis') {
+						const ellipsis = document.createElement('span');
+						ellipsis.className = 'category-page-ellipsis';
+						ellipsis.textContent = '…';
+						pagination.append(ellipsis);
+					} else {
+						addLink(String(token), token, token === page);
+					}
+				}
+				if (page < totalPages) addLink('التالي', page + 1, false, 'next');
+			}
+
+			function attachInitialImageFallbacks() {
+				for (const image of document.querySelectorAll('.category-card__media img')) {
+					image.addEventListener('error', () => image.replaceWith(makePlaceholder()), { once: true });
+				}
+			}
+
+			function render(page, size, updateHistory = false, scroll = false) {
+				if (!(grid instanceof HTMLElement)) return;
+				const safeSize = clampSize(size);
+				const totalPages = Math.max(1, Math.ceil(items.length / safeSize));
+				const safePage = Math.min(totalPages, Math.max(1, page));
+				const start = (safePage - 1) * safeSize;
+				const end = Math.min(start + safeSize, items.length);
+				grid.replaceChildren(...items.slice(start, end).map(makeCard));
+
+				if (rangeLabel instanceof HTMLElement) {
+					rangeLabel.textContent = items.length ? `عرض ${start + 1}–${end} من ${items.length}` : 'لا توجد مقالات';
+				}
+				if (sizeInput instanceof HTMLInputElement) sizeInput.value = String(safeSize);
+				renderPagination(safePage, safeSize, totalPages);
+				try { localStorage.setItem(STORAGE_KEY, String(safeSize)); } catch {}
+
+				if (updateHistory) history.pushState({ page: safePage, size: safeSize }, '', categoryUrl(safePage, safeSize));
+				if (scroll && heading instanceof HTMLElement) heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+
+			attachInitialImageFallbacks();
+			const initialState = urlState();
+			render(initialState.page, initialState.size, false, false);
+
+			sizeForm?.addEventListener('submit', (event) => {
+				event.preventDefault();
+				const size = clampSize(sizeInput instanceof HTMLInputElement ? sizeInput.value : DEFAULT_SIZE);
+				render(1, size, true, false);
+			});
+
+			pagination?.addEventListener('click', (event) => {
+				const link = event.target instanceof Element ? event.target.closest('[data-page]') : null;
+				if (!(link instanceof HTMLAnchorElement)) return;
+				event.preventDefault();
+				const state = urlState();
+				const page = Number.parseInt(link.dataset.page || '1', 10);
+				render(page, state.size, true, true);
+			});
+
+			window.addEventListener('popstate', () => {
+				const state = urlState();
+				render(state.page, state.size, false, false);
+			});
+		</script>
 	</body>
 </html>
 
@@ -169,7 +412,9 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	}
 
 	.category-eyebrow,
-	.category-card__date {
+	.category-card__date,
+	.category-range,
+	.category-page-size__hint {
 		color: var(--color-neutral-foreground-3);
 		font-size: var(--font-size-caption-1);
 	}
@@ -201,15 +446,62 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 	.category-section-heading {
 		display: flex;
-		align-items: center;
+		align-items: end;
 		justify-content: space-between;
 		gap: var(--spacing-160);
-		margin-bottom: var(--spacing-160);
+		margin-bottom: var(--spacing-120);
 	}
 
 	.category-section-heading h2 {
 		margin: 0;
 		font-size: var(--font-size-title-2);
+	}
+
+	.category-range {
+		margin: var(--spacing-40) 0 0;
+	}
+
+	.category-list-toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-120);
+		margin-bottom: var(--spacing-160);
+		padding: var(--spacing-100) var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-2);
+	}
+
+	.category-page-size {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-80);
+		font-size: var(--font-size-body-1);
+	}
+
+	.category-page-size input {
+		width: 82px;
+		min-height: 36px;
+		padding-inline: var(--spacing-80);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-medium);
+		background: var(--color-neutral-background-1);
+		color: var(--color-neutral-foreground-1);
+		font: inherit;
+		text-align: center;
+	}
+
+	.category-page-size button {
+		min-height: 36px;
+		padding-inline: var(--spacing-120);
+		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
+		border-radius: var(--radius-medium);
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground-strong);
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
 	}
 
 	.category-grid {
@@ -220,17 +512,17 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 	.category-card {
 		min-width: 0;
+		overflow: hidden;
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 		border-radius: var(--radius-large);
 		background: var(--color-neutral-background-2);
-		overflow: hidden;
 	}
 
 	.category-card > a {
 		display: flex;
+		height: 100%;
 		min-height: 100%;
 		flex-direction: column;
-		padding: var(--spacing-180);
 		color: inherit;
 		text-decoration: none;
 	}
@@ -241,23 +533,66 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		background: var(--color-neutral-background-2-hover);
 	}
 
+	.category-card__media {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: var(--color-neutral-background-3);
+	}
+
+	.category-card__media img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
+	}
+
+	.category-card:hover .category-card__media img {
+		transform: scale(1.025);
+	}
+
+	.category-card__placeholder {
+		display: grid;
+		width: 100%;
+		height: 100%;
+		place-items: center;
+		color: var(--color-neutral-foreground-4);
+		font-size: var(--font-size-subtitle-2);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.category-card__body {
+		display: flex;
+		min-height: 210px;
+		flex: 1;
+		flex-direction: column;
+		padding: var(--spacing-140);
+	}
+
 	.category-card h3 {
-		margin: var(--spacing-80) 0 var(--spacing-100);
+		display: -webkit-box;
+		overflow: hidden;
+		margin: var(--spacing-60) 0 var(--spacing-80);
 		color: var(--color-neutral-foreground-1);
-		font-size: var(--font-size-subtitle-1);
-		line-height: 1.55;
+		font-size: var(--font-size-subtitle-2);
+		line-height: 1.5;
 		text-wrap: balance;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
 	}
 
 	.category-card p {
-		margin: 0 0 var(--spacing-160);
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0 0 var(--spacing-120);
 		color: var(--color-neutral-foreground-2);
 		font-size: var(--font-size-body-1);
-		line-height: 1.75;
-		display: -webkit-box;
+		line-height: 1.7;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
-		overflow: hidden;
+		-webkit-line-clamp: 2;
 	}
 
 	.category-card__action {
@@ -267,17 +602,73 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		font-weight: var(--font-weight-semibold);
 	}
 
-	@media (max-width: 980px) {
+	.category-pagination {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: var(--spacing-60);
+		margin-top: var(--spacing-240);
+		padding-block: var(--spacing-80);
+	}
+
+	.category-page-link {
+		display: inline-flex;
+		min-width: 38px;
+		min-height: 38px;
+		align-items: center;
+		justify-content: center;
+		padding-inline: var(--spacing-100);
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-medium);
+		background: var(--color-subtle-background);
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+	}
+
+	.category-page-link:hover,
+	.category-page-link:focus-visible {
+		border-color: var(--color-neutral-stroke-1-hover);
+		background: var(--color-subtle-background-hover);
+		color: var(--color-neutral-foreground-1);
+	}
+
+	.category-page-link[aria-current='page'] {
+		border-color: var(--color-brand-stroke-1);
+		background: var(--color-brand-background-2);
+		color: var(--color-brand-foreground-strong);
+	}
+
+	.category-page-ellipsis {
+		padding-inline: var(--spacing-40);
+		color: var(--color-neutral-foreground-4);
+	}
+
+	@media (max-width: 1080px) {
 		.category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 	}
 
-	@media (max-width: 640px) {
+	@media (max-width: 700px) {
 		.category-header,
-		.category-section-heading {
+		.category-section-heading,
+		.category-list-toolbar {
 			align-items: start;
 			flex-direction: column;
 		}
 
+		.category-page-size {
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		.category-page-size__hint {
+			line-height: 1.6;
+		}
+
 		.category-grid { grid-template-columns: 1fr; }
+		.category-card__body { min-height: 0; }
+		.category-page-link { min-width: 42px; min-height: 42px; }
 	}
 </style>
