@@ -6,6 +6,7 @@ import ArticleToc from '../../components/ArticleToc.astro';
 import { categoryDefinitions, getPostCategories } from '../../data/blog-taxonomy';
 import BlogPost from '../../layouts/BlogPost.astro';
 import '../../styles/article-content-compat.css';
+import '../../styles/article-polish.css';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
