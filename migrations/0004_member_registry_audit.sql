@@ -1,9 +1,9 @@
 PRAGMA foreign_keys = ON;
 
-ALTER TABLE users ADD COLUMN last_login_at TEXT;
-ALTER TABLE users ADD COLUMN status_reason TEXT;
-ALTER TABLE users ADD COLUMN status_changed_at TEXT;
-ALTER TABLE users ADD COLUMN status_changed_by TEXT;
+-- Member registry compatibility columns are added defensively at runtime by
+-- functions/_lib/member-audit.js after inspecting PRAGMA table_info(users).
+-- Keeping this migration CREATE-only avoids duplicate-column failures if an
+-- existing D1 database was already upgraded by the runtime guard.
 
 CREATE TABLE IF NOT EXISTS member_audit_log (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
