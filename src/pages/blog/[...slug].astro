@@ -184,8 +184,6 @@ function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 		.replace(/<p\b[^>]*>(?:\s|&nbsp;|<br\s*\/?\s*>)*<\/p>/gi, '')
 		.replace(/(?:<br\s*\/?\s*>\s*){4,}/gi, '<br /><br />');
 
-	// The page template owns the page landmark and H1. Preserve the article's
-	// inner structure while removing invalid nested page-level semantics.
 	result = result
 		.replace(/<main\b([^>]*)>/gi, '<div$1>')
 		.replace(/<\/main>/gi, '</div>')
@@ -206,20 +204,23 @@ function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 			},
 		);
 
-		const altMatch = normalized.match(/\balt\s*=\s*(["'])([^"']*)\1/i);
-		if (!altMatch || !plainText(altMatch[2])) {
+		if (!/\balt\s*=/i.test(normalized)) {
 			const titleAttribute = normalized.match(/\btitle\s*=\s*["']([^"']+)["']/i)?.[1];
 			const fallback = titleAttribute && plainText(titleAttribute)
 				? plainText(titleAttribute)
 				: `صورة من مقال ${articleTitle}`;
-			if (altMatch) {
+			normalized = normalized.replace(/^<img\b/i, `<img alt="${escapeAttribute(fallback)}"`);
+		} else {
+			const altMatch = normalized.match(/\balt\s*=\s*(["'])([^"']*)\1/i);
+			if (altMatch && !plainText(altMatch[2])) {
+				const titleAttribute = normalized.match(/\btitle\s*=\s*["']([^"']+)["']/i)?.[1];
+				const fallback = titleAttribute && plainText(titleAttribute)
+					? plainText(titleAttribute)
+					: `صورة من مقال ${articleTitle}`;
 				normalized = normalized.replace(altMatch[0], `alt="${escapeAttribute(fallback)}"`);
-			} else {
-				normalized = normalized.replace(/^<img\b/i, `<img alt="${escapeAttribute(fallback)}"`);
 			}
 		}
 
-		// Keep the first article image eligible for early loading; defer the rest.
 		if (currentImageIndex > 0 && !/\bloading\s*=/i.test(normalized)) {
 			normalized = normalized.replace(/^<img\b/i, '<img loading="lazy"');
 		}
