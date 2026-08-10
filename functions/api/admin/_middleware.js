@@ -140,9 +140,9 @@ async function handleCutoverRequest(context, action) {
 		headers.append('Set-Cookie', clearLegacyCookie());
 		return new Response(JSON.stringify({ authenticated: false }), { status: 200, headers });
 	}
-	if (action === 'publish') {
+	if (action === 'publish' || action === 'rewrite') {
 		if (!user) return json({ error: 'يلزم تسجيل الدخول بحساب المدير.', loginUrl: '/login?next=/admin' }, 401);
-		if (user.role !== 'admin') return json({ error: 'لا تملك صلاحية نشر المقالات.' }, 403);
+		if (user.role !== 'admin') return json({ error: 'لا تملك صلاحية استخدام أدوات إدارة المقالات.' }, 403);
 		const mfaError = await requireAdminMfa(request, env, user);
 		if (mfaError) return mfaError;
 		return context.next();
