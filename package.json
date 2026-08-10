@@ -8,6 +8,8 @@
   "scripts": {
     "blogger:independence": "node scripts/blogger-independence-quality.mjs",
     "article:rendered-quality": "node scripts/article-rendered-quality.mjs --dist dist",
+    "content:cleanup": "node scripts/content-source-cleanup.mjs --write",
+    "content:cleanup:check": "node scripts/content-source-cleanup.mjs --check",
     "content:quality": "node scripts/content-quality.mjs",
     "content:quality:strict": "node scripts/content-quality.mjs --strict",
     "content:quality:report": "node scripts/content-quality.mjs --json reports/content-quality.json",
