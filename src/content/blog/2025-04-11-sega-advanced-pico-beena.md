@@ -62,17 +62,17 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 <div class="beena-info-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg">
                 <img alt="صورة توضيحية ضمن مقال ما هو جهاز Sega Advanced Pico Beena؟ ولماذا لم نسمع به؟" class="img-frame" src="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg" width="251" />
             </a>
         </div>
         
-        <p style="text-align: center;">اقتحمت SEGA سوق تعليم الأطفال بجهاز Beena؛ محاولة تقنية طموحة لصنع كونسول تعليمي تفاعلي، لكنها واجهت تحديات كبيرة حالت دون انتشاره العالمي.</p>
+        <p style="text-align: center">اقتحمت SEGA سوق تعليم الأطفال بجهاز Beena؛ محاولة تقنية طموحة لصنع كونسول تعليمي تفاعلي، لكنها واجهت تحديات كبيرة حالت دون انتشاره العالمي.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">ما هو نظام Beena؟</h3>
+        <h3 style="color: var(--xe-gold)">ما هو نظام Beena؟</h3>
         <ul class="clean-list">
             <li>منصة تعليمية متطورة من SEGA أطلقت في اليابان عام 2005.</li>
             <li>يعتبر الخليفة التقني المباشر لجهاز Sega Pico الشهير.</li>
@@ -82,7 +82,7 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">آلية العمل والتشغيل</h3>
+        <h3 style="color: var(--xe-gold)">آلية العمل والتشغيل</h3>
         <ul class="clean-list">
             <li>يتم توصيل الجهاز بجهاز التلفزيون عبر كابل AV التقليدي.</li>
             <li>مزود بقلم إلكتروني دقيق للتفاعل المباشر مع المحتوى البرمجي.</li>
@@ -90,8 +90,8 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f39c12;">
-        <h3 style="color: #f39c12;">أسباب غياب الشهرة العالمية</h3>
+    <section class="section-card" style="border-right: 5px solid #f39c12">
+        <h3 style="color: #f39c12">أسباب غياب الشهرة العالمية</h3>
         <ul class="clean-list">
             <li>انحصار الجهاز جغرافياً داخل حدود اليابان فقط.</li>
             <li>استهدافه لفئة عمرية ضيقة جداً (رياض الأطفال).</li>
@@ -101,7 +101,7 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">المحتوى والألعاب</h3>
+        <h3 style="color: var(--xe-blue)">المحتوى والألعاب</h3>
         <p>قدم الجهاز أكثر من 100 عنوان تعليمي ركزت على:</p>
         <ul class="clean-list">
             <li>أساسيات الرياضيات، اللغات، والموسيقى.</li>
@@ -110,13 +110,13 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة</h3>
         <p>كان Beena سابقاً لعصره في مفهوم "التعليم باللعب"، ولو أطلق في عصر الأجهزة اللوحية (Tablets) لربما حقق نجاحاً مدوياً. يظل الجهاز اليوم تحفة نادرة تجذب اهتمام المتخصصين في أرشفة الأنظمة القديمة بفضل فرادته التقنية.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

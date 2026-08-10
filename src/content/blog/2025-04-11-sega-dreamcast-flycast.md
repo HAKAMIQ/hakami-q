@@ -65,22 +65,22 @@ labels: ["Dreamcast","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg">
                 <img alt="صورة توضيحية ضمن مقال شغيل ألعاب Sega Dreamcast بجودة عالية عبر محاكي Flycast" class="img-frame" src="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 تشغيل ألعاب SEGA Dreamcast بجودة عالية عبر محاكي Flycast</h2>
-        <p style="text-align: center;">لو كنت من محبي جهاز Sega Dreamcast وتبي تشغل ألعابك المفضلة بجودة عالية على جهازك، محاكي <strong>Flycast</strong> هو الخيار المثالي! هنا بنشرح لك كيفية تشغيل ألعاب Dreamcast بجودة ممتازة باستخدام Flycast على الكمبيوتر والجوال.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 تشغيل ألعاب SEGA Dreamcast بجودة عالية عبر محاكي Flycast</h2>
+        <p style="text-align: center">لو كنت من محبي جهاز Sega Dreamcast وتبي تشغل ألعابك المفضلة بجودة عالية على جهازك، محاكي <strong>Flycast</strong> هو الخيار المثالي! هنا بنشرح لك كيفية تشغيل ألعاب Dreamcast بجودة ممتازة باستخدام Flycast على الكمبيوتر والجوال.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🌟 ما هو محاكي Flycast؟</h3>
+        <h3 style="color: var(--xe-gold)">🌟 ما هو محاكي Flycast؟</h3>
         <p>محاكي <strong>Flycast</strong> هو محرك برمجي حديث يتيح لك تجربة ألعاب <b>Sega Dreamcast</b> ومطورة نظام NAOMI على الكمبيوتر، الجوال، وأجهزة أخرى. يتميز بتقديم أداء عالٍ وتوافق رائع مع معظم الألعاب الشهيرة، بالإضافة لدعمه تقنيات رفع الدقة المتقدمة.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">⚙️ 1. تحميل وتثبيت محاكي Flycast</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">⚙️ 1. تحميل وتثبيت محاكي Flycast</h3>
         <ul class="clean-list">
             <li>ادخل على الموقع الرسمي للمشروع: <a href="https://flycast.xyz/" target="_blank">⬇️ تحميل Flycast من الموقع الرسمي</a></li>
             <li>اختر النسخة المناسبة لمعمارية نظامك (Windows، macOS، Linux، أو Android).</li>
@@ -88,8 +88,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">🎮 2. تحميل ملفات الألعاب وتجهيزها</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">🎮 2. تحميل ملفات الألعاب وتجهيزها</h3>
         <p>لتشغيل ألعابك على محاكي Flycast، تحتاج إلى توافر الرومات الصحيحة:</p>
         <ul class="clean-list">
             <li>يجب أن تكون ملفات الألعاب بصيغة <code>.iso</code> أو <code>.gdi</code> أو <code>.chd</code> الخاصة بـ Sega Dreamcast.</li>
@@ -98,8 +98,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">⚙️ 3. أفضل الإعدادات لرفع الرسوميات (Upscaling)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">⚙️ 3. أفضل الإعدادات لرفع الرسوميات (Upscaling)</h3>
         <p>من داخل واجهة المحاكي (Settings)، قم بتعديل القيم التالية للحصول على أفضل مظهر بصري:</p>
         <ul class="clean-list">
             <li><b>الرندرة (Resolution):</b> قم برفع الدقة الداخلية إلى <b>1080p</b> أو <b>4K</b> (يتطلب بطاقة رسومية قوية).</li>
@@ -108,8 +108,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">💡 نصائح تقنية للحصول على أداء مستقر</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">💡 نصائح تقنية للحصول على أداء مستقر</h3>
         <ul class="clean-list">
             <li>إذا كنت تعاني من التقطيع (Stuttering)، قم بتغيير محرك الرسوميات إلى <code>Vulkan</code> بدلاً من OpenGL.</li>
             <li>استخدم ميزة <b>Save States</b> للحفظ اللحظي قبل مواجهة الزعماء، فهي أسرع وأكثر أماناً من حفظ اللعبة الكلاسيكي (VMU).</li>
@@ -117,9 +117,9 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">محاكي <b>Flycast</b> هو بوابتك المثالية لإحياء مكتبة Dreamcast. مع دعمه لدقة 4K واللعب الجماعي، ستعيش التجربة أفضل مما كانت عليه في عام 1999! 🚀</p>
-        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">محاكي <b>Flycast</b> هو بوابتك المثالية لإحياء مكتبة Dreamcast. مع دعمه لدقة 4K واللعب الجماعي، ستعيش التجربة أفضل مما كانت عليه في عام 1999! 🚀</p>
+        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

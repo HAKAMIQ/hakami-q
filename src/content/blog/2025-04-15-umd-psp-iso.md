@@ -134,14 +134,14 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-umd-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg">
-            <img alt="صورة توضيحية ضمن مقال شرح نسخ ألعاب UMD من جهاز PSP وتحويلها إلى ISO؟" src="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال شرح نسخ ألعاب UMD من جهاز PSP وتحويلها إلى ISO؟" src="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
     <h2 class="hakamiq-umd-title">📤 كيف تسحب ألعاب PSP من قرص UMD وتحولها إلى ISO؟</h2>
-    <p>لو عندك جهاز PSP حقيقي وعندك عليه أقراص ألعاب <strong>UMD</strong>، تقدر تسحبها بكل فخامة وتحوّلها إلى ملف <strong>ISO</strong> وتشغلها في <strong style="color: gold;">PPSSPP</strong> على أي جهاز تحبه.</p>
+    <p>لو عندك جهاز PSP حقيقي وعندك عليه أقراص ألعاب <strong>UMD</strong>، تقدر تسحبها بكل فخامة وتحوّلها إلى ملف <strong>ISO</strong> وتشغلها في <strong style="color: gold">PPSSPP</strong> على أي جهاز تحبه.</p>
     <p>العملية سهلة، بس تحتاج شوية أدوات... خلني أعلمك الطريقة من الألف للي ISO 😎</p>
 
     <hr class="hakamiq-divider" />
@@ -165,7 +165,7 @@ labels: ["PlayStation","psp"]
         <li>انسخه لجهازك وأعد تسميته لاسم واضح مثل: <span class="hakamiq-code-inline">GodOfWar.iso</span></li>
     </ol>
     <div class="hakamiq-success">
-        <span style="color: #00e676;">🎉 مبروك!</span> صار عندك ملف ISO شغال على PPSSPP تمام 👌
+        <span style="color: #00e676">🎉 مبروك!</span> صار عندك ملف ISO شغال على PPSSPP تمام 👌
     </div>
 
     <hr class="hakamiq-divider" />
@@ -189,16 +189,16 @@ labels: ["PlayStation","psp"]
     <div class="hakamiq-code-block">chdman createdvd -hs 2048 -i game.iso -o game.chd -c zstd</div>
 
     <div class="hakamiq-info">
-        <span style="color: #ffa726; font-weight: bold;">معلومة:</span> إذا بغيت ترجع CHD إلى ISO:
+        <span style="color: #ffa726; font-weight: bold">معلومة:</span> إذا بغيت ترجع CHD إلى ISO:
     </div>
-    <div class="hakamiq-code-block" style="margin-top: 10px;">chdman extractdvd -hs 2048 -i game.chd -o game.iso</div>
+    <div class="hakamiq-code-block" style="margin-top: 10px">chdman extractdvd -hs 2048 -i game.chd -o game.iso</div>
 
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-conclusion">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>عندك لعبة UMD أصلية؟ سحبها وتحويلها إلى ISO ما ياخذ منك إلا كم دقيقة. بعدها تقدر تحتفظ فيها، تلعبها على جوالك، كمبيوترك، وحتى على VR لو تبغى 😎</p>
-        <p style="margin-bottom: 0;">وفر مساحة بتحويلها إلى <strong>CSO</strong> أو <strong>CHD</strong>، واستمتع بألعاب الطفولة بجودة وفخامة.</p>
+        <p style="margin-bottom: 0">وفر مساحة بتحويلها إلى <strong>CSO</strong> أو <strong>CHD</strong>، واستمتع بألعاب الطفولة بجودة وفخامة.</p>
     </div>
 
 </div>

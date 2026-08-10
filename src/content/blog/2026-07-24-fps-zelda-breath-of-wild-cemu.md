@@ -929,7 +929,7 @@ labels: ["Nintendo","Wii-U"]
 </section>
 <section class="cf-card">
 <h3>خطأ Vulkan: failed to submit command buffer -4</h3>
-<div class="cf-code" style="display: block; margin: 12px 0px; padding: 12px; text-align: left; white-space: normal;">
+<div class="cf-code" style="display: block; margin: 12px 0px; padding: 12px; text-align: left; white-space: normal">
             vkWaitForFences: Returned unhandled error -4<br />
             Unrecoverable error in Vulkan renderer<br />
             Msg: failed to submit command buffer. Error -4

@@ -64,12 +64,12 @@ labels: ["GBA","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c8/c85d8b617ba07c1a49af2a637c4be9257131be20b496de29724beddf6505629e.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/c8/c85d8b617ba07c1a49af2a637c4be9257131be20b496de29724beddf6505629e.jpg" width="320" alt="تحسين دقة GBA" />
             </a>
         </div>
-        <h2 style="color: var(--xe-teal); text-align: center;">🔄 الدليل التقني: رفع دقة ألعاب GBA إلى أعلى دقة HD</h2>
+        <h2 style="color: var(--xe-teal); text-align: center">🔄 الدليل التقني: رفع دقة ألعاب GBA إلى أعلى دقة HD</h2>
         <p>الـ Upscale هو عملية تقنية تهدف لتشغيل ألعاب GBA الأصلية (التي كانت بدقة 240x160 بيكسل فقط) وعرضها بدقة <strong>HD أو حتى 4K</strong>، مما يزيل التشويش والبيكسلة المزعجة ويمنح اللعبة مظهراً عصرياً.</p>
     </header>
 
@@ -107,8 +107,8 @@ labels: ["GBA","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من الناحية التقنية، عملية الـ Upscaling لا تزيد من تفاصيل اللعبة الأصلية، بل تقوم بـ "إعادة تفسير" البكسلات بذكاء. شاشات 1080p و 1440p هي البيئة المثالية لهذه العملية. النتيجة ستكون مذهلة؛ فمثلاً <b>Metroid Fusion</b> ستبدو كأنها لعبة Indie حديثة، و <b>Pokémon FireRed</b> ستصبح أنعم وأوضح بكثير. اجعل ألعابك الكلاسيكية تبرق على شاشتك الحديثة، وعش التجربة بجودة لم تكن ممكنة في السابق! 😌💥</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من الناحية التقنية، عملية الـ Upscaling لا تزيد من تفاصيل اللعبة الأصلية، بل تقوم بـ "إعادة تفسير" البكسلات بذكاء. شاشات 1080p و 1440p هي البيئة المثالية لهذه العملية. النتيجة ستكون مذهلة؛ فمثلاً <b>Metroid Fusion</b> ستبدو كأنها لعبة Indie حديثة، و <b>Pokémon FireRed</b> ستصبح أنعم وأوضح بكثير. اجعل ألعابك الكلاسيكية تبرق على شاشتك الحديثة، وعش التجربة بجودة لم تكن ممكنة في السابق! 😌💥</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

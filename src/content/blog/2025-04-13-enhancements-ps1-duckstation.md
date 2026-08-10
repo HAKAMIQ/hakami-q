@@ -59,13 +59,13 @@ labels: ["PlayStation","PS1"]
 <article class="hakamiq-enhancement-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg">
                 <img class="img-frame" src="/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg" alt="DuckStation PS1 Enhancements Guide" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;">🚀 كيف تحسن تجربة ألعاب PS1 باستخدام DuckStation؟</h2>
-        <p style="color: var(--xe-gold); font-size: 1.2rem;">دليلك التقني لتفعيل أقوى ميزات التعزيز البصري والأداء لتحويل ألعابك الكلاسيكية إلى جودة العصر الحديث.</p>
+        <h2 style="color: var(--xe-blue); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900">🚀 كيف تحسن تجربة ألعاب PS1 باستخدام DuckStation؟</h2>
+        <p style="color: var(--xe-gold); font-size: 1.2rem">دليلك التقني لتفعيل أقوى ميزات التعزيز البصري والأداء لتحويل ألعابك الكلاسيكية إلى جودة العصر الحديث.</p>
     </header>
 
     <section class="section-card">
@@ -86,7 +86,7 @@ labels: ["PlayStation","PS1"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
         <h3>3. وضع الشاشة العريضة (Widescreen Hack)</h3>
         <p>بدلاً من اللعب في "صندوق" ضيق بنسبة 4:3، يمكنك الآن استغلال كامل مساحة شاشتك الحديثة.</p>
         <ul>
@@ -113,9 +113,9 @@ labels: ["PlayStation","PS1"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 15px; text-align: center; border-top: 4px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">🎯 خلاصة حكميك</h3>
-        <p style="margin: 0; font-size: 15px;">
+    <footer style="background: #252525; padding: 25px; border-radius: 15px; text-align: center; border-top: 4px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold); margin-top: 0">🎯 خلاصة حكميك</h3>
+        <p style="margin: 0; font-size: 15px">
             محاكي <strong>DuckStation</strong> ليس مجرد مشغل للألعاب، بل هو استوديو تحسين كامل. ابدأ بتفعيل <span class="highlight-blue">Resolution Scaling</span> أولاً، ثم انتقل لـ <span class="highlight-gold">Widescreen Hack</span> لتشعر بالفرق الحقيقي في تجربتك!
         </p>
     </footer>

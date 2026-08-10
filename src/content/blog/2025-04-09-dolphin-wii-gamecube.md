@@ -226,7 +226,7 @@ labels: ["GameCube","Nintendo","Wii"]
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">🧠 4. ضبط إعدادات الجرافيكس</h3>
-            <p style="color: var(--text-secondary); margin-top: 0; margin-bottom: 10px;">من <strong>Graphics</strong> تقدر ترفع الجودة لأقصى حد:</p>
+            <p style="color: var(--text-secondary); margin-top: 0; margin-bottom: 10px">من <strong>Graphics</strong> تقدر ترفع الجودة لأقصى حد:</p>
             <ul class="hakamiq-list-style">
                 <li><span class="hakamiq-highlight-text">Backend:</span> اختر OpenGL أو Vulkan (حسب كرت الشاشة)</li>
                 <li><span class="hakamiq-highlight-text">انتر ريزلوشن:</span> خليه 2x أو 3x = جودة HD أو 4K</li>
@@ -237,7 +237,7 @@ labels: ["GameCube","Nintendo","Wii"]
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">✨ 5. تفعيل الشيدرات (Shaders)</h3>
-            <p style="color: var(--text-secondary); margin-top: 0; margin-bottom: 10px;">لإضافة لمسة جمالية عصرية أو كلاسيكية:</p>
+            <p style="color: var(--text-secondary); margin-top: 0; margin-bottom: 10px">لإضافة لمسة جمالية عصرية أو كلاسيكية:</p>
             <ul class="hakamiq-list-style">
                 <li>من تبويب <span class="hakamiq-highlight-text">Enhancements → Post-Processing Effect</span></li>
                 <li>اختر تأثير مثل <span class="hakamiq-code-tag">CRT</span> (كلاسيكي) أو <span class="hakamiq-code-tag">Bloom</span> (إضاءة ناعمة)</li>
@@ -265,15 +265,15 @@ labels: ["GameCube","Nintendo","Wii"]
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">📱 8. المحاكي على الجوال؟</h3>
-            <p style="color: var(--text-secondary); margin: 0;">
+            <p style="color: var(--text-secondary); margin: 0">
                 Dolphin له نسخة أندرويد (تجريبية)، بس يحتاج جوال قوي جداً.<br>
                 موصى به فقط إذا عندك معالج Snapdragon 865 أو أعلى للحصول على أداء مستقر.
             </p>
         </section>
 
-        <section class="hakamiq-info-card" style="grid-column: 1 / -1; border-color: #ffc107;">
-            <h3 class="hakamiq-card-heading" style="color: #ffc107;">💡 9. نصائح سريعة من حكميك</h3>
-            <ul class="hakamiq-list-style" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+        <section class="hakamiq-info-card" style="grid-column: 1 / -1; border-color: #ffc107">
+            <h3 class="hakamiq-card-heading" style="color: #ffc107">💡 9. نصائح سريعة من حكميك</h3>
+            <ul class="hakamiq-list-style" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px">
                 <li>🎯 إذا شفت تقطيع → جرّب تغيير الـ Backend بين Vulkan و OpenGL.</li>
                 <li>📏 خلك على Aspect Ratio = 4:3 للألعاب الكلاسيكية عشان ما تتمطط الصورة.</li>
                 <li>🌀 الألعاب الثقيلة مثل Xenoblade تشتغل بامتياز بس يبغالها جهاز محترم.</li>
@@ -282,8 +282,8 @@ labels: ["GameCube","Nintendo","Wii"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--dolphin-cyan);">🎯 الخلاصة</h3>
-        <p style="margin: 0; color: var(--text-secondary);">
+        <h3 style="margin-top: 0; color: var(--dolphin-cyan)">🎯 الخلاصة</h3>
+        <p style="margin: 0; color: var(--text-secondary)">
             <span class="hakamiq-highlight-text">Dolphin</span> مش بس محاكي… هو منصة كاملة لإعادة إحياء جيل GameCube و Wii بدقة ما كانت ممكنة وقتها.<br>
             سواءً تبغى تلعب Super Mario Galaxy أو Zelda أو Smash… المحاكي بيسهّل لك كل شي.
         </p>

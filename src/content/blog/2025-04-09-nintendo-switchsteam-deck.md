@@ -9,9 +9,9 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-switchsteam-deck.ht
 labels: ["Nintendo","NS"]
 ---
 
-<div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
+<div dir="rtl" style="font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right">
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1b/1b609373c234acff9aed224884e87b3fba92ba7693f7d8e38489376c908622cc.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال Nintendo Switch🆚Steam Deck – من الأفضل؟" border="0" data-original-height="628" data-original-width="1116" height="180" src="/media/blogger/1b/1b609373c234acff9aed224884e87b3fba92ba7693f7d8e38489376c908622cc.jpg" width="320" /></a></div><br /><p><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">إذا تبي تلعب ألعابك "وين ما تروح"، فإنت أكيد سمعت عن </span><strong data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">Switch</strong><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;"> و</span><strong data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">Steam Deck</strong><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">…  
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/1b/1b609373c234acff9aed224884e87b3fba92ba7693f7d8e38489376c908622cc.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال Nintendo Switch🆚Steam Deck – من الأفضل؟" border="0" data-original-height="628" data-original-width="1116" height="180" src="/media/blogger/1b/1b609373c234acff9aed224884e87b3fba92ba7693f7d8e38489376c908622cc.jpg" width="320" /></a></div><br /><p><span>إذا تبي تلعب ألعابك "وين ما تروح"، فإنت أكيد سمعت عن </span><strong>Switch</strong><span> و</span><strong>Steam Deck</strong><span>…  
 بس مين يناسبك أكثر؟ وش الفرق بينهم فعلًا؟  
 خلنا نكسر المقارنة لأقسام واضحة ونتكلم بدون تجميل 👇</span></p>
 
@@ -28,7 +28,7 @@ labels: ["Nintendo","NS"]
 
 <h3>⚙️ 2. العتاد والمواصفات</h3>
 
-<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%">
 <thead>
 <tr><th>العنصر</th><th>Switch (OLED)</th><th>Steam Deck</th></tr>
 </thead>
@@ -68,7 +68,7 @@ labels: ["Nintendo","NS"]
 
 <h3>🔋 5. البطارية</h3>
 
-<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%">
 <thead>
 <tr><th>الجهاز</th><th>مدة البطارية</th></tr>
 </thead>
@@ -109,6 +109,6 @@ labels: ["Nintendo","NS"]
   <li>🔥 <strong>تبغى جهاز قوي، ألعاب ثقيلة، وتحب التعديل والحرية؟</strong> خذ Steam Deck.</li>
 </ul>
 
-<p style="font-weight: bold; text-align: center;">وش تشوف الأفضل؟ أو وش يناسبك أكثر؟ شاركني تحت في التعليقات 👇</p>
+<p style="font-weight: bold; text-align: center">وش تشوف الأفضل؟ أو وش يناسبك أكثر؟ شاركني تحت في التعليقات 👇</p>
 
 </div>

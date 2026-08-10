@@ -66,17 +66,17 @@ labels: ["PlayStation","PS3"]
 <div class="pkg-rap-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg">
                 <img alt="صورة توضيحية ضمن مقال كيفية تشغيل الألعاب عبر ملفات PKG وRAP على RPCS3" class="img-frame" src="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">كيفية تشغيل الألعاب عبر ملفات PKG و RAP على محاكي RPCS3</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">كيفية تشغيل الألعاب عبر ملفات PKG و RAP على محاكي RPCS3</h2>
         <p>إذا كنت تمتلك ألعاب PS3 بصيغ PKG أو RAP، فإن هذا الدليل سيوضح لك الخطوات التقنية الصحيحة لتثبيتها وتشغيل التراخيص الخاصة بها لضمان عملها بأعلى جودة على المحاكي.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">أولاً: تحميل وتثبيت محاكي RPCS3</h3>
+        <h3 style="color: var(--xe-gold)">أولاً: تحميل وتثبيت محاكي RPCS3</h3>
         <ol class="clean-list">
             <li>قم بزيارة الموقع الرسمي: <a href="https://rpcs3.net" target="_blank">rpcs3.net</a> وحمل النسخة المتوافقة مع نظامك.</li>
             <li>استخرج الملفات وقم بتشغيل ملف <code>rpcs3.exe</code> لبدء البرنامج.</li>
@@ -88,7 +88,7 @@ labels: ["PlayStation","PS3"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">ثانياً: إضافة ملفات PKG إلى المحاكي</h3>
+        <h3 style="color: var(--xe-gold)">ثانياً: إضافة ملفات PKG إلى المحاكي</h3>
         <p>لبدء تثبيت اللعبة، اتبع الخطوات التالية داخل واجهة المحاكي:</p>
         <ol class="clean-list">
             <li>اذهب إلى القائمة <b>File</b> ثم اختر <b>Install Firmware</b> لتثبيت ملفات النظام أولاً.</li>
@@ -101,7 +101,7 @@ labels: ["PlayStation","PS3"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">ثالثاً: إضافة ملف RAP (التراخيص)</h3>
+        <h3 style="color: var(--xe-gold)">ثالثاً: إضافة ملف RAP (التراخيص)</h3>
         <p>تحتاج ألعاب PKG إلى ملف ترخيص RAP لتعمل. يتم تفعيل الترخيص يدوياً باتباع المسار التالي:</p>
         <ol class="clean-list">
             <li>قم بنقل ملف <code>.rap</code> إلى المسار التالي في مجلد المحاكي:</li>
@@ -114,13 +114,13 @@ labels: ["PlayStation","PS3"]
         </div>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">رابعاً: تشغيل اللعبة وضبط الأداء</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">رابعاً: تشغيل اللعبة وضبط الأداء</h3>
         <p>بعد اكتمال التثبيت، ستظهر اللعبة في القائمة الرئيسية للمحاكي. اختر اللعبة واضغط على <b>Boot</b>. في حال واجهت مشاكل في الأداء، ينصح بالتوجه لإعدادات الجرافيكس واختيار محرك <b>Vulkan</b> لتحسين سرعة معالجة الرسوميات.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">يعد محاكي RPCS3 الأداة الأقوى حالياً لتشغيل ألعاب PS3؛ وباتباع هذه الخطوات البسيطة ستتمكن من الاستمتاع بمكتبة ألعابك المفضلة بكل سلاسة.</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">يعد محاكي RPCS3 الأداة الأقوى حالياً لتشغيل ألعاب PS3؛ وباتباع هذه الخطوات البسيطة ستتمكن من الاستمتاع بمكتبة ألعابك المفضلة بكل سلاسة.</p>
     </footer>
 
 </div>

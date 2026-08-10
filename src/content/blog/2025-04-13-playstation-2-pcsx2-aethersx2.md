@@ -118,19 +118,19 @@ labels: ["PlayStation","PS2"]
 
 <div class="hakamiq-ps2-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg" target="_blank">
-            <img alt="PS2 Emulators - PCSX2 & AetherSX2" src="/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+            <img alt="PS2 Emulators - PCSX2 & AetherSX2" src="/media/blogger/41/418c283616d5fce4414deca75e87cdb7ec81c8556ef51b7476837b5e53578147.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333" />
         </a>
     </div>
 
     
 
-    <p style="text-align: center;">إذا ودك تعيش لحظات الطيبين وتلعب God of War 2 أو Need for Speed Most Wanted من أيام البلايستيشن 2، فأنت تحتاج محاكي محترم يشغل الألعاب بدون ما يحوّل جهازك إلى مروحة تبريد نفاثة! 💨 هنا بنعطيك الزبدة بين أفضل محاكيين: <strong>PCSX2</strong> للكمبيوتر و<strong>AetherSX2</strong> للجوال.</p>
+    <p style="text-align: center">إذا ودك تعيش لحظات الطيبين وتلعب God of War 2 أو Need for Speed Most Wanted من أيام البلايستيشن 2، فأنت تحتاج محاكي محترم يشغل الألعاب بدون ما يحوّل جهازك إلى مروحة تبريد نفاثة! 💨 هنا بنعطيك الزبدة بين أفضل محاكيين: <strong>PCSX2</strong> للكمبيوتر و<strong>AetherSX2</strong> للجوال.</p>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #4caf50;">💻 PCSX2 – المحاكي الكلاسيكي للكمبيوتر</h3>
+    <h3 class="hakamiq-section-header" style="color: #4caf50">💻 PCSX2 – المحاكي الكلاسيكي للكمبيوتر</h3>
     <p>أقدم وأشهر محاكي لـ PS2، شغال من أيام Windows XP ولا زال يبدع!</p>
     <ul class="hakamiq-tech-box">
         <li>✅ يدعم دقة 1080p وحتى 4K</li>
@@ -145,7 +145,7 @@ labels: ["PlayStation","PS2"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #2196f3;">📱 AetherSX2 – المحاكي المجنون للجوال</h3>
+    <h3 class="hakamiq-section-header" style="color: #2196f3">📱 AetherSX2 – المحاكي المجنون للجوال</h3>
     <p>AetherSX2 جاء لينقذنا من حنين PS2 على الأندرويد. نسخة مبنية على PCSX2، بس مخصصة للجوالات.</p>
     <ul class="hakamiq-tech-box">
         <li>✅ يدعم شاشات لمس + أذرعة تحكم</li>
@@ -160,7 +160,7 @@ labels: ["PlayStation","PS2"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #ff5722;">⚔️ الفرق بين PCSX2 و AetherSX2</h3>
+    <h3 class="hakamiq-section-header" style="color: #ff5722">⚔️ الفرق بين PCSX2 و AetherSX2</h3>
     
     <div class="hakamiq-table-container">
         <table class="hakamiq-compare-table">
@@ -198,15 +198,15 @@ labels: ["PlayStation","PS2"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none;">🎯 الزبدة</h3>
+    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none">🎯 الزبدة</h3>
     <ul class="hakamiq-tech-box">
         <li>🎮 عندك كمبيوتر؟ خذ <strong>PCSX2</strong> بدون تفكير</li>
         <li>📱 تلعب على جوالك؟ <strong>AetherSX2</strong> هو خيارك الأفضل</li>
         <li>🧠 تبي أعلى دقة؟ PCSX2 هو الوحش الحقيقي في هذا المجال</li>
     </ul>
 
-    <p style="font-weight: bold; margin-top: 25px; text-align: center; color: #fff;">🔥 بلايستيشن 2 ما مات… رجع بقوة في جيبك وعلى مكتبك، بس أهم شيء: خلك ذيب في الإعدادات، وراجع ملفات BIOS قبل لا تلوم اللعبة! 😅</p>
+    <p style="font-weight: bold; margin-top: 25px; text-align: center; color: #fff">🔥 بلايستيشن 2 ما مات… رجع بقوة في جيبك وعلى مكتبك، بس أهم شيء: خلك ذيب في الإعدادات، وراجع ملفات BIOS قبل لا تلوم اللعبة! 😅</p>
 
-    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px;">// HAKAMIQ TECH ARCHIVES // 2026 // PS2_EMULATION_GUIDE</p>
+    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px">// HAKAMIQ TECH ARCHIVES // 2026 // PS2_EMULATION_GUIDE</p>
 
 </div>

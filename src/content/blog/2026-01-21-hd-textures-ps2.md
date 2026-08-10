@@ -113,26 +113,26 @@ labels: ["PlayStation","PS2"]
 <div class="textures-archive-wrapper">
 
     <header class="archive-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png">
-                <img alt="أرشيف حزم القوام PCSX2 - حكميك" src="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
+                <img alt="أرشيف حزم القوام PCSX2 - حكميك" src="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png" style="width:100%; max-width: 600px; border-radius: 10px" />
             </a>
         </div>
         <h2>أرشيف حزم القوام (HD Textures) لمحاكي PCSX2</h2>
-        <p style="color: #8b949e;">ترقية جرافيكس الألعاب الكلاسيكية لتناسب شاشات 4K الحديثة</p>
+        <p style="color: #8b949e">ترقية جرافيكس الألعاب الكلاسيكية لتناسب شاشات 4K الحديثة</p>
     </header>
 
     <section class="warning-card">
-        <h3 style="color: var(--t-red); margin-top:0;">⚠️ تنبيه هام قبل التحميل</h3>
+        <h3 style="color: var(--t-red); margin-top:0">⚠️ تنبيه هام قبل التحميل</h3>
         <p>لضمان عمل هذه الحزم بنسبة 100% وتجنب الشاشة السوداء، يوصى باستخدام نسخة المحاكي <b>v1.7.4250</b>. النسخ الأحدث قد تسبب تعارضاً مع بعض ملفات القوام.</p>
-        <div style="text-align: center;">
-            <a href="https://github.com/PCSX2/pcsx2/releases/download/v1.7.4250/pcsx2-v1.7.4250-windows-64bit-SSE4-Qt.7z" class="btn-dl" style="background: var(--t-red); color: white !important; border:none;">📥 تحميل نسخة المحاكي المطلوبة</a>
+        <div style="text-align: center">
+            <a href="https://github.com/PCSX2/pcsx2/releases/download/v1.7.4250/pcsx2-v1.7.4250-windows-64bit-SSE4-Qt.7z" class="btn-dl" style="background: var(--t-red); color: white !important; border:none">📥 تحميل نسخة المحاكي المطلوبة</a>
         </div>
     </section>
 
     <section class="guide-card">
         <h3>⚙️ بروتوكول التركيب</h3>
-        <ol style="padding-right: 20px;">
+        <ol style="padding-right: 20px">
             <li>حمل ملف الـ Texture وفك الضغط عنه.</li>
             <li>ستجد مجلداً يحمل كود اللعبة (مثل: <code>SLUS-21727</code>).</li>
             <li>انقل المجلد بالكامل إلى مسار: <code>PCSX2 > textures</code>.</li>
@@ -142,13 +142,13 @@ labels: ["PlayStation","PS2"]
 
     
 
-    <h2 style="border-right: 4px solid var(--t-cyan); padding-right: 15px; color: white;">🎮 مكتبة الحزم (Mega Server)</h2>
+    <h2 style="border-right: 4px solid var(--t-cyan); padding-right: 15px; color: white">🎮 مكتبة الحزم (Mega Server)</h2>
     
     <div class="game-grid">
         <div class="game-card">
             <div>
                 <h3>Baroque</h3>
-                <p style="font-size: 13px; color: #8b949e;">لعبة RPG سوداوية بأسلوب استكشاف الأبراج المحصنة.</p>
+                <p style="font-size: 13px; color: #8b949e">لعبة RPG سوداوية بأسلوب استكشاف الأبراج المحصنة.</p>
             </div>
             <a href="https://mega.nz/file/Qds2kQAR#H0axHO4bIWOciSqh0jNkkzwpfHMiZ8AukDQfFClLMuI" class="btn-dl" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
@@ -156,43 +156,43 @@ labels: ["PlayStation","PS2"]
         <div class="game-card">
             <div>
                 <h3>Black</h3>
-                <p style="font-size: 13px; color: #8b949e;">ملك ألعاب التصويب (FPS) على الجيل الثاني بجرافيكس سينمائي.</p>
+                <p style="font-size: 13px; color: #8b949e">ملك ألعاب التصويب (FPS) على الجيل الثاني بجرافيكس سينمائي.</p>
             </div>
             <a href="https://mega.nz/file/1NFxQCxb#pTjLHhhXsHFzQkIgIoR4lL-ciNE94LBi83FbCJEeca8" class="btn-dl" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
 
-        <div class="game-card" style="border-color: var(--t-orange);">
+        <div class="game-card" style="border-color: var(--t-orange)">
             <div>
-                <h3 style="color: var(--t-orange);">Devil May Cry 2 (Combined)</h3>
-                <p style="font-size: 12px; color: #8b949e;">حزمة مدمجة للقرصين. <b>مهم:</b> قم بتغيير اسم المجلد حسب الشخصية:</p>
-                <ul style="font-size: 11px; padding-right: 15px;">
+                <h3 style="color: var(--t-orange)">Devil May Cry 2 (Combined)</h3>
+                <p style="font-size: 12px; color: #8b949e">حزمة مدمجة للقرصين. <b>مهم:</b> قم بتغيير اسم المجلد حسب الشخصية:</p>
+                <ul style="font-size: 11px; padding-right: 15px">
                     <li>لـ Lucia: <code>SLUS-20627</code></li>
                     <li>لـ Dante: <code>SLUS-20484</code></li>
                 </ul>
             </div>
-            <a href="https://mega.nz/file/8MFVVTDQ#K2VnsSy2u6mjtsP4T1n9rN_iYjuuF75zsbwjW12Hfhk" class="btn-dl" style="border-color: var(--t-orange); color: var(--t-orange) !important;" target="_blank">تحميل الحزمة ⬇️</a>
+            <a href="https://mega.nz/file/8MFVVTDQ#K2VnsSy2u6mjtsP4T1n9rN_iYjuuF75zsbwjW12Hfhk" class="btn-dl" style="border-color: var(--t-orange); color: var(--t-orange) !important" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
 
         <div class="game-card">
             <div>
                 <h3>The Matrix: Path of Neo</h3>
-                <p style="font-size: 13px; color: #8b949e;">عش رحلة نيو كاملة مع تحكم مذهل بالزمن.</p>
+                <p style="font-size: 13px; color: #8b949e">عش رحلة نيو كاملة مع تحكم مذهل بالزمن.</p>
             </div>
             <a href="https://mega.nz/file/RE03RCCK#Bu0XhEXvsrZzlFIUxck12c1ArUo1ntWVmb6Vv2fXYBU" class="btn-dl" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
 
-        <div class="game-card" style="border-top-color: var(--t-green);">
+        <div class="game-card" style="border-top-color: var(--t-green)">
             <div>
-                <h3 style="color: var(--t-green);">.hack// Collection</h3>
-                <p style="font-size: 13px; color: #8b949e;">تشمل الأجزاء الأربعة: Infection, Mutation, Outbreak, Quarantine.</p>
+                <h3 style="color: var(--t-green)">.hack// Collection</h3>
+                <p style="font-size: 13px; color: #8b949e">تشمل الأجزاء الأربعة: Infection, Mutation, Outbreak, Quarantine.</p>
             </div>
-            <a href="https://mega.nz/file/AJEWgT5C#jRvpYoSHh-31sH0Ik88JLFPtgjhcxuZdUZvGwr2UMaA" class="btn-dl" style="border-color: var(--t-green); color: var(--t-green) !important;" target="_blank">تحميل الحزمة ⬇️</a>
+            <a href="https://mega.nz/file/AJEWgT5C#jRvpYoSHh-31sH0Ik88JLFPtgjhcxuZdUZvGwr2UMaA" class="btn-dl" style="border-color: var(--t-green); color: var(--t-green) !important" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
 
         <div class="game-card">
             <div>
                 <h3>Need For Speed: Underground</h3>
-                <p style="font-size: 13px; color: #8b949e;">بداية أسطورة التعديل والسباقات الليلية.</p>
+                <p style="font-size: 13px; color: #8b949e">بداية أسطورة التعديل والسباقات الليلية.</p>
             </div>
             <a href="https://mega.nz/file/cYFHgYRB#wrGA6tTGYMOLTh2n7YGliz8XbjwkpaBUdQ8peFHKKxI" class="btn-dl" target="_blank">تحميل الحزمة ⬇️</a>
         </div>
@@ -200,10 +200,10 @@ labels: ["PlayStation","PS2"]
 
     
 
-    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px solid #30363d; text-align: center;">
-        <h2 style="color: white; font-size: 32px; letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #666; font-family: monospace; font-size: 14px;">TEXTURE_ARCHIVE_LOADED // MEGA_SERVER_ACTIVE</p>
-        <p style="margin-top: 15px; font-size: 13px; color: #8b949e;">تم نقل كافة الروابط لسيرفرات Mega لضمان بقائها للأبد. استمتع بالجرافيكس الجديد!</p>
+    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px solid #30363d; text-align: center">
+        <h2 style="color: white; font-size: 32px; letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #666; font-family: monospace; font-size: 14px">TEXTURE_ARCHIVE_LOADED // MEGA_SERVER_ACTIVE</p>
+        <p style="margin-top: 15px; font-size: 13px; color: #8b949e">تم نقل كافة الروابط لسيرفرات Mega لضمان بقائها للأبد. استمتع بالجرافيكس الجديد!</p>
     </footer>
 
 </div>

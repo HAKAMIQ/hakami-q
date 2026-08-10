@@ -45,7 +45,7 @@ labels: ["N3DS","Nintendo"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/a2/a2481dfd4075b9f04b0c6f1d02424401166885ee42aec7ee0bc556ad350042e8.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال 🎨 كيف تفعل الشيدرز وHQ Graphics على ألعاب 3DS بالمحاكي؟" border="0" data-original-height="1536" data-original-width="1024" height="320" src="/media/blogger/a2/a2481dfd4075b9f04b0c6f1d02424401166885ee42aec7ee0bc556ad350042e8.png" width="213" /></a></div><br /><h2>🎨 كيف تخلّي ألعاب 3DS تطلع بجودة HD؟</h2>
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/a2/a2481dfd4075b9f04b0c6f1d02424401166885ee42aec7ee0bc556ad350042e8.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال 🎨 كيف تفعل الشيدرز وHQ Graphics على ألعاب 3DS بالمحاكي؟" border="0" data-original-height="1536" data-original-width="1024" height="320" src="/media/blogger/a2/a2481dfd4075b9f04b0c6f1d02424401166885ee42aec7ee0bc556ad350042e8.png" width="213" /></a></div><br /><h2>🎨 كيف تخلّي ألعاب 3DS تطلع بجودة HD؟</h2>
 <p>
 محاكي <strong>Citra</strong> يسمح لك تفعّل الشيدرز (Shaders)  
 وترفع دقة الألعاب إلى جودة عالية تخليك تحس اللعبة نازلة على سويتش 😎  

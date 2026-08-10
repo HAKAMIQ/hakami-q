@@ -64,12 +64,12 @@ labels: ["N3DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/91/919b45e40b52e3ed4747151438f2dbbc820e4f2103cbb00462d2eb00ffdd3c81.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/91/919b45e40b52e3ed4747151438f2dbbc820e4f2103cbb00462d2eb00ffdd3c81.png" width="213" alt="أفضل محاكيات 3DS" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 ما هو المحاكي الأفضل لتشغيل Nintendo 3DS؟</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 ما هو المحاكي الأفضل لتشغيل Nintendo 3DS؟</h2>
         <p>إذا كنت ترغب في تجربة ألعاب مثل Pokémon Sun أو Mario 3D Land على جهازك الحالي، فإن المحاكيات اليوم وصلت لمستوى تقني مذهل، حيث تقدم أداءً يقارب الجهاز الأصلي، بل ويتفوق عليه في أحيان كثيرة.</p>
     </header>
 
@@ -94,7 +94,7 @@ labels: ["N3DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">💡 المتطلبات التقنية للتشغيل</h3>
+        <h3 style="color: var(--xe-gold)">💡 المتطلبات التقنية للتشغيل</h3>
         
         <ul class="clean-list">
             <li>📀 توفير ملفات الألعاب بصيغة <code>.3ds</code> أو <code>.cia</code> نظيفة.</li>
@@ -105,8 +105,8 @@ labels: ["N3DS","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من الناحية التقنية، يظل <b>Citra الرسمي</b> هو المعيار الذهبي لأي شخص يبحث عن الاستقرار على الحاسوب. أما لمستخدمي الأندرويد، فننصح بالبدء بالنسخة الرسمية، وفي حال واجهت بطئاً، انتقل للنسخ المعدلة مثل MegaZ. تذكر دائماً: كلما رفعت دقة الشاشة (Internal Resolution) في المحاكي، حصلت على تفاصيل بصرية لم تكن موجودة حتى في الجهاز الأصلي! 😍</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من الناحية التقنية، يظل <b>Citra الرسمي</b> هو المعيار الذهبي لأي شخص يبحث عن الاستقرار على الحاسوب. أما لمستخدمي الأندرويد، فننصح بالبدء بالنسخة الرسمية، وفي حال واجهت بطئاً، انتقل للنسخ المعدلة مثل MegaZ. تذكر دائماً: كلما رفعت دقة الشاشة (Internal Resolution) في المحاكي، حصلت على تفاصيل بصرية لم تكن موجودة حتى في الجهاز الأصلي! 😍</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

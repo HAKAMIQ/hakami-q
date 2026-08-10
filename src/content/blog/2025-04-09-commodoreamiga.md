@@ -107,13 +107,13 @@ labels: ["Atari","Commodore-AMIGA"]
 <div class="amiga-guide-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/50/5026aba3fbd0ac0213c6ac52c3cc79d24a1affd2886e34d3b313c253de694759.png">
                 <img class="img-frame" alt="Commodore Amiga الأسطوري" src="/media/blogger/50/5026aba3fbd0ac0213c6ac52c3cc79d24a1affd2886e34d3b313c253de694759.png" />
             </a>
         </div>
         <h2>🖥️ Commodore Amiga: أيقونة الإبداع الرقمي الخالدة</h2>
-        <p style="opacity: 0.8; margin-top: 10px;">الجهاز الذي سبق عصره في الرسوم، الصوت، وتعدد المهام الحقيقي</p>
+        <p style="opacity: 0.8; margin-top: 10px">الجهاز الذي سبق عصره في الرسوم، الصوت، وتعدد المهام الحقيقي</p>
     </header>
 
     <section class="tech-card">
@@ -128,10 +128,10 @@ labels: ["Atari","Commodore-AMIGA"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--am-orange);">
+    <section class="tech-card" style="border-right-color: var(--am-orange)">
         <h3>🎮 مملكة ألعاب الأركيد</h3>
         <p>مكتبة الأميغا ضمت آلاف العناوين التي تميزت بسلاسة الحركة (Scrolling) وجودة الموسيقى الإلكترونية. أشهر الأساطير:</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>⚔️ <b>Shadow of the Beast:</b> استعراض بصري مذهل للخلفيات المتعددة.</li>
             <li>🚀 <b>Turrican II:</b> أروع موسيقى وأكشن في عصر الـ 16-bit.</li>
             <li>🎮 <b>Lemmings:</b> اللعبة التي ولدت على الأميغا وغزت العالم.</li>
@@ -141,17 +141,17 @@ labels: ["Atari","Commodore-AMIGA"]
 
     
 
-    <section class="tech-card" style="border-right-color: var(--am-purple);">
+    <section class="tech-card" style="border-right-color: var(--am-purple)">
         <h3>📦 المحاكاة اليوم (Emulation)</h3>
         <p>لا تحتاج لامتلاك الجهاز الأصلي؛ يمكنك استحضار روح الأميغا عبر أفضل المحاكيات لعام 2026:</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>🔹 <b>FS-UAE:</b> المحاكي الأكثر توازناً بواجهة رسومية سهلة.</li>
             <li>🔹 <b>Amiberry:</b> الخيار الأول لمستخدمي Raspberry Pi.</li>
             <li>🔹 <b>RetroArch:</b> يوفر نواة <code>Puae</code> لتشغيل مكتبة الأميغا بالكامل.</li>
         </ul>
 
-        <h4 style="margin-top: 25px; color: var(--am-red);">🔑 متطلب تشغيل BIOS (Kickstart)</h4>
-        <p style="font-size: 14px;">للمحاكاة الصحيحة، ستحتاج لملفات الـ ROM الخاصة بالنظام وتسمى <b>Kickstart</b>:</p>
+        <h4 style="margin-top: 25px; color: var(--am-red)">🔑 متطلب تشغيل BIOS (Kickstart)</h4>
+        <p style="font-size: 14px">للمحاكاة الصحيحة، ستحتاج لملفات الـ ROM الخاصة بالنظام وتسمى <b>Kickstart</b>:</p>
         <div class="bios-box">
             kick13.rom (لجهاز Amiga 500)<br>
             kick20.rom (لجهاز Amiga 600)<br>
@@ -160,12 +160,12 @@ labels: ["Atari","Commodore-AMIGA"]
     </section>
 
     <footer>
-        <h3 style="color: var(--am-blue); margin-top:0;">🎯 خلاصة الحكميك</h3>
-        <p style="font-size: 15px; color: #8b949e; max-width: 800px; margin: 0 auto;">
+        <h3 style="color: var(--am-blue); margin-top:0">🎯 خلاصة الحكميك</h3>
+        <p style="font-size: 15px; color: #8b949e; max-width: 800px; margin: 0 auto">
             الأميغا كان مدرسة بحد ذاتها. اللي اشتغل عليه يعرف إن التقنية كانت سابقة وقتها بمراحل. سواء كنت تبحث عن النوستالجيا أو تدرس تاريخ الفن الرقمي، فالأميغا هو الوجهة الأولى.
         </p>
-        <p style="margin-top: 25px; font-weight: bold; color: var(--am-green); font-size: 18px;">استشعر إبداع ما قبل الإنترنت! 🧠✨</p>
-        <div style="margin-top: 30px; font-size: 11px; color: #555; font-family: monospace;">
+        <p style="margin-top: 25px; font-weight: bold; color: var(--am-green); font-size: 18px">استشعر إبداع ما قبل الإنترنت! 🧠✨</p>
+        <div style="margin-top: 30px; font-size: 11px; color: #555; font-family: monospace">
             // HAKAMIQ TECH ARCHIVES // AMIGA_POWER // 2026
         </div>
     </footer>

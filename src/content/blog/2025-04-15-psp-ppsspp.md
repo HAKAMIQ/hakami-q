@@ -111,14 +111,14 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-homebrew-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg">
-            <img alt="صورة توضيحية ضمن مقال ديمو وهومبرو PSP: ألعاب مجانية وتجريبية تشتغل على PPSSPP" src="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال ديمو وهومبرو PSP: ألعاب مجانية وتجريبية تشتغل على PPSSPP" src="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
     <h2 class="hakamiq-homebrew-title">🎮 ديمو وهومبرو PSP: ألعاب مجانية تشتغل على PPSSPP؟</h2>
-    <p>مو كل شيء لازم تدفع عليه! 😎 فيه ألعاب تجريبية وألعاب مطورين منزليين (هومبرو) تشتغل بكفاءة على محاكي <strong style="color: gold;">PPSSPP</strong>، وتخليك تعيش تجربة جديدة بدون ما تصرف ريال.</p>
+    <p>مو كل شيء لازم تدفع عليه! 😎 فيه ألعاب تجريبية وألعاب مطورين منزليين (هومبرو) تشتغل بكفاءة على محاكي <strong style="color: gold">PPSSPP</strong>، وتخليك تعيش تجربة جديدة بدون ما تصرف ريال.</p>
 
     <hr class="hakamiq-divider" />
 
@@ -144,7 +144,7 @@ labels: ["PlayStation","psp"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #ffc107;">📥 وين تحصل الهومبرو؟</h3>
+    <h3 class="hakamiq-section-title" style="color: #ffc107">📥 وين تحصل الهومبرو؟</h3>
     <ul class="hakamiq-homebrew-box">
         <li>📚 <a class="hakamiq-link" href="https://archive.org/details/psp_homebrew_games" target="_blank">مكتبة Archive.org</a> – كنز من الألعاب</li>
         <li>🎮 متجر الهومبرو المدمج داخل PPSSPP نفسه</li>
@@ -164,7 +164,7 @@ labels: ["PlayStation","psp"]
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-conclusion">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>تبي تجربة جديدة؟ جرب ألعاب الديمو، أو انطلق مع الهومبرو المجانية.  <br>محتوى متجدد، مجاني، وقانوني بالكامل – وراح تكتشف ألعاب ممتعة ما كنت تحلم فيها حتى أيام الـ PSP نفسه.</p>
     </div>
 

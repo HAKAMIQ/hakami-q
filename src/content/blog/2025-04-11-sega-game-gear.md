@@ -64,17 +64,17 @@ labels: ["sega","Sega-GameGear"]
 <div class="sega-emu-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c6/c65c234165ab7395e684625ce1a2ada42ecfbc2ca2952b7ddcbdc08823577c0d.jpg">
                 <img alt="صورة توضيحية ضمن مقال أفضل محاكيات Sega Game Gear للكمبيوتر والأندرويد" class="img-frame" src="/media/blogger/c6/c65c234165ab7395e684625ce1a2ada42ecfbc2ca2952b7ddcbdc08823577c0d.jpg" width="289" />
             </a>
         </div>
         
-        <p style="text-align: center;">تسمح لك محاكيات Game Gear الحديثة باستعادة ذكريات سونيك وتيلز بدقة بصرية محسنة وجودة صوت عالية، دون القلق بشأن مشكلات استهلاك الطاقة في الأجهزة الأصلية.</p>
+        <p style="text-align: center">تسمح لك محاكيات Game Gear الحديثة باستعادة ذكريات سونيك وتيلز بدقة بصرية محسنة وجودة صوت عالية، دون القلق بشأن مشكلات استهلاك الطاقة في الأجهزة الأصلية.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">Kega Fusion (للحاسوب)</h3>
+        <h3 style="color: var(--xe-gold)">Kega Fusion (للحاسوب)</h3>
         <ul class="clean-list">
             <li>يدعم تشغيل منصات Game Gear و Master System و Genesis بالكامل.</li>
             <li>يتميز بواجهة برمجية خفيفة جداً وسرعة إقلاع فورية للألعاب.</li>
@@ -84,7 +84,7 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">RetroArch + Genesis Plus GX</h3>
+        <h3 style="color: var(--xe-gold)">RetroArch + Genesis Plus GX</h3>
         <ul class="clean-list">
             <li>توفر نواة <span class="highlight-blue">Genesis Plus GX</span> أعلى مستويات الدقة في المحاكاة الصوتية والرسومية.</li>
             <li>يتيح استخدام "الشادرات" لمحاكاة مظهر شاشات CRT القديمة بوضوح عالٍ.</li>
@@ -93,8 +93,8 @@ labels: ["sega","Sega-GameGear"]
         <p><b>التوصية التقنية:</b> يفضل استخدام هذه النواة حصرياً لتجنب أي مشاكل في مزامنة الإطارات أو تشوه الصوت.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f1c40f;">
-        <h3 style="color: #f39c12;">MasterGear (للأندرويد)</h3>
+    <section class="section-card" style="border-right: 5px solid #f1c40f">
+        <h3 style="color: #f39c12">MasterGear (للأندرويد)</h3>
         <ul class="clean-list">
             <li>يعتبر المحاكي الأكثر استقراراً وتوافقاً على نظام أندرويد.</li>
             <li>يدعم ميزات الحفظ التلقائي (Save States) وتخصيص أزرار التحكم اللمسية.</li>
@@ -104,7 +104,7 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">Gearsystem (متعدد الأنظمة)</h3>
+        <h3 style="color: var(--xe-gold)">Gearsystem (متعدد الأنظمة)</h3>
         <ul class="clean-list">
             <li>مشروع مفتوح المصدر (Open Source) يتميز بنظافة الكود البرمجي.</li>
             <li>يوفر واجهة مستخدم بسيطة جداً وتركز على الأداء النقي.</li>
@@ -113,13 +113,13 @@ labels: ["sega","Sega-GameGear"]
         <p><b>المصدر الرسمي:</b> <a href="https://github.com/drhelius/gearsystem" target="_blank">GitHub - Gearsystem Repository</a></p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة</h3>
         <p>كان Game Gear جهازاً سابقاً لعصره، وبفضل هذه المحاكيات يمكنك الآن اكتشاف مكتبته الممتعة بدقة 1080p وثبات كامل. اختر المحاكي الذي يناسب منصتك، واستعد لرحلة تقنية تعود بك إلى أوائل التسعينيات.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

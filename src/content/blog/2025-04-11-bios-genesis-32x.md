@@ -71,17 +71,17 @@ labels: ["Genesis32X","sega"]
 <div class="sega32x-bios-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg">
                 <img alt="صورة توضيحية ضمن مقال كيف تجهز ملفات BIOS لتشغيل ألعاب Genesis 32X بدون مشاكل" class="img-frame" src="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg" width="317" />
             </a>
         </div>
         
-        <p style="text-align: center;">تواجه مشكلة الشاشة السوداء عند تشغيل ألعاب 32X؟ غالباً ما يكون السبب هو غياب ملفات النظام الأساسية. إليك الدليل التقني الشامل لضبط ملفات BIOS وضمان عمل المحاكي بكفاءة تامة.</p>
+        <p style="text-align: center">تواجه مشكلة الشاشة السوداء عند تشغيل ألعاب 32X؟ غالباً ما يكون السبب هو غياب ملفات النظام الأساسية. إليك الدليل التقني الشامل لضبط ملفات BIOS وضمان عمل المحاكي بكفاءة تامة.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">ملفات BIOS المطلوبة لمنظومة 32X</h3>
+        <h3 style="color: var(--xe-gold)">ملفات BIOS المطلوبة لمنظومة 32X</h3>
         <p>يحتاج المحاكي إلى ثلاثة ملفات أساسية تمثل أقاليم التشغيل المختلفة، وهي بمثابة العقل المدبر لربط العتاد بالبرمجيات:</p>
         <ul class="clean-list">
             <li><code>32X_G.BIN</code> : ملف BIOS المخصص للنسخة الأمريكية (Genesis).</li>
@@ -91,7 +91,7 @@ labels: ["Genesis32X","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">مسارات التخزين الصحيحة</h3>
+        <h3 style="color: var(--xe-gold)">مسارات التخزين الصحيحة</h3>
         <p>لضمان تعرف منصة <span class="highlight-blue">RetroArch</span> على الملفات، اتبع التسلسل التالي:</p>
         <ol class="clean-list">
             <li>توجه إلى المجلد الرئيسي لتطبيق RetroArch على جهازك.</li>
@@ -101,8 +101,8 @@ labels: ["Genesis32X","sega"]
         <p>لمستخدمي الأندرويد، المسار الافتراضي غالباً ما يكون: <code>Android/data/com.retroarch/files/retroarch/system</code></p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">اختبار جاهزية النظام</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">اختبار جاهزية النظام</h3>
         <ul class="clean-list">
             <li>تأكد من ضبط المسار الصحيح عبر <code>Settings > Directory > System/BIOS</code>.</li>
             <li>استخدم نواة <span class="highlight-blue">PicoDrive</span> لتشغيل أي عنوان من مكتبة 32X.</li>
@@ -112,7 +112,7 @@ labels: ["Genesis32X","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">توجيهات الحصول على الملفات</h3>
+        <h3 style="color: var(--xe-gold)">توجيهات الحصول على الملفات</h3>
         <p>نظراً لحقوق الملكية الفكرية، لا يتم دمج هذه الملفات مع المحاكيات. يمكنك الحصول عليها بالطرق التالية:</p>
         <ul class="clean-list">
             <li>استخراج الملفات كنسخة احتياطية من جهازك الأصلي.</li>
@@ -123,13 +123,13 @@ labels: ["Genesis32X","sega"]
         </div>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">الخلاصة</h3>
         <p>تجهيز ملفات BIOS بشكل صحيح يختصر عليك الكثير من الوقت في استكشاف أخطاء التشغيل. بمجرد وضع الملفات في مسارها الصحيح، ستفتح أمامك مكتبة ألعاب نادرة تستحق الاستكشاف بدقتها الأصلية وتحسينات الـ 32-بت.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

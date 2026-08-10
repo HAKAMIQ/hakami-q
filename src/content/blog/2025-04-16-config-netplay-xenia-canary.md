@@ -111,13 +111,13 @@ labels: ["Xbox","Xbox360"]
 <div class="xenia-netplay-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png">
-                <img class="img-frame" alt="Xenia Canary Netplay Config Guide" src="/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png" style="max-width: 450px;" />
+                <img class="img-frame" alt="Xenia Canary Netplay Config Guide" src="/media/blogger/7b/7b056bb6ae73bae6b0b0879e0f1532134ad33c2d12547f35866a7279fdbf14b3.png" style="max-width: 450px" />
             </a>
         </div>
         <h2>دليل إعداد ملف config لـ Netplay في Xenia Canary</h2>
-        <p style="color: var(--text-muted);">
+        <p style="color: var(--text-muted)">
             ميزة Netplay في Xenia Canary فتحت باباً كبيراً لتجربة اللعب الجماعي على محاكي Xbox 360، لكنها تحتاج إعدادات دقيقة في ملف <code>xenia.config.toml</code> لضمان استقرار الاتصال وسلاسة اللعب الجماعي.
         </p>
     </header>
@@ -128,7 +128,7 @@ labels: ["Xbox","Xbox360"]
         <div class="code-block">
             api_address = "https://xenia-netplay-2a0298c0e3f4.herokuapp.com"
         </div>
-        <p style="font-size: 14px; color: var(--xe-gold);">💡 نصيحة: استخدم دائماً عنواناً مستقراً ومعروفاً لتجنب الانقطاعات المفاجئة.</p>
+        <p style="font-size: 14px; color: var(--xe-gold)">💡 نصيحة: استخدم دائماً عنواناً مستقراً ومعروفاً لتجنب الانقطاعات المفاجئة.</p>
     </section>
 
     <section class="option-card">
@@ -169,12 +169,12 @@ labels: ["Xbox","Xbox360"]
 
     <div class="opinion-box">
         <h3>📝 رأي حكميك الشخصي</h3>
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0">
             تعديل ملف <code>xenia.config.toml</code> ليس مجرد خطوة إضافية، بل هو "مفتاح" الدخول لعالم الأونلاين في Xbox 360 اليوم. ميزة Netplay تطورت بشكل مذهل، ولكنها تظل حساسة جداً لإعدادات الشبكة. ضبط هذه الخيارات بشكل صحيح سيغنيك عن 90% من مشاكل الفصل والتعليق.
         </p>
     </div>
 
-    <footer class="source-links" style="margin-top: 30px; font-size: 14px; border-top: 1px solid #333; padding-top: 15px;">
+    <footer class="source-links" style="margin-top: 30px; font-size: 14px; border-top: 1px solid #333; padding-top: 15px">
         <p>📚 المصادر الرسمية:</p>
         <ul class="styled-list">
             <li><a href="https://github.com/xenia-canary/xenia-canary/wiki/Config-Setup" target="_blank">Xenia Canary Wiki – Config Setup</a></li>

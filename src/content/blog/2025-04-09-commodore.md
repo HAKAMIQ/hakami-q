@@ -103,37 +103,37 @@ labels: ["Commodore"]
 <div class="commodore-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png">
                 <img class="img-frame" alt="جهاز Commodore 64" src="/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png" />
             </a>
         </div>
         <h2>Commodore 64: الأسطورة التي سبقت عمالقة الألعاب</h2>
-        <p style="color: #8b949e; font-size: 16px;">قبل البلايستيشن 🎮، قبل الإكس بوكس 🕹، وحتى قبل النينتندو 🍄.. كان هو نجم الثمانينات المطلق.</p>
+        <p style="color: #8b949e; font-size: 16px">قبل البلايستيشن 🎮، قبل الإكس بوكس 🕹، وحتى قبل النينتندو 🍄.. كان هو نجم الثمانينات المطلق.</p>
     </header>
 
     <section class="tech-card">
         <h3>🧠 وش يعني Commodore؟</h3>
         <p>Commodore هو اسم الشركة التي أطلقت أشهر أجهزتها <b>Commodore 64</b> (أو C64) في عام 1982. سُمّي بالرقم "64" لأنه كان يحتوي على <b>64 كيلوبايت</b> من الرام؛ وهو رقم كان يُعتبر "خرافياً" بمعايير ذلك الزمان.</p>
         
-        <ul class="feature-list" style="margin-top: 20px;">
+        <ul class="feature-list" style="margin-top: 20px">
             <li>💸 <b>السعر:</b> كان رخيصاً جداً مقارنة بأجهزة Apple أو IBM وقتها.</li>
             <li>🎮 <b>الألعاب:</b> قدم جودة رسومية وصوتية تفوقت على المنافسين.</li>
             <li>🧑‍💻 <b>البرمجة:</b> أتاح للمستخدمين كتابة برامجهم بلغة <b>BASIC</b> مباشرة.</li>
         </ul>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--c64-emerald);">
+    <section class="tech-card" style="border-right-color: var(--c64-emerald)">
         <h3>🎮 مكتبة الألعاب الأسطورية</h3>
         <p>اعتُبر الـ C64 منصة ألعاب غير رسمية بفضل مكتبته التي ضمت آلاف العناوين:</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
             <ul class="feature-list">
                 <li>🥋 International Karate</li>
                 <li>🥷 The Last Ninja</li>
                 <li>🏅 Summer Games</li>
                 <li>🐉 Bubble Bobble</li>
             </ul>
-            <img alt="ألعاب C64 الكلاسيكية" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Commodore64_games.jpg" style="width: 100%; border-radius: 10px;" />
+            <img alt="ألعاب C64 الكلاسيكية" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Commodore64_games.jpg" style="width: 100%; border-radius: 10px" />
         </div>
     </section>
 
@@ -149,7 +149,7 @@ labels: ["Commodore"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--c64-cyan);">
+    <section class="tech-card" style="border-right-color: var(--c64-cyan)">
         <h3>💾 كيف تعيش التجربة اليوم؟</h3>
         <p>لا تحتاج للبحث عن الجهاز الأصلي؛ المحاكيات الحديثة تنقل لك التجربة بدقة 100%:</p>
         <div class="emu-box">
@@ -161,13 +161,13 @@ labels: ["Commodore"]
         </div>
     </section>
 
-    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px dashed #30363d; text-align: center;">
-        <h3 style="color: white;">💬 خلاصة الحكميك</h3>
-        <p style="color: #8b949e; font-size: 15px; max-width: 800px; margin: 0 auto;">
+    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px dashed #30363d; text-align: center">
+        <h3 style="color: white">💬 خلاصة الحكميك</h3>
+        <p style="color: #8b949e; font-size: 15px; max-width: 800px; margin: 0 auto">
             Commodore مو بس جهاز قديم، هذا كان بوابة المستقبل. اللي يلعبه اليوم يقدر يعيش نوستالجيا الزمن الجميل، ويشوف بداية كل شيء بلون بسيط وصوت "بيب بيب" 🎵.
         </p>
-        <p style="margin-top: 25px; font-weight: bold; color: var(--c64-cyan); font-size: 18px;">هل فعلاً هذا الجهاز كان قبل نينتندو؟ 😉</p>
-        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace;">
+        <p style="margin-top: 25px; font-weight: bold; color: var(--c64-cyan); font-size: 18px">هل فعلاً هذا الجهاز كان قبل نينتندو؟ 😉</p>
+        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace">
             // HAKAMIQ TECH ARCHIVES // COMMODORE_64_STABLE // 2026
         </div>
     </footer>

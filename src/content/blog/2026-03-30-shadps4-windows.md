@@ -131,11 +131,11 @@ labels: ["PlayStation","PS4"]
                 <img alt="محاكي shadPS4 للألعاب" src="/media/blogger/43/438157cbde6eee0ac5d4864c30f8e6a504d45770e148cdfcb588cf0bb295afd0.jpg" />
             </a>
         </div>
-        <p style="font-size: 1.05em;">مرحباً بكم في هذا التقرير التقني الشامل .. إذا كنت من عشاق محاكيات الألعاب، فمن المؤكد أنك سمعت عن التطور المذهل الذي يشهده محاكي <code data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">shadPS4</code>. في هذا الموضوع ، نستعرض معكم التحديثات الأخيرة حتى عام 2026، مع قائمة كاملة تضم 109 لعبة قابلة للعب بشكل كامل (Playable) على أنظمة ويندوز.</p>
+        <p style="font-size: 1.05em">مرحباً بكم في هذا التقرير التقني الشامل .. إذا كنت من عشاق محاكيات الألعاب، فمن المؤكد أنك سمعت عن التطور المذهل الذي يشهده محاكي <code data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">shadPS4</code>. في هذا الموضوع ، نستعرض معكم التحديثات الأخيرة حتى عام 2026، مع قائمة كاملة تضم 109 لعبة قابلة للعب بشكل كامل (Playable) على أنظمة ويندوز.</p>
     </header>
 
     <section class="section-card">
-        <h3 data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">إحصائيات التوافقية الحالية</h3>
+        <h3 style="color: var(--xe-gold)">إحصائيات التوافقية الحالية</h3>
         <p>يقدم المحاكي أداءً متفاوتًا بناءً على نظام التشغيل، وإليكم نبذة عن الإحصائيات (بناءً على الألعاب المختبرة):</p>
         <ul class="clean-list">
             <li><b>نظام Windows:</b> تم اختبار 724 لعبة، منها 109 لعبة قابلة للعب بالكامل (15.06%)، و184 لعبة تصل لمرحلة اللعب داخل اللعبة.</li>
@@ -145,8 +145,8 @@ labels: ["PlayStation","PS4"]
     </section>
 
     <section class="section-card">
-        <h3 data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">متطلبات التشغيل الأساسية</h3>
-        <div class="table-container" style="max-height: max-content; overflow: hidden;"> <table>
+        <h3 style="color: var(--xe-gold)">متطلبات التشغيل الأساسية</h3>
+        <div class="table-container" style="max-height: max-content; overflow: hidden"> <table>
                 <thead>
                     <tr><th>المتطلب</th><th>المواصفات التقنية الموصى بها</th></tr>
                 </thead>
@@ -161,7 +161,7 @@ labels: ["PlayStation","PS4"]
     </section>
 
     <section class="section-card">
-        <h3 data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-gold, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-gold);">القائمة الكاملة للألعاب القابلة للعب (Windows) - 109 لعبة</h3>
+        <h3 style="color: var(--xe-gold)">القائمة الكاملة للألعاب القابلة للعب (Windows) - 109 لعبة</h3>
         <p>إليك الجدول الكامل لجميع الألعاب التي تم تصنيفها كـ "Playable" (قابلة للعب بشكل كامل) على نظام ويندوز. <b>(يمكنك التمرير داخل الجدول للأسفل لرؤية كافة الألعاب):</b></p>
         
         <div class="table-container">
@@ -288,11 +288,11 @@ labels: ["PlayStation","PS4"]
                 </tbody>
             </table>
         </div>
-        <p data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--text-muted, var(--darkreader-text-000000, #d8d7d5)); color: var(--text-muted); font-size: 0.9em; text-align: left;">* ملاحظة: يتم تحديث توافقية الألعاب باستمرار من قبل مطوري المحاكي، لذا تأكد من استخدام النسخة المذكورة أو أحدث للحصول على أفضل أداء.</p>
+        <p style="color: var(--text-muted); font-size: 0.9em; text-align: left">* ملاحظة: يتم تحديث توافقية الألعاب باستمرار من قبل مطوري المحاكي، لذا تأكد من استخدام النسخة المذكورة أو أحدث للحصول على أفضل أداء.</p>
     </section>
 
-    <footer data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-border-right="" data-darkreader-inline-border-top="" style="--darkreader-inline-bgcolor: var(--darkreader-background-191919, #232425); --darkreader-inline-bgimage: initial; --darkreader-inline-border-bottom: var(--darkreader-border-333333, #7a746c); --darkreader-inline-border-left: var(--darkreader-border-333333, #7a746c); --darkreader-inline-border-right: var(--darkreader-border-333333, #7a746c); --darkreader-inline-border-top: var(--darkreader-border-333333, #7a746c); background: rgb(25, 25, 25); border-radius: 10px; border: 1px solid rgb(51, 51, 51); margin-top: 30px; padding: 20px; text-align: center;">
-        <p data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text--xe-blue, var(--darkreader-text-000000, #d8d7d5)); color: var(--xe-blue); font-weight: bold; margin: 0px;">نتمنى أن يكون هذا الدليل المرجعي مفيداً لكم في تجربة ألعاب PS4 المفضلة لديكم على الكمبيوتر. لا تتردد في ترك تعليق بالأسفل لأي استفسار تقني..</p>
+    <footer style="background: rgb(25, 25, 25); border-radius: 10px; border: 1px solid rgb(51, 51, 51); margin-top: 30px; padding: 20px; text-align: center">
+        <p style="color: var(--xe-blue); font-weight: bold; margin: 0px">نتمنى أن يكون هذا الدليل المرجعي مفيداً لكم في تجربة ألعاب PS4 المفضلة لديكم على الكمبيوتر. لا تتردد في ترك تعليق بالأسفل لأي استفسار تقني..</p>
     </footer>
 
 </div>

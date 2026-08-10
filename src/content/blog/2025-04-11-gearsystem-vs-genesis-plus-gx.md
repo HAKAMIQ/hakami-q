@@ -64,17 +64,17 @@ labels: ["sega","Sega-GameGear"]
 <div class="emu-comparison-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png">
                 <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات Gearsystem vs Genesis Plus GX" class="img-frame" src="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png" width="320" />
             </a>
         </div>
         
-        <p style="text-align: center;">إذا كنت تبحث عن تشغيل مكتبة ألعاب Game Gear على حاسوبك، فإن المفاضلة بين Gearsystem و Genesis Plus GX تعتمد على احتياجاتك من حيث الدقة والمنصة المستخدمة.</p>
+        <p style="text-align: center">إذا كنت تبحث عن تشغيل مكتبة ألعاب Game Gear على حاسوبك، فإن المفاضلة بين Gearsystem و Genesis Plus GX تعتمد على احتياجاتك من حيث الدقة والمنصة المستخدمة.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">الأداء والاستقرار التقني</h3>
+        <h3 style="color: var(--xe-gold)">الأداء والاستقرار التقني</h3>
         <ul class="clean-list">
             <li><b>Gearsystem:</b> يوفر أداءً متزناً ومستقراً جداً كبرنامج مستقل على أنظمة Windows و macOS و Linux.</li>
             <li><b>Genesis Plus GX:</b> يتميز بسرعة استثنائية، خاصة عند استخدامه داخل بيئة RetroArch، مما يجعله مثالياً للأجهزة ذات المواصفات المحدودة.</li>
@@ -83,7 +83,7 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">دقة المحاكاة والمضاهاة</h3>
+        <h3 style="color: var(--xe-gold)">دقة المحاكاة والمضاهاة</h3>
         <ul class="clean-list">
             <li><b>Gearsystem:</b> مشروع مفتوح المصدر يركز على تقديم دقة تقنية قريبة جداً من العتاد الأصلي للجهاز.</li>
             <li><b>Genesis Plus GX:</b> يعتبره المجتمع التقني المعيار الذهبي في دقة محاكاة أنظمة SEGA 8-bit، خاصة في معالجة الصوت ومزامنة الإطارات.</li>
@@ -91,8 +91,8 @@ labels: ["sega","Sega-GameGear"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f39c12;">
-        <h3 style="color: #f39c12;">التوافق والانتشار</h3>
+    <section class="section-card" style="border-right: 5px solid #f39c12">
+        <h3 style="color: #f39c12">التوافق والانتشار</h3>
         <ul class="clean-list">
             <li><b>Gearsystem:</b> متاح كبرنامج مستقل لمختلف الأنظمة، بما في ذلك أجهزة Raspberry Pi.</li>
             <li><b>Genesis Plus GX:</b> بفضل وجوده كـ Core داخل RetroArch، يمكن تشغيله على الهواتف، الشاشات الذكية، وحتى أجهزة الكونسول المعدلة.</li>
@@ -101,24 +101,24 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">سهولة الاستخدام والواجهة</h3>
+        <h3 style="color: var(--xe-blue)">سهولة الاستخدام والواجهة</h3>
         <ul class="clean-list">
             <li><b>Gearsystem:</b> يمتلك واجهة تقليدية بسيطة ومباشرة، تناسب من يفضل البرامج المستقلة (Standalone).</li>
             <li><b>Genesis Plus GX:</b> يستفيد من واجهة RetroArch المتطورة، مما يتيح ميزات متقدمة مثل رفع "انتر ريزلوشن" وتطبيق الفلاتر والشادرات بسهولة.</li>
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الروابط الرسمية (GitHub)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الروابط الرسمية (GitHub)</h3>
         <ul class="clean-list">
             <li><a href="https://github.com/drhelius/gearsystem" target="_blank">مستودع Gearsystem الرسمي</a></li>
             <li><a href="https://github.com/ekeeke/Genesis-Plus-GX" target="_blank">مستودع Genesis Plus GX الرسمي</a></li>
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;"><b>الخلاصة:</b> استخدم Gearsystem إذا أردت محاكياً خفيفاً ومستقلاً، واختر Genesis Plus GX للحصول على التجربة الاحترافية الكاملة والميزات الإضافية.</p>
-        <p style="margin-top: 10px; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0"><b>الخلاصة:</b> استخدم Gearsystem إذا أردت محاكياً خفيفاً ومستقلاً، واختر Genesis Plus GX للحصول على التجربة الاحترافية الكاملة والميزات الإضافية.</p>
+        <p style="margin-top: 10px; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

@@ -63,22 +63,22 @@ labels: ["articles","PlayStation"]
 <div class="emu-intro-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg">
                 <img alt="صورة توضيحية ضمن مقال وش سالفة المحاكيات؟ وش الفرق بين Emulator وBIOS ؟" class="img-frame" src="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">وش يعني محاكي بلايستيشن؟ وهل يشتغل على أي جهاز؟</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">وش يعني محاكي بلايستيشن؟ وهل يشتغل على أي جهاز؟</h2>
         <p>كثيراً ما تتردد كلمة محاكي في أوساط اللاعبين، خصوصاً عند الحديث عن تشغيل ألعاب PS2 على الحاسوب؛ فهل من الممكن حقاً تشغيل الألعاب القديمة على الأجهزة الحديثة؟ وما الذي نحتاجه بالضبط؟</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">وش هو المحاكي؟</h3>
+        <h3 style="color: var(--xe-gold)">وش هو المحاكي؟</h3>
         <p>المحاكي هو برنامج يقلد وظائف جهاز آخر؛ فهو يقوم بخداع اللعبة لتعتقد أنها تعمل على بيئة بلايستيشن الأصلية بينما هي تعمل فعلياً على الحاسوب. وبما أن لكل جهاز معمارية خاصة، فإن المحاكي يعمل على تمثيل هذه المعمارية برمجياً بكل تفاصيلها.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">الفرق بين المحاكي (Emulator) والـ BIOS</h3>
+        <h3 style="color: var(--xe-gold)">الفرق بين المحاكي (Emulator) والـ BIOS</h3>
         <ul class="clean-list">
             <li><b>الـ Emulator:</b> هو البرنامج الأساسي المسؤول عن تشغيل ومعالجة الألعاب.</li>
             <li><b>الـ BIOS:</b> يمثل البرنامج الثابت الأصلي للجهاز؛ وبدونه قد لا تعمل بعض الألعاب أو تظهر أخطاء برمجية غير متوقعة.</li>
@@ -86,7 +86,7 @@ labels: ["articles","PlayStation"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">هل يشتغل على أي جهاز؟</h3>
+        <h3 style="color: var(--xe-gold)">هل يشتغل على أي جهاز؟</h3>
         <p>يعتمد تشغيل المحاكي على نوع المنصة المستهدفة وقوة جهازك الحالي:</p>
         <ul class="clean-list">
             <li>محاكيات PS1 و PS2 تعمل بكفاءة حتى على الأجهزة المتوسطة والضعيفة.</li>
@@ -96,13 +96,13 @@ labels: ["articles","PlayStation"]
         <p>بشكل عام، إذا كان جهازك يحتوي على معالج بـ 4 أنوية أو أكثر، يمكنك البدء بتجربة ممتازة في عالم المحاكاة.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة التقنية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة التقنية</h3>
         <p>المحاكي هو بوابتك لاستعادة ذكريات ألعاب الطفولة على عتاد حديث. كل ما يتطلبه الأمر هو جهاز بمواصفات جيدة، ضبط المحاكي بشكل صحيح، واستخدام ملفات ألعاب قانونية لضمان أفضل تجربة تقنية ممكنة.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">جاهز للبدء؟ اختر المحاكي المناسب، اضبط إعداداتك، واسترجع ذكرياتك بأفضل صورة ممكنة.</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">جاهز للبدء؟ اختر المحاكي المناسب، اضبط إعداداتك، واسترجع ذكرياتك بأفضل صورة ممكنة.</p>
     </footer>
 
 </div>

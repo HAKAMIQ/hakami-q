@@ -100,8 +100,8 @@ labels: ["articles"]
 
 <div class="hakamiq-post-container">
 
-    <div class="separator" style="clear: both; text-align: center;">
-        <a href="/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png" style="margin-left: 1em; margin-right: 1em;">
+    <div class="separator" style="clear: both; text-align: center">
+        <a href="/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png" style="margin-left: 1em; margin-right: 1em">
             <img class="main-post-image" alt="شعار محاكي CitraVR لتشغيل ألعاب نينتندو 3DS على نظارات كويست" title="CitraVR Banner" src="/media/blogger/6b/6be9cb7488c984ce0c32a4c196103deb698fce051f0d7791e159b70788e831a3.png" width="640" height="159" />
         </a>
     </div>
@@ -116,7 +116,7 @@ labels: ["articles"]
     </blockquote>
 
     <h3 class="hakamiq-sub-title">🔗 روابط سريعة ومهمة</h3>
-    <blockquote class="hakamiq-box" style="text-align: center;">
+    <blockquote class="hakamiq-box" style="text-align: center">
         <p>
             <a href="https://github.com/CitraVR/CitraVR#compatibility" target="_blank" rel="noopener">Compatibility</a>
             <span class="link-separator">|</span>
@@ -166,7 +166,7 @@ labels: ["articles"]
     <h3 class="hakamiq-sub-title">🎮 توافق الألعاب والتحكم</h3>
     <blockquote class="hakamiq-box">
         <p><strong>الألعاب:</strong> ليست كل الألعاب تعمل بمثالية بعد. للاطلاع على القائمة المحدثة، قم بزيارة <a href="https://github.com/CitraVR/CitraVR/wiki/Game-Compatibility-List" target="_blank" rel="noopener">صفحة توافق ألعاب CitraVR الرسمية</a>.</p>
-        <hr style="border-color: #eee; margin: 15px 0;">
+        <hr style="border-color: #eee; margin: 15px 0">
         <p><strong>التحكم:</strong> يدعم المحاكي وحدات التحكم اللمسية (Touch)، وأيضاً أيادي التحكم العادية (Bluetooth/USB). يمكنك الاطلاع على <a href="https://github.com/CitraVR/CitraVR/wiki/Touch-Controller-Input-Bindings" target="_blank" rel="noopener">مخطط توزيع الأزرار هنا</a>.</p>
     </blockquote>
 
@@ -179,10 +179,10 @@ labels: ["articles"]
         </ul>
     </blockquote>
 
-    <h3 class="hakamiq-sub-title" style="color: #b71c1c;">💡 خلاصة HAKAMIQ</h3>
+    <h3 class="hakamiq-sub-title" style="color: #b71c1c">💡 خلاصة HAKAMIQ</h3>
     <blockquote class="hakamiq-box hakamiq-summary-box">
         <p><strong>CitraVR</strong> ليس مجرد محاكي، بل هو نظرة مستقبلية لما يمكن أن تكون عليه المحاكاة في الواقع الافتراضي. تجربة ألعاب <strong>Nintendo 3DS</strong> الكلاسيكية بشاشتها ثلاثية الأبعاد داخل نظارة Quest هي تجربة ساحرة وتستحق التجربة لكل محب لألعاب الريترو 🔥.</p>
-        <p style="margin-top: 10px; font-size: 16px;">تابعوا مدونة وقناة حكميك للمزيد من الشروحات الحصرية!</p>
+        <p style="margin-top: 10px; font-size: 16px">تابعوا مدونة وقناة حكميك للمزيد من الشروحات الحصرية!</p>
     </blockquote>
 
 </div>

@@ -114,12 +114,12 @@ labels: ["articles"]
     <header class="tr-header">
         <div class="tr-badge">Native Version • No Emulation</div>
         <h2>Tomb Raider (2013) تصل رسمياً إلى أندرويد</h2>
-        <p style="opacity: 0.9;">تجربة الـ AAA الكاملة الآن في جيبك عبر Feral Interactive</p>
+        <p style="opacity: 0.9">تجربة الـ AAA الكاملة الآن في جيبك عبر Feral Interactive</p>
     </header>
 
     <div class="img-frame">
         <a href="/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png">
-            <img alt="لعبة Tomb Raider 2013 لارا كروفت نسخة الأندرويد الرسمية" src="/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png" style="width:100%; height:auto; display:block;" />
+            <img alt="لعبة Tomb Raider 2013 لارا كروفت نسخة الأندرويد الرسمية" src="/media/blogger/bf/bfcb696c5dbcedbff6bc6e28122b4d386a2ea85b6eea3d6e43809347162b8135.png" style="width:100%; height:auto; display:block" />
         </a>
     </div>
 
@@ -145,13 +145,13 @@ labels: ["articles"]
             <li>السعر: <strong>19.99 دولار أمريكي</strong>.</li>
             <li>تدعم الأجهزة القوية لضمان تجربة مستقرة (قائمة توافق رسمية).</li>
         </ul>
-        <div style="text-align: center;">
+        <div style="text-align: center">
             <a href="https://play.google.com/store/apps/details?id=com.feralinteractive.tombraider_android" class="play-btn" target="_blank">📥 رابط التسجيل المسبق في Google Play</a>
         </div>
     </div>
 
-    <div class="tr-card" style="background: #f8fafc; border-right: 8px solid #334155;">
-        <h2 style="color: #334155;">💡 رؤية HAKAMIQ</h2>
+    <div class="tr-card" style="background: #f8fafc; border-right: 8px solid #334155">
+        <h2 style="color: #334155">💡 رؤية HAKAMIQ</h2>
         <p>بناءً على تزايد أعداد ألعاب AAA المنتقلة للأندرويد، أرى أن وصول Tomb Raider رسمياً هو المسمار الأخير في نعش فكرة أن الجوال مخصص للألعاب البسيطة فقط. نحن أمام عهد جديد تصبح فيه أجهزة أندرويد منافساً حقيقياً لأجهزة الكونسول المحمولة.</p>
     </div>
 

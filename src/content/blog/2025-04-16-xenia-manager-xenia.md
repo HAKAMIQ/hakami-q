@@ -128,18 +128,18 @@ labels: ["Xbox","Xbox360"]
 <div class="xenia-manager-intro">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png">
-                <img class="img-frame" alt="Xenia Manager Header" src="/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png" style="max-width: 500px; margin: 0 auto;" />
+                <img class="img-frame" alt="Xenia Manager Header" src="/media/blogger/95/95b5ff6cc1c04aac9a3d76b31c7370379ada3f467e763a0c1c45e39401a0ec99.png" style="max-width: 500px; margin: 0 auto" />
             </a>
         </div>
         <h2>Xenia Manager: الأداة الأقوى لإدارة محاكي الإكس بوكس 360</h2>
         <p>Xenia Manager هي أداة طرف ثالث مصممة خصيصاً لتبسيط استخدام محاكي <b>Xenia</b>. تهدف لتوفير تجربة استخدام أسهل وأكثر سلاسة، خصوصاً للمستخدمين الذين يتعاملون مع الألعاب، الباتشات، والإعدادات المتقدمة داخل المحاكي.</p>
-        <p style="color: #ec81a5; font-size: 14px;"><b>ملاحظة:</b> هذه الأداة غير رسمية ولا تتبع لفريق Xenia الأساسي.</p>
+        <p style="color: #ec81a5; font-size: 14px"><b>ملاحظة:</b> هذه الأداة غير رسمية ولا تتبع لفريق Xenia الأساسي.</p>
     </header>
 
     <section class="feature-card">
-        <h3 style="color: var(--xe-yellow);">✨ المميزات الرئيسية</h3>
+        <h3 style="color: var(--xe-yellow)">✨ المميزات الرئيسية</h3>
         <ul class="styled-list">
             <li>إعداد تلقائي بضغطة واحدة لمحاكي Xenia.</li>
             <li>تحديث تلقائي لإصدار Xenia Canary لضمان آخر التقنيات.</li>
@@ -152,17 +152,17 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <div class="quick-links">
-        <h3 style="color: var(--xe-blue); margin-top: 0;">🚀 كيفية البدء</h3>
+        <h3 style="color: var(--xe-blue); margin-top: 0">🚀 كيفية البدء</h3>
         <p>للبدء مباشرة، توجه إلى صفحة <a href="#">Quickstart</a> الخاصة بالأداة واتبع الخطوات البسيطة لتشغيل محاكي Xenia عبر Xenia Manager.</p>
     </div>
 
-    <div class="quick-links" style="border-right-color: #81d4fa;">
-        <h3 style="color: #81d4fa; margin-top: 0;">🙋‍♂️ الأسئلة الشائعة</h3>
+    <div class="quick-links" style="border-right-color: #81d4fa">
+        <h3 style="color: #81d4fa; margin-top: 0">🙋‍♂️ الأسئلة الشائعة</h3>
         <p>لو كان لديك أي استفسار، زر صفحة <a href="#">الأسئلة الشائعة (FAQ)</a> للحصول على حلول سريعة ومباشرة لأكثر المشاكل شيوعاً.</p>
     </div>
 
     <section class="feature-card">
-        <h3 style="color: var(--xe-pink);">🖼️ صور من واجهة البرنامج</h3>
+        <h3 style="color: var(--xe-pink)">🖼️ صور من واجهة البرنامج</h3>
         <div class="gallery-grid">
             <div class="gallery-item">
                 <a href="/media/blogger/71/711c80abc5255b5648a64ab71972c24f2167fae95f7b7c1f57f7bc9148b38b48.png">
@@ -192,7 +192,7 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <div class="summary-box">
-        <p style="margin: 0; font-weight: bold; color: var(--xe-green);">🔥 باختصار: Xenia Manager هو الخيار المثالي لكل لاعب يبحث عن طريقة بسيطة وسريعة لإدارة وتشغيل ألعاب Xbox 360 على المحاكي بدون صداع الإعدادات اليدوية. 🚀</p>
+        <p style="margin: 0; font-weight: bold; color: var(--xe-green)">🔥 باختصار: Xenia Manager هو الخيار المثالي لكل لاعب يبحث عن طريقة بسيطة وسريعة لإدارة وتشغيل ألعاب Xbox 360 على المحاكي بدون صداع الإعدادات اليدوية. 🚀</p>
     </div>
 
 </div>

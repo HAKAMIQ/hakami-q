@@ -112,9 +112,9 @@ labels: ["PlayStation","PS3"]
 <div class="hakamiq-mac-fix">
 
     <header class="fix-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png">
-                <img alt="إصلاح خطأ تشغيل RPCS3 على الماك - حكميك" src="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
+                <img alt="إصلاح خطأ تشغيل RPCS3 على الماك - حكميك" src="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png" style="width:100%; max-width: 600px; border-radius: 10px" />
             </a>
         </div>
         <h2>إصلاح خطأ "The selected file is invalid" في RPCS3</h2>
@@ -131,27 +131,27 @@ labels: ["PlayStation","PS3"]
         <h3>1. تصحيح هيكلة مجلد اللعبة (Folder Structure)</h3>
         <p>المحاكي يبحث عن ملف <code>EBOOT.BIN</code>. الخطأ الشائع هو اختيار مجلد يحتوي على مجلد آخر بنفس الاسم (Nested Folders).</p>
         <div class="path-example">GameFolder > GameFolder > PS3_GAME</div>
-        <p style="margin-top:15px;"><strong>الحل الصحيح:</strong></p>
-        <ul style="padding-right: 20px;">
+        <p style="margin-top:15px"><strong>الحل الصحيح:</strong></p>
+        <ul style="padding-right: 20px">
             <li>اختر المجلد "الأب" الذي يحتوي مباشرة على مجلد <strong>PS3_GAME</strong> وملف <strong>PS3_DISC.SFB</strong>.</li>
             <li>استخدم خيار <strong>File > Add Games</strong> بدلاً من السحب والإفلات العشوائي.</li>
         </ul>
         
     </section>
 
-    <section class="solution-card" style="border-right-color: var(--mac-orange);">
+    <section class="solution-card" style="border-right-color: var(--mac-orange)">
         <h3>2. التعامل مع ملفات الـ ISO</h3>
         <p>محاكي RPCS3 **لا يدعم** تشغيل ملفات <code>.ISO</code> مباشرة على الماك أو الويندوز.</p>
-        <div class="path-example" style="background:#fff7ed; border:1px solid #fed7aa; color:#9a3412;">
+        <div class="path-example" style="background:#fff7ed; border:1px solid #fed7aa; color:#9a3412">
             ⚠️ يجب فك ضغط الـ ISO لاستخراج المجلدات الداخلية أولاً.
         </div>
-        <p style="margin-top:10px;">يمكنك عمل (Mount) للملف داخل macOS ثم نسخ المجلدات الناتجة إلى مكان آخر واختيارها من المحاكي.</p>
+        <p style="margin-top:10px">يمكنك عمل (Mount) للملف داخل macOS ثم نسخ المجلدات الناتجة إلى مكان آخر واختيارها من المحاكي.</p>
     </section>
 
     <section class="solution-card">
         <h3>3. تثبيت ألعاب الـ PKG</h3>
         <p>إذا كانت اللعبة بصيغة <code>.pkg</code>، فهي ليست للتشغيل المباشر (Boot)، بل هي ملف تثبيت للنظام.</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>اذهب إلى: <strong>File > Install Packages/Raps</strong>.</li>
             <li>بعد اكتمال التثبيت، ستظهر أيقونة اللعبة في واجهة المحاكي الرئيسية.</li>
         </ul>
@@ -159,7 +159,7 @@ labels: ["PlayStation","PS3"]
 
     <footer class="mac-tip">
         <p>💡 <strong>نصيحة HAKAMIQ لمستعملي الماك:</strong> تأكد من تحديث نظام macOS وتحديث المحاكي باستمرار، فالتحديثات الأخيرة حسنت الأداء بشكل كبير على معالجات <strong>Apple Silicon</strong>، خاصة في ألعاب مثل God of War III.</p>
-        <p style="margin-top: 15px; font-weight: bold;">📢 تابع مدونتنا للمزيد من الحلول الحصرية!</p>
+        <p style="margin-top: 15px; font-weight: bold">📢 تابع مدونتنا للمزيد من الحلول الحصرية!</p>
     </footer>
 
 </div>

@@ -62,17 +62,17 @@ labels: ["Dreamcast","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7c/7cebfca11823334c50c58db115cb4497a1e7ddf65ad7aae8f3fd3fba82dea86e.png" target="_blank">
                 <img alt="إطلاق تحديث Deecy v0.6.0" class="img-frame" src="/media/blogger/7c/7cebfca11823334c50c58db115cb4497a1e7ddf65ad7aae8f3fd3fba82dea86e.png" width="600" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">محاكي Deecy v0.6.0: تجربة دريم كاست المتطورة بلغة Zig</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">محاكي Deecy v0.6.0: تجربة دريم كاست المتطورة بلغة Zig</h2>
         <p>عشاق أجهزة سيجا الكلاسيكية على موعد مع تحديث ضخم لمحاكي <b>Deecy</b>. هذا المشروع التجريبي المكتوب بلغة البرمجة الحديثة <b>Zig</b>، نجح في تقديم أداء مذهل واستقرار عالٍ في تشغيل ألعاب دريم كاست الشهيرة مثل Soul Calibur و Grandia II، واليوم يأتي الإصدار v0.6.0 ليضع معايير جديدة للأداء والرسوم.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">ما الجديد في إصدار Deecy v0.6.0؟</h3>
+        <h3 style="color: var(--xe-gold)">ما الجديد في إصدار Deecy v0.6.0؟</h3>
         <p>شهد التحديث الأخير دمج أكثر من 100 التزام (Commit) ركزت على تحسين تجربة المستخدم:</p>
         <ul class="clean-list">
             <li><b>تحسين الأداء (Pipeline Cache):</b> تقليل التقطيع (Stutter) بشكل ملحوظ أثناء تجميع المظللات.</li>
@@ -84,7 +84,7 @@ labels: ["Dreamcast","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">دليل اختيار النسخة المناسبة لمعالجك</h3>
+        <h3 style="color: var(--xe-gold)">دليل اختيار النسخة المناسبة لمعالجك</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -100,7 +100,7 @@ labels: ["Dreamcast","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">متطلبات التشغيل الأساسية</h3>
+        <h3 style="color: var(--xe-gold)">متطلبات التشغيل الأساسية</h3>
         <div class="warning-box">
             <b>ملاحظة تقنية:</b> تنسيق الإعدادات تغير في هذا الإصدار، ستحتاج لضبط خياراتك من جديد، لكن يمكنك نقل ملفات VMU وحالات الحفظ يدوياً لمجلد <code>./userdata/</code> الجديد.
         </div>
@@ -111,8 +111,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center;">
-        <p style="margin: 0px;">هل جربتم قوة لغة Zig في محاكاة ألعاب سيجا؟ شاركونا تجربتكم مع إصدار v0.6.0 وأي الألعاب كانت الأفضل أداءً على حواسيبكم!</p>
+    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center">
+        <p style="margin: 0px">هل جربتم قوة لغة Zig في محاكاة ألعاب سيجا؟ شاركونا تجربتكم مع إصدار v0.6.0 وأي الألعاب كانت الأفضل أداءً على حواسيبكم!</p>
     </footer>
 
 </div>

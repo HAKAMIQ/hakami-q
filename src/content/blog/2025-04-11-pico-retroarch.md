@@ -61,17 +61,17 @@ labels: ["Pico","sega"]
 <div class="pico-retroarch-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png">
                 <img alt="صورة توضيحية ضمن مقال طريقة تشغيل ألعاب Pico داخل RetroArch + أفضل النوى" class="img-frame" src="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png" width="195" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب SEGA Pico داخل RetroArch | الدليل التقني</h2>
-        <p style="text-align: center;">استكشف كيفية إعداد وتشغيل نظام SEGA Pico التعليمي عبر منصة RetroArch. سنوضح لك الخطوات البرمجية لتحميل النواة الصحيحة وضبط إعدادات الرندرة للحصول على أفضل أداء ممكن.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">طريقة تشغيل ألعاب SEGA Pico داخل RetroArch | الدليل التقني</h2>
+        <p style="text-align: center">استكشف كيفية إعداد وتشغيل نظام SEGA Pico التعليمي عبر منصة RetroArch. سنوضح لك الخطوات البرمجية لتحميل النواة الصحيحة وضبط إعدادات الرندرة للحصول على أفضل أداء ممكن.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">النواة المعتمدة: Picodrive Core</h3>
+        <h3 style="color: var(--xe-gold)">النواة المعتمدة: Picodrive Core</h3>
         <p>تعتبر نواة <span class="highlight-blue">Picodrive</span> هي الحل البرمجي الأمثل لمحاكاة عتاد SEGA Pico، حيث تمتاز بتوافقية عالية واستهلاك منخفض للموارد.</p>
         <ul class="clean-list">
             <li>اسم النواة التقني: <code>Picodrive</code></li>
@@ -86,8 +86,8 @@ labels: ["Pico","sega"]
         </ol>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">خطوات تحميل وتشغيل المحتوى</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">خطوات تحميل وتشغيل المحتوى</h3>
         <ol class="clean-list">
             <li>تأكد من توفر ملفات الألعاب بصيغة <code>.bin</code> أو <code>.smd</code> سليمة برمجياً.</li>
             <li>من القائمة الرئيسية، اختر <code>Load Core</code> ثم قم بتنشيط Picodrive.</li>
@@ -97,7 +97,7 @@ labels: ["Pico","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">تحسين الأداء وضبط محرك الرندرة</h3>
+        <h3 style="color: var(--xe-gold)">تحسين الأداء وضبط محرك الرندرة</h3>
         <p>للحصول على تجربة بصرية خالية من التقطيع (Stuttering)، يوصى بضبط الخيارات التالية:</p>
         <ul class="clean-list">
             <li>من إعدادات الفيديو <code>Settings > Video</code>، فعل خياري <span class="highlight-blue">Hard GPU Sync</span> و <span class="highlight-blue">VSync</span>.</li>
@@ -106,8 +106,8 @@ labels: ["Pico","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: #29b6f6;">توصيات تقنية إضافية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: #29b6f6">توصيات تقنية إضافية</h3>
         <ul class="clean-list">
             <li>استخدم ميزة <span class="highlight-blue">Save State</span> لحفظ تقدمك في أي لحظة وتجنب فقدان البيانات.</li>
             <li>للحصول على المظهر الكلاسيكي، يمكنك تجربة شادر <code>CRT-Royale</code> من قائمة Shader Presets.</li>
@@ -115,13 +115,13 @@ labels: ["Pico","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة</h3>
         <p>بفضل معمارية RetroArch المرنة، أصبح تشغيل SEGA Pico عملية تقنية بسيطة ومستقرة. دمج نواة Picodrive مع إعدادات الفيديو الصحيحة يضمن لك استعادة ذكريات هذا النظام الفريد بدقة عالية وسلاسة تامة.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

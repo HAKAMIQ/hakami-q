@@ -81,9 +81,9 @@ labels: ["Xbox","Xbox-Original"]
 <div class="dashboard-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png">
-                <img class="img-frame" alt="Xbox Dashboard in xemu" src="/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png" style="max-width: 500px; margin: 0 auto;" />
+                <img class="img-frame" alt="Xbox Dashboard in xemu" src="/media/blogger/8e/8eab2bb0e702570c1040391ad12d2a00d75e8686ab853d82a1c2e5ce3a19662a.png" style="max-width: 500px; margin: 0 auto" />
             </a>
         </div>
         <h2>🧩 إعداد واجهة Dashboard الرسمية والبديلة في محاكي xemu</h2>
@@ -102,12 +102,12 @@ labels: ["Xbox","Xbox-Original"]
             <li>المثبت بداخلها يسمى <b>Dummy Dashboard</b>، وهي واجهة وهمية غير موقعة برمجياً.</li>
             <li>بعض إصدارات الـ BIOS قد تعطيك رسالة خطأ عند الإقلاع بسبب عدم "توقيع" هذه الواجهة الوهمية.</li>
         </ul>
-        <p style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 8px; font-size: 15px;">
+        <p style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 8px; font-size: 15px">
             💡 <b>معلومة:</b> حتى بدون الواجهة، يمكنك تشغيل الألعاب مباشرة من قائمة المحاكي، فالواجهة ليست إلزامية للعب ولكنها أساسية للحصول على التجربة الأصلية كاملة.
         </p>
     </section>
 
-    <section class="info-section" style="border-right: 5px solid var(--xe-cyan);">
+    <section class="info-section" style="border-right: 5px solid var(--xe-cyan)">
         <h3>📥 تثبيت Dashboard الرسمية من Xbox حقيقي</h3>
         <p>للحصول على التجربة الأقرب للأصل، ستحتاج لنسخ ملفات الواجهة من جهاز حقيقي. الطريقة المثالية هي:</p>
         <ol class="styled-steps">
@@ -128,7 +128,7 @@ labels: ["Xbox","Xbox-Original"]
         </ul>
     </section>
 
-    <section class="info-section" style="border-right: 5px solid var(--xe-green);">
+    <section class="info-section" style="border-right: 5px solid var(--xe-green)">
         <h3>📌 ملاحظات تقنية هامة</h3>
         <ul class="styled-steps">
             <li>إذا حصلت على الـ Dashboard من الإنترنت، تأكد أنها مأخوذة من جهاز حقيقي ونظيفة.</li>
@@ -137,8 +137,8 @@ labels: ["Xbox","Xbox-Original"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #444; text-align: center;">
-        <p style="margin: 0; font-weight: bold;">🎮 الآن يمكنك عيش تجربة Xbox الكلاسيكية بالكامل، من واجهة الإقلاع الأيقونية إلى أضخم الألعاب، وكأنك تمتلك جهاز Xbox OG بين يديك! ✨</p>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #444; text-align: center">
+        <p style="margin: 0; font-weight: bold">🎮 الآن يمكنك عيش تجربة Xbox الكلاسيكية بالكامل، من واجهة الإقلاع الأيقونية إلى أضخم الألعاب، وكأنك تمتلك جهاز Xbox OG بين يديك! ✨</p>
     </footer>
 
 </div>

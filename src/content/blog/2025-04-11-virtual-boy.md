@@ -66,41 +66,41 @@ labels: ["Nintendo","VirtualBoy"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/63/63e0eaca6b630cf73dffeed70c4e2c79da7956ba16b490af720715e7d4116b64.jpg">
                 <img class="img-frame" src="/media/blogger/63/63e0eaca6b630cf73dffeed70c4e2c79da7956ba16b490af720715e7d4116b64.jpg" width="320" alt="Virtual Boy Emulation" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">الدليل التقني: أفضل محاكيات نظام Virtual Boy للحواسيب والهواتف الذكية</h2>
-        <p style="text-align: center;">يُعد جهاز Virtual Boy من الأجهزة النادرة في تاريخ الأجهزة المنزلية نظراً لقصر دورة حياته. توفر تقنيات المحاكاة (Emulation) الحديثة فرصة ممتازة لتجربة مكتبة هذا الجهاز البرمجية، مع تجاوز قيود العتاد الأصلي المتمثلة في الشاشات أحادية اللون ذات التباين العالي التي تسبب إجهاداً بصرياً.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">الدليل التقني: أفضل محاكيات نظام Virtual Boy للحواسيب والهواتف الذكية</h2>
+        <p style="text-align: center">يُعد جهاز Virtual Boy من الأجهزة النادرة في تاريخ الأجهزة المنزلية نظراً لقصر دورة حياته. توفر تقنيات المحاكاة (Emulation) الحديثة فرصة ممتازة لتجربة مكتبة هذا الجهاز البرمجية، مع تجاوز قيود العتاد الأصلي المتمثلة في الشاشات أحادية اللون ذات التباين العالي التي تسبب إجهاداً بصرياً.</p>
         
         
     </header>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">1. محاكي Red Dragon (نظام Windows)</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">1. محاكي Red Dragon (نظام Windows)</h3>
         <p>يُعتبر محاكي <strong>Red Dragon</strong> من أقدم البرمجيات المستقرة المخصصة لمحاكاة بيئة Virtual Boy. بُني ليكون خفيفاً ومباشراً لتشغيل ملفات الـ ROM الأساسية.</p>
         <ul class="clean-list">
             <li><strong>كفاءة الموارد:</strong> لا يتطلب مواصفات عتاد (Hardware) متقدمة للتشغيل المستقر، مما يجعله مثالياً للحواسيب القديمة.</li>
             <li><strong>واجهة المستخدم:</strong> يمتلك واجهة رسومية (GUI) مبسطة لا تتطلب إعدادات برمجية معقدة.</li>
             <li><strong>التوافقية:</strong> يوفر توافقية عالية مع معظم الألعاب التجارية المُصدرة للنظام.</li>
         </ul>
-        <a href="https://www.emulator-zone.com/doc.php/virtualboy/reddragon.html" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ تحميل محاكي Red Dragon</a>
+        <a href="https://www.emulator-zone.com/doc.php/virtualboy/reddragon.html" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ تحميل محاكي Red Dragon</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">2. محاكي Mednafen (متعدد الأنظمة)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">2. محاكي Mednafen (متعدد الأنظمة)</h3>
         <p>محاكي <strong>Mednafen</strong> هو بيئة محاكاة متعددة الأنظمة تعتمد على واجهة سطر الأوامر (CLI). يُعرف في الأوساط التقنية بدقته العالية (Accuracy) في محاكاة المعالجات الكلاسيكية.</p>
         <ul class="clean-list">
             <li><strong>دقة المحاكاة:</strong> يقدم أداءً مطابقاً للعتاد الأصلي مع دعم لخيارات العرض ثلاثي الأبعاد المتقدمة.</li>
             <li><strong>الواجهة:</strong> يتطلب استخدام واجهة أمامية (Frontend) مثل MedGUI لتسهيل الاستخدام نظراً لاعتماده الافتراضي على الأوامر النصية.</li>
             <li><strong>المرونة:</strong> يدعم ميزات متقدمة مثل الحفظ اللحظي (Save States) وإعادة تعيين مفاتيح الإدخال بدقة.</li>
         </ul>
-        <a href="https://mednafen.github.io/" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ تحميل محاكي Mednafen</a>
+        <a href="https://mednafen.github.io/" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ تحميل محاكي Mednafen</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">3. بيئة RetroArch (مُتعدد المنصات)</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">3. بيئة RetroArch (مُتعدد المنصات)</h3>
         <p>تمثل <strong>RetroArch</strong> واجهة المحاكاة الأكثر شمولية. لضمان تشغيل ألعاب Virtual Boy، تعتمد المنصة على نواة المعالجة المخصصة <code>Beetle VB</code> (والمبنية على شيفرة Mednafen).</p>
         
         
@@ -110,23 +110,23 @@ labels: ["Nintendo","VirtualBoy"]
             <li><strong>المعالجة البصرية:</strong> دعم كامل لتقنيات رفع الدقة (Upscaling) وإضافة فلاتر التنعيم (Shaders).</li>
             <li><strong>التوافر:</strong> الخيار التقني الأفضل والمستقر للتشغيل على الأجهزة المحمولة (Android / iOS).</li>
         </ul>
-        <a href="https://retroarch.com/?page=platforms" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ تحميل بيئة RetroArch</a>
+        <a href="https://retroarch.com/?page=platforms" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ تحميل بيئة RetroArch</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">4. محاكي VBjin (تخصص الـ VR)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">4. محاكي VBjin (تخصص الـ VR)</h3>
         <p>يُعد <strong>VBjin</strong> تفريعاً برمجياً (Fork) محسناً لمحاكي Red Dragon. صُمم خصيصاً ليُقدم دعماً لتقنيات الواقع الافتراضي الحديثة.</p>
         <ul class="clean-list">
             <li><strong>دعم الـ OVR:</strong> يحتوي على إصدارات مخصصة لدعم نظارات الواقع الافتراضي (مثل Oculus Rift)، لتقديم تجربة العرض المجسم كما خُطط لها في الأصل.</li>
             <li><strong>التوافق:</strong> مُهيأ للعمل باستقرار على بيئات التشغيل الحديثة (Windows 10/11) مع واجهة مستخدم رسومية متكاملة.</li>
         </ul>
-        <a href="https://github.com/1wErt3r/vbjin-ovr" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ تحميل VBjin من مستودع GitHub</a>
+        <a href="https://github.com/1wErt3r/vbjin-ovr" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ تحميل VBjin من مستودع GitHub</a>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <h3 style="color: var(--xe-blue); margin-top: 0;">الخلاصة التقنية</h3>
-        <p style="margin: 0;">تُعد المحاكيات البرمجية الطريقة الأكثر عملية وأماناً لدراسة وتشغيل مكتبة Virtual Boy. من خلال التحكم في لوحات الألوان ودقة العرض عبر برمجيات مثل RetroArch، يمكن تجاوز العيوب التصميمية للجهاز الأصلي واستكشاف العناوين الكلاسيكية بوضوح عالي الجودة.</p>
-        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold;">إعداد: HAKAMIQ</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <h3 style="color: var(--xe-blue); margin-top: 0">الخلاصة التقنية</h3>
+        <p style="margin: 0">تُعد المحاكيات البرمجية الطريقة الأكثر عملية وأماناً لدراسة وتشغيل مكتبة Virtual Boy. من خلال التحكم في لوحات الألوان ودقة العرض عبر برمجيات مثل RetroArch، يمكن تجاوز العيوب التصميمية للجهاز الأصلي واستكشاف العناوين الكلاسيكية بوضوح عالي الجودة.</p>
+        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold">إعداد: HAKAMIQ</p>
     </footer>
 
 </div>

@@ -64,7 +64,7 @@ labels: ["N-DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg" width="320" alt="صورة توضيحية لجودة المحاكي" />
             </a>
@@ -74,7 +74,7 @@ labels: ["N-DS","Nintendo"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📥 1. اختر المحاكي المناسب (لرفع الجودة)</h3>
+        <h3 style="color: var(--xe-gold)">📥 1. اختر المحاكي المناسب (لرفع الجودة)</h3>
         <ul class="clean-list">
             <li><strong>melonDS:</strong> أفضل خيار للكمبيوتر لرفع الدقة بسهولة.</li>
             <li><strong>DeSmuME:</strong> يدعم رفع الجودة، لكن يحتاج شوية تعديل بالإعدادات.</li>
@@ -83,7 +83,7 @@ labels: ["N-DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🔧 2. فعّل Upscaling (رفع الدقة)</h3>
+        <h3 style="color: var(--xe-gold)">🔧 2. فعّل Upscaling (رفع الدقة)</h3>
         <p>هنا تبدأ السحر يصير! طبق الخطوات التالية حسب المحاكي الخاص بك:</p>
         
         
@@ -96,7 +96,7 @@ labels: ["N-DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🎨 3. فعّل الفلاتر (Shaders) إذا متوفر</h3>
+        <h3 style="color: var(--xe-gold)">🎨 3. فعّل الفلاتر (Shaders) إذا متوفر</h3>
         <p>الفلاتر تحسّن جودة العرض وتخلي اللعبة شكلها "مطبوخ على نار هادية":</p>
         <ul class="clean-list">
             <li><strong>في RetroArch أو DeSmuME:</strong> تقدر تستخدم فلاتر <code>xBRZ</code> أو <code>HQ2x</code>.</li>
@@ -105,7 +105,7 @@ labels: ["N-DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">💡 نصائح خرافية:</h3>
+        <h3 style="color: var(--xe-gold)">💡 نصائح خرافية:</h3>
         <ul class="clean-list">
             <li>زود الدقة شوي شوي وشوف الأداء – لا تطقها 6x وانت على كرت شاشة مدمج 🤕</li>
             <li>استخدم شاشة أكبر لو تبي تستمتع بالتفاصيل.</li>
@@ -113,10 +113,10 @@ labels: ["N-DS","Nintendo"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px;">🏁 النتيجة النهائية؟</h3>
-        <p style="margin-bottom: 15px;">اللعبة نفسها... بس مرّت على بوتوكس جرافيكس! 😆<br />شغّل، عدل، وارفع الجودة وخلي DS يتنفس HD وكأنه وُلد من جديد.</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">تحياتي،حكميك</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px">🏁 النتيجة النهائية؟</h3>
+        <p style="margin-bottom: 15px">اللعبة نفسها... بس مرّت على بوتوكس جرافيكس! 😆<br />شغّل، عدل، وارفع الجودة وخلي DS يتنفس HD وكأنه وُلد من جديد.</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">تحياتي،حكميك</p>
     </footer>
 
 </div>

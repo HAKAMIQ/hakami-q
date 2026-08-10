@@ -133,23 +133,23 @@ labels: ["Xbox","Xbox360"]
 <div class="netplay-list-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg">
-                <img class="img-frame" alt="Xenia Netplay Compatibility" src="/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg" style="max-width: 300px;" />
+                <img class="img-frame" alt="Xenia Netplay Compatibility" src="/media/blogger/0c/0c4b57f02871fbc007f24d38a8f4f6733b90716fbf6ee76a88b0f2c81a11d58c.jpg" style="max-width: 300px" />
             </a>
         </div>
         <h2>دليل الألعاب المدعومة في Netplay على محاكي Xenia</h2>
-        <p style="color: var(--text-muted); max-width: 850px; margin: 15px auto 0 auto;">
+        <p style="color: var(--text-muted); max-width: 850px; margin: 15px auto 0 auto">
             مع ميزة Netplay، أصبح بإمكانك عيش تجربة اللعب الجماعي لأساطير Xbox 360 على جهازك الشخصي. في هذا الجدول، نستعرض أشهر الألعاب التي تم اختبارها، سواء كانت تعمل كلياً أو جزئياً، مع ملاحظات تقنية لضمان أفضل أداء.
         </p>
     </header>
 
-    <h3 style="color: var(--xe-cyan); margin-bottom: 15px;">📈 إحصائيات التوافق الحالية:</h3>
+    <h3 style="color: var(--xe-cyan); margin-bottom: 15px">📈 إحصائيات التوافق الحالية:</h3>
     <div class="stats-container">
         <div class="stat-card"><span>Working Public</span><b>148</b></div>
         <div class="stat-card"><span>Tested Locally</span><b>215</b></div>
         <div class="stat-card"><span>Systemlink</span><b>110</b></div>
-        <div class="stat-card" style="border-color: var(--xe-cyan);"><span>Total Supported</span><b>439</b></div>
+        <div class="stat-card" style="border-color: var(--xe-cyan)"><span>Total Supported</span><b>439</b></div>
     </div>
 
     
@@ -224,16 +224,16 @@ labels: ["Xbox","Xbox360"]
     </div>
 
     <section class="opinion-box">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">🎮 رأي حكميك الشخصي - HAKAMIQ</h3>
-        <p style="margin-bottom: 0;">
+        <h3 style="color: var(--xe-gold); margin-top: 0">🎮 رأي حكميك الشخصي - HAKAMIQ</h3>
+        <p style="margin-bottom: 0">
             بصراحة... عندما رأيت كمية الألعاب التي عادت للحياة عبر Netplay انصدمت! ألعاب كانت في طي النسيان، عادت لتعمل وكأنك تملك سيرفر Xbox Live خاص بك. 
             <br><br>
             <b>السر يكمن في الترتيب:</b> تطابق نسخة المحاكي بينك وبين أصدقائك، تحديثات اللعبة (Title Updates)، وتفعيل الخيارات الدقيقة مثل <code>network_mode</code> أو <code>protect_zero</code>. إذا كنت تحب التجارب الجماعية الكلاسيكية، جرب Gears أو Left 4 Dead مع خويك، ستعيش لحظة حماس كأنكم جالسين سوياً قبل 10 سنوات! 😎🔥
         </p>
     </section>
 
-    <div style="margin-top: 30px; text-align: center;">
-        <a href="https://github.com/xenia-canary/xenia-canary/wiki/Netplay-Compatibility" target="_blank" style="color: var(--xe-cyan); text-decoration: none; font-weight: bold;">🔗 اضغط هنا للاطلاع على القائمة الكاملة والمحدثة رسمياً</a>
+    <div style="margin-top: 30px; text-align: center">
+        <a href="https://github.com/xenia-canary/xenia-canary/wiki/Netplay-Compatibility" target="_blank" style="color: var(--xe-cyan); text-decoration: none; font-weight: bold">🔗 اضغط هنا للاطلاع على القائمة الكاملة والمحدثة رسمياً</a>
     </div>
 
 </div>

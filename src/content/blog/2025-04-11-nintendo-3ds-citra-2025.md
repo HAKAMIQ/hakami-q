@@ -60,12 +60,12 @@ labels: ["N3DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7a/7a9412f0c671f0e629c5971a0727087256aa9ba95ca897c176fbda298f5267a5.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/7a/7a9412f0c671f0e629c5971a0727087256aa9ba95ca897c176fbda298f5267a5.png" width="299" alt="بدائل محاكي Citra" />
             </a>
         </div>
-        <h2 style="color: var(--xe-green); text-align: center;">🔥 بعد سقوط Citra... من المتصدر في محاكاة 3DS؟</h2>
+        <h2 style="color: var(--xe-green); text-align: center">🔥 بعد سقوط Citra... من المتصدر في محاكاة 3DS؟</h2>
         <p>من يوم ما نينتندو سكرت Citra في 2024، الكود المفتوح رجّع الروح لمحاكيات 3DS. طلعوا وحوش جديدة على GitHub، بعضها طور مباشر من Citra، وبعضهم كتبوا من الصفر. وهنا جبت لك الزبدة... بدون لف ولا دوران 🎮</p>
     </header>
 
@@ -107,7 +107,7 @@ labels: ["N3DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📊 مقارنة سريعة بين العمالقة</h3>
+        <h3 style="color: var(--xe-gold)">📊 مقارنة سريعة بين العمالقة</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -127,14 +127,14 @@ labels: ["N3DS","Nintendo"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <h3 style="color: var(--xe-gold); margin-top: 0; margin-bottom: 15px;">🎯رأي :</h3>
-        <p style="margin-bottom: 20px;">
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <h3 style="color: var(--xe-gold); margin-top: 0; margin-bottom: 15px">🎯رأي :</h3>
+        <p style="margin-bottom: 20px">
             🔵 للمطورين والتجارب الجديدة: جرب <b>Panda3DS</b><br>
             🟢 للاستقرار واللعب المباشر: خذ <b>Lime3DS</b><br>
             🟡 للجوال: <b>Lemuroid</b> يكفي وزود
         </p>
-        <p style="margin: 15px 0 0 0; color: var(--xe-blue); font-weight: bold;">تحياتي،<br />🕹️ حكميك</p>
+        <p style="margin: 15px 0 0 0; color: var(--xe-blue); font-weight: bold">تحياتي،<br />🕹️ حكميك</p>
     </footer>
 
 </div>

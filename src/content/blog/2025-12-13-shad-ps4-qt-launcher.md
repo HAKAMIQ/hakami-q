@@ -146,7 +146,7 @@ labels: ["PlayStation","PS4"]
         
         <div class="h-alert">
             <strong>محتويات الدليل:</strong>
-            <ul class="feature-list" style="margin-top:10px;">
+            <ul class="feature-list" style="margin-top:10px">
                 <li>تثبيت المحاكي والإعداد الأولي.</li>
                 <li>إضافة الألعاب وتنظيم المكتبة.</li>
                 <li>ضبط الإعدادات الرسومية والتحكم.</li>
@@ -158,7 +158,7 @@ labels: ["PlayStation","PS4"]
     <header class="chapter-header">💻 الفصل الأول – المتطلبات الأساسية</header>
     <section class="chapter-card">
         <p>تأكد من أن جهازك يلبي هذه المواصفات لضمان تجربة محاكاة مستقرة:</p>
-        <div class="table-container" style="overflow-x:auto;">
+        <div class="table-container" style="overflow-x:auto">
             <table class="tech-table">
                 <thead>
                     <tr><th>العنصر</th><th>الحد الأدنى</th><th>الموصى به</th></tr>
@@ -191,7 +191,7 @@ labels: ["PlayStation","PS4"]
     <section class="chapter-card">
         <div class="h-alert">
             <strong>🎨 إعدادات الرسوميات (Graphics):</strong>
-            <ul class="feature-list" style="margin-top:10px;">
+            <ul class="feature-list" style="margin-top:10px">
                 <li><strong>Graphics Device:</strong> اختر كرت الشاشة الخارجي (NVIDIA/AMD).</li>
                 <li><strong>Borderless:</strong> أفضل وضع عرض لتفادي مشاكل الانتقال بين النوافذ.</li>
                 <li><strong>FSR:</strong> فعله لتحسين الأداء ورفع "انتر ريزلوشن" الصورة.</li>
@@ -223,10 +223,10 @@ labels: ["PlayStation","PS4"]
             <li>لا تفعل إعدادات <strong>Debug</strong> إلا إذا طلب منك المطورون ذلك لتقليل استهلاك المعالج.</li>
             <li>راجع <a href="https://github.com/shadPS4/shadPS4/wiki">ShadPS4 Wiki</a> لمعرفة أفضل إعدادات لكل لعبة.</li>
         </ul>
-        <div class="h-alert" style="text-align:center; background: var(--h-dark-red); color: white;">
+        <div class="h-alert" style="text-align:center; background: var(--h-dark-red); color: white">
             🎮 أنت الآن جاهز لخوض تجربة ألعاب PS4 باحترافية على حاسوبك!
         </div>
-        <p style="text-align:center; margin-top:20px;">📢 تابع <strong>HAKAMIQ</strong> لمزيد من الشروحات الحصرية وتحديثات المحاكيات.</p>
+        <p style="text-align:center; margin-top:20px">📢 تابع <strong>HAKAMIQ</strong> لمزيد من الشروحات الحصرية وتحديثات المحاكيات.</p>
     </section>
 
 </div>

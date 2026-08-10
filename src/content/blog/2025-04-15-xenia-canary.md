@@ -104,9 +104,9 @@ labels: ["Xbox","Xbox360"]
 <div class="xenia-quickstart-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png">
-                <img class="img-frame" alt="Xenia Canary Quickstart" src="/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png" style="max-width: 500px;" />
+                <img class="img-frame" alt="Xenia Canary Quickstart" src="/media/blogger/38/38ddabf1634ac01a16509fc5f2a1f9f555296918fe5afb89d8620e21163512ea.png" style="max-width: 500px" />
             </a>
         </div>
         <h2>دليل Quickstart الكامل لتشغيل ألعاب Xbox 360 عبر محاكي Xenia Canary</h2>
@@ -114,7 +114,7 @@ labels: ["Xbox","Xbox360"]
     </header>
 
     <section class="guide-card">
-        <h3 style="color: var(--xe-yellow);">🧰 متطلبات تشغيل Xenia Canary</h3>
+        <h3 style="color: var(--xe-yellow)">🧰 متطلبات تشغيل Xenia Canary</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -122,7 +122,7 @@ labels: ["Xbox","Xbox360"]
                 </thead>
                 <tbody>
                     <tr>
-                        <td><b style="color: var(--xe-green);">موصى بها</b></td>
+                        <td><b style="color: var(--xe-green)">موصى بها</b></td>
                         <td>
                             <ul class="styled-list">
                                 <li>نظام التشغيل: Windows 11 x64</li>
@@ -133,7 +133,7 @@ labels: ["Xbox","Xbox360"]
                         </td>
                     </tr>
                     <tr>
-                        <td><b style="color: var(--xe-orange);">الحد الأدنى</b></td>
+                        <td><b style="color: var(--xe-orange)">الحد الأدنى</b></td>
                         <td>
                             <ul class="styled-list">
                                 <li>النظام: Windows 10 x64 / Linux (Proton)</li>
@@ -152,17 +152,17 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="guide-card">
-        <h3 style="color: var(--xe-blue);">📥 تحميل محاكي Xenia</h3>
+        <h3 style="color: var(--xe-blue)">📥 تحميل محاكي Xenia</h3>
         <ul class="styled-list">
             <li><a href="https://github.com/xenia-canary/xenia-canary" target="_blank">Xenia Canary</a> – الخيار الأفضل (الأكثر تحديثاً).</li>
             <li><a href="https://github.com/xenia-project/xenia" target="_blank">Xenia Master</a> – النسخة المستقرة.</li>
         </ul>
-        <p style="font-size: 14px; opacity: 0.8;">💡 إذا اكتشفه مضاد الفيروسات، تجاهل التنبيه طالما التحميل من الروابط الرسمية أعلاه.</p>
+        <p style="font-size: 14px; opacity: 0.8">💡 إذا اكتشفه مضاد الفيروسات، تجاهل التنبيه طالما التحميل من الروابط الرسمية أعلاه.</p>
     </section>
 
     <section class="guide-card">
-        <h3 style="color: var(--xe-yellow);">💿 استخراج الألعاب من Xbox 360</h3>
-        <p style="color: var(--xe-red);"><b>❌ تنبيه:</b> لا يمكن تشغيل الألعاب مباشرة من القرص، ولا يمكنك استخدام Xbox One/Series لاستخراجها!</p>
+        <h3 style="color: var(--xe-yellow)">💿 استخراج الألعاب من Xbox 360</h3>
+        <p style="color: var(--xe-red)"><b>❌ تنبيه:</b> لا يمكن تشغيل الألعاب مباشرة من القرص، ولا يمكنك استخدام Xbox One/Series لاستخراجها!</p>
         
         <h4>🔌 التجهيز المطلوب:</h4>
         <ul class="styled-list">
@@ -185,14 +185,14 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="guide-card">
-        <h3 style="color: var(--xe-orange);">📂 تثبيت الإضافات (DLCs)</h3>
+        <h3 style="color: var(--xe-orange)">📂 تثبيت الإضافات (DLCs)</h3>
         <p><b>في نسخة Canary:</b> شغل اللعبة لمعرفة الـ Title ID، ثم من القائمة اختر <b>Install Content</b> وحدد حزمة الـ DLC.</p>
         <p><b>في نسخة Master:</b> استخرج الـ DLC باستخدام أداة Velocity إلى المسار التالي:</p>
         <pre>Documents\Xenia\TitleID\00000002</pre>
     </section>
 
     <section class="guide-card">
-        <h3 style="color: var(--xe-blue);">🔗 روابط ومراجع هامة:</h3>
+        <h3 style="color: var(--xe-blue)">🔗 روابط ومراجع هامة:</h3>
         <ul class="styled-list">
             <li><a href="https://xenia.jp" target="_blank">الموقع الرسمي للمشروع</a></li>
             <li><a href="https://xenia.jp/compatibility" target="_blank">قائمة توافق الألعاب</a></li>
@@ -200,8 +200,8 @@ labels: ["Xbox","Xbox360"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #444; text-align: center;">
-        <p style="margin: 0; font-weight: bold;">🎮 نصيحة سريعة: لا تقم بتحويل الألعاب إلى ISO؛ فهي تستهلك مساحة ضخمة بدون أي فائدة تقنية حقيقية!</p>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #444; text-align: center">
+        <p style="margin: 0; font-weight: bold">🎮 نصيحة سريعة: لا تقم بتحويل الألعاب إلى ISO؛ فهي تستهلك مساحة ضخمة بدون أي فائدة تقنية حقيقية!</p>
     </footer>
 
 </div>

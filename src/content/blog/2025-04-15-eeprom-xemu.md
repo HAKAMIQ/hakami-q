@@ -50,7 +50,7 @@ labels: ["Xbox","Xbox-Original"]
 <div class="eeprom-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png">
                 <img alt="صورة توضيحية ضمن مقال إعدادات EEPROM وتعديلها في محاكي xemu" class="img-frame" src="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png" width="320" />
             </a>
@@ -59,22 +59,22 @@ labels: ["Xbox","Xbox-Original"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📄 وين ألقى ملف EEPROM؟</h3>
+        <h3 style="color: var(--xe-gold)">📄 وين ألقى ملف EEPROM؟</h3>
         <p>إذا ما وفرت ملف EEPROM بنفسك، xemu يولّد واحد تلقائيًا عند أول تشغيل. لكن لو تبغى تعدله أو تخصصه، تقدر تختار ملفك الخاص من <b>Settings → EEPROM</b>.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🧰 طريقة تعديل ملف EEPROM</h3>
+        <h3 style="color: var(--xe-gold)">🧰 طريقة تعديل ملف EEPROM</h3>
         <p>فيه طريقتين:</p>
         <ul>
-            <li>🔗 <a href="https://xboxdevwiki.net/Eeprom_Editor" target="_blank" style="color: var(--xe-blue);">Xbox EEPROM Online Editor</a>: أداة على المتصفح لتعديل الإعدادات مباشرة بدون برامج.</li>
-            <li>💾 <a href="https://digiex.net/attachments/xbox-eeprom-editor-1-5-0-rar.14110/" target="_blank" style="color: var(--xe-blue);">XboxEepromEditor</a>: برنامج لويندوز تقدر تستخدمه أوفلاين.</li>
+            <li>🔗 <a href="https://xboxdevwiki.net/Eeprom_Editor" target="_blank" style="color: var(--xe-blue)">Xbox EEPROM Online Editor</a>: أداة على المتصفح لتعديل الإعدادات مباشرة بدون برامج.</li>
+            <li>💾 <a href="https://digiex.net/attachments/xbox-eeprom-editor-1-5-0-rar.14110/" target="_blank" style="color: var(--xe-blue)">XboxEepromEditor</a>: برنامج لويندوز تقدر تستخدمه أوفلاين.</li>
         </ul>
         <p>📌 <b>ملاحظة مهمة:</b> لا تفعل خيار <b>Surround Sound</b> لأن المحاكي ما يدعمه حاليًا، وراح يسبب مشاكل صوت.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🔧 أبرز الإعدادات القابلة للتعديل:</h3>
+        <h3 style="color: var(--xe-gold)">🔧 أبرز الإعدادات القابلة للتعديل:</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -92,20 +92,20 @@ labels: ["Xbox","Xbox-Original"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📤 خطوات عملية لتعديل EEPROM:</h3>
+        <h3 style="color: var(--xe-gold)">📤 خطوات عملية لتعديل EEPROM:</h3>
         <ol>
             <li>حمّل ملف EEPROM الحالي من <b>Settings → EEPROM → Save</b></li>
-            <li>افتح الرابط <a href="https://xboxdevwiki.net/Eeprom_Editor" target="_blank" style="color: var(--xe-blue);">Xbox EEPROM Online Editor</a></li>
+            <li>افتح الرابط <a href="https://xboxdevwiki.net/Eeprom_Editor" target="_blank" style="color: var(--xe-blue)">Xbox EEPROM Online Editor</a></li>
             <li>ارفع الملف واضبط الإعدادات كما تريد</li>
             <li>احفظ الملف الجديد وارجعه إلى xemu من <b>Settings → EEPROM → Load</b></li>
         </ol>
         <p>🧠 <b>ليه مهم تعدل EEPROM؟</b> بعض الألعاب أو البرامج تعتمد على منطقة الجهاز أو نوع الفيديو، فتحتاج تضبط الإعدادات لتجنب مشاكل التشغيل. وأيضًا لو بتشبك أكثر من جهاز xemu على الشبكة، لازم تغير عنوان MAC علشان ما يصير تعارض.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">🧩 خيار احترافي للمطورين والمبرمجين: Fancy Mouse Boot ROM</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">🧩 خيار احترافي للمطورين والمبرمجين: Fancy Mouse Boot ROM</h3>
         <p>لو تبغى محاكي يشتغل من دون الحاجة إلى ملفات MCPX مسربة أو مقرصنة، تقدر تستخدم <b>Fancy Mouse Boot ROM</b>، مشروع مفتوح المصدر يقدر يقلع نظام Xbox بشكل قانوني تمامًا.</p>
-        <p>🔗 <a href="https://github.com/SnowyMouse/fancy-mouse-boot-rom" target="_blank" style="color: var(--xe-blue);">رابط المشروع الرسمي على GitHub</a></p>
+        <p>🔗 <a href="https://github.com/SnowyMouse/fancy-mouse-boot-rom" target="_blank" style="color: var(--xe-blue)">رابط المشروع الرسمي على GitHub</a></p>
 
         <div class="table-container">
             <table>
@@ -122,8 +122,8 @@ labels: ["Xbox","Xbox-Original"]
         <p>🧪 إذا كنت مبرمج أو مطور وتبغى تجربة دقيقة للمحاكي أو تحاكي الـ boot بدقة، هذا خيار ممتاز لك!</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">📝 <b>نصيحة:</b> تقدر تستخدم Fancy Mouse Boot ROM كـ MCPX ROM في إعدادات xemu، فقط استبدل الملف الرسمي بـ <code>mouse.bin</code> بعد ما تبنيه.</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">📝 <b>نصيحة:</b> تقدر تستخدم Fancy Mouse Boot ROM كـ MCPX ROM في إعدادات xemu، فقط استبدل الملف الرسمي بـ <code>mouse.bin</code> بعد ما تبنيه.</p>
     </footer>
 
 </div>

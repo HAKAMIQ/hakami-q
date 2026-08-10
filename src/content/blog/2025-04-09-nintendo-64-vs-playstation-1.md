@@ -137,16 +137,16 @@ labels: ["N64","Nintendo"]
 <div class="battle-3d-wrapper">
 
     <header class="battle-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg">
-                <img class="img-frame" alt="Nintendo 64 vs PlayStation 1" src="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg" style="max-width: 450px;" />
+                <img class="img-frame" alt="Nintendo 64 vs PlayStation 1" src="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg" style="max-width: 450px" />
             </a>
         </div>
         <h2>مواجهة الجيل الخامس: Nintendo 64 ضد PlayStation 1</h2>
         <p>صراع الكارتريدج ضد الأقراص.. من الذي رسم ملامح المستقبل؟</p>
     </header>
 
-    <p style="text-align: center; color: var(--vs-gray); font-size: 16px; margin-bottom: 40px;">
+    <p style="text-align: center; color: var(--vs-gray); font-size: 16px; margin-bottom: 40px">
         في منتصف التسعينات، اشتعلت المنافسة بين جهازين غيّروا شكل الألعاب بالكامل. كل شركة جاءت بفلسفة مختلفة تماماً وكانت تدّعي أنها "المستقبل"… لكن تقنياً وفنياً، من كان الأقوى؟
     </p>
 
@@ -217,18 +217,18 @@ labels: ["N64","Nintendo"]
         <div class="winner-tag winner-tie">🟰 تعادل: كل مكتبة صنعت جيلاً كاملاً من العشاق</div>
     </section>
 
-    <section class="vs-card" style="border: 2px solid var(--vs-dark);">
-        <h3 style="margin-bottom: 15px;">🎯 خلاصة حكميك | من انتصر في النهاية؟</h3>
-        <p style="font-size: 15px; margin: 0;">
+    <section class="vs-card" style="border: 2px solid var(--vs-dark)">
+        <h3 style="margin-bottom: 15px">🎯 خلاصة حكميك | من انتصر في النهاية؟</h3>
+        <p style="font-size: 15px; margin: 0">
             تجارياً، سحقت <b>Sony</b> المنافسة ببيع أكثر من 102 مليون وحدة بفضل سهولة التطوير واعتماد الأقراص، بينما اكتفت <b>Nintendo</b> بـ 32 مليون وحدة. لكن تاريخياً؟ الاثنان فازا. الـ PS1 أسس للقصص السينمائية، والـ N64 أسس لميكانيكا اللعب ثلاثي الأبعاد التي نستخدمها اليوم. 
             <br><br><b>نصيحة للمحاكاة:</b> إذا لعبت ألعاب N64 اليوم على المحاكي، قم برفع الـ <b>انتر ريزلوشن (Internal Resolution)</b> لتتخلص من الضبابية القديمة، وستصدم بمدى نقاء اللعبة!
         </p>
     </section>
 
     <footer>
-        <h2 style="letter-spacing: 4px; margin: 0; color: white;">HAKAMIQ</h2>
-        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px;">// CONSOLE_WARS // GEN_5_ARCHIVE // 2026</p>
-        <p style="margin-top: 25px; font-weight: bold; font-size: 18px; color: #f8fafc;">وش كان جهازك المفضل في هذا الجيل؟ شاركنا في التعليقات 🎮👇</p>
+        <h2 style="letter-spacing: 4px; margin: 0; color: white">HAKAMIQ</h2>
+        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px">// CONSOLE_WARS // GEN_5_ARCHIVE // 2026</p>
+        <p style="margin-top: 25px; font-weight: bold; font-size: 18px; color: #f8fafc">وش كان جهازك المفضل في هذا الجيل؟ شاركنا في التعليقات 🎮👇</p>
     </footer>
 
 </div>

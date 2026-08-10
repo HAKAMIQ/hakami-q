@@ -189,7 +189,7 @@ labels: ["Nintendo","Wii-U"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             <span class="hakamiq-highlight-text">Wii U</span> هو الجيل الثامن من أجهزة نينتندو، واللي نزل عام 2012.<br>
             لكن رغم الاسم، ترى هو مو مجرد تطوير بسيط للـWii… هو تجربة جديدة بالكامل، لكنها للأسف كانت ضحية التسويق وسوء الفهم 💔
         </p>
@@ -208,8 +208,8 @@ labels: ["Nintendo","Wii-U"]
             </div>
         </section>
 
-        <section class="hakamiq-info-card" style="border-bottom: 3px solid var(--wiiu-red);">
-            <h3 class="hakamiq-card-heading" style="color: var(--wiiu-red);">📉 ليه Wii U فشل؟</h3>
+        <section class="hakamiq-info-card" style="border-bottom: 3px solid var(--wiiu-red)">
+            <h3 class="hakamiq-card-heading" style="color: var(--wiiu-red)">📉 ليه Wii U فشل؟</h3>
             <ul class="hakamiq-list-style">
                 <li>💔 الناس حسبوه ملحق للـWii، مو جهاز جديد</li>
                 <li>📺 دعايات ضعيفة، ما وضحت الفكرة</li>
@@ -238,7 +238,7 @@ labels: ["Nintendo","Wii-U"]
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">🛠️ المحاكاة: Cemu Emulator</h3>
-            <p style="color: var(--text-secondary); margin-top: 0;">إذا ما عندك Wii U، لا تشيل هم:</p>
+            <p style="color: var(--text-secondary); margin-top: 0">إذا ما عندك Wii U، لا تشيل هم:</p>
             <ul class="hakamiq-list-style">
                 <li>🎮 محاكي <span class="hakamiq-highlight-text">Cemu</span> يشغّل ألعاب Wii U على PC بدقة 1080p و60fps</li>
                 <li>💻 يشتغل على أجهزة متوسطة وفوق</li>
@@ -251,8 +251,8 @@ labels: ["Nintendo","Wii-U"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--wiiu-cyan);">🎯 خلاصة</h3>
-        <p style="color: var(--text-secondary);">
+        <h3 style="margin-top: 0; color: var(--wiiu-cyan)">🎯 خلاصة</h3>
+        <p style="color: var(--text-secondary)">
             <span class="hakamiq-highlight-text">Wii U</span> فشل في السوق، لكنه فتح الباب لتجربة الـHybrid Console<br>
             هو اللي مشى نينتندو في درب الـSwitch… وكان مختبر الأفكار الثورية اللي نشوفها اليوم.
         </p>

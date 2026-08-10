@@ -122,7 +122,7 @@ labels: ["Nintendo","Wii-U"]
 
 <div class="hakamiq-guide">
 
-    <div class="separator" style="clear: both; text-align: center;">
+    <div class="separator" style="clear: both; text-align: center">
         <a href="/media/blogger/c1/c1f0f68f76a0874738bea3ecf4515b687e11385f1ea501927c653cb3f3295dc2.png">
             <img alt="تشغيل ألعاب GameCube و Wii على Dolphin - مدونة حكميك" class="post-img" height="320" src="/media/blogger/c1/c1f0f68f76a0874738bea3ecf4515b687e11385f1ea501927c653cb3f3295dc2.png" width="320" />
         </a>
@@ -193,9 +193,9 @@ labels: ["Nintendo","Wii-U"]
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>2X / 4X MSAA</td><td>توازن ممتاز</td><td data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-2e7d32, #8ec090); color: #2e7d32;">خفيف جداً</td></tr>
-                    <tr><td>8X MSAA</td><td>جودة عالية</td><td data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-f57c00, #d8924a); color: #f57c00;">متوسط</td></tr>
-                    <tr><td>2X / 4X SSAA</td><td>دقة فائقة</td><td data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-d32f2f, #b15353); color: #d32f2f;">ثقيل (يحتاج كرت قوي)</td></tr>
+                    <tr><td>2X / 4X MSAA</td><td>توازن ممتاز</td><td style="color: #2e7d32">خفيف جداً</td></tr>
+                    <tr><td>8X MSAA</td><td>جودة عالية</td><td style="color: #f57c00">متوسط</td></tr>
+                    <tr><td>2X / 4X SSAA</td><td>دقة فائقة</td><td style="color: #d32f2f">ثقيل (يحتاج كرت قوي)</td></tr>
                 </tbody>
             </table>
         </div>
@@ -204,8 +204,8 @@ labels: ["Nintendo","Wii-U"]
         </div>
     </div>
 
-    <div class="dolphin-card" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-2c3e50, #343d46); --darkreader-inline-bgimage: initial; --darkreader-inline-color: var(--darkreader-text-ffffff, #d8d7d4); background: rgb(44, 62, 80); color: white;">
-        <h3 data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-border-right="" data-darkreader-inline-border-top="" data-darkreader-inline-color="" style="--darkreader-inline-border-bottom: var(--darkreader-border-03a9f4, #2a789b); --darkreader-inline-border-left: var(--darkreader-border-03a9f4, #2a789b); --darkreader-inline-border-right: var(--darkreader-border-03a9f4, #2a789b); --darkreader-inline-border-top: var(--darkreader-border-03a9f4, #2a789b); --darkreader-inline-color: var(--darkreader-text-03a9f4, #4aaad5); border-color: rgb(3, 169, 244); color: #03a9f4;">💡 رؤية HAKAMIQ للتحسين</h3>
+    <div class="dolphin-card" style="background: rgb(44, 62, 80); color: white">
+        <h3 style="border-color: rgb(3, 169, 244); color: #03a9f4">💡 رؤية HAKAMIQ للتحسين</h3>
         <p>التحديثات الأخيرة (أكتوبر 2025) أصلحت مشاكل تاريخية في ألعاب ديزني وحسنت تزامن الوقت (Time Drift). إذا كنت تعاني من تقطيع في الصوت، تأكد من تفعيل <strong>DSP-LLE</strong> لتجربة مطابقة للأصل تماماً.</p>
     </div>
 

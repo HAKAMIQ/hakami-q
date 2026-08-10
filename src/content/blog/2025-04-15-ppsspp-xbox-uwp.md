@@ -121,9 +121,9 @@ labels: ["PlayStation","psp"]
 
 <div class="xbox-emu-wrapper">
 
-    <div style="text-align: center; margin-bottom: 35px;">
+    <div style="text-align: center; margin-bottom: 35px">
         <a href="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg">
-            <img alt="صورة توضيحية ضمن مقال 🟦 تشغيل محاكي PPSSPP على Xbox (UWP) " src="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10;" />
+            <img alt="صورة توضيحية ضمن مقال 🟦 تشغيل محاكي PPSSPP على Xbox (UWP) " src="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10" />
         </a>
     </div>
 
@@ -131,26 +131,26 @@ labels: ["PlayStation","psp"]
     
     <div class="xbox-intro">
         تخيل تشغل ألعاب PSP على شاشة 55 بوصة… وباليد الرسمية حق Xbox؟ 
-        مع نسخة <strong style="color: gold;">UWP</strong> من PPSSPP، هذا الحلم صار حقيقة! ولو إن الطريقة لسه مو رسمية 100٪، لكن شغالة وزي العسل 🔥
+        مع نسخة <strong style="color: gold">UWP</strong> من PPSSPP، هذا الحلم صار حقيقة! ولو إن الطريقة لسه مو رسمية 100٪، لكن شغالة وزي العسل 🔥
     </div>
 
     <hr class="xbox-divider" />
 
-    <h3 class="xbox-section-title" style="color: #ff9800; border-color: #ff9800;">🧠 وش يعني "UWP"؟</h3>
+    <h3 class="xbox-section-title" style="color: #ff9800; border-color: #ff9800">🧠 وش يعني "UWP"؟</h3>
     <p>
         UWP تعني <strong>Universal Windows Platform</strong>، وهي الطريقة الرسمية لتشغيل التطبيقات على أجهزة Xbox بوضع المطور (Developer Mode). PPSSPP له نسخة غير رسمية بصيغة UWP تشتغل بكفاءة على أجهزة Xbox One و Series X/S.
     </p>
 
     <hr class="xbox-divider" />
 
-    <h3 class="xbox-section-title" style="color: #ffc107; border-color: #ffc107;">📦 وش تحتاج؟</h3>
+    <h3 class="xbox-section-title" style="color: #ffc107; border-color: #ffc107">📦 وش تحتاج؟</h3>
     <div class="xbox-box">
         <ul class="xbox-list">
             <li>✅ جهاز Xbox One / Series S / Series X.</li>
             <li>✅ تفعيل <strong>وضع المطور (Developer Mode)</strong> من متجر Xbox.</li>
             <li>✅ جهاز كمبيوتر عشان تثبت ملفات UWP على الـ Xbox عبر الشبكة.</li>
         </ul>
-        <p style="color: #00e676; font-weight: bold; margin-top: 15px;">
+        <p style="color: #00e676; font-weight: bold; margin-top: 15px">
             🎯 تنبيه: إلى الآن، ما فيه نسخة رسمية من PPSSPP للـ Xbox، لكن نسخة UWP غير الرسمية تشتغل بكفاءة عالية.
         </p>
     </div>
@@ -171,9 +171,9 @@ labels: ["PlayStation","psp"]
 
     <hr class="xbox-divider" />
 
-    <h3 class="xbox-section-title" style="color: #f44336; border-color: #f44336;">⚠️ ملاحظات مهمة جداً</h3>
+    <h3 class="xbox-section-title" style="color: #f44336; border-color: #f44336">⚠️ ملاحظات مهمة جداً</h3>
     <div class="xbox-alert">
-        <ul style="padding-right: 20px; margin: 0;">
+        <ul style="padding-right: 20px; margin: 0">
             <li>❌ لا يوجد دعم رسمي من فريق PPSSPP لنسخة الـ Xbox حتى الآن.</li>
             <li>🧪 النسخة تعتبر (تجريبية/غير مستقرة 100%) لكنها قابلة للعب بشكل ممتاز لأغلب الألعاب.</li>
             <li>📦 التحديثات لازم تنزلها وتثبتها يدوياً كل مرة (ما فيه تحديث تلقائي من المتجر).</li>
@@ -182,7 +182,7 @@ labels: ["PlayStation","psp"]
 
     <hr class="xbox-divider" />
 
-    <h3 class="xbox-section-title" style="color: #00e676; border-color: #00e676;">🎯 الزبدة</h3>
+    <h3 class="xbox-section-title" style="color: #00e676; border-color: #00e676">🎯 الزبدة</h3>
     <div class="xbox-success">
         تشغيل PPSSPP على Xbox خيار رهيب للناس اللي تبي تلعب كلاسيكيات PSP على شاشة كبيرة وبدون الحاجة لشبك الكمبيوتر بالتلفزيون. صحيح إنه لسه غير رسمي ويحتاج شوية "حوسة" بالبداية، بس التجربة النهائية فعلاً ممتعة وتستاهل وقتك.
     </div>

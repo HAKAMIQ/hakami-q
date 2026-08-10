@@ -84,14 +84,14 @@ labels: []
 
 <article class="xenia-guide-wrapper">
 
-    <header style="text-align: center;">
+    <header style="text-align: center">
         <div class="img-container">
             <a href="/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png">
                 <img src="/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png" alt="شرح تشغيل Systemlink في محاكي Xenia" loading="lazy">
             </a>
         </div>
         
-        <p>ميزة <strong style="color: var(--xenia-gold);">Systemlink</strong> تفتح لك الباب للعب الجماعي تمامًا كما كان على جهاز Xbox 360، ولكن عبر الشبكة المحلية أو حتى شبكة وهمية (VPN). في هذا الدليل نوضح كل شيء بأسلوب مبسط واحترافي.</p>
+        <p>ميزة <strong style="color: var(--xenia-gold)">Systemlink</strong> تفتح لك الباب للعب الجماعي تمامًا كما كان على جهاز Xbox 360، ولكن عبر الشبكة المحلية أو حتى شبكة وهمية (VPN). في هذا الدليل نوضح كل شيء بأسلوب مبسط واحترافي.</p>
     </header>
 
     <section>
@@ -102,15 +102,15 @@ labels: []
     <section class="highlight-box">
         <h3>📂 أنواع Systemlink</h3>
         <p>
-            <strong style="color: var(--xenia-cyan);">1. Systemlink عبر خادم:</strong> بعض الألعاب لا تشتغل إلا إذا كانت متصلة بخادم وسيط. بدون الخادم، الجلسة ما تنشاف.<br>
-            <strong style="color: var(--xenia-cyan);">2. LAN Systemlink (أوفلاين):</strong> ألعاب تشتغل فورًا على الشبكة المحلية أو Radmin بدون أي إعداد إضافي.
+            <strong style="color: var(--xenia-cyan)">1. Systemlink عبر خادم:</strong> بعض الألعاب لا تشتغل إلا إذا كانت متصلة بخادم وسيط. بدون الخادم، الجلسة ما تنشاف.<br>
+            <strong style="color: var(--xenia-cyan)">2. LAN Systemlink (أوفلاين):</strong> ألعاب تشتغل فورًا على الشبكة المحلية أو Radmin بدون أي إعداد إضافي.
         </p>
     </section>
 
     <section>
         <h3>🔧 خطوات الإعداد باستخدام VPN</h3>
         <ol class="step-list">
-            <li>حمّل برنامج <strong style="color: var(--xenia-gold);">Radmin VPN</strong> وثبّته، ثم ادخل على نفس الشبكة مع صديقك (Join Network).</li>
+            <li>حمّل برنامج <strong style="color: var(--xenia-gold)">Radmin VPN</strong> وثبّته، ثم ادخل على نفس الشبكة مع صديقك (Join Network).</li>
             <li>افتح Xenia واذهب إلى <code>Netplay → Network Mode → LAN/Systemlink</code>.
                 <div class="img-container">
                     <img src="/media/blogger/f1/f1463cd5ba072fc21cfbb79d1c5196dca818e6787219c539586e2fe94b3ba5a5.png" alt="إعدادات الشبكة في Xenia" loading="lazy">
@@ -129,8 +129,8 @@ labels: []
         </ol>
     </section>
 
-    <aside class="highlight-box" style="border-right-color: var(--xenia-gold);">
-        <h3 style="color: var(--xenia-gold);">🧠 ملاحظات مهمة</h3>
+    <aside class="highlight-box" style="border-right-color: var(--xenia-gold)">
+        <h3 style="color: var(--xenia-gold)">🧠 ملاحظات مهمة</h3>
         <ul>
             <li>جميع الأجهزة يجب أن تختار نفس <strong>Network Interface</strong>.</li>
             <li>بعض الألعاب ترفض الاتصال إذا تجاوز الـ <strong>Ping</strong> حاجز 30ms.</li>
@@ -149,11 +149,11 @@ labels: []
             <li>🔹 Borderlands 2</li>
             <li>🔹 والمزيد...</li>
         </ul>
-        <p style="margin-top: 15px;">للقائمة الكاملة: <a href="https://github.com/AdrianCassar/xenia-canary/wiki/Netplay-Compatibility" target="_blank">📄 صفحة التوافق الرسمية</a></p>
+        <p style="margin-top: 15px">للقائمة الكاملة: <a href="https://github.com/AdrianCassar/xenia-canary/wiki/Netplay-Compatibility" target="_blank">📄 صفحة التوافق الرسمية</a></p>
     </section>
 
     <footer class="opinion-card">
-        <h3 style="margin-top: 0;">💬 رأيي الشخصي - HAKAMIQ</h3>
+        <h3 style="margin-top: 0">💬 رأيي الشخصي - HAKAMIQ</h3>
         <p>جربت Systemlink على ألعاب كثيرة باستخدام Radmin VPN، وكانت التجربة مذهلة، خصوصًا لما تضبط كل شيء من واجهة الشبكة وتطابق الإصدارات. رجّعت لي ذكريات الجلسات القديمة بس بجودة حديثة 👌🎮</p>
     </footer>
 

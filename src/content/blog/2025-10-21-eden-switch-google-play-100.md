@@ -126,7 +126,7 @@ labels: ["articles","Nintendo"]
 
     <div class="img-container">
         <a href="/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png">
-            <img alt="إزالة محاكي Eden من متجر جوجل بلاي - أخبار المحاكيات حكميك" src="/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png" style="width:100%; height:auto; display:block;" />
+            <img alt="إزالة محاكي Eden من متجر جوجل بلاي - أخبار المحاكيات حكميك" src="/media/blogger/e0/e0a5d1f6848719b4e93620bd2b0b1f12e1b6f27f6f754d659c43248fcaf864fe.png" style="width:100%; height:auto; display:block" />
         </a>
     </div>
 
@@ -143,7 +143,7 @@ labels: ["articles","Nintendo"]
     <div class="news-card">
         <h3>⚠️ تفاصيل الاختفاء المفاجئ</h3>
         <p>في منتصف أكتوبر 2025، اختفت صفحة Eden تماماً من متجر تطبيقات جوجل. صرح الفريق عبر Reddit بأنهم "يعيدون تقييم قنوات التوزيع" لضمان استمرارية المشروع بعيداً عن التعقيدات القانونية.</p>
-        <div style="text-align: center;">
+        <div style="text-align: center">
             <a href="https://github.com/eden-emulator/eden/releases" class="github-btn" target="_blank">🔗 تحميل الإصدار الأخير من GitHub</a>
         </div>
     </div>
@@ -151,7 +151,7 @@ labels: ["articles","Nintendo"]
     <div class="news-card">
         <h3>📉 الأسباب المحتملة للإزالة</h3>
         <div class="reason-box">
-            <ul style="list-style: none; padding: 0;">
+            <ul style="list-style: none; padding: 0">
                 <li>🔴 <strong>ضغوط نينتندو:</strong> السياسة الصارمة ضد المحاكيات التي تستخدم كوداً موروثاً من Yuzu.</li>
                 <li>🟠 <strong>سياسة جوجل:</strong> الإزالة الاحترازية لتجنب أي إشكالات قانونية متعلقة بحقوق النشر.</li>
                 <li>🟡 <strong>تنظيم داخلي:</strong> رغبة الفريق في النشر عبر منصات تضمن لهم حرية التحديث دون قيود المتجر.</li>
@@ -171,7 +171,7 @@ labels: ["articles","Nintendo"]
     <div class="hakamiq-insight">
         <h4>💡 رؤية HAKAMIQ</h4>
         <p>بصفتي متابعاً دائماً لمسيرة المحاكيات، أرى أن انتقال Eden إلى GitHub هو خطوة ذكية جداً. وجوده هناك يضمن شفافية التطوير واستمراريته بعيداً عن رقابة الشركات، مما يجعله أكثر أماناً لمستقبل المحاكاة على الأندرويد.</p>
-        <p style="margin-top: 15px; font-weight: bold;">📢 تابعوا "حكميك" للحصول على روابط التحديثات الفورية!</p>
+        <p style="margin-top: 15px; font-weight: bold">📢 تابعوا "حكميك" للحصول على روابط التحديثات الفورية!</p>
     </div>
 
 </div>

@@ -84,9 +84,9 @@ labels: ["Nintendo","Wii-U"]
 <div class="cemu-packs-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png">
-                <img alt="Cemu Graphic Packs Guide" src="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png" width="213" style="border-radius: 10px;" />
+                <img alt="Cemu Graphic Packs Guide" src="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png" width="213" style="border-radius: 10px" />
             </a>
         </div>
         <h2>Cemu Graphic Packs: الدليل الهندسي الكامل لعام 2026</h2>
@@ -100,7 +100,7 @@ labels: ["Nintendo","Wii-U"]
     <section class="tech-card">
         <h3>📥 التثبيت التلقائي (الموصى به)</h3>
         <p>بدءاً من الإصدار <b>1.15.1</b>، أصبح بإمكانك جلب التحديثات بضغطة زر:</p>
-        <ol style="padding-right: 20px;">
+        <ol style="padding-right: 20px">
             <li>افتح Cemu واذهب إلى <code>Options -> Graphic packs</code>.</li>
             <li>اضغط على زر <b>Download latest community graphic packs</b> في الأسفل.</li>
             <li>بعد انتهاء التحميل، فعّل الإعدادات التي تناسب قوة جهازك.</li>
@@ -108,26 +108,26 @@ labels: ["Nintendo","Wii-U"]
         <img class="img-frame" alt="واجهة تحميل الحزم في Cemu" src="/media/blogger/4d/4d6988edb9f9c97b77afb14e5fdd845ff7a31fbd791390a4d16638e27f3a179c.png" width="400" />
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--cemu-blue);">
+    <section class="tech-card" style="border-right-color: var(--cemu-blue)">
         <h3>🛠️ التثبيت اليدوي (للمحترفين)</h3>
         <p>إذا كنت تستخدم حزم مخصصة أو تريد العودة لإصدار معين:</p>
-        <ol style="padding-right: 20px;">
+        <ol style="padding-right: 20px">
             <li>حمل ملف ZIP من <a href="https://github.com/slashiee/cemu_graphic_packs" target="_blank">المستودع الرسمي على GitHub</a>.</li>
             <li>احذف كافة الحزم القديمة من مجلد <code>graphicPacks</code> داخل مسار المحاكي.</li>
             <li>فك ضغط الملف الجديد وانقل المجلدات إلى نفس المسار.</li>
         </ol>
-        <div style="display: flex; gap: 10px; justify-content: center;">
+        <div style="display: flex; gap: 10px; justify-content: center">
             <img class="img-frame" alt="مجلد حزم القوام" src="/media/blogger/71/7142eb23d0a47c8881c64c6340900cb18f4c7b81e94d99af9108ed5b48ae607f.png" width="200" />
             <img class="img-frame" alt="هيكل المجلدات" src="/media/blogger/b1/b1697676bd310c95532aee9469e0e33a2f38c05dafc463d7922f3ab60c85a374.png" width="150" />
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--cemu-gold);">
+    <section class="tech-card" style="border-right-color: var(--cemu-gold)">
         <h3>❓ الأسئلة الشائعة وحلول الأداء</h3>
         
         <div class="h-blue">
             <strong>كيف أضيف دقة شاشة مخصصة (Ultrawide)؟</strong>
-            <p style="font-size: 13px; margin-top: 5px;">ادخل مجلد اللعبة ثم <code>Resolution</code> وافتح ملف <code>rules.txt</code>. عدّل القيم يدوياً كما يلي:</p>
+            <p style="font-size: 13px; margin-top: 5px">ادخل مجلد اللعبة ثم <code>Resolution</code> وافتح ملف <code>rules.txt</code>. عدّل القيم يدوياً كما يلي:</p>
             <pre style="background: #000; color: #00ffcc; padding: 10px; border-radius: 8px; direction: ltr; text-align: left; font-size: 12px;">[Preset]
 name = 2560x1080 (Custom)
 $width = 2560
@@ -141,24 +141,24 @@ $height = 1080</pre>
 
     <section class="tech-card">
         <h3>📅 سجل التحديثات الأخيرة (Releases)</h3>
-        <div style="overflow-x: auto;">
+        <div style="overflow-x: auto">
             <table class="version-table">
                 <thead>
                     <tr><th>التاريخ</th><th>التحسين المضاف</th><th>الحالة</th></tr>
                 </thead>
                 <tbody>
                     <tr><td>قبل 3 أسابيع</td><td>Lego City Undercover: Anisotropic Filtering</td><td>✅ جاهز</td></tr>
-                    <tr style="background: #f8fafc;"><td>قبل شهرين</td><td>BotW: 90FPS Advanced Preset Fix</td><td>✅ مستقر</td></tr>
+                    <tr style="background: #f8fafc"><td>قبل شهرين</td><td>BotW: 90FPS Advanced Preset Fix</td><td>✅ مستقر</td></tr>
                     <tr><td>2026 Update</td><td>Global Vulkan Pipeline Optimization</td><td>🚀 جديد</td></tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <footer style="background: #1e293b; color: white; padding: 30px; border-radius: 20px; text-align: center;">
-        <h2 style="color: #60a5fa; letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #94a3b8; font-family: monospace; font-size: 11px; margin-top: 10px;">// GRAPHIC_ENGINE_READY // ALL_SYSTEMS_GO</p>
-        <p style="margin-top: 20px; font-size: 14px;">باستخدام الـ Graphic Packs، أنت لا تلعب فقط، بل تعيد صياغة الجمال البصري للأساطير الكلاسيكية.</p>
+    <footer style="background: #1e293b; color: white; padding: 30px; border-radius: 20px; text-align: center">
+        <h2 style="color: #60a5fa; letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #94a3b8; font-family: monospace; font-size: 11px; margin-top: 10px">// GRAPHIC_ENGINE_READY // ALL_SYSTEMS_GO</p>
+        <p style="margin-top: 20px; font-size: 14px">باستخدام الـ Graphic Packs، أنت لا تلعب فقط، بل تعيد صياغة الجمال البصري للأساطير الكلاسيكية.</p>
     </footer>
 
 </div>

@@ -84,9 +84,9 @@ labels: ["Xbox","Xbox-Original"]
 <div class="xemu-tech-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png">
-                <img class="img-frame" alt="xemu Tech Guide" src="/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png" style="max-width: 500px;" />
+                <img class="img-frame" alt="xemu Tech Guide" src="/media/blogger/d6/d6516da114043e63e60d8dbb372d043e375612183fc5ca4fef1c57c7ceb5be57.png" style="max-width: 500px" />
             </a>
         </div>
         <h2>💽 إدارة القرص الصلب، ملفات BIOS، وتحسين الأداء في xemu</h2>
@@ -101,7 +101,7 @@ labels: ["Xbox","Xbox-Original"]
             <li><b>📥 Flash ROM / BIOS:</b> يفضل استخدام BIOS معدل مثل <b>COMPLEX 4627</b> لفتح ميزات إضافية.</li>
             <li><b>💽 Xbox HDD Image:</b> صورة للقرص الصلب الأصلي بصيغة <code>qcow2</code>.</li>
         </ul>
-        <p style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 8px; font-size: 14px;">
+        <p style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 8px; font-size: 14px">
             💡 <b>مهم:</b> هذه الملفات تُستخرج من جهاز Xbox حقيقي باستخدام أدوات متخصصة لضمان التوافق والقانونية.
         </p>
     </section>
@@ -112,7 +112,7 @@ labels: ["Xbox","Xbox-Original"]
             <li><b>الصورة الرسمية:</b> بحجم 8GB، تحتوي على نظام وهمي أساسي.</li>
             <li><a href="https://xemu.app/hdd/" target="_blank">تحميل صورة القرص الصلب الجاهزة من الموقع الرسمي</a></li>
         </ul>
-        <h4 style="color: var(--xe-cyan); margin-top: 15px;">صنع صورة مخصصة:</h4>
+        <h4 style="color: var(--xe-cyan); margin-top: 15px">صنع صورة مخصصة:</h4>
         <ol class="styled-list">
             <li>استخدام أدوات خارجية مثل <b>XboxHDM</b> أو <b>FATXplorer</b>.</li>
             <li>استخدام أمر <code>dd</code> لسحب نسخة مباشرة من قرص Xbox أصلي.</li>
@@ -130,7 +130,7 @@ labels: ["Xbox","Xbox-Original"]
         <p>بعد الحفظ، سيقوم المحاكي بإعادة التشغيل والإقلاع كأنه جهاز حقيقي تماماً.</p>
     </section>
 
-    <section class="tech-card" style="border-right: 5px solid var(--xe-green);">
+    <section class="tech-card" style="border-right: 5px solid var(--xe-green)">
         <h3>🚀 تحسين الأداء (Optimization)</h3>
         <ul class="styled-list">
             <li><b>استخدم BIOS معدل:</b> ضروري لتشغيل العديد من الألعاب الثقيلة.</li>
@@ -139,7 +139,7 @@ labels: ["Xbox","Xbox-Original"]
             <li><b>Fast Boot:</b> فعله لتقليل زمن إقلاع شعار Xbox الكلاسيكي.</li>
         </ul>
 
-        <h3 style="color: var(--xe-cyan); margin-top: 25px;">🎮 تشغيل الألعاب</h3>
+        <h3 style="color: var(--xe-cyan); margin-top: 25px">🎮 تشغيل الألعاب</h3>
         <p>تأكد أن ألعابك بصيغة <code>.xiso</code>، ثم اتبع المسار:</p>
         <p><b>Machine > Load Disc > اختر ملف اللعبة</b></p>
     </section>
@@ -153,8 +153,8 @@ labels: ["Xbox","Xbox-Original"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #333; text-align: center;">
-        <p style="margin: 0; font-weight: bold;">🎉 الآن أنت تمتلك نظام Xbox متكامل داخل حاسوبك! استمتع بأساطير الجيل السادس بأفضل جودة ممكنة. 🎮✨</p>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; border: 1px solid #333; text-align: center">
+        <p style="margin: 0; font-weight: bold">🎉 الآن أنت تمتلك نظام Xbox متكامل داخل حاسوبك! استمتع بأساطير الجيل السادس بأفضل جودة ممكنة. 🎮✨</p>
     </footer>
 
 </div>

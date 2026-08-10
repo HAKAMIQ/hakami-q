@@ -71,12 +71,12 @@ labels: ["N3DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7f/7f0f4ed47f193a57e9a2ab5603171c88ce283fa437464f51bc01b05446373ee7.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/7f/7f0f4ed47f193a57e9a2ab5603171c88ce283fa437464f51bc01b05446373ee7.png" width="213" alt="شرح صيغ ألعاب 3DS" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">💾 الدليل الكامل لفهم صيغ ألعاب Nintendo 3DS</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">💾 الدليل الكامل لفهم صيغ ألعاب Nintendo 3DS</h2>
         <p>إذا دخلت عالم محاكيات 3DS، بتلقى قدامك ملفات بأسماء وصيغ محيرة مثل <code>.CIA</code>، <code>.3DS</code>، و <code>.CCI</code>. وش الفرق بينهم؟ خلّني أشرحها لك ببساطة لتعرف وش تختار.</p>
     </header>
 
@@ -110,7 +110,7 @@ labels: ["N3DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🎮 جدول التوافق السريع</h3>
+        <h3 style="color: var(--xe-gold)">🎮 جدول التوافق السريع</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -133,8 +133,8 @@ labels: ["N3DS","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من وجهة نظر تقنية، إذا كنت تلعب على الكمبيوتر، فصيغة <code>.3DS</code> هي الأسهل والأسرع للتشغيل المباشر. أما إذا كنت تمتلك جهاز 3DS حقيقي، فصيغة <code>.CIA</code> هي خيارك الوحيد لتجربة لعب أصلية. تأكد دائماً من تحميل نسخ <b>Decrypted</b> للمحاكيات لتجنب مشاكل التشفير.</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من وجهة نظر تقنية، إذا كنت تلعب على الكمبيوتر، فصيغة <code>.3DS</code> هي الأسهل والأسرع للتشغيل المباشر. أما إذا كنت تمتلك جهاز 3DS حقيقي، فصيغة <code>.CIA</code> هي خيارك الوحيد لتجربة لعب أصلية. تأكد دائماً من تحميل نسخ <b>Decrypted</b> للمحاكيات لتجنب مشاكل التشفير.</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

@@ -81,15 +81,15 @@ labels: ["Game Boy","Nintendo"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7e/7e22739c427c8b5265bbd783185e053910202ca9dd10abd04f68165f173d9d6d.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/7e/7e22739c427c8b5265bbd783185e053910202ca9dd10abd04f68165f173d9d6d.png" width="320" alt="Game Boy MultiROM" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">💡 وش فكرة MultiROM؟</h2>
-        <p>بدل ما يكون عندك 10 ملفات لألعاب مختلفة، تقدر تدمجهم كلهم في <strong style="color: var(--xe-gold);">ملف واحد</strong> يحتوي على "قائمة ألعاب" داخلية تختار منها اللعبة وقت التشغيل.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">💡 وش فكرة MultiROM؟</h2>
+        <p>بدل ما يكون عندك 10 ملفات لألعاب مختلفة، تقدر تدمجهم كلهم في <strong style="color: var(--xe-gold)">ملف واحد</strong> يحتوي على "قائمة ألعاب" داخلية تختار منها اللعبة وقت التشغيل.</p>
         <p>هذي الحركة مفيدة خصوصًا لـ:</p>
-        <ul class="clean-list" style="max-width: 400px; margin: 0 auto; text-align: right;">
+        <ul class="clean-list" style="max-width: 400px; margin: 0 auto; text-align: right">
             <li>📦 التجميعات</li>
             <li>🔄 التنقل السريع</li>
             <li>🎮 الاستخدام في الكونسولات المحمولة أو المحاكيات البسيطة</li>
@@ -97,7 +97,7 @@ labels: ["Game Boy","Nintendo"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🛠️ البرامج اللي نحتاجها</h3>
+        <h3 style="color: var(--xe-gold)">🛠️ البرامج اللي نحتاجها</h3>
         <ul class="clean-list">
             <li>✅ <strong>Goomba Color</strong> (محول GBA يشغل ألعاب GB/GBC)</li>
             <li>✅ <strong>Goomba Frontend</strong> (واجهة تسهّل الدمج)</li>
@@ -109,7 +109,7 @@ labels: ["Game Boy","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold); border-bottom: none;">📦 خطوات الدمج</h3>
+        <h3 style="color: var(--xe-gold); border-bottom: none">📦 خطوات الدمج</h3>
         
         <div class="step-title">1. فك الضغط عن Goomba</div>
         <p>بيكون عندك ملف اسمه <code>goomba.gba</code> هذا هو نواة الـ MultiROM.</p>
@@ -125,7 +125,7 @@ labels: ["Game Boy","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🔍 ملاحظات مهمة</h3>
+        <h3 style="color: var(--xe-gold)">🔍 ملاحظات مهمة</h3>
         <ul class="clean-list">
             <li>💥 يدعم GB و GBC… لكنه يحتاج محاكي GBA</li>
             <li>⚠️ بعض الألعاب ما تشتغل بكامل الأداء (خصوصًا اللي فيها خصائص SGB)</li>
@@ -134,7 +134,7 @@ labels: ["Game Boy","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🎯 استخداماته العملية</h3>
+        <h3 style="color: var(--xe-gold)">🎯 استخداماته العملية</h3>
         <ul class="clean-list">
             <li>🎁 توزيع مجموعات مخصصة من الألعاب (زي أفضل ألعاب البوكيمون أو ماريو)</li>
             <li>🕹️ تشغيل أكثر من لعبة على أجهزة محمولة فيها فتحة GBA فقط</li>
@@ -142,9 +142,9 @@ labels: ["Game Boy","Nintendo"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">📌 حكميك ينصحك</h3>
-        <p style="margin-bottom: 15px;">إذا عندك تجميعة من ألعابك المفضلة، لا تخليها تتشتت… اجمعها بملف واحد، واضبطها بقائمة سريعة تعيشك جو التسعينات بكفاءة 2026 💾🔥</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">📌 حكميك ينصحك</h3>
+        <p style="margin-bottom: 15px">إذا عندك تجميعة من ألعابك المفضلة، لا تخليها تتشتت… اجمعها بملف واحد، واضبطها بقائمة سريعة تعيشك جو التسعينات بكفاءة 2026 💾🔥</p>
     </footer>
 
 </div>

@@ -238,7 +238,7 @@ labels: ["articles","PlayStation","PS4"]
 </style>
 <div class="shad-table-wrapper">
 <header class="shad-header">
-    <h2><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="71" data-original-width="233" height="98" src="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" width="320" /></a></div></h2>
+    <div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="71" data-original-width="233" height="98" src="/media/blogger/7a/7ad82148dc86ad87e6b7b9c546c096a36e6abebe340dbb9b84027704e38afddc.png" width="320" /></a></div>
     <p>
         تشمل هذه الصفحة الألعاب المصنفة رسميًا ضمن <b>status-ingame</b>
         على نظام Windows، ومقسمة حسب إصدار shadPS4 المستخدم في التقرير.

@@ -44,7 +44,7 @@ labels: ["Nintendo","SGB"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال كيف تشغل ألعاب Super Game Boy داخل المحاكي؟" border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" width="320" /></a></div><h2>🕹️ وش هو Super Game Boy (SGB)؟</h2>
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال كيف تشغل ألعاب Super Game Boy داخل المحاكي؟" border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/41/416e779d8b9bb4e7ea5e5fc2f086591c476d935244d2dbd273c5f1a2ddfd6c95.png" width="320" /></a></div><h2>🕹️ وش هو Super Game Boy (SGB)؟</h2>
 <p>
 <code>SGB</code> هو محول كان يُستخدم على جهاز Super Nintendo لتشغيل ألعاب Game Boy على التلفزيون مع ألوان وإطارات وأحياناً مزايا صوتية إضافية.
 </p>

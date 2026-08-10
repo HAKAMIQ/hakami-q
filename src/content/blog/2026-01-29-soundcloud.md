@@ -104,28 +104,28 @@ labels: ["articles"]
 <div class="security-alert-wrapper">
 
     <header class="alert-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png">
-                <img alt="Have I Been Pwned Alert" src="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png" style="width:100%; max-width: 500px; border-radius: 10px;" />
+                <img alt="Have I Been Pwned Alert" src="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png" style="width:100%; max-width: 500px; border-radius: 10px" />
             </a>
         </div>
         <h2>تحذير أمني: اختراق ضخم يطال 29.8 مليون حساب</h2>
-        <p style="color: #94a3b8; font-size: 14px;">كشفت خدمة Have I Been Pwned في 29 يناير 2026 عن تسريب بيانات يتجاوز كل التوقعات السابقة.</p>
+        <p style="color: #94a3b8; font-size: 14px">كشفت خدمة Have I Been Pwned في 29 يناير 2026 عن تسريب بيانات يتجاوز كل التوقعات السابقة.</p>
     </header>
 
     <section class="stats-card">
-        <h3 style="color: var(--s-blue); margin-top: 0;">📊 ملخص الحادثة بالأرقام</h3>
+        <h3 style="color: var(--s-blue); margin-top: 0">📊 ملخص الحادثة بالأرقام</h3>
         <table class="stats-table">
-            <tr><td>عدد الحسابات المتضررة</td><td style="color: var(--s-red); font-weight: bold;">29.8 مليون حساب</td></tr>
+            <tr><td>عدد الحسابات المتضررة</td><td style="color: var(--s-red); font-weight: bold">29.8 مليون حساب</td></tr>
             <tr><td>تاريخ الكشف الرسمي</td><td>29 يناير 2026</td></tr>
-            <tr><td>الجهة المسؤولة عن الهجوم</td><td style="color: #fca5a5;">عصابة ShinyHunters</td></tr>
-            <tr><td>حالة البيانات الحالية</td><td style="color: var(--s-green);">تم نشرها علناً للعموم</td></tr>
+            <tr><td>الجهة المسؤولة عن الهجوم</td><td style="color: #fca5a5">عصابة ShinyHunters</td></tr>
+            <tr><td>حالة البيانات الحالية</td><td style="color: var(--s-green)">تم نشرها علناً للعموم</td></tr>
         </table>
     </section>
 
-    <section class="stats-card" style="border-right: 5px solid var(--s-blue);">
-        <h3 style="color: white;">🔍 ما هي البيانات التي تم حصدها؟</h3>
-        <p style="font-size: 14px; color: #8b949e;">شمل التسريب تفاصيل دقيقة قد تُستخدم في هجمات هندسة اجتماعية:</p>
+    <section class="stats-card" style="border-right: 5px solid var(--s-blue)">
+        <h3 style="color: white">🔍 ما هي البيانات التي تم حصدها؟</h3>
+        <p style="font-size: 14px; color: #8b949e">شمل التسريب تفاصيل دقيقة قد تُستخدم في هجمات هندسة اجتماعية:</p>
         <div class="data-grid">
             <div class="data-item">📧 عناوين البريد الإلكتروني</div>
             <div class="data-item">👤 الأسماء الحقيقية والمستخدمين</div>
@@ -136,17 +136,17 @@ labels: ["articles"]
 
     <section class="protection-box">
         <h3>⚠️ كيف تحمي نفسك الآن؟</h3>
-        <ul style="padding-right: 20px; font-size: 14px;">
-            <li style="margin-bottom: 10px;"><b>احذر من التصيد (Phishing):</b> المهاجمون يربطون إيميلك ببياناتك العامة لاستهدافك برسائل بريدية خبيثة تبدو رسمية.</li>
-            <li style="margin-bottom: 10px;"><b>تغيير كلمات المرور:</b> قم بتحديث كلمات السر فوراً لأي حسابات تستخدم نفس البريد الإلكتروني.</li>
+        <ul style="padding-right: 20px; font-size: 14px">
+            <li style="margin-bottom: 10px"><b>احذر من التصيد (Phishing):</b> المهاجمون يربطون إيميلك ببياناتك العامة لاستهدافك برسائل بريدية خبيثة تبدو رسمية.</li>
+            <li style="margin-bottom: 10px"><b>تغيير كلمات المرور:</b> قم بتحديث كلمات السر فوراً لأي حسابات تستخدم نفس البريد الإلكتروني.</li>
             <li><b>المراقبة اللصيقة:</b> لا تضغط على أي روابط تطلب تسجيل دخول مفاجئ أو تطلب بيانات حساسة.</li>
         </ul>
     </section>
 
-    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #333; text-align: center;">
-        <h2 style="color: white; font-size: 24px; letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #555; font-family: monospace; font-size: 11px; margin-top: 5px;">SECURITY_ADVISORY // INCIDENT_REPORT // 2026</p>
-        <p style="margin-top: 20px; font-size: 12px; color: #8b949e;">ابقَ آمناً، وتذكر أن الوقاية الرقمية تبدأ بكلمة سر قوية وتفعيل المصادقة الثنائية (2FA).</p>
+    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #333; text-align: center">
+        <h2 style="color: white; font-size: 24px; letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #555; font-family: monospace; font-size: 11px; margin-top: 5px">SECURITY_ADVISORY // INCIDENT_REPORT // 2026</p>
+        <p style="margin-top: 20px; font-size: 12px; color: #8b949e">ابقَ آمناً، وتذكر أن الوقاية الرقمية تبدأ بكلمة سر قوية وتفعيل المصادقة الثنائية (2FA).</p>
     </footer>
 
 </div>

@@ -130,9 +130,9 @@ labels: ["PlayStation","PS3"]
 
 <div class="hakamiq-savestate-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg">
-            <img alt="RPCS3 Save State Guide" src="/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg" width="320" style="border-radius: 12px;" />
+            <img alt="RPCS3 Save State Guide" src="/media/blogger/01/01dcf79f6735f3ace6860ffca606b1d86c4fe355dcb729553c685643ab4fd6dd.jpg" width="320" style="border-radius: 12px" />
         </a>
     </div>
 
@@ -147,9 +147,9 @@ labels: ["PlayStation","PS3"]
 
     <h3 class="hakamiq-section-header">🕹️ كيفية التنفيذ والتحكم</h3>
     <div class="hakamiq-info-box">
-        <ul style="margin: 0; padding-right: 20px;">
+        <ul style="margin: 0; padding-right: 20px">
             <li><b>عملية الحفظ:</b> استخدم الاختصار <span class="hakamiq-key-btn">Ctrl + S</span> أثناء التشغيل.</li>
-            <li><b>عملية الاسترجاع:</b> استخدم <span class="hakamiq-key-btn">Ctrl + R</span> أو خيار <span style="color: gold;">Boot with savestate</span> من القائمة الرئيسية.</li>
+            <li><b>عملية الاسترجاع:</b> استخدم <span class="hakamiq-key-btn">Ctrl + R</span> أو خيار <span style="color: gold">Boot with savestate</span> من القائمة الرئيسية.</li>
             <li><b>الاستيراد اليدوي:</b> يمكن سحب ملف الـ Save State وإسقاطه مباشرة داخل نافذة المحاكي.</li>
         </ul>
     </div>
@@ -190,9 +190,9 @@ labels: ["PlayStation","PS3"]
 
     <h3 class="hakamiq-section-header">🔧 بروتوكول حل المشكلات التقنية</h3>
     <div class="hakamiq-info-box">
-        <ol style="margin: 0; padding-right: 20px;">
+        <ol style="margin: 0; padding-right: 20px">
             <li>قم بإيقاف المحاكاة مؤقتاً عبر <span class="hakamiq-key-btn">Ctrl + P</span>.</li>
-            <li>توجه إلى <span style="color: #00ffff;">Kernel Explorer</span> وقم بتفعيل <span style="color: #00ffff;">Log All</span>.</li>
+            <li>توجه إلى <span style="color: #00ffff">Kernel Explorer</span> وقم بتفعيل <span style="color: #00ffff">Log All</span>.</li>
             <li>نفذ عملية الحفظ والاسترجاع المتتالي للتأكد من استقرار الذاكرة.</li>
             <li>في حال الفشل، تأكد من تفعيل <b>Write Color Buffers</b> في إعدادات GPU.</li>
         </ol>
@@ -200,7 +200,7 @@ labels: ["PlayStation","PS3"]
 
     <hr class="hakamiq-divider" />
 
-    <p style="text-align: center; color: #666; font-size: 14px; font-weight: bold;">
+    <p style="text-align: center; color: #666; font-size: 14px; font-weight: bold">
         // HAKAMIQ TECH ARCHIVES // 2026 // EMULATION_GUIDES
     </p>
 

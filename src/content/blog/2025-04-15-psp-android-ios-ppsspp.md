@@ -116,9 +116,9 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-sync-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg">
-            <img alt="صورة توضيحية ضمن مقال طريقة نقل ألعاب PSP إلى الجوال (Android و iOS) وتشغيلها على PPSSPP" src="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال طريقة نقل ألعاب PSP إلى الجوال (Android و iOS) وتشغيلها على PPSSPP" src="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
@@ -140,13 +140,13 @@ labels: ["PlayStation","psp"]
     </ol>
 
     <div class="hakamiq-tip">
-        <span style="color: #00e676; font-weight: bold;">💡 ملاحظة:</span> لو جوالك أندرويد 11 أو أحدث، ممكن يحتاج صلاحية اختيار مجلد التخزين. اختار مجلد PSP بنفسك وخلك كفو ✌️
+        <span style="color: #00e676; font-weight: bold">💡 ملاحظة:</span> لو جوالك أندرويد 11 أو أحدث، ممكن يحتاج صلاحية اختيار مجلد التخزين. اختار مجلد PSP بنفسك وخلك كفو ✌️
     </div>
 
     <hr class="hakamiq-divider" />
 
     <h3 class="hakamiq-section-title">🍎 ثانياً: أجهزة iOS (iPhone / iPad)</h3>
-    <p style="color: gold; font-weight: bold;">ملاحظة: هذي الطريقة تحتاج <strong>macOS</strong>، ما تنفع من كمبيوتر Windows حالياً.</p>
+    <p style="color: gold; font-weight: bold">ملاحظة: هذي الطريقة تحتاج <strong>macOS</strong>، ما تنفع من كمبيوتر Windows حالياً.</p>
     <ol class="hakamiq-step-box">
         <li>نزل تطبيق PPSSPP من App Store على جهازك</li>
         <li>وصل الآيفون أو الآيباد بجهاز الماك باستخدام USB</li>
@@ -157,13 +157,13 @@ labels: ["PlayStation","psp"]
     </ol>
 
     <div class="hakamiq-alert">
-        ⚠️ <span style="font-weight: bold; color: #ffc669;">تنبيه:</span> لازم تنقل الألعاب بصيغة ISO أو CSO فقط. ملفات مضغوطة (ZIP / RAR) ما تشتغل إلا بعد فك الضغط.
+        ⚠️ <span style="font-weight: bold; color: #ffc669">تنبيه:</span> لازم تنقل الألعاب بصيغة ISO أو CSO فقط. ملفات مضغوطة (ZIP / RAR) ما تشتغل إلا بعد فك الضغط.
     </div>
 
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-conclusion">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>سواء عندك جوال أندرويد ولا آيفون، نقل الألعاب لمحاكي PPSSPP سهل جداً،  <br>كل اللي تحتاجه كابل، كمبيوتر، وملف لعبة بصيغة مناسبة، وكم لمسة زر… والباقي على متعة اللعب!</p>
     </div>
 

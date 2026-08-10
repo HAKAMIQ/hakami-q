@@ -75,45 +75,45 @@ labels: ["N-DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/3d/3d15ec2f09703439e1c3b76144fc5b79d39957832a7db8b43fdf35eaafc24389.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/3d/3d15ec2f09703439e1c3b76144fc5b79d39957832a7db8b43fdf35eaafc24389.jpg" width="320" alt="أفضل محاكيات DS" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 أقوى محاكيات نينتندو دي إس (DS) للكمبيوتر والجوال</h2>
-        <p style="text-align: center;">أهلاً فيكم يا عشاق الألعاب، اليوم جبنا لكم تجميعة أسطورية لمحاكيات نينتندو دي إس اللي تخلي جهازك يشتغل زي الصاروخ 🚀. يلا تعالوا نشوف!</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 أقوى محاكيات نينتندو دي إس (DS) للكمبيوتر والجوال</h2>
+        <p style="text-align: center">أهلاً فيكم يا عشاق الألعاب، اليوم جبنا لكم تجميعة أسطورية لمحاكيات نينتندو دي إس اللي تخلي جهازك يشتغل زي الصاروخ 🚀. يلا تعالوا نشوف!</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-red);">1. محاكي DraStic (للأندرويد)</h3>
+        <h3 style="color: var(--xe-red)">1. محاكي DraStic (للأندرويد)</h3>
         
         <p>هذا المحاكي ملك محاكيات الـ DS بدون منازع على جوالك. سريع، ثابت، ويدعم تحسين جودة الألعاب بشكل خرافي. كأنك تلعب Mario داخل سينما 🎬😂.</p>
         <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.dsemu.drastic" target="_blank">⬇️ تحميل DraStic</a>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">2. محاكي melonDS (للكمبيوتر)</h3>
+        <h3 style="color: var(--xe-blue)">2. محاكي melonDS (للكمبيوتر)</h3>
         
         <p>إذا تبي تلعب Pokémon أو Zelda على الكمبيوتر، melonDS هو خيارك المثالي. أداء ثابت ورسوميات HD ولا تقطيع ولا خرابيط 😎.</p>
         <a class="download-btn" href="https://melonds.kuribo64.net/downloads.php" target="_blank">⬇️ تحميل melonDS الرسمي</a>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-green);">3. محاكي DeSmuME (للكمبيوتر)</h3>
+        <h3 style="color: var(--xe-green)">3. محاكي DeSmuME (للكمبيوتر)</h3>
         
         <p>محاكي شعبي ومجاني، يتميز بدقته العالية في المحاكاة، لكن يحتاج شوي ضبط في الإعدادات عشان تشوفه "يطير" معك زي مايكل جوردن 🏀😆.</p>
         <a class="download-btn" href="https://desmume.org/download/" target="_blank">⬇️ تحميل DeSmuME</a>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-purple);">4. RetroArch (متعدد المنصات)</h3>
+        <h3 style="color: var(--xe-purple)">4. RetroArch (متعدد المنصات)</h3>
         
         <p>هذي المنصة العجيبة تشغل كل شيء تقريبًا ومنها DS! إذا تحب "كل شيء في مكان واحد" هذا خيارك، لكن جهز نفسك تضيع بين الإعدادات 🤯😅.</p>
         <a class="download-btn" href="https://retroarch.com/" target="_blank">⬇️ تحميل RetroArch</a>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🛠️ متطلبات التشغيل المقترحة</h3>
+        <h3 style="color: var(--xe-gold)">🛠️ متطلبات التشغيل المقترحة</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -131,9 +131,9 @@ labels: ["N-DS","Nintendo"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <p style="margin-bottom: 15px; font-weight: bold;">🔥 وأخيراً... وش المحاكي اللي تحب تستخدمه؟ شاركنا رأيك بالتعليقات تحت! 🔥</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">تحياتي،<br />🕹️ حكميك</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <p style="margin-bottom: 15px; font-weight: bold">🔥 وأخيراً... وش المحاكي اللي تحب تستخدمه؟ شاركنا رأيك بالتعليقات تحت! 🔥</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">تحياتي،<br />🕹️ حكميك</p>
     </footer>
 
 </div>

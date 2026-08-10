@@ -9,11 +9,11 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-switch.html'
 labels: ["Nintendo","NS"]
 ---
 
-<div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
+<div dir="rtl" style="font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right">
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/3d/3dc19943d55929a7d16400a39cb1c1ecf07728ea4be172786062dffcfbb28dda.jpg" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال  🎮 ما هو Nintendo Switch ؟ (مقدمة + الفرق بين الإصدارات)" border="0" data-original-height="470" data-original-width="780" height="193" src="/media/blogger/3d/3dc19943d55929a7d16400a39cb1c1ecf07728ea4be172786062dffcfbb28dda.jpg" width="320" /></a></div><br /><h2 style="text-align: center;">🎮 وش هو Nintendo Switch؟ كل شيء عن الجهاز الثوري!</h2>
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/3d/3dc19943d55929a7d16400a39cb1c1ecf07728ea4be172786062dffcfbb28dda.jpg" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال 🎮 ما هو Nintendo Switch ؟ (مقدمة + الفرق بين الإصدارات)" border="0" data-original-height="470" data-original-width="780" height="193" src="/media/blogger/3d/3dc19943d55929a7d16400a39cb1c1ecf07728ea4be172786062dffcfbb28dda.jpg" width="320" /></a></div><br /><h2 style="text-align: center">🎮 وش هو Nintendo Switch؟ كل شيء عن الجهاز الثوري!</h2>
 
-<p><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">من يوم ما أطلقت نينتندو جهاز </span><strong data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">Switch</strong><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;"> عام 2017، وصار حديث العالم!  
+<p><span>من يوم ما أطلقت نينتندو جهاز </span><strong>Switch</strong><span> عام 2017، وصار حديث العالم!  
 مو بس لأنه محمول… ولا منزلي… لكنه الجهاز اللي جمع الاثنين، وقدم مكتبة ألعاب خرافية.</span></p>
 
 ---
@@ -59,7 +59,7 @@ labels: ["Nintendo","NS"]
 
 <h3>🎯 وش الفرق بينهم بشكل سريع؟</h3>
 
-<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%">
 <thead>
 <tr><th>الميزة</th><th>Switch</th><th>OLED</th><th>Lite</th></tr>
 </thead>

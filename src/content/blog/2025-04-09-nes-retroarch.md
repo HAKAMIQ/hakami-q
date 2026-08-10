@@ -131,23 +131,23 @@ labels: ["Nintendo","Nintendo-NES"]
 <div class="retroarch-guide-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png">
-                <img src="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png" alt="RetroArch Logo" style="max-width: 300px;" />
+                <img src="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png" alt="RetroArch Logo" style="max-width: 300px" />
             </a>
         </div>
         <h2>إعداد RetroArch لتشغيل أساطير Nintendo NES</h2>
-        <p style="opacity: 0.8; margin-top: 10px;">دليلك الشامل لضبط الأنوية والتحكم والفلاتر لعام 2026</p>
+        <p style="opacity: 0.8; margin-top: 10px">دليلك الشامل لضبط الأنوية والتحكم والفلاتر لعام 2026</p>
     </header>
 
-    <p style="text-align: center; color: #64748b; font-size: 16px; margin-bottom: 40px;">
+    <p style="text-align: center; color: #64748b; font-size: 16px; margin-bottom: 40px">
         <b>RetroArch</b> هو الحل البرمجي المتكامل الذي يغنيك عن عشرات المحاكيات. اليوم سنطوعه ليعيد لنا أمجاد الـ NES بلمسة تقنية حديثة.
     </p>
 
     <section class="step-card">
         <h3><span class="step-num">1</span> تحميل وتثبيت RetroArch</h3>
         <p>ابدأ بتحميل النسخة المناسبة لنظامك من الموقع الرسمي:</p>
-        <div style="margin: 15px 0; text-align: center;">
+        <div style="margin: 15px 0; text-align: center">
             <a href="https://www.retroarch.com/" class="btn-site" target="_blank">زيارة الموقع الرسمي ➔</a>
         </div>
     </section>
@@ -155,9 +155,9 @@ labels: ["Nintendo","Nintendo-NES"]
     <section class="step-card">
         <h3><span class="step-num">2</span> تثبيت "النواة" (Core)</h3>
         <p>النواة هي محرك الجهاز الذي تريد تشغيله. اتبع المسار التالي داخل البرنامج:</p>
-        <p style="font-size: 14px; margin-top: 10px;"><code>Load Core -> Download a Core</code> ثم ابحث عن:</p>
+        <p style="font-size: 14px; margin-top: 10px"><code>Load Core -> Download a Core</code> ثم ابحث عن:</p>
         <code style="display: block; margin: 10px 0;">Nestopia (Nintendo - NES)</code>
-        <div class="h-tip" style="padding: 12px; margin: 10px 0; font-size: 13px;">
+        <div class="h-tip" style="padding: 12px; margin: 10px 0; font-size: 13px">
             💡 <strong>تلميح:</strong> تعتبر Nestopia الأدق رسومياً، لكن يمكنك تجربة <code>FCEUmm</code> إذا كنت تملك جهازاً ضعيفاً جداً.
         </div>
     </section>
@@ -166,7 +166,7 @@ labels: ["Nintendo","Nintendo-NES"]
 
     <section class="step-card">
         <h3><span class="step-num">3</span> تشغيل الألعاب (ROMs)</h3>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>🔸 ضع ألعابك بصيغة <code>.nes</code> في مجلد مخصص.</li>
             <li>🔸 اختر <code>Load Content</code> من القائمة الرئيسية.</li>
             <li>🔸 تصفح المجلد واختر لعبتك المفضلة لتبدأ النوستالجيا! 🔥</li>
@@ -176,13 +176,13 @@ labels: ["Nintendo","Nintendo-NES"]
     <section class="step-card">
         <h3><span class="step-num">4</span> هندسة التحكم والجرافيك</h3>
         <p><b>يد التحكم:</b> البرنامج يتعرف عليها فورياً، وللتخصيص اذهب لـ <code>Settings -> Input -> Port 1 Binds</code>.</p>
-        <p style="margin-top: 15px;"><b>جو الريترو (Shaders):</b> لتعيش تجربة التلفزيونات القديمة، اذهب لـ:</p>
+        <p style="margin-top: 15px"><b>جو الريترو (Shaders):</b> لتعيش تجربة التلفزيونات القديمة، اذهب لـ:</p>
         <code>Settings -> Video -> Shaders</code> وفعّل الشيدر المفضل مثل <code>crt-geom</code>.
     </section>
 
     <section class="h-tip">
         <h3>🎯 نصائح حكميك الاحترافية</h3>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>✅ <b>خاصية Rewind:</b> كأنك تملك آلة زمن! فعلها من إعدادات الـ Input لتصحيح قفزاتك الخاطئة.</li>
             <li>✅ <b>Thumbnails:</b> فعّل خيار تحميل الصور المصغرة لتبدو مكتبتك كأنها متجر ألعاب احترافي.</li>
             <li>✅ <b>Save State:</b> استخدم زر <code>F2</code> للحفظ الفوري و <code>F4</code> للتحميل، ستحتاجها في ألعاب مثل <i>Mega Man</i>.</li>
@@ -190,9 +190,9 @@ labels: ["Nintendo","Nintendo-NES"]
     </section>
 
     <footer>
-        <h2 style="color: var(--ra-blue); letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px;">// SYSTEM_STATUS: ALL_CORES_LOADED // ALL_SYSTEMS_GO</p>
-        <p style="margin-top: 25px; font-weight: bold; color: var(--ra-blue); font-size: 18px;">وش أول لعبة جربتها على RetroArch؟ وهل ودك نسوي دليل لباقي الأجهزة؟ 🎮👇</p>
+        <h2 style="color: var(--ra-blue); letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px">// SYSTEM_STATUS: ALL_CORES_LOADED // ALL_SYSTEMS_GO</p>
+        <p style="margin-top: 25px; font-weight: bold; color: var(--ra-blue); font-size: 18px">وش أول لعبة جربتها على RetroArch؟ وهل ودك نسوي دليل لباقي الأجهزة؟ 🎮👇</p>
     </footer>
 
 </div>

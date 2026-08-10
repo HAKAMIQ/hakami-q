@@ -131,14 +131,14 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-compress-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg">
-            <img alt="صورة توضيحية ضمن مقال  كيف تضغط ألعاب PSP وتحولها من ISO إلى CSO أو CHD" src="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال كيف تضغط ألعاب PSP وتحولها من ISO إلى CSO أو CHD" src="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto" />
         </a>
     </div>
 
     <h2 class="hakamiq-compress-title">🗜️ ضغط ألعاب PSP - وفر مساحة بدون ما تخسر الأداء!</h2>
-    <p>ملف ISO حجمه كبير؟ جوالك أو لابتوبك ما فيه مساحة؟  <br>تعال أعلّمك كيف تحول ألعاب <strong style="color: gold;">PSP</strong> إلى <strong>CSO</strong> أو <strong>CHD</strong> وتلعبها على <strong>PPSSPP</strong> بدون ما تفقد الجودة 😎</p>
+    <p>ملف ISO حجمه كبير؟ جوالك أو لابتوبك ما فيه مساحة؟  <br>تعال أعلّمك كيف تحول ألعاب <strong style="color: gold">PSP</strong> إلى <strong>CSO</strong> أو <strong>CHD</strong> وتلعبها على <strong>PPSSPP</strong> بدون ما تفقد الجودة 😎</p>
 
     <hr class="hakamiq-divider" />
 
@@ -149,7 +149,7 @@ labels: ["PlayStation","psp"]
         <li><strong>CHD</strong>: صيغة أحدث، ضغط أعلى، مدعومة من الإصدار <strong>1.17+</strong></li>
     </ul>
 
-    <p style="color: #00e676; font-weight: bold; margin-top: 20px;">كلها تشتغل مباشرة على PPSSPP بدون فك ضغط أو تحويل إضافي 💪</p>
+    <p style="color: #00e676; font-weight: bold; margin-top: 20px">كلها تشتغل مباشرة على PPSSPP بدون فك ضغط أو تحويل إضافي 💪</p>
 
     <hr class="hakamiq-divider" />
 
@@ -163,29 +163,29 @@ labels: ["PlayStation","psp"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #ffc107;">📦 تحويل ISO إلى CSO باستخدام maxcso</h3>
+    <h3 class="hakamiq-section-title" style="color: #ffc107">📦 تحويل ISO إلى CSO باستخدام maxcso</h3>
     <div class="hakamiq-cmd-box">maxcso game.iso</div>
     <p>تقدر تضبط نسبة الضغط بالأوامر المتقدمة، لكن الوضع الافتراضي ممتاز للأغلب.</p>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #ffc107;">💿 تحويل ISO إلى CHD باستخدام chdman</h3>
+    <h3 class="hakamiq-section-title" style="color: #ffc107">💿 تحويل ISO إلى CHD باستخدام chdman</h3>
     <p>الصيغة CHD تعطي ضغط أفضل، لكن تحتاج أمر محدد:</p>
 
     <div class="hakamiq-cmd-box">chdman createdvd -hs 2048 -i game.iso -o game.chd</div>
 
-    <p style="margin-top: 20px;">وإذا تبغى تستخدم ضغط <strong>zstd</strong> لتحسين الأداء:</p>
+    <p style="margin-top: 20px">وإذا تبغى تستخدم ضغط <strong>zstd</strong> لتحسين الأداء:</p>
     <div class="hakamiq-cmd-box">chdman createdvd -hs 2048 -i game.iso -o game.chd -c zstd</div>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #ffc107;">🔁 تحويل CHD إلى ISO من جديد؟</h3>
+    <h3 class="hakamiq-section-title" style="color: #ffc107">🔁 تحويل CHD إلى ISO من جديد؟</h3>
     <p>لو احتجت ترجّع اللعبة لصيغة ISO الأصلية:</p>
     <div class="hakamiq-cmd-box">chdman extractdvd -hs 2048 -i game.chd -o game.iso</div>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #00e676;">📊 مقارنة بين الصيغ</h3>
+    <h3 class="hakamiq-section-title" style="color: #00e676">📊 مقارنة بين الصيغ</h3>
     <div class="hakamiq-table-wrapper">
         <table class="hakamiq-tech-table">
             <thead>
@@ -222,10 +222,10 @@ labels: ["PlayStation","psp"]
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-conclusion">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>ودك تخفف مساحة ألعاب PSP؟ حول ملفاتك من ISO إلى CSO أو CHD، وشغلها على PPSSPP براحتك.</p>
         <p>الفرق في الأداء شبه معدوم، لكن الفرق في الحجم ممكن يوصلك توفر نص المساحة 🔥</p>
-        <p style="margin-bottom: 0;">وبكذا تقدر تجمع مكتبتك الكاملة في جوالك أو فلاش صغير… جاهز للمغامرة؟ 😎</p>
+        <p style="margin-bottom: 0">وبكذا تقدر تجمع مكتبتك الكاملة في جوالك أو فلاش صغير… جاهز للمغامرة؟ 😎</p>
     </div>
 
 </div>

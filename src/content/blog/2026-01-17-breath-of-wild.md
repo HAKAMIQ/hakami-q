@@ -111,15 +111,15 @@ labels: ["Nintendo","Wii-U"]
 <div class="hakamiq-botw-guide">
 
     <header class="guide-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png">
-                <img alt="تحسين أداء Zelda BOTW على Cemu" src="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
+                <img alt="تحسين أداء Zelda BOTW على Cemu" src="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png" style="width:100%; max-width: 600px; border-radius: 10px" />
             </a>
         </div>
         <h2>دليل تحسين أداء Breath of the Wild (Optimizing Guide)</h2>
     </header>
 
-    <div class="tech-card" style="border: none; background: transparent; box-shadow: none;">
+    <div class="tech-card" style="border: none; background: transparent; box-shadow: none">
         <p>تعتبر <strong>Breath of the Wild</strong> من أكثر الألعاب طلباً للموارد. بفضل مجتمع المطورين، لدينا الآن تعديلات تتيح تشغيل اللعبة بدقة 4K وسلاسة 60 إطاراُ وأكثر، بشرط امتلاك كرت شاشة يدعم التقنيات الحديثة.</p>
     </div>
 
@@ -128,7 +128,7 @@ labels: ["Nintendo","Wii-U"]
         <p>للحصول على أفضل أداء، نعتمد على واجهة <strong>Vulkan</strong> وتقنية <strong>تجميع الشادرز غير المتزامن (Async Compile)</strong>.</p>
         <div class="info-box">
             <strong>💡 كيف تحل تقنية Async مشكلة التقطيع؟</strong>
-            <p style="font-size: 14px; margin-top: 5px;">بدلاً من إيقاف اللعبة لانتظار تحميل مؤثر جديد، يقوم المحاكي بهذه العملية في الخلفية. قد يختفي المؤثر لأجزاء من الثانية في المرة الأولى، لكن اللعبة ستستمر بسلاسة تامة دون توقف.</p>
+            <p style="font-size: 14px; margin-top: 5px">بدلاً من إيقاف اللعبة لانتظار تحميل مؤثر جديد، يقوم المحاكي بهذه العملية في الخلفية. قد يختفي المؤثر لأجزاء من الثانية في المرة الأولى، لكن اللعبة ستستمر بسلاسة تامة دون توقف.</p>
         </div>
         
         <div class="alert-box">
@@ -136,20 +136,20 @@ labels: ["Nintendo","Wii-U"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: #0277bd;">
+    <section class="tech-card" style="border-right-color: #0277bd">
         <h3>🛠️ تثبيت وتفعيل الـ Graphic Packs</h3>
         <p>اتبع الخطوات التالية لجلب أحدث التعديلات التقنية:</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>كليك يمين على اللعبة ← <strong>Edit graphics packs</strong>.</li>
             <li>اضغط <strong>Download latest community graphic packs</strong> في الأسفل.</li>
             <li>من فئة <strong>Mods</strong>، فعّل خيار <strong>FPS++</strong> للوصول إلى 60 إطاراً.</li>
         </ul>
-        <div class="info-box" style="border-right-color: var(--botw-teal); background: #f0f9ff;">
+        <div class="info-box" style="border-right-color: var(--botw-teal); background: #f0f9ff">
             💡 <strong>نصيحة الأداء:</strong> إذا واجهت مشاكل في مناطق معينة، قلل حد الإطارات إلى 30FPS مؤقتاً لتجاوز النقطة الحرجة.
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--botw-purple);">
+    <section class="tech-card" style="border-right-color: var(--botw-purple)">
         <h3>🎨 إعدادات الجرافيك الموصى بها</h3>
         <p>قم بتفعيل قسم <strong>Graphics</strong> وابدأ بتعديل الخيارات التالية:</p>
         
@@ -170,10 +170,10 @@ labels: ["Nintendo","Wii-U"]
         
     </section>
 
-    <footer class="tech-card" style="background: #111827; color: white; border: none; text-align: center;">
-        <h3 style="color: var(--botw-gold); border: none;">🎬 ملخص حكميك التقني</h3>
+    <footer class="tech-card" style="background: #111827; color: white; border: none; text-align: center">
+        <h3 style="color: var(--botw-gold); border: none">🎬 ملخص حكميك التقني</h3>
         <p>بمجرد فهمك لما يفعله كل إعداد، يمكنك بناء "بروفايل" خاص يناسب قوة جهازك. تذكر دائماً أن <b>Vulkan</b> هو صديقك الأول في الأداء، وحافظ على تحديث حزم الجرافيك بانتظام.</p>
-        <p style="margin-top: 20px; font-weight: bold;">📢 هل تود تعلم طريقة استخراج ملفات اللعبة من جهازك؟ تابعنا!</p>
+        <p style="margin-top: 20px; font-weight: bold">📢 هل تود تعلم طريقة استخراج ملفات اللعبة من جهازك؟ تابعنا!</p>
     </footer>
 
 </div>

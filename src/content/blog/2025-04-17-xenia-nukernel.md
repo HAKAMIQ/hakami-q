@@ -99,18 +99,18 @@ labels: ["Xbox","Xbox360"]
 <div class="nukernel-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png">
-                <img class="img-frame" alt="Xenia Nukernel Guide" src="/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png" style="max-width: 320px; margin: 0 auto;" />
+                <img class="img-frame" alt="Xenia Nukernel Guide" src="/media/blogger/e3/e3a175c43e01d30490b849256760ff0fb48f45d4424a3740ee4f7f101c7eb242.png" style="max-width: 320px; margin: 0 auto" />
             </a>
         </div>
-        <p>لو كنت من النوع اللي يحب يجرب كل شيء قبل الناس، ويغامر حتى لو كان الثمن كراش وانفجار في الأداء... فمرحبًا بك في <span style="color: var(--nu-orange); font-weight: bold;">Xenia Nukernel</span>، النسخة التجريبية المثيرة للجدل من محاكي Xbox 360 الشهير!</p>
+        <p>لو كنت من النوع اللي يحب يجرب كل شيء قبل الناس، ويغامر حتى لو كان الثمن كراش وانفجار في الأداء... فمرحبًا بك في <span style="color: var(--nu-orange); font-weight: bold">Xenia Nukernel</span>، النسخة التجريبية المثيرة للجدل من محاكي Xbox 360 الشهير!</p>
     </header>
 
     
 
     <section class="status-card">
-        <h3 style="color: var(--nu-green);">⚠️ تحذير أول السطر:</h3>
+        <h3 style="color: var(--nu-green)">⚠️ تحذير أول السطر:</h3>
         <ul class="nu-list list-warning">
             <li>معظم الألعاب ما تشتغل، أو تشتغل وتكرش بعد فترة.</li>
             <li>لا أحد يضمن أنها تشتغل عندك.</li>
@@ -121,18 +121,18 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="status-card">
-        <h3 style="color: var(--nu-blue);">🧠 طيب ليش أجربها أصلاً؟</h3>
+        <h3 style="color: var(--nu-blue)">🧠 طيب ليش أجربها أصلاً؟</h3>
         <p>رغم كل العيوب، إلا إن نسخة Nukernel فتحت الباب لتشغيل بعض الألعاب اللي كانت مستحيلة على النسخ العادية مثل:</p>
-        <ul class="nu-list" style="padding-right: 20px;">
+        <ul class="nu-list" style="padding-right: 20px">
             <li>🔸 <b>Things On Wheels</b></li>
             <li>🔸 <b>Quake 4</b> (ما عاد بطيء بشكل سخيف)</li>
             <li>🔸 <b>Dynasty Warriors 6</b> (القائمة ما عاد تكراش، والصوت شغال!)</li>
         </ul>
     </section>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px">
         <div class="status-card">
-            <h3 style="color: var(--nu-blue);">🎮 ألعاب تشتغل (بشكل معقول):</h3>
+            <h3 style="color: var(--nu-blue)">🎮 ألعاب تشتغل (بشكل معقول):</h3>
             <ul class="nu-list list-success">
                 <li>Halo 3</li>
                 <li>Halo Reach (مع بقاء مشكلة تسريب الذاكرة)</li>
@@ -141,7 +141,7 @@ labels: ["Xbox","Xbox360"]
             </ul>
         </div>
         <div class="status-card">
-            <h3 style="color: var(--nu-red);">🚫 ألعاب مكسورة بالكامل حاليًا:</h3>
+            <h3 style="color: var(--nu-red)">🚫 ألعاب مكسورة بالكامل حاليًا:</h3>
             <ul class="nu-list list-warning">
                 <li>Fable 2 و Fable 3</li>
                 <li>Halo 4</li>
@@ -152,12 +152,12 @@ labels: ["Xbox","Xbox360"]
     </div>
 
     <section class="status-card">
-        <h3 style="color: var(--nu-orange);">🧪 وش الفرق عن canary_experimental؟</h3>
+        <h3 style="color: var(--nu-orange)">🧪 وش الفرق عن canary_experimental؟</h3>
         <p>بعض الألعاب زي سلسلة Assassin's Creed ما تحس بفرق، تشتغل وتكرش بنفس الطريقة القديمة. يعني النوكرنل ما زادها طين، بس ما أنقذها برضه 😅.</p>
     </section>
 
     <div class="download-box">
-        <h3 style="color: white; margin-top: 0;">📦 النسخ المتاحة للتحميل:</h3>
+        <h3 style="color: white; margin-top: 0">📦 النسخ المتاحة للتحميل:</h3>
         <ul class="nu-list">
             <li><a href="#">🔗 xenia_canary.7z – نسخة 2.15 MB (Jan 24)</a></li>
             <li><a href="#">🔗 xenia_canary.7z – نسخة 2.16 MB (Jan 25)</a></li>
@@ -165,8 +165,8 @@ labels: ["Xbox","Xbox360"]
         </ul>
     </div>
 
-    <footer class="status-card" style="border-right: 5px solid var(--nu-red);">
-        <h3 style="color: var(--nu-red);">🎤 رأيي الشخصي:</h3>
+    <footer class="status-card" style="border-right: 5px solid var(--nu-red)">
+        <h3 style="color: var(--nu-red)">🎤 رأيي الشخصي:</h3>
         <p>النوكرنل نسخة مهووسين، مو مستخدمين عاديين. إذا ما كان عندك فضول تقني أو وقت تصليح الأعطال، انس الموضوع. بس لو ودك تجرب شي تجريبي، وتحلل ملفات الكراش بنفسك... فهذي النسخة ممكن تفاجئك في بعض العناوين.</p>
     </footer>
 

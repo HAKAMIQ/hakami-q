@@ -66,12 +66,12 @@ labels: ["N3DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/a7/a740d4161f026f4d6fe92c26969a8be0b5ac2a679757fe530a1e4f905458afe3.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/a7/a740d4161f026f4d6fe92c26969a8be0b5ac2a679757fe530a1e4f905458afe3.png" width="213" alt="ألعاب 3DS المنسية" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 كنوز نينتندو: أفضل ألعاب 3DS المنسية (Hidden Gems)</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 كنوز نينتندو: أفضل ألعاب 3DS المنسية (Hidden Gems)</h2>
         <p>إذا انتهيت من ماريو وبوكيمون وزيلدا... وتبحث عن تجربة جديدة؟ إليك قائمة بألعاب حصرية لم تأخذ حقها من الشهرة، لكنها تقدم أفكاراً عبقرية وتعمل بامتياز على المحاكيات.</p>
     </header>
 
@@ -101,7 +101,7 @@ labels: ["N3DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">🔍 ملاحظات تقنية للتشغيل</h3>
+        <h3 style="color: var(--xe-blue)">🔍 ملاحظات تقنية للتشغيل</h3>
         <ul class="clean-list">
             <li>✅ أغلب هذه الألعاب مصنفة كـ <b>Perfect</b> أو <b>Great</b> في قائمة توافق Citra.</li>
             <li>📂 تأكد من توفر الملف بصيغة <code>.3ds</code> للكمبيوتر أو <code>.cia</code> للتثبيت.</li>
@@ -111,8 +111,8 @@ labels: ["N3DS","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من وجهة نظر تقنية وفنية، مكتبة الـ 3DS تحتوي على تجارب "مستقلة" وتجريبية لم تحصل على ميزانيات تسويق ضخمة لكنها تفوقت في أسلوب اللعب. ننصح بشدة بتجربة <b>Ever Oasis</b> كبداية، لأنها تستعرض قدرات المحاكي في الإضاءة والتحكم بشكل ممتاز. جربها واحدة تلو الأخرى، فقد تجد لعبتك المفضلة الجديدة بين هذه السطور! ❤️</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من وجهة نظر تقنية وفنية، مكتبة الـ 3DS تحتوي على تجارب "مستقلة" وتجريبية لم تحصل على ميزانيات تسويق ضخمة لكنها تفوقت في أسلوب اللعب. ننصح بشدة بتجربة <b>Ever Oasis</b> كبداية، لأنها تستعرض قدرات المحاكي في الإضاءة والتحكم بشكل ممتاز. جربها واحدة تلو الأخرى، فقد تجد لعبتك المفضلة الجديدة بين هذه السطور! ❤️</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

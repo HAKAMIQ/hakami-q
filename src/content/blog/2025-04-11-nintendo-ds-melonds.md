@@ -69,12 +69,12 @@ labels: ["N-DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f6/f6b889c966c70ff2e191c512d4809afda311bf25a687e5116a060b2f3fdc1900.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/f6/f6b889c966c70ff2e191c512d4809afda311bf25a687e5116a060b2f3fdc1900.jpg" width="320" alt="محاكي melonDS" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 شرح تشغيل ألعاب Nintendo DS باستخدام محاكي melonDS</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 شرح تشغيل ألعاب Nintendo DS باستخدام محاكي melonDS</h2>
         <p>إذا ودك ترجع لأيام الطفولة وتعيش مغامرات Pokémon أو Mario Kart، فـ محاكي <strong>melonDS</strong> هو المفتاح الذهبي 🔓 لجهازك. خفيف، مجاني، ويشتغل حتى على الأجهزة المتهالكة 😂</p>
     </header>
 
@@ -140,10 +140,10 @@ labels: ["N-DS","Nintendo"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px;">📌 الخلاصة</h3>
-        <p style="margin-bottom: 15px;">محاكي melonDS هو بوابتك لعالم نينتندو DS من جديد. ثبت، شغل، وعيش المغامرة 👾 ولو عندك أي استفسار، عطنا إياه في التعليقات تحت.</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">تحياتي،<br />🕹️ حكميك</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px">📌 الخلاصة</h3>
+        <p style="margin-bottom: 15px">محاكي melonDS هو بوابتك لعالم نينتندو DS من جديد. ثبت، شغل، وعيش المغامرة 👾 ولو عندك أي استفسار، عطنا إياه في التعليقات تحت.</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">تحياتي،<br />🕹️ حكميك</p>
     </footer>
 
 </div>

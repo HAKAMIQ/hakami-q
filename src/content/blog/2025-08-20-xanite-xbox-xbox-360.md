@@ -86,13 +86,13 @@ labels: ["ANDROID-EMU"]
 <div class="xanite-truth-wrapper">
 
     <header class="alert-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png">
-                <img alt="محاكي Xanite للأندرويد - حقيقة أم وهم؟" src="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
+                <img alt="محاكي Xanite للأندرويد - حقيقة أم وهم؟" src="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png" style="width:100%; max-width: 600px; border-radius: 15px" />
             </a>
         </div>
         
-        <p style="opacity: 0.8; margin-top: 10px;">بين وعود المطورين وتشكيك المجتمع التقني: هل هو محاكي حقيقي؟</p>
+        <p style="opacity: 0.8; margin-top: 10px">بين وعود المطورين وتشكيك المجتمع التقني: هل هو محاكي حقيقي؟</p>
     </header>
 
     <section class="fact-card">
@@ -108,14 +108,14 @@ labels: ["ANDROID-EMU"]
     <section class="fact-card">
         <h3>🔍 لماذا يشكك الخبراء في هذا المشروع؟</h3>
         <p>أثار المشروع موجة من التساؤلات في مجتمعات مثل <code>r/EmulationOnAndroid</code> لعدة أسباب تقنية:</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>🔸 <b>كود فارغ:</b> عند فحص الملفات، تبين أنها تحتوي على "عناصر نائبة" (Placeholders) فقط دون وجود أي نواة محاكاة (Core).</li>
             <li>🔸 <b>وصف مريب:</b> أسلوب كتابة الوصف والميزات يبدو وكأنه نتاج ذكاء اصطناعي، مما يقلل من المصداقية التقنية.</li>
             <li>🔸 <b>غياب الأنوية:</b> لا توجد أي إشارة لكيفية التعامل مع معمارية CPU/GPU المعقدة لأجهزة Xbox 360 على الهواتف.</li>
         </ul>
     </section>
 
-    <section class="fact-card" style="border-right-color: #1e293b;">
+    <section class="fact-card" style="border-right-color: #1e293b">
         <h3>📌 البدائل الموثوقة (للكمبيوتر فقط)</h3>
         <p>حتى هذه اللحظة، لا يوجد محاكي Xbox 360 حقيقي للأندرويد. الخيارات المستقرة هي:</p>
         <ul class="alt-list">
@@ -124,10 +124,10 @@ labels: ["ANDROID-EMU"]
         </ul>
     </section>
 
-    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center;">
-        <h2 style="color: #1e293b; font-size: 28px; letter-spacing: 3px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px;">// REALITY_CHECK_COMPLETE // STATUS: VAPORWARE_ALERT</p>
-        <div class="h-alert" style="margin-top: 25px; text-align: center;">
+    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center">
+        <h2 style="color: #1e293b; font-size: 28px; letter-spacing: 3px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px">// REALITY_CHECK_COMPLETE // STATUS: VAPORWARE_ALERT</p>
+        <div class="h-alert" style="margin-top: 25px; text-align: center">
             🚨 <strong>نصيحة حكميك:</strong> تابع المشروع بحذر شديد، ولا تقم بتحميل أي ملفات APK من مصادر غير موثوقة لحماية خصوصيتك.
         </div>
     </footer>

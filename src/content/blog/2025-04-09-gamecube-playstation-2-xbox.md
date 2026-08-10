@@ -175,7 +175,7 @@ labels: ["GameCube","Nintendo"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             في أوائل الألفينات، كانت الحرب مشتعلة بين ثلاث عمالقة… نينتندو كانت تحاول تسترجع مكانتها، سوني توسعت بقوة، ومايكروسوفت دخلت السوق لأول مرة بجهاز ضخم.<br>
             خلنا نقارن بينهم من كل النواحي ونعرف وش صار فعلاً 👇
         </p>
@@ -219,8 +219,8 @@ labels: ["GameCube","Nintendo"]
         </section>
     </div>
 
-    <div class="hakamiq-intro-box" style="border-right-color: #f1c40f;">
-        <h3 style="margin-top: 0; color: #f1c40f;">📊 الأرقام والمبيعات النهائية</h3>
+    <div class="hakamiq-intro-box" style="border-right-color: #f1c40f">
+        <h3 style="margin-top: 0; color: #f1c40f">📊 الأرقام والمبيعات النهائية</h3>
         <ul class="hakamiq-list-style">
             <li>🔵 <span class="tag-ps">PS2:</span> أكثر من 155 مليون وحدة (الأنجح تاريخياً).</li>
             <li>🟩 <span class="tag-xbox">Xbox:</span> باع حوالي 24 مليون وحدة.</li>
@@ -229,13 +229,13 @@ labels: ["GameCube","Nintendo"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: #fff;">🎯 خلاصة الحكميك</h3>
-        <p style="color: var(--text-secondary); margin: 0;">
+        <h3 style="margin-top: 0; color: #fff">🎯 خلاصة الحكميك</h3>
+        <p style="color: var(--text-secondary); margin: 0">
             🔹 <span class="hakamiq-highlight-text">GameCube</span> كان قوياً وأنيقاً، لكن نينتندو تعثرت في تسويقه.<br>
             ⚫ <span class="hakamiq-highlight-text">PS2</span> سحق الجميع بالتنوع ودعم الـ DVD العالمي.<br>
             🟩 <span class="hakamiq-highlight-text">Xbox</span> بدأ بتأسيس إمبراطورية مايكروسوفت في عالم الألعاب.
         </p>
-        <p style="font-weight: bold; color: #fff; margin-top: 20px;">
+        <p style="font-weight: bold; color: #fff; margin-top: 20px">
             وش كان جهازك المفضل؟ وهل ترى إن GameCube انظلم؟ 🎮👇
         </p>
     </footer>

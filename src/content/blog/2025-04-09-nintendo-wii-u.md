@@ -178,7 +178,7 @@ labels: ["Nintendo","Wii-U"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             كل الناس تذكر <span class="hakamiq-highlight-text">Wii U</span> كجهاز فشل… بس الحقيقة؟ <span class="hakamiq-highlight-text">Wii U كان عبقري</span>، سابق لعصره، وفتح الطريق لأشياء نشوفها اليوم ونقول عنها "واو".<br>
             خلونا نرجع شوي ونفهم: ليش انظلم؟ وليش كان يستحق فرصته؟ 👇
         </p>
@@ -187,7 +187,7 @@ labels: ["Nintendo","Wii-U"]
     <div class="hakamiq-grid-layout">
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">🎮 فكرة GamePad الثورية</h3>
-            <p style="margin: 0; color: var(--text-secondary);">
+            <p style="margin: 0; color: var(--text-secondary)">
                 نينتندو قدمت لأول مرة جهاز تحكم فيه شاشة لمسية كبيرة. الفكرة؟ تقدر تلعب بدون تلفزيون، أو تستخدم الشاشة الثانية لأشياء زي الخريطة، المخزون، أو زوايا مختلفة.
             </p>
             <ul class="hakamiq-list-style">
@@ -195,20 +195,20 @@ labels: ["Nintendo","Wii-U"]
                 <li>🎮 <span class="hakamiq-highlight-text">Mario Maker:</span> تصميم المراحل كان سهل وسريع جداً</li>
                 <li>👨‍👩‍👧 <span class="hakamiq-highlight-text">Nintendo Land:</span> ألعاب جماعية مبتكرة، كل لاعب عنده تجربة مختلفة!</li>
             </ul>
-            <p style="margin: 15px 0 0 0; color: var(--wiiu-cyan); font-weight: bold; font-size: 0.95rem;">
+            <p style="margin: 15px 0 0 0; color: var(--wiiu-cyan); font-weight: bold; font-size: 0.95rem">
                 هذي الأفكار نشوفها اليوم في Switch ونسميها "عبقرية"… لكنها بدأت من Wii U!
             </p>
         </section>
 
-        <section class="hakamiq-info-card" style="border-bottom: 3px solid var(--wiiu-red);">
-            <h3 class="hakamiq-card-heading" style="color: var(--wiiu-red);">📺 ليش الناس ما فهمته؟</h3>
+        <section class="hakamiq-info-card" style="border-bottom: 3px solid var(--wiiu-red)">
+            <h3 class="hakamiq-card-heading" style="color: var(--wiiu-red)">📺 ليش الناس ما فهمته؟</h3>
             <ul class="hakamiq-list-style">
                 <li>🔁 الاسم "Wii U" خلا الناس يظنونه مجرد ملحق للـ Wii</li>
                 <li>📦 التسويق كان كارثي… ما وضّحوا أنه جهاز جديد تمامًا</li>
                 <li>🧩 استخدام GamePad ما كان واضح في كل الألعاب</li>
                 <li>📉 ضعف دعم الشركات الخارجية (EA، Ubisoft، إلخ)</li>
             </ul>
-            <p style="margin: 15px 0 0 0; color: #ff6b6b; font-weight: bold;">
+            <p style="margin: 15px 0 0 0; color: #ff6b6b; font-weight: bold">
                 الناس ببساطة… ما فهموا وش هو Wii U.
             </p>
         </section>
@@ -221,14 +221,14 @@ labels: ["Nintendo","Wii-U"]
                 <li>✅ حسابات مستخدمين متعددة على نفس الجهاز</li>
                 <li>✅ التحكم بالصوت والتلفزيون من نفس يد التحكم</li>
             </ul>
-            <p style="margin: 15px 0 0 0; color: var(--text-secondary);">
+            <p style="margin: 15px 0 0 0; color: var(--text-secondary)">
                 كلها أشياء صارت "عادية" اليوم… لكنها كانت ثورة وقتها.
             </p>
         </section>
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">🧠 مكتبة ألعاب قوية (بس منسية)</h3>
-            <p style="margin: 0; color: var(--text-secondary);">
+            <p style="margin: 0; color: var(--text-secondary)">
                 ناس كثير ما جربوا Wii U، وضيّعوا على نفسهم كنوز مثل:
             </p>
             <ul class="hakamiq-list-style">
@@ -238,15 +238,15 @@ labels: ["Nintendo","Wii-U"]
                 <li>🐙 Splatoon (الجزء الأول)</li>
                 <li>👻 Luigi’s Mansion Arcade</li>
             </ul>
-            <p style="margin: 15px 0 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+            <p style="margin: 15px 0 0 0; color: var(--text-secondary); font-size: 0.95rem">
                 بعضها نقلوه للـ Switch، وبعضها لسه حبيسة الجهاز للأسف 😢
             </p>
         </section>
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--wiiu-cyan);">🎯 خلاصة الحكميك</h3>
-        <p style="color: var(--text-secondary); margin: 0;">
+        <h3 style="margin-top: 0; color: var(--wiiu-cyan)">🎯 خلاصة الحكميك</h3>
+        <p style="color: var(--text-secondary); margin: 0">
             <span class="hakamiq-highlight-text">Wii U</span> كان تجربة جريئة، فكّر خارج الصندوق… بس توقيته كان غلط، وتسويقه كان أسوأ.<br>
             واللي عاشه، يعرف إنه <span class="hakamiq-highlight-text">كان "Switch 0.5"</span> – النسخة التجريبية للثورة اللي صارت بعده.
         </p>

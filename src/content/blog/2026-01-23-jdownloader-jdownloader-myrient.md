@@ -100,53 +100,53 @@ labels: ["articles"]
 <div class="myrient-support-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png">
-                <img alt="دليل برامج تحميل Myrient - حكميك" src="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png" style="width:100%; max-width: 650px; border-radius: 15px;" />
+                <img alt="دليل برامج تحميل Myrient - حكميك" src="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png" style="width:100%; max-width: 650px; border-radius: 15px" />
             </a>
         </div>
         <h2>شروحات برامج التحميل وإعدادات الأداء الأقصى</h2>
-        <p style="color: #94a3b8;">تجنب الحظر واضمن سرعة تحميل مستقرة من سيرفرات Myrient</p>
+        <p style="color: #94a3b8">تجنب الحظر واضمن سرعة تحميل مستقرة من سيرفرات Myrient</p>
     </header>
 
     <section class="support-card">
         <h2>📥 بروتوكول ضبط برامج التحميل</h2>
         
         <div class="solution-item">
-            <h3 style="color: var(--m-emerald);">🟢 طريقة JDownloader</h3>
-            <p style="font-size: 14px;">مثالي لتحميل الملفات المفردة بدقة عالية.</p>
-            <div class="h-alert" style="border-color: var(--m-emerald); background: rgba(16, 185, 129, 0.1);">
+            <h3 style="color: var(--m-emerald)">🟢 طريقة JDownloader</h3>
+            <p style="font-size: 14px">مثالي لتحميل الملفات المفردة بدقة عالية.</p>
+            <div class="h-alert" style="border-color: var(--m-emerald); background: rgba(16, 185, 129, 0.1)">
                 ⚠️ <strong>القاعدة الذهبية:</strong> اضبط خيار <code>Max. Chunks per Download</code> على رقم <b>1</b> حصراً لمنع حظر اتصالك.
             </div>
-            <p style="font-size: 13px;">استخدم زر <b>"Add New Links"</b> في الزاوية اليسرى لبدء المهمة.</p>
+            <p style="font-size: 13px">استخدم زر <b>"Add New Links"</b> في الزاوية اليسرى لبدء المهمة.</p>
         </div>
 
-        <div class="solution-item" style="border-right-color: var(--m-indigo);">
-            <h3 style="color: var(--m-indigo);">🟣 طريقة IDM / FDM / AB Manager</h3>
-            <p style="font-size: 14px;">لضمان السرعة القصوى وعدم انقطاع الرابط:</p>
-            <div class="h-alert" style="border-color: var(--m-indigo); background: rgba(99, 102, 241, 0.1);">
+        <div class="solution-item" style="border-right-color: var(--m-indigo)">
+            <h3 style="color: var(--m-indigo)">🟣 طريقة IDM / FDM / AB Manager</h3>
+            <p style="font-size: 14px">لضمان السرعة القصوى وعدم انقطاع الرابط:</p>
+            <div class="h-alert" style="border-color: var(--m-indigo); background: rgba(99, 102, 241, 0.1)">
                 ⚠️ <strong>إلزامي:</strong> اضبط <b>"عدد الاتصالات" (Connections)</b> على رقم <b>1</b> فقط. زيادة العدد ستؤدي لهبوط السرعة فوراً لـ 10 KB/s.
             </div>
             <img class="img-frame" alt="إعدادات الاتصالات في IDM" src="/media/blogger/f4/f4936a72e48879ec36bd5e72ce02924c6e09455e004e0cc9bbedbb8b74582364.png" width="400" />
         </div>
     </section>
 
-    <section class="support-card" style="border-right-color: var(--m-amber);">
-        <h2 style="color: var(--m-amber);">🛠️ الأسئلة الشائعة وحل المعضلات التقنية</h2>
+    <section class="support-card" style="border-right-color: var(--m-amber)">
+        <h2 style="color: var(--m-amber)">🛠️ الأسئلة الشائعة وحل المعضلات التقنية</h2>
         
-        <div class="solution-item" style="border-right-color: var(--m-rose);">
-            <h3 style="color: var(--m-rose);">🐢 لماذا السرعة عالقة على 10 KB/s؟</h3>
-            <p style="font-size: 14px;">هذا يعني أن نظام الحماية صنف تحميلك كـ "مسيء" (Abusive). إليك خطة الإنقاذ:</p>
-            <ul style="padding-right: 20px; font-size: 13px;">
+        <div class="solution-item" style="border-right-color: var(--m-rose)">
+            <h3 style="color: var(--m-rose)">🐢 لماذا السرعة عالقة على 10 KB/s؟</h3>
+            <p style="font-size: 14px">هذا يعني أن نظام الحماية صنف تحميلك كـ "مسيء" (Abusive). إليك خطة الإنقاذ:</p>
+            <ul style="padding-right: 20px; font-size: 13px">
                 <li>✅ حمّل مباشرة من النطاق الرسمي <code>myrient.erista.me</code>.</li>
                 <li>✅ لا تقم بنسخ الرابط في نافذة تصفح خفية (Incognito).</li>
                 <li>✅ <b>عطّل</b> كافة إضافات المتصفح (Extensions) أثناء جلب الرابط.</li>
             </ul>
         </div>
 
-        <div class="solution-item" style="border-right-color: var(--m-blue);">
-            <h3 style="color: var(--m-blue);">🚫 أخطاء الاتصال وحجب السيرفرات</h3>
-            <p style="font-size: 14px;">بعض البرامج والشبكات تعترض طريق Myrient وتصنفه كموقع خطر:</p>
+        <div class="solution-item" style="border-right-color: var(--m-blue)">
+            <h3 style="color: var(--m-blue)">🚫 أخطاء الاتصال وحجب السيرفرات</h3>
+            <p style="font-size: 14px">بعض البرامج والشبكات تعترض طريق Myrient وتصنفه كموقع خطر:</p>
             <div class="h-warning">
                 🦈 <b>NordVPN & Surfshark:</b> يجب تعطيل ميزات "Threat Protection" أو "CleanWeb" لتجنب أخطاء SSL.
             </div>
@@ -158,16 +158,16 @@ labels: ["articles"]
             </div>
         </div>
 
-        <div class="solution-item" style="border-right-color: var(--m-cyan);">
-            <h3 style="color: var(--m-cyan);">⏳ الملفات المحدثة لا تعمل؟</h3>
-            <p style="font-size: 14px;">الملفات التي تم رفعها في أقل من 24 ساعة تحتاج وقتاً لـ <b>"الانتشار" (Propagate)</b> عبر كافة السيرفرات. إذا لم يعمل الرابط، انتظر يوماً كاملاً ثم حاول مجدداً.</p>
+        <div class="solution-item" style="border-right-color: var(--m-cyan)">
+            <h3 style="color: var(--m-cyan)">⏳ الملفات المحدثة لا تعمل؟</h3>
+            <p style="font-size: 14px">الملفات التي تم رفعها في أقل من 24 ساعة تحتاج وقتاً لـ <b>"الانتشار" (Propagate)</b> عبر كافة السيرفرات. إذا لم يعمل الرابط، انتظر يوماً كاملاً ثم حاول مجدداً.</p>
         </div>
     </section>
 
-    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px dashed #333; text-align: center;">
-        <h2 style="color: white; font-size: 28px; letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px;">SUPPORT_INDEX_STABLE // 2026_EDITION</p>
-        <p style="margin-top: 15px; font-size: 13px; color: #8b949e;">اتبع هذه الإرشادات بدقة لتضمن وصولك الدائم لأضخم مكتبة ألعاب في التاريخ. بالتوفيق يا بطل! 🌹</p>
+    <footer style="margin-top: 60px; padding-top: 30px; border-top: 1px dashed #333; text-align: center">
+        <h2 style="color: white; font-size: 28px; letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px">SUPPORT_INDEX_STABLE // 2026_EDITION</p>
+        <p style="margin-top: 15px; font-size: 13px; color: #8b949e">اتبع هذه الإرشادات بدقة لتضمن وصولك الدائم لأضخم مكتبة ألعاب في التاريخ. بالتوفيق يا بطل! 🌹</p>
     </footer>
 
 </div>

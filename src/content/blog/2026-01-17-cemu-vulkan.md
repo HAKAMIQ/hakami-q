@@ -110,9 +110,9 @@ labels: ["Nintendo","Wii-U"]
 <div class="cemu-vulkan-article">
 
     <header class="v-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png">
-                <img alt="أداء Vulkan في محاكي Cemu - حكميك" src="/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
+                <img alt="أداء Vulkan في محاكي Cemu - حكميك" src="/media/blogger/eb/ebf9b285b30a4ba629cc99b72e6296af7a2b75ea26e2ce67d51f300735df17d9.png" style="width:100%; max-width: 600px; border-radius: 10px" />
             </a>
         </div>
         <h2>دليل القضاء على التقطيع: لماذا نفضل Vulkan في Cemu؟</h2>
@@ -124,11 +124,11 @@ labels: ["Nintendo","Wii-U"]
         
         <div class="tech-info">
             <strong>💡 كيف تعمل التقنية؟</strong>
-            <p style="font-size: 14px; margin-top: 10px;">إذا ظهر مؤثر جديد ولم ينتهِ تحميله، سيتخطاه المحاكي لحظياً (قد يختفي لأجزاء من الثانية)، لكن اللعبة لن تتوقف أبداً! وفي المرة القادمة سيظهر المؤثر بشكل طبيعي لأنه تم حفظه في الكاش.</p>
+            <p style="font-size: 14px; margin-top: 10px">إذا ظهر مؤثر جديد ولم ينتهِ تحميله، سيتخطاه المحاكي لحظياً (قد يختفي لأجزاء من الثانية)، لكن اللعبة لن تتوقف أبداً! وفي المرة القادمة سيظهر المؤثر بشكل طبيعي لأنه تم حفظه في الكاش.</p>
         </div>
 
-        <div style="text-align: center;">
-            <p style="font-size: 14px; color: #666;">🔽 الفيديو يوضح سلاسة لعبة Breath of the Wild مع تفعيل الخاصية:</p>
+        <div style="text-align: center">
+            <p style="font-size: 14px; color: #666">🔽 الفيديو يوضح سلاسة لعبة Breath of the Wild مع تفعيل الخاصية:</p>
             <a href="/media/blogger/10/102c1f3d2f58eab41aa7b876da74255f18f1b05f119b845a68d4894bddbc16cf.gif">
                 <img class="img-frame" src="/media/blogger/10/102c1f3d2f58eab41aa7b876da74255f18f1b05f119b845a68d4894bddbc16cf.gif" alt="Zelda BOTW Async Compile Demo" />
             </a>
@@ -137,9 +137,9 @@ labels: ["Nintendo","Wii-U"]
 
     
 
-    <section class="v-card" style="border-right-color: var(--v-blue);">
+    <section class="v-card" style="border-right-color: var(--v-blue)">
         <h3>⚙️ ضبط إعدادات Cemu (خطوة بخطوة)</h3>
-        <ol style="padding-right: 20px;">
+        <ol style="padding-right: 20px">
             <li>من القائمة اختر <strong>Options</strong> ثم <strong>General settings</strong>.</li>
             <li>انتقل لتبويب <strong>Graphics</strong> وقم بتغيير API إلى <strong>Vulkan</strong>.</li>
             <li>تأكد من اختيار "الكرت المنفصل" الأقوى في خانة Graphics Device.</li>
@@ -148,15 +148,15 @@ labels: ["Nintendo","Wii-U"]
         <div class="os-settings">
             <details>
                 <summary>💻 إعدادات Windows (اضغط هنا)</summary>
-                <ul style="margin-top:10px; padding-right: 15px;">
+                <ul style="margin-top:10px; padding-right: 15px">
                     <li>- <b>VSync:</b> اجعله <span class="code-span">Match emulated display</span>.</li>
                     <li>- <b>Shaders:</b> فعّل <span class="code-span">Enable Async shader compiler</span>.</li>
                     <li>- <b>Audio API:</b> غيره إلى <span class="code-span">XAudio2</span>.</li>
                 </ul>
             </details>
-            <details style="margin-top:15px;">
+            <details style="margin-top:15px">
                 <summary>🍎 إعدادات macOS (اضغط هنا)</summary>
-                <ul style="margin-top:10px; padding-right: 15px;">
+                <ul style="margin-top:10px; padding-right: 15px">
                     <li>- <b>VSync:</b> اجعله <span class="code-span">Double buffering</span>.</li>
                     <li>- <b>Audio API:</b> غيره إلى <span class="code-span">Cubeb</span>.</li>
                     <li>- ⚠️ <b>تنبيه:</b> عطل خيار <span class="code-span">Accurate barriers (Vulkan)</span> من قائمة Debug.</li>
@@ -165,24 +165,24 @@ labels: ["Nintendo","Wii-U"]
         </div>
     </section>
 
-    <section class="v-card" style="border-right-color: #6a1b9a;">
+    <section class="v-card" style="border-right-color: #6a1b9a">
         <h3>📥 استيراد ملفات الكاش الجاهزة</h3>
         <p>بدلاً من بناء الكاش بنفسك، يمكنك تحميل ملفات جاهزة قام لاعبون آخرون بتجميعها لتشغيل اللعبة بسلاسة 100% فوراً.</p>
         
-        <div style="text-align: center; margin: 20px 0;">
+        <div style="text-align: center; margin: 20px 0">
             <iframe allowfullscreen="" class="img-frame" height="315" src="https://www.youtube.com/embed/HIR298KkSXA" width="100%"></iframe>
         </div>
 
-        <div style="text-align: center;">
-            <a href="https://chriztr.github.io/cemu_shader_and_pipeline_caches/" class="v-header" style="padding: 10px 20px; text-decoration: none; display: inline-block; font-size: 16px;" target="_blank">🔗 رابط مستودع الكاش الجاهز</a>
+        <div style="text-align: center">
+            <a href="https://chriztr.github.io/cemu_shader_and_pipeline_caches/" class="v-header" style="padding: 10px 20px; text-decoration: none; display: inline-block; font-size: 16px" target="_blank">🔗 رابط مستودع الكاش الجاهز</a>
         </div>
 
-        <p style="margin-top: 20px; font-size: 14px;"><strong>طريقة التركيب:</strong> حمل ملف الـ zip الخاص بلعبتك ومنطقتها (USA/EUR)، فك الضغط وانقل المحتويات داخل مجلد Cemu الرئيسي.</p>
+        <p style="margin-top: 20px; font-size: 14px"><strong>طريقة التركيب:</strong> حمل ملف الـ zip الخاص بلعبتك ومنطقتها (USA/EUR)، فك الضغط وانقل المحتويات داخل مجلد Cemu الرئيسي.</p>
     </section>
 
-    <footer style="background: var(--v-dark-teal); color: white; padding: 25px; border-radius: 15px; text-align: center;">
+    <footer style="background: var(--v-dark-teal); color: white; padding: 25px; border-radius: 15px; text-align: center">
         <strong>🎉 تهانينا!</strong>
-        <p style="font-size: 14px; margin-top: 10px;">يجب أن يعمل Cemu الآن بأقصى سرعة ممكنة وبسلاسة هائلة. استمتع بتجربتك من HAKAMIQ.</p>
+        <p style="font-size: 14px; margin-top: 10px">يجب أن يعمل Cemu الآن بأقصى سرعة ممكنة وبسلاسة هائلة. استمتع بتجربتك من HAKAMIQ.</p>
     </footer>
 
 </div>

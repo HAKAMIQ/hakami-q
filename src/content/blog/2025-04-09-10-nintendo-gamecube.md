@@ -162,7 +162,7 @@ labels: ["GameCube","Nintendo"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             رغم إن <span class="hakamiq-highlight-text">GameCube</span> ما كان الأكثر مبيعًا، إلا إن مكتبته مليانة جواهر، منها ألعاب حصرية، ومنها تجارب صارت معيار لصناعة الألعاب.<br>
             هذي أقوى 10 ألعاب على الجهاز، مرتبة بعناية وتقدير من القلب 👇
         </p>
@@ -241,8 +241,8 @@ labels: ["GameCube","Nintendo"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--gc-purple);">🎯 خلاصة الحكميك</h3>
-        <p style="color: var(--text-secondary); margin: 0;">
+        <h3 style="margin-top: 0; color: var(--gc-purple)">🎯 خلاصة الحكميك</h3>
+        <p style="color: var(--text-secondary); margin: 0">
             <span class="hakamiq-highlight-text">GameCube</span> احتوى على بعض من أعظم التجارب في جيله.<br>
             وإذا تبغى تعيشها من جديد، محاكي <span class="hakamiq-highlight-text">Dolphin</span> بيخدمك بجودة خرافية ومكتبة ضخمة.
         </p>

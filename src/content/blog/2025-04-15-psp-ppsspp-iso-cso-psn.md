@@ -107,14 +107,14 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-guide-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg">
-            <img alt="صورة توضيحية ضمن مقال 💿 كيف تحصل على ألعاب PSP لمحاكي PPSSPP؟ | دليل كامل للـ ISO وCSO وPSN" src="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال 💿 كيف تحصل على ألعاب PSP لمحاكي PPSSPP؟ | دليل كامل للـ ISO وCSO وPSN" src="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
     <h2 class="hakamiq-guide-title">💿 كيف تحصل على ألعاب PSP لمحاكي PPSSPP؟</h2>
-    <p>عشان تشغل لعبة على محاكي <strong style="color: gold;">PPSSPP</strong>، لازم تكون عندك نسخة اللعبة بصيغة <strong>ISO</strong> أو <strong>CSO</strong> (يعني نسخة رقمية من القرص الأصلي). وبهالشرح، بخليك ملك في الموضوع 👑</p>
+    <p>عشان تشغل لعبة على محاكي <strong style="color: gold">PPSSPP</strong>، لازم تكون عندك نسخة اللعبة بصيغة <strong>ISO</strong> أو <strong>CSO</strong> (يعني نسخة رقمية من القرص الأصلي). وبهالشرح، بخليك ملك في الموضوع 👑</p>
 
     <hr class="hakamiq-divider" />
 
@@ -149,7 +149,7 @@ labels: ["PlayStation","psp"]
         <li>شغل تطبيق PPSSPP، وروح لتبويب "Games"، وحدد المجلد، واضغط على اللعبة ✨</li>
     </ol>
     <div class="hakamiq-tip">
-        <span style="color: #00e676; font-weight: bold;">💡 تلميحة:</span> إذا ما ظهرت اللعبة، تأكد إن الملف ما هو مضغوط بصيغة RAR أو ZIP، لازم يكون ISO أو CSO.
+        <span style="color: #00e676; font-weight: bold">💡 تلميحة:</span> إذا ما ظهرت اللعبة، تأكد إن الملف ما هو مضغوط بصيغة RAR أو ZIP، لازم يكون ISO أو CSO.
     </div>
 
     <hr class="hakamiq-divider" />
@@ -167,7 +167,7 @@ labels: ["PlayStation","psp"]
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-conclusion">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>عشان تشغل لعبة على PPSSPP، لازم يكون عندك ملف بصيغة <strong>ISO / CSO / PBP</strong>.  <br>تجيبها من PSP حقيقي، أو من مكتبتك الرقمية، وتنقلها بالجوال أو الكمبيوتر وتشغلها بكل سهولة.</p>
     </div>
 

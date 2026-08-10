@@ -59,7 +59,7 @@ labels: ["PlayStation","PS3"]
 <div class="hakamiq-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
                 <img alt="صورة توضيحية ضمن مقال الإعدادات الافتراضية في محاكي RPCS3 | إعدادات (Debug Configuration)" class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
@@ -68,7 +68,7 @@ labels: ["PlayStation","PS3"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">🧩 جدول إعدادات Debug الشامل</h3>
+        <h3 style="color: var(--xe-blue)">🧩 جدول إعدادات Debug الشامل</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -109,15 +109,15 @@ labels: ["PlayStation","PS3"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px;">
-        <h3 style="color: var(--xe-gold); margin-top: 0; text-align: center;">📌 دليل الألوان</h3>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px">
+        <h3 style="color: var(--xe-gold); margin-top: 0; text-align: center">📌 دليل الألوان</h3>
         <div class="legend-container">
-            <div class="legend-item" style="background: rgba(0, 230, 118, 0.2); color: var(--xe-green);">✅ آمن / افتراضي</div>
-            <div class="legend-item" style="background: rgba(255, 214, 0, 0.2); color: var(--xe-gold);">⚠️ متقدم / اختياري</div>
-            <div class="legend-item" style="background: rgba(255, 82, 82, 0.2); color: var(--xe-red);">❌ غير موصى به</div>
-            <div class="legend-item" style="background: rgba(41, 182, 246, 0.2); color: var(--xe-blue);">🎮 للتجربة فقط</div>
+            <div class="legend-item" style="background: rgba(0, 230, 118, 0.2); color: var(--xe-green)">✅ آمن / افتراضي</div>
+            <div class="legend-item" style="background: rgba(255, 214, 0, 0.2); color: var(--xe-gold)">⚠️ متقدم / اختياري</div>
+            <div class="legend-item" style="background: rgba(255, 82, 82, 0.2); color: var(--xe-red)">❌ غير موصى به</div>
+            <div class="legend-item" style="background: rgba(41, 182, 246, 0.2); color: var(--xe-blue)">🎮 للتجربة فقط</div>
         </div>
-        <p style="margin-top: 20px; font-size: 14px; text-align: center;">📝 <b>نصيحة حكميك:</b> لا تغير أي خيار في هذه القائمة إلا إذا كنت تتبع حلاً لمشكلة تقنية محددة موثقة في Wiki المحاكي.</p>
+        <p style="margin-top: 20px; font-size: 14px; text-align: center">📝 <b>نصيحة حكميك:</b> لا تغير أي خيار في هذه القائمة إلا إذا كنت تتبع حلاً لمشكلة تقنية محددة موثقة في Wiki المحاكي.</p>
     </footer>
 
 </div>

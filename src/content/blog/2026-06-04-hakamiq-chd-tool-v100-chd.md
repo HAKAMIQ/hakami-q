@@ -312,11 +312,11 @@ labels: ["PC"]
         <p class="muted">نسخة كاملة للتشغيل المباشر، وتتضمن كافة مكونات التشغيل المطلوبة بداخلها. هذا الخيار هو الأنسب إذا كنت لا تعرف الفرق بين النسختين أو لا ترغب بتثبيت .NET يدويًا.<br />
         📥 <i>اسم الملف:</i> <code>HakamiqChdTool-v1.0.0-win-x64-self-contained.zip</code></p>
         
-        <p style="margin-top: 25px;"><b>2. نسخة Framework-Dependent (المعتمدة على إطار العمل)</b></p>
+        <p style="margin-top: 25px"><b>2. نسخة Framework-Dependent (المعتمدة على إطار العمل)</b></p>
         <p class="muted">هذه النسخة أخف حجماً، لكنها تتطلب وجود بيئة تشغيل .NET 8 Desktop Runtime مثبتة مسبقاً على جهازك.<br />
         📥 <i>اسم الملف:</i> <code>HakamiqChdTool-v1.0.0-win-x64-framework-dependent.zip</code></p>
 
-        <div style="border-top: 1px dashed rgb(51, 51, 51); margin-top: 25px; padding-top: 20px;">
+        <div style="border-top: 1px dashed rgb(51, 51, 51); margin-top: 25px; padding-top: 20px">
             <p><b>روابط التحميل الرسمية:</b></p>
             <ul class="clean-list">
                 <li><b>تحميل الإصدار من صفحة GitHub Releases:</b> <a href="https://github.com/HAKAMIQ/HakamiqChdTool.App/releases/tag/v1.0.0" target="_blank">اضغط هنا للتحميل</a></li>

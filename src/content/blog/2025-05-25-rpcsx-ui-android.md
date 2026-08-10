@@ -132,13 +132,13 @@ labels: ["PlayStation","PS3"]
 <div class="rpcsx-report-wrapper">
 
     <header class="royal-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png">
-                <img class="img-frame" alt="RPCSX UI Android Logo" src="/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png" style="max-width: 250px; margin-bottom: 0;" />
+                <img class="img-frame" alt="RPCSX UI Android Logo" src="/media/blogger/59/5971891ee0b320ba6d74046c17e079f7fb77ece602981296a04112ffea1553d4.png" style="max-width: 250px; margin-bottom: 0" />
             </a>
         </div>
         <h2>🔥 آخر تطورات محاكي RPCSX UI-Android 🔥</h2>
-        <p style="opacity: 0.9; margin: 0;">تقرير حصري ومفصل لأحدث التغييرات البرمجية</p>
+        <p style="opacity: 0.9; margin: 0">تقرير حصري ومفصل لأحدث التغييرات البرمجية</p>
     </header>
 
     <div class="stats-box">
@@ -150,10 +150,10 @@ labels: ["PlayStation","PS3"]
     <section class="report-card">
         <h3>👑 المساهمين الأساسيين</h3>
         <ul>
-            <li><b style="color: #d48806;">DHrpcs3:</b> أصلح مشاكل حاسمة مثل خطأ الشاشة السوداء.</li>
-            <li><b style="color: #9159c6;">Ishan09811:</b> أضاف دعم <code>DocumentsProvider</code> وتحسينات برمجية متقدمة.</li>
-            <li><b style="color: #059669;">TickStop:</b> قلل من الأعطال (Crashes) الناتجة عن تحديث القوائم.</li>
-            <li><b style="color: #e83e8c;">AliasAccount:</b> حسّن الواجهة وأضاف خيارات للتحكم الشامل بالإعدادات.</li>
+            <li><b style="color: #d48806">DHrpcs3:</b> أصلح مشاكل حاسمة مثل خطأ الشاشة السوداء.</li>
+            <li><b style="color: #9159c6">Ishan09811:</b> أضاف دعم <code>DocumentsProvider</code> وتحسينات برمجية متقدمة.</li>
+            <li><b style="color: #059669">TickStop:</b> قلل من الأعطال (Crashes) الناتجة عن تحديث القوائم.</li>
+            <li><b style="color: #e83e8c">AliasAccount:</b> حسّن الواجهة وأضاف خيارات للتحكم الشامل بالإعدادات.</li>
         </ul>
     </section>
 
@@ -188,7 +188,7 @@ labels: ["PlayStation","PS3"]
         
         
 
-        <p style="margin-top: 15px;"><b>واجهات المستخدم (UI):</b></p>
+        <p style="margin-top: 15px"><b>واجهات المستخدم (UI):</b></p>
         <ul>
             <li><code>GpuDriversScreen.kt</code> – شاشة إدارة وتثبيت تعريفات كرت الشاشة المخصصة.</li>
             <li><code>GamesScreen.kt</code> – تحسين عرض الألعاب وتنظيم واجهة المكتبة.</li>
@@ -198,8 +198,8 @@ labels: ["PlayStation","PS3"]
     </section>
 
     <div class="success-box">
-        <h3 style="color: #047857; margin-top: 0;">✅ الفوائد النهائية للاعبين:</h3>
-        <ul style="color: #065f46; font-weight: bold;">
+        <h3 style="color: #047857; margin-top: 0">✅ الفوائد النهائية للاعبين:</h3>
+        <ul style="color: #065f46; font-weight: bold">
             <li>⚡ سرعة أعلى واستقرار في التحديثات المباشرة.</li>
             <li>📱 توافق أكبر مع طيف واسع من أجهزة الأندرويد.</li>
             <li>🎮 تجربة مستخدم (UX) سلسة وواضحة خالية من التعقيد.</li>
@@ -208,13 +208,13 @@ labels: ["PlayStation","PS3"]
     </div>
 
     <div class="links-box">
-        <h3 style="color: var(--rpc-gold); margin-top: 0;">📌 روابط ومصادر مهمة</h3>
+        <h3 style="color: var(--rpc-gold); margin-top: 0">📌 روابط ومصادر مهمة</h3>
         <p>
             🔗 <a href="https://www.reddit.com/r/EmulationOnAndroid/comments/1ksemwv/rpcsx_on_android/" target="_blank">نقاش Reddit</a> |
             🎥 <a href="https://streamable.com/v361vp" target="_blank">مقطع استعراض التحديث</a> |
             📁 <a href="https://github.com/RPCSX/rpcsx-ui-android/compare/v20250417...v20250425" target="_blank">سجل التعديلات (GitHub)</a>
         </p>
-        <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.8">
             ✨ لا تنسوا مشاركة التقرير، وزيارة <a href="https://hakamiq1.blogspot.com" target="_blank">المدونة الرسمية</a> لمزيد من التحديثات الحصرية.
         </p>
     </div>

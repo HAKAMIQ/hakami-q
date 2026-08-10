@@ -9,9 +9,9 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/nintendo-switch_3.html'
 labels: ["Nintendo","NS"]
 ---
 
-<div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
+<div dir="rtl" style="font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right">
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/16/165399e0941746af5b6ab49f4280b7f96d10712377a6cb3dfe2478346111455d.jpg" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال 🛠️ تقرير شامل عن محاكيات Nintendo Switch بعد إيقاف Yuzu" border="0" data-original-height="386" data-original-width="686" height="180" src="/media/blogger/16/165399e0941746af5b6ab49f4280b7f96d10712377a6cb3dfe2478346111455d.jpg" width="320" /></a></div><br /><p><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">بعد إيقاف محاكي </span><strong data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;">Yuzu</strong><span data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333;"> رسميًا من نينتندو، ظهرت مشاريع مشتقة ومحاكيات بديلة تحاول سد الفجوة.  
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/16/165399e0941746af5b6ab49f4280b7f96d10712377a6cb3dfe2478346111455d.jpg" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال 🛠️ تقرير شامل عن محاكيات Nintendo Switch بعد إيقاف Yuzu" border="0" data-original-height="386" data-original-width="686" height="180" src="/media/blogger/16/165399e0941746af5b6ab49f4280b7f96d10712377a6cb3dfe2478346111455d.jpg" width="320" /></a></div><br /><p><span>بعد إيقاف محاكي </span><strong>Yuzu</strong><span> رسميًا من نينتندو، ظهرت مشاريع مشتقة ومحاكيات بديلة تحاول سد الفجوة.  
 لكن هل المحاكيات ما زالت تشتغل؟ وش اللي صار فعليًا؟ خلنا نغوص في التفاصيل…</span></p>
 
 ---
@@ -78,7 +78,7 @@ labels: ["Nintendo","NS"]
 
 <h3>📌 ملخص حالة المحاكيات</h3>
 
-<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%">
 <thead>
 <tr><th>المحاكي</th><th>الحالة</th><th>الأنظمة المدعومة</th><th>تعليق</th></tr>
 </thead>

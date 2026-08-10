@@ -228,7 +228,7 @@ labels: ["articles","PS4"]
 </style>
 <div class="shad-table-wrapper">
 <header class="shad-header">
-    <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="369" data-original-width="738" height="160" src="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" width="320" /></a></div><p>
+    <div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="369" data-original-width="738" height="160" src="/media/blogger/29/29e98e06ec99f1a72496624a14361ff0fae26a8522e75130d348bde757c1d189.png" width="320" /></a></div><p>
         تشمل القائمة جميع الألعاب المصنفة رسميًا ضمن <b>status-playable</b>
         على نظام Windows، مع تقسيمها حسب إصدار shadPS4 المستخدم في التقرير.
     </p>

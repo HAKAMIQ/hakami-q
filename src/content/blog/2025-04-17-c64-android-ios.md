@@ -143,18 +143,18 @@ labels: ["Commodore","Commodore-AMIGA"]
 <div class="c64-mobile-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png">
-                <img class="img-frame" alt="أفضل محاكيات C64 للجوال" src="/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png" style="max-width: 450px;" />
+                <img class="img-frame" alt="أفضل محاكيات C64 للجوال" src="/media/blogger/de/de96d284584c6aa5ee180516ba041e0cd5b141c5967b4ef97e86434c836517fa.png" style="max-width: 450px" />
             </a>
         </div>
         <h2>أفضل محاكيات Commodore 64 على الجوال (Android & iOS)</h2>
-        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto">
             تبغى تعيش ذكريات <b>Commodore 64</b> وألعابه الأيقونية على جوالك؟ الأمر سهل جداً! توفرت اليوم محاكيات ممتازة للجوال سواء كنت على نظام <b>Android</b> أو <b>iOS</b>. لكن ليست كل المحاكيات تستحق وقتك؛ بعضها مهجور أو لا يعمل باستقرار... عشان كذا، جبت لك الزبدة في هذا الدليل.
         </p>
     </header>
 
-    <h3 class="section-title" style="color: var(--c64-gold);">🔝 القائمة الذهبية لأفضل المحاكيات:</h3>
+    <h3 class="section-title" style="color: var(--c64-gold)">🔝 القائمة الذهبية لأفضل المحاكيات:</h3>
     <div class="table-container">
         <table class="c64-table">
             <thead>
@@ -173,7 +173,7 @@ labels: ["Commodore","Commodore-AMIGA"]
                     <td>Android</td>
                     <td>1.5.84</td>
                     <td>عالية ومستقرة</td>
-                    <td><span style="color: #4ade80;">✅ مستقر وسهل جداً</span></td>
+                    <td><span style="color: #4ade80">✅ مستقر وسهل جداً</span></td>
                     <td><a href="https://play.google.com/store/apps/details?id=com.explusalpha.C64Emu" class="dl-link" target="_blank">Google Play</a></td>
                 </tr>
                 <tr>
@@ -181,7 +181,7 @@ labels: ["Commodore","Commodore-AMIGA"]
                     <td>Android / iOS / Linux</td>
                     <td>3.10</td>
                     <td>عالية جداً (دقيق)</td>
-                    <td><span style="color: #4ade80;">✅ نسخة محمولة من الأفضل للـ PC</span></td>
+                    <td><span style="color: #4ade80">✅ نسخة محمولة من الأفضل للـ PC</span></td>
                     <td><a href="https://vice-emu.sourceforge.io/android.html" class="dl-link" target="_blank">الموقع الرسمي</a></td>
                 </tr>
                 <tr>
@@ -189,10 +189,10 @@ labels: ["Commodore","Commodore-AMIGA"]
                     <td>Android</td>
                     <td>0.8</td>
                     <td>متوسطة</td>
-                    <td><span style="color: #4ade80;">✅ مجاني ومفتوح المصدر</span></td>
+                    <td><span style="color: #4ade80">✅ مجاني ومفتوح المصدر</span></td>
                     <td>
                         <a href="https://play.google.com/store/apps/details?id=de.rainerhock.eightbitwonders.pls" class="dl-link" target="_blank">Play Store</a>
-                        <a href="https://f-droid.org/packages/de.rainerhock.eightbitwonders/" class="dl-link" style="border-color:#4caf50; color:#4caf50;" target="_blank">F-Droid</a>
+                        <a href="https://f-droid.org/packages/de.rainerhock.eightbitwonders/" class="dl-link" style="border-color:#4caf50; color:#4caf50" target="_blank">F-Droid</a>
                     </td>
                 </tr>
                 <tr>
@@ -200,7 +200,7 @@ labels: ["Commodore","Commodore-AMIGA"]
                     <td>Android</td>
                     <td>1.11.6</td>
                     <td>متوسطة</td>
-                    <td><span style="color: var(--c64-gold);">~ جيد لكنه قديم نسبياً</span></td>
+                    <td><span style="color: var(--c64-gold)">~ جيد لكنه قديم نسبياً</span></td>
                     <td><a href="https://play.google.com/store/apps/details?id=de.joergjahnke.c64.android" class="dl-link" target="_blank">Google Play</a></td>
                 </tr>
                 <tr>
@@ -208,14 +208,14 @@ labels: ["Commodore","Commodore-AMIGA"]
                     <td>Android</td>
                     <td>0.96.3</td>
                     <td>ضعيفة</td>
-                    <td><span style="color: var(--c64-red);">✘ محدود ومهجور</span></td>
-                    <td><a href="https://frodo-c64.en.uptodown.com/android" class="dl-link" style="border-color:#94a3b8; color:#94a3b8;" target="_blank">Uptodown</a></td>
+                    <td><span style="color: var(--c64-red)">✘ محدود ومهجور</span></td>
+                    <td><a href="https://frodo-c64.en.uptodown.com/android" class="dl-link" style="border-color:#94a3b8; color:#94a3b8" target="_blank">Uptodown</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <h3 class="section-title" style="color: var(--c64-cyan);">💡 كيف تختار المحاكي الأنسب لك؟</h3>
+    <h3 class="section-title" style="color: var(--c64-cyan)">💡 كيف تختار المحاكي الأنسب لك؟</h3>
     <ul class="tips-list">
         <li>✅ <strong>للعب المباشر السريع:</strong> إذا كنت تبحث عن محاكي جاهز للعمل فوراً "بدون فلسفة" أو إعدادات معقدة، فخيارك الأول هو <b>C64.emu</b>.</li>
         <li>💻 <strong>للمحاكاة الدقيقة:</strong> إذا كنت ترغب بتجربة احترافية مطابقة تماماً للكمبيوتر (تدعم الكيبورد الفيزيائي وكل تفاصيل النظام)، فجرّب <b>VICE</b> الرسمي.</li>
@@ -224,7 +224,7 @@ labels: ["Commodore","Commodore-AMIGA"]
 
     <div class="opinion-box">
         <h3>🧠 رأي حكميك الشخصي:</h3>
-        <p style="color: #ccc; margin-bottom: 0; font-size: 16px;">
+        <p style="color: #ccc; margin-bottom: 0; font-size: 16px">
             بعد تجربة طويلة في عالم محاكاة الموبايل، يظل <strong>C64.emu</strong> هو الأفضل بلا منازع من ناحية الاستقرار، سهولة واجهة المستخدم، وتوافقه الممتاز مع أذرع التحكم (Controllers). <br><br>
             أما <b>VICE</b> فيظل المفضل للناس التي تعرف كيف تتعامل مع الإعدادات الكثيرة والمعقدة. بالنسبة لباقي الخيارات في القائمة؟ تصلح فقط للفضوليين أو لأصحاب الأجهزة القديمة جداً.
         </p>

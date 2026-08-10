@@ -63,22 +63,22 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 <div class="beena-retroarch-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg">
-                <img alt="صورة توضيحية ضمن مقال  تشغيل Beena على RetroArch – هل ممكن؟ وهل يستحق؟" class="img-frame" src="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال تشغيل Beena على RetroArch – هل ممكن؟ وهل يستحق؟" class="img-frame" src="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">تشغيل Beena على RetroArch – هل هو ممكن؟ وهل يستحق؟</h2>
-        <p style="text-align: center;">يعتبر RetroArch المنصة الأقوى للمحاكاة، ولكن ماذا عن الأنظمة النادرة مثل SEGA Beena؟ هل تتوفر لها أنوية تشغيل؟ وهل تستحق التجربة التقنية؟</p>
+        <h2 style="color: var(--xe-blue); text-align: center">تشغيل Beena على RetroArch – هل هو ممكن؟ وهل يستحق؟</h2>
+        <p style="text-align: center">يعتبر RetroArch المنصة الأقوى للمحاكاة، ولكن ماذا عن الأنظمة النادرة مثل SEGA Beena؟ هل تتوفر لها أنوية تشغيل؟ وهل تستحق التجربة التقنية؟</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">وضعية النواة (Core) في RetroArch</h3>
+        <h3 style="color: var(--xe-gold)">وضعية النواة (Core) في RetroArch</h3>
         <p>من الناحية التقنية، <span class="highlight-blue">لا توجد نواة رسمية مدعومة لـ Beena</span> داخل مكتبة RetroArch الحالية أو مشاريع Libretro. جميع محاكيات هذا الجهاز لا تزال في مراحلها التجريبية المستقلة ولم يتم دمجها برمجياً في الواجهة الموحدة للمحاكي الشهير.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e67e22;">
-        <h3 style="color: #f39c12;">أسباب غياب الدعم الرسمي</h3>
+    <section class="section-card" style="border-right: 5px solid #e67e22">
+        <h3 style="color: #f39c12">أسباب غياب الدعم الرسمي</h3>
         <ul class="clean-list">
             <li>ندرة الجهاز وانحصاره التقني داخل السوق اليابانية فقط.</li>
             <li>تعقيد منظومة التشغيل التي تدمج بين الأقراص المدمجة، الكتب التفاعلية، والقلم الإلكتروني.</li>
@@ -87,7 +87,7 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">الحلول البديلة للتشغيل</h3>
+        <h3 style="color: var(--xe-gold)">الحلول البديلة للتشغيل</h3>
         <p>إذا كنت ترغب في خوض التجربة، يمكنك الاعتماد على مشاريع مستقلة خارج RetroArch:</p>
         <ul class="clean-list">
             <li>استخدام مشروع <code>beena-emulator</code> المتوفر على منصة GitHub.</li>
@@ -97,18 +97,18 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">هل تستحق المحاكاة عناء التجربة؟</h3>
+        <h3 style="color: var(--xe-blue)">هل تستحق المحاكاة عناء التجربة؟</h3>
         <p>تعتبر محاكاة Beena خطوة هامة لمحبين <span class="highlight-gold">أرشفة الألعاب النادرة</span> والباحثين عن التحف التقنية المنقرضة. أما من منظور الترفيه التقليدي، فإن الجهاز يقدم تجربة كتب تفاعلية تعليمية موجهة للأطفال، وهو ما قد لا يناسب اللاعبين الباحثين عن الأكشن أو التحديات التقليدية.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة التقنية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة التقنية</h3>
         <p>حتى اللحظة، يظل Beena خارج مظلة RetroArch الرسمية. ولكن بفضل مجتمع المصادر المفتوحة على GitHub، لا يزال الأمل قائماً لتشغيل هذه التحفة النادرة والاستمتاع بخصوصيتها التقنية التي دمجت الورق بالبرمجيات.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin-bottom: 10px;"><b>هل تود الحصول على دليل تقني لتشغيل المحاكي المستقل؟ شاركنا اهتمامك في التعليقات.</b></p>
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin-bottom: 10px"><b>هل تود الحصول على دليل تقني لتشغيل المحاكي المستقل؟ شاركنا اهتمامك في التعليقات.</b></p>
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

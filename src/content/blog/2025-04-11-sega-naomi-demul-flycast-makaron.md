@@ -74,17 +74,17 @@ labels: ["sega","Sega-Naomi"]
 <div class="naomi-emu-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg">
-                <img alt="صورة توضيحية ضمن مقال  أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد (Demul - Flycast - Makaron)" class="img-frame" src="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg" width="226" />
+                <img alt="صورة توضيحية ضمن مقال أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد (Demul - Flycast - Makaron)" class="img-frame" src="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg" width="226" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد</h2>
-        <p style="text-align: center;">يعد نظام Sega NAOMI الأيقونة الحقيقية لصالات الأركيد في بداية الألفية. عبر هذه المحاكيات المتقدمة، يمكنك استعادة تجربة ألعاب أسطورية مثل Marvel vs Capcom 2 بدقة عالية وأداء مستقر.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد</h2>
+        <p style="text-align: center">يعد نظام Sega NAOMI الأيقونة الحقيقية لصالات الأركيد في بداية الألفية. عبر هذه المحاكيات المتقدمة، يمكنك استعادة تجربة ألعاب أسطورية مثل Marvel vs Capcom 2 بدقة عالية وأداء مستقر.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">Demul – الدقة والمحاكاة الواقعية</h3>
+        <h3 style="color: var(--xe-gold)">Demul – الدقة والمحاكاة الواقعية</h3>
         <p>يعتبر المحاكي الأكثر دقة في محاكاة أنظمة <span class="highlight-blue">NAOMI</span> و <span class="highlight-blue">Atomiswave</span> برمجياً. يوفر تجربة مطابقة تماماً للعتاد الأصلي مع دعم كامل لكافة المؤثرات البصرية والصوتية.</p>
         <ul class="clean-list">
             <li>يعمل بشكل حصري على أنظمة Windows.</li>
@@ -94,8 +94,8 @@ labels: ["sega","Sega-Naomi"]
         <a href="https://demul.emulation64.com/" target="_blank" class="btn-link">الموقع الرسمي لمحاكي Demul</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">Flycast – المرونة والأنظمة المتعددة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">Flycast – المرونة والأنظمة المتعددة</h3>
         <p>يعد الخيار الأفضل لمستخدمي الهواتف الذكية ومنصات <span class="highlight-blue">RetroArch</span>. يتميز بسرعة المعالجة وخفة الوزن البرمجي، مما يجعله مناسباً لمجموعة واسعة من الأجهزة.</p>
         <ul class="clean-list">
             <li>يدعم أنظمة Dreamcast و NAOMI و Atomiswave في بيئة موحدة.</li>
@@ -106,7 +106,7 @@ labels: ["sega","Sega-Naomi"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">Makaron – الكلاسيكية والأداء الخفيف</h3>
+        <h3 style="color: var(--xe-gold)">Makaron – الكلاسيكية والأداء الخفيف</h3>
         <p>مشروع تاريخي كان له الفضل في بدايات دعم ألعاب NAOMI. رغم توقف تطويره، إلا أنه لا يزال يحتفظ بمكانته كخيار خفيف جداً لتشغيل بعض العناوين المحددة.</p>
         <ul class="clean-list">
             <li>يتميز ببساطة برمجية عالية واستهلاك منخفض جداً للموارد.</li>
@@ -115,13 +115,13 @@ labels: ["sega","Sega-Naomi"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة التقنية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة التقنية</h3>
         <p>لاختيار المحاكي الأمثل، اعتمد على نوع جهازك؛ فإذا كنت من مستخدمي الحاسوب وتبحث عن الدقة المطلقة، فإن <span class="highlight-blue">Demul</span> هو رهانك الرابح. أما إذا كنت تفضل اللعب أثناء التنقل أو عبر واجهة RetroArch، فإن <span class="highlight-blue">Flycast</span> هو الحل التقني الأكثر مرونة واستقراراً في عام 2026.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

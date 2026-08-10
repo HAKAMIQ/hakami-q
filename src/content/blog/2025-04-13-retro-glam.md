@@ -56,17 +56,17 @@ labels: ["PlayStation","PS2"]
 <div class="ps2-emu-comparison-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg">
                 <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات PS2 PCSX2 vs Play! vs RetroArch" class="img-frame" src="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); font-size: 28px;">🎮 مقارنة أفضل محاكيات PS2 (PCSX2 vs Play! vs RetroArch)</h2>
-        <p style="color: var(--xe-gold);">دليل شامل لاختيار المحاكي الأنسب لجهازك بناءً على الأداء والتوافق والميزات التقنية.</p>
+        <h2 style="color: var(--xe-blue); font-size: 28px">🎮 مقارنة أفضل محاكيات PS2 (PCSX2 vs Play! vs RetroArch)</h2>
+        <p style="color: var(--xe-gold)">دليل شامل لاختيار المحاكي الأنسب لجهازك بناءً على الأداء والتوافق والميزات التقنية.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">📋 جدول المقارنة التفصيلي</h3>
+        <h3 style="color: var(--xe-blue)">📋 جدول المقارنة التفصيلي</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -120,7 +120,7 @@ labels: ["PlayStation","PS2"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🎯 الخلاصة: ماذا تختار؟</h3>
+        <h3 style="color: var(--xe-gold)">🎯 الخلاصة: ماذا تختار؟</h3>
         <ul>
             <li><strong>PCSX2:</strong> الخيار رقم 1 بلا منازع إذا كنت تلعب على جهاز كمبيوتر وتريد أفضل أداء وتوافق مع كافة الألعاب.</li>
             <li><strong>Play!:</strong> الخيار الأمثل إذا كنت تبحث عن البساطة المطلقة أو تريد تجربة المحاكاة على أجهزة الماك والأندرويد بشكل خفيف.</li>
@@ -128,8 +128,8 @@ labels: ["PlayStation","PS2"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid var(--xe-blue);">
-        <p style="margin: 0; font-weight: bold; color: var(--xe-green);">🎮 اختر محاكيك المفضل الآن واستمتع بذكريات البلايستيشن 2!</p>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid var(--xe-blue)">
+        <p style="margin: 0; font-weight: bold; color: var(--xe-green)">🎮 اختر محاكيك المفضل الآن واستمتع بذكريات البلايستيشن 2!</p>
     </footer>
 
 </div>

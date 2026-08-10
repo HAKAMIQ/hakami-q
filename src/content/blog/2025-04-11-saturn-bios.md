@@ -65,22 +65,22 @@ labels: ["Saturn","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png">
                 <img alt="صورة توضيحية ضمن مقال شرح تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS" class="img-frame" src="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png" width="250" />
             </a>
         </div>
         
-        <p style="text-align: center;">إذا كنت تحب ألعاب SEGA Saturn الكلاسيكية وتريد تشغيلها على جهازك باستخدام محاكي، فستحتاج إلى محاكي مناسب وملفات BIOS الخاصة بالجهاز. في هذا الموضوع، راح نتعرف على كيفية تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS بشكل سهل وبسيط. 🚀</p>
+        <p style="text-align: center">إذا كنت تحب ألعاب SEGA Saturn الكلاسيكية وتريد تشغيلها على جهازك باستخدام محاكي، فستحتاج إلى محاكي مناسب وملفات BIOS الخاصة بالجهاز. في هذا الموضوع، راح نتعرف على كيفية تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS بشكل سهل وبسيط. 🚀</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🌟 ما هو SEGA Saturn؟</h3>
+        <h3 style="color: var(--xe-gold)">🌟 ما هو SEGA Saturn؟</h3>
         <p><strong>SEGA Saturn</strong> هو جهاز ألعاب تم إطلاقه في التسعينات، وكان يعتبر من أقوى الأجهزة في تقديم تقنيات <strong>3D</strong> في تلك الفترة. ومع ذلك، تعرض الجهاز لبعض المشاكل التقنية مما أثر على انتشاره في السوق. الآن، يمكن لمحاكيات مثل <strong>Kronos</strong> و <strong>Yaba Sanshiro</strong> إحياء تلك الألعاب على الكمبيوتر أو الجوال بشكل رائع.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">⚙️ 1. تحميل محاكي SEGA Saturn</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">⚙️ 1. تحميل محاكي SEGA Saturn</h3>
         <ul class="clean-list">
             <li>إذا كنت تستخدم <strong>الكمبيوتر</strong>، فقم بتحميل محاكي <strong>Kronos</strong> من GitHub عبر الرابط التالي: <a href="https://github.com/benvanik/Kronos" target="_blank">⬇️ تحميل Kronos من GitHub</a></li>
             <li>إذا كنت تستخدم <strong>أندرويد</strong>، فقم بتحميل محاكي <strong>Yaba Sanshiro</strong> عبر الرابط التالي: <a href="https://play.google.com/store/apps/details?id=com.yabasanshiro.sega.saturn" target="_blank">⬇️ تحميل Yaba Sanshiro من جوجل بلاي</a></li>
@@ -88,8 +88,8 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">🎮 2. تحميل ملفات BIOS لـ SEGA Saturn</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">🎮 2. تحميل ملفات BIOS لـ SEGA Saturn</h3>
         <p>لتشغيل ألعاب <strong>SEGA Saturn</strong> بشكل صحيح، تحتاج إلى ملفات <strong>BIOS</strong> الخاصة بالجهاز. هذه الملفات ضرورية لأنها تسمح للمحاكي بالتفاعل مع الألعاب كما كان يحدث مع الجهاز الأصلي. لا يمكنك تشغيل الألعاب بدونها!</p>
         <ul class="clean-list">
             <li>ملفات BIOS التي ستحتاجها هي: <code>saturn_bios.bin</code> و <code>scu_bios.bin</code>.</li>
@@ -98,8 +98,8 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">⚙️ 3. إعداد المحاكي باستخدام ملفات BIOS</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">⚙️ 3. إعداد المحاكي باستخدام ملفات BIOS</h3>
         <ul class="clean-list">
             <li>افتح المحاكي (سواء كان <strong>Kronos</strong> أو <strong>Yaba Sanshiro</strong>) على جهازك.</li>
             <li>انتقل إلى إعدادات المحاكي وابحث عن قسم <strong>BIOS</strong> أو <strong>Settings</strong>.</li>
@@ -108,8 +108,8 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">🎮 4. تحميل وتشغيل الألعاب</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">🎮 4. تحميل وتشغيل الألعاب</h3>
         <ul class="clean-list">
             <li>حمل ألعاب SEGA Saturn بصيغة <strong>ISO</strong> أو <strong>GDI</strong>.</li>
             <li>ضع ملفات الألعاب في مجلد مخصص لتسهيل الوصول إليها.</li>
@@ -119,8 +119,8 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">💡 نصائح لتحسين الأداء</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">💡 نصائح لتحسين الأداء</h3>
         <ul class="clean-list">
             <li>على <strong>Kronos</strong>، تأكد من تمكين خيار <strong>Vulkan</strong> للحصول على أداء أفضل.</li>
             <li>على <strong>Yaba Sanshiro</strong>، قم بتعديل إعدادات <strong>Graphics</strong> و <strong>Resolution</strong> حسب قوة جهازك.</li>
@@ -129,9 +129,9 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">تثبيت وتشغيل ألعاب <strong>SEGA Saturn</strong> باستخدام ملفات <strong>BIOS</strong> والمحاكيات المناسبة قد يبدو معقدًا في البداية، لكنه في الحقيقة بسيط جدًا. مع محاكيات مثل <strong>Kronos</strong> و <strong>Yaba Sanshiro</strong>، يمكن تشغيل ألعاب SEGA Saturn بأداء رائع على أجهزة الكمبيوتر والجوال. استمتع بتجربة الألعاب الكلاسيكية على جهازك وابدأ مغامرتك الآن! 🚀</p>
-        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">تثبيت وتشغيل ألعاب <strong>SEGA Saturn</strong> باستخدام ملفات <strong>BIOS</strong> والمحاكيات المناسبة قد يبدو معقدًا في البداية، لكنه في الحقيقة بسيط جدًا. مع محاكيات مثل <strong>Kronos</strong> و <strong>Yaba Sanshiro</strong>، يمكن تشغيل ألعاب SEGA Saturn بأداء رائع على أجهزة الكمبيوتر والجوال. استمتع بتجربة الألعاب الكلاسيكية على جهازك وابدأ مغامرتك الآن! 🚀</p>
+        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

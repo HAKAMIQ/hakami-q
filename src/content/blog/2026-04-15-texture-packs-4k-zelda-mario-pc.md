@@ -114,7 +114,7 @@ labels: ["articles","Nintendo","PC"]
         <a href="https://www.henrikomagnifico.com/" target="_blank">
             <img class="proweb-banner-frame" src="/media/blogger/4f/4ff0efef375cbef820640d15a30c347fe2acbb1ee0ee55ca4b7175faba655870.jpg" alt="إبداعات Henriko Magnifico بدقة 4K" />
         </a>
-        <h2 style="color: var(--xe-blue);">دليلك الشامل لأعمال Henriko Magnifico: حزم نسيج 4K وتطبيقات خرافية</h2>
+        <h2 style="color: var(--xe-blue)">دليلك الشامل لأعمال Henriko Magnifico: حزم نسيج 4K وتطبيقات خرافية</h2>
         <p>إذا كنت من عشاق الألعاب الكلاسيكية وترغب في إعادة إحيائها برسومات 4K مذهلة، أو تبحث عن تطبيقات أنيقة تسهل عملك اليومي، فإن موقع <b>Henriko Magnifico</b> هو كنزك المفقود. دعنا نستعرض أبرز المشاريع التي يقدمها هذا المبدع مجاناً.</p>
     </div>
 
@@ -126,7 +126,7 @@ labels: ["articles","Nintendo","PC"]
             <li><b>سلسلة Mario:</b> مثل Super Mario Sunshine و Super Mario 3D Land.</li>
             <li><b>ألعاب أخرى رائعة:</b> Luigi’s Mansion, Pikmin 1 & 2, و Wii Sports.</li>
         </ul>
-        <p style="color: var(--text-muted); font-size: 0.9em;">* ملاحظة هامة: هذه الحزم مخصصة للمحاكيات (مثل Dolphin و Citra) ولا يمكن استخدامها على أجهزة الكونسول الأصلية.</p>
+        <p style="color: var(--text-muted); font-size: 0.9em">* ملاحظة هامة: هذه الحزم مخصصة للمحاكيات (مثل Dolphin و Citra) ولا يمكن استخدامها على أجهزة الكونسول الأصلية.</p>
     </section>
 
     <section class="section-card">
@@ -164,7 +164,7 @@ labels: ["articles","Nintendo","PC"]
                 </tbody>
             </table>
         </div>
-        <div style="margin-top: 30px; text-align: center;">
+        <div style="margin-top: 30px; text-align: center">
             <a class="btn-visit" href="https://www.henrikomagnifico.com/" target="_blank">زيارة الصفحة الرئيسية للموقع 🚀</a>
         </div>
     </section>

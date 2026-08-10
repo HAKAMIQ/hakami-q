@@ -59,15 +59,15 @@ labels: ["PlayStation","PS1"]
 <div class="ps1-emu-wrapper">
 
     <header class="tech-header">
-        <h2 style="color: var(--xe-blue); font-size: 28px;">🎮 مقارنة محاكيات PS1: من ePSXe إلى DuckStation</h2>
-        <p style="color: var(--xe-gold);">رحلة تطور المحاكاة من العصر الكلاسيكي القائم على الإضافات إلى عصر المحاكاة الحديثة والدقة الفائقة.</p>
+        <h2 style="color: var(--xe-blue); font-size: 28px">🎮 مقارنة محاكيات PS1: من ePSXe إلى DuckStation</h2>
+        <p style="color: var(--xe-gold)">رحلة تطور المحاكاة من العصر الكلاسيكي القائم على الإضافات إلى عصر المحاكاة الحديثة والدقة الفائقة.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-red);">1. ePSXe: المحاكي الكلاسيكي القديم</h3>
-        <div class="separator" style="clear: both; text-align: center;">
+        <h3 style="color: var(--xe-red)">1. ePSXe: المحاكي الكلاسيكي القديم</h3>
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png">
-                <img alt="صورة توضيحية ضمن مقال  مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png" width="320" />
             </a>
         </div>
         <p>يعتبر <strong>ePSXe</strong> الأب الروحي لمحاكاة PS1، أطلق عام 2000 واعتمد على نظام "البلجنز" (Plugins). رغم تاريخه العريق، إلا أنه بدأ يواجه صعوبات في التوافق مع أنظمة ويندوز الحديثة.</p>
@@ -75,14 +75,14 @@ labels: ["PlayStation","PS1"]
             <li><strong>المميزات:</strong> دعم هائل للأجهزة القديمة، تخصيص دقيق عبر الإضافات، دعم الأقراص المتعددة.</li>
             <li><strong>العيوب:</strong> تعقيد في الإعداد الأولي، تحديثات متوقفة منذ سنوات، مشاكل في تصيير الرسوم الحديثة.</li>
         </ul>
-        <p style="text-align: center;"><a href="https://www.epsxe.com/" target="_blank">📲 تحميل ePSXe من الموقع الرسمي</a></p>
+        <p style="text-align: center"><a href="https://www.epsxe.com/" target="_blank">📲 تحميل ePSXe من الموقع الرسمي</a></p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">2. DuckStation: ثورة المحاكاة الحديثة</h3>
-        <div class="separator" style="clear: both; text-align: center;">
+        <h3 style="color: var(--xe-blue)">2. DuckStation: ثورة المحاكاة الحديثة</h3>
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png">
-                <img alt="صورة توضيحية ضمن مقال  مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png" width="320" />
             </a>
         </div>
         <p>بالمقابل، يمثل <strong>DuckStation</strong> الجيل الجديد. يركز على سهولة الاستخدام، السرعة، والدقة العالية جداً، مما يجعله المحاكي رقم 1 حالياً لمعظم اللاعبين.</p>
@@ -90,11 +90,11 @@ labels: ["PlayStation","PS1"]
             <li><strong>المميزات:</strong> رفع الدقة لـ 4K بسهولة، تقنيات PGXP لإصلاح اهتزاز الرسوم، دعم Widescreen، وتحديثات مستمرة.</li>
             <li><strong>العيوب:</strong> يتطلب أجهزة حديثة نسبياً لتفعيل كافة ميزات التحسين البصري.</li>
         </ul>
-        <p style="text-align: center;"><a href="https://github.com/stenzek/duckstation" target="_blank">📲 تحميل DuckStation من GitHub</a></p>
+        <p style="text-align: center"><a href="https://github.com/stenzek/duckstation" target="_blank">📲 تحميل DuckStation من GitHub</a></p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📊 جدول المقارنة المباشرة</h3>
+        <h3 style="color: var(--xe-gold)">📊 جدول المقارنة المباشرة</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -115,9 +115,9 @@ labels: ["PlayStation","PS1"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">🎯 نصيحة حكميك الختامية</h3>
-        <p style="margin: 0; font-size: 15px;">
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">🎯 نصيحة حكميك الختامية</h3>
+        <p style="margin: 0; font-size: 15px">
             إذا كنت تريد تجربة "شغل والعب" بأعلى جودة بصرية، فلا تتردد في اختيار <strong>DuckStation</strong>. أما إذا كنت تمتلك جهازاً قديماً جداً وتريد استرجاع ذكريات ضبط الإضافات يدوياً، فإن <strong>ePSXe</strong> لا يزال يقوم بالواجب.
         </p>
     </footer>

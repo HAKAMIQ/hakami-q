@@ -865,7 +865,7 @@ labels: ["PlayStation","PS3"]
                     أو تسحب ملف Save State وتفلته داخل نافذة RPCS3.
                 </div>
 <div class="ss-step-media">
-<figure class="ss-shot"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="455" data-original-width="287" height="240" src="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" width="151" /></a></div><br /><br /><p>
+<figure class="ss-shot"><div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="455" data-original-width="287" height="240" src="/media/blogger/1f/1fec04a70f0f0c6a4dee36224a8d60c12c4e1e8f1700b094206258d61b3bcd38.png" width="151" /></a></div><br /><br /><p>
                             صورة حقيقية من واجهة RPCS3 توضح Boot Savestate
                             وBoot Recent Savestate داخل قائمة File.
                         </p>

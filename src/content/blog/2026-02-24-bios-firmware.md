@@ -217,7 +217,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
     <header>
         <h2 class="hakamiq-header-title">المكتبة الشاملة لملفات BIOS و Firmware - نينتندو (Nintendo)</h2>
         
-        <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال الدليل الشامل لملفات تشغيل المحاكيات (BIOS &amp; Firmware)" border="0" data-original-height="760" data-original-width="1381" height="176" src="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" width="320" /></a></div><br /><div style="text-align: center;"><br /></div>
+        <div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال الدليل الشامل لملفات تشغيل المحاكيات (BIOS &amp; Firmware)" border="0" data-original-height="760" data-original-width="1381" height="176" src="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" width="320" /></a></div><br /><div style="text-align: center"><br /></div>
 
         <p>هل قمت بتحميل محاكي لتستعيد ذكريات الطفولة، لكنك فوجئت بشاشة سوداء أو رسالة خطأ "Missing BIOS"؟ المحاكي هو مجرد "جسد" للجهاز، ولكي يعمل، يحتاج إلى "الروح" وهي ملفات النظام الأصلية. بدون هذه الملفات، لن تتمكن المحاكيات من تشغيل الألعاب بدقة، أو حفظ التقدم، أو حتى الإقلاع في الأجهزة الحديثة مثل Switch و Wii U.</p>
     </header>
@@ -227,15 +227,15 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
     </div>
 
     <div class="hakamiq-legend-box">
-        <h3 data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-0984e3, #61a2d2); color: #0984e3; margin-top: 0px;">💡 مفاهيم ودلالات الرموز</h3>
+        <h3 style="color: #0984e3; margin-top: 0px">💡 مفاهيم ودلالات الرموز</h3>
         <p><strong>ماذا نقصد بعمود "Backup"؟</strong> مصطلح تقني (Dumping) يعني سحب ملف النظام من جهازك الأصلي. يوضح هذا العمود ما إذا كانت هناك طريقة برمجية لاستخراج الملف من جهازك بشكل قانوني.</p>
-        <ul style="list-style: none; padding: 0px;">
-            <li style="margin-bottom: 8px;"><span class="hakamiq-status-ok">✓</span> قابل للاستخراج (Dumping)</li>
-            <li><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888; font-weight: bold; margin-left: 10px;"> - </span> اختياري / لا توجد طريقة مباشرة</li>
+        <ul style="list-style: none; padding: 0px">
+            <li style="margin-bottom: 8px"><span class="hakamiq-status-ok">✓</span> قابل للاستخراج (Dumping)</li>
+            <li><span style="color: #888888; font-weight: bold; margin-left: 10px"> - </span> اختياري / لا توجد طريقة مباشرة</li>
         </ul>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-00ffff, #50e2e2); color: cyan;">🌐 Multi-system / PC Emulators</h3>
+    <h3 class="hakamiq-section-title" style="color: cyan">🌐 Multi-system / PC Emulators</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -247,11 +247,11 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
             </thead>
             <tbody>
                 <tr><td>RetroArch</td><td><a class="hakamiq-download-btn" href="https://github.com/Abdess/retroarch_system/releases/download/v20220308/RetroArch_v1.10.1.zip">BIOS files Pack</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
-                <tr><td>Lemuroid</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/lemuroid-bios">BIOS files</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Lemuroid</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/lemuroid-bios">BIOS files</a></td><td><span style="color: #888888">-</span></td></tr>
                 <tr><td>Mednafen (standalone)</td><td><a class="hakamiq-download-btn" href="https://www.mediafire.com/file/ii9numjq0o3juek/Mednafen_BIOS.zip/file">BIOS files</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>OpenEmu</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/OpenEmuBIOSPack">BIOS files</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
-                <tr><td>Mesen2</td><td><a class="hakamiq-download-btn" href="https://mega.nz/file/sbpAETaK#Zlgd0uWdRVey-BgBCJ3Hi2XgkomB2UVbeuluR1iA9Ao">ROMs Pack</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
-                <tr><td>MAME</td><td><a class="hakamiq-download-btn" href="https://archive.org/download/mame-merged/BIOS/">BIOS files (0.265)</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Mesen2</td><td><a class="hakamiq-download-btn" href="https://mega.nz/file/sbpAETaK#Zlgd0uWdRVey-BgBCJ3Hi2XgkomB2UVbeuluR1iA9Ao">ROMs Pack</a></td><td><span style="color: #888888">-</span></td></tr>
+                <tr><td>MAME</td><td><a class="hakamiq-download-btn" href="https://archive.org/download/mame-merged/BIOS/">BIOS files (0.265)</a></td><td><span style="color: #888888">-</span></td></tr>
                 <tr><td>MESS</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/MESS-0.151.BIOS.ROMs">ROMs Pack (0.151)</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>PCem</td><td><a class="hakamiq-download-btn" href="https://www.mediafire.com/file/6vc518bg37a0ngw/PCem+v16+ROMs.zip/file">Pack v16</a> <a class="hakamiq-download-btn" href="https://www.mediafire.com/file/zn7wpqat2d6zej0/PCem+v17+ROMs.zip/file">Pack v17</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>86Box</td><td><a class="hakamiq-download-btn" href="https://github.com/86Box/roms/releases">ROMs Pack</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
@@ -259,7 +259,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-ff0015, #c6343f); color: #ff0015;">🍄 Nintendo Classics (NES / SNES)</h3>
+    <h3 class="hakamiq-section-title" style="color: #ff0015">🍄 Nintendo Classics (NES / SNES)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -280,7 +280,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-6c5ce7, #7268be); color: #6c5ce7;">🧊 Nintendo 64 (N64 / 64DD)</h3>
+    <h3 class="hakamiq-section-title" style="color: #6c5ce7">🧊 Nintendo 64 (N64 / 64DD)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -299,7 +299,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-0984e3, #61a2d2); color: #0984e3;">💿 GameCube &amp; Wii (Dolphin)</h3>
+    <h3 class="hakamiq-section-title" style="color: #0984e3">💿 GameCube &amp; Wii (Dolphin)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -313,12 +313,12 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
                 <tr><td>GameCube (BIOS)</td><td><a class="hakamiq-download-btn" href="http://www.mediafire.com/download/2ajx3xr7v1ahqtf/GCN_BIOS.zip">GameCube IPL BIOS</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>Audio / GBA Link</td><td><a class="hakamiq-download-btn" href="http://www.mediafire.com/file/66hh53x9nczaun6/LLE+DSP.rar">DSP-LLE plugin</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>Wii (Wi-Fi/Network)</td><td><a class="hakamiq-download-btn" href="http://www.mediafire.com/file/rb81q0lr66o6s67/dolphin+network+files.7z">Wii WC24 SSL certs</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
-                <tr><td>Wii (Online Servers)</td><td><a class="hakamiq-download-btn" href="https://dolphin-emu.org/docs/guides/nand-usage-guide/">Device credentials (شرح الاستخراج)</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Wii (Online Servers)</td><td><a class="hakamiq-download-btn" href="https://dolphin-emu.org/docs/guides/nand-usage-guide/">Device credentials (شرح الاستخراج)</a></td><td><span style="color: #888888">-</span></td></tr>
             </tbody>
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-2ecc71, #66c18c); color: #2ecc71;">👾 Game Boy &amp; Game Boy Color</h3>
+    <h3 class="hakamiq-section-title" style="color: #2ecc71">👾 Game Boy &amp; Game Boy Color</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -338,7 +338,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-2ecc71, #66c18c); color: #2ecc71;">👾 Pokémon mini</h3>
+    <h3 class="hakamiq-section-title" style="color: #2ecc71">👾 Pokémon mini</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -354,7 +354,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-e67e22, #c78b56); color: #e67e22;">📱 Game Boy Advance &amp; e-Reader</h3>
+    <h3 class="hakamiq-section-title" style="color: #e67e22">📱 Game Boy Advance &amp; e-Reader</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -371,7 +371,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-e67e22, #c78b56); color: #e67e22;">📟 Nintendo DS &amp; DSi</h3>
+    <h3 class="hakamiq-section-title" style="color: #e67e22">📟 Nintendo DS &amp; DSi</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -396,7 +396,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         • nand.bin ➔ <b>DSi-1.mmc</b> | • biosdsi7.bin ➔ <b>BIOSDSI7.ROM</b> | • biosdsi9.bin ➔ <b>BIOSDSI9.ROM</b>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-ff0015, #c6343f); color: #ff0015;">👓 Nintendo 3DS (Citra)</h3>
+    <h3 class="hakamiq-section-title" style="color: #ff0015">👓 Nintendo 3DS (Citra)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -407,15 +407,15 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Decryption Keys</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/5422_20240206">aes_keys.txt + seeddb.bin</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Decryption Keys</td><td><a class="hakamiq-download-btn" href="https://archive.org/details/5422_20240206">aes_keys.txt + seeddb.bin</a></td><td><span style="color: #888888">-</span></td></tr>
                 <tr><td>System Data (Shared)</td><td><a class="hakamiq-download-btn" href="http://www.mediafire.com/file/xf0i4pwijnsz3wo/3DS%20Shared%20Data.zip">3DS Extra Data</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>Bootroms</td><td><a class="hakamiq-download-btn" href="https://mega.nz/#!qUkWXISL!ivytO3ZgcBtUM1FqGR_0WKZBdrXDM_2_suJng4OJYno">3DS Bootroms</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
-                <tr><td>Sound (Homebrew)</td><td><a class="hakamiq-download-btn" href="https://drive.google.com/uc?id=1LeetYqN9rik9uj25nRL97yai6KqgH15A&amp;export=download">dspfirm.cdc</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Sound (Homebrew)</td><td><a class="hakamiq-download-btn" href="https://drive.google.com/uc?id=1LeetYqN9rik9uj25nRL97yai6KqgH15A&amp;export=download">dspfirm.cdc</a></td><td><span style="color: #888888">-</span></td></tr>
             </tbody>
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-00ffff, #50e2e2); color: cyan;">📟 Wii U (Cemu / Decaf)</h3>
+    <h3 class="hakamiq-section-title" style="color: cyan">📟 Wii U (Cemu / Decaf)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -426,7 +426,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Keys (المفاتيح)</td><td><a class="hakamiq-download-btn" href="https://pastebin.com/w6GxMMNX">Wii U Common Keys</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>Keys (المفاتيح)</td><td><a class="hakamiq-download-btn" href="https://pastebin.com/w6GxMMNX">Wii U Common Keys</a></td><td><span style="color: #888888">-</span></td></tr>
                 <tr><td>Online Play</td><td><a class="hakamiq-download-btn" href="https://mega.nz/file/8M9WxAzZ#-AUqbBj3V68TV7uhrZc_t9nwwkvRlyaSEcAUS__2fFo">Online files (Cemu/Decaf)</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>System Menu (EU)</td><td><a class="hakamiq-download-btn" href="https://www.mediafire.com/file/5n50l8fpsoqfcnq/mlc01_WiiUMenu_5.5.5EU.zip">EU v5.5.5</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>System Menu (US)</td><td><a class="hakamiq-download-btn" href="https://www.mediafire.com/file/ajp0b1lb7jmsqjl/mlc01_WiiUMenu_5.5.5US.zip">USA v5.5.5</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
@@ -435,7 +435,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
         </table>
     </div>
 
-    <h3 class="hakamiq-section-title" data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-ff0015, #c6343f); color: #ff0015;">🎮 Nintendo Switch (Ryujinx / Yuzu / Skyline)</h3>
+    <h3 class="hakamiq-section-title" style="color: #ff0015">🎮 Nintendo Switch (Ryujinx / Yuzu / Skyline)</h3>
     <div class="hakamiq-table-container">
         <table class="hakamiq-tech-table">
             <thead>
@@ -446,7 +446,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
                 </tr>
             </thead>
             <tbody>
-                <tr><td>RyuSAK (Tool)</td><td><a class="hakamiq-download-btn" href="https://github.com/FennyFatal/RyuSAK/releases">تحميل RyuSAK</a></td><td><span data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-888888, #979189); color: #888888;">-</span></td></tr>
+                <tr><td>RyuSAK (Tool)</td><td><a class="hakamiq-download-btn" href="https://github.com/FennyFatal/RyuSAK/releases">تحميل RyuSAK</a></td><td><span style="color: #888888">-</span></td></tr>
                 <tr><td>Production Keys</td><td><a class="hakamiq-download-btn" href="https://prodkeys.net/ryujinx-prod-keys-v3/">Prod Keys</a> <a class="hakamiq-download-btn" href="https://archive.org/download/keys-16.0.3-by-prodkeys.net/Keys%2016.0.3%20By%20Prodkeys.net.zip">Mirror</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
                 <tr><td>System Firmware</td><td><a class="hakamiq-download-btn" href="https://prodkeys.net/latest-switch-firmwares-v/">Switch Firmware</a></td><td><span class="hakamiq-status-ok">✓</span></td></tr>
             </tbody>
@@ -454,8 +454,8 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
     </div>
 
     <div class="hakamiq-footer-steps">
-        <h3 data-darkreader-inline-color="" style="--darkreader-inline-color: var(--darkreader-text-111111, #ceccca); color: #111111; margin-top: 0px;">🛠️ خطوات ما بعد التحميل</h3>
-        <ul style="line-height: 1.8;">
+        <h3 style="color: #111111; margin-top: 0px">🛠️ خطوات ما بعد التحميل</h3>
+        <ul style="line-height: 1.8">
             <li><strong>فك الضغط:</strong> أغلب الملفات تأتي مضغوطة (.zip)، يجب فكها قبل الاستخدام.</li>
             <li><strong>المسار الصحيح:</strong> لكل محاكي مجلد خاص يسمى عادة <code>BIOS</code> أو <code>System</code>.</li>
             <li><strong>تحديث المفاتيح:</strong> لملاك Switch، يجب تحديث <code>prod.keys</code> بشكل دوري لتشغيل الألعاب الجديدة.</li>

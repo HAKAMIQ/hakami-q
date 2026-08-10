@@ -106,9 +106,9 @@ labels: ["PlayStation","PSPVita"]
 
 <div class="v3k-full-guide">
 
-    <div style="text-align: center; margin-bottom: 35px;">
+    <div style="text-align: center; margin-bottom: 35px">
         <a href="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg">
-            <img alt="صورة توضيحية ضمن مقال محاكيات PlayStation Vita" src="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال محاكيات PlayStation Vita" src="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
@@ -140,24 +140,24 @@ labels: ["PlayStation","PSPVita"]
                     <td>Windows, Linux, macOS</td>
                     <td>git / Continuous</td>
                     <td>✓</td>
-                    <td style="color: #00c4ff;">57.40% (1765/3075)</td>
+                    <td style="color: #00c4ff">57.40% (1765/3075)</td>
                     <td>GPLv2</td>
-                    <td style="color: #00e676;">✓</td>
+                    <td style="color: #00e676">✓</td>
                 </tr>
                 <tr>
                     <td><b>Vita3K (ARM)</b></td>
                     <td>Android</td>
                     <td>Release 12 (v8)</td>
                     <td>✓</td>
-                    <td style="color: #00c4ff;">57.40%</td>
+                    <td style="color: #00c4ff">57.40%</td>
                     <td>GPLv2</td>
-                    <td style="color: #00e676;">✓</td>
+                    <td style="color: #00e676">✓</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <h3 class="v3k-header" style="color: #00c4ff;">🔍 نبذة عن Vita3K</h3>
+    <h3 class="v3k-header" style="color: #00c4ff">🔍 نبذة عن Vita3K</h3>
     <p>
         <b>Vita3K</b> هو أول وأفضل محاكي مفتوح المصدر لتشغيل ألعاب PS Vita على الكمبيوتر والأندرويد. شهد المحاكي تطورًا كبيرًا في توافق الألعاب، ويُعد الخيار الوحيد حاليًا لهذا النوع من المحاكاة.
     </p>
@@ -178,7 +178,7 @@ labels: ["PlayStation","PSPVita"]
     </ul>
     <p><b>ملاحظة:</b> بعض الميزات مثل Ray-Tracing و DLSS غير مدعومة حاليًا، لكنها قيد الدراسة أو مستبعدة لصعوبتها.</p>
 
-    <h3 class="v3k-header" style="color: #00c4ff;">🔧 مميزات العتاد والدعم الداخلي</h3>
+    <h3 class="v3k-header" style="color: #00c4ff">🔧 مميزات العتاد والدعم الداخلي</h3>
     <ul class="v3k-list">
         <li>الكاميرا الأمامية والخلفية ✗</li>
         <li>المايكروفون ✗*</li>
@@ -194,12 +194,12 @@ labels: ["PlayStation","PSPVita"]
         واجهة LiveArea هي شاشة البداية التفاعلية لجهاز PS Vita. يوجد حالياً طلب تطوير في Vita3K لدعم هذه الواجهة، لكنها لا تعرض الألعاب المثبتة بعد، بل فقط تطبيقات النظام.
     </p>
 
-    <h3 class="v3k-header" style="color: #00c4ff;">🏆 التروفيز (Trophies)</h3>
+    <h3 class="v3k-header" style="color: #00c4ff">🏆 التروفيز (Trophies)</h3>
     <p>
         يدعم Vita3K جزئيًا نظام التروفيز، ويملك مدير تروفيز مدمج GUI-Trophy Collection داخل واجهة المحاكي.
     </p>
 
-    <h3 class="v3k-header" style="color: #00bcd4;">🌐 الاتصال والتعدد</h3>
+    <h3 class="v3k-header" style="color: #00bcd4">🌐 الاتصال والتعدد</h3>
     <ul class="v3k-list">
         <li><b>Ad-Hoc:</b> يمكن اللعب محليًا عبر الشبكة باستخدام أدوات مثل XLink Kai (غير مدعومة حاليًا)</li>
         <li><b>Infrastructure:</b> لعب أونلاين باستخدام سيرفرات خاصة (غير مدعومة حالياً)</li>

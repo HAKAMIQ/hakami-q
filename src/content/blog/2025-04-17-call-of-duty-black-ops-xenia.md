@@ -122,21 +122,21 @@ labels: ["Xbox","Xbox360"]
 <div class="blackops-fix-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png">
-                <img class="img-frame" alt="Black Ops Xenia Crash Fix" src="/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png" style="max-width: 500px;" />
+                <img class="img-frame" alt="Black Ops Xenia Crash Fix" src="/media/blogger/9e/9e71d8b82f1a5a6172e823178632853ddd67473e5d6bc1983ca613d220a1f1de.png" style="max-width: 500px" />
             </a>
         </div>
         <h2>❄️ مشكلة كراش Black Ops على Xenia || الأسباب والحلول</h2>
-        <p style="color: var(--text-muted);">
+        <p style="color: var(--text-muted)">
             محاكي Xenia معروف بقوّته في تشغيل ألعاب Xbox 360... لكن عندما تصل إلى <b>Black Ops</b>؟ تبدأ المشاكل! اللعبة تنكسر، تتجمد، وتكراش باستمرار، مما يجعل التجربة اختبار صبر أكثر من كونها متعة.
         </p>
     </header>
 
     <section class="fix-card">
-        <h3 style="color: var(--ops-orange);">🧩 ما هو السبب الحقيقي خلف المشكلة؟</h3>
+        <h3 style="color: var(--ops-orange)">🧩 ما هو السبب الحقيقي خلف المشكلة؟</h3>
         <p>تعتبر Black Ops واحدة من أكثر الألعاب تعقيداً برمجياً في تاريخ المحاكاة بسبب:</p>
-        <ul style="padding-right: 20px; margin: 0;">
+        <ul style="padding-right: 20px; margin: 0">
             <li>اعتماد المحرك على تعليمات معالج دقيقة جداً يصعب ترجمتها فورياً.</li>
             <li>وجود معالجة صوتية متقدمة وفيزياء متغيرة تضغط على ذاكرة المحاكي.</li>
             <li>تحتاج بعض النسخ إلى تصحيحات (Patches) مخصصة فقط لتخطي شاشة الإقلاع.</li>
@@ -145,7 +145,7 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="fix-card">
-        <h3 style="color: var(--ops-green);">🛠️ قائمة الحلول الذكية (جربها قبل الاستسلام)</h3>
+        <h3 style="color: var(--ops-green)">🛠️ قائمة الحلول الذكية (جربها قبل الاستسلام)</h3>
         <ul class="mission-checklist">
             <li><span>✅</span> <b>التنظيف الدوري:</b> احذف ملفات <code>cache</code> وملفات <code>shader</code> قبل كل محاولة تشغيل.</li>
             <li><span>✅</span> <b>تعديل الإعدادات:</b> فعّل خيار <code>use_new_decoder = true</code> في ملف الـ Config.</li>
@@ -162,8 +162,8 @@ labels: ["Xbox","Xbox360"]
     </div>
 
     <div class="opinion-box">
-        <h3 style="color: var(--ops-orange);">🎤 رأي حكميك الشخصي:</h3>
-        <p style="color: #ccc; margin-bottom: 0;">
+        <h3 style="color: var(--ops-orange)">🎤 رأي حكميك الشخصي:</h3>
+        <p style="color: #ccc; margin-bottom: 0">
             لعبة Black Ops على محاكي Xenia حالياً تعتبر تجربة "غير مضمونة". إذا كان هدفك هو اللعب والاستمتاع بدون صداع تقني؟ فالنسخة المخصصة للـ PC على Steam هي الخيار الأفضل بمراحل. أما إذا كنت تبحث عن التحدي وإثبات قوة جهازك؟ فجرب الحلول أعلاه، لكن كن مستعداً للكراش في أي لحظة!
         </p>
     </div>

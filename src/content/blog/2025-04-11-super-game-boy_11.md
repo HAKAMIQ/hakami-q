@@ -66,17 +66,17 @@ labels: ["Nintendo","SGB"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/ab/ab4a72c60b11811686764f2202cb1a0e283a588f2172fe260c10303c84d1b801.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/ab/ab4a72c60b11811686764f2202cb1a0e283a588f2172fe260c10303c84d1b801.png" width="320" alt="Super Game Boy Border" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🖼️ وش هو إطار Super Game Boy؟</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🖼️ وش هو إطار Super Game Boy؟</h2>
         <p>الإطار (Border) هو الخلفية اللي تظهر حوالين شاشة اللعب لما تشغّل ألعاب GB على SGB. نينتندو كانت تحط إطارات رسمية لبعض الألعاب… لكن الحين؟ تقدر تصمم واحد بنفسك 💥</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🛠️ الأشياء اللي تحتاجها</h3>
+        <h3 style="color: var(--xe-gold)">🛠️ الأشياء اللي تحتاجها</h3>
         <ul class="clean-list">
             <li>🎨 برنامج رسم (يفضل Photoshop أو GIMP)</li>
             <li>📦 أداة <strong>SGB Border Injector</strong> أو <strong>GB Enhanced</strong></li>
@@ -85,7 +85,7 @@ labels: ["Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📐 أبعاد التصميم</h3>
+        <h3 style="color: var(--xe-gold)">📐 أبعاد التصميم</h3>
         <ul class="clean-list">
             <li>🖼️ الحجم: <code>256x224</code> بيكسل (نفس دقة شاشة SNES)</li>
             <li>🎨 4 ألوان فقط لكل جزء (بسبب حدود الـ VRAM)</li>
@@ -94,7 +94,7 @@ labels: ["Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🧪 خطوات التخصيص بالكامل</h3>
+        <h3 style="color: var(--xe-gold)">🧪 خطوات التخصيص بالكامل</h3>
         
         <h4>1. صمّم الإطار</h4>
         <p>استخدم أي برنامج رسم وخلّي المساحة اللي وسط فارغة (مكان شاشة اللعب). مثلاً: حط شعارك فوق، شخصيتك الغامضة يمين، وخلفية ريترونتندو بالزاوية!</p>
@@ -110,7 +110,7 @@ labels: ["Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📁 نصائح حكميك الذهبية</h3>
+        <h3 style="color: var(--xe-gold)">📁 نصائح حكميك الذهبية</h3>
         <ul class="clean-list">
             <li>🖌️ صمّم إطار مو مزعج… خلّي الألوان خفيفة وما تشتت عن اللعب</li>
             <li>⚠️ لا تغيّر من بيانات ROM بشكل كبير، خلي بس الإطار</li>
@@ -118,9 +118,9 @@ labels: ["Nintendo","SGB"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">📌 وش تسوي بالإطارات بعدين؟</h3>
-        <ul class="clean-list" style="text-align: right; max-width: 450px; margin: 0 auto 20px auto;">
+    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">📌 وش تسوي بالإطارات بعدين؟</h3>
+        <ul class="clean-list" style="text-align: right; max-width: 450px; margin: 0 auto 20px auto">
             <li>– تقدر توزعها للمتابعين بصيغة ROM</li>
             <li>– أو تسوي تجميعة ألعاب فيها كل وحدة بإطار خاص</li>
             <li>– أو حتى تنشئ لعبة GB بسيطة وتحط لها هويتك الخاصة على SGB فقط!</li>

@@ -65,7 +65,7 @@ labels: ["Xbox","Xbox-Original"]
 <div class="snapshot-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png">
                 <img alt="صورة توضيحية ضمن مقال نظام الحفظ Snapshot (Save States) في محاكي xemu" class="img-frame" src="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png" width="320" />
             </a>
@@ -74,13 +74,13 @@ labels: ["Xbox","Xbox-Original"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🧠 وش يعني Snapshot؟</h3>
+        <h3 style="color: var(--xe-gold)">🧠 وش يعني Snapshot؟</h3>
         <p>الـ Snapshot هو ملف يحتفظ بالحالة الكاملة للمحاكي: ذاكرة الجهاز، موقع اللعبة، كل شي! لما تسترجعه، يرجع كل شي زي ما كان.</p>
         
         <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container">
             <tbody>
                 <tr>
-                    <td style="text-align: center;">
+                    <td style="text-align: center">
                         <a href="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png">
                             <img alt="صورة توضيحية ضمن مقال نظام الحفظ Snapshot (Save States) في محاكي xemu" border="0" src="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png" width="320" />
                         </a>
@@ -97,7 +97,7 @@ labels: ["Xbox","Xbox-Original"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📌 ملاحظات مهمة قبل الاسترجاع:</h3>
+        <h3 style="color: var(--xe-gold)">📌 ملاحظات مهمة قبل الاسترجاع:</h3>
         <ul>
             <li>لازم تكون محمل ملف اللعبة قبل تسترجع Snapshot (خصوصًا إذا تستخدم الـ Monitor).</li>
             <li>تأكد إن الكنترولرات المتصلة نفس وضعها وقت الحفظ، وإلا ممكن يرفض يسترجع الحالة.</li>
@@ -105,7 +105,7 @@ labels: ["Xbox","Xbox-Original"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🖱️ من خلال واجهة المستخدم:</h3>
+        <h3 style="color: var(--xe-gold)">🖱️ من خلال واجهة المستخدم:</h3>
         <p>روح لـ <b>Machine → Snapshots</b> وبتلقى هناك كل اللقطات المحفوظة. تقدر:</p>
         <ul>
             <li>تحفظ لقطة جديدة</li>
@@ -115,12 +115,12 @@ labels: ["Xbox","Xbox-Original"]
         </ul>
         <p>💡 لو ربطت لقطة بزر معين، تقدر تضغط F5 لتحمّلها، أو Shift+F5 لحفظ جديد فوقها.</p>
 
-        <h3 style="color: var(--xe-gold); margin-top: 20px;">🛠️ استخدام Snapshot من قائمة الآلة:</h3>
+        <h3 style="color: var(--xe-gold); margin-top: 20px">🛠️ استخدام Snapshot من قائمة الآلة:</h3>
         <p>تقدر تحفظ أو تحمّل لقطة من قائمة <b>Machine → Snapshot</b> مباشرة، أو من القائمة السريعة اللي تطلع بزر اليمين.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🖥️ استخدام Monitor (للمتقدمين):</h3>
+        <h3 style="color: var(--xe-gold)">🖥️ استخدام Monitor (للمتقدمين):</h3>
         <ol>
             <li>افتح اللعبة داخل xemu</li>
             <li>روح لـ <b>Debug → Monitor</b></li>
@@ -132,14 +132,14 @@ labels: ["Xbox","Xbox-Original"]
             <li><code>loadvm halo-checkpoint</code> لاسترجاع لقطة</li>
             <li><code>delvm halo-checkpoint</code> لحذف لقطة</li>
         </ul>
-        <p style="font-size: 14px; color: #ddd;">🧩 هذه الطريقة تنفع إذا كنت تسوي اختبارات أو تسجل فيديوهات تبغى ترجع تعيد لحظة بدون ما تبدأ من جديد.</p>
+        <p style="font-size: 14px; color: #ddd">🧩 هذه الطريقة تنفع إذا كنت تسوي اختبارات أو تسجل فيديوهات تبغى ترجع تعيد لحظة بدون ما تبدأ من جديد.</p>
     </section>
 
     <div class="alert-box">
         ⚠️ ميزة Snapshots ما زالت جديدة، وممكن تواجه مشاكل مع بعض الألعاب أو الإصدارات، جرب واحفظ كثير عشان تتفادى ضياع التقدم.
     </div>
 
-    <p style="text-align: center; font-weight: bold; padding: 20px; background: rgba(0,230,118,0.05); border-radius: 10px;">
+    <p style="text-align: center; font-weight: bold; padding: 20px; background: rgba(0,230,118,0.05); border-radius: 10px">
         🎮 باختصار: Snapshots هي أداة إنقاذ للاعبين! تحفظ كل لحظة وتكملها لاحقًا بدون همّ أو تعب. ما يحتاج تعيد المرحلة ولا تقعد تنتظر نقطة حفظ داخل اللعبة، بس لقطة... وتحملها وقت ما تبي!
     </p>
 

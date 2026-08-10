@@ -60,13 +60,13 @@ labels: ["PlayStation","PS2"]
 <div class="pcsx2-download-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg">
                 <img alt="صورة توضيحية ضمن مقال محاكي PCSX2 | هل يجب استخدام النسخة الثابتة أو التجريبية Nightly" class="img-frame" src="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">هل يجب استخدام النسخة الثابتة أم التجريبية (Nightly)؟</h2>
-        <p style="color: var(--xe-gold); text-align: center;">دليلك لاختيار الإصدار الأنسب وتحميله لكافة أنظمة التشغيل.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">هل يجب استخدام النسخة الثابتة أم التجريبية (Nightly)؟</h2>
+        <p style="color: var(--xe-gold); text-align: center">دليلك لاختيار الإصدار الأنسب وتحميله لكافة أنظمة التشغيل.</p>
     </header>
 
     <section class="section-card">
@@ -75,7 +75,7 @@ labels: ["PlayStation","PS2"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">🌐 روابط التحميل والأنظمة المدعومة</h3>
+        <h3 style="color: var(--xe-blue)">🌐 روابط التحميل والأنظمة المدعومة</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -97,11 +97,11 @@ labels: ["PlayStation","PS2"]
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 13px; color: var(--text-muted);">⚠️ <strong>تنبيه:</strong> الحزم المذكورة أعلاه يتم توفيرها كخدمة للمجتمع، لأي استفسار تقني تواصل مع مديري الحزمة المعنيين.</p>
+        <p style="font-size: 13px; color: var(--text-muted)">⚠️ <strong>تنبيه:</strong> الحزم المذكورة أعلاه يتم توفيرها كخدمة للمجتمع، لأي استفسار تقني تواصل مع مديري الحزمة المعنيين.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold); font-size: 24px;">📦 مدير الحزم (Package Manager)</h3>
+        <h3 style="color: var(--xe-gold); font-size: 24px">📦 مدير الحزم (Package Manager)</h3>
         <p>للمطورين والمستخدمين المتقدمين، يمكنك تثبيت وتحديث المحاكي عبر سطر الأوامر:</p>
         <div class="table-container">
             <table>
@@ -126,9 +126,9 @@ labels: ["PlayStation","PS2"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">🎯 رأي حكميك الختامي</h3>
-        <p style="margin: 0; font-size: 15px;">
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-gold); margin-top: 0">🎯 رأي حكميك الختامي</h3>
+        <p style="margin: 0; font-size: 15px">
             إذا كنت من هواة متابعة التطورات التقنية وتريد واجهة عصرية وسرعة أكبر، فنسخة <strong>Nightly</strong> هي اختيارك الأول. أما إذا كان هدفك هو إنهاء لعبة طويلة دون القلق من تحديثات يومية قد تغير بعض الإعدادات، فالتزم بالنسخة <strong>Stable</strong> لضمان أعلى درجات الاستقرار.
         </p>
     </footer>

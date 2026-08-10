@@ -65,12 +65,12 @@ labels: ["GBA","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/59/59cd31b38898298dc922e9f46a56f197dae3976274f77fe4f907694f6215cfde.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/59/59cd31b38898298dc922e9f46a56f197dae3976274f77fe4f907694f6215cfde.jpg" width="320" alt="تفعيل الغش في محاكيات GBA" />
             </a>
         </div>
-        <h2 style="color: var(--xe-red); text-align: center;">🎮 الدليل الكامل لتفعيل أكواد الغش (Cheats) في محاكيات GBA</h2>
+        <h2 style="color: var(--xe-red); text-align: center">🎮 الدليل الكامل لتفعيل أكواد الغش (Cheats) في محاكيات GBA</h2>
         <p>أكواد الغش أو الـ Cheats هي رموز برمجية تمكنك من تعديل قيم اللعبة للحصول على ميزات استثنائية؛ مثل المال اللانهائي، أسلحة نادرة، أو حتى اختراق الجدران. إليك كيفية تفعيلها في أشهر المحاكيات.</p>
     </header>
 
@@ -104,7 +104,7 @@ labels: ["GBA","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">⚠️ نصائح تقنية هامة</h3>
+        <h3 style="color: var(--xe-gold)">⚠️ نصائح تقنية هامة</h3>
         <ul class="clean-list">
             <li>💾 <b>الحفظ المسبق:</b> دائماً قم بعمل <b>Save State</b> قبل تفعيل أي كود، لأن بعض الأكواد قد تسبب تلفاً لملف الحفظ الأصلي.</li>
             <li>🧠 <b>التدرج:</b> لا تفعّل أكثر من 3 أكواد في وقت واحد لتجنب انهيار المحاكي (Crash).</li>
@@ -114,8 +114,8 @@ labels: ["GBA","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من الناحية التقنية، تعتبر أكواد الغش وسيلة ممتعة لاستكشاف أسرار الألعاب أو تجاوز المراحل الصعبة التي قد تستهلك وقتاً طويلاً. لكن كقاعدة ذهبية: لا تستخدم هذه الأكواد في أطوار اللعب الجماعي أو البطولات، لأنها تقتل روح المنافسة. استخدمها بحكمة للاستمتاع الشخصي وتجربة اللعبة بمنظور جديد! 😎🕹️</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من الناحية التقنية، تعتبر أكواد الغش وسيلة ممتعة لاستكشاف أسرار الألعاب أو تجاوز المراحل الصعبة التي قد تستهلك وقتاً طويلاً. لكن كقاعدة ذهبية: لا تستخدم هذه الأكواد في أطوار اللعب الجماعي أو البطولات، لأنها تقتل روح المنافسة. استخدمها بحكمة للاستمتاع الشخصي وتجربة اللعبة بمنظور جديد! 😎🕹️</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

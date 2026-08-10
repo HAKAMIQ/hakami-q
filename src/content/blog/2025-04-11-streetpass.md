@@ -55,12 +55,12 @@ labels: ["N3DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/2b/2ba34cae6d9c1bfdd5e682c268f9c4e7ff19a0a866500d6a695b66ab0569a5d9.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/2b/2ba34cae6d9c1bfdd5e682c268f9c4e7ff19a0a866500d6a695b66ab0569a5d9.png" width="213" alt="خاصية StreetPass" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">📡 وش سالفة خاصية StreetPass في الـ 3DS؟</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">📡 وش سالفة خاصية StreetPass في الـ 3DS؟</h2>
         <p>خاصية <strong>StreetPass</strong> هي ميزة ثورية في جهاز Nintendo 3DS تسمح للأجهزة بتبادل البيانات "تلقائياً" بمجرد المرور بجانب شخص آخر يحمل نفس الجهاز، دون الحاجة لأي تدخل منك!</p>
     </header>
 
@@ -81,7 +81,7 @@ labels: ["N3DS","Nintendo"]
     
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">❓ هل StreetPass يشتغل اليوم؟</h3>
+        <h3 style="color: var(--xe-gold)">❓ هل StreetPass يشتغل اليوم؟</h3>
         <ul class="clean-list">
             <li>✅ <b>محلياً:</b> نعم، الميزة تعتمد على اتصال لاسلكي محلي (Ad-hoc) وستعمل دائماً لو صادفت شخصاً يحمل الجهاز.</li>
             <li>⚠️ <b>الوضع الحالي:</b> الخدمة أصبحت نادرة جداً بسبب قلة عدد المستخدمين النشطين في الشوارع حالياً.</li>
@@ -90,18 +90,18 @@ labels: ["N3DS","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-red);">💻 هل تقدر تفعله بالمحاكي؟</h3>
+        <h3 style="color: var(--xe-red)">💻 هل تقدر تفعله بالمحاكي؟</h3>
         <p>للأسف الشديد، الإجابة هي <b>لا</b>. محاكي <code>Citra</code> والبدائل الحالية لا تدعم StreetPass رسمياً لأنه يحتاج لمحاكاة دقيقة لشريحة الواي فاي والهاردوير الفيزيائي.</p>
         <div class="alert-box">
-            <p style="margin:0;">🛠️ <b>حلول بديلة:</b> يلجأ البعض لاستخدام أجهزة 3DS مهكرة كـ "محطات StreetPass" منزلية أو محاكاة شبكات WiFi وهمية لتبادل البيانات، لكنها عملية معقدة وغير رسمية.</p>
+            <p style="margin:0">🛠️ <b>حلول بديلة:</b> يلجأ البعض لاستخدام أجهزة 3DS مهكرة كـ "محطات StreetPass" منزلية أو محاكاة شبكات WiFi وهمية لتبادل البيانات، لكنها عملية معقدة وغير رسمية.</p>
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <h3 style="color: var(--xe-gold); margin-top: 0; margin-bottom: 15px;">📌 خلاصة حكميك</h3>
-        <p style="margin-bottom: 15px;">خاصية StreetPass كانت فكرة سابقة لعصرها، حولت المشي في الشارع إلى مغامرة تقنية. رغم أنها صعبة التفعيل على المحاكيات، إلا أنها تظل جزءاً من سحر الـ 3DS الأصلي.</p>
-        <p style="color: var(--text-muted);">هل جربت يوماً أن تفتح جهازك وتجد "اللمبة الخضراء" مشتعلة؟ شعور لا يوصف! 💚</p>
-        <p style="margin: 15px 0 0 0; color: var(--xe-blue); font-weight: bold;">تحياتي،<br />🕹️ حكميك</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <h3 style="color: var(--xe-gold); margin-top: 0; margin-bottom: 15px">📌 خلاصة حكميك</h3>
+        <p style="margin-bottom: 15px">خاصية StreetPass كانت فكرة سابقة لعصرها، حولت المشي في الشارع إلى مغامرة تقنية. رغم أنها صعبة التفعيل على المحاكيات، إلا أنها تظل جزءاً من سحر الـ 3DS الأصلي.</p>
+        <p style="color: var(--text-muted)">هل جربت يوماً أن تفتح جهازك وتجد "اللمبة الخضراء" مشتعلة؟ شعور لا يوصف! 💚</p>
+        <p style="margin: 15px 0 0 0; color: var(--xe-blue); font-weight: bold">تحياتي،<br />🕹️ حكميك</p>
     </footer>
 
 </div>

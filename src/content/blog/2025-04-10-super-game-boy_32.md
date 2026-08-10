@@ -78,17 +78,17 @@ labels: ["Nintendo","SGB"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c0/c01e1f6a91eff853fae24cdf951156ef66f59e2377be8c08043ccabf3089eb2a.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/c0/c01e1f6a91eff853fae24cdf951156ef66f59e2377be8c08043ccabf3089eb2a.png" width="320" alt="Super Game Boy Secrets" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش هو Super Game Boy؟ (تذكير سريع)</h2>
-        <p>هو محوّل رسمي من نينتندو يخلي ألعاب <strong style="color: var(--xe-gold);">Game Boy</strong> تشتغل على جهاز <strong>Super Nintendo</strong>. بس هالمحول مو مجرد وسيط… فيه أسرار وتقنيات ما تتوقعها 👀</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 وش هو Super Game Boy؟ (تذكير سريع)</h2>
+        <p>هو محوّل رسمي من نينتندو يخلي ألعاب <strong style="color: var(--xe-gold)">Game Boy</strong> تشتغل على جهاز <strong>Super Nintendo</strong>. بس هالمحول مو مجرد وسيط… فيه أسرار وتقنيات ما تتوقعها 👀</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold); text-align: center; border-bottom: none;">🧠 أسرار ما تعرفها عن SGB</h3>
+        <h3 style="color: var(--xe-gold); text-align: center; border-bottom: none">🧠 أسرار ما تعرفها عن SGB</h3>
         
         <div class="game-title">1. 🖌️ كل لعبة تقدر تختار لها إطار خاص</div>
         <p>ألعاب كثيرة كانت تجي بإطار (border) رسمي مرسوم، مثل Pokémon Yellow اللي يطلع فيها <strong>Pikachu</strong> يتفاعل على يمين الشاشة!</p>
@@ -107,7 +107,7 @@ labels: ["Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">💡 ألعاب فيها محتوى "حصري" لـ SGB</h3>
+        <h3 style="color: var(--xe-gold)">💡 ألعاب فيها محتوى "حصري" لـ SGB</h3>
         <ul class="clean-list">
             <li>🎮 <strong>Pokémon Yellow</strong> – فيه تفاعل وجه بيكاتشو!</li>
             <li>🧱 <strong>Donkey Kong</strong> – شاشة كاملة فيها HUD محسّن</li>
@@ -118,14 +118,14 @@ labels: ["Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🎯 تجربها كيف اليوم؟</h3>
-        <p>المحاكيات مثل <strong>SameBoy</strong> و <strong>RetroArch</strong> (مع نواة Gambatte أو SameBoy) تقدر تفعّل فيها وضع <strong style="color: var(--xe-blue);">Super Game Boy</strong> وتشوف كل هالأسرار بنفسك!</p>
+        <h3 style="color: var(--xe-gold)">🎯 تجربها كيف اليوم؟</h3>
+        <p>المحاكيات مثل <strong>SameBoy</strong> و <strong>RetroArch</strong> (مع نواة Gambatte أو SameBoy) تقدر تفعّل فيها وضع <strong style="color: var(--xe-blue)">Super Game Boy</strong> وتشوف كل هالأسرار بنفسك!</p>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">📌 من حكميك</h3>
-        <p style="margin-bottom: 15px;">الـ SGB ما كان بس أداة… كان قفزة! نينتندو عطتك لون، صوت، شاشة كبيرة، وتحكم مطور…</p>
-        <p style="color: var(--xe-green); font-size: 1.2em; font-weight: bold; margin-bottom: 0;">وإنت الحين؟ كل هالشي بين يديك بمحاكي بسيط – بس لازم تعرف تفعلها صح 🔥</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">📌 من حكميك</h3>
+        <p style="margin-bottom: 15px">الـ SGB ما كان بس أداة… كان قفزة! نينتندو عطتك لون، صوت، شاشة كبيرة، وتحكم مطور…</p>
+        <p style="color: var(--xe-green); font-size: 1.2em; font-weight: bold; margin-bottom: 0">وإنت الحين؟ كل هالشي بين يديك بمحاكي بسيط – بس لازم تعرف تفعلها صح 🔥</p>
     </footer>
 
 </div>

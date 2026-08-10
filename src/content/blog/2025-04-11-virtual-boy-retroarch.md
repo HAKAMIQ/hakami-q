@@ -66,25 +66,25 @@ labels: ["Nintendo","VirtualBoy"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/05/053e3dc282f6248adb6794c811d825348a1339e11aed413a7aeb50f33a5dbe62.jpg">
                 <img class="img-frame" src="/media/blogger/05/053e3dc282f6248adb6794c811d825348a1339e11aed413a7aeb50f33a5dbe62.jpg" width="320" alt="RetroArch Virtual Boy" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">الدليل التقني: تشغيل ألعاب Virtual Boy عبر بيئة RetroArch</h2>
-        <p style="text-align: center;">يتيح محاكي <strong>RetroArch</strong>، عبر استخدام نواة المعالجة المخصصة، تجاوز القيود البصرية المعقدة لجهاز Nintendo Virtual Boy. يستعرض هذا الدليل خطوات إعداد نواة "Beetle VB" لتحويل تجربة العرض أحادية اللون إلى بيئة لعب مستقرة وعالية الدقة (HD) لتفادي الإجهاد البصري.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">الدليل التقني: تشغيل ألعاب Virtual Boy عبر بيئة RetroArch</h2>
+        <p style="text-align: center">يتيح محاكي <strong>RetroArch</strong>، عبر استخدام نواة المعالجة المخصصة، تجاوز القيود البصرية المعقدة لجهاز Nintendo Virtual Boy. يستعرض هذا الدليل خطوات إعداد نواة "Beetle VB" لتحويل تجربة العرض أحادية اللون إلى بيئة لعب مستقرة وعالية الدقة (HD) لتفادي الإجهاد البصري.</p>
     </header>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">1. تحميل وتكوين بيئة RetroArch</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">1. تحميل وتكوين بيئة RetroArch</h3>
         <ul class="clean-list">
             <li>قم بزيارة الموقع الرسمي لتحميل النسخة المتوافقة مع نظام التشغيل الخاص بك (Windows، Android، macOS): <a href="https://retroarch.com/?page=platforms" target="_blank">رابط التحميل المباشر</a>.</li>
             <li>أكمل عملية التثبيت القياسية لتهيئة مساحة العمل الأساسية للمحاكي وتكوين مسارات النظام.</li>
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">2. تثبيت نواة المعالجة (Beetle VB Core)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">2. تثبيت نواة المعالجة (Beetle VB Core)</h3>
         <p>لتتمكن الواجهة من قراءة ومعالجة ملفات النظام الخاصة بالجهاز، يجب تثبيت النواة البرمجية المخصصة:</p>
         <ul class="clean-list">
             <li>من الواجهة الرئيسية للمحاكي، توجه إلى قائمة التحديثات <code>Online Updater</code>.</li>
@@ -93,8 +93,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">3. تهيئة ملفات الألعاب (ROMs)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">3. تهيئة ملفات الألعاب (ROMs)</h3>
         <p>يتطلب التشغيل السليم إعداد ملفات القراءة بالشكل الصحيح:</p>
         <ul class="clean-list">
             <li>تأكد من توافر ملفات الألعاب بالصيغ البرمجية المعتمدة للنواة: <code>.vb</code> أو <code>.vboy</code>.</li>
@@ -103,8 +103,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">4. التشغيل والضبط المتقدم للإعدادات البصرية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">4. التشغيل والضبط المتقدم للإعدادات البصرية</h3>
         <p>بعد اختيار <code>Load Content</code> وتحديد ملف اللعبة والنواة، يُنصح بإجراء التعديلات التالية من قائمة الإعدادات السريعة (Quick Menu) لضمان أفضل تجربة بصرية:</p>
         <ul class="clean-list">
             <li><strong>لوحة الألوان (Color Palette):</strong> لتجنب الإجهاد البصري الناتج عن اللون الأحمر، قم بتغيير العرض إلى التدرج الرمادي (Grayscale) أو الأبيض والأسود.</li>
@@ -113,8 +113,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">💡 إرشادات تشغيلية إضافية</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">💡 إرشادات تشغيلية إضافية</h3>
         <ul class="clean-list">
             <li>استخدم ميزة الحفظ اللحظي (Save States) المدمجة في المحاكي كبديل عملي لنظام الحفظ الأصلي والمحدود للبطاقات القديمة.</li>
             <li>تدعم النواة وضع العرض التجسيمي <strong>Anaglyph 3D</strong>، وهو خيار ممتاز لمن يمتلك نظارات العرض باللونين (الأحمر/الأزرق) ويرغب في اختبار العمق المكاني الأصلي للتصميم.</li>
@@ -122,10 +122,10 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <h3 style="color: var(--xe-blue); margin-top: 0;">الخلاصة</h3>
-        <p style="margin: 0;">يمثل محاكي RetroArch حلاً برمجياً متكاملاً لتجربة مكتبة Virtual Boy وتخطي التحديات التصميمية والصحية التي رافقت الجهاز الأصلي. توفر نواة Beetle VB بيئة مستقرة تتيح دراسة هذا الجزء الفريد من تاريخ هندسة الألعاب بمنتهى الاحترافية.</p>
-        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold;">إعداد: HAKAMIQ</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <h3 style="color: var(--xe-blue); margin-top: 0">الخلاصة</h3>
+        <p style="margin: 0">يمثل محاكي RetroArch حلاً برمجياً متكاملاً لتجربة مكتبة Virtual Boy وتخطي التحديات التصميمية والصحية التي رافقت الجهاز الأصلي. توفر نواة Beetle VB بيئة مستقرة تتيح دراسة هذا الجزء الفريد من تاريخ هندسة الألعاب بمنتهى الاحترافية.</p>
+        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold">إعداد: HAKAMIQ</p>
     </footer>
 
 </div>

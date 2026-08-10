@@ -106,45 +106,45 @@ labels: ["Commodore","Commodore64"]
 <div class="vice-guide-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg">
                 <img class="img-frame" alt="محاكي VICE للـ C64" src="/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg" />
             </a>
         </div>
         <h2>🖥️ طريقة تشغيل Commodore 64 على الكمبيوتر باستخدام VICE</h2>
-        <p style="opacity: 0.8; margin-top: 10px;">استعد تجربة الـ C64 الكاملة وكأنك أمام شاشة CRT في الثمانينات</p>
+        <p style="opacity: 0.8; margin-top: 10px">استعد تجربة الـ C64 الكاملة وكأنك أمام شاشة CRT في الثمانينات</p>
     </header>
 
     <section class="tech-card">
         <h3>🔧 المتطلبات الأساسية</h3>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>🔸 كمبيوتر بنظام <b>Windows / Mac / Linux</b>.</li>
             <li>🔸 تحميل محاكي <b>VICE</b> (Versatile Commodore Emulator).</li>
             <li>🔸 ألعاب Commodore 64 بصيغ <span class="format-tag">.d64</span> أو <span class="format-tag">.crt</span>.</li>
         </ul>
-        <div style="text-align: center; margin-top: 20px;">
+        <div style="text-align: center; margin-top: 20px">
             <a href="https://vice-emu.sourceforge.io/" class="btn-download" target="_blank">تحميل محاكي VICE الرسمي ➔</a>
         </div>
     </section>
 
     <img class="img-frame" alt="واجهة محاكي VICE" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/VICE_C64_emulator.png" width="500" />
 
-    <section class="tech-card" style="border-right-color: var(--c64-cyan);">
+    <section class="tech-card" style="border-right-color: var(--c64-cyan)">
         <h3>🚀 بروتوكول تشغيل الألعاب</h3>
-        <ol style="padding-right: 20px;">
+        <ol style="padding-right: 20px">
             <li>افتح ملف <code>x64sc.exe</code> (النسخة الأكثر دقة في المحاكاة).</li>
             <li>من الشريط العلوي اختر: <code>File -> Attach Disk Image -> Drive 8</code>.</li>
             <li>اختر ملف اللعبة بصيغة <b>.d64</b>.</li>
             <li>في شاشة المحاكي الزرقاء، اكتب الأمر التالي بدقة:</li>
         </ol>
         <div class="terminal-box">LOAD"*",8,1</div>
-        <p style="padding-right: 20px; font-size: 14px;">بعد انتهاء التحميل وظهور كلمة <b>READY</b>، اكتب:</p>
+        <p style="padding-right: 20px; font-size: 14px">بعد انتهاء التحميل وظهور كلمة <b>READY</b>، اكتب:</p>
         <div class="terminal-box">RUN</div>
     </section>
 
     <section class="h-tip">
         <h3>🎯 نصائح حكميك الاحترافية</h3>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>✅ <b>فلتر CRT:</b> لا تنسَ تفعيله من إعدادات الفيديو لتعيش الجو الأصلي بظلال الشاشة القديمة.</li>
             <li>✅ <b>سرعة التشغيل:</b> استخدم زر <code>Alt + R</code> لإعادة التشغيل السريع (Soft Reset).</li>
             <li>✅ <b>أرصفة التحميل:</b> بعض الألعاب تتطلب انتظاراً طويلاً بعد كلمة RUN؛ لا تغلق المحاكي، اللعبة تعمل في الخلفية!.</li>
@@ -154,16 +154,16 @@ labels: ["Commodore","Commodore64"]
     <section class="tech-card">
         <h3>📁 مكتبة الألعاب (Archives)</h3>
         <p>يمكنك العثور على أضخم مكتبة ألعاب تاريخية لهذا الجهاز في المواقع التالية:</p>
-        <ul style="padding-right: 20px;">
+        <ul style="padding-right: 20px">
             <li>🔹 <a href="https://www.c64.com/" target="_blank">موقع C64.com</a> (الأكثر تنظيماً).</li>
             <li>🔹 <a href="https://www.zimmers.net/anonftp/pub/cbm/c64/games/" target="_blank">أرشيف Zimmers</a> (المصدر التقني).</li>
         </ul>
     </section>
 
-    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center;">
-        <h2 style="color: #1e293b; letter-spacing: 4px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px;">// SYSTEM_STATUS: COMMODORE_64_ONLINE // 2026_EDITION</p>
-        <p style="margin-top: 20px; font-weight: bold; color: var(--c64-blue);">كأنك فتحت بوابة زمنية للثمانينات.. استمتع بالبكسلات النقية! 👾💾</p>
+    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center">
+        <h2 style="color: #1e293b; letter-spacing: 4px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #64748b; font-family: monospace; font-size: 12px; margin-top: 10px">// SYSTEM_STATUS: COMMODORE_64_ONLINE // 2026_EDITION</p>
+        <p style="margin-top: 20px; font-weight: bold; color: var(--c64-blue)">كأنك فتحت بوابة زمنية للثمانينات.. استمتع بالبكسلات النقية! 👾💾</p>
     </footer>
 
 </div>

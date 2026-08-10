@@ -121,13 +121,13 @@ labels: ["Nintendo","NS"]
 <div class="switch-emu-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png">
-                <img class="img-frame" alt="Yuzu vs Ryujinx Emulator Comparison" src="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png" style="max-width: 500px;" />
+                <img class="img-frame" alt="Yuzu vs Ryujinx Emulator Comparison" src="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png" style="max-width: 500px" />
             </a>
         </div>
         <h2>مقارنة نهائية بين Yuzu و Ryujinx من تجربة شخصية 🎮</h2>
-        <p style="color: var(--text-muted); font-size: 16px; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); font-size: 16px; max-width: 800px; margin: 0 auto">
             بعد سنوات من الغوص في عالم المحاكاة وتجربة مئات الألعاب عبر منصات متعددة، وصلت لقناعة راسخة: <b>محاكيات Yuzu و Ryujinx هما حجر الأساس لتشغيل ألعاب Nintendo Switch على الحاسب.</b> لكن رغم أنهم يخدمون نفس الهدف، إلا أن كل واحد فيهم يمشي على طريق مختلف تماماً.
         </p>
     </header>
@@ -139,7 +139,7 @@ labels: ["Nintendo","NS"]
         <p>
             محاكي <b>Yuzu</b> يركز على الأداء. مصمم بعقلية <i>"النتيجة أهم من الدقة العمياء"</i>، حيث يحتوي على تحسينات ذكية وتقنيات تسريع تعطيك إطارات (Frames) ممتازة، حتى لو كنت تمتلك جهازاً متوسطاً أو ضعيفاً.
         </p>
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0">
             بعد تجربته على عشرات الألعاب، خاصة العناوين المألوفة مثل <em>Mario Odyssey</em> و <em>Donkey Kong</em>، كانت النتائج مرضية جداً؛ أوقات تحميل سريعة وتجربة لعب في قمة السلاسة.
         </p>
     </section>
@@ -151,18 +151,18 @@ labels: ["Nintendo","NS"]
         <p>
             أما <b>Ryujinx</b>، فهو المحاكي الذي يرفع شعار: <i>"لا تزوّر… عطنا المحاكاة كما هي"</i>. هذا البرنامج يحاكي نظام السويتش بدقة مذهلة ومطابقة للهاردوير الأصلي، بدون اللجوء لأي اختصارات برمجية أو أكواد مخصصة للتحايل على الأداء.
         </p>
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0">
             هو الخيار المثالي للألعاب الضخمة والمعقدة تقنياً مثل <em>Red Dead Redemption 1</em>، <em>Zelda BOTW/TOTK</em>، و <em>Nier Automata</em>. لكنه بالمقابل، يتطلب عتاداً ومواصفات أقوى… لذا <b>لا تفكر تشغله على جهاز "تنفسه ثقيل"</b>.
         </p>
     </section>
 
-    <h3 style="text-align: center; color: white; margin-top: 40px;">📊 المواجهة المباشرة: Yuzu ضد Ryujinx</h3>
+    <h3 style="text-align: center; color: white; margin-top: 40px">📊 المواجهة المباشرة: Yuzu ضد Ryujinx</h3>
     <table class="compare-table">
         <thead>
             <tr>
-                <th style="width: 20%;">وجه المقارنة</th>
-                <th style="width: 40%; border-left: 1px solid #444; color: var(--yuzu-red);">Yuzu</th>
-                <th style="width: 40%; color: var(--ryu-blue);">Ryujinx</th>
+                <th style="width: 20%">وجه المقارنة</th>
+                <th style="width: 40%; border-left: 1px solid #444; color: var(--yuzu-red)">Yuzu</th>
+                <th style="width: 40%; color: var(--ryu-blue)">Ryujinx</th>
             </tr>
         </thead>
         <tbody>
@@ -200,12 +200,12 @@ labels: ["Nintendo","NS"]
     </table>
 
     <div class="conclusion-box">
-        <h3 style="color: #00ffcc; margin-top: 0;">✅ خلاصة حكميك: وش تختار؟</h3>
-        <p style="color: #ccc; margin-bottom: 15px;">
+        <h3 style="color: #00ffcc; margin-top: 0">✅ خلاصة حكميك: وش تختار؟</h3>
+        <p style="color: #ccc; margin-bottom: 15px">
             المحاكيات ليست مسألة "من الأفضل مطلقاً"، بل مسألة <b>"ماذا يناسب عتادك واللعبة التي تريدها"</b>. <br><br>
             أنصحك دائماً بالبدء مع <strong>Yuzu</strong> إذا كان جهازك متوسطاً أو تبحث عن تشغيل سريع بدون تعقيد. أما لو واجهتك أعطال رسومية، أو أردت تشغيل ألعاب ضخمة وحديثة بأعلى دقة بصرية ممكنة، فانتقل فوراً إلى <strong>Ryujinx</strong> كخيار أكثر استقراراً.
         </p>
-        <p style="color: white; font-weight: bold; font-size: 18px; margin-bottom: 0;">
+        <p style="color: white; font-weight: bold; font-size: 18px; margin-bottom: 0">
             💡 السر الاحترافي: امتلاك المحاكيين معاً هو الأفضل حالياً. انسخ ملفات الحفظ (Saves) بينهما، جرّب، ودع التجربة تشتغل بأفضل شكل على يدك 👾.
         </p>
     </div>

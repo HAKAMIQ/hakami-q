@@ -65,22 +65,22 @@ labels: ["Saturn","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/ce/ce5bb24cdfe2487481ba3bf02c997572ca8d5782891b1399e33f2a10474dde19.png">
                 <img alt="صورة توضيحية ضمن مقال أفضل محاكيات SEGA Saturn (Yaba Sanshiro &amp; Kronos)" class="img-frame" src="/media/blogger/ce/ce5bb24cdfe2487481ba3bf02c997572ca8d5782891b1399e33f2a10474dde19.png" width="320" />
             </a>
         </div>
         
-        <p style="text-align: center;">لو كنت من محبي جهاز SEGA Saturn وتبحث عن محاكيات قوية لتشغيل الألعاب على جهازك، فمحاكيا <strong>Yaba Sanshiro</strong> و <strong>Kronos</strong> هما الخياران الأفضل! في هذا الموضوع، سنشرح كل محاكي بشكل تفصيلي مع الإعدادات المناسبة لتشغيل الألعاب بأعلى جودة.</p>
+        <p style="text-align: center">لو كنت من محبي جهاز SEGA Saturn وتبحث عن محاكيات قوية لتشغيل الألعاب على جهازك، فمحاكيا <strong>Yaba Sanshiro</strong> و <strong>Kronos</strong> هما الخياران الأفضل! في هذا الموضوع، سنشرح كل محاكي بشكل تفصيلي مع الإعدادات المناسبة لتشغيل الألعاب بأعلى جودة.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🌟 ما هو SEGA Saturn؟</h3>
+        <h3 style="color: var(--xe-gold)">🌟 ما هو SEGA Saturn؟</h3>
         <p>جهاز <strong>SEGA Saturn</strong> كان خطوة متقدمة جدًا في وقته، حيث كان يقدم دعمًا لتقنيات 3D متطورة بالنسبة لألعاب الفيديو. لكن الجهاز لم يحقق النجاح التجاري المتوقع بسبب المشاكل التقنية والمنافسة الشديدة. رغم ذلك، تمكنت محاكيات مثل <strong>Yaba Sanshiro</strong> و <strong>Kronos</strong> من إعادة إحياء الألعاب القديمة الخاصة به بشكل مذهل.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">1. Yaba Sanshiro (محاكي الأندرويد)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">1. Yaba Sanshiro (محاكي الأندرويد)</h3>
         <p><strong>Yaba Sanshiro</strong> هو واحد من أقوى المحاكيات الخاصة بـ SEGA Saturn على نظام أندرويد. يتميز بتقديم تجربة لعب رائعة مع رسومات محسّنة بفضل التقنيات الحديثة. يمكنك تشغيل ألعاب مثل <strong>Virtua Fighter 2</strong> و <strong>Shining Force III</strong> بجودة عالية جدًا.</p>
         <ul class="clean-list">
             <li>يدعم معظم ألعاب SEGA Saturn الشهيرة والتجربة ثلاثية الأبعاد (3D) بسلاسة.</li>
@@ -88,22 +88,22 @@ labels: ["Saturn","sega"]
             <li>يتميز بتحسينات رسومية قوية مثل <strong>4K Upscaling</strong>.</li>
             <li>يتطلب جهاز أندرويد قوي (مثل Snapdragon 845 فأعلى) لتشغيل الألعاب بشكل سلس.</li>
         </ul>
-        <a href="https://play.google.com/store/apps/details?id=com.yabasanshiro.sega.saturn" target="_blank" style="margin-top: 10px;">⬇️ تحميل Yaba Sanshiro من متجر جوجل بلاي</a>
+        <a href="https://play.google.com/store/apps/details?id=com.yabasanshiro.sega.saturn" target="_blank" style="margin-top: 10px">⬇️ تحميل Yaba Sanshiro من متجر جوجل بلاي</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">2. Kronos (محاكي الكمبيوتر)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">2. Kronos (محاكي الكمبيوتر)</h3>
         <p><strong>Kronos</strong> هو محاكي SEGA Saturn مفتوح المصدر ومخصص للكمبيوتر (Windows, Linux, macOS). يتميز بأنه محاكي سريع وقوي جدًا بفضل الدعم المتقدم للمحركات الرسومية، ويوفر أداءً رائعًا مع تحسينات على جودة الصوت والصورة.</p>
         <ul class="clean-list">
             <li>دعم كامل لألعاب SEGA Saturn بفضل محرك <strong>Vulkan</strong> لتوفير تجربة لعب خالية من التقطيع.</li>
             <li>يدعم الألعاب الثقيلة والمعقدة مثل <strong>Virtua Fighter 2</strong> و <strong>Radiant Silvergun</strong>.</li>
             <li>محاكي مفتوح المصدر ويحظى بتحديثات مستمرة من مجتمع المطورين.</li>
         </ul>
-        <a href="https://github.com/benvanik/Kronos" target="_blank" style="margin-top: 10px;">⬇️ تحميل Kronos من مستودع GitHub</a>
+        <a href="https://github.com/benvanik/Kronos" target="_blank" style="margin-top: 10px">⬇️ تحميل Kronos من مستودع GitHub</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">⚖️ مقارنة: أيهما تختار لجهازك؟</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">⚖️ مقارنة: أيهما تختار لجهازك؟</h3>
         <p>عند مقارنة المحاكيين، نجد أن كلاً منهما يتميز في بيئته الخاصة:</p>
         <ul class="clean-list">
             <li><strong>Yaba Sanshiro:</strong> الخيار الأمثل إذا كنت تستخدم أندرويد. يتميز بالأداء العالي والرسوميات المحسّنة والواجهة المصممة خصيصاً للجوال.</li>
@@ -111,8 +111,8 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">💡 نصائح تقنية لتحسين الأداء</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">💡 نصائح تقنية لتحسين الأداء</h3>
         <ul class="clean-list">
             <li>على <strong>Yaba Sanshiro</strong>، تأكد من إغلاق التطبيقات الخلفية لتوفير موارد المعالج والرام (RAM) للمحاكي.</li>
             <li>في محاكي <strong>Kronos</strong>، قم دائماً بتفعيل محرك <strong>Vulkan</strong> من الإعدادات للحصول على أفضل معالجة بصرية للرسوميات الثلاثية الأبعاد.</li>
@@ -120,9 +120,9 @@ labels: ["Saturn","sega"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">محاكيات <strong>Yaba Sanshiro</strong> و <strong>Kronos</strong> توفر لك أفضل تجربة لتشغيل ألعاب SEGA Saturn. الاختيار بينهما يعتمد على جهازك؛ فاستمتع بالألعاب الكلاسيكية بجودة عصرية! 🚀</p>
-        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">محاكيات <strong>Yaba Sanshiro</strong> و <strong>Kronos</strong> توفر لك أفضل تجربة لتشغيل ألعاب SEGA Saturn. الاختيار بينهما يعتمد على جهازك؛ فاستمتع بالألعاب الكلاسيكية بجودة عصرية! 🚀</p>
+        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

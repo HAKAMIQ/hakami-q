@@ -69,17 +69,17 @@ labels: ["Genesis32X","sega"]
 <div class="sega-comp-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg">
                 <img alt="صورة توضيحية ضمن مقال مقارنة بين Kega Fusion وGenesis Plus GX وPicoDrive لتشغيل 32X" class="img-frame" src="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">مقارنة تقنية | Kega Fusion vs Genesis Plus GX vs PicoDrive</h2>
-        <p style="text-align: center;">عند محاكاة ألعاب SEGA 32X، تبرز ثلاثة خيارات برمجية كبرى. هذا التحليل يوضح الفوارق الجوهرية بينها لمساعدتك في اختيار المحرك الأمثل لتجربتك التقنية.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">مقارنة تقنية | Kega Fusion vs Genesis Plus GX vs PicoDrive</h2>
+        <p style="text-align: center">عند محاكاة ألعاب SEGA 32X، تبرز ثلاثة خيارات برمجية كبرى. هذا التحليل يوضح الفوارق الجوهرية بينها لمساعدتك في اختيار المحرك الأمثل لتجربتك التقنية.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📊 جدول المقارنة الفنية</h3>
+        <h3 style="color: var(--xe-gold)">📊 جدول المقارنة الفنية</h3>
         <div class="xe-table-container">
             <table>
                 <thead>
@@ -127,7 +127,7 @@ labels: ["Genesis32X","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">التحليل النقدي</h3>
+        <h3 style="color: var(--xe-gold)">التحليل النقدي</h3>
         <ul class="clean-list">
             <li><span class="highlight-blue">Kega Fusion:</span> الخيار المثالي للأجهزة المكتبية القديمة ولمن يفضل البساطة بعيداً عن تعقيدات RetroArch.</li>
             <li><span class="highlight-blue">Genesis Plus GX:</span> رغم تفوقه المطلق في دقة محاكاة Genesis، إلا أنه يفتقر لدعم معمارية 32X، مما يجعله خارج المنافسة في هذا القسم.</li>
@@ -135,13 +135,13 @@ labels: ["Genesis32X","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة</h3>
         <p>إذا كانت غايتك هي الاستمتاع بمكتبة 32X بأقل مجهود تقني، فإن <span class="highlight-gold">PicoDrive</span> هو بطل الميدان الحالي. أما عشاق الكلاسيكية على الحواسب الشخصية، فيظل Kega Fusion رفيقاً وفياً لا يخذل أبداً.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

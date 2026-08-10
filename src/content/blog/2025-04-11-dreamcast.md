@@ -64,17 +64,17 @@ labels: ["Dreamcast","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg">
                 <img alt="صورة توضيحية ضمن مقال طريقة ربط يد التحكم والأزرار في محاكي Dreamcast" class="img-frame" src="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg" width="267" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">الدليل الشامل: طريقة ربط يد التحكم في محاكيات Dreamcast</h2>
-        <p style="text-align: center;">للحصول على التجربة الكلاسيكية الحقيقية لألعاب Dreamcast عبر <b>Flycast</b> أو <b>Reicast</b>، فإن إعداد أداة التحكم هو الخطوة الأهم. إليك الخطوات البرمجية لربط وتخصيص الأزرار بدقة متناهية. 🚀</p>
+        <h2 style="color: var(--xe-blue); text-align: center">الدليل الشامل: طريقة ربط يد التحكم في محاكيات Dreamcast</h2>
+        <p style="text-align: center">للحصول على التجربة الكلاسيكية الحقيقية لألعاب Dreamcast عبر <b>Flycast</b> أو <b>Reicast</b>، فإن إعداد أداة التحكم هو الخطوة الأهم. إليك الخطوات البرمجية لربط وتخصيص الأزرار بدقة متناهية. 🚀</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">1. التوصيل والتعريف الأولي</h3>
+        <h3 style="color: var(--xe-gold)">1. التوصيل والتعريف الأولي</h3>
         <p>قبل الدخول إلى بيئة المحاكي، يجب التأكد من تعرف النظام على العتاد:</p>
         <ul class="clean-list">
             <li>تأكد من توصيل يد التحكم عبر منفذ USB (لأجهزة الحواسب) أو عبر اقتران Bluetooth (للهواتف).</li>
@@ -82,8 +82,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">2. ضبط الإعدادات داخل بيئة المحاكي</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">2. ضبط الإعدادات داخل بيئة المحاكي</h3>
         <p>تختلف الواجهات قليلاً، لكن المبدأ التقني واحد لتعريف أداة الإدخال:</p>
         <ul class="clean-list">
             <li><b>في Flycast:</b> توجه إلى قائمة <code>Settings</code> ثم اختر تبويب <code>Input</code> لتفعيل يد التحكم الخاصة بك وبدء التخصيص.</li>
@@ -91,8 +91,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">3. تخصيص مفاتيح الإدخال (Mapping)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">3. تخصيص مفاتيح الإدخال (Mapping)</h3>
         <p>لتعيين الأزرار (مثل A, B, X, Y، والأسهم، ومفاتيح الزناد Triggers):</p>
         <ul class="clean-list">
             <li>انقر على اسم الزر في واجهة المحاكي، ثم اضغط على الزر المقابل له فعلياً في يد التحكم لربطهما برمجياً.</li>
@@ -101,8 +101,8 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">4. الاختبار والنصائح الإضافية</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">4. الاختبار والنصائح الإضافية</h3>
         <ul class="clean-list">
             <li>قم بتشغيل أي لعبة لاختبار استجابة الأزرار وتأكد من عدم وجود تأخير (Input Lag).</li>
             <li>لا تنسَ تخصيص أزرار للوظائف السريعة (Hotkeys) مثل حفظ الحالة (Save State) واسترجاعها (Load State).</li>
@@ -111,9 +111,9 @@ labels: ["Dreamcast","sega"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">ضبط يد التحكم بشكل صحيح هو الفاصل بين تجربة لعب ممتعة ومعاناة مستمرة. خصص 5 دقائق للإعداد لترتاح طوال رحلتك في عالم الألعاب!</p>
-        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">ضبط يد التحكم بشكل صحيح هو الفاصل بين تجربة لعب ممتعة ومعاناة مستمرة. خصص 5 دقائق للإعداد لترتاح طوال رحلتك في عالم الألعاب!</p>
+        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

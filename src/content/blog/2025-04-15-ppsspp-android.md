@@ -118,9 +118,9 @@ labels: ["PlayStation","psp"]
 
 <div class="hakamiq-storage-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg">
-            <img alt="صورة توضيحية ضمن مقال 💾 حفظ البيانات والتخزين في PPSSPP على Android – الشرح الكامل" src="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال 💾 حفظ البيانات والتخزين في PPSSPP على Android – الشرح الكامل" src="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto" />
         </a>
     </div>
 
@@ -153,7 +153,7 @@ labels: ["PlayStation","psp"]
     <div class="hakamiq-path-box">/Android/data/org.ppsspp.ppsspp/files/PSP</div>
     
     <div class="hakamiq-alert">
-        <span style="font-weight: bold; color: #f44336;">⚠️ تحذير:</span> الدخول لمجلد <code>data</code> المخفي صار صعب جداً ويحتاج تطبيقات إدارة ملفات معينة لكسر حماية أندرويد!
+        <span style="font-weight: bold; color: #f44336">⚠️ تحذير:</span> الدخول لمجلد <code>data</code> المخفي صار صعب جداً ويحتاج تطبيقات إدارة ملفات معينة لكسر حماية أندرويد!
     </div>
 
     <hr class="hakamiq-divider" />
@@ -170,7 +170,7 @@ labels: ["PlayStation","psp"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-title" style="color: #ffc107;">👀 مشاكل شائعة وحلول سريعة:</h3>
+    <h3 class="hakamiq-section-title" style="color: #ffc107">👀 مشاكل شائعة وحلول سريعة:</h3>
     <ul class="hakamiq-storage-box">
         <li>📛 <b>ما تظهر الحفظات؟</b> ← تأكد أنك اخترت نفس المجلد اللي فيه <code>PSP/SAVEDATA</code>.</li>
         <li>📤 <b>تبي تنقل بيانات من جهاز قديم؟</b> ← انسخ مجلد <strong>SAVEDATA</strong> بالكامل وضعه داخل مجلد PSP الجديد.</li>
@@ -180,11 +180,11 @@ labels: ["PlayStation","psp"]
     <hr class="hakamiq-divider" />
 
     <div class="hakamiq-recommendation">
-        <h3 style="color: #00e676; margin-top: 0;">🎯 الزبدة</h3>
+        <h3 style="color: #00e676; margin-top: 0">🎯 الزبدة</h3>
         <p>
             من بعد أندرويد 11، صار لازم تختار مجلد التخزين بنفسك في PPSSPP، والأفضل تسوي مجلد PSP صريح في الذاكرة وتخليه هو الرسمي.
         </p>
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0">
             بهالحركة تضمن ملفات الحفظ، وتنقلها بسهولة، وتخلي تجربة المحاكي مرتبة مثل أيام الـ PSP الأصلية 💾🔥
         </p>
     </div>

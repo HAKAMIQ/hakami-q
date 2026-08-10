@@ -62,17 +62,17 @@ labels: ["Dreamcast","Sega-Naomi"]
 <div class="naomi-dc-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg">
-                <img alt="صورة توضيحية ضمن مقال  هل NAOMI يتفوق على Dreamcast؟ مقارنة" class="img-frame" src="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال هل NAOMI يتفوق على Dreamcast؟ مقارنة" class="img-frame" src="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">هل يتفوق نظام NAOMI على Dreamcast؟ مقارنة تقنية</h2>
-        <p style="text-align: center;">ناومي ودريم كاست؛ توأمان تقنيان من SEGA ظهرا في نهاية التسعينيات. بينما سيطر أحدهما على صالات الآركيد، دخل الآخر المنازل ليصبح أيقونة كلاسيكية رغم عمره القصير.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">هل يتفوق نظام NAOMI على Dreamcast؟ مقارنة تقنية</h2>
+        <p style="text-align: center">ناومي ودريم كاست؛ توأمان تقنيان من SEGA ظهرا في نهاية التسعينيات. بينما سيطر أحدهما على صالات الآركيد، دخل الآخر المنازل ليصبح أيقونة كلاسيكية رغم عمره القصير.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">المواصفات والعتاد التقني</h3>
+        <h3 style="color: var(--xe-gold)">المواصفات والعتاد التقني</h3>
         <ul class="clean-list">
             <li><b>NAOMI:</b> يستخدم نفس معالج SH-4 بسرعة 200MHz، لكنه يتفوق بذاكرة وصول عشوائي (RAM) أكبر بضعفين.</li>
             <li><b>Dreamcast:</b> يمتلك نفس المعالج الرسومي والمركز، لكنه محدود بسعة الذاكرة؛ مما يقلل من قدرته على معالجة البيانات الضخمة.</li>
@@ -81,7 +81,7 @@ labels: ["Dreamcast","Sega-Naomi"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">طبيعة الألعاب والتوزيع</h3>
+        <h3 style="color: var(--xe-gold)">طبيعة الألعاب والتوزيع</h3>
         <ul class="clean-list">
             <li><b>NAOMI:</b> صمم خصيصاً لصالات الآركيد؛ لذا ركزت ألعابه على السرعة، التحدي المباشر، والمنافسات القصيرة.</li>
             <li><b>Dreamcast:</b> استهدف الاستخدام المنزلي؛ فقدم ألعاباً أطول، ذات قصص عميقة، وأنظمة حفظ متقدمة.</li>
@@ -89,8 +89,8 @@ labels: ["Dreamcast","Sega-Naomi"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f1c40f;">
-        <h3 style="color: #f39c12;">العمر الافتراضي والدعم</h3>
+    <section class="section-card" style="border-right: 5px solid #f1c40f">
+        <h3 style="color: #f39c12">العمر الافتراضي والدعم</h3>
         <ul class="clean-list">
             <li><b>NAOMI:</b> استمر في صالات الآركيد لسنوات طويلة، وصدرت منه نسخ مطورة مثل NAOMI 2 لرفع كفاءة المعالجة.</li>
             <li><b>Dreamcast:</b> توقف إنتاجه مبكراً بعد دخول المنافسين وتغيير استراتيجية SEGA البرمجية.</li>
@@ -99,7 +99,7 @@ labels: ["Dreamcast","Sega-Naomi"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">المحاكاة والتجربة الحديثة</h3>
+        <h3 style="color: var(--xe-blue)">المحاكاة والتجربة الحديثة</h3>
         <p>بفضل التطور التقني لعام 2026، أصبحت محاكاة كلا النظامين في غاية السهولة:</p>
         <ul class="clean-list">
             <li><b>Dreamcast:</b> يتميز بسهولة المحاكاة عبر تطبيقات مثل <span class="highlight-blue">ReDream</span> أو <span class="highlight-blue">Flycast</span>.</li>
@@ -107,13 +107,13 @@ labels: ["Dreamcast","Sega-Naomi"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة التقنية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة التقنية</h3>
         <p>لا يوجد خاسر في هذه المقارنة؛ فبينما يتفوق NAOMI في القوة الخام والاستدامة التقنية، يظل Dreamcast هو الملك في التنوع وتوفير تجربة منزلية متكاملة. بفضل المحاكيات الحديثة، يمكنك الآن الاستمتاع بكلا العالمين في منصة واحدة.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

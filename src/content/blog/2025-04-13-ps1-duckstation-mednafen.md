@@ -64,17 +64,17 @@ labels: ["PlayStation","PS1"]
 <div class="emu-comparison-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png">
                 <img alt="صورة توضيحية ضمن مقال أفضل محاكيات PS1 مقارنة بين DuckStation وMednafen" class="img-frame" src="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">مقارنة محاكيات PS1: DuckStation مقابل Mednafen</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">مقارنة محاكيات PS1: DuckStation مقابل Mednafen</h2>
         <p>جولة تقنية بين أبرز محاكيات PlayStation 1 في الساحة؛ أيهما يقدم الدقة الأفضل وأيهما يتفوق في الأداء والرسوميات الحديثة؟</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">جدول المقارنة المباشرة</h3>
+        <h3 style="color: var(--xe-gold)">جدول المقارنة المباشرة</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -96,7 +96,7 @@ labels: ["PlayStation","PS1"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">لماذا تختار DuckStation؟</h3>
+        <h3 style="color: var(--xe-gold)">لماذا تختار DuckStation؟</h3>
         <ul class="clean-list">
             <li>دعم رفع دقة الرسوميات حتى 8x لتجربة مرئية عصرية.</li>
             <li>واجهة مستخدم احترافية وسهلة الضبط لا تحتاج لخبرة برمجية.</li>
@@ -106,7 +106,7 @@ labels: ["PlayStation","PS1"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">لماذا تختار Mednafen؟</h3>
+        <h3 style="color: var(--xe-gold)">لماذا تختار Mednafen؟</h3>
         <ul class="clean-list">
             <li>دقة محاكاة متناهية تحاكي الأنظمة الأصلية بدقة 1:1.</li>
             <li>دعم شامل لأنظمة كلاسيكية أخرى بجانب بلايستيشن 1.</li>
@@ -115,8 +115,8 @@ labels: ["PlayStation","PS1"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">الاختيار يعود لتفضيلاتك؛ إذا كنت تبحث عن الحداثة والسهولة فالخيار هو <b>DuckStation</b>، أما إذا كنت تنشد الدقة الأصلية المفرطة فتوجه إلى <b>Mednafen</b>.</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">الاختيار يعود لتفضيلاتك؛ إذا كنت تبحث عن الحداثة والسهولة فالخيار هو <b>DuckStation</b>، أما إذا كنت تنشد الدقة الأصلية المفرطة فتوجه إلى <b>Mednafen</b>.</p>
     </footer>
 
 </div>

@@ -80,20 +80,20 @@ labels: ["Xbox","Xbox360"]
 <div class="xenia-manager-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png">
-                <img class="img-frame" alt="إدارة الألعاب في Xenia Manager" src="/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png" style="max-width: 320px; margin: 0 auto;" />
+                <img class="img-frame" alt="إدارة الألعاب في Xenia Manager" src="/media/blogger/04/047436992d235a858f8ea31a88114383746e3db834c1dbbdcfde56d8b4d4adcc.png" style="max-width: 320px; margin: 0 auto" />
             </a>
         </div>
         <p>لو كنت تستخدم <strong>Xenia Manager</strong>، فهذا الدليل بيكون رفيقك، من أول إضافة اللعبة إلى تثبيت التحديثات والـ DLC، لين توصل لمرحلة التنظيف 😎</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">✅ أولاً: إضافة الألعاب إلى Xenia Manager</h3>
+        <h3 style="color: var(--xe-blue)">✅ أولاً: إضافة الألعاب إلى Xenia Manager</h3>
         <ol class="styled-list">
             <li>افتح Xenia Manager واضغط على زر <strong>"+"</strong> لإضافة لعبة جديدة.</li>
             <li>اختر ملف اللعبة من جهازك. ممكن يكون:
-                <ul style="margin-top:5px;">
+                <ul style="margin-top:5px">
                     <li>ملف GoD</li>
                     <li>أو ISO</li>
                     <li>أو المفضل دائمًا: ملف <code>default.xex</code></li>
@@ -105,13 +105,13 @@ labels: ["Xbox","Xbox360"]
         </ol>
         
         <div class="alert-box">
-            <strong style="color: var(--xe-red);">⚠️ ملاحظة مهمة:</strong>
-            <p style="margin: 0px;">تأكد إن مجلد اللعبة ومسار المحاكي كامل باللغة الإنجليزية فقط! أي اسم مجلد يحتوي على حروف عربية أو رموز غريبة (مثل: [ ] / _ عربي) ممكن يمنع تشغيل اللعبة أو يتسبب في خطأ غريب داخل Xenia Manager.</p>
+            <strong style="color: var(--xe-red)">⚠️ ملاحظة مهمة:</strong>
+            <p style="margin: 0px">تأكد إن مجلد اللعبة ومسار المحاكي كامل باللغة الإنجليزية فقط! أي اسم مجلد يحتوي على حروف عربية أو رموز غريبة (مثل: [ ] / _ عربي) ممكن يمنع تشغيل اللعبة أو يتسبب في خطأ غريب داخل Xenia Manager.</p>
         </div>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-green);">📦 ثانياً: تثبيت الإضافات (DLCs) والتحديثات (Title Updates)</h3>
+        <h3 style="color: var(--xe-green)">📦 ثانياً: تثبيت الإضافات (DLCs) والتحديثات (Title Updates)</h3>
         <ol class="styled-list">
             <li>اضغط يمين على غلاف اللعبة (Box Art) واختر <strong>Game Details</strong> لمعرفة <code>Title ID</code>.</li>
             <li>اضغط يمين مرة ثانية واختر: <strong>Content → Install DLC/Updates</strong>.</li>
@@ -121,11 +121,11 @@ labels: ["Xbox","Xbox360"]
             <li>لو ودك تحذف إضافة، حددها من القائمة واضغط <strong>Remove</strong>.</li>
             <li>وأخيرًا، اضغط <strong>Confirm</strong> وخل المحاكي يشتغل شغله.</li>
         </ol>
-        <p style="color: var(--xe-red); font-size: 14px; margin-top: 10px;"><strong>🚫 ملاحظة مهمة:</strong> لا تثبت أكثر من تحديث للعبة وحدة، ممكن يصير تعارض أو خرابيط.</p>
+        <p style="color: var(--xe-red); font-size: 14px; margin-top: 10px"><strong>🚫 ملاحظة مهمة:</strong> لا تثبت أكثر من تحديث للعبة وحدة، ممكن يصير تعارض أو خرابيط.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: #e57373;">🗑️ ثالثاً: حذف الإضافات والتحديثات</h3>
+        <h3 style="color: #e57373">🗑️ ثالثاً: حذف الإضافات والتحديثات</h3>
         <ol class="styled-list">
             <li>اضغط يمين على اللعبة واختر <strong>Content → View Installed Content</strong>.</li>
             <li>بتفتح نافذة تعرض كل المحتوى المثبت: إضافات، تحديثات، ملفات حفظ.</li>
@@ -133,10 +133,10 @@ labels: ["Xbox","Xbox360"]
         </ol>
     </section>
 
-    <footer style="margin-top: 30px; border-top: 1px dashed #444; padding-top: 20px;">
-        <p style="text-align: center; font-weight: bold;">🚀 جاهز تدخل عالم الإكسبوكس بقوة؟ هذا الدليل بيخليك ترتب مكتبتك مثل المحترفين.</p>
-        <p style="font-size: 14px; color: var(--text-muted); text-align: center;">
-            📚 المصدر: <a href="https://github.com/xenia-canary/xenia-canary/wiki/FAQ" target="_blank" style="color: var(--xe-blue); text-decoration: none;">Xenia FAQ</a>
+    <footer style="margin-top: 30px; border-top: 1px dashed #444; padding-top: 20px">
+        <p style="text-align: center; font-weight: bold">🚀 جاهز تدخل عالم الإكسبوكس بقوة؟ هذا الدليل بيخليك ترتب مكتبتك مثل المحترفين.</p>
+        <p style="font-size: 14px; color: var(--text-muted); text-align: center">
+            📚 المصدر: <a href="https://github.com/xenia-canary/xenia-canary/wiki/FAQ" target="_blank" style="color: var(--xe-blue); text-decoration: none">Xenia FAQ</a>
         </p>
     </footer>
 

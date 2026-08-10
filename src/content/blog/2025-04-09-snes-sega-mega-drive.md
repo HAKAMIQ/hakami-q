@@ -100,13 +100,13 @@ labels: ["Nintendo","SNES"]
 <div class="battle-wrapper">
 
     <header class="battle-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg">
                 <img class="img-frame" alt="Nintendo SNES vs Sega Mega Drive" src="/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg" />
             </a>
         </div>
         <h2>حروب الـ 16 بت: Nintendo SNES ضد Sega Mega Drive</h2>
-        <p style="opacity: 0.8;">تحليل تقني لأقوى صراع في تاريخ الألعاب المنزلية</p>
+        <p style="opacity: 0.8">تحليل تقني لأقوى صراع في تاريخ الألعاب المنزلية</p>
     </header>
 
     <section class="vs-card">
@@ -161,15 +161,15 @@ labels: ["Nintendo","SNES"]
         <div class="winner-tag">✅ النقطة لـ SNES في الهندسة المريحة</div>
     </section>
 
-    <section class="vs-card" style="border-right: 6px solid var(--vs-red);">
-        <h3 style="text-align: right;">🎯 خلاصة حكميك | من الفائز؟</h3>
+    <section class="vs-card" style="border-right: 6px solid var(--vs-red)">
+        <h3 style="text-align: right">🎯 خلاصة حكميك | من الفائز؟</h3>
         <p>الجهازان شكلا العصر الذهبي للألعاب. <b>SNES</b> كان "المختبر التقني" للألوان والألحان العاطفية، بينما كان <b>Mega Drive</b> "الوحش الجريء" الذي جلب روح الأركيد السريع لبيتك. تجارياً، حسمت نينتندو المعركة بـ 49 مليون وحدة مقابل 30 مليون لسيجا.</p>
     </section>
 
     <footer>
-        <h2 style="color: var(--vs-red); letter-spacing: 3px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #666; font-size: 11px; margin-top: 10px;">// CONSOLE_WARS_ARCHIVE // SNES_VS_MD // 2026</p>
-        <p style="margin-top: 20px; font-weight: bold; font-size: 18px;">وأنت؟ وش كنت؟ فريق ماريو 🍄 ولا فريق سونيك 🔥؟</p>
+        <h2 style="color: var(--vs-red); letter-spacing: 3px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #666; font-size: 11px; margin-top: 10px">// CONSOLE_WARS_ARCHIVE // SNES_VS_MD // 2026</p>
+        <p style="margin-top: 20px; font-weight: bold; font-size: 18px">وأنت؟ وش كنت؟ فريق ماريو 🍄 ولا فريق سونيك 🔥؟</p>
     </footer>
 
 </div>

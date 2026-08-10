@@ -65,17 +65,17 @@ labels: ["Genesis-MegaDrive","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg">
                 <img alt="صورة توضيحية ضمن مقال أفضل محاكيات Sega Genesis (Mega Drive) للكمبيوتر والجوال" class="img-frame" src="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg" width="320" />
             </a>
         </div>
         
-        <p style="text-align: center;">إذا كنت من عشاق ألعاب <strong>Sega Genesis</strong> وتبحث عن أفضل المحاكيات لتجربة تلك الألعاب الكلاسيكية على جهازك، فأنت في المكان الصحيح! في هذا الموضوع، بنعرض لك أفضل المحاكيات على الكمبيوتر والجوال اللي بتخليك تعيش مغامرات <b>Sonic</b> و <b>Streets of Rage</b> وكأنك لسه مخلص اللعب عليهم بالأمس!</p>
+        <p style="text-align: center">إذا كنت من عشاق ألعاب <strong>Sega Genesis</strong> وتبحث عن أفضل المحاكيات لتجربة تلك الألعاب الكلاسيكية على جهازك، فأنت في المكان الصحيح! في هذا الموضوع، بنعرض لك أفضل المحاكيات على الكمبيوتر والجوال اللي بتخليك تعيش مغامرات <b>Sonic</b> و <b>Streets of Rage</b> وكأنك لسه مخلص اللعب عليهم بالأمس!</p>
     </header>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">1. Kega Fusion (للكمبيوتر)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">1. Kega Fusion (للكمبيوتر)</h3>
         <p><strong>Kega Fusion</strong> هو واحد من أقدم وأشهر المحاكيات لجهاز Sega Genesis. المحاكي يقدم لك أداء رائع، مع دعم لعدد كبير من الألعاب ويتميز بواجهة مستخدم بسيطة وسهلة الاستخدام.</p>
         <ul class="clean-list">
             <li>يدعم ألعاب Sega Genesis، Sega CD، 32X، و Master System.</li>
@@ -83,11 +83,11 @@ labels: ["Genesis-MegaDrive","sega"]
             <li>يدعم الحفظ السريع <strong>Save States</strong>.</li>
             <li>يدعم اللعب عبر الشبكة باستخدام <strong>Netplay</strong>.</li>
         </ul>
-        <a href="https://www.emulator-zone.com/doc.php/megadrive/kega-fusion.html" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ حمل Kega Fusion من موقع Emulator Zone</a>
+        <a href="https://www.emulator-zone.com/doc.php/megadrive/kega-fusion.html" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ حمل Kega Fusion من موقع Emulator Zone</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">2. RetroArch (للكمبيوتر والجوال)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">2. RetroArch (للكمبيوتر والجوال)</h3>
         <p><strong>RetroArch</strong> هو محاكي متعدد المنصات يدعم Sega Genesis من خلال نواة <strong>Genesis Plus GX Core</strong>. يعتبر الأفضل لمن يبحث عن محاكي موحّد يدعم أكثر من جهاز. ويدعم تقنيات متقدمة مثل الفلاتر و Shaders لتحسين الرسوميات.</p>
         <ul class="clean-list">
             <li>دعم عدة منصات بما فيها الكمبيوتر الشخصي والهواتف الذكية.</li>
@@ -95,45 +95,45 @@ labels: ["Genesis-MegaDrive","sega"]
             <li>معدل إطار ثابت وتجربة رائعة في الألعاب السريعة.</li>
             <li>يدعم العديد من المحاكيات والألعاب القديمة من مختلف الأنظمة.</li>
         </ul>
-        <a href="https://retroarch.com/?page=platforms" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ حمل RetroArch من الموقع الرسمي</a>
+        <a href="https://retroarch.com/?page=platforms" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ حمل RetroArch من الموقع الرسمي</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #9b59b6;">
-        <h3 style="color: #9b59b6;">3. Gens (للكمبيوتر)</h3>
+    <section class="section-card" style="border-right: 5px solid #9b59b6">
+        <h3 style="color: #9b59b6">3. Gens (للكمبيوتر)</h3>
         <p><strong>Gens</strong> هو محاكي ممتاز للـ Sega Genesis، ويتميز بواجهة سهلة الاستخدام. كان يعتبر أحد أفضل المحاكيات لألعاب Genesis في فترة من الفترات بسبب أدائه الجيد وحجمه الصغير.</p>
         <ul class="clean-list">
             <li>يدعم الحفظ السريع واللعب عبر الشبكة بشكل مستقر.</li>
             <li>إعدادات مرنة للفيديو والصوت لتحسين الأداء على الأجهزة الضعيفة.</li>
             <li>يدعم المحاكاة لعدد ضخم جداً من الألعاب الكلاسيكية.</li>
         </ul>
-        <a href="http://www.emulator-zone.com/doc.php/megadrive/gens.html" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ حمل Gens من موقع Emulator Zone</a>
+        <a href="http://www.emulator-zone.com/doc.php/megadrive/gens.html" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ حمل Gens من موقع Emulator Zone</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">4. MD.emu (للجوال - أندرويد)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">4. MD.emu (للجوال - أندرويد)</h3>
         <p><strong>MD.emu</strong> هو أفضل محاكي Sega Genesis على أجهزة الأندرويد المدفوعة أو المتاحة كإصدارات مجانية مفتوحة المصدر. يقدم لك تجربة ألعاب ممتازة على الجوال مع دعم للحفظ السريع وضبط الإعدادات الخاصة بالجرافيكس والصوت.</p>
         <ul class="clean-list">
             <li>يدعم معظم ألعاب Sega Genesis بسلاسة تامة.</li>
             <li>إعدادات متقدمة للفيديو والصوت لتوفير البطارية.</li>
             <li>حفظ سريع وتوافق كامل مع أذرع التحكم الخارجية (Gamepads).</li>
         </ul>
-        <a href="https://play.google.com/store/apps/details?id=com.explusalpha.MDemu" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ حمل MD.emu من جوجل بلاي</a>
+        <a href="https://play.google.com/store/apps/details?id=com.explusalpha.MDemu" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ حمل MD.emu من جوجل بلاي</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">5. BlastEm (للكمبيوتر)</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">5. BlastEm (للكمبيوتر)</h3>
         <p><strong>BlastEm</strong> هو محاكي Sega Genesis مبني على الدقة المتناهية (Cycle-accurate). يتميز بأداء ممتاز، دعم للألعاب العالية الجودة، كما أن واجهته سريعة وتقدم خيارات ضبط قوية لمحاكاة أفضل.</p>
         <ul class="clean-list">
             <li>أداء دقيق ومتميز بدون أي تقطيع أو لاغ.</li>
             <li>واجهة بسيطة وسهلة لا تستهلك موارد الجهاز.</li>
             <li>يدعم ألعاب Sega Genesis، Sega CD، و 32X بكفاءة.</li>
         </ul>
-        <a href="https://blastem.github.io/" target="_blank" style="display: inline-block; margin-top: 10px;">⬇️ حمل BlastEm من الموقع الرسمي</a>
+        <a href="https://blastem.github.io/" target="_blank" style="display: inline-block; margin-top: 10px">⬇️ حمل BlastEm من الموقع الرسمي</a>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;">أفضل محاكيات Sega Genesis تقدم لك تجربة الألعاب الكلاسيكية التي لا تُنسى. سواء كنت على الكمبيوتر أو الجوال، عندك الآن خيارات متنوعة لتحاكي جهازك المفضل. اختار المحاكي اللي يناسبك وابدأ رحلة مع <b>Sonic</b> و <b>Mortal Kombat</b> كما لو أنك في التسعينات من جديد! 🚀</p>
-        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0">أفضل محاكيات Sega Genesis تقدم لك تجربة الألعاب الكلاسيكية التي لا تُنسى. سواء كنت على الكمبيوتر أو الجوال، عندك الآن خيارات متنوعة لتحاكي جهازك المفضل. اختار المحاكي اللي يناسبك وابدأ رحلة مع <b>Sonic</b> و <b>Mortal Kombat</b> كما لو أنك في التسعينات من جديد! 🚀</p>
+        <p style="margin-top: 10px; color: var(--xe-blue); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

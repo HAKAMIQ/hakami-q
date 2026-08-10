@@ -66,17 +66,17 @@ labels: ["GBA","Nintendo"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/60/609ef235b3e2f9d4e631d4f657d70c07d2cdbcf11b3c16da4095f0ed1334d607.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/60/609ef235b3e2f9d4e631d4f657d70c07d2cdbcf11b3c16da4095f0ed1334d607.png" width="320" alt="GBA Emulators" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش أفضل محاكي لـ GBA؟</h2>
-        <p>كل واحد يقولك رأي... واحد يحب الواجهة، الثاني الأداء، والثالث وده بشي يشغّل اللعبة وخلاص. <br> أنا هنا كـ <strong style="color: var(--xe-gold);">حكميك</strong> بختصر عليك الوقت وأعطيك الزبدة ⏳</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 وش أفضل محاكي لـ GBA؟</h2>
+        <p>كل واحد يقولك رأي... واحد يحب الواجهة، الثاني الأداء، والثالث وده بشي يشغّل اللعبة وخلاص. <br> أنا هنا كـ <strong style="color: var(--xe-gold)">حكميك</strong> بختصر عليك الوقت وأعطيك الزبدة ⏳</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🖥️ لأجهزة الكمبيوتر (Windows / macOS / Linux)</h3>
+        <h3 style="color: var(--xe-gold)">🖥️ لأجهزة الكمبيوتر (Windows / macOS / Linux)</h3>
         
         <h4>1. 💻 mGBA</h4>
         <p>الأفضل من ناحية دقة المحاكاة والميزات، خفيف وسهل، يدعم حفظ تلقائي، شيدر، Cheats، وحتى ربط Link Cable!</p>
@@ -104,7 +104,7 @@ labels: ["GBA","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">📱 أفضل محاكيات GBA لأندرويد</h3>
+        <h3 style="color: var(--xe-gold)">📱 أفضل محاكيات GBA لأندرويد</h3>
         
         <h4>1. 📱 Pizza Boy GBA</h4>
         <p>أداء جبار، دقة عالية، حفظ تلقائي، سرعات قابلة للتخصيص، وواجهة رهيبة.</p>
@@ -127,7 +127,7 @@ labels: ["GBA","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🍏 iOS (بدون جلبريك؟)</h3>
+        <h3 style="color: var(--xe-gold)">🍏 iOS (بدون جلبريك؟)</h3>
         
         <h4>1. 🧃 Delta Emulator</h4>
         <p>واجهة رائعة، يدعم GBA و GBC و SNES و NES وكل عيال نينتندو، سهل وتقدر تركبه من AltStore.</p>
@@ -136,10 +136,10 @@ labels: ["GBA","Nintendo"]
         <p>يشغل GBA من المتصفح مباشرة، ملفاتك ترفعها من Google Drive أو Dropbox.</p>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333;">
-        <h3 style="color: var(--xe-gold); margin-top: 0; text-align: center;">📌 حكميك يوصيك</h3>
-        <p style="text-align: center; margin-bottom: 15px;">لو تبي راحة البال، اعتمد على هذه القائمة:</p>
-        <ul class="clean-list" style="max-width: 400px; margin: 0 auto;">
+    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333">
+        <h3 style="color: var(--xe-gold); margin-top: 0; text-align: center">📌 حكميك يوصيك</h3>
+        <p style="text-align: center; margin-bottom: 15px">لو تبي راحة البال، اعتمد على هذه القائمة:</p>
+        <ul class="clean-list" style="max-width: 400px; margin: 0 auto">
             <li>💻 <strong>كمبيوتر:</strong> mGBA أو RetroArch</li>
             <li>📱 <strong>أندرويد:</strong> Pizza Boy</li>
             <li>🍏 <strong>iOS:</strong> Delta</li>

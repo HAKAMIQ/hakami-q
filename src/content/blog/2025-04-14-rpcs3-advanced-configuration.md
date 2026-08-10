@@ -196,15 +196,15 @@ labels: ["PlayStation","PS3"]
     </div>
 
     <div class="hakamiq-legend">
-        <div class="legend-item"><span style="color: var(--xe-green);">●</span> إعداد آمن ومستحسن</div>
-        <div class="legend-item"><span style="color: var(--xe-gold);">●</span> إعداد متقدم أو اختياري</div>
-        <div class="legend-item"><span style="color: var(--xe-red);">●</span> إعداد غير موصى به</div>
-        <div class="legend-item"><span style="color: var(--xe-blue);">●</span> جربه حسب حاجة اللعبة</div>
+        <div class="legend-item"><span style="color: var(--xe-green)">●</span> إعداد آمن ومستحسن</div>
+        <div class="legend-item"><span style="color: var(--xe-gold)">●</span> إعداد متقدم أو اختياري</div>
+        <div class="legend-item"><span style="color: var(--xe-red)">●</span> إعداد غير موصى به</div>
+        <div class="legend-item"><span style="color: var(--xe-blue)">●</span> جربه حسب حاجة اللعبة</div>
     </div>
 
-    <footer style="text-align: center; margin-top: 40px; padding: 25px; background: #111; border-radius: 15px; border-top: 4px solid var(--xe-blue);">
-        <h3 style="margin-top: 0; color: var(--xe-gold);">🎯 نصيحة الحكميك الختامية</h3>
-        إعدادات <span class="hakamiq-highlight">Advanced</span> هي "الصندوق الأسود" لمحاكي <span style="color: var(--xe-blue);">RPCS3</span>. تذكر دائماً أن الإعدادات الافتراضية هي الأفضل لغالبية الألعاب، ولا تغير أي خيار هنا إلا إذا كنت تبحث عن حل لمشكلة محددة مذكورة في ويكي المحاكي الرسمي.
+    <footer style="text-align: center; margin-top: 40px; padding: 25px; background: #111; border-radius: 15px; border-top: 4px solid var(--xe-blue)">
+        <h3 style="margin-top: 0; color: var(--xe-gold)">🎯 نصيحة الحكميك الختامية</h3>
+        إعدادات <span class="hakamiq-highlight">Advanced</span> هي "الصندوق الأسود" لمحاكي <span style="color: var(--xe-blue)">RPCS3</span>. تذكر دائماً أن الإعدادات الافتراضية هي الأفضل لغالبية الألعاب، ولا تغير أي خيار هنا إلا إذا كنت تبحث عن حل لمشكلة محددة مذكورة في ويكي المحاكي الرسمي.
     </footer>
 
 </article>

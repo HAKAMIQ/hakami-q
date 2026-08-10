@@ -65,12 +65,12 @@ labels: ["GBASP","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/11/117b481584caf56a124ee94d22dad79bbe9bbb5b120f5cffbc045fd331c40e10.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/11/117b481584caf56a124ee94d22dad79bbe9bbb5b120f5cffbc045fd331c40e10.png" width="318" alt="جهاز Game Boy Advance SP" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🕹️ الدليل الشامل لجهاز Game Boy Advance SP</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🕹️ الدليل الشامل لجهاز Game Boy Advance SP</h2>
         <p>الـ <strong>Game Boy Advance SP</strong> أو اختصاراً <code>GBASP</code>، هو النسخة المحسّنة من موديل GBA الكلاسيكي. أطلق في عام 2003، وشكل ثورة في عالم الأجهزة المحمولة بفضل تصميمه الهندسي ومميزاته التي كانت تعتبر "سابقاً لعصرها".</p>
     </header>
 
@@ -107,7 +107,7 @@ labels: ["GBASP","Nintendo"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">⚠️ الجوانب التي يجب مراعاتها</h3>
+        <h3 style="color: var(--xe-gold)">⚠️ الجوانب التي يجب مراعاتها</h3>
         <ul class="clean-list">
             <li>❌ <b>منفذ السماعات:</b> لا يحتوي على منفذ 3.5mm، ويتطلب محولاً خاصاً للصوت.</li>
             <li>❌ <b>زر الإضاءة:</b> في الموديلات القديمة، الإضاءة يدوية بالكامل ولا تتكيف مع البيئة.</li>
@@ -117,8 +117,8 @@ labels: ["GBASP","Nintendo"]
 
     <footer class="opinion-footer">
         <span class="opinion-header">💡 رأينا التقني:</span>
-        <p style="margin-bottom: 15px;">من وجهة نظر تقنية واستثمارية، يظل جهاز GBA SP هو القمة في تاريخ أجهزة الجيم بوي. إذا استطعت الحصول على نسخة <code>AGS-101</code> أصلية، فأنت تمتلك قطعة من التاريخ التقني. ولمحبي التطوير، يمكن شراء موديل 001 وترقية شاشته إلى <b>IPS V3</b> الحديثة للحصول على أفضل تجربة بصرية ممكنة في عام 2026. إنه الجهاز الذي نقل الألعاب المحمولة من عصر الظلال إلى عصر النور! 😎💡</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
+        <p style="margin-bottom: 15px">من وجهة نظر تقنية واستثمارية، يظل جهاز GBA SP هو القمة في تاريخ أجهزة الجيم بوي. إذا استطعت الحصول على نسخة <code>AGS-101</code> أصلية، فأنت تمتلك قطعة من التاريخ التقني. ولمحبي التطوير، يمكن شراء موديل 001 وترقية شاشته إلى <b>IPS V3</b> الحديثة للحصول على أفضل تجربة بصرية ممكنة في عام 2026. إنه الجهاز الذي نقل الألعاب المحمولة من عصر الظلال إلى عصر النور! 😎💡</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">فريق العمل،<br />🕹️ إدارة المحتوى التقني</p>
     </footer>
 
 </div>

@@ -123,13 +123,13 @@ labels: ["Nintendo","SNES"]
 <div class="snes-guide-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e0/e0c995b942c308f31cacac3434f03858a0dcf75a5c3ebff91cb7581723a24157.jpg">
-                <img class="img-frame" alt="Super Nintendo - SNES" src="/media/blogger/e0/e0c995b942c308f31cacac3434f03858a0dcf75a5c3ebff91cb7581723a24157.jpg" style="max-width: 320px;" />
+                <img class="img-frame" alt="Super Nintendo - SNES" src="/media/blogger/e0/e0c995b942c308f31cacac3434f03858a0dcf75a5c3ebff91cb7581723a24157.jpg" style="max-width: 320px" />
             </a>
         </div>
         <h2>تشغيل SNES على RetroArch: عيش تجربة الـ 16-بت على أصولها</h2>
-        <p style="opacity: 0.9;">دليلك التقني لتشغيل زيلدا وماريو بأعلى دقة بكسل لعام 2026</p>
+        <p style="opacity: 0.9">دليلك التقني لتشغيل زيلدا وماريو بأعلى دقة بكسل لعام 2026</p>
     </header>
 
     <section class="tech-card">
@@ -139,20 +139,20 @@ labels: ["Nintendo","SNES"]
     <section class="tech-card">
         <h3>1️⃣ التحميل واختيار "النواة" (Core)</h3>
         <p>أولاً، حمّل المحاكي من موقعه الرسمي:</p>
-        <div style="margin: 15px 0; text-align: center;">
+        <div style="margin: 15px 0; text-align: center">
             <a href="https://www.retroarch.com/" class="btn-link" target="_blank">تحميل RetroArch الرسمي ➔</a>
         </div>
         <p>بعد التثبيت، اذهب إلى <code>Load Core -> Download a Core</code> واختر:</p>
         <code>Snes9x (Super Nintendo)</code>
-        <div class="h-tip" style="padding: 12px; margin-top: 15px; font-size: 13px;">
+        <div class="h-tip" style="padding: 12px; margin-top: 15px; font-size: 13px">
             💡 <strong>نصيحة حكميك:</strong> نواة <b>Snes9x</b> هي الأفضل توازناً، لكن إذا كنت تملك جهازاً قوياً جداً وتطمع في "دقة محاكاة" مطلقة، جرّب نواة <b>bsnes</b>.
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--sn-emerald);">
+    <section class="tech-card" style="border-right-color: var(--sn-emerald)">
         <h3>2️⃣ إضافة الألعاب (ROMs)</h3>
-        <p>ألعاب الـ SNES تأتي عادة بصيغة <span style="font-family: monospace; font-weight: bold;">.smc</span> أو <span style="font-family: monospace; font-weight: bold;">.sfc</span>. لتبدأ اللعب:</p>
-        <ul style="padding-right: 20px;">
+        <p>ألعاب الـ SNES تأتي عادة بصيغة <span style="font-family: monospace; font-weight: bold">.smc</span> أو <span style="font-family: monospace; font-weight: bold">.sfc</span>. لتبدأ اللعب:</p>
+        <ul style="padding-right: 20px">
             <li>🔸 ضع ملفاتك في مجلد مرتب، مثلاً: <code>ROMS/SNES</code>.</li>
             <li>🔸 من القائمة الرئيسية اختر <code>Load Content</code> وحدد لعبتك.</li>
         </ul>
@@ -167,8 +167,8 @@ labels: ["Nintendo","SNES"]
     <section class="tech-card">
         <h3>3️⃣ هندسة التحكم والجرافيك</h3>
         <p><b>التحكم:</b> اذهب لـ <code>Settings -> Input -> Port 1 Binds</code>. تأكد من ضبط الأزرار (A, B, X, Y) حسب ترتيب يد SNES الأصلية لتفادي اللخبطة.</p>
-        <p style="margin-top: 15px;"><b>الفلاتر (Shaders):</b> لتعيش جو الثمانينات الحقيقي، فعّل الشيدرات من <code>Video -> Shaders</code> وجرب:</p>
-        <ul style="padding-right: 20px;">
+        <p style="margin-top: 15px"><b>الفلاتر (Shaders):</b> لتعيش جو الثمانينات الحقيقي، فعّل الشيدرات من <code>Video -> Shaders</code> وجرب:</p>
+        <ul style="padding-right: 20px">
             <li>🔸 <code>crt-geom</code>: يعيد لك هيبة التلفزيونات القديمة.</li>
             <li>🔸 <code>pixellate</code>: لحدة بكسلات واضحة جداً وبدون تشويش.</li>
         </ul>
@@ -179,10 +179,10 @@ labels: ["Nintendo","SNES"]
         <p>الألعاب القديمة مثل <i>Ghosts 'n Goblins</i> قد تكون محبطة جداً. استخدم <code>F2</code> للحفظ اللحظي و <code>F4</code> للتحميل السريع لتتجاوز العقبات المستحيلة بلمحة بصر.</p>
     </section>
 
-    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center;">
-        <h2 style="color: white; font-size: 28px; letter-spacing: 3px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #94a3b8; font-family: monospace; font-size: 12px; margin-top: 10px;">// SYSTEM_STATUS: 16_BIT_ACTIVE // SNES_EMULATION_STABLE</p>
-        <p style="margin-top: 15px; font-weight: bold; color: var(--sn-purple);">جرب سوبر ماريو وعيش صوت "اليييهه" يوم تاخذ الفطر! 🍄💥</p>
+    <footer style="margin-top: 50px; padding-top: 30px; border-top: 1px dashed #cbd5e1; text-align: center">
+        <h2 style="color: white; font-size: 28px; letter-spacing: 3px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #94a3b8; font-family: monospace; font-size: 12px; margin-top: 10px">// SYSTEM_STATUS: 16_BIT_ACTIVE // SNES_EMULATION_STABLE</p>
+        <p style="margin-top: 15px; font-weight: bold; color: var(--sn-purple)">جرب سوبر ماريو وعيش صوت "اليييهه" يوم تاخذ الفطر! 🍄💥</p>
     </footer>
 
 </div>

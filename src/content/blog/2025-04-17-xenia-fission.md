@@ -125,13 +125,13 @@ labels: ["Xbox","Xbox360"]
 <div class="comparison-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png">
-                <img class="img-frame" alt="Xenia vs Fission Comparison" src="/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png" style="max-width: 400px;" />
+                <img class="img-frame" alt="Xenia vs Fission Comparison" src="/media/blogger/74/744b7924ac67348d03f8f496f4d17949069256cc5b42175661c8d73e03f90f59.png" style="max-width: 400px" />
             </a>
         </div>
         <h2>مقارنة تحسينات الرسوم والأداء: Xenia ضد Fission</h2>
-        <p style="color: var(--text-muted);">سواءً كنت محترفاً يحب تخصيص كل بكسل، أو تبحث عن البساطة والتشغيل المباشر، هذا الدليل يوضح لك أين تكمن القوة الحقيقية.</p>
+        <p style="color: var(--text-muted)">سواءً كنت محترفاً يحب تخصيص كل بكسل، أو تبحث عن البساطة والتشغيل المباشر، هذا الدليل يوضح لك أين تكمن القوة الحقيقية.</p>
     </header>
 
     [Image showing side-by-side graphical comparison of Xbox 360 games running on Xenia and Fission]
@@ -140,9 +140,9 @@ labels: ["Xbox","Xbox360"]
         <table class="comp-table">
             <thead>
                 <tr>
-                    <th style="width: 40%;">الميزة التقنية</th>
-                    <th style="width: 30%;">Xenia (Canary)</th>
-                    <th style="width: 30%;">Fission (Xbox)</th>
+                    <th style="width: 40%">الميزة التقنية</th>
+                    <th style="width: 30%">Xenia (Canary)</th>
+                    <th style="width: 30%">Fission (Xbox)</th>
                 </tr>
             </thead>
             <tbody>
@@ -177,10 +177,10 @@ labels: ["Xbox","Xbox360"]
 
     <div class="opinion-box">
         <h2>🧠 خلاصة حكميك: وش تختار؟</h2>
-        <p style="font-size: 17px; color: #ddd; margin-bottom: 20px;">
+        <p style="font-size: 17px; color: #ddd; margin-bottom: 20px">
             إذا كنت من "عشاق الحوسبة" الذين يحبون الغوص في ملفات الإعدادات لاستخراج آخر قطرة أداء وجرافيكس، فـ <strong>Xenia Canary</strong> هو ملك الساحة بلا منازع، خاصة مع إضافات المجتمع المستمرة.
         </p>
-        <p style="font-size: 17px; color: #ddd;">
+        <p style="font-size: 17px; color: #ddd">
             أما إذا كنت تبحث عن تجربة "شغّل والعب" (Console-like) على شاشة التلفاز بدون تعقيدات برمجية، فـ <strong>Fission</strong> يظل حلاً وسطاً، لكنه لن يمنحك الحرية التقنية التي يقدمها الأول.
         </p>
     </div>

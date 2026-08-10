@@ -170,7 +170,7 @@ labels: ["Nintendo","Wii"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             <span class="hakamiq-highlight-text">Nintendo Wii</span> مو مجرد كونسول… هذا ثورة. نزل في عام 2006، وقرر يخالف كل شي: ما ركز على الجرافيكس، ولا على الهاردوير الخارق… ركز على <span class="hakamiq-highlight-text">الحركة</span>، <span class="hakamiq-highlight-text">التفاعل</span>، و<span class="hakamiq-highlight-text">اللعب الجماعي</span>.
         </p>
     </div>
@@ -195,9 +195,9 @@ labels: ["Nintendo","Wii"]
             </ul>
         </section>
 
-        <section class="hakamiq-info-card" style="grid-column: 1 / -1;">
+        <section class="hakamiq-info-card" style="grid-column: 1 / -1">
             <h3 class="hakamiq-card-heading">🎮 أشهر الألعاب على Wii</h3>
-            <ul class="hakamiq-list-style" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+            <ul class="hakamiq-list-style" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px">
                 <li>🏃‍♂️ <span class="hakamiq-highlight-text">Wii Sports:</span> خلى كل بيت ملعب تنس 😆.</li>
                 <li>👒 <span class="hakamiq-highlight-text">Super Mario Galaxy:</span> ماريو في الفضاء بجرافيكس ساحر.</li>
                 <li>🧝 <span class="hakamiq-highlight-text">Zelda: Twilight Princess + Skyward Sword</span>.</li>
@@ -208,14 +208,14 @@ labels: ["Nintendo","Wii"]
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">🎮 التحكم بالحركة؟</h3>
-            <p style="margin: 0; color: var(--text-secondary);">
+            <p style="margin: 0; color: var(--text-secondary)">
                 بعض الناس شافه "فكرة رهيبة"، والبعض قال "تعبنا من التلويح!" لكن الحقيقة؟ هو اللي خلا فكرة <span class="hakamiq-highlight-text">الـ Motion Gaming</span> تنتشر… حتى سوني ومايكروسوفت قلدوه (PS Move و Kinect).
             </p>
         </section>
 
         <section class="hakamiq-info-card">
             <h3 class="hakamiq-card-heading">💻 المحاكاة اليوم</h3>
-            <p style="margin: 0; color: var(--text-secondary);">تقدر تلعب ألعاب Wii بجودة HD وأفضل باستخدام:</p>
+            <p style="margin: 0; color: var(--text-secondary)">تقدر تلعب ألعاب Wii بجودة HD وأفضل باستخدام:</p>
             <ul class="hakamiq-list-style">
                 <li><span class="hakamiq-highlight-text">Dolphin Emulator:</span> يشغّل ألعاب Wii + GameCube بامتياز.</li>
                 <li>يدعم يد Wii الأصلية عن طريق البلوتوث.</li>
@@ -225,8 +225,8 @@ labels: ["Nintendo","Wii"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--wii-cyan);">🎯 خلاصة الحكميك</h3>
-        <p style="color: var(--text-secondary); margin: 0;">
+        <h3 style="margin-top: 0; color: var(--wii-cyan)">🎯 خلاصة الحكميك</h3>
+        <p style="color: var(--text-secondary); margin: 0">
             <span class="hakamiq-highlight-text">Wii</span> مو أقوى جهاز… لكنه كان الأذكى. غيّر مفهوم الألعاب، كسر حواجز بين الأجيال، وخلّى الناس تتحرك وهي تلعب. إذا عندك ذكريات مع Wii؟ فإنت عشت لحظة ما راح تتكرر 💙
         </p>
     </footer>

@@ -141,19 +141,19 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
 <div class="retro-arcade-wrapper">
 
     <header class="arcade-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png">
-                <img class="img-frame" alt="المحاكيات الأونلاين - Virtual Consoles" src="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png" style="max-width: 500px;" />
+                <img class="img-frame" alt="المحاكيات الأونلاين - Virtual Consoles" src="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png" style="max-width: 500px" />
             </a>
         </div>
         <h2>🎮 المحاكيات الأونلاين - رجعة للأساطير القديمة بدون تحميل</h2>
-        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto">
             إذا أنت من الناس اللي عاشت أيام أبل 2، أتاري، كومودور 64، أو جيم بوي، وتبي تعيش الحنين من جديد بدون تحميل ولا وجع راس؟ موقع <b>Virtual Consoles</b> هو كنزك الرقمي، يقدّم محاكيات للأجهزة القديمة <u>أونلاين مباشرة من المتصفح</u>. افتح اللعبة، واضغط تشغيل، وخلك فالعالم الثاني.
         </p>
     </header>
 
-    <section class="info-card" style="border-right: 5px solid var(--neon-cyan);">
-        <h3 style="color: var(--neon-cyan);">🕹️ المحاكيات المتوفرة حالياً</h3>
+    <section class="info-card" style="border-right: 5px solid var(--neon-cyan)">
+        <h3 style="color: var(--neon-cyan)">🕹️ المحاكيات المتوفرة حالياً</h3>
         <div class="emu-grid">
             <div class="emu-badge">🍎 محاكي Apple II</div>
             <div class="emu-badge">🕹️ محاكي Atari 2600</div>
@@ -173,7 +173,7 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
         <p>
             انطلق المشروع في عام 2017 كمبادرة غير ربحية من ناس يحبون ألعاب الطفولة ويؤمنون إن الريترو ما انتهى. من وقتها وهم يطورون الموقع ويضيفون محاكيات جديدة بشكل مستمر.
         </p>
-        <p style="margin-bottom: 0;">
+        <p style="margin-bottom: 0">
             في 2019، بدأوا مشروعاً لحفظ الألعاب القديمة رقميًا، وبفضل قانون DMCA المعتمد من مكتبة الكونغرس، صار بإمكانهم حفظ ألعاب منتهية الدعم وجعلها قابلة للعب أونلاين (لتجربتها بدون توفير تحميل مباشر للملفات).
         </p>
     </section>
@@ -183,7 +183,7 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
         <ul class="history-list">
             <li><b>24 نوفمبر 2021:</b> إطلاق قسم AtariOnline.org المخصص لألعاب الأتاري.</li>
             <li><b>6 مارس 2021:</b> تشغيل قسم C64Online.com لمحبي الكومودور 64.</li>
-            <li><b>21 فبراير 2021:</b> إضافة لعبة Strip Poker الكلاسيكية على C64 <span style="color: var(--text-muted);">(ممنوع تفتحها لو عندك أهل 😅)</span>.</li>
+            <li><b>21 فبراير 2021:</b> إضافة لعبة Strip Poker الكلاسيكية على C64 <span style="color: var(--text-muted)">(ممنوع تفتحها لو عندك أهل 😅)</span>.</li>
             <li><b>مارس 2024:</b> إضافة ألعاب ضخمة مثل Stunts و Jones in the Fast Lane.</li>
         </ul>
     </section>
@@ -195,8 +195,8 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
     </div>
 
     <div class="royal-opinion">
-        <h3 style="color: #ff9900; margin-top: 0; border-bottom: 1px solid #5a401a; padding-bottom: 10px;">👑 الرأي الشخصي الملكي</h3>
-        <p style="margin-bottom: 0;">
+        <h3 style="color: #ff9900; margin-top: 0; border-bottom: 1px solid #5a401a; padding-bottom: 10px">👑 الرأي الشخصي الملكي</h3>
+        <p style="margin-bottom: 0">
             هذا الموقع يعتبر بوابة الزمن لعشاق الألعاب الكلاسيكية. لو كنت من "جيل الطيبين" أو حتى من الجيل الجديد وتبي تشوف ألعاب زمان كيف كانت... فموقع <b>Virtual Consoles</b> بيخليك تعيش اللحظة بدون ما تثبت شيء ولا تعقد نفسك. جربه، وبتحس إنك رجعت 30 سنة ورا، بس بجهازك الحالي!
         </p>
     </div>

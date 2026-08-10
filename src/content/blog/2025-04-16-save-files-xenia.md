@@ -100,16 +100,16 @@ labels: ["Xbox360","Xbox-Original"]
 <div class="save-manager-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png">
-                <img class="img-frame" alt="Save Files Management Xenia" src="/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png" style="max-width: 450px;" />
+                <img class="img-frame" alt="Save Files Management Xenia" src="/media/blogger/90/90880ff498996e8702a60b7fdc7475decadbf57d03ccef682007c2d6ff4aa3e4.png" style="max-width: 450px" />
             </a>
         </div>
         <p>لا يوجد شعور أقهر من أن تنهي نصف اللعبة وتضيع تخزينتك... ولكن لا تقلق، في Xenia تستطيع حفظ واسترجاع ملفات الحفظ بكل سهولة! سنشرح هنا كيف تستورد تخزينات جاهزة أو تصدّر تخزينتك الخاصة للاحتياط 🔄.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">📥 أولاً: استيراد ملفات الحفظ (Import Save Files)</h3>
+        <h3 style="color: var(--xe-blue)">📥 أولاً: استيراد ملفات الحفظ (Import Save Files)</h3>
         <p><b>متطلبات:</b> يجب أن يكون ملف الحفظ مضغوطاً بصيغة <code>.zip</code> ومرتباً بالهيكلة التالية:</p>
         <pre class="file-tree">[TitleID]
 └── 00000001
@@ -126,29 +126,29 @@ labels: ["Xbox360","Xbox-Original"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-green);">📤 ثانياً: تصدير ملفات الحفظ (Export Save Files)</h3>
+        <h3 style="color: var(--xe-green)">📤 ثانياً: تصدير ملفات الحفظ (Export Save Files)</h3>
         <ol class="styled-steps">
             <li>بنفس الخطوات السابقة، اضغط بيمين الفأرة واختر <b>Content → View Installed Content</b>.</li>
             <li>اختر <b>"Saved Game"</b> من القائمة العلوية.</li>
             <li>حدد البروفايل (XUID) المطلوب ثم اضغط على <b>Export</b>.</li>
         </ol>
-        <div class="note-box" style="border-right-color: var(--xe-blue);">
+        <div class="note-box" style="border-right-color: var(--xe-blue)">
             سيتم تصدير التخزينة إلى سطح المكتب فوراً باسم: <br>
             <code>[التاريخ والوقت] - [اسم اللعبة] Save File.zip</code>
         </div>
     </section>
 
     <div class="note-box">
-        <strong style="color: var(--xe-gold);">💡 ملاحظة هامة:</strong>
-        <p style="margin: 0;">Xenia يستخدم نفس الهيكلية لكل عمليات التصدير والاستيراد، فإذا حملت تخزينة من الإنترنت وأردت ضبطها يدوياً، تأكد أنها تتبع نفس المسار والشكل المذكور أعلاه!</p>
+        <strong style="color: var(--xe-gold)">💡 ملاحظة هامة:</strong>
+        <p style="margin: 0">Xenia يستخدم نفس الهيكلية لكل عمليات التصدير والاستيراد، فإذا حملت تخزينة من الإنترنت وأردت ضبطها يدوياً، تأكد أنها تتبع نفس المسار والشكل المذكور أعلاه!</p>
     </div>
 
     <footer class="opinion-box">
-        <p style="margin: 0;">🧠 <b>نصيحة حكميك:</b> دائماً قم بعمل نسخة احتياطية لتخزيناتك قبل تجربة أي باتش أو مود جديد... "الاحتياط واجب" خصوصاً مع الألعاب التي قد تحتوي شفرات غير مستقرة 😅.</p>
+        <p style="margin: 0">🧠 <b>نصيحة حكميك:</b> دائماً قم بعمل نسخة احتياطية لتخزيناتك قبل تجربة أي باتش أو مود جديد... "الاحتياط واجب" خصوصاً مع الألعاب التي قد تحتوي شفرات غير مستقرة 😅.</p>
     </footer>
 
-    <p style="font-size: 14px; color: var(--text-muted); margin-top: 20px; text-align: center;">
-        📚 المصدر التقني: <a href="https://github.com/xenia-canary/xenia-canary/wiki/FAQ" target="_blank" style="color: var(--xe-blue); text-decoration: none;">Xenia FAQ Wiki</a>
+    <p style="font-size: 14px; color: var(--text-muted); margin-top: 20px; text-align: center">
+        📚 المصدر التقني: <a href="https://github.com/xenia-canary/xenia-canary/wiki/FAQ" target="_blank" style="color: var(--xe-blue); text-decoration: none">Xenia FAQ Wiki</a>
     </p>
 
 </div>

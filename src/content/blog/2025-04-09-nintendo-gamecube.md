@@ -114,16 +114,16 @@ labels: ["GameCube","Nintendo"]
 <div class="gamecube-doc-wrapper">
 
     <header class="doc-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg">
-                <img class="img-frame" alt="Nintendo GameCube Console" src="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg" style="max-width: 250px;" />
+                <img class="img-frame" alt="Nintendo GameCube Console" src="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg" style="max-width: 250px" />
             </a>
         </div>
         <h2>Nintendo GameCube: المكعب الذي خسر السوق وفاز بالتاريخ</h2>
-        <p style="opacity: 0.8;">قصة الجهاز الذي خبأ وحشاً تقنياً داخل تصميم "بنفسجي" لطيف!</p>
+        <p style="opacity: 0.8">قصة الجهاز الذي خبأ وحشاً تقنياً داخل تصميم "بنفسجي" لطيف!</p>
     </header>
 
-    <p style="text-align: center; color: var(--gc-gray); font-size: 16px; margin-bottom: 40px;">
+    <p style="text-align: center; color: var(--gc-gray); font-size: 16px; margin-bottom: 40px">
         صدر عام 2001، وكان خطوة جريئة من نينتندو لرد الاعتبار بعد ضربة الـ N64. ظهر بشكل مكعب بنفسجي صغير مزود بمقبض حمل ومشغل أقراص ميني… لكن لا يغرك المظهر، فقد كان تحته وحش تقني فعلياً 💪
     </p>
 
@@ -138,7 +138,7 @@ labels: ["GameCube","Nintendo"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--gc-orange);">
+    <section class="tech-card" style="border-right-color: var(--gc-orange)">
         <h3>🎮 مكتبة الحصريات المذهلة</h3>
         <p>رغم قلة دعم الطرف الثالث، قدم الكيوب ألعاباً تعتبر اليوم من أعظم التحف الفنية في الصناعة:</p>
         <div class="grid-list">
@@ -153,14 +153,14 @@ labels: ["GameCube","Nintendo"]
     </section>
 
     <section class="fail-box">
-        <h3 style="color: var(--gc-red); margin-top: 0;">❌ لماذا سقط الـ GameCube تجارياً؟</h3>
-        <ul style="padding-right: 20px;">
+        <h3 style="color: var(--gc-red); margin-top: 0">❌ لماذا سقط الـ GameCube تجارياً؟</h3>
+        <ul style="padding-right: 20px">
             <li><b>هوية طفولية:</b> اللون البنفسجي وشكل "صندوق الغداء" بمقبض الحمل جعل الكبار يميلون لهيبة تصميم الـ PS2.</li>
             <li><b>مساحة التخزين:</b> الـ Mini-DVD (1.5GB) لم يسمح بتخزين المشاهد السينمائية الطويلة مقارنة بأقراص الـ DVD الكاملة (4.7GB) في PS2 و Xbox.</li>
             <li><b>الطرف الثالث:</b> استمرار غياب دعم الشركات الكبرى التي فضلت سهولة وسعة الأجهزة المنافسة.</li>
             <li><b>غياب مشغل الـ DVD:</b> الـ PS2 كان يُباع كـ "مشغل أفلام" وجهاز ألعاب بنفس السعر، مما جعله صفقة لا تُقاوم للعائلة.</li>
         </ul>
-        <p style="margin-top: 15px; font-size: 18px; text-align: center; color: var(--gc-dark);">
+        <p style="margin-top: 15px; font-size: 18px; text-align: center; color: var(--gc-dark)">
             📉 <b>النتيجة القاسية:</b> باع الجهاز 21 مليون وحدة فقط... مقابل 155 مليون للـ PS2! 😬
         </p>
     </section>
@@ -168,18 +168,18 @@ labels: ["GameCube","Nintendo"]
     <section class="tech-card">
         <h3>🛠️ الإرث الخالد والمحاكاة اليوم</h3>
         <p>لم يمت الـ GameCube فعلياً؛ تصميم يد التحكم الخاصة به يُستخدم رسمياً حتى اليوم في بطولات <i>Smash Bros Ultimate</i>. أما برمجياً، فبفضل هندسة معالجه المتميزة، يُعتبر الجهاز من أسهل الأجهزة محاكاة وأكثرها استقراراً عبر محاكي <b>Dolphin</b>.</p>
-        <p style="background: #f8fafc; padding: 15px; border-radius: 8px; border-right: 4px solid var(--gc-purple); margin-top: 15px; font-size: 15px;">
+        <p style="background: #f8fafc; padding: 15px; border-radius: 8px; border-right: 4px solid var(--gc-purple); margin-top: 15px; font-size: 15px">
             💡 <b>لمسة تقنية:</b> يمكنك اليوم تشغيل تحف الكيوب على محاكي Dolphin ورفع الـ <b>انتر ريزلوشن</b> لأقصى حد، مع تفعيل تنعيم الحواف (MSAA)، لتُصدم بمدى جودة ورقي التصميم الفني (Art Style) الذي كان مخفياً خلف دقة شاشات الـ CRT القديمة.
         </p>
     </section>
 
     <footer>
-        <h3 style="color: var(--gc-orange); margin-top: 0;">🎯 خلاصة حكميك</h3>
-        <p style="font-size: 15px; color: #cbd5e1; max-width: 800px; margin: 0 auto;">
+        <h3 style="color: var(--gc-orange); margin-top: 0">🎯 خلاصة حكميك</h3>
+        <p style="font-size: 15px; color: #cbd5e1; max-width: 800px; margin: 0 auto">
             <b>GameCube</b> كان جهازاً خارقاً لم يُحسن تسويق نفسه في سوق يعج بالعمالقة. خسر المعركة التجارية بلا شك، ولكنه فاز بالمعركة الفنية، وصار له اليوم جمهور شغوف ومخلص يعرف قيمته بعد فوات الأوان.
         </p>
-        <p style="margin-top: 25px; font-weight: bold; color: white; font-size: 18px;">هل لعبت عليه؟ أو كنت من اللي شافه وقال "وش هاللعبة البنفسجية؟" 😅🟪 شاركنا!</p>
-        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace;">
+        <p style="margin-top: 25px; font-weight: bold; color: white; font-size: 18px">هل لعبت عليه؟ أو كنت من اللي شافه وقال "وش هاللعبة البنفسجية؟" 😅🟪 شاركنا!</p>
+        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace">
             // HAKAMIQ TECH ARCHIVES // GAMECUBE_LEGACY // 2026
         </div>
     </footer>

@@ -100,7 +100,7 @@ labels: ["Xbox","Xbox360"]
 <div class="mousehook-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9e/9eb0976c5cb3f07038f2f2e83206bb3329530143c36a94a05fd0cc04a6a97194.jpg">
                 <img class="img-frame" src="/media/blogger/9e/9eb0976c5cb3f07038f2f2e83206bb3329530143c36a94a05fd0cc04a6a97194.jpg" alt="Mousehook Games Xbox 360" />
             </a>
@@ -159,8 +159,8 @@ labels: ["Xbox","Xbox360"]
     </div>
 
     <section class="info-box">
-        <h3 style="color: var(--mh-yellow); margin-top: 0;">🔍 توضيح المصطلحات</h3>
-        <ul style="padding-right: 20px; margin: 0;">
+        <h3 style="color: var(--mh-yellow); margin-top: 0">🔍 توضيح المصطلحات</h3>
+        <ul style="padding-right: 20px; margin: 0">
             <li><b>TU (Title Update):</b> رقم التحديث الرسمي المطلوب.</li>
             <li><b>Fair:</b> دعم جزئي - الماوس يعمل مع بعض العيوب البسيطة.</li>
             <li><b>Good:</b> دعم ممتاز - تجربة قريبة جداً من ألعاب الـ PC.</li>
@@ -169,7 +169,7 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <footer class="example-box">
-        <p style="margin: 0;"><strong>💡 مثال:</strong> لعبة <span style="color: var(--mh-blue);">Red Dead Redemption</span> تصنيفها <b>Good</b>، الماوس فيها خيالي، لكن في لحظة المبارزات (Duel) لازم ترجع تستخدم الكيبورد لمحاكاة العصا.</p>
+        <p style="margin: 0"><strong>💡 مثال:</strong> لعبة <span style="color: var(--mh-blue)">Red Dead Redemption</span> تصنيفها <b>Good</b>، الماوس فيها خيالي، لكن في لحظة المبارزات (Duel) لازم ترجع تستخدم الكيبورد لمحاكاة العصا.</p>
     </footer>
 
 </div>

@@ -118,13 +118,13 @@ labels: ["Commodore","Commodore-AMIGA"]
 <div class="amiga-list-wrapper">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg">
                 <img class="img-frame" alt="Best Amiga Games - HAKAMIQ" src="/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg" />
             </a>
         </div>
         <h2>أفضل 10 ألعاب على Commodore Amiga لا تزال ممتعة في 2026</h2>
-        <p style="opacity: 0.8; margin-top: 10px;">استكشف مكتبة الجهاز الذي قدم أروع الرسوم والصوتيات في العصر الذهبي</p>
+        <p style="opacity: 0.8; margin-top: 10px">استكشف مكتبة الجهاز الذي قدم أروع الرسوم والصوتيات في العصر الذهبي</p>
     </header>
 
     <div class="games-grid">
@@ -176,12 +176,12 @@ labels: ["Commodore","Commodore-AMIGA"]
     </section>
 
     <footer>
-        <h3 style="color: white;">💬 كلمة حكميك الختامية</h3>
-        <p style="color: #94a3b8; font-size: 15px; max-width: 800px; margin: 0 auto;">
+        <h3 style="color: white">💬 كلمة حكميك الختامية</h3>
+        <p style="color: #94a3b8; font-size: 15px; max-width: 800px; margin: 0 auto">
             الأميغا كان الجهاز الذي "حلّم" به الجميع. جرب واحدة من هذه الأساطير اليوم، وستدرك لماذا لا تزال موسيقى Turrican أو سخرية Monkey Island خالدة حتى الآن.
         </p>
-        <p style="margin-top: 25px; font-weight: bold; color: var(--am-rainbow-purple); font-size: 18px;">وش أدهشك أكثر: الألحان أم الرسوم؟ 👀🎮</p>
-        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace;">
+        <p style="margin-top: 25px; font-weight: bold; color: var(--am-rainbow-purple); font-size: 18px">وش أدهشك أكثر: الألحان أم الرسوم؟ 👀🎮</p>
+        <div style="margin-top: 30px; font-size: 11px; color: #475569; font-family: monospace">
             // HAKAMIQ TECH ARCHIVES // AMIGA_BEST_TITLES // 2026
         </div>
     </footer>

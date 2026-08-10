@@ -121,13 +121,13 @@ labels: ["GBC","Nintendo"]
 <div class="gambatte-guide-container">
 
     <header class="hero-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png">
-                <img alt="محاكي Gambatte - حكميك" src="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
+                <img alt="محاكي Gambatte - حكميك" src="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png" style="width:100%; max-width: 600px; border-radius: 15px" />
             </a>
         </div>
         <h2>دليل احتراف محاكاة Game Boy بدقة 2026</h2>
-        <p style="opacity: 0.8;">تشغيل ألعاب Classic و Color بأعلى دقة محاكاة عالمية</p>
+        <p style="opacity: 0.8">تشغيل ألعاب Classic و Color بأعلى دقة محاكاة عالمية</p>
     </header>
 
     <section class="tech-card">
@@ -138,10 +138,10 @@ labels: ["GBC","Nintendo"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--g-indigo);">
+    <section class="tech-card" style="border-right-color: var(--g-indigo)">
         <h3>📥 دليل التثبيت (Installation)</h3>
         <p>البرنامج مستقل (Standalone)؛ لا يحتاج لعملية تثبيت. فقط قم بفك الضغط عن ملف ZIP وضعه في مجلد <b>Documents</b> لضمان صلاحيات الكتابة الكاملة.</p>
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/d2/d2689b2248f42b477a1012e2443bce69e7ecee423128f9feba5b42de3dfdd3b0.png">
                 <img alt="تشغيل محاكي Gambatte" src="/media/blogger/d2/d2689b2248f42b477a1012e2443bce69e7ecee423128f9feba5b42de3dfdd3b0.png" width="200" />
             </a>
@@ -157,24 +157,24 @@ labels: ["GBC","Nintendo"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--g-emerald);">
+    <section class="tech-card" style="border-right-color: var(--g-emerald)">
         <h3>📂 تحميل وتشغيل الألعاب</h3>
         <p>استخدم الاختصار <code>Ctrl + O</code> لاختيار ملف اللعبة. بمجرد الاختيار، ستبدأ المغامرة فوراً بدقة كاملة.</p>
         <img class="img-frame" alt="قائمة فتح الألعاب" src="/media/blogger/18/18f6caca520cad108c7c6c995cb45de2b7748ca40ff8e24ffb8d23b5e3a804d8.png" width="320" />
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--g-blue);">
+    <section class="tech-card" style="border-right-color: var(--g-blue)">
         <h3>✨ تحسين الجرافيك (Video Filters)</h3>
         <p>تمنحك الفلاتر مظهراً عصرياً للألعاب الكلاسيكية. للوصول إليها: <code>Settings -> Video</code>.</p>
         
         <div class="feature-grid">
             <div class="feature-item">
                 <span class="btn-badge">Bicubic</span>
-                <p style="font-size: 13px; margin-top: 10px;">يعمل على دمج وتمويه البيكسلات لخلق مظهر ناعم جداً ومريح للعين.</p>
+                <p style="font-size: 13px; margin-top: 10px">يعمل على دمج وتمويه البيكسلات لخلق مظهر ناعم جداً ومريح للعين.</p>
             </div>
-            <div class="feature-item" style="border-top-color: var(--g-amber);">
-                <span class="btn-badge" style="background: var(--g-amber);">hq2x / hq3x</span>
-                <p style="font-size: 13px; margin-top: 10px;">تقنية تدوير البيكسلات لتجعل الرسوم تبدو وكأنها مرسومة يدوياً وليست مربعات.</p>
+            <div class="feature-item" style="border-top-color: var(--g-amber)">
+                <span class="btn-badge" style="background: var(--g-amber)">hq2x / hq3x</span>
+                <p style="font-size: 13px; margin-top: 10px">تقنية تدوير البيكسلات لتجعل الرسوم تبدو وكأنها مرسومة يدوياً وليست مربعات.</p>
             </div>
         </div>
         
@@ -183,16 +183,16 @@ labels: ["GBC","Nintendo"]
         </div>
     </section>
 
-    <section class="tech-card" style="border-right-color: var(--g-rose);">
+    <section class="tech-card" style="border-right-color: var(--g-rose)">
         <h3>🚀 ميزات السرعة والحفظ</h3>
         <div class="feature-grid">
             <div class="feature-item">
                 <strong>📸 حفظ الحالة (Save States)</strong>
-                <p style="font-size: 13px;">استخدم <code>Ctrl + S</code> للحفظ و <code>Ctrl + L</code> للتحميل. يدعم المحاكي 10 خانات حفظ (Slots) لكل لعبة.</p>
+                <p style="font-size: 13px">استخدم <code>Ctrl + S</code> للحفظ و <code>Ctrl + L</code> للتحميل. يدعم المحاكي 10 خانات حفظ (Slots) لكل لعبة.</p>
             </div>
-            <div class="feature-item" style="border-top-color: var(--g-amber);">
+            <div class="feature-item" style="border-top-color: var(--g-amber)">
                 <strong>⏩ التسريع (Fast Forward)</strong>
-                <p style="font-size: 13px;">اضغط <code>Ctrl + I</code> لتسريع وتيرة اللعب و <code>Ctrl + U</code> للعودة للسرعة الطبيعية.</p>
+                <p style="font-size: 13px">اضغط <code>Ctrl + I</code> لتسريع وتيرة اللعب و <code>Ctrl + U</code> للعودة للسرعة الطبيعية.</p>
             </div>
         </div>
     </section>
@@ -200,16 +200,16 @@ labels: ["GBC","Nintendo"]
     <section class="tech-card">
         <h3>🔓 استخدام أكواد الغش (Cheats)</h3>
         <p>يدعم المحاكي أكواد Game Genie و Game Shark. اذهب إلى <code>Tools -> Cheats</code> لإضافتها يدوياً.</p>
-        <div class="h-alert" style="background: #fdf2f2; border-color: var(--g-rose);">
+        <div class="h-alert" style="background: #fdf2f2; border-color: var(--g-rose)">
             ⚠️ <strong>ملاحظة:</strong> إذا كان كود Game Shark مكوناً من 6 أرقام فقط، أضف <b>"01"</b> في بدايته ليقبله البرنامج.
         </div>
         <img class="img-frame" alt="إضافة الأكواد في Gambatte" src="/media/blogger/0f/0f357d88870731dad570f08a64f744799707477524b6f58c2beb306fc6e5b8ad.png" width="300" />
     </section>
 
-    <footer style="background: var(--h-bg); color: white; padding: 30px; border-radius: 20px; text-align: center;">
-        <h2 style="color: var(--g-blue); letter-spacing: 3px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px;">// EMULATION_GUIDE_COMPLETE // SYSTEM_READY</p>
-        <p style="margin-top: 15px; font-size: 14px;">محاكي Gambatte يظل الخيار الأفضل للدقة والبساطة. استمتع ببناء مكتبتك الكلاسيكية!</p>
+    <footer style="background: var(--h-bg); color: white; padding: 30px; border-radius: 20px; text-align: center">
+        <h2 style="color: var(--g-blue); letter-spacing: 3px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #666; font-family: monospace; font-size: 11px; margin-top: 10px">// EMULATION_GUIDE_COMPLETE // SYSTEM_READY</p>
+        <p style="margin-top: 15px; font-size: 14px">محاكي Gambatte يظل الخيار الأفضل للدقة والبساطة. استمتع ببناء مكتبتك الكلاسيكية!</p>
     </footer>
 
 </div>

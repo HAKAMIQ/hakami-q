@@ -63,17 +63,17 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
 <div class="beena-emu-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png">
                 <img alt="صورة توضيحية ضمن مقال أفضل محاكي لتشغيل ألعاب Beena على الكمبيوتر (OpenEmu + forks)" class="img-frame" src="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png" width="320" />
             </a>
         </div>
         
-        <p style="text-align: center;">على الرغم من ندرة جهاز Sega Advanced Pico Beena، إلا أن هناك محاولات تقنية جادة لتوفير بيئة محاكاة مستقرة لألعابه عبر مشاريع مفتوحة المصدر وتفرعات مجتمعية نشطة.</p>
+        <p style="text-align: center">على الرغم من ندرة جهاز Sega Advanced Pico Beena، إلا أن هناك محاولات تقنية جادة لتوفير بيئة محاكاة مستقرة لألعابه عبر مشاريع مفتوحة المصدر وتفرعات مجتمعية نشطة.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">نظرة عامة على النظام</h3>
+        <h3 style="color: var(--xe-gold)">نظرة عامة على النظام</h3>
         <ul class="clean-list">
             <li>جهاز تعليمي متطور من SEGA صدر حصرياً في اليابان عام 2005.</li>
             <li>اعتمد على منظومة تقنية تدمج بين الكرتريدج والكتب الورقية التفاعلية.</li>
@@ -82,7 +82,7 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">أفضل خيارات المحاكاة المتاحة</h3>
+        <h3 style="color: var(--xe-gold)">أفضل خيارات المحاكاة المتاحة</h3>
         <ul class="clean-list">
             <li><b>OpenEmu (نظام Mac):</b> يوفر دعماً جزئياً عبر إضافة الكور (Core) المناسب من التفرعات غير الرسمية.</li>
             <li><b>beena-emulator fork:</b> يعتبر المشروع الأكثر استقراراً حالياً على Windows و Linux، وهو مشروع مستقل بدأ في عام 2022.</li>
@@ -91,8 +91,8 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
         <p>الخلاصة التقنية: لا يوجد محاكي رسمي متكامل، ولكن مشروع <code>beena-emulator</code> يمثل أقرب تجربة فعلية حالياً.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f1c40f;">
-        <h3 style="color: #f39c12;">المتطلبات التقنية للتشغيل</h3>
+    <section class="section-card" style="border-right: 5px solid #f1c40f">
+        <h3 style="color: #f39c12">المتطلبات التقنية للتشغيل</h3>
         <p>لضمان نجاح عملية المحاكاة، يجب توفير المكونات التالية:</p>
         <ul class="clean-list">
             <li>ملف BIOS الأصلي تحت مسمى <code>beena_bios.bin</code>.</li>
@@ -102,18 +102,18 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">جدوى التجربة التقنية</h3>
+        <h3 style="color: var(--xe-blue)">جدوى التجربة التقنية</h3>
         <p>تعتبر محاكاة هذا الجهاز هدفاً مثالياً لهواة <span class="highlight-gold">أرشفة الألعاب النادرة</span> والباحثين عن استكشاف الأنظمة المفقودة. على الرغم من أن المحتوى تعليمي في المقام الأول، إلا أن التحدي التقني في تشغيل نظام يعتمد على الورق والبرمجيات معاً يمنح التجربة قيمة استثنائية.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة</h3>
         <p>محاكيات Beena موجودة وتتطور، لكنها تتطلب بحثاً دقيقاً وملفات نادرة. باستخدام تفرعات <b>OpenEmu</b> أو مشروع <b>beena-emulator</b> على GitHub، يمكنك البدء في استكشاف كنوز تقنية لم تخرج من حدود اليابان من قبل.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin-bottom: 10px;"><b>هل تبحث عن روابط المشاريع أو ملفات BIOS المحددة؟ شاركنا استفسارك في التعليقات.</b></p>
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin-bottom: 10px"><b>هل تبحث عن روابط المشاريع أو ملفات BIOS المحددة؟ شاركنا استفسارك في التعليقات.</b></p>
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

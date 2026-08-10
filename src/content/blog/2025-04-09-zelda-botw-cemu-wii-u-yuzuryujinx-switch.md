@@ -206,7 +206,7 @@ labels: ["Nintendo","NS","Wii-U"]
     </header>
 
     <div class="hakamiq-intro-box">
-        <p style="margin: 0;">
+        <p style="margin: 0">
             إذا كنت ناوي تلعب <span class="hakamiq-highlight-text">Legend of Zelda: Breath of the Wild</span> على الكمبيوتر، فأنت قدامك خيارين: 
             تشغل نسخة Wii U عن طريق <span class="hakamiq-highlight-text">Cemu</span> أو نسخة Switch عن طريق <span class="hakamiq-highlight-text">Yuzu</span> أو <span class="hakamiq-highlight-text">Ryujinx</span>.
             بس أي واحد يعطيك الأداء الأفضل؟ 👇
@@ -287,16 +287,16 @@ labels: ["Nintendo","NS","Wii-U"]
         </table>
     </div>
 
-    <div class="hakamiq-grid-layout" style="margin-top: 40px;">
-        <section class="hakamiq-info-card" style="border-right-color: var(--zelda-green);">
+    <div class="hakamiq-grid-layout" style="margin-top: 40px">
+        <section class="hakamiq-info-card" style="border-right-color: var(--zelda-green)">
             <h3 class="hakamiq-card-heading">🎉 6. مين الأفضل؟</h3>
-            <p style="margin: 0; color: var(--text-secondary);">
+            <p style="margin: 0; color: var(--text-secondary)">
                 <span class="hakamiq-highlight-text">Cemu</span> هو البطل الحالي لـ BOTW على الحاسب من ناحية الثبات، دعم المودات، ودقة الـ 4K الحقيقية.
             </p>
         </section>
 
-        <section class="hakamiq-info-card" style="border-right-color: #f1c40f;">
-            <h3 class="hakamiq-card-heading" style="color: #f1c40f;">🌐 نصائح ذهبية</h3>
+        <section class="hakamiq-info-card" style="border-right-color: #f1c40f">
+            <h3 class="hakamiq-card-heading" style="color: #f1c40f">🌐 نصائح ذهبية</h3>
             <ul class="hakamiq-list-style">
                 <li>استخدم Cemu + FPS++ + Texture Pack 4K.</li>
                 <li>لا تشغل من HDD – الـ <span class="hakamiq-highlight-text">SSD</span> ضروري لمنع التقطيع.</li>
@@ -306,7 +306,7 @@ labels: ["Nintendo","NS","Wii-U"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--zelda-green);">🎯 الخلاصة</h3>
+        <h3 style="margin-top: 0; color: var(--zelda-green)">🎯 الخلاصة</h3>
         رغم تطور محاكيات Switch، إلا أن نضج <span class="hakamiq-highlight-text">Cemu</span> يجعل تجربة زيلدا عليه هي الأكثر كمالاً حتى الآن.
     </footer>
 

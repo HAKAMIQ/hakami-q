@@ -101,19 +101,19 @@ labels: ["PlayStation","PS1"]
 
 <div class="hakamiq-hd-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg" target="_blank">
-            <img alt="PS1 HD Graphics DuckStation Guide" src="/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+            <img alt="PS1 HD Graphics DuckStation Guide" src="/media/blogger/d6/d65191c7cee6a50d91882eb59783f8f7798f7e0d1829f0ffb2860c2fdb36d0f4.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333" />
         </a>
     </div>
 
     
 
-    <p style="text-align: center;">تبغى تشغّل ألعاب PS1 القديمة بجودة HD تخليك تقول "هذي كانت كذا؟" محاكي DuckStation هو أفضل حل لهذي المهمة 🔥 والجميل؟ أنه سهل، سريع، ويدعم تحسين الجرافيكس لدرجة تخليك تشوف Crash كأنه طالع من بلايستيشن 4 😍</p>
+    <p style="text-align: center">تبغى تشغّل ألعاب PS1 القديمة بجودة HD تخليك تقول "هذي كانت كذا؟" محاكي DuckStation هو أفضل حل لهذي المهمة 🔥 والجميل؟ أنه سهل، سريع، ويدعم تحسين الجرافيكس لدرجة تخليك تشوف Crash كأنه طالع من بلايستيشن 4 😍</p>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #4caf50;">📥 أولاً: تثبيت DuckStation</h3>
+    <h3 class="hakamiq-section-header" style="color: #4caf50">📥 أولاً: تثبيت DuckStation</h3>
     <ol class="hakamiq-tech-box">
         <li>ادخل الموقع الرسمي: <a class="hakamiq-link" href="https://github.com/stenzek/duckstation" target="_blank">github.com/stenzek/duckstation</a></li>
         <li>حمّل نسخة Windows أو Android حسب جهازك.</li>
@@ -122,7 +122,7 @@ labels: ["PlayStation","PS1"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #ff9800;">🛠️ ثانياً: إعدادات الجرافيكس بجودة HD</h3>
+    <h3 class="hakamiq-section-header" style="color: #ff9800">🛠️ ثانياً: إعدادات الجرافيكس بجودة HD</h3>
     <p>من داخل DuckStation، ادخل على: <strong>Settings > Enhancements</strong> وطبق الإعدادات التالية:</p>
 
     <ul class="hakamiq-tech-box">
@@ -135,13 +135,13 @@ labels: ["PlayStation","PS1"]
 
     <p>✨ هذي الإعدادات راح تخلي البيئة أكثر نعومة، وخطوط الخرائط أوضح بدون اهتزاز. فرق فعلي بتحسه من أول دقيقة.</p>
 
-    <div class="hakamiq-note-box" style="border-right-color: #f44336; color: #ff8a80; background: rgba(244, 67, 54, 0.05);">
+    <div class="hakamiq-note-box" style="border-right-color: #f44336; color: #ff8a80; background: rgba(244, 67, 54, 0.05)">
         ⚠️ <strong>ملاحظة:</strong> لو جهازك ضعيف، خفّض Internal Resolution إلى 2x أو 3x علشان الأداء.
     </div>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #03a9f4;">🎮 ثالثاً: تفعيل الشاشة الكاملة + FPS</h3>
+    <h3 class="hakamiq-section-header" style="color: #03a9f4">🎮 ثالثاً: تفعيل الشاشة الكاملة + FPS</h3>
     <ul class="hakamiq-tech-box">
         <li>من <strong>Settings > Display</strong>، فعّل:
             <ul>
@@ -154,22 +154,22 @@ labels: ["PlayStation","PS1"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #e91e63;">📦 ملفات BIOS</h3>
+    <h3 class="hakamiq-section-header" style="color: #e91e63">📦 ملفات BIOS</h3>
     <p>لا تنسى تحط ملف BIOS داخل مجلد <code style="color: #ffb300;">bios</code> وأفضل ملف هو: <code style="color: #ffb300;">SCPH1001.BIN</code> أو أي نسخة متوافقة.</p>
 
-    <div class="hakamiq-note-box" style="border-right-color: #2196f3; color: #bbdefb; background: rgba(33, 150, 243, 0.05);">
+    <div class="hakamiq-note-box" style="border-right-color: #2196f3; color: #bbdefb; background: rgba(33, 150, 243, 0.05)">
         🧠 <strong>للمزيد عن البيوس:</strong> شوف موضوعنا الكامل "📥 أهم ملفات BIOS لتشغيل محاكي PS1"
     </div>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none;">🎯 الزبدة</h3>
+    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none">🎯 الزبدة</h3>
     <ul class="hakamiq-tech-box">
         <li>💎 DuckStation هو الأفضل لتجربة PS1 بجودة HD</li>
         <li>🎨 يرفع دقة الألعاب + يصحح تشوهات الكاميرا القديمة</li>
         <li>🕹️ يدعم جميع أنواع الأذرعة والملفات</li>
     </ul>
 
-    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px;">// HAKAMIQ TECH ARCHIVES // 2026 // PS1_HD_DUCKSTATION</p>
+    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px">// HAKAMIQ TECH ARCHIVES // 2026 // PS1_HD_DUCKSTATION</p>
 
 </div>

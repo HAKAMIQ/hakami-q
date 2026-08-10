@@ -127,9 +127,9 @@ labels: ["Nintendo","Wii"]
 <div class="vsync-article">
 
     <header class="vs-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png">
-                <img alt="شرح خيار V-Sync في إعدادات الألعاب - مدونة حكميك" src="/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png" style="max-width:100%; height:auto;" />
+                <img alt="شرح خيار V-Sync في إعدادات الألعاب - مدونة حكميك" src="/media/blogger/f7/f7b32e451ebfeb0c76539ba7f2df04f07f7f890fc247c8bc3d1c492b217c2743.png" style="max-width:100%; height:auto" />
             </a>
         </div>
         <h2>ماذا يفعل خيار المزامنة العمودية؟ وهل يجب تفعيله؟</h2>
@@ -140,19 +140,19 @@ labels: ["Nintendo","Wii"]
         <p>لتبسيط العملية، لنتخيل أن الكمبيوتر يتكون من شخصين يقومان بمهمة عرض اللعبة:</p>
         <div class="char-grid">
             <div class="char-box bg-indigo">
-                <div style="font-size: 40px;">🎨</div>
-                <h4 style="color:var(--vs-indigo);">اللعبة (الرسام)</h4>
+                <div style="font-size: 40px">🎨</div>
+                <h4 style="color:var(--vs-indigo)">اللعبة (الرسام)</h4>
                 <p>مسؤول عن رسم صورة (إطار) جديدة كل لحظة وإرسالها للعرض.</p>
             </div>
             <div class="char-box bg-pink">
-                <div style="font-size: 40px;">📺</div>
-                <h4 style="color:var(--vs-pink);">الجهاز (العارض)</h4>
+                <div style="font-size: 40px">📺</div>
+                <h4 style="color:var(--vs-pink)">الجهاز (العارض)</h4>
                 <p>يأخذ الصورة من الرسام ويعلقها على الشاشة فوراً لتراها عينك.</p>
             </div>
         </div>
     </section>
 
-    <section class="material-card" style="border-top-color: var(--vs-pink);">
+    <section class="material-card" style="border-top-color: var(--vs-pink)">
         <h3>🛑 الحالة الأولى: بدون تفعيل الخيار</h3>
         <p>عندما يتأخر الرسام (اللعبة) في إنتاج صورة جديدة، ماذا يفعل العارض؟</p>
         <div class="timeline-container">
@@ -163,33 +163,33 @@ labels: ["Nintendo","Wii"]
                 <div>➡</div>
                 <div class="frame-node">صورة 2</div>
             </div>
-            <p style="margin-top:15px; font-size:14px; color:#d1d5db;">النتيجة: الجهاز يبذل جهداً 100% لإعادة عرض نفس الصورة، مما ينهك الأجهزة الضعيفة ويسبب "تمزق الشاشة".</p>
+            <p style="margin-top:15px; font-size:14px; color:#d1d5db">النتيجة: الجهاز يبذل جهداً 100% لإعادة عرض نفس الصورة، مما ينهك الأجهزة الضعيفة ويسبب "تمزق الشاشة".</p>
         </div>
     </section>
 
-    <section class="material-card" style="border-top-color: var(--vs-cyan);">
+    <section class="material-card" style="border-top-color: var(--vs-cyan)">
         <h3>✅ الحالة الثانية: عند تفعيل الخيار (V-Sync)</h3>
         <p>الآن، العارض يقرر أن "يرتاح" إذا لم تصل صورة جديدة من الرسام.</p>
         <div class="timeline-container">
             <div class="timeline-flex">
                 <div class="frame-node">صورة 1</div>
                 <div>➡</div>
-                <div style="background:#374151; padding:10px 20px; border-radius:8px; border:1px dashed var(--vs-cyan);">💤 راحة</div>
+                <div style="background:#374151; padding:10px 20px; border-radius:8px; border:1px dashed var(--vs-cyan)">💤 راحة</div>
                 <div>➡</div>
                 <div class="frame-node">صورة 2</div>
             </div>
-            <p style="margin-top:15px; font-size:14px; color:#9ca3af;">النتيجة: نفس الصور ظهرت، لكن الجهاز ارتاح بينهما وقل الضغط عليه، واختفى التمزق البصري.</p>
+            <p style="margin-top:15px; font-size:14px; color:#9ca3af">النتيجة: نفس الصور ظهرت، لكن الجهاز ارتاح بينهما وقل الضغط عليه، واختفى التمزق البصري.</p>
         </div>
     </section>
 
     <section class="material-card">
         <h3>📊 تحليل التأثير: جهاز ضعيف vs جهاز قوي</h3>
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/3f/3f2e44afc16e5025f455d3d8e1337be398bf591b6bb02aa07ff976c67c940feb.png">
-                <img alt="رسم بياني لتأثير V-Sync على الأداء" src="/media/blogger/3f/3f2e44afc16e5025f455d3d8e1337be398bf591b6bb02aa07ff976c67c940feb.png" style="max-width:100%; border-radius:10px;" />
+                <img alt="رسم بياني لتأثير V-Sync على الأداء" src="/media/blogger/3f/3f2e44afc16e5025f455d3d8e1337be398bf591b6bb02aa07ff976c67c940feb.png" style="max-width:100%; border-radius:10px" />
             </a>
         </div>
-        <ul style="margin-top:20px;">
+        <ul style="margin-top:20px">
             <li>🔹 <strong>جهازك ضعيف؟</strong> فعّل الخيار فوراً لتقليل الضغط ومنع التقطيع (Stutter).</li>
             <li>🔹 <strong>جهازك قوي؟</strong> قد ترغب في إغلاقه لتقليل تأخر الاستجابة (Input Lag) في الألعاب التنافسية.</li>
         </ul>
@@ -198,7 +198,7 @@ labels: ["Nintendo","Wii"]
     <footer class="vs-footer">
         <h3>💡 الخلاصة النهائية</h3>
         <p>"هذا الخيار لا يزيد عدد الفريمات (FPS)، هو فقط يعطي استراحة للمحارب المتعب."</p>
-        <p style="font-size:14px; color:#6b7280; margin-top:10px;">📢 تابع HAKAMIQ لمزيد من الشروحات التقنية العميقة!</p>
+        <p style="font-size:14px; color:#6b7280; margin-top:10px">📢 تابع HAKAMIQ لمزيد من الشروحات التقنية العميقة!</p>
     </footer>
 
 </div>

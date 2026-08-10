@@ -82,17 +82,17 @@ labels: ["sega","Sega-Naomi"]
 <div class="naomi-retro-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg">
-                <img alt="صورة توضيحية ضمن مقال  شرح استخدام NAOMI داخل RetroArch (عبر نواة Flycast)" class="img-frame" src="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg" width="300" />
+                <img alt="صورة توضيحية ضمن مقال شرح استخدام NAOMI داخل RetroArch (عبر نواة Flycast)" class="img-frame" src="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg" width="300" />
             </a>
         </div>
         
-        <p style="text-align: center;">استعد لإحياء تجربة الأركيد الأكثر إثارة. عبر نواة Flycast، يمكنك تشغيل ألعاب SEGA NAOMI بواجهة أنيقة وإعدادات رسومية متطورة على كافة أجهزتك.</p>
+        <p style="text-align: center">استعد لإحياء تجربة الأركيد الأكثر إثارة. عبر نواة Flycast، يمكنك تشغيل ألعاب SEGA NAOMI بواجهة أنيقة وإعدادات رسومية متطورة على كافة أجهزتك.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">1. تحميل وتثبيت نواة Flycast</h3>
+        <h3 style="color: var(--xe-gold)">1. تحميل وتثبيت نواة Flycast</h3>
         <p>لبدء عملية المحاكاة، تحتاج أولاً لتثبيت النواة المخصصة داخل RetroArch:</p>
         <ul class="clean-list">
             <li>اذهب إلى: <code>Main Menu > Online Updater > Core Downloader</code>.</li>
@@ -102,8 +102,8 @@ labels: ["sega","Sega-Naomi"]
         <a href="https://github.com/flyinghead/flycast/releases" target="_blank" class="btn-link">رابط مستودع Flycast الرسمي</a>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e67e22;">
-        <h3 style="color: #f39c12;">2. تجهيز ملفات النظام (BIOS)</h3>
+    <section class="section-card" style="border-right: 5px solid #e67e22">
+        <h3 style="color: #f39c12">2. تجهيز ملفات النظام (BIOS)</h3>
         <p>تعتبر ملفات BIOS ضرورية جداً للإقلاع البرمجي؛ يجب توفير الملفات التالية في مجلد <code>system</code>:</p>
         <ul class="clean-list">
             <li>ملف <code>naomi.zip</code> (ملف BIOS الأساسي).</li>
@@ -115,7 +115,7 @@ labels: ["sega","Sega-Naomi"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">3. تشغيل الألعاب وتحسين الأداء</h3>
+        <h3 style="color: var(--xe-gold)">3. تشغيل الألعاب وتحسين الأداء</h3>
         <p>بعد الإعداد، يمكنك تشغيل الألعاب وتخصيص الرسوميات للحصول على أفضل دقة بصرية:</p>
         <ul class="clean-list">
             <li>من <code>Load Core</code> اختر <b>Flycast</b>، ثم من <code>Load Content</code> اختر ملف اللعبة.</li>
@@ -124,13 +124,13 @@ labels: ["sega","Sega-Naomi"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">الخلاصة التقنية</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">الخلاصة التقنية</h3>
         <p>تعتبر نواة Flycast الخيار الأمثل لمن يبحث عن سهولة الإعداد وقوة الأداء في تشغيل ألعاب NAOMI و Atomiswave. باتباع هذه الخطوات وضبط ملفات النظام بشكل صحيح، ستستمتع بتجربة أركيد مثالية بدقة HD.</p>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

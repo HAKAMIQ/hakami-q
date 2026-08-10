@@ -118,19 +118,19 @@ labels: ["PlayStation","PS1"]
 
 <div class="hakamiq-iso-wrapper">
 
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 30px">
         <a href="/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg" target="_blank">
-            <img alt="PS2 ISO and BIN/CUE Booting Guide" src="/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333;" />
+            <img alt="PS2 ISO and BIN/CUE Booting Guide" src="/media/blogger/9d/9d6533ee15ae02e76e28cb3b590d214955e8feca400d58b2a42a58cbb9eda054.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 1px solid #333" />
         </a>
     </div>
 
     
 
-    <p style="text-align: center;">لقيت لعبة PS2 بصيغة <strong>ISO</strong> أو <strong>BIN/CUE</strong> وتحس مخك وقف؟ ما تدري تشغلها بأي برنامج؟ لا تشيل هم، جهزنا لك الطريقة الكاملة لتشغيلها سواء على كمبيوترك أو على جوالك… بكل بساطة وبعيد عن الفلسفة التقنية 😎</p>
+    <p style="text-align: center">لقيت لعبة PS2 بصيغة <strong>ISO</strong> أو <strong>BIN/CUE</strong> وتحس مخك وقف؟ ما تدري تشغلها بأي برنامج؟ لا تشيل هم، جهزنا لك الطريقة الكاملة لتشغيلها سواء على كمبيوترك أو على جوالك… بكل بساطة وبعيد عن الفلسفة التقنية 😎</p>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #4caf50;">🖥️ أولاً: تشغيل ألعاب PS2 على الكمبيوتر (PCSX2)</h3>
+    <h3 class="hakamiq-section-header" style="color: #4caf50">🖥️ أولاً: تشغيل ألعاب PS2 على الكمبيوتر (PCSX2)</h3>
     <ol class="hakamiq-tech-box">
         <li>حمّل أحدث نسخة من محاكي <strong>PCSX2</strong> من الموقع الرسمي: <a class="hakamiq-link" href="https://pcsx2.net/" target="_blank">pcsx2.net</a></li>
         <li>ثبّت المحاكي وافتحه، وروّق ☕</li>
@@ -145,7 +145,7 @@ labels: ["PlayStation","PS1"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #2196f3;">📱 ثانياً: تشغيل ألعاب PS2 على الجوال (AetherSX2)</h3>
+    <h3 class="hakamiq-section-header" style="color: #2196f3">📱 ثانياً: تشغيل ألعاب PS2 على الجوال (AetherSX2)</h3>
     <ol class="hakamiq-tech-box">
         <li>نزّل محاكي <strong>AetherSX2</strong> بصيغة APK (من الموقع الرسمي أو trusted source).</li>
         <li>افتح التطبيق، وروح إلى مجلد اللعبة.</li>
@@ -154,13 +154,13 @@ labels: ["PlayStation","PS1"]
         <li>اضبط الإعدادات حسب جهازك (نقطة الأداء مهمة للأجهزة المتوسطة).</li>
     </ol>
 
-    <div class="hakamiq-note-box" style="border-right-color: #f44336; color: #ff8a80; background: rgba(244, 67, 54, 0.05);">
+    <div class="hakamiq-note-box" style="border-right-color: #f44336; color: #ff8a80; background: rgba(244, 67, 54, 0.05)">
         ⚠️ <strong>تنبيه:</strong> لازم يكون عندك ملف BIOS مضاف داخل المحاكي، مثل SCPH70012 أو SCPH39001.
     </div>
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #ff5722;">📦 الفروقات بين ISO و BIN/CUE</h3>
+    <h3 class="hakamiq-section-header" style="color: #ff5722">📦 الفروقات بين ISO و BIN/CUE</h3>
     <ul class="hakamiq-tech-box">
         <li><strong>ISO:</strong> ملف واحد مضغوط، مباشر وأسهل بالتشغيل.</li>
         <li><strong>BIN/CUE:</strong> ملفين، واحد للبيانات وواحد للتوجيه. بعض الألعاب فيها صوت أو فيديو يكون محفوظ بهيكل cue.</li>
@@ -169,15 +169,15 @@ labels: ["PlayStation","PS1"]
 
     <hr class="hakamiq-divider" />
 
-    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none;">🎯 الزبدة التقنية</h3>
+    <h3 class="hakamiq-section-header" style="color: #00e676; border-bottom: none">🎯 الزبدة التقنية</h3>
     <ul class="hakamiq-tech-box">
         <li>🎮 <strong>PCSX2:</strong> افتح أي ملف ISO أو BIN/CUE بسهولة من "ISO Selector"</li>
         <li>📱 <strong>AetherSX2:</strong> اسحب الملف وافتحه على طول، المحاكي ذكي ويدعم التنسيقات</li>
         <li>🧠 <strong>أهم شيء:</strong> تأكد من ملفات BIOS وتوافق اللعبة</li>
     </ul>
 
-    <p style="font-weight: bold; margin-top: 30px; text-align: center; color: #fff;">🔥 الألعاب القديمة ما تموت، بس تحتاج منك 3 أشياء: ملف BIOS، نسخة نظيفة من اللعبة، وقلب يحب النستالجيا ❤️ شغّل Tekken 5 ولا Burnout 3، وخلّك أسطورة من أيام الـ2004!</p>
+    <p style="font-weight: bold; margin-top: 30px; text-align: center; color: #fff">🔥 الألعاب القديمة ما تموت، بس تحتاج منك 3 أشياء: ملف BIOS، نسخة نظيفة من اللعبة، وقلب يحب النستالجيا ❤️ شغّل Tekken 5 ولا Burnout 3، وخلّك أسطورة من أيام الـ2004!</p>
 
-    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px;">// HAKAMIQ TECH ARCHIVES // 2026 // PS2_BOOT_GUIDE</p>
+    <p style="text-align: center; color: #666; font-size: 13px; margin-top: 30px">// HAKAMIQ TECH ARCHIVES // 2026 // PS2_BOOT_GUIDE</p>
 
 </div>

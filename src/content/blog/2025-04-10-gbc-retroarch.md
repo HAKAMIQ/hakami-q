@@ -9,8 +9,8 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/gbc-retroarch.html'
 labels: ["GBC","Nintendo"]
 ---
 
-<div class="separator" style="clear: both; text-align: center;">
-    <a href="/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg" style="margin-left: 1em; margin-right: 1em;">
+<div class="separator" style="clear: both; text-align: center">
+    <a href="/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg" style="margin-left: 1em; margin-right: 1em">
         <img alt="شرح تشغيل ألعاب Game Boy Color على RetroArch - مدونة حكميك" border="0" data-original-height="480" data-original-width="640" height="240" src="/media/blogger/32/32c1c70d670ff82a3a3ff936c880db2f53280d3f1542da2357fff4734c28c7db.jpg" title="دليل محاكي GBC" width="320" />
     </a>
 </div>

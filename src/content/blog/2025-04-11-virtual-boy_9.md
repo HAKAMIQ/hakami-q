@@ -66,17 +66,17 @@ labels: ["Nintendo","VirtualBoy"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/8d/8d9c19460eb02ac8af1368b793f3dd507f0b89afcc2d5d9dca1952a4d080684a.jpg">
                 <img class="img-frame" src="/media/blogger/8d/8d9c19460eb02ac8af1368b793f3dd507f0b89afcc2d5d9dca1952a4d080684a.jpg" width="240" alt="Nintendo Virtual Boy" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">تحليل تقني: جهاز Virtual Boy من نينتندو وتحديات تقنية العرض المجسم</h2>
-        <p style="text-align: center;">يُعد جهاز <strong>Virtual Boy</strong>، الذي أطلقته شركة نينتندو عام 1995، محاولة مبكرة وطموحة لتقديم تقنية العرض الثلاثي الأبعاد (3D) للاعبين. في هذا التقرير، نستعرض أبرز الخصائص التقنية للجهاز، والتحديات التي واجهته، ومدى قابليته للتجربة في الوقت الحالي عبر المحاكيات.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">تحليل تقني: جهاز Virtual Boy من نينتندو وتحديات تقنية العرض المجسم</h2>
+        <p style="text-align: center">يُعد جهاز <strong>Virtual Boy</strong>، الذي أطلقته شركة نينتندو عام 1995، محاولة مبكرة وطموحة لتقديم تقنية العرض الثلاثي الأبعاد (3D) للاعبين. في هذا التقرير، نستعرض أبرز الخصائص التقنية للجهاز، والتحديات التي واجهته، ومدى قابليته للتجربة في الوقت الحالي عبر المحاكيات.</p>
     </header>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">1. آلية العرض: تقنية الـ Parallax وأحادية اللون (Monochrome)</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">1. آلية العرض: تقنية الـ Parallax وأحادية اللون (Monochrome)</h3>
         <p>اعتمد جهاز Virtual Boy على شاشات LED أحادية اللون (الأسود والأحمر) مع نظام مرايا متذبذبة لخلق وهم العمق البصري (Parallax). ورغم ابتكار الفكرة في ذلك الوقت، إلا أن هذا الأسلوب فرض قيوداً واضحة.</p>
         <ul class="clean-list">
             <li><strong>التأثير البصري:</strong> الاستخدام المستمر للشاشات الحمراء ذات التباين العالي يؤدي غالباً إلى إجهاد شديد للعين والصداع.</li>
@@ -84,8 +84,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-blue);">
-        <h3 style="color: var(--xe-blue);">2. قيود التصميم والعتاد (Hardware Limitations)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-blue)">
+        <h3 style="color: var(--xe-blue)">2. قيود التصميم والعتاد (Hardware Limitations)</h3>
         <p>صُمم الجهاز ليكون "محمولاً"، لكن واقعه كان مختلفاً. تطلب تصميمه وضعه على حامل مكتبي والانحناء لاستخدامه، مما أدى إلى تجربة استخدام غير مريحة (Ergonomic Issues).</p>
         <ul class="clean-list">
             <li><strong>التصميم:</strong> عدم القدرة على استخدامه أثناء الحركة أو في وضعيات مريحة قلل من جاذبيته كجهاز محمول.</li>
@@ -93,8 +93,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">3. مكتبة الألعاب وتقييم المحتوى البرمجي</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">3. مكتبة الألعاب وتقييم المحتوى البرمجي</h3>
         <p>صدر للجهاز مكتبة محدودة جداً من الألعاب (22 لعبة فقط عالمياً). ورغم محدودية العدد، قدمت بعض الألعاب أفكاراً مبتكرة في استغلال البعد الثالث.</p>
         <ul class="clean-list">
             <li><strong>أمثلة بارزة:</strong> قدمت ألعاب مثل <strong>Wario Land</strong> و <strong>Mario Clash</strong> استخداماً ذكياً لتأثير العمق لخدمة أسلوب اللعب المنصي (Platforming).</li>
@@ -102,8 +102,8 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">4. تجربة محاكاة Virtual Boy في الوقت الحاضر</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">4. تجربة محاكاة Virtual Boy في الوقت الحاضر</h3>
         <p>نظراً لصعوبة الحصول على الجهاز الأصلي ومشاكله الصحية، تُعد المحاكاة (Emulation) الخيار الأمثل والآمن للمهتمين بدراسة هذا الجهاز.</p>
         <ul class="clean-list">
             <li><strong>إدارة الإجهاد البصري:</strong> تتيح المحاكيات الحديثة تحويل الألوان من الأحمر/الأسود إلى الأبيض/الأسود، أو إلغاء تأثير الـ 3D (التحويل إلى وضع 2D) لتقليل إجهاد العين.</li>
@@ -112,10 +112,10 @@ labels: ["Nintendo","VirtualBoy"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <h3 style="color: var(--xe-blue); margin-top: 0;">الخلاصة</h3>
-        <p style="margin: 0;">يُعد جهاز Virtual Boy محطة تجريبية هامة في تطور أجهزة العرض المجسم. ورغم فشله التجاري ومشاكله التصميمية، فإنه يوفر تجربة تستحق الدراسة للمهتمين بتاريخ تقنيات الألعاب وتطورها. تبقى المحاكاة هي الوسيلة الأكثر أماناً وعملية لاستكشاف مكتبته البرمجية.</p>
-        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold;">إعداد: HAKAMIQ</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <h3 style="color: var(--xe-blue); margin-top: 0">الخلاصة</h3>
+        <p style="margin: 0">يُعد جهاز Virtual Boy محطة تجريبية هامة في تطور أجهزة العرض المجسم. ورغم فشله التجاري ومشاكله التصميمية، فإنه يوفر تجربة تستحق الدراسة للمهتمين بتاريخ تقنيات الألعاب وتطورها. تبقى المحاكاة هي الوسيلة الأكثر أماناً وعملية لاستكشاف مكتبته البرمجية.</p>
+        <p style="margin-top: 10px; color: var(--text-muted); font-weight: bold">إعداد: HAKAMIQ</p>
     </footer>
 
 </div>

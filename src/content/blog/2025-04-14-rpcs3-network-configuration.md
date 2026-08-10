@@ -57,7 +57,7 @@ labels: ["PlayStation","PS3"]
 <div class="network-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
                 <img alt="صورة توضيحية ضمن مقال الإعدادات الافتراضية في محاكي RPCS3 | إعدادات (Network Configuration)" class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
@@ -66,7 +66,7 @@ labels: ["PlayStation","PS3"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">🌐 جدول إعدادات الشبكة (Network)</h3>
+        <h3 style="color: var(--xe-blue)">🌐 جدول إعدادات الشبكة (Network)</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -113,14 +113,14 @@ labels: ["PlayStation","PS3"]
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">📌 دليل الألوان</h3>
+    <footer style="background: #252525; padding: 20px; border-radius: 12px; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">📌 دليل الألوان</h3>
         <div class="legend-container">
-            <div class="legend-item" style="background: rgba(0, 230, 118, 0.2); color: var(--xe-green);">✅ آمن / مستحسن</div>
-            <div class="legend-item" style="background: rgba(255, 214, 0, 0.2); color: var(--xe-gold);">⚠️ متقدم / اختياري</div>
-            <div class="legend-item" style="background: rgba(41, 182, 246, 0.2); color: var(--xe-blue);">🎮 جربه حسب الحاجة</div>
+            <div class="legend-item" style="background: rgba(0, 230, 118, 0.2); color: var(--xe-green)">✅ آمن / مستحسن</div>
+            <div class="legend-item" style="background: rgba(255, 214, 0, 0.2); color: var(--xe-gold)">⚠️ متقدم / اختياري</div>
+            <div class="legend-item" style="background: rgba(41, 182, 246, 0.2); color: var(--xe-blue)">🎮 جربه حسب الحاجة</div>
         </div>
-        <p style="margin-top: 20px; color: var(--xe-gold); font-weight: bold;">هكذا نكون قد ختمنا جميع الإعدادات العامة للمحاكي 🎮</p>
+        <p style="margin-top: 20px; color: var(--xe-gold); font-weight: bold">هكذا نكون قد ختمنا جميع الإعدادات العامة للمحاكي 🎮</p>
     </footer>
 
 </div>

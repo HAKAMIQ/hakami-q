@@ -64,12 +64,12 @@ labels: ["N-DS","Nintendo"]
 <div class="guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/01/0174eb47b5d726bf90a3c4e3f4414e06f94630c3de03668a926bf156b864eea0.jpg" target="_blank">
                 <img class="img-frame" src="/media/blogger/01/0174eb47b5d726bf90a3c4e3f4414e06f94630c3de03668a926bf156b864eea0.jpg" width="320" alt="شرح دمج الحفظ مع اللعبة" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🧩 كيف تدمج ملفات ألعاب NDS مع ملفات الحفظ (Save Data)؟</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">🧩 كيف تدمج ملفات ألعاب NDS مع ملفات الحفظ (Save Data)؟</h2>
         <p>مشتاق ترجع تكمل لعبتك القديمة؟ حملت اللعبة وملف الحفظ بس مو راضي يشتغل؟ خلك معي، هالشرح بيفك لك اللغز ويحفظ لك تعبك 💾🔥</p>
     </header>
 
@@ -116,10 +116,10 @@ labels: ["N-DS","Nintendo"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333;">
-        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px;">📌 الخلاصة</h3>
-        <p style="margin-bottom: 15px; font-weight: bold;">لا تكثر فلسفة، خل اسم الملف واحد، وحطه بالمكان الصح، وعيش جوك 😎🎮</p>
-        <p style="margin: 0; color: var(--xe-blue); font-weight: bold;">تحياتي،<br />🕹️ حكميك</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 10px; text-align: center; border: 1px solid #333">
+        <h3 style="color: var(--text-main); margin-top: 0; margin-bottom: 15px">📌 الخلاصة</h3>
+        <p style="margin-bottom: 15px; font-weight: bold">لا تكثر فلسفة، خل اسم الملف واحد، وحطه بالمكان الصح، وعيش جوك 😎🎮</p>
+        <p style="margin: 0; color: var(--xe-blue); font-weight: bold">تحياتي،<br />🕹️ حكميك</p>
     </footer>
 
 </div>

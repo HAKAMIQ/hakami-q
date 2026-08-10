@@ -115,14 +115,14 @@ labels: ["Xbox","Xbox360"]
 <div class="xenia-netplay-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg">
-                <img class="img-frame" alt="ما هو Netplay في محاكي Xenia؟" src="/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg" style="max-width: 450px;" />
+                <img class="img-frame" alt="ما هو Netplay في محاكي Xenia؟" src="/media/blogger/d5/d5ed1a001d46f022b3185147cf2c804e442eee1bb8caa472ee8ff6c60fd06c7e.jpg" style="max-width: 450px" />
             </a>
         </div>
         <h2>ما هو Netplay في محاكي Xenia؟ ثورة اللعب الجماعي للـ Xbox 360</h2>
-        <p style="color: var(--text-muted);">
-            ميزة <b>Netplay</b> في محاكي <span style="color: var(--xe-cyan);">Xenia Canary</span> هي بوابتك للعب ألعابك المفضلة أونلاين، حتى تلك التي أغلقت خوادمها الرسمية. بفضل هذا المشروع، صار بإمكانك محاكاة "الشبكة" بطرق ذكية تعيد الحياة لزمن اللعب الجماعي الجميل.
+        <p style="color: var(--text-muted)">
+            ميزة <b>Netplay</b> في محاكي <span style="color: var(--xe-cyan)">Xenia Canary</span> هي بوابتك للعب ألعابك المفضلة أونلاين، حتى تلك التي أغلقت خوادمها الرسمية. بفضل هذا المشروع، صار بإمكانك محاكاة "الشبكة" بطرق ذكية تعيد الحياة لزمن اللعب الجماعي الجميل.
         </p>
     </header>
 
@@ -138,7 +138,7 @@ labels: ["Xbox","Xbox360"]
 
     
 
-    <h3 style="color: var(--xe-cyan); margin-bottom: 15px;">⚙️ الإعدادات التقنية لملف Config:</h3>
+    <h3 style="color: var(--xe-cyan); margin-bottom: 15px">⚙️ الإعدادات التقنية لملف Config:</h3>
     <div class="table-container">
         <table class="xe-table">
             <thead>
@@ -168,8 +168,8 @@ labels: ["Xbox","Xbox360"]
         </table>
     </div>
 
-    <section class="info-card" style="border-right: 4px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">⚠️ شروط أساسية قبل البدء:</h3>
+    <section class="info-card" style="border-right: 4px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">⚠️ شروط أساسية قبل البدء:</h3>
         <ul class="styled-list">
             <li>يجب أن يتطابق الـ <b>Media ID</b> وإصدار اللعبة (Title Updates) عند جميع اللاعبين.</li>
             <li>بعض العناوين تتطلب باتشات مخصصة (Patches) لتعمل بسلاسة في وضع الشبكة.</li>
@@ -178,14 +178,14 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <div class="opinion-box">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">💬 رأي حكميك الشخصي - HAKAMIQ</h3>
-        <p style="margin-bottom: 0;">
+        <h3 style="color: var(--xe-gold); margin-top: 0">💬 رأي حكميك الشخصي - HAKAMIQ</h3>
+        <p style="margin-bottom: 0">
             بصراحة، Netplay في Xenia هو طوق النجاة الحقيقي لعشاق الـ 360. استخدام <b>Radmin VPN</b> مع وضع <b>Systemlink</b> أعاد لنا ذكريات 2010 في ألعاب مثل <i>Halo</i> و <i>Left 4 Dead</i>. قد لا يكون الاتصال مستقراً بنسبة 100% في كل الألعاب، لكن المتعة التي تحصل عليها مع أصدقائك بضغطة زر تستحق كل عناء الإعداد! 🎮🔥
         </p>
     </div>
 
-    <footer style="margin-top: 30px; font-size: 14px; text-align: center; color: var(--text-muted);">
-        📚 المصدر الرسمي والمزيد من التفاصيل: <a href="https://github.com/xenia-canary/xenia-canary/wiki/Netplay-Compatibility" target="_blank" style="color: var(--xe-cyan); text-decoration: none;">Xenia Canary Wiki</a>
+    <footer style="margin-top: 30px; font-size: 14px; text-align: center; color: var(--text-muted)">
+        📚 المصدر الرسمي والمزيد من التفاصيل: <a href="https://github.com/xenia-canary/xenia-canary/wiki/Netplay-Compatibility" target="_blank" style="color: var(--xe-cyan); text-decoration: none">Xenia Canary Wiki</a>
     </footer>
 
 </div>

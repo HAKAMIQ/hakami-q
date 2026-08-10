@@ -185,22 +185,22 @@ labels: ["Xbox","Xbox360"]
 
     <div class="hakamiq-grid-layout">
         <section class="hakamiq-info-card">
-            <h3 class="hakamiq-card-heading" style="color: var(--xe-orange);">📝 الوصول لملف الإعدادات</h3>
+            <h3 class="hakamiq-card-heading" style="color: var(--xe-orange)">📝 الوصول لملف الإعدادات</h3>
             <p>افتح ملف الإعدادات في المسار التالي باستخدام Notepad++:</p>
             <pre>Documents\Xenia\xenia.config.toml</pre>
-            <p style="font-size: 0.9rem; color: var(--xe-green);">💡 ملاحظة: في النسخة المحمولة (Canary)، الملف يكون بجانب <span class="hakamiq-highlight">xenia.exe</span>.</p>
+            <p style="font-size: 0.9rem; color: var(--xe-green)">💡 ملاحظة: في النسخة المحمولة (Canary)، الملف يكون بجانب <span class="hakamiq-highlight">xenia.exe</span>.</p>
         </section>
 
         <section class="hakamiq-info-card">
-            <h3 class="hakamiq-card-heading" style="color: var(--xe-pink);">🧩 تفعيل النسخة الكاملة</h3>
+            <h3 class="hakamiq-card-heading" style="color: var(--xe-pink)">🧩 تفعيل النسخة الكاملة</h3>
             <p>لتشغيل الألعاب الرقمية وXBLA كنسخ كاملة بدلاً من الديمو:</p>
             <pre>license_mask = -1</pre>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">0 = ديمو | -1 أو 1 = نسخة كاملة.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted)">0 = ديمو | -1 أو 1 = نسخة كاملة.</p>
         </section>
     </div>
 
-    <section class="hakamiq-info-card" style="margin-bottom: 40px;">
-        <h3 class="hakamiq-card-heading" style="color: var(--xe-blue);">🌍 تغيير لغة الواجهة (System Language)</h3>
+    <section class="hakamiq-info-card" style="margin-bottom: 40px">
+        <h3 class="hakamiq-card-heading" style="color: var(--xe-blue)">🌍 تغيير لغة الواجهة (System Language)</h3>
         <div class="hakamiq-table-container">
             <table class="hakamiq-table">
                 <thead>
@@ -217,8 +217,8 @@ labels: ["Xbox","Xbox360"]
         <p>قم بتعديل القيمة: <code class="hakamiq-code-inline">user_language = 1</code></p>
     </section>
 
-    <section class="hakamiq-info-card" style="margin-bottom: 40px;">
-        <h3 class="hakamiq-card-heading" style="color: var(--xe-yellow);">🖥️ إعدادات الرسوميات والدقة (D3D12)</h3>
+    <section class="hakamiq-info-card" style="margin-bottom: 40px">
+        <h3 class="hakamiq-card-heading" style="color: var(--xe-yellow)">🖥️ إعدادات الرسوميات والدقة (D3D12)</h3>
         <p>لرفع دقة العرض (Resolution Scaling)، قم بتغيير الأرقام من 1 إلى 2 أو 3:</p>
         <div class="hakamiq-table-container">
             <table class="hakamiq-table">
@@ -235,21 +235,21 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <div class="hakamiq-grid-layout">
-        <section class="hakamiq-info-card" style="border-right: 5px solid var(--xe-orange);">
-            <h3 class="hakamiq-card-heading" style="color: var(--xe-orange);">💾 خاصية Cache (مهمة)</h3>
+        <section class="hakamiq-info-card" style="border-right: 5px solid var(--xe-orange)">
+            <h3 class="hakamiq-card-heading" style="color: var(--xe-orange)">💾 خاصية Cache (مهمة)</h3>
             <pre>mount_cache = true</pre>
-            <p style="font-size: 0.9rem;">ضرورية لألعاب مثل <span class="hakamiq-highlight">FIFA 14-17</span> و <span class="hakamiq-highlight">Forza Horizon</span> لتجنب مشاكل الحفظ والتثبيت.</p>
+            <p style="font-size: 0.9rem">ضرورية لألعاب مثل <span class="hakamiq-highlight">FIFA 14-17</span> و <span class="hakamiq-highlight">Forza Horizon</span> لتجنب مشاكل الحفظ والتثبيت.</p>
         </section>
 
-        <section class="hakamiq-info-card" style="border-right: 5px solid var(--xe-blue);">
-            <h3 class="hakamiq-card-heading" style="color: var(--xe-blue);">🧼 حل مشاكل الجرافيكس</h3>
+        <section class="hakamiq-info-card" style="border-right: 5px solid var(--xe-blue)">
+            <h3 class="hakamiq-card-heading" style="color: var(--xe-blue)">🧼 حل مشاكل الجرافيكس</h3>
             <pre>clear_memory_page_state = true</pre>
-            <p style="font-size: 0.9rem;">فعل هذا الخيار لحل تكسر الرسومات في <span class="hakamiq-highlight">Ninja Gaiden II</span> و <span class="hakamiq-highlight">FIFA 13-19</span>.</p>
+            <p style="font-size: 0.9rem">فعل هذا الخيار لحل تكسر الرسومات في <span class="hakamiq-highlight">Ninja Gaiden II</span> و <span class="hakamiq-highlight">FIFA 13-19</span>.</p>
         </section>
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--xe-green);">🎯 الزبدة</h3>
+        <h3 style="margin-top: 0; color: var(--xe-green)">🎯 الزبدة</h3>
         كذا تكون طبقت إعدادات <span class="hakamiq-highlight">HAKAMIQ</span> الاحترافية لكسر ألعاب Xbox 360 والاستمتاع بأفضل أداء ممكن! 🎮💥
     </footer>
 

@@ -236,8 +236,8 @@ labels: ["GameCube","Nintendo"]
         </section>
     </div>
 
-    <div class="hakamiq-intro-box" style="border-right-color: #ffc107;">
-        <h3 style="margin-top: 0; color: #ffc107;">🧠 نصائح الحكميك</h3>
+    <div class="hakamiq-intro-box" style="border-right-color: #ffc107">
+        <h3 style="margin-top: 0; color: #ffc107">🧠 نصائح الحكميك</h3>
         <ul class="hakamiq-list-style">
             <li>📦 اجمع ألعابك في مجلد واحد وحدد المسار من داخل المحاكي لتظهر تلقائياً.</li>
             <li>🚀 ألعاب مثل <span class="hakamiq-highlight-text">F-Zero GX</span> و <span class="hakamiq-highlight-text">Metroid Prime</span> تعمل بدقة 1080p وسلاسة مذهلة.</li>
@@ -246,8 +246,8 @@ labels: ["GameCube","Nintendo"]
     </div>
 
     <footer class="hakamiq-conclusion-box">
-        <h3 style="margin-top: 0; color: var(--gc-cyan);">🎯 الخلاصة</h3>
-        <p style="margin: 0; color: var(--text-secondary);">
+        <h3 style="margin-top: 0; color: var(--gc-cyan)">🎯 الخلاصة</h3>
+        <p style="margin: 0; color: var(--text-secondary)">
             محاكي <span class="hakamiq-highlight-text">Dolphin</span> خلاك تشوف GameCube بأفضل شكل ممكن – بدون انتظار، وبدون صوت المروحة المرعب 😅<br>
             جرب Super Mario Sunshine، عيش Luigi’s Mansion من جديد، واكتشف تحف ما أخذت حقها وقتها.
         </p>

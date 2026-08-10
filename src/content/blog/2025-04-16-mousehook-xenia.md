@@ -118,9 +118,9 @@ labels: ["Xbox","Xbox360"]
 <div class="mousehook-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png">
-                <img class="img-frame" alt="ما هو Mousehook في Xenia؟" src="/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png" style="max-width: 450px;" />
+                <img class="img-frame" alt="ما هو Mousehook في Xenia؟" src="/media/blogger/4f/4f0a5fb6c8eea0fa7838c27017857a2d37af54c8f32aae7918ad9b6a6df6c5ec.png" style="max-width: 450px" />
             </a>
         </div>
         <p>تخيل أنك تلعب <strong>Call of Duty</strong> على الإكس بوكس، ولكن بإحساس الفأرة والكيبورد كأنك تعمل على البي سي... هذا بالضبط هو شغل <strong>Mousehook</strong> داخل محاكي Xenia 🔥</p>
@@ -137,7 +137,7 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="info-card">
-        <h3 style="color: var(--mh-green);">⚙️ كيف يعمل فعلياً؟</h3>
+        <h3 style="color: var(--mh-green)">⚙️ كيف يعمل فعلياً؟</h3>
         <ul class="styled-list">
             <li>يربط محاور X و Y الخاصة بالكاميرا داخل اللعبة مع إحداثيات الماوس في الويندوز.</li>
             <li>يعمل بكفاءة مع ألعاب المنظور الأول (FPS) والثالث (TPS).</li>
@@ -145,15 +145,15 @@ labels: ["Xbox","Xbox360"]
         </ul>
 
         <div class="highlight-box">
-            <strong style="color: var(--mh-green);">🎮 مثال توضيحي:</strong>
-            <p style="margin: 5px 0 0 0;">
+            <strong style="color: var(--mh-green)">🎮 مثال توضيحي:</strong>
+            <p style="margin: 5px 0 0 0">
                 في لعبة <b>Red Dead Redemption</b>، يمكنك التحكم بالكاميرا بحرية بالماوس، ولكن عند دخول طور "المبارزة" (Duel)، تعود اللعبة لاستخدام الأنالوج لمحاكاة سحب السلاح، مما يجعل الماوس غير مفعل مؤقتاً. هذا يوضح أن Mousehook "يعتمد على اللعبة" وليس شاملاً لكل لحظة فيها.
             </p>
         </div>
     </section>
 
     <section class="info-card">
-        <h3 style="color: var(--mh-pink);">🧠 أبرز العناوين المستفيدة:</h3>
+        <h3 style="color: var(--mh-pink)">🧠 أبرز العناوين المستفيدة:</h3>
         <ul class="styled-list">
             <li>🟢 <b>CoD: Modern Warfare 2 :</b> تصويب سريع واحترافي.</li>
             <li>🟢 <b>Portal 1 & 2 :</b> دقة متناهية في وضع البوابات.</li>
@@ -163,7 +163,7 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <section class="info-card">
-        <h3 style="color: var(--mh-orange);">⚠️ ملاحظات وتحذيرات تقنية:</h3>
+        <h3 style="color: var(--mh-orange)">⚠️ ملاحظات وتحذيرات تقنية:</h3>
         <ul class="styled-list">
             <li>اللغات غير الإنجليزية في الويندوز قد تسبب مشاكل في تفعيل الحقن البرمجي.</li>
             <li>الأدوات الخاصة (مثل الـ SpyCam في <i>Perfect Dark</i>) غالباً لا يدعمها الماوس.</li>
@@ -172,16 +172,16 @@ labels: ["Xbox","Xbox360"]
     </section>
 
     <div class="opinion-box">
-        <strong style="color: var(--mh-orange); font-size: 18px;">💡 نصيحة من حكميك:</strong>
-        <p style="margin: 10px 0 0 0;">
+        <strong style="color: var(--mh-orange); font-size: 18px">💡 نصيحة من حكميك:</strong>
+        <p style="margin: 10px 0 0 0">
             إذا كنت تريد استرجاع ذكريات ألعاب FPS الكلاسيكية بدقة الـ PC، فـ Mousehook هو خيارك الأفضل... فقط كن صبوراً في الإعدادات، لأن التجربة تختلف جذرياً من لعبة لأخرى حسب محركها البرمجي.
         </p>
     </div>
 
-    <hr style="border: none; border-top: 1px dashed #444; margin: 30px 0;" />
+    <hr style="border: none; border-top: 1px dashed #444; margin: 30px 0" />
     
     <p>🧩 <b>الموضوع القادم:</b> سأقدم لكم جدولاً كاملاً بجميع الألعاب التي تدعم Mousehook، مع تقييم حالة كل واحدة (ممتازة – متوسطة – ضعيفة) والملاحظات اللازمة لكل منها.</p>
     
-    <p style="font-size: 14px; color: var(--text-muted);">📚 المصدر التقني: <a href="https://github.com/xenia-canary/xenia-canary/wiki/Mousehook" target="_blank" style="color: var(--mh-cyan); text-decoration: none;">Xenia Canary - Mousehook Wiki</a></p>
+    <p style="font-size: 14px; color: var(--text-muted)">📚 المصدر التقني: <a href="https://github.com/xenia-canary/xenia-canary/wiki/Mousehook" target="_blank" style="color: var(--mh-cyan); text-decoration: none">Xenia Canary - Mousehook Wiki</a></p>
 
 </div>

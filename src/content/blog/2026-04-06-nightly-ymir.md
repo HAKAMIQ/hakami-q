@@ -91,7 +91,7 @@ labels: ["Saturn","sega"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;"><br /><div class="screenshot-grid">
+        <div class="separator" style="clear: both; text-align: center"><br /><div class="screenshot-grid">
                 <img alt="Virtua Fighter 2" src="https://github.com/StrikerX3/Ymir/raw/main/docs/images/virtua-fighter-2.png" />
                 <img alt="Radiant Silvergun" src="https://github.com/StrikerX3/Ymir/raw/main/docs/images/radiant-silvergun.png" />
                 <img alt="Panzer Dragoon Saga" src="https://github.com/StrikerX3/Ymir/raw/main/docs/images/panzer-dragoon-saga.png" />
@@ -99,12 +99,12 @@ labels: ["Saturn","sega"]
             </div>
         </div>
 
-        <h2 style="color: var(--xe-blue); text-align: center;">دليلك الشامل لمحاكي Ymir: الخيار القادم بقوة لمحاكاة Sega Saturn</h2>
+        <h2 style="color: var(--xe-blue); text-align: center">دليلك الشامل لمحاكي Ymir: الخيار القادم بقوة لمحاكاة Sega Saturn</h2>
         <p>يعتبر جهاز <b>Sega Saturn</b> من أصعب الأجهزة في المحاكاة نظراً لتعقيد معمارته، ولكن محاكي <b>Ymir</b> المفتوح المصدر والمبني بلغة C++20 يأتي ليغير قواعد اللعبة. يقدم المحاكي تجربة متطورة تدعم أنظمة (Windows, macOS, Linux, FreeBSD) مع ميزات تقنية مذهلة تجعل ألعابك المفضلة تبدو وتعمل بشكل أفضل من الجهاز الأصلي.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">أبرز ميزات محاكي Ymir</h3>
+        <h3 style="color: var(--xe-gold)">أبرز ميزات محاكي Ymir</h3>
         <p>لا يكتفي Ymir بتشغيل الألعاب فحسب، بل يقدم ترسانة من الخصائص الحديثة:</p>
         <ul class="clean-list">
             <li><b>دعم واسع لصيغ الألعاب:</b> تشغيل مباشر من ملفات (ISO, BIN+CUE, MAME CHD, IMG+CCD, MDF+MDS).</li>
@@ -116,7 +116,7 @@ labels: ["Saturn","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">طريقة التشغيل والمتطلبات الأساسية</h3>
+        <h3 style="color: var(--xe-gold)">طريقة التشغيل والمتطلبات الأساسية</h3>
         <p>المحاكي "Portable" ولا يحتاج لتثبيت. لكن انتبه للمتطلبات التالية:</p>
         <ul class="clean-list">
             <li><b>ملفات الـ BIOS:</b> يتطلب المحاكي ملف IPL (BIOS) ليعمل. ضعه في مجلد <code>roms/ipl</code>.</li>
@@ -126,7 +126,7 @@ labels: ["Saturn","sega"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">التحكم المتقدم (أوامر Command Line)</h3>
+        <h3 style="color: var(--xe-gold)">التحكم المتقدم (أوامر Command Line)</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -144,12 +144,12 @@ labels: ["Saturn","sega"]
     </section>
 
     <div class="alert-box">
-        <h4 style="color: #f44336; margin-top: 0px;">💡 نصيحة للمجتمع:</h4>
-        <p style="margin-bottom: 0px;">يمكنك الانضمام لمجتمع <b>Discord</b> الرسمي للمحاكي لمتابعة التحديثات، كما تتوفر قائمة توافق رسمية لمعرفة الألعاب التي تعمل بشكل مثالي حالياً.</p>
+        <h4 style="color: #f44336; margin-top: 0px">💡 نصيحة للمجتمع:</h4>
+        <p style="margin-bottom: 0px">يمكنك الانضمام لمجتمع <b>Discord</b> الرسمي للمحاكي لمتابعة التحديثات، كما تتوفر قائمة توافق رسمية لمعرفة الألعاب التي تعمل بشكل مثالي حالياً.</p>
     </div>
 
-    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center;">
-        <p style="margin: 0px;">مشروع Ymir هو عمل مستمر بجهود المطور <b>StrikerX3</b> وبدعم من المجتمع. هل جربت تشغيل ألعاب سيجا ساتورن عليه؟ شاركنا تجربتك في التعليقات!</p>
+    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center">
+        <p style="margin: 0px">مشروع Ymir هو عمل مستمر بجهود المطور <b>StrikerX3</b> وبدعم من المجتمع. هل جربت تشغيل ألعاب سيجا ساتورن عليه؟ شاركنا تجربتك في التعليقات!</p>
     </footer>
 
 </div>

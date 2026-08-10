@@ -84,15 +84,15 @@ labels: ["PlayStation","PS3"]
 <div class="rpcs3-save-article">
 
     <header class="main-header">
-        <div class="separator" style="clear: both; text-align: center; margin-bottom: 20px;">
+        <div class="separator" style="clear: both; text-align: center; margin-bottom: 20px">
             <a href="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png">
-                <img alt="ميزة Save State في محاكي RPCS3" src="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png" style="width:100%; max-width: 650px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);" />
+                <img alt="ميزة Save State في محاكي RPCS3" src="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png" style="width:100%; max-width: 650px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2)" />
             </a>
         </div>
         <h2>الدليل الشامل لميزة حفظ الحالة (Save State) في RPCS3</h2>
     </header>
 
-    <div class="h-alert" style="border-color: var(--s-gold); background: #fffce0;">
+    <div class="h-alert" style="border-color: var(--s-gold); background: #fffce0">
         🔔 <strong>ملاحظة هامة:</strong> ميزة Save State لا تزال في مرحلة تطوير مستمرة. قد تواجه بعض عدم الاستقرار في ألعاب معينة، لذا يُنصح بزيارة هذا الدليل دورياً لمتابعة التحسينات.
     </div>
 
@@ -101,13 +101,13 @@ labels: ["PlayStation","PS3"]
         <p>هي عبارة عن "لقطة شمولية" (Snapshot) تجمد كل ما يحدث داخل اللعبة في اللحظة التي تختارها، بما في ذلك الموسيقى ومواقع الأعداء وطاقة اللاعب.</p>
         
         <div class="info-grid">
-            <div class="info-item" style="border-top-color: var(--s-red);">
+            <div class="info-item" style="border-top-color: var(--s-red)">
                 <strong>🎮 بيانات الحفظ التقليدية (Save Data)</strong>
-                <p style="font-size: 13px; margin-top: 5px;">تخزن تقدمك الرسمي فقط (مثل نقاط الحفظ داخل اللعبة)، وتتطلب إعادة تحميل المرحلة.</p>
+                <p style="font-size: 13px; margin-top: 5px">تخزن تقدمك الرسمي فقط (مثل نقاط الحفظ داخل اللعبة)، وتتطلب إعادة تحميل المرحلة.</p>
             </div>
-            <div class="info-item" style="border-top-color: var(--s-green);">
+            <div class="info-item" style="border-top-color: var(--s-green)">
                 <strong>📸 حفظ الحالة (Save State)</strong>
-                <p style="font-size: 13px; margin-top: 5px;">تجميد فوري للزمن؛ تعيدك لنفس الثانية التي كنت فيها بالضبط دون انتظار.</p>
+                <p style="font-size: 13px; margin-top: 5px">تجميد فوري للزمن؛ تعيدك لنفس الثانية التي كنت فيها بالضبط دون انتظار.</p>
             </div>
         </div>
         
@@ -116,83 +116,83 @@ labels: ["PlayStation","PS3"]
         </div>
     </section>
 
-    <section class="step-card" style="border-right-color: var(--s-green);">
+    <section class="step-card" style="border-right-color: var(--s-green)">
         <h3>🚀 كيفية إجراء الحفظ والاستعادة</h3>
         
-        <div style="margin-bottom: 30px;">
-            <strong style="color: var(--s-green); font-size: 18px;">1️⃣ لإنشاء حفظ جديد (Create):</strong>
-            <div style="text-align: center; margin: 15px 0; background: #f0fdfa; padding: 20px; border-radius: 10px;">
+        <div style="margin-bottom: 30px">
+            <strong style="color: var(--s-green); font-size: 18px">1️⃣ لإنشاء حفظ جديد (Create):</strong>
+            <div style="text-align: center; margin: 15px 0; background: #f0fdfa; padding: 20px; border-radius: 10px">
                 <span class="key-badge">Ctrl + S</span>
-                <p style="font-size: 13px; color: #666; margin-top: 10px;">* اضغط المفتاحين معاً أثناء اللعب لتجميد الحالة فوراً.</p>
+                <p style="font-size: 13px; color: #666; margin-top: 10px">* اضغط المفتاحين معاً أثناء اللعب لتجميد الحالة فوراً.</p>
             </div>
         </div>
 
         <div>
-            <strong style="color: var(--s-blue); font-size: 18px;">2️⃣ لاستعادة الحالة (Load):</strong>
+            <strong style="color: var(--s-blue); font-size: 18px">2️⃣ لاستعادة الحالة (Load):</strong>
             <p>يوفر المحاكي ثلاث طرق لاستعادة اللحظة التي قمت بحفظها:</p>
-            <ul style="padding-right: 20px; font-size: 14px; line-height: 2;">
+            <ul style="padding-right: 20px; font-size: 14px; line-height: 2">
                 <li>🔹 <strong>القائمة المختصرة:</strong> اضغط بزر الفأرة الأيمن على اللعبة في القائمة الرئيسية واختر <b>Boot with savestate</b>.</li>
                 <li>🔹 <strong>السحب والإفلات:</strong> اسحب ملف الحفظ وأفلته داخل نافذة المحاكي المفتوحة.</li>
                 <li>🔹 <strong>الاختصار السريع:</strong> استخدم <code style="color: #fff; background: #555;">Ctrl + R</code> أثناء اللعب (يتطلب إعدادات خاصة، انظر أدناه).</li>
             </ul>
         </div>
 
-        <div class="separator" style="clear: both; text-align: center; margin-top: 25px;">
+        <div class="separator" style="clear: both; text-align: center; margin-top: 25px">
             <a href="/media/blogger/e7/e7f09697ea2f637af5da8ddd860d79d385e5d24eb4a075b9b02feaf3f7fa8e00.png">
                 <img alt="قائمة تحميل Save State في RPCS3" src="/media/blogger/e7/e7f09697ea2f637af5da8ddd860d79d385e5d24eb4a075b9b02feaf3f7fa8e00.png" class="img-frame" width="400" />
             </a>
-            <p style="font-size: 12px; color: #777;">لقطة شاشة توضح خيار التحميل من القائمة المختصرة.</p>
+            <p style="font-size: 12px; color: #777">لقطة شاشة توضح خيار التحميل من القائمة المختصرة.</p>
         </div>
     </section>
 
-    <section class="step-card" style="border-right-color: var(--s-red);">
+    <section class="step-card" style="border-right-color: var(--s-red)">
         <h3>⚠️ تحذيرات الاستقرار وإعدادات هامة</h3>
         
         <div class="h-danger">
             <strong>🚫 متى يجب عليك تجنب الحفظ؟</strong>
-            <ul style="font-size: 13px; margin-top: 10px; padding-right: 15px;">
+            <ul style="font-size: 13px; margin-top: 10px; padding-right: 15px">
                 <li>أثناء عمليات <b>الحفظ التلقائي (Auto-save)</b> داخل اللعبة.</li>
                 <li>أثناء <b>تثبيت بيانات اللعبة</b> (Game Data Install) لأول مرة.</li>
             </ul>
-            <p style="font-size: 12px; margin-top: 5px;">* القيام بذلك قد يؤدي لتعطل ملفات اللعبة (Dump).</p>
+            <p style="font-size: 12px; margin-top: 5px">* القيام بذلك قد يؤدي لتعطل ملفات اللعبة (Dump).</p>
         </div>
 
-        <div class="h-alert" style="border-color: var(--s-purple); background: #f8f0ff; margin-top: 25px;">
-            <strong style="color: var(--s-purple);">⚙️ ملاحظات تقنية وإعدادات:</strong>
-            <ul style="font-size: 13px; margin-top: 10px; padding-right: 15px;">
+        <div class="h-alert" style="border-color: var(--s-purple); background: #f8f0ff; margin-top: 25px">
+            <strong style="color: var(--s-purple)">⚙️ ملاحظات تقنية وإعدادات:</strong>
+            <ul style="font-size: 13px; margin-top: 10px; padding-right: 15px">
                 <li><b>سلوك المحاكي:</b> حالياً، عند إجراء Save State ستغلق اللعبة تلقائياً وتضطر لإعادة تشغيلها. هذا طبيعي.</li>
                 <li><b>لتحسين الاستقرار (GPU):</b> قم بتفعيل خيار <code>Write Color Buffers</code> من تبويب GPU لحل مشاكل الرسوميات عند التحميل.</li>
                 <li><b>لتحسين التوافق (Debug):</b> تفعيل خيار <code>Force CPU Blit</code> من تبويب Debug قد يحل بعض المشاكل المستعصية.</li>
             </ul>
-            <p style="font-size: 12px; margin-top: 5px;">* تفعيل هذه الخيارات قد يسبب انخفاضاً طفيفاً في الأداء.</p>
+            <p style="font-size: 12px; margin-top: 5px">* تفعيل هذه الخيارات قد يسبب انخفاضاً طفيفاً في الأداء.</p>
         </div>
     </section>
 
-    <section class="step-card" style="border-right-color: #333;">
+    <section class="step-card" style="border-right-color: #333">
         <h3>📍 المسارات والإبلاغ عن المشاكل</h3>
         
         <p>تُحفظ الملفات في مجلد <code>savestates</code> داخل مسار المحاكي:</p>
-        <div style="font-family: monospace; font-size: 13px; background: #f1f5f9; padding: 15px; border-radius: 8px;">
-            <div style="margin-bottom: 8px;"><span style="color: var(--s-purple);">Linux:</span> <code>~/.config/rpcs3/</code></div>
-            <div><span style="color: var(--s-blue);">MacOS:</span> <code>~/Library/Application Support/rpcs3/</code></div>
+        <div style="font-family: monospace; font-size: 13px; background: #f1f5f9; padding: 15px; border-radius: 8px">
+            <div style="margin-bottom: 8px"><span style="color: var(--s-purple)">Linux:</span> <code>~/.config/rpcs3/</code></div>
+            <div><span style="color: var(--s-blue)">MacOS:</span> <code>~/Library/Application Support/rpcs3/</code></div>
         </div>
 
-        <div style="margin-top: 25px;">
+        <div style="margin-top: 25px">
             <strong>📢 للإبلاغ عن خطأ (Debug Steps):</strong>
-            <ol style="font-size: 14px; padding-right: 20px; line-height: 1.8;">
+            <ol style="font-size: 14px; padding-right: 20px; line-height: 1.8">
                 <li>أوقف المحاكاة مؤقتاً عند النقطة التي تسبق الخطأ عبر <code style="background:#ddd; color:#333">Ctrl + P</code>.</li>
                 <li>اذهب إلى <b>Utilities > Kernel Explorer</b> واختر <b>Log All</b>.</li>
                 <li>قم بإجراء Save State، ثم انسخ ملف السجل (Log) وارفعه للمطورين.</li>
             </ol>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="https://github.com/RPCS3/rpcs3/issues" style="background: #333; color: white; padding: 10px 25px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold;">الانتقال لصفحة GitHub Issues الرسمية ←</a>
+            <div style="text-align: center; margin-top: 20px">
+                <a href="https://github.com/RPCS3/rpcs3/issues" style="background: #333; color: white; padding: 10px 25px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold">الانتقال لصفحة GitHub Issues الرسمية ←</a>
             </div>
         </div>
     </section>
 
-    <footer style="margin-top: 40px; padding-top: 25px; border-top: 2px solid #eee; text-align: center;">
-        <h2 style="color: var(--s-blue); font-size: 28px; letter-spacing: 2px; margin: 0;">HAKAMIQ</h2>
-        <p style="color: #777; font-family: monospace; font-size: 12px;">TECH_GUIDE // RPCS3_SAVESTATE // 2026</p>
+    <footer style="margin-top: 40px; padding-top: 25px; border-top: 2px solid #eee; text-align: center">
+        <h2 style="color: var(--s-blue); font-size: 28px; letter-spacing: 2px; margin: 0">HAKAMIQ</h2>
+        <p style="color: #777; font-family: monospace; font-size: 12px">TECH_GUIDE // RPCS3_SAVESTATE // 2026</p>
     </footer>
 
 </div>

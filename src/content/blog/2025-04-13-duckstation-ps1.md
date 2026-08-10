@@ -65,12 +65,12 @@ labels: ["PlayStation","PS1"]
 <article class="duckstation-guide-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png">
                 <img class="img-frame" src="/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png" alt="DuckStation Logo" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); font-size: 28px; font-weight: 900;">DuckStation: الدليل الشامل لأقوى محاكي PS1</h2>
+        <h2 style="color: var(--xe-blue); font-size: 28px; font-weight: 900">DuckStation: الدليل الشامل لأقوى محاكي PS1</h2>
         <p><strong>DuckStation</strong> هو محاكي مفتوح المصدر تم تصميمه لتقديم أعلى دقة وأفضل أداء لتشغيل ألعاب <strong>PlayStation 1</strong>. يتميز بكونه يجمع بين القوة وسهولة الاستخدام، مما يجعله الخيار الأول للمبتدئين والمحترفين على حد سواء.</p>
     </header>
 
@@ -79,7 +79,7 @@ labels: ["PlayStation","PS1"]
         <ul>
             <li>✅ <strong>أداء مذهل:</strong> يعمل بسلاسة فائقة حتى على الأجهزة الضعيفة والمتوسطة.</li>
             <li>🎨 <strong>محركات رسومية:</strong> دعم كامل لتقنيات <code>Vulkan</code>, <code>OpenGL</code>, <code>D3D11/12</code>, و <code>Metal</code>.</li>
-            <li>🔍 <strong>تحسين الهندسة:</strong> ميزة <span style="color: var(--xe-green);">PGXP</span> لإصلاح اهتزاز الرسوم وتشويه الملمس الشهير في PS1.</li>
+            <li>🔍 <strong>تحسين الهندسة:</strong> ميزة <span style="color: var(--xe-green)">PGXP</span> لإصلاح اهتزاز الرسوم وتشويه الملمس الشهير في PS1.</li>
             <li>💾 <strong>إدارة متكاملة:</strong> حفظ سريع، تسريع زمني، الرجوع بالزمن (Rewind)، وتسجيل فيديو مباشر.</li>
             <li>📱 <strong>تعدد المنصات:</strong> دعم كامل لأنظمة Windows، Linux، macOS، و Android.</li>
         </ul>
@@ -87,7 +87,7 @@ labels: ["PlayStation","PS1"]
 
     <section class="section-card">
         <h3>⚙️ المواصفات والإمكانيات التقنية</h3>
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <img class="img-frame" src="/media/blogger/4d/4de0997621d969894e646843875c90b8b2392ee04216b5de250c9559d61f07d7.gif)%20Normal%20(Right)%20PGXP%20Mode.gif" alt="PGXP Comparison" width="320" />
         </div>
         <div class="table-container">
@@ -154,19 +154,19 @@ labels: ["PlayStation","PS1"]
 
     <section class="section-card">
         <h3>🐧 تثبيت الأنظمة الأخرى</h3>
-        <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--xe-green);">Linux</h4>
+        <div style="margin-bottom: 20px">
+            <h4 style="color: var(--xe-green)">Linux</h4>
             <p>استخدم نسخة <code>AppImage</code> ثم اعطها صلاحية التشغيل عبر <code>chmod +x</code>، أو استخدم Flatpak للأتمتة.</p>
         </div>
-        <div style="margin-bottom: 20px;">
-            <h4 style="color: var(--xe-blue);">macOS</h4>
+        <div style="margin-bottom: 20px">
+            <h4 style="color: var(--xe-blue)">macOS</h4>
             <p>حمل ملف <code>.zip</code> المخصص للماك، فك الضغط وانقل التطبيق لمجلد Applications.</p>
         </div>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 15px; text-align: center; border-top: 4px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">🎯 نصيحة حكميك الختامية</h3>
-        <p style="margin: 0; font-size: 15px;">
+    <footer style="background: #252525; padding: 25px; border-radius: 15px; text-align: center; border-top: 4px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold); margin-top: 0">🎯 نصيحة حكميك الختامية</h3>
+        <p style="margin: 0; font-size: 15px">
             للحصول على أفضل تجربة بصرية، فعل خيار <strong>Perspective Correction</strong> من إعدادات الجرافيكس؛ هذا الخيار سيجعل الأرضيات والجدران في ألعاب مثل <em>Resident Evil</em> و <em>Silent Hill</em> ثابتة تماماً وبدون أي تموجات!
         </p>
     </footer>

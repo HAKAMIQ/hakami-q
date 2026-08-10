@@ -65,17 +65,17 @@ labels: ["sega","Sega-GameGear"]
 <div class="retroarch-gg-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg">
                 <img alt="صورة توضيحية ضمن مقال تشغيل ألعاب Game Gear باستخدام RetroArch" class="img-frame" src="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg" width="265" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب Game Gear باستخدام RetroArch</h2>
-        <p style="text-align: center;">يعتبر RetroArch الحل الأمثل لاستعادة أمجاد ألعاب Sega المحمولة بجودة فائقة. عبر تنصيب النواة الصحيحة، يمكنك الاستمتاع بمكتبة Game Gear بالكامل دون القلق بشأن استهلاك البطاريات التقليدي.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">طريقة تشغيل ألعاب Game Gear باستخدام RetroArch</h2>
+        <p style="text-align: center">يعتبر RetroArch الحل الأمثل لاستعادة أمجاد ألعاب Sega المحمولة بجودة فائقة. عبر تنصيب النواة الصحيحة، يمكنك الاستمتاع بمكتبة Game Gear بالكامل دون القلق بشأن استهلاك البطاريات التقليدي.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">1. تحميل وتثبيت منصة RetroArch</h3>
+        <h3 style="color: var(--xe-gold)">1. تحميل وتثبيت منصة RetroArch</h3>
         <ul class="clean-list">
             <li>توجه للموقع الرسمي: <a href="https://www.retroarch.com/" target="_blank">retroarch.com</a>.</li>
             <li>قم بتحميل النسخة المتوافقة مع نظام تشغيلك (Windows, Android, macOS).</li>
@@ -84,7 +84,7 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">2. تحميل نواة التشغيل (Core Downloader)</h3>
+        <h3 style="color: var(--xe-gold)">2. تحميل نواة التشغيل (Core Downloader)</h3>
         <p>لبدء المحاكاة، تحتاج إلى تنصيب النواة الأكثر استقراراً:</p>
         <ul class="clean-list">
             <li>من القائمة الرئيسية، اختر <code>Main Menu &gt; Online Updater &gt; Core Downloader</code>.</li>
@@ -93,8 +93,8 @@ labels: ["sega","Sega-GameGear"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #f1c40f;">
-        <h3 style="color: #f39c12;">3. تنظيم وتجهيز ملفات الألعاب (ROMs)</h3>
+    <section class="section-card" style="border-right: 5px solid #f1c40f">
+        <h3 style="color: #f39c12">3. تنظيم وتجهيز ملفات الألعاب (ROMs)</h3>
         <ul class="clean-list">
             <li>قم بتجهيز ملفات الألعاب بامتداد <code>.gg</code> أو داخل ملفات مضغوطة <code>.zip</code>.</li>
             <li>ينصح بتنظيمها داخل مجلد خاص، مثل <code>RetroArch/ROMs/GameGear</code>.</li>
@@ -103,7 +103,7 @@ labels: ["sega","Sega-GameGear"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">4. إجراءات تشغيل المحتوى</h3>
+        <h3 style="color: var(--xe-gold)">4. إجراءات تشغيل المحتوى</h3>
         <ul class="clean-list">
             <li>من خيار <code>Load Core</code>، اختر النواة التي حملتها: <span class="highlight-blue">Genesis Plus GX</span>.</li>
             <li>توجه إلى <code>Load Content</code> وقم باختيار ملف اللعبة المراد تشغيلها.</li>
@@ -111,8 +111,8 @@ labels: ["sega","Sega-GameGear"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-green);">
-        <h3 style="color: var(--xe-green);">5. تحسين التجربة البصرية (اختياري)</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-green)">
+        <h3 style="color: var(--xe-green)">5. تحسين التجربة البصرية (اختياري)</h3>
         <p>للحصول على أفضل مظهر تقني، يمكنك تعديل الشادرات من القائمة السريعة:</p>
         <ul class="clean-list">
             <li>ادخل إلى <code>Quick Menu &gt; Shaders</code>.</li>
@@ -120,9 +120,9 @@ labels: ["sega","Sega-GameGear"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin: 0;"><b>الخلاصة:</b> دمج RetroArch مع نواة Genesis Plus GX يوفر التجربة الأكثر استقراراً ودقة لمحاكاة Game Gear دون الحاجة لإعدادات معقدة.</p>
-        <p style="margin-top: 10px; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin: 0"><b>الخلاصة:</b> دمج RetroArch مع نواة Genesis Plus GX يوفر التجربة الأكثر استقراراً ودقة لمحاكاة Game Gear دون الحاجة لإعدادات معقدة.</p>
+        <p style="margin-top: 10px; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

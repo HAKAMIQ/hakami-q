@@ -64,22 +64,22 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
 <div class="emu-ultimate-guide">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg">
                 <img alt="صورة توضيحية ضمن مقال كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين !" class="img-frame" src="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين الشامل</h2>
-        <p style="text-align: center;">حلمك تعيش ذكرياتك مع كراش، تيكن، أو جاد أوف وور؟ هذا الدليل مجهز ليأخذك من الصفر حتى الاحتراف في تشغيل ألعاب بلايستيشن على حاسوبك الشخصي.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين الشامل</h2>
+        <p style="text-align: center">حلمك تعيش ذكرياتك مع كراش، تيكن، أو جاد أوف وور؟ هذا الدليل مجهز ليأخذك من الصفر حتى الاحتراف في تشغيل ألعاب بلايستيشن على حاسوبك الشخصي.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🧠 أول شيء: وش يعني محاكي؟</h3>
+        <h3 style="color: var(--xe-gold)">🧠 أول شيء: وش يعني محاكي؟</h3>
         <p>المحاكي هو برنامج يقلد وظائف جهاز البلايستيشن؛ فهو يخدع اللعبة ويجعلها تظن أنها تعمل على بيئتها الأصلية بينما هي تعمل فعلياً على عتاد حاسوبك. إنه بمثابة "ممثل محترف" يحاكي الصوت والصورة بدقة مذهلة.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-blue);">🎮 المحاكيات المناسبة لكل جيل</h3>
+        <h3 style="color: var(--xe-blue)">🎮 المحاكيات المناسبة لكل جيل</h3>
         <ul class="clean-list">
             <li><b>بلايستيشن 1:</b> استخدم <span class="highlight-blue">DuckStation</span> (الأفضل حالياً).</li>
             <li><b>بلايستيشن 2:</b> المحاكي الأسطوري <span class="highlight-blue">PCSX2</span>.</li>
@@ -89,8 +89,8 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
         </ul>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid var(--xe-gold);">
-        <h3 style="color: var(--xe-gold);">🚀 تحديث 2026: ثورة ShadPS4 والـ Forks</h3>
+    <section class="section-card" style="border-right: 5px solid var(--xe-gold)">
+        <h3 style="color: var(--xe-gold)">🚀 تحديث 2026: ثورة ShadPS4 والـ Forks</h3>
         <p>لم يعد تشغيل ألعاب PS4 مستحيلاً؛ فمحاكي <span class="highlight-gold">ShadPS4</span> حقق قفزات تاريخية هذا العام:</p>
         <ul class="clean-list">
             <li><b>Bloodborne 4K/60:</b> اللعبة أصبحت قابلة للعب بالكامل مع إضافاتها بدقة 4K وثبات عالٍ.</li>
@@ -101,7 +101,7 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">🧩 عشان تبدأ، وش يلزمك؟</h3>
+        <h3 style="color: var(--xe-gold)">🧩 عشان تبدأ، وش يلزمك؟</h3>
         <ul class="clean-list">
             <li><b>ملف BIOS:</b> العقل الرئيسي للنظام، وهو ضروري لبعض المحاكيات لضمان التوافق.</li>
             <li><b>ملفات الألعاب:</b> تأتي عادة بصيغ <b>ISO</b> أو <b>BIN</b> أو <b>PKG</b> (للجيل الثامن).</li>
@@ -110,8 +110,8 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
         <p><b>تلميحة حكميك:</b> حمل من مواقع موثوقة دائماً لتجنب الملفات الضارة والروابط الإعلانية التي قد تنهك جهازك.</p>
     </section>
 
-    <section class="section-card" style="border-right: 5px solid #e74c3c;">
-        <h3 style="color: #e74c3c;">🔥 هل لازم جهاز قوي؟</h3>
+    <section class="section-card" style="border-right: 5px solid #e74c3c">
+        <h3 style="color: #e74c3c">🔥 هل لازم جهاز قوي؟</h3>
         <p>المعادلة بسيطة: كل ما زاد جيل الجهاز، زادت المتطلبات التقنية:</p>
         <ul class="clean-list">
             <li><b>PS1 و PSP:</b> أي جهاز حديث يشغلهم بسهولة.</li>
@@ -120,9 +120,9 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center;">
-        <p style="margin-bottom: 10px;">لا تدع عالم المحاكيات يخيفك؛ الموضوع ممتع وبسيط مع الضبط الصحيح. استرجع ذكريات طفولتك الآن!</p>
-        <p style="margin: 0; color: var(--xe-gold); font-weight: bold;">تحياتي، حكميك 🕹️</p>
+    <footer style="background: #252525; padding: 15px; border-radius: 10px; text-align: center">
+        <p style="margin-bottom: 10px">لا تدع عالم المحاكيات يخيفك؛ الموضوع ممتع وبسيط مع الضبط الصحيح. استرجع ذكريات طفولتك الآن!</p>
+        <p style="margin: 0; color: var(--xe-gold); font-weight: bold">تحياتي، حكميك 🕹️</p>
     </footer>
 
 </div>

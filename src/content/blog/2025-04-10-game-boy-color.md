@@ -9,7 +9,7 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-color.html'
 labels: ["GBC","Nintendo"]
 ---
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال كل شيء عن Game Boy Color – المحاكي، الإعدادات، التجربة، والنصائح الذهبية" border="0" data-original-height="512" data-original-width="512" height="320" src="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
+<div class="separator" style="clear: both; text-align: center"><a href="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="صورة توضيحية ضمن مقال كل شيء عن Game Boy Color – المحاكي، الإعدادات، التجربة، والنصائح الذهبية" border="0" data-original-height="512" data-original-width="512" height="320" src="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
 <p>بعد ما عشنا على الأبيض والأسود سنين، قررت نينتندو تفكنا وتنزل جهاز ملوّن! <strong>Game Boy Color</strong> نزل عام 1998، وكان حرفيًا صدمة لعيوننا الصغيرة وقتها 😍</p>
 <p>صار كل شيء ينور: بوكيمون بالألوان، زيلدا ترقص، وماريو يلبس أحمر صح 😂</p>
 
@@ -26,29 +26,29 @@ labels: ["GBC","Nintendo"]
 
 <h2>🧠 أفضل محاكيات GBC في 2025</h2>
 
-<table data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-border-right="" data-darkreader-inline-border-top="" style="--darkreader-inline-border-bottom: var(--darkreader-border-cccccc, #54585a); --darkreader-inline-border-left: var(--darkreader-border-cccccc, #54585a); --darkreader-inline-border-right: var(--darkreader-border-cccccc, #54585a); --darkreader-inline-border-top: var(--darkreader-border-cccccc, #54585a); border-collapse: collapse; border: 1px solid rgb(204, 204, 204); width: 100%;">
-<thead data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="" style="--darkreader-inline-bgcolor: var(--darkreader-background-f5f5f5, #323434); --darkreader-inline-bgimage: initial; background: rgb(245, 245, 245);">
+<table style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); width: 100%">
+<thead style="background: rgb(245, 245, 245)">
 <tr>
-  <th style="padding: 10px;">🧠 المحاكي</th>
-  <th style="padding: 10px;">✅ يشتغل على</th>
-  <th style="padding: 10px;">🔎 المميزات</th>
+  <th style="padding: 10px">🧠 المحاكي</th>
+  <th style="padding: 10px">✅ يشتغل على</th>
+  <th style="padding: 10px">🔎 المميزات</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="padding: 10px;"><strong>SameBoy</strong></td>
-  <td style="padding: 10px;">ويندوز / ماك / لينوكس</td>
-  <td style="padding: 10px;">أدق محاكاة لـ GBC – تأثيرات بصرية تشبه الجهاز الحقيقي</td>
+  <td style="padding: 10px"><strong>SameBoy</strong></td>
+  <td style="padding: 10px">ويندوز / ماك / لينوكس</td>
+  <td style="padding: 10px">أدق محاكاة لـ GBC – تأثيرات بصرية تشبه الجهاز الحقيقي</td>
 </tr>
 <tr>
-  <td style="padding: 10px;"><strong>RetroArch (نواة SameBoy)</strong></td>
-  <td style="padding: 10px;">كل الأنظمة (ويندوز، جوال، بلاي ستيشن!)</td>
-  <td style="padding: 10px;">فلترة - شيدرز - حفظ تلقائي - واجهة وحده لكل المحاكيات</td>
+  <td style="padding: 10px"><strong>RetroArch (نواة SameBoy)</strong></td>
+  <td style="padding: 10px">كل الأنظمة (ويندوز، جوال، بلاي ستيشن!)</td>
+  <td style="padding: 10px">فلترة - شيدرز - حفظ تلقائي - واجهة وحده لكل المحاكيات</td>
 </tr>
 <tr>
-  <td style="padding: 10px;"><strong>mGBA</strong></td>
-  <td style="padding: 10px;">ويندوز / أندرويد / لينوكس</td>
-  <td style="padding: 10px;">يشغّل GBA وGBC – سهل وسريع</td>
+  <td style="padding: 10px"><strong>mGBA</strong></td>
+  <td style="padding: 10px">ويندوز / أندرويد / لينوكس</td>
+  <td style="padding: 10px">يشغّل GBA وGBC – سهل وسريع</td>
 </tr>
 </tbody>
 </table>

@@ -171,8 +171,8 @@ labels: ["Nintendo","Wii-U"]
     </div>
 
     <div class="hakamiq-intro-text">
-        <p style="margin-top: 0;">ألعاب نينتندو كانت دايم حصرية، بس اليوم؟ صار بإمكانك تلعب <strong>The Legend of Zelda: Breath of the Wild</strong> على كمبيوترك بكل سلاسة باستخدام <strong>محاكي Cemu</strong>، وبدون لف ولا دوران.</p>
-        <p style="margin-bottom: 0;">الخطوات بسيطة جدًا، وبتدخل عالم زيلدا في أقل من 10 دقايق:</p>
+        <p style="margin-top: 0">ألعاب نينتندو كانت دايم حصرية، بس اليوم؟ صار بإمكانك تلعب <strong>The Legend of Zelda: Breath of the Wild</strong> على كمبيوترك بكل سلاسة باستخدام <strong>محاكي Cemu</strong>، وبدون لف ولا دوران.</p>
+        <p style="margin-bottom: 0">الخطوات بسيطة جدًا، وبتدخل عالم زيلدا في أقل من 10 دقايق:</p>
     </div>
 
     <section class="hakamiq-step-card">
@@ -214,11 +214,11 @@ labels: ["Nintendo","Wii-U"]
 
     <section class="hakamiq-step-card">
         <h3 class="hakamiq-step-title">🎮 5. شغّل واستمتع!</h3>
-        <p style="margin: 0; color: #ddd;">اختر اللعبة من القائمة، انتظر تحميل الشيدر أول مرة (دقيقة أو دقيقتين بالكثير). وبعدها؟ جرافيكس خرافي وأداء ناعم زي الزبدة 🤌✨</p>
+        <p style="margin: 0; color: #ddd">اختر اللعبة من القائمة، انتظر تحميل الشيدر أول مرة (دقيقة أو دقيقتين بالكثير). وبعدها؟ جرافيكس خرافي وأداء ناعم زي الزبدة 🤌✨</p>
     </section>
 
-    <section class="hakamiq-step-card" style="border-right: 4px solid var(--text-dim);">
-        <h3 class="hakamiq-step-title" style="color: var(--text-light);">📌 ملاحظات سريعة عن المواصفات:</h3>
+    <section class="hakamiq-step-card" style="border-right: 4px solid var(--text-dim)">
+        <h3 class="hakamiq-step-title" style="color: var(--text-light)">📌 ملاحظات سريعة عن المواصفات:</h3>
         <ul>
             <li>الرام 8GB كافية للعب، لكن <strong>يجب</strong> إغلاق متصفح كروم والبرامج الثقيلة أثناء اللعب حتى لا ينهار المحاكي.</li>
             <li>المعالج (CPU) أهم من كرت الشاشة في المحاكيات، كرت GTX 1050 بيشغلها بالراحة على 1080p.</li>
@@ -227,9 +227,9 @@ labels: ["Nintendo","Wii-U"]
     </section>
 
     <div class="hakamiq-advice-box">
-        <h3 style="color: var(--zelda-gold); margin-top: 0;">✨ نصيحة من حكميك:</h3>
+        <h3 style="color: var(--zelda-gold); margin-top: 0">✨ نصيحة من حكميك:</h3>
         <p>إذا سويت الخطوات هذي، ما تحتاج Switch 😎</p>
-        <p style="margin-top: 10px; font-size: 1rem; color: #aaa;">وإذا تبي إعدادات جاهزة أو ملف Save 100%… اكتب لي تحت في التعليقات 👇</p>
+        <p style="margin-top: 10px; font-size: 1rem; color: #aaa">وإذا تبي إعدادات جاهزة أو ملف Save 100%… اكتب لي تحت في التعليقات 👇</p>
     </div>
 
 </article>

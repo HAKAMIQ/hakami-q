@@ -73,7 +73,7 @@ labels: ["PlayStation","PSPVita"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="https://vita3k.org/" target="_blank">
                 <img alt="Vita3K Emulator Logo" class="img-frame" src="/media/blogger/65/65295c3d0bb590a753a20775e687b283f56af54f73048335a4f8f3ad19af17c5.png" width="600" />
             </a>
@@ -82,7 +82,7 @@ labels: ["PlayStation","PSPVita"]
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">آخر التحديثات التقنية (سجل التغييرات)</h3>
+        <h3 style="color: var(--xe-gold)">آخر التحديثات التقنية (سجل التغييرات)</h3>
         <p>يمكنك متابعة التطور اللحظي للمشروع عبر <b><a href="https://github.com/Vita3K/Vita3K/commits/master" target="_blank">مستودع GitHub</a></b>، وإليك أبرز ما تم إنجازه مؤخراً:</p>
         <ul class="clean-list">
             <li><b>إصلاح مشاكل الصوت (Audio Fix):</b> تم حل مشكلة "طقطقة الصوت" المزعجة لضمان تجربة صوتية نقية.</li>
@@ -92,14 +92,14 @@ labels: ["PlayStation","PSPVita"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">التوافق وأداء الألعاب</h3>
+        <h3 style="color: var(--xe-gold)">التوافق وأداء الألعاب</h3>
         <p>يتحسن التوافق بشكل يومي، ويمكنك دائماً مراجعة <b><a href="https://vita3k.org/compatibility.html" target="_blank">قائمة التوافق الرسمية</a></b> قبل تشغيل أي لعبة:</p>
         <div class="screenshot-grid">Persona 4 Golden&nbsp; |&nbsp;&nbsp;A Rose in the Twilight</div>
         <p>يدعم المحاكي الآن ألعاباً ضخمة مثل <i>Persona 4 Golden</i> بسلاسة تصاعدية على الأجهزة القوية.</p>
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">روابط التحميل المباشرة</h3>
+        <h3 style="color: var(--xe-gold)">روابط التحميل المباشرة</h3>
         <p>اختر الإصدار المناسب لنظام تشغيلك من الروابط الرسمية أدناه:</p>
         <div class="btn-container">
             <a class="download-btn" href="https://github.com/Vita3K/Vita3K/releases/latest" target="_blank">تحميل ويندوز (Windows)</a>
@@ -109,12 +109,12 @@ labels: ["PlayStation","PSPVita"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">كيفية الحصول على الألعاب بشكل قانوني؟</h3>
+        <h3 style="color: var(--xe-gold)">كيفية الحصول على الألعاب بشكل قانوني؟</h3>
         <p>ننصح دائماً باستخدام أدوات مثل <code>NoNpDrm</code> لاستخراج ألعابك الخاصة. كما يمكنك استكشاف آلاف التطبيقات المجانية عبر <b><a href="https://vitadb.rinnegatamante.it/" target="_blank">متجر VitaDB</a></b> الشهير.</p>
     </section>
 
-    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center;">
-        <p style="margin: 0px;">مشروع Vita3K يتطور بسرعة بفضل دعمكم. للمزيد من النقاشات التقنية، انضم إلى <b><a href="https://discord.com/invite/K7Sxw9H" target="_blank">سيرفر الديسكورد الرسمي</a></b>.</p>
+    <footer style="background: rgb(37, 37, 37); border-radius: 10px; padding: 15px; text-align: center">
+        <p style="margin: 0px">مشروع Vita3K يتطور بسرعة بفضل دعمكم. للمزيد من النقاشات التقنية، انضم إلى <b><a href="https://discord.com/invite/K7Sxw9H" target="_blank">سيرفر الديسكورد الرسمي</a></b>.</p>
     </footer>
 
 </div>

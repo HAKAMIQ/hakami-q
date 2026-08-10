@@ -78,17 +78,17 @@ labels: ["Game Boy","Nintendo","SGB"]
 <div class="orbital-full-wrapper">
 
     <header class="tech-header">
-        <div class="separator" style="clear: both; text-align: center;">
+        <div class="separator" style="clear: both; text-align: center">
             <a href="/media/blogger/ac/ac99bd589ae0cdae07698c1dfcc033ffe232b812805de363dcd7e9ade7ef890b.png" target="_blank">
                 <img class="img-frame" src="/media/blogger/ac/ac99bd589ae0cdae07698c1dfcc033ffe232b812805de363dcd7e9ade7ef890b.png" width="217" alt="Top 10 SGB Games" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 وش يعني "تحف مخفية"؟</h2>
-        <p>يعني ألعاب GB كانت تدعم <strong style="color: var(--xe-gold);">Super Game Boy</strong>، لكن ما أخذت شهرة أو الناس ما جربوها أصلاً على SGB، وفاتهم اللي ورا الكواليس 👀 <br> اليوم بنعرض لك 10 منها… وكل وحدة فيها شيء غريب أو مميز على الـ SGB.</p>
+        <h2 style="color: var(--xe-blue); text-align: center">🎮 وش يعني "تحف مخفية"؟</h2>
+        <p>يعني ألعاب GB كانت تدعم <strong style="color: var(--xe-gold)">Super Game Boy</strong>، لكن ما أخذت شهرة أو الناس ما جربوها أصلاً على SGB، وفاتهم اللي ورا الكواليس 👀 <br> اليوم بنعرض لك 10 منها… وكل وحدة فيها شيء غريب أو مميز على الـ SGB.</p>
     </header>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold); text-align: center; border-bottom: none;">🎯 القائمة (بلا ترتيب معين)</h3>
+        <h3 style="color: var(--xe-gold); text-align: center; border-bottom: none">🎯 القائمة (بلا ترتيب معين)</h3>
         
         <div class="game-title">1. 🧪 TNN Outdoors Fishing Champ</div>
         <p>ما توقعت تلعب صيد سمك؟ على SGB يجي معها HUD ملوّن كامل + خلفية مائية أنيقة. حتى المؤثرات تتغير.</p>
@@ -122,7 +122,7 @@ labels: ["Game Boy","Nintendo","SGB"]
     </section>
 
     <section class="section-card">
-        <h3 style="color: var(--xe-gold);">💡 كيف تعرف إذا اللعبة تدعم SGB؟</h3>
+        <h3 style="color: var(--xe-gold)">💡 كيف تعرف إذا اللعبة تدعم SGB؟</h3>
         <ul class="clean-list">
             <li>📦 شوف الغلاف الخلفي – أحيانًا يكون مكتوب “SGB Enhanced”</li>
             <li>🔍 افتح ملف اللعبة ببرنامج <code>ROM Info Checker</code></li>
@@ -130,10 +130,10 @@ labels: ["Game Boy","Nintendo","SGB"]
         </ul>
     </section>
 
-    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center;">
-        <h3 style="color: var(--xe-gold); margin-top: 0;">📌 من حكميك</h3>
-        <p style="margin-bottom: 15px;">بعض الألعاب ما عطوها فرصة بس لأنها كانت على Game Boy… لكن مع SGB، تكتشف إنها فيها أفكار مرئية وصوتية رهيبة 👀</p>
-        <p style="color: var(--xe-green); font-size: 1.2em; font-weight: bold; margin-bottom: 0;">جربها بالمحاكي، وعيش التجربة الكاملة اللي الناس ما عرفوها زمان.</p>
+    <footer style="background: #252525; padding: 25px; border-radius: 12px; border: 1px solid #333; text-align: center">
+        <h3 style="color: var(--xe-gold); margin-top: 0">📌 من حكميك</h3>
+        <p style="margin-bottom: 15px">بعض الألعاب ما عطوها فرصة بس لأنها كانت على Game Boy… لكن مع SGB، تكتشف إنها فيها أفكار مرئية وصوتية رهيبة 👀</p>
+        <p style="color: var(--xe-green); font-size: 1.2em; font-weight: bold; margin-bottom: 0">جربها بالمحاكي، وعيش التجربة الكاملة اللي الناس ما عرفوها زمان.</p>
     </footer>
 
 </div>
