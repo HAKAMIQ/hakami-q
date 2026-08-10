@@ -1,0 +1,92 @@
+name: Content Source Cleanup
+
+"on":
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/content-source-cleanup.mjs"
+      - "scripts/content-quality.mjs"
+      - ".github/workflows/content-source-cleanup.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-source-cleanup-main
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    name: Normalize migrated article sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Record baseline content quality
+        run: npm run content:quality:report
+
+      - name: Normalize article source files
+        run: npm run content:cleanup
+
+      - name: Verify cleanup is idempotent
+        run: npm run content:cleanup:check
+
+      - name: Require clean source quality
+        run: npm run content:quality:strict
+
+      - name: Guard cleanup write scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed="$(git diff --name-only)"
+          if [[ -z "$changed" ]]; then
+            echo "No source changes were required."
+            exit 0
+          fi
+
+          unexpected="$(printf '%s\n' "$changed" | grep -v '^src/content/blog/' || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "Cleanup modified files outside src/content/blog/:"
+            printf '%s\n' "$unexpected"
+            exit 1
+          fi
+
+          echo "Cleanup write scope is valid."
+
+      - name: Validate production build and rendered output
+        run: npm run build
+
+      - name: Validate diff whitespace
+        run: git diff --check
+
+      - name: Commit normalized article sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/content/blog; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog
+          git diff --cached --stat
+          git commit -m "chore(content): normalize migrated article sources [skip ci]"
+          git push origin HEAD:main
