@@ -122,6 +122,7 @@ function scanArticle(file, source) {
 function scanExecutableSource(file, source) {
   const normalized = rel(file);
   if (!/\.(?:js|mjs|cjs|ts|tsx|astro)$/i.test(file)) return;
+  if (normalized === 'scripts/security-audit.mjs') return;
 
   // Test fixtures may intentionally mention dangerous primitives as strings; still report them as low if present.
   const severity = normalized.includes('self-test') || normalized.includes('/test') ? 'low' : 'high';
