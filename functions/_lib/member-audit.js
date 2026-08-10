@@ -35,6 +35,8 @@ async function ensureUserColumns(db) {
 		['status_reason', 'TEXT'],
 		['status_changed_at', 'TEXT'],
 		['status_changed_by', 'TEXT'],
+		['google_subject', 'TEXT'],
+		['google_linked_at', 'TEXT'],
 	];
 	for (const [name, type] of additions) {
 		if (!columns.has(name)) await db.prepare(`ALTER TABLE users ADD COLUMN ${name} ${type}`).run();
@@ -61,6 +63,7 @@ export async function ensureMemberAdminSchema(env) {
 	await db.prepare('CREATE INDEX IF NOT EXISTS idx_member_audit_actor ON member_audit_log(actor_user_id, occurred_at)').run();
 	await db.prepare('CREATE INDEX IF NOT EXISTS idx_member_audit_target ON member_audit_log(target_user_id, occurred_at)').run();
 	await db.prepare('CREATE INDEX IF NOT EXISTS idx_member_audit_event ON member_audit_log(event_type, occurred_at)').run();
+	await db.prepare('CREATE UNIQUE INDEX IF NOT EXISTS idx_users_google_subject ON users(google_subject) WHERE google_subject IS NOT NULL').run();
 	schemaReadyDatabases.add(db);
 	return db;
 }
