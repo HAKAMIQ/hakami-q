@@ -1,11 +1,6 @@
-import { getAuthenticatedUser, requireAuthDb } from '../../_lib/auth.js';
-import { createMfaLoginChallenge, isMfaEnabled, requiresMfaRole } from '../../_lib/mfa.js';
-import {
-	accountSessionTokenFromSetCookie,
-	clearAccountSessionCookieHeader,
-	isCurrentSessionMfaVerified,
-	revokeAccountSessionToken,
-} from '../../_lib/mfa-session.js';
+import { requireAuthDb } from '../../_lib/auth.js';
+import { accountSessionTokenFromSetCookie, clearAccountSessionCookieHeader, revokeAccountSessionToken } from '../../_lib/mfa-session.js';
+import { createMfaLoginChallenge, isMfaEnabled } from '../../_lib/mfa.js';
 
 const encoder = new TextEncoder();
 const LOGIN_RATE_WINDOW_SECONDS = 15 * 60;
@@ -20,10 +15,7 @@ const JSON_HEADERS = {
 };
 
 function json(payload, status = 200, extraHeaders = {}) {
-	return new Response(JSON.stringify(payload), {
-		status,
-		headers: { ...JSON_HEADERS, ...extraHeaders },
-	});
+	return new Response(JSON.stringify(payload), { status, headers: { ...JSON_HEADERS, ...extraHeaders } });
 }
 
 function actionFrom(request) {
@@ -43,13 +35,7 @@ function bytesToBase64Url(bytes) {
 }
 
 async function hmac(secret, value) {
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(secret),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign'],
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
 	return bytesToBase64Url(await crypto.subtle.sign('HMAC', key, encoder.encode(value)));
 }
 
@@ -67,8 +53,7 @@ async function ensureRateTable(db) {
 
 function secondsUntil(value) {
 	const timestamp = Date.parse(value || '');
-	if (!Number.isFinite(timestamp)) return 0;
-	return Math.max(0, Math.ceil((timestamp - Date.now()) / 1000));
+	return Number.isFinite(timestamp) ? Math.max(0, Math.ceil((timestamp - Date.now()) / 1000)) : 0;
 }
 
 async function rateContext(request, env) {
@@ -77,13 +62,9 @@ async function rateContext(request, env) {
 	if (!ip || !secret) return null;
 	const db = requireAuthDb(env);
 	await ensureRateTable(db);
-	const clientKey = await hmac(secret, `account-login:${ip}`);
-	const row = await db.prepare(`
-		SELECT attempts, window_started, blocked_until
-		FROM auth_login_limits
-		WHERE client_key = ?
-		LIMIT 1
-	`).bind(clientKey).first();
+	const clientKey = await hmac(secret, `admin-login:${ip}`);
+	const row = await db.prepare('SELECT attempts, window_started, blocked_until FROM auth_login_limits WHERE client_key = ? LIMIT 1')
+		.bind(clientKey).first();
 	return { db, clientKey, row };
 }
 
@@ -94,15 +75,11 @@ async function enforceRateLimit(request, env) {
 		const retryAfter = secondsUntil(context.row?.blocked_until);
 		if (retryAfter <= 0) return { blocked: null, context };
 		return {
-			blocked: json(
-				{ error: 'تم إيقاف محاولات تسجيل الدخول مؤقتًا من هذا الاتصال. حاول لاحقًا.' },
-				429,
-				{ 'Retry-After': String(retryAfter) },
-			),
+			blocked: json({ error: 'تم إيقاف محاولات دخول الإدارة مؤقتًا. حاول لاحقًا.' }, 429, { 'Retry-After': String(retryAfter) }),
 			context,
 		};
 	} catch (error) {
-		console.error('Account login rate limiter unavailable', error);
+		console.error('Admin login rate limiter unavailable', error);
 		return { blocked: null, context: null };
 	}
 }
@@ -118,17 +95,12 @@ async function recordLoginResult(context, status) {
 			return;
 		}
 		if (status !== 401) return;
-
 		const windowStartedMs = Date.parse(row?.window_started || '');
-		const windowExpired = !Number.isFinite(windowStartedMs)
-			|| now.getTime() - windowStartedMs >= LOGIN_RATE_WINDOW_SECONDS * 1000;
+		const windowExpired = !Number.isFinite(windowStartedMs) || now.getTime() - windowStartedMs >= LOGIN_RATE_WINDOW_SECONDS * 1000;
 		const attempts = windowExpired ? 1 : Number(row?.attempts || 0) + 1;
 		const blockedUntil = attempts >= LOGIN_RATE_MAX_FAILURES
 			? new Date(now.getTime() + LOGIN_RATE_BLOCK_SECONDS * 1000).toISOString()
 			: null;
-		const storedAttempts = blockedUntil ? 0 : attempts;
-		const windowStarted = windowExpired ? nowIso : String(row.window_started);
-
 		await db.prepare(`
 			INSERT INTO auth_login_limits (client_key, attempts, window_started, blocked_until, updated_at)
 			VALUES (?, ?, ?, ?, ?)
@@ -137,62 +109,21 @@ async function recordLoginResult(context, status) {
 				window_started = excluded.window_started,
 				blocked_until = excluded.blocked_until,
 				updated_at = excluded.updated_at
-		`).bind(clientKey, storedAttempts, windowStarted, blockedUntil, nowIso).run();
+		`).bind(clientKey, blockedUntil ? 0 : attempts, windowExpired ? nowIso : String(row.window_started), blockedUntil, nowIso).run();
 		await db.prepare('DELETE FROM auth_login_limits WHERE updated_at < ?')
 			.bind(new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString()).run();
 	} catch (error) {
-		console.error('Account login rate result could not be recorded', error);
+		console.error('Admin login rate result could not be recorded', error);
 	}
-}
-
-async function guardPrivilegedAccountApi(request, env, action) {
-	const minimumRole = action === 'user-role' || action === 'audit-log' ? 'admin' : 'moderator';
-	const user = await getAuthenticatedUser(request, env);
-	if (!user) return json({ error: 'يلزم تسجيل الدخول.' }, 401);
-
-	const rank = { user: 0, moderator: 1, admin: 2 };
-	if ((rank[user.role] ?? -1) < (rank[minimumRole] ?? 99)) {
-		return json({ error: 'لا تملك الصلاحية المطلوبة.' }, 403);
-	}
-	if (!(await isMfaEnabled(env, user.id))) {
-		return json({
-			error: 'يلزم تفعيل التحقق بخطوتين قبل استخدام صلاحيات إدارة المستخدمين.',
-			mfaSetupRequired: true,
-			setupUrl: '/account?security=setup',
-		}, 403);
-	}
-	if (!(await isCurrentSessionMfaVerified(request, env))) {
-		return json({
-			error: 'يلزم تسجيل دخول مكتمل بالتحقق بخطوتين.',
-			mfaRequired: true,
-			loginUrl: '/login?next=/admin/users',
-		}, 401);
-	}
-	return null;
 }
 
 export async function onRequest(context) {
 	const { request, env } = context;
 	const action = actionFrom(request);
-
-	if (['users', 'audit-log', 'user-role', 'user-status', 'user-unlock'].includes(action)) {
-		try {
-			const blocked = await guardPrivilegedAccountApi(request, env, action);
-			if (blocked) return blocked;
-		} catch (error) {
-			console.error('HAKAMIQ privileged account API guard failure', error);
-			return json({ error: 'تعذر التحقق من حماية الحساب الإداري حاليًا.' }, 503);
-		}
-		return context.next();
-	}
-
-	if (request.method !== 'POST' || action !== 'login') {
-		return context.next();
-	}
+	if (request.method !== 'POST' || action !== 'login') return context.next();
 
 	const rate = await enforceRateLimit(request, env);
 	if (rate.blocked) return rate.blocked;
-
 	const response = await context.next();
 	await recordLoginResult(rate.context, response.status);
 	if (!response.ok) return response;
@@ -200,29 +131,19 @@ export async function onRequest(context) {
 	try {
 		const payload = await response.clone().json().catch(() => null);
 		const user = payload?.user;
-		if (!payload?.authenticated || !user?.id || !requiresMfaRole(user.role)) return response;
-		if (!(await isMfaEnabled(env, user.id))) return response;
-
-		const sessionToken = accountSessionTokenFromSetCookie(response.headers.get('Set-Cookie'));
-		if (!sessionToken) {
-			console.error('Privileged login returned no account session cookie before MFA cutover.');
-			return json({ error: 'تعذر بدء التحقق بخطوتين. أعد تسجيل الدخول.' }, 503);
+		if (!payload?.authenticated || !user?.id || user.role !== 'admin') {
+			return json({ error: 'لا تملك صلاحية دخول الإدارة.' }, 403, { 'Set-Cookie': clearAccountSessionCookieHeader() });
 		}
-
+		if (!(await isMfaEnabled(env, user.id))) return response;
+		const sessionToken = accountSessionTokenFromSetCookie(response.headers.get('Set-Cookie'));
+		if (!sessionToken) return json({ error: 'تعذر بدء التحقق بخطوتين. أعد تسجيل الدخول.' }, 503);
 		await revokeAccountSessionToken(env, sessionToken);
 		const challenge = await createMfaLoginChallenge(env, user.id);
-		return json(
-			{
-				mfaRequired: true,
-				mfaToken: challenge.token,
-				expiresAt: challenge.expiresAt,
-				methods: ['totp', 'recovery'],
-			},
-			202,
-			{ 'Set-Cookie': clearAccountSessionCookieHeader() },
-		);
+		return json({ mfaRequired: true, mfaToken: challenge.token, expiresAt: challenge.expiresAt, methods: ['totp', 'recovery'] }, 202, {
+			'Set-Cookie': clearAccountSessionCookieHeader(),
+		});
 	} catch (error) {
-		console.error('HAKAMIQ privileged login MFA middleware failure', error);
+		console.error('HAKAMIQ admin login MFA middleware failure', error);
 		return json({ error: 'تعذر بدء التحقق بخطوتين. أعد المحاولة.' }, 503);
 	}
 }
