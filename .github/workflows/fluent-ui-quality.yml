@@ -30,7 +30,7 @@ name: Fluent UI Quality
       - "scripts/web-standards-quality.mjs"
       - "scripts/seo-quality.mjs"
       - "scripts/final-site-audit.mjs"
-      - ".github/workflows/fluent-ui-quality.yml"
+      - ".github/workflows/**"
   pull_request:
     paths:
       - "astro.config.mjs"
@@ -57,7 +57,7 @@ name: Fluent UI Quality
       - "scripts/web-standards-quality.mjs"
       - "scripts/seo-quality.mjs"
       - "scripts/final-site-audit.mjs"
-      - ".github/workflows/fluent-ui-quality.yml"
+      - ".github/workflows/**"
 
 permissions:
   contents: read
