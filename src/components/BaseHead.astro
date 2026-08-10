@@ -45,6 +45,7 @@ const {
 const normalizedCanonicalPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
 const canonicalURL = new URL(normalizedCanonicalPath, siteURL);
 const imageURL = typeof image === 'string' ? new URL(image, siteURL) : new URL(image.src, siteURL);
+const isAdminPublisher = pathname === '/admin' || pathname === '/admin/';
 
 const websiteSchema = {
 	'@context': 'https://schema.org',
@@ -73,6 +74,7 @@ const websiteSchemaJson = JSON.stringify(websiteSchema).replace(/</g, '\\u003c')
 <script src="/header-persistent-nav.js" defer></script>
 <script src="/fluent-tooltip.js" defer></script>
 <script src="/fluent-category-tree.js" defer></script>
+{isAdminPublisher && <script src="/admin-editor-enhancements.js" defer></script>}
 
 <link rel="canonical" href={canonicalURL} />
 <title>{title}</title>
