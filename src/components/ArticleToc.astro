@@ -1,0 +1,129 @@
+---
+type TocItem = {
+	id: string;
+	text: string;
+	level: 2 | 3;
+};
+
+interface Props {
+	items: TocItem[];
+}
+
+const { items } = Astro.props;
+const visibleItems = items.slice(0, 18);
+---
+
+{visibleItems.length >= 3 && (
+	<nav class="article-toc" aria-labelledby="article-toc-title">
+		<div class="article-toc__header">
+			<strong id="article-toc-title">في هذا المقال</strong>
+			<span>{visibleItems.length} أقسام</span>
+		</div>
+		<ol>
+			{visibleItems.map((item) => (
+				<li data-level={item.level}>
+					<a href={`#${item.id}`}>{item.text}</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+)}
+
+<style>
+	.article-toc {
+		width: min(100%, 920px);
+		margin: clamp(var(--spacing-160), 2.5vw, var(--spacing-240)) auto;
+		padding: clamp(var(--spacing-140, 14px), 2vw, var(--spacing-200));
+		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+		border-radius: var(--radius-large);
+		background: var(--color-neutral-background-2);
+		box-shadow: var(--shadow-2);
+	}
+
+	.article-toc__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-120);
+		margin-bottom: var(--spacing-120);
+		padding-bottom: var(--spacing-100);
+		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.article-toc__header strong {
+		color: var(--color-neutral-foreground-1);
+		font-size: var(--font-size-subtitle-1);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.article-toc__header span {
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
+	}
+
+	.article-toc ol {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-60) var(--spacing-160);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: toc-item;
+	}
+
+	.article-toc li {
+		min-width: 0;
+		counter-increment: toc-item;
+	}
+
+	.article-toc li[data-level='3'] {
+		padding-inline-start: var(--spacing-160);
+	}
+
+	.article-toc a {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: start;
+		gap: var(--spacing-80);
+		padding: var(--spacing-60) var(--spacing-80);
+		border-radius: var(--radius-medium);
+		color: var(--color-neutral-foreground-2);
+		text-decoration: none;
+		line-height: 1.65;
+	}
+
+	.article-toc a::before {
+		content: counter(toc-item, decimal-leading-zero);
+		color: var(--color-neutral-foreground-3);
+		font-family: var(--font-family-monospace);
+		font-size: var(--font-size-caption-1);
+		line-height: 1.8;
+	}
+
+	.article-toc a:hover,
+	.article-toc a:focus-visible {
+		background: var(--color-neutral-background-2-hover);
+		color: var(--color-brand-foreground-link-hover);
+		outline: none;
+	}
+
+	.article-toc a:focus-visible {
+		box-shadow: 0 0 0 2px var(--color-brand-stroke-1);
+	}
+
+	@media (max-width: 700px) {
+		.article-toc {
+			margin-block: var(--spacing-140, 14px);
+			padding: var(--spacing-120);
+			border-radius: var(--radius-medium);
+		}
+
+		.article-toc ol {
+			grid-template-columns: 1fr;
+		}
+
+		.article-toc li[data-level='3'] {
+			padding-inline-start: var(--spacing-100);
+		}
+	}
+</style>
