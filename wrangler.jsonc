@@ -28,8 +28,7 @@
       ],
       "vars": {
         "TURNSTILE_SITEKEY": "0x4AAAAAAELLaYZP_eTDico5",
-        "TURNSTILE_HOSTNAMES": "hakami-q.pages.dev",
-        "REGISTRATION_CLOSED": "1"
+        "TURNSTILE_HOSTNAMES": "hakami-q.pages.dev"
       }
     }
   }
