@@ -21,6 +21,7 @@ name: Fluent UI Quality
       - "src/styles/**"
       - "scripts/blogger-independence-quality.mjs"
       - "scripts/article-rendered-quality.mjs"
+      - "scripts/content-source-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -45,6 +46,7 @@ name: Fluent UI Quality
       - "src/styles/**"
       - "scripts/blogger-independence-quality.mjs"
       - "scripts/article-rendered-quality.mjs"
+      - "scripts/content-source-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -78,8 +80,14 @@ jobs:
       - name: Guard Blogger independence
         run: npm run blogger:independence
 
+      - name: Guard normalized article sources
+        run: npm run content:cleanup:check
+
       - name: Evaluate all article sources
         run: npm run content:quality:report
+
+      - name: Require clean article sources
+        run: npm run content:quality:strict
 
       - name: Evaluate Fluent UI invariants
         run: npm run ui:quality:report
