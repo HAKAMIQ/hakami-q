@@ -70,10 +70,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 24
           cache: npm
@@ -82,7 +82,33 @@ jobs:
         run: npm ci
 
       - name: Audit exploit, injection and backdoor surfaces
-        run: npm run security:audit:report
+        run: |
+          npm run security:audit:report
+          npm run security:audit
+
+      - name: Validate auth and MFA syntax
+        run: |
+          node --check functions/_lib/auth.js
+          node --check functions/_lib/mfa.js
+          node --check functions/_lib/mfa-session.js
+          node --check functions/admin/_middleware.js
+          node --check functions/api/admin/_middleware.js
+          node --check functions/api/auth/_middleware.js
+          node --check 'functions/api/admin/[[path]].js'
+          node --check 'functions/api/auth/[[path]].js'
+          node --check 'functions/api/mfa/[[path]].js'
+
+      - name: Verify password hashing
+        run: node scripts/auth-password-self-test.mjs
+
+      - name: Verify TOTP implementation
+        run: node scripts/mfa-self-test.mjs
+
+      - name: Verify login and privileged middleware
+        run: node scripts/auth-login-middleware-self-test.mjs
+
+      - name: Verify admin account cutover
+        run: node scripts/admin-cutover-self-test.mjs
 
       - name: Guard Blogger independence
         run: npm run blogger:independence
@@ -125,7 +151,7 @@ jobs:
 
       - name: Upload quality and security reports
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: final-site-quality-reports
           path: |
