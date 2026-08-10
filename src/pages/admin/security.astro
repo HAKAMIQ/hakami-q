@@ -1,0 +1,207 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import SkipLink from '../../components/SkipLink.astro';
+import '../../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="أمان الإدارة | HAKAMIQ" description="إعداد حماية حساب إدارة HAKAMIQ." />
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ADMIN SECURITY</p>
+					<h1>أمان الإدارة</h1>
+					<p id="page-status">جاري التحقق من حماية الإدارة…</p>
+				</header>
+
+				<section id="bootstrap-card" class="account-card account-hidden" aria-labelledby="bootstrap-title">
+					<h2 id="bootstrap-title">إنشاء المدير الأول</h2>
+					<p class="account-help">تعمل هذه الخطوة مرة واحدة فقط. سجّل الدخول أولًا بكلمة مرور الإدارة القديمة من لوحة المقالات لإثبات ملكية الموقع.</p>
+					<form id="bootstrap-form" class="account-form">
+						<div class="account-field"><label for="bootstrap-username">اسم المستخدم</label><input id="bootstrap-username" class="account-input" type="text" minlength="3" maxlength="32" autocomplete="username" required /></div>
+						<div class="account-field"><label for="bootstrap-email">البريد الإلكتروني</label><input id="bootstrap-email" class="account-input" type="email" maxlength="254" autocomplete="email" required /></div>
+						<div class="account-field"><label for="bootstrap-password">كلمة المرور</label><input id="bootstrap-password" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required /></div>
+						<div class="account-field"><label for="bootstrap-confirm">تأكيد كلمة المرور</label><input id="bootstrap-confirm" class="account-input" type="password" minlength="12" maxlength="128" autocomplete="new-password" required /></div>
+						<div class="account-actions"><button id="bootstrap-button" class="account-button account-button--primary" type="submit">إنشاء المدير</button><a class="account-button" href="/admin">العودة إلى لوحة المقالات</a></div>
+						<p id="bootstrap-feedback" class="account-feedback account-hidden" role="status"></p>
+					</form>
+				</section>
+
+				<section id="admin-card" class="account-card account-hidden" aria-labelledby="admin-title">
+					<h2 id="admin-title">حساب المدير</h2>
+					<dl class="account-summary"><div><dt>اسم المستخدم</dt><dd id="admin-username">—</dd></div><div><dt>البريد الإلكتروني</dt><dd id="admin-email">—</dd></div></dl>
+					<div class="account-actions"><a class="account-button account-button--primary" href="/admin">إدارة المقالات</a><button id="logout-button" class="account-button account-button--danger" type="button">تسجيل الخروج</button></div>
+				</section>
+
+				<section id="security-card" class="account-card account-hidden" aria-labelledby="security-title">
+					<h2 id="security-title">التحقق بخطوتين</h2>
+					<p id="mfa-state">جاري قراءة الإعدادات…</p>
+					<div id="mfa-start-panel" class="account-form account-hidden">
+						<p class="account-help">الوصول إلى الإدارة يتطلب تطبيق مصادقة. أعد إدخال كلمة مرور المدير لبدء الإعداد.</p>
+						<div class="account-field"><label for="mfa-current-password">كلمة المرور الحالية</label><input id="mfa-current-password" class="account-input" type="password" maxlength="128" autocomplete="current-password" /></div>
+						<div class="account-actions"><button id="mfa-start-button" class="account-button account-button--primary" type="button">بدء التفعيل</button></div>
+					</div>
+					<div id="mfa-setup-panel" class="account-form account-hidden">
+						<p>أضف الحساب إلى تطبيق TOTP مثل Google Authenticator أو Microsoft Authenticator.</p>
+						<div class="account-field"><span class="account-field-label">المفتاح اليدوي</span><code id="mfa-secret" class="account-secret" dir="ltr"></code></div>
+						<div class="account-actions"><a id="mfa-open-app" class="account-button" href="#">فتح في تطبيق المصادقة</a></div>
+						<div class="account-field"><label for="mfa-confirm-code">رمز التطبيق</label><input id="mfa-confirm-code" class="account-input" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000" /></div>
+						<div class="account-actions"><button id="mfa-confirm-button" class="account-button account-button--primary" type="button">تأكيد وتفعيل</button></div>
+					</div>
+					<div id="mfa-enabled-panel" class="account-form account-hidden">
+						<p id="mfa-enabled-text">التحقق بخطوتين مفعّل.</p>
+						<div class="account-field"><label for="mfa-regenerate-code">لإنشاء رموز استرداد جديدة، أدخل رمز التطبيق الحالي أو رمز استرداد صالح</label><input id="mfa-regenerate-code" class="account-input" type="text" maxlength="20" autocomplete="one-time-code" /></div>
+						<div class="account-actions"><button id="mfa-regenerate-button" class="account-button" type="button">إنشاء رموز استرداد جديدة</button></div>
+					</div>
+					<div id="recovery-panel" class="account-recovery account-hidden" aria-live="polite"><h3>رموز الاسترداد</h3><p><strong>احفظ هذه الرموز الآن.</strong> كل رمز يعمل مرة واحدة.</p><div id="recovery-codes" class="account-recovery-codes" dir="ltr"></div><div id="reauth-actions" class="account-actions account-hidden"><a class="account-button account-button--primary" href="/login?next=/admin/security">تسجيل الدخول من جديد</a></div></div>
+					<p id="mfa-feedback" class="account-feedback account-hidden" role="status"></p>
+				</section>
+			</div>
+		</main>
+		<Footer />
+
+		<script>
+			const byId = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
+			const pageStatus = byId<HTMLElement>('page-status');
+			const bootstrapCard = byId<HTMLElement>('bootstrap-card');
+			const bootstrapForm = byId<HTMLFormElement>('bootstrap-form');
+			const bootstrapFeedback = byId<HTMLElement>('bootstrap-feedback');
+			const bootstrapButton = byId<HTMLButtonElement>('bootstrap-button');
+			const adminCard = byId<HTMLElement>('admin-card');
+			const adminUsername = byId<HTMLElement>('admin-username');
+			const adminEmail = byId<HTMLElement>('admin-email');
+			const logout = byId<HTMLButtonElement>('logout-button');
+			const securityCard = byId<HTMLElement>('security-card');
+			const mfaState = byId<HTMLElement>('mfa-state');
+			const mfaStartPanel = byId<HTMLElement>('mfa-start-panel');
+			const mfaSetupPanel = byId<HTMLElement>('mfa-setup-panel');
+			const mfaEnabledPanel = byId<HTMLElement>('mfa-enabled-panel');
+			const mfaCurrentPassword = byId<HTMLInputElement>('mfa-current-password');
+			const mfaStartButton = byId<HTMLButtonElement>('mfa-start-button');
+			const mfaSecret = byId<HTMLElement>('mfa-secret');
+			const mfaOpenApp = byId<HTMLAnchorElement>('mfa-open-app');
+			const mfaConfirmCode = byId<HTMLInputElement>('mfa-confirm-code');
+			const mfaConfirmButton = byId<HTMLButtonElement>('mfa-confirm-button');
+			const mfaEnabledText = byId<HTMLElement>('mfa-enabled-text');
+			const mfaRegenerateCode = byId<HTMLInputElement>('mfa-regenerate-code');
+			const mfaRegenerateButton = byId<HTMLButtonElement>('mfa-regenerate-button');
+			const recoveryPanel = byId<HTMLElement>('recovery-panel');
+			const recoveryCodes = byId<HTMLElement>('recovery-codes');
+			const reauthActions = byId<HTMLElement>('reauth-actions');
+			const mfaFeedback = byId<HTMLElement>('mfa-feedback');
+
+			function message(element: HTMLElement | null, text: string, kind = '') {
+				if (!element) return;
+				element.textContent = text;
+				element.dataset.kind = kind;
+				element.classList.toggle('account-hidden', !text);
+			}
+
+			async function api(path: string, options: RequestInit = {}) {
+				const response = await fetch(path, { credentials: 'same-origin', headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options });
+				const payload = await response.json().catch(() => ({}));
+				if (!response.ok) throw new Error(payload.error || 'تعذر تنفيذ الطلب.');
+				return payload;
+			}
+
+			function showRecovery(codes: unknown, reauth = false) {
+				if (!recoveryCodes || !recoveryPanel) return;
+				recoveryCodes.replaceChildren();
+				for (const code of Array.isArray(codes) ? codes : []) { const item = document.createElement('code'); item.textContent = String(code); recoveryCodes.append(item); }
+				recoveryPanel.classList.remove('account-hidden');
+				reauthActions?.classList.toggle('account-hidden', !reauth);
+			}
+
+			async function loadMfa() {
+				securityCard?.classList.remove('account-hidden');
+				const payload = await api('/api/mfa/status', { method: 'GET' });
+				if (!payload.enabled) {
+					if (mfaState) mfaState.textContent = 'التحقق بخطوتين غير مفعّل. لن تفتح لوحة الإدارة قبل تفعيله.';
+					mfaStartPanel?.classList.remove('account-hidden');
+					mfaEnabledPanel?.classList.add('account-hidden');
+					return;
+				}
+				mfaStartPanel?.classList.add('account-hidden');
+				mfaSetupPanel?.classList.add('account-hidden');
+				mfaEnabledPanel?.classList.remove('account-hidden');
+				if (mfaState) mfaState.textContent = payload.sessionVerified ? 'التحقق بخطوتين مفعّل والجلسة الحالية موثقة.' : 'التحقق بخطوتين مفعّل.';
+				if (mfaEnabledText) mfaEnabledText.textContent = `رموز الاسترداد المتبقية: ${Number(payload.recoveryCodesRemaining || 0)}`;
+			}
+
+			async function initialize() {
+				try {
+					const boot = await api('/api/auth/bootstrap-status', { method: 'GET' });
+					if (boot.needsBootstrap) {
+						if (pageStatus) pageStatus.textContent = 'يلزم إنشاء حساب المدير الأول.';
+						bootstrapCard?.classList.remove('account-hidden');
+						return;
+					}
+					const session = await api('/api/auth/session', { method: 'GET' });
+					if (!session.authenticated || session.user?.role !== 'admin') { window.location.replace('/login?next=/admin/security'); return; }
+					if (adminUsername) adminUsername.textContent = session.user.username || '—';
+					if (adminEmail) adminEmail.textContent = session.user.email || '—';
+					if (pageStatus) pageStatus.textContent = 'إعدادات حماية حساب المدير.';
+					adminCard?.classList.remove('account-hidden');
+					await loadMfa();
+				} catch (error) {
+					if (pageStatus) pageStatus.textContent = error instanceof Error ? error.message : 'تعذر تحميل إعدادات الحماية.';
+				}
+			}
+
+			bootstrapForm?.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				const username = byId<HTMLInputElement>('bootstrap-username'); const email = byId<HTMLInputElement>('bootstrap-email'); const password = byId<HTMLInputElement>('bootstrap-password'); const confirm = byId<HTMLInputElement>('bootstrap-confirm');
+				if (!username || !email || !password || !confirm || !bootstrapButton) return;
+				if (password.value !== confirm.value) { message(bootstrapFeedback, 'كلمتا المرور غير متطابقتين.', 'error'); return; }
+				bootstrapButton.disabled = true;
+				try {
+					await api('/api/auth/bootstrap-admin', { method: 'POST', body: JSON.stringify({ username: username.value, email: email.value, password: password.value }) });
+					window.location.replace('/admin/security');
+				} catch (error) { message(bootstrapFeedback, error instanceof Error ? error.message : 'تعذر إنشاء المدير.', 'error'); }
+				finally { bootstrapButton.disabled = false; }
+			});
+
+			mfaStartButton?.addEventListener('click', async () => {
+				if (!mfaCurrentPassword || !mfaStartButton) return;
+				mfaStartButton.disabled = true; message(mfaFeedback, 'جاري إنشاء إعداد التحقق…');
+				try {
+					const payload = await api('/api/mfa/setup-start', { method: 'POST', body: JSON.stringify({ password: mfaCurrentPassword.value }) });
+					mfaCurrentPassword.value = ''; if (mfaSecret) mfaSecret.textContent = payload.secret || ''; if (mfaOpenApp) mfaOpenApp.href = payload.otpauthUri || '#';
+					mfaStartPanel?.classList.add('account-hidden'); mfaSetupPanel?.classList.remove('account-hidden'); message(mfaFeedback, 'أدخل الرمز الظاهر في تطبيق المصادقة.');
+				} catch (error) { message(mfaFeedback, error instanceof Error ? error.message : 'تعذر بدء الإعداد.', 'error'); }
+				finally { mfaStartButton.disabled = false; }
+			});
+
+			mfaConfirmButton?.addEventListener('click', async () => {
+				if (!mfaConfirmCode || !mfaConfirmButton) return;
+				mfaConfirmButton.disabled = true;
+				try {
+					const payload = await api('/api/mfa/setup-confirm', { method: 'POST', body: JSON.stringify({ code: mfaConfirmCode.value.trim() }) });
+					showRecovery(payload.recoveryCodes, true); message(mfaFeedback, 'تم تفعيل التحقق بخطوتين. احفظ رموز الاسترداد ثم سجّل الدخول من جديد.', 'success');
+					mfaSetupPanel?.classList.add('account-hidden');
+				} catch (error) { message(mfaFeedback, error instanceof Error ? error.message : 'تعذر تأكيد الرمز.', 'error'); }
+				finally { mfaConfirmButton.disabled = false; }
+			});
+
+			mfaRegenerateButton?.addEventListener('click', async () => {
+				if (!mfaRegenerateCode || !mfaRegenerateButton) return;
+				mfaRegenerateButton.disabled = true;
+				try { const payload = await api('/api/mfa/recovery-regenerate', { method: 'POST', body: JSON.stringify({ code: mfaRegenerateCode.value.trim() }) }); mfaRegenerateCode.value = ''; showRecovery(payload.recoveryCodes); message(mfaFeedback, 'تم إنشاء رموز استرداد جديدة.', 'success'); }
+				catch (error) { message(mfaFeedback, error instanceof Error ? error.message : 'تعذر إنشاء الرموز.', 'error'); }
+				finally { mfaRegenerateButton.disabled = false; }
+			});
+
+			logout?.addEventListener('click', async () => { try { await api('/api/auth/logout', { method: 'POST', body: '{}' }); } finally { window.location.replace('/login?next=/admin'); } });
+			initialize();
+		</script>
+	</body>
+</html>
