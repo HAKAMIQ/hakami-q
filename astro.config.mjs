@@ -29,12 +29,9 @@ export default defineConfig({
 				const pathname = new URL(page).pathname;
 				const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/+$/g, '');
 				if (legacyAliasPaths.has(normalizedPathname)) return false;
-				return ![
-					'/admin',
-					'/account',
-					'/login',
-					'/register',
-				].some((route) => pathname === route || pathname.startsWith(`${route}/`));
+				return !['/admin', '/login'].some(
+					(route) => pathname === route || pathname.startsWith(`${route}/`),
+				);
 			},
 		}),
 	],
