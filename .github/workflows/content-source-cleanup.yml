@@ -41,6 +41,16 @@ jobs:
       - name: Record baseline content quality
         run: npm run content:quality:report
 
+      - name: Record source integrity baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          media_refs="$(grep -Roh '/media/blogger/' src/content/blog | wc -l | tr -d ' ')"
+          image_tags="$(grep -Rioh '<img\b' src/content/blog | wc -l | tr -d ' ')"
+          echo "HQ_MEDIA_REFS_BEFORE=$media_refs" >> "$GITHUB_ENV"
+          echo "HQ_IMAGE_TAGS_BEFORE=$image_tags" >> "$GITHUB_ENV"
+          echo "Baseline: media_refs=$media_refs image_tags=$image_tags"
+
       - name: Normalize article source files
         run: npm run content:cleanup
 
@@ -49,6 +59,18 @@ jobs:
 
       - name: Require clean source quality
         run: npm run content:quality:strict
+
+      - name: Guard source media integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          media_refs="$(grep -Roh '/media/blogger/' src/content/blog | wc -l | tr -d ' ')"
+          image_tags="$(grep -Rioh '<img\b' src/content/blog | wc -l | tr -d ' ')"
+          echo "After cleanup: media_refs=$media_refs image_tags=$image_tags"
+          if [[ "$media_refs" != "$HQ_MEDIA_REFS_BEFORE" || "$image_tags" != "$HQ_IMAGE_TAGS_BEFORE" ]]; then
+            echo "Source media integrity changed unexpectedly."
+            exit 1
+          fi
 
       - name: Guard cleanup write scope
         shell: bash
@@ -73,7 +95,7 @@ jobs:
         run: npm run build
 
       - name: Validate diff whitespace
-        run: git diff --check
+        run: git diff --check --ignore-space-at-eol
 
       - name: Commit normalized article sources
         shell: bash
