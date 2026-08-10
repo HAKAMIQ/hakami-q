@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { categoryDefinitions, formatArabicDate, getPostCategories } from '../data/blog-taxonomy';
+import ArticleShare from './ArticleShare.astro';
 
 interface Props {
 	post: CollectionEntry<'blog'>;
@@ -39,6 +40,8 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 	? chronologicalPosts[currentIndex + 1]
 	: null;
 ---
+
+<ArticleShare title={post.data.title} description={post.data.description} />
 
 <section class="article-discovery" aria-labelledby="article-discovery-title">
 	<header class="article-discovery__header">
