@@ -22,6 +22,7 @@ name: Fluent UI Quality
       - "scripts/blogger-independence-quality.mjs"
       - "scripts/article-rendered-quality.mjs"
       - "scripts/content-source-cleanup.mjs"
+      - "scripts/content-legacy-markup-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -47,6 +48,7 @@ name: Fluent UI Quality
       - "scripts/blogger-independence-quality.mjs"
       - "scripts/article-rendered-quality.mjs"
       - "scripts/content-source-cleanup.mjs"
+      - "scripts/content-legacy-markup-cleanup.mjs"
       - "scripts/content-quality.mjs"
       - "scripts/fluent-ui-quality.mjs"
       - "scripts/header-utility-quality.mjs"
@@ -82,6 +84,9 @@ jobs:
 
       - name: Guard normalized article sources
         run: npm run content:cleanup:check
+
+      - name: Guard clean legacy article markup
+        run: npm run content:legacy-cleanup:check
 
       - name: Evaluate all article sources
         run: npm run content:quality:report
