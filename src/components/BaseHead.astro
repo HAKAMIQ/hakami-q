@@ -27,7 +27,7 @@ const isBlogArchiveRoute =
 	pathname.startsWith('/blog/category/') ||
 	pathname.startsWith('/blog/page/');
 const inferredType = pathname.startsWith('/blog/') && !isBlogArchiveRoute ? 'article' : 'website';
-const noIndexRoutes = ['/admin', '/account', '/login', '/register'];
+const noIndexRoutes = ['/admin', '/login'];
 const shouldNoIndex = noIndexRoutes.some(
 	(route) => pathname === route || pathname === `${route}/` || pathname.startsWith(`${route}/`),
 );
@@ -44,10 +44,7 @@ const {
 } = Astro.props;
 const normalizedCanonicalPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
 const canonicalURL = new URL(normalizedCanonicalPath, siteURL);
-const imageURL =
-	typeof image === 'string'
-		? new URL(image, siteURL)
-		: new URL(image.src, siteURL);
+const imageURL = typeof image === 'string' ? new URL(image, siteURL) : new URL(image.src, siteURL);
 
 const websiteSchema = {
 	'@context': 'https://schema.org',
