@@ -1,5 +1,6 @@
 PRAGMA foreign_keys = ON;
 
+-- Internal administrator identity store. Public member registration is intentionally unsupported.
 CREATE TABLE IF NOT EXISTS users (
     id TEXT PRIMARY KEY,
     username TEXT NOT NULL,
@@ -7,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
     email TEXT NOT NULL,
     email_key TEXT NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
-    role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('user', 'moderator', 'admin')),
+    role TEXT NOT NULL DEFAULT 'admin' CHECK (role = 'admin'),
     status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'suspended')),
     failed_login_count INTEGER NOT NULL DEFAULT 0,
     locked_until TEXT,
