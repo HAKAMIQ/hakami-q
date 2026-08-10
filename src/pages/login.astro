@@ -20,10 +20,17 @@ import '../styles/account-system.css';
 				<header class="account-heading">
 					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
 					<h1>تسجيل الدخول</h1>
-					<p>استخدم اسم المستخدم أو البريد الإلكتروني.</p>
+					<p>استخدم حساب Google أو اسم المستخدم والبريد الإلكتروني.</p>
 				</header>
 				<section class="account-card" aria-labelledby="login-title">
 					<h2 id="login-title">دخول الحساب</h2>
+
+					<div id="google-login-panel" class="account-form account-hidden" aria-label="تسجيل الدخول بحساب Google">
+						<div id="google-signin-button" class="account-google-button"></div>
+						<p id="google-feedback" class="account-feedback account-hidden" role="status"></p>
+					</div>
+					<div id="google-divider" class="account-divider account-hidden" aria-hidden="true"><span>أو</span></div>
+
 					<form id="login-form" class="account-form">
 						<div class="account-field">
 							<label for="identifier">اسم المستخدم أو البريد الإلكتروني</label>
@@ -53,12 +60,19 @@ import '../styles/account-system.css';
 						<p id="mfa-feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
 
-					<p class="account-links">ليس لديك حساب؟ <a href="/register">إنشاء حساب</a></p>
+					<p class="account-links">ليس لديك حساب؟ <a href="/register">إنشاء حساب</a> · <a href="/account/google">ربط حساب Google بحسابك الحالي</a></p>
 				</section>
 			</div>
 		</main>
 		<Footer />
 		<script>
+			type GoogleCredentialResponse = { credential?: string };
+			type GoogleIdentityApi = {
+				initialize: (config: { client_id: string; callback: (response: GoogleCredentialResponse) => void; auto_select?: boolean }) => void;
+				renderButton: (element: HTMLElement, options: Record<string, string | number | boolean>) => void;
+				disableAutoSelect?: () => void;
+			};
+
 			const form = document.querySelector<HTMLFormElement>('#login-form');
 			const identifier = document.querySelector<HTMLInputElement>('#identifier');
 			const password = document.querySelector<HTMLInputElement>('#password');
@@ -70,7 +84,12 @@ import '../styles/account-system.css';
 			const mfaSubmit = document.querySelector<HTMLButtonElement>('#mfa-submit');
 			const mfaCancel = document.querySelector<HTMLButtonElement>('#mfa-cancel');
 			const mfaFeedback = document.querySelector<HTMLElement>('#mfa-feedback');
+			const googlePanel = document.querySelector<HTMLElement>('#google-login-panel');
+			const googleButton = document.querySelector<HTMLElement>('#google-signin-button');
+			const googleFeedback = document.querySelector<HTMLElement>('#google-feedback');
+			const googleDivider = document.querySelector<HTMLElement>('#google-divider');
 			let mfaToken = '';
+			let googleScriptLoading = false;
 
 			function showOn(element: HTMLElement | null, message: string, kind = '') {
 				if (!element) return;
@@ -104,7 +123,10 @@ import '../styles/account-system.css';
 				mfaToken = token;
 				if (password) password.value = '';
 				show('');
+				showOn(googleFeedback, '');
 				form?.classList.add('account-hidden');
+				googlePanel?.classList.add('account-hidden');
+				googleDivider?.classList.add('account-hidden');
 				mfaForm?.classList.remove('account-hidden');
 				showOn(mfaFeedback, 'أدخل رمز التحقق لإكمال تسجيل الدخول.');
 				mfaCode?.focus();
@@ -116,11 +138,95 @@ import '../styles/account-system.css';
 				showOn(mfaFeedback, '');
 				mfaForm?.classList.add('account-hidden');
 				form?.classList.remove('account-hidden');
+				if (googleButton?.childElementCount) {
+					googlePanel?.classList.remove('account-hidden');
+					googleDivider?.classList.remove('account-hidden');
+				}
 				resetTurnstile();
 				password?.focus();
 			}
 
-			async function initializeSecurity() {
+			function finishLogin(response: Response, payload: Record<string, unknown>) {
+				if (response.status === 202 && payload.mfaRequired && payload.mfaToken) {
+					enterMfaStep(String(payload.mfaToken));
+					return true;
+				}
+				window.location.assign(safeNextPath());
+				return true;
+			}
+
+			async function handleGoogleCredential(response: GoogleCredentialResponse) {
+				const credential = String(response?.credential || '');
+				if (!credential) {
+					showOn(googleFeedback, 'لم يصل رمز تسجيل الدخول من Google.', 'error');
+					return;
+				}
+				showOn(googleFeedback, 'جاري التحقق من حساب Google…');
+				try {
+					const result = await fetch('/api/google/login', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ credential }),
+					});
+					const payload = await result.json().catch(() => ({}));
+					if (!result.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول بحساب Google.');
+					finishLogin(result, payload);
+				} catch (error) {
+					showOn(googleFeedback, error instanceof Error ? error.message : 'تعذر تسجيل الدخول بحساب Google.', 'error');
+				}
+			}
+
+			function googleApi() {
+				return (window as typeof window & { google?: { accounts?: { id?: GoogleIdentityApi } } }).google?.accounts?.id;
+			}
+
+			async function initializeGoogle() {
+				if (!googlePanel || !googleButton || googleScriptLoading) return;
+				try {
+					const response = await fetch('/api/google/config', { credentials: 'same-origin' });
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok || !payload.enabled || !payload.clientId) return;
+					googleScriptLoading = true;
+					const script = document.createElement('script');
+					script.src = 'https://accounts.google.com/gsi/client?hl=ar';
+					script.async = true;
+					script.defer = true;
+					script.addEventListener('load', () => {
+						googleScriptLoading = false;
+						const api = googleApi();
+						if (!api) {
+							showOn(googleFeedback, 'تعذر تهيئة تسجيل الدخول بحساب Google.', 'error');
+							return;
+						}
+						api.initialize({
+							client_id: String(payload.clientId),
+							callback: handleGoogleCredential,
+							auto_select: false,
+						});
+						googleButton.replaceChildren();
+						api.renderButton(googleButton, {
+							theme: 'outline',
+							size: 'large',
+							shape: 'rectangular',
+							text: 'signin_with',
+							locale: 'ar',
+							width: 320,
+						});
+						googlePanel.classList.remove('account-hidden');
+						googleDivider?.classList.remove('account-hidden');
+					}, { once: true });
+					script.addEventListener('error', () => {
+						googleScriptLoading = false;
+						showOn(googleFeedback, 'تعذر تحميل خدمة تسجيل الدخول من Google.', 'error');
+					}, { once: true });
+					document.head.append(script);
+				} catch {
+					// يبقى تسجيل الدخول التقليدي متاحًا عند تعذر تهيئة Google.
+				}
+			}
+
+			async function initializeTurnstile() {
 				try {
 					const response = await fetch('/api/auth/config', { credentials: 'same-origin' });
 					const payload = await response.json().catch(() => ({}));
@@ -160,11 +266,7 @@ import '../styles/account-system.css';
 					});
 					const payload = await response.json().catch(() => ({}));
 					if (!response.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول.');
-					if (response.status === 202 && payload.mfaRequired && payload.mfaToken) {
-						enterMfaStep(String(payload.mfaToken));
-						return;
-					}
-					window.location.assign(safeNextPath());
+					finishLogin(response, payload);
 				} catch (error) {
 					show(error instanceof Error ? error.message : 'تعذر تسجيل الدخول.', 'error');
 					resetTurnstile();
@@ -206,7 +308,8 @@ import '../styles/account-system.css';
 			});
 
 			mfaCancel?.addEventListener('click', leaveMfaStep);
-			initializeSecurity();
+			initializeGoogle();
+			initializeTurnstile();
 		</script>
 	</body>
 </html>
