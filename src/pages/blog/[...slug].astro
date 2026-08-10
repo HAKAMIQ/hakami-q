@@ -2,6 +2,8 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import ArticleDiscovery from '../../components/ArticleDiscovery.astro';
 import ArticleSeo from '../../components/ArticleSeo.astro';
+import ArticleToc from '../../components/ArticleToc.astro';
+import { categoryDefinitions, getPostCategories } from '../../data/blog-taxonomy';
 import BlogPost from '../../layouts/BlogPost.astro';
 import '../../styles/article-content-compat.css';
 
@@ -14,6 +16,7 @@ export async function getStaticPaths() {
 }
 
 type Props = CollectionEntry<'blog'>;
+type TocItem = { id: string; text: string; level: 2 | 3 };
 
 const post = Astro.props;
 (Astro.locals as { seoImage?: CollectionEntry<'blog'>['data']['heroImage'] | string }).seoImage =
@@ -23,6 +26,23 @@ const allPosts = (await getCollection('blog')).sort(
 );
 const rawBody = post.body ?? '';
 const ARTICLE_STYLE_SCOPE_MARKER = '/* HAKAMIQ_ARTICLE_SCOPE */';
+const broadCategorySlugs = new Set([
+	'nintendo',
+	'nintendo-handhelds',
+	'playstation',
+	'playstation-handhelds',
+	'xbox',
+	'sega',
+	'other-consoles',
+	'multi-system',
+]);
+const postCategorySlugs = getPostCategories(post);
+const primaryCategory =
+	categoryDefinitions.find(
+		(category) => postCategorySlugs.includes(category.slug) && !broadCategorySlugs.has(category.slug),
+	) ??
+	categoryDefinitions.find((category) => postCategorySlugs.includes(category.slug)) ??
+	null;
 
 function decodeEntities(value: string) {
 	return value
@@ -44,8 +64,14 @@ function escapeAttribute(value: string) {
 		.replace(/>/g, '&gt;');
 }
 
-function comparableHeading(value: string) {
+function plainText(value: string) {
 	return decodeEntities(value.replace(/<[^>]+>/g, ' '))
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+function comparableHeading(value: string) {
+	return plainText(value)
 		.normalize('NFKC')
 		.replace(/[\u064B-\u065F\u0670]/g, '')
 		.replace(/[أإآ]/g, 'ا')
@@ -53,6 +79,17 @@ function comparableHeading(value: string) {
 		.replace(/[^\p{L}\p{N}]+/gu, ' ')
 		.trim()
 		.toLocaleLowerCase('ar');
+}
+
+function headingSlug(value: string, fallbackIndex: number) {
+	const slug = plainText(value)
+		.normalize('NFKC')
+		.toLocaleLowerCase('ar')
+		.replace(/[\u064B-\u065F\u0670]/g, '')
+		.replace(/[^\p{L}\p{N}]+/gu, '-')
+		.replace(/^-+|-+$/g, '')
+		.slice(0, 96);
+	return slug || `section-${fallbackIndex}`;
 }
 
 function removeDuplicateArticleHeading(html: string, title: string) {
@@ -88,11 +125,6 @@ function scopeLegacyStyleBlocks(html: string) {
 		const source = String(css);
 		if (source.includes('HAKAMIQ_ARTICLE_SCOPE')) return full;
 
-		// Imported themes may use :root variables and broad selectors such as p,
-		// h2 or code. Keep those rules useful inside the article without allowing
-		// them to restyle the site header, navigation or footer. Legacy !important
-		// flags are intentionally softened so the site compatibility contract can
-		// guarantee contrast and media sizing.
 		const scopedCss = source
 			.replace(/\s*!important\b/gi, '')
 			.replace(/:root\b/gi, ':scope');
@@ -108,18 +140,60 @@ function softenInlineLegacyPriorities(html: string) {
 	});
 }
 
-function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
-	let result = html.replace(/^\s*---\s*$/gm, '<hr />');
+function ensureHeadingIds(html: string) {
+	const usedIds = new Set<string>();
+	let headingIndex = 0;
 
-	// The page template owns the page landmark and H1. Preserve legacy content
-	// while preventing nested <main> landmarks or secondary page-level H1s.
+	return html.replace(/<h([2-4])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (full, rawLevel, rawAttributes, inner) => {
+		const text = plainText(inner);
+		if (!text) return full;
+
+		headingIndex += 1;
+		let attributes = String(rawAttributes ?? '');
+		const idMatch = attributes.match(/\bid\s*=\s*(["'])([^"']+)\1/i);
+		let id = idMatch?.[2] || headingSlug(text, headingIndex);
+		const baseId = id;
+		let suffix = 2;
+		while (usedIds.has(id)) id = `${baseId}-${suffix++}`;
+		usedIds.add(id);
+
+		if (idMatch) {
+			attributes = attributes.replace(idMatch[0], `id="${escapeAttribute(id)}"`);
+		} else {
+			attributes += ` id="${escapeAttribute(id)}"`;
+		}
+
+		return `<h${rawLevel}${attributes}>${inner}</h${rawLevel}>`;
+	});
+}
+
+function extractTocItems(html: string): TocItem[] {
+	return [...html.matchAll(/<h([23])\b[^>]*\bid=["']([^"']+)["'][^>]*>([\s\S]*?)<\/h\1>/gi)]
+		.map((match) => ({
+			id: decodeEntities(match[2]),
+			text: plainText(match[3]),
+			level: Number(match[1]) as 2 | 3,
+		}))
+		.filter((item) => item.text.length > 0);
+}
+
+function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
+	let result = html
+		.replace(/^\s*---\s*$/gm, '<hr />')
+		.replace(/<p\b[^>]*>(?:\s|&nbsp;|<br\s*\/?\s*>)*<\/p>/gi, '')
+		.replace(/(?:<br\s*\/?\s*>\s*){4,}/gi, '<br /><br />');
+
+	// The page template owns the page landmark and H1. Preserve the article's
+	// inner structure while removing invalid nested page-level semantics.
 	result = result
 		.replace(/<main\b([^>]*)>/gi, '<div$1>')
 		.replace(/<\/main>/gi, '</div>')
 		.replace(/<h1\b([^>]*)>/gi, '<h2$1>')
 		.replace(/<\/h1>/gi, '</h2>');
 
+	let imageIndex = 0;
 	result = result.replace(/<img\b[^>]*>/gi, (tag) => {
+		const currentImageIndex = imageIndex++;
 		let normalized = tag.replace(
 			/(\bsrc\s*=\s*["'])(https:\/\/blogger\.googleusercontent\.com\/[^"']+)(["'])/i,
 			(_match, prefix, url, suffix) => {
@@ -131,21 +205,38 @@ function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 			},
 		);
 
-		if (!/\balt\s*=/i.test(normalized)) {
+		const altMatch = normalized.match(/\balt\s*=\s*(["'])([^"']*)\1/i);
+		if (!altMatch || !plainText(altMatch[2])) {
 			const titleAttribute = normalized.match(/\btitle\s*=\s*["']([^"']+)["']/i)?.[1];
-			const fallback = titleAttribute
-				? decodeEntities(titleAttribute)
-				: `صورة توضيحية ضمن مقال ${articleTitle}`;
-			normalized = normalized.replace(/^<img\b/i, `<img alt="${escapeAttribute(fallback)}"`);
+			const fallback = titleAttribute && plainText(titleAttribute)
+				? plainText(titleAttribute)
+				: `صورة من مقال ${articleTitle}`;
+			if (altMatch) {
+				normalized = normalized.replace(altMatch[0], `alt="${escapeAttribute(fallback)}"`);
+			} else {
+				normalized = normalized.replace(/^<img\b/i, `<img alt="${escapeAttribute(fallback)}"`);
+			}
 		}
-		if (!/\bloading\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img loading="lazy"');
+
+		// Keep the first article image eligible for early loading; defer the rest.
+		if (currentImageIndex > 0 && !/\bloading\s*=/i.test(normalized)) {
+			normalized = normalized.replace(/^<img\b/i, '<img loading="lazy"');
+		}
 		if (!/\bdecoding\s*=/i.test(normalized)) normalized = normalized.replace(/^<img\b/i, '<img decoding="async"');
 		return normalized;
 	});
 
 	result = result.replace(/<iframe\b[^>]*>/gi, (tag) => {
-		if (/\bloading\s*=/i.test(tag)) return tag;
-		return tag.replace(/^<iframe\b/i, '<iframe loading="lazy"');
+		let normalized = tag;
+		if (!/\bloading\s*=/i.test(normalized)) normalized = normalized.replace(/^<iframe\b/i, '<iframe loading="lazy"');
+		if (!/\btitle\s*=/i.test(normalized)) {
+			const src = normalized.match(/\bsrc\s*=\s*["']([^"']+)["']/i)?.[1] ?? '';
+			const label = /youtube(?:-nocookie)?\.com|youtu\.be/i.test(src)
+				? `فيديو ضمن مقال ${articleTitle}`
+				: `محتوى مضمن ضمن مقال ${articleTitle}`;
+			normalized = normalized.replace(/^<iframe\b/i, `<iframe title="${escapeAttribute(label)}"`);
+		}
+		return normalized;
 	});
 
 	result = result.replace(/<a\b[^>]*\btarget\s*=\s*["']_blank["'][^>]*>/gi, (tag) => {
@@ -159,6 +250,7 @@ function normalizeLegacyArticleMarkup(html: string, articleTitle: string) {
 
 	result = scopeLegacyStyleBlocks(result);
 	result = softenInlineLegacyPriorities(result);
+	result = ensureHeadingIds(result);
 
 	return result;
 }
@@ -167,10 +259,12 @@ const renderedBody = normalizeLegacyArticleMarkup(
 	removeDuplicateArticleHeading(rawBody, post.data.title),
 	post.data.title,
 );
+const tocItems = extractTocItems(renderedBody);
 ---
 
 <BlogPost {...post.data}>
-	<ArticleSeo {...post.data} />
+	<ArticleSeo {...post.data} primaryCategory={primaryCategory} />
+	<ArticleToc items={tocItems} />
 	<div class="article-compat-root" data-hq-article-compat="v1">
 		<Fragment set:html={renderedBody} />
 	</div>
