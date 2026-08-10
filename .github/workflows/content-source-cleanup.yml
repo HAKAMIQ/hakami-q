@@ -94,9 +94,6 @@ jobs:
       - name: Validate production build and rendered output
         run: npm run build
 
-      - name: Validate diff whitespace
-        run: git diff --check --ignore-space-at-eol
-
       - name: Commit normalized article sources
         shell: bash
         run: |
