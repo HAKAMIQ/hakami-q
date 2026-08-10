@@ -72,6 +72,16 @@ function normalize(value = '') {
     .toLocaleLowerCase('ar');
 }
 
+function stripLiteralBlocks(value = '') {
+  return value
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/~~~[\s\S]*?~~~/g, '')
+    .replace(/<pre\b[\s\S]*?<\/pre>/gi, '')
+    .replace(/<code\b[\s\S]*?<\/code>/gi, '')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, '')
+    .replace(/<!--([\s\S]*?)-->/g, '');
+}
+
 function addIssue(file, severity, code, message, details = {}) {
   issues.push({ file, severity, code, message, ...details });
 }
@@ -101,7 +111,7 @@ function evaluateFile(relativeFile, document) {
   const { title, description, body } = document;
   const titleNormalized = normalize(title);
   const descriptionNormalized = normalize(description);
-  const bodyWithoutCode = body.replace(/```[\s\S]*?```/g, '');
+  const inspectableBody = stripLiteralBlocks(body);
 
   if (!titleNormalized) addIssue(relativeFile, 'error', 'missing-title', 'عنوان المقال مفقود.');
   if (!descriptionNormalized) addIssue(relativeFile, 'error', 'missing-description', 'ملخص المقال مفقود.');
@@ -121,7 +131,7 @@ function evaluateFile(relativeFile, document) {
     addIssue(relativeFile, 'warning', 'description-too-long', 'الملخص طويل؛ وظيفته تقديم الموضوع قبل فتح المقال وليس إعادة المحتوى.', { length: description.length });
   }
 
-  const headings = extractHeadings(body);
+  const headings = extractHeadings(inspectableBody);
   const duplicateTitleHeadings = headings.filter((heading) => normalize(heading.text) === titleNormalized);
   if (titleNormalized && duplicateTitleHeadings.length > 0) {
     addIssue(relativeFile, 'warning', 'duplicate-page-title', 'عنوان الصفحة مكرر داخل محتوى المقال. القاعدة: عنوان المقال ثم المحتوى الكامل مباشرة.', { count: duplicateTitleHeadings.length });
@@ -132,21 +142,21 @@ function evaluateFile(relativeFile, document) {
     addIssue(relativeFile, 'warning', 'body-h1', 'المحتوى يحتوي H1 إضافيًا بينما قالب المقال يوفر H1 واحدًا.', { count: bodyH1Count });
   }
 
-  const duplicateParagraphs = findDuplicateParagraphs(body);
+  const duplicateParagraphs = findDuplicateParagraphs(inspectableBody);
   if (duplicateParagraphs.length > 0) {
     addIssue(relativeFile, 'warning', 'duplicate-paragraph', 'يوجد نص طويل مكرر داخل المقال ويحتاج مراجعة.', { groups: duplicateParagraphs.length });
   }
 
-  const images = [...body.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
+  const images = [...inspectableBody.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
   const imagesWithoutAlt = images.filter((tag) => !/\balt\s*=\s*["'][^"']*["']/i.test(tag)).length;
   if (imagesWithoutAlt > 0) {
     addIssue(relativeFile, 'warning', 'image-alt-missing', 'توجد صور بدون نص بديل alt.', { count: imagesWithoutAlt });
   }
 
-  if (/<script\b/i.test(bodyWithoutCode)) {
+  if (/<script\b/i.test(inspectableBody)) {
     addIssue(relativeFile, 'error', 'script-tag', 'لا يسمح بوسوم script داخل محتوى المقالات.');
   }
-  if (/\b(?:href|src)\s*=\s*["']\s*javascript:/i.test(bodyWithoutCode)) {
+  if (/\b(?:href|src)\s*=\s*["']\s*javascript:/i.test(inspectableBody)) {
     addIssue(relativeFile, 'error', 'javascript-url', 'لا يسمح بروابط javascript: داخل المحتوى.');
   }
 }
