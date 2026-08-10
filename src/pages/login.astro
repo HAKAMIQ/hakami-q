@@ -9,8 +9,8 @@ import '../styles/account-system.css';
 <!doctype html>
 <html lang="ar" dir="rtl">
 	<head>
-		<BaseHead title="تسجيل الدخول | HAKAMIQ" description="تسجيل الدخول إلى حساب HAKAMIQ." />
-		<meta name="robots" content="noindex,follow" />
+		<BaseHead title="دخول الإدارة | HAKAMIQ" description="تسجيل الدخول إلى لوحة إدارة HAKAMIQ." />
+		<meta name="robots" content="noindex,nofollow,noarchive" />
 	</head>
 	<body>
 		<SkipLink />
@@ -18,61 +18,30 @@ import '../styles/account-system.css';
 		<main id="main-content" tabindex="-1" class="account-main">
 			<div class="account-shell">
 				<header class="account-heading">
-					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
-					<h1>تسجيل الدخول</h1>
-					<p>استخدم حساب Google أو اسم المستخدم والبريد الإلكتروني.</p>
+					<p class="account-kicker">HAKAMIQ ADMIN</p>
+					<h1>دخول الإدارة</h1>
+					<p>هذه الصفحة مخصصة لإدارة HAKAMIQ فقط.</p>
 				</header>
 				<section class="account-card" aria-labelledby="login-title">
-					<h2 id="login-title">دخول الحساب</h2>
-
-					<div id="google-login-panel" class="account-form account-hidden" aria-label="تسجيل الدخول بحساب Google">
-						<div id="google-signin-button" class="account-google-button"></div>
-						<p id="google-feedback" class="account-feedback account-hidden" role="status"></p>
-					</div>
-					<div id="google-divider" class="account-divider account-hidden" aria-hidden="true"><span>أو</span></div>
-
+					<h2 id="login-title">حساب المدير</h2>
 					<form id="login-form" class="account-form">
-						<div class="account-field">
-							<label for="identifier">اسم المستخدم أو البريد الإلكتروني</label>
-							<input id="identifier" class="account-input" type="text" maxlength="254" autocomplete="username" required />
-						</div>
-						<div class="account-field">
-							<label for="password">كلمة المرور</label>
-							<input id="password" class="account-input" type="password" maxlength="128" autocomplete="current-password" required />
-						</div>
+						<div class="account-field"><label for="identifier">اسم المستخدم أو البريد الإلكتروني</label><input id="identifier" class="account-input" type="text" maxlength="254" autocomplete="username" required /></div>
+						<div class="account-field"><label for="password">كلمة المرور</label><input id="password" class="account-input" type="password" maxlength="128" autocomplete="current-password" required /></div>
 						<div id="turnstile-slot" class="account-turnstile" aria-label="التحقق الأمني"></div>
-						<div class="account-actions">
-							<button id="submit-button" class="account-button account-button--primary" type="submit" disabled>دخول</button>
-						</div>
+						<div class="account-actions"><button id="submit-button" class="account-button account-button--primary" type="submit" disabled>دخول</button></div>
 						<p id="feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
-
 					<form id="mfa-form" class="account-form account-hidden" autocomplete="one-time-code">
-						<p class="account-help">هذا الحساب إداري ومحمي بالتحقق بخطوتين. أدخل رمز تطبيق المصادقة المكوّن من 6 أرقام، أو أحد رموز الاسترداد.</p>
-						<div class="account-field">
-							<label for="mfa-code">رمز التحقق</label>
-							<input id="mfa-code" class="account-input" type="text" inputmode="text" maxlength="20" autocomplete="one-time-code" required />
-						</div>
-						<div class="account-actions">
-							<button id="mfa-submit" class="account-button account-button--primary" type="submit">تحقق ودخول</button>
-							<button id="mfa-cancel" class="account-button" type="button">رجوع</button>
-						</div>
+						<p class="account-help">أدخل رمز تطبيق المصادقة المكوّن من 6 أرقام أو أحد رموز الاسترداد.</p>
+						<div class="account-field"><label for="mfa-code">رمز التحقق</label><input id="mfa-code" class="account-input" type="text" maxlength="20" autocomplete="one-time-code" required /></div>
+						<div class="account-actions"><button id="mfa-submit" class="account-button account-button--primary" type="submit">تحقق ودخول</button><button id="mfa-cancel" class="account-button" type="button">رجوع</button></div>
 						<p id="mfa-feedback" class="account-feedback account-hidden" role="status"></p>
 					</form>
-
-					<p class="account-links">ليس لديك حساب؟ <a href="/register">إنشاء حساب</a> · <a href="/account/google">ربط حساب Google بحسابك الحالي</a></p>
 				</section>
 			</div>
 		</main>
 		<Footer />
 		<script>
-			type GoogleCredentialResponse = { credential?: string };
-			type GoogleIdentityApi = {
-				initialize: (config: { client_id: string; callback: (response: GoogleCredentialResponse) => void; auto_select?: boolean }) => void;
-				renderButton: (element: HTMLElement, options: Record<string, string | number | boolean>) => void;
-				disableAutoSelect?: () => void;
-			};
-
 			const form = document.querySelector<HTMLFormElement>('#login-form');
 			const identifier = document.querySelector<HTMLInputElement>('#identifier');
 			const password = document.querySelector<HTMLInputElement>('#password');
@@ -84,231 +53,61 @@ import '../styles/account-system.css';
 			const mfaSubmit = document.querySelector<HTMLButtonElement>('#mfa-submit');
 			const mfaCancel = document.querySelector<HTMLButtonElement>('#mfa-cancel');
 			const mfaFeedback = document.querySelector<HTMLElement>('#mfa-feedback');
-			const googlePanel = document.querySelector<HTMLElement>('#google-login-panel');
-			const googleButton = document.querySelector<HTMLElement>('#google-signin-button');
-			const googleFeedback = document.querySelector<HTMLElement>('#google-feedback');
-			const googleDivider = document.querySelector<HTMLElement>('#google-divider');
 			let mfaToken = '';
-			let googleScriptLoading = false;
 
-			function showOn(element: HTMLElement | null, message: string, kind = '') {
-				if (!element) return;
-				element.textContent = message;
-				element.dataset.kind = kind;
-				element.classList.toggle('account-hidden', !message);
-			}
-
-			function show(message: string, kind = '') {
-				showOn(feedback, message, kind);
-			}
-
+			function showOn(element: HTMLElement | null, message: string, kind = '') { if (!element) return; element.textContent = message; element.dataset.kind = kind; element.classList.toggle('account-hidden', !message); }
+			function show(message: string, kind = '') { showOn(feedback, message, kind); }
 			function safeNextPath() {
 				const requested = new URLSearchParams(window.location.search).get('next');
-				if (!requested) return '/account';
+				if (!requested) return '/admin';
 				try {
 					const target = new URL(requested, window.location.origin);
-					if (target.origin !== window.location.origin) return '/account';
+					if (target.origin !== window.location.origin || !target.pathname.startsWith('/admin')) return '/admin';
 					return `${target.pathname}${target.search}${target.hash}`;
-				} catch {
-					return '/account';
-				}
+				} catch { return '/admin'; }
 			}
-
-			function resetTurnstile() {
-				const api = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
-				api?.reset();
-			}
-
-			function enterMfaStep(token: string) {
-				mfaToken = token;
-				if (password) password.value = '';
-				show('');
-				showOn(googleFeedback, '');
-				form?.classList.add('account-hidden');
-				googlePanel?.classList.add('account-hidden');
-				googleDivider?.classList.add('account-hidden');
-				mfaForm?.classList.remove('account-hidden');
-				showOn(mfaFeedback, 'أدخل رمز التحقق لإكمال تسجيل الدخول.');
-				mfaCode?.focus();
-			}
-
-			function leaveMfaStep() {
-				mfaToken = '';
-				if (mfaCode) mfaCode.value = '';
-				showOn(mfaFeedback, '');
-				mfaForm?.classList.add('account-hidden');
-				form?.classList.remove('account-hidden');
-				if (googleButton?.childElementCount) {
-					googlePanel?.classList.remove('account-hidden');
-					googleDivider?.classList.remove('account-hidden');
-				}
-				resetTurnstile();
-				password?.focus();
-			}
-
-			function finishLogin(response: Response, payload: Record<string, unknown>) {
-				if (response.status === 202 && payload.mfaRequired && payload.mfaToken) {
-					enterMfaStep(String(payload.mfaToken));
-					return true;
-				}
-				window.location.assign(safeNextPath());
-				return true;
-			}
-
-			async function handleGoogleCredential(response: GoogleCredentialResponse) {
-				const credential = String(response?.credential || '');
-				if (!credential) {
-					showOn(googleFeedback, 'لم يصل رمز تسجيل الدخول من Google.', 'error');
-					return;
-				}
-				showOn(googleFeedback, 'جاري التحقق من حساب Google…');
-				try {
-					const result = await fetch('/api/google/login', {
-						method: 'POST',
-						credentials: 'same-origin',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ credential }),
-					});
-					const payload = await result.json().catch(() => ({}));
-					if (!result.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول بحساب Google.');
-					finishLogin(result, payload);
-				} catch (error) {
-					showOn(googleFeedback, error instanceof Error ? error.message : 'تعذر تسجيل الدخول بحساب Google.', 'error');
-				}
-			}
-
-			function googleApi() {
-				return (window as typeof window & { google?: { accounts?: { id?: GoogleIdentityApi } } }).google?.accounts?.id;
-			}
-
-			async function initializeGoogle() {
-				if (!googlePanel || !googleButton || googleScriptLoading) return;
-				try {
-					const response = await fetch('/api/google/config', { credentials: 'same-origin' });
-					const payload = await response.json().catch(() => ({}));
-					if (!response.ok || !payload.enabled || !payload.clientId) return;
-					googleScriptLoading = true;
-					const script = document.createElement('script');
-					script.src = 'https://accounts.google.com/gsi/client?hl=ar';
-					script.async = true;
-					script.defer = true;
-					script.addEventListener('load', () => {
-						googleScriptLoading = false;
-						const api = googleApi();
-						if (!api) {
-							showOn(googleFeedback, 'تعذر تهيئة تسجيل الدخول بحساب Google.', 'error');
-							return;
-						}
-						api.initialize({
-							client_id: String(payload.clientId),
-							callback: handleGoogleCredential,
-							auto_select: false,
-						});
-						googleButton.replaceChildren();
-						api.renderButton(googleButton, {
-							theme: 'outline',
-							size: 'large',
-							shape: 'rectangular',
-							text: 'signin_with',
-							locale: 'ar',
-							width: 320,
-						});
-						googlePanel.classList.remove('account-hidden');
-						googleDivider?.classList.remove('account-hidden');
-					}, { once: true });
-					script.addEventListener('error', () => {
-						googleScriptLoading = false;
-						showOn(googleFeedback, 'تعذر تحميل خدمة تسجيل الدخول من Google.', 'error');
-					}, { once: true });
-					document.head.append(script);
-				} catch {
-					// يبقى تسجيل الدخول التقليدي متاحًا عند تعذر تهيئة Google.
-				}
-			}
+			function resetTurnstile() { (window as typeof window & { turnstile?: { reset: () => void } }).turnstile?.reset(); }
+			function enterMfaStep(token: string) { mfaToken = token; if (password) password.value = ''; form?.classList.add('account-hidden'); mfaForm?.classList.remove('account-hidden'); show(''); showOn(mfaFeedback, 'أدخل رمز التحقق لإكمال دخول الإدارة.'); mfaCode?.focus(); }
+			function leaveMfaStep() { mfaToken = ''; if (mfaCode) mfaCode.value = ''; mfaForm?.classList.add('account-hidden'); form?.classList.remove('account-hidden'); showOn(mfaFeedback, ''); resetTurnstile(); password?.focus(); }
 
 			async function initializeTurnstile() {
 				try {
 					const response = await fetch('/api/auth/config', { credentials: 'same-origin' });
 					const payload = await response.json().catch(() => ({}));
-					if (!response.ok) throw new Error(payload.error || 'تعذر تهيئة التحقق الأمني.');
-					if (!payload.turnstileSitekey || !turnstileSlot) throw new Error('التحقق الأمني غير مهيأ بعد.');
-					turnstileSlot.classList.add('cf-turnstile');
-					turnstileSlot.dataset.sitekey = payload.turnstileSitekey;
-					turnstileSlot.dataset.action = 'login';
-					const script = document.createElement('script');
-					script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-					script.async = true;
-					script.defer = true;
+					if (!response.ok || !payload.turnstileSitekey || !turnstileSlot) throw new Error('التحقق الأمني غير مهيأ بعد.');
+					turnstileSlot.classList.add('cf-turnstile'); turnstileSlot.dataset.sitekey = payload.turnstileSitekey; turnstileSlot.dataset.action = 'login';
+					const script = document.createElement('script'); script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'; script.async = true; script.defer = true;
 					script.addEventListener('load', () => { if (submit) submit.disabled = false; }, { once: true });
-					script.addEventListener('error', () => show('تعذر تحميل التحقق الأمني.', 'error'), { once: true });
-					document.head.append(script);
-				} catch (error) {
-					show(error instanceof Error ? error.message : 'تعذر تهيئة التحقق الأمني.', 'error');
-				}
+					script.addEventListener('error', () => show('تعذر تحميل التحقق الأمني.', 'error'), { once: true }); document.head.append(script);
+				} catch (error) { show(error instanceof Error ? error.message : 'تعذر تهيئة التحقق الأمني.', 'error'); }
 			}
 
 			form?.addEventListener('submit', async (event) => {
-				event.preventDefault();
-				if (!identifier || !password || !submit || !form) return;
-				show('');
+				event.preventDefault(); if (!identifier || !password || !submit || !form) return; show('');
 				const token = form.querySelector<HTMLInputElement>('input[name="cf-turnstile-response"]')?.value || '';
-				if (!token) {
-					show('أكمل التحقق الأمني ثم أعد المحاولة.', 'error');
-					return;
-				}
+				if (!token) { show('أكمل التحقق الأمني ثم أعد المحاولة.', 'error'); return; }
 				submit.disabled = true;
 				try {
-					const response = await fetch('/api/auth/login', {
-						method: 'POST',
-						credentials: 'same-origin',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ identifier: identifier.value, password: password.value, turnstileToken: token }),
-					});
+					const response = await fetch('/api/auth/login', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ identifier: identifier.value, password: password.value, turnstileToken: token }) });
 					const payload = await response.json().catch(() => ({}));
-					if (!response.ok) throw new Error(payload.error || 'تعذر تسجيل الدخول.');
-					finishLogin(response, payload);
-				} catch (error) {
-					show(error instanceof Error ? error.message : 'تعذر تسجيل الدخول.', 'error');
-					resetTurnstile();
-				} finally {
-					submit.disabled = false;
-				}
+					if (!response.ok) throw new Error(payload.error || 'تعذر دخول الإدارة.');
+					if (response.status === 202 && payload.mfaRequired && payload.mfaToken) { enterMfaStep(String(payload.mfaToken)); return; }
+					window.location.assign(payload.user?.role === 'admin' ? (payload.user && safeNextPath()) : '/admin');
+				} catch (error) { show(error instanceof Error ? error.message : 'تعذر دخول الإدارة.', 'error'); resetTurnstile(); }
+				finally { submit.disabled = false; }
 			});
 
 			mfaForm?.addEventListener('submit', async (event) => {
-				event.preventDefault();
-				if (!mfaToken || !mfaCode || !mfaSubmit) return;
-				const code = mfaCode.value.trim();
-				if (!code) {
-					showOn(mfaFeedback, 'أدخل رمز التحقق.', 'error');
-					return;
-				}
+				event.preventDefault(); if (!mfaToken || !mfaCode || !mfaSubmit) return; const code = mfaCode.value.trim(); if (!code) return;
 				mfaSubmit.disabled = true;
-				showOn(mfaFeedback, 'جاري التحقق…');
 				try {
-					const response = await fetch('/api/mfa/verify-login', {
-						method: 'POST',
-						credentials: 'same-origin',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ mfaToken, code }),
-					});
-					const payload = await response.json().catch(() => ({}));
-					if (!response.ok) throw new Error(payload.error || 'تعذر التحقق من الرمز.');
-					mfaToken = '';
-					window.location.assign(safeNextPath());
-				} catch (error) {
-					showOn(mfaFeedback, error instanceof Error ? error.message : 'تعذر التحقق من الرمز.', 'error');
-					if (mfaCode) {
-						mfaCode.value = '';
-						mfaCode.focus();
-					}
-				} finally {
-					mfaSubmit.disabled = false;
-				}
+					const response = await fetch('/api/mfa/verify-login', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mfaToken, code }) });
+					const payload = await response.json().catch(() => ({})); if (!response.ok) throw new Error(payload.error || 'تعذر التحقق من الرمز.');
+					mfaToken = ''; window.location.assign(safeNextPath());
+				} catch (error) { showOn(mfaFeedback, error instanceof Error ? error.message : 'تعذر التحقق من الرمز.', 'error'); if (mfaCode) { mfaCode.value = ''; mfaCode.focus(); } }
+				finally { mfaSubmit.disabled = false; }
 			});
-
 			mfaCancel?.addEventListener('click', leaveMfaStep);
-			initializeGoogle();
 			initializeTurnstile();
 		</script>
 	</body>
