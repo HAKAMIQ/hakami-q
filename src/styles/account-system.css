@@ -1,3 +1,5 @@
+@import './google-auth.css';
+
 .account-main {
 	min-height: 55vh;
 	padding: 48px 16px 72px;
