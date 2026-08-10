@@ -65,10 +65,10 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png">
-                <img class="img-frame" src="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال أفضل محاكي لتشغيل ألعاب Beena على الكمبيوتر (OpenEmu + forks)" class="img-frame" src="/media/blogger/f4/f493144dc219eabf21081f052516f29c33a58d8680ae3451d01e381059de0b3f.png" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكي لتشغيل ألعاب Beena على الكمبيوتر (OpenEmu + forks)</h2>
+        
         <p style="text-align: center;">على الرغم من ندرة جهاز Sega Advanced Pico Beena، إلا أن هناك محاولات تقنية جادة لتوفير بيئة محاكاة مستقرة لألعابه عبر مشاريع مفتوحة المصدر وتفرعات مجتمعية نشطة.</p>
     </header>
 

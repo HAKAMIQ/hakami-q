@@ -65,7 +65,7 @@ labels: ["articles","PlayStation"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg">
-                <img class="img-frame" src="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال وش سالفة المحاكيات؟ وش الفرق بين Emulator وBIOS ؟" class="img-frame" src="/media/blogger/c7/c7863b77a90008ba95ab4f1cd2a3a2a184a57111df7e05ba2019696ef0eb0bd0.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">وش يعني محاكي بلايستيشن؟ وهل يشتغل على أي جهاز؟</h2>

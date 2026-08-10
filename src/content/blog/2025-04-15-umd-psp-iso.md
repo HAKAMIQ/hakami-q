@@ -136,7 +136,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg">
-            <img src="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال شرح نسخ ألعاب UMD من جهاز PSP وتحويلها إلى ISO؟" src="/media/blogger/32/320c024b6fcc59b5120e3608a9980b224b7e2dd02174fcb9cafbafdae1440e53.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

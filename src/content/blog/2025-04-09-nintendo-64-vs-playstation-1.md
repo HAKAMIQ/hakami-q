@@ -142,7 +142,7 @@ labels: ["N64","Nintendo"]
                 <img class="img-frame" alt="Nintendo 64 vs PlayStation 1" src="/media/blogger/f3/f328472623e5349ac036dca4a8c3992a9eeacdfb1c3d9b7bd9d3728b0fbee174.jpg" style="max-width: 450px;" />
             </a>
         </div>
-        <h1>مواجهة الجيل الخامس: Nintendo 64 ضد PlayStation 1</h1>
+        <h2>مواجهة الجيل الخامس: Nintendo 64 ضد PlayStation 1</h2>
         <p>صراع الكارتريدج ضد الأقراص.. من الذي رسم ملامح المستقبل؟</p>
     </header>
 

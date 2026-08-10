@@ -58,7 +58,7 @@ labels: ["PlayStation","PS2"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg">
-                <img class="img-frame" src="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات PS2 PCSX2 vs Play! vs RetroArch" class="img-frame" src="/media/blogger/ad/ad28523e5bc628cb64e1f43dcca9372e798e2fa466222f1010ac11c15e223a78.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); font-size: 28px;">🎮 مقارنة أفضل محاكيات PS2 (PCSX2 vs Play! vs RetroArch)</h2>

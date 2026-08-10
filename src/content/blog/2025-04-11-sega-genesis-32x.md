@@ -85,10 +85,10 @@ labels: ["Genesis32X","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg">
-                <img class="img-frame" src="/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال  أفضل محاكيات Sega Genesis 32X للكمبيوتر والجوال" class="img-frame" src="/media/blogger/e6/e6e959b5ef3d6858bea69dd024ee7c7a9a220d2d950bb02e44858e2187aa7a15.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega Genesis 32X للكمبيوتر والجوال</h2>
+        
         <p style="text-align: center;">يعتبر نظام 32X إضافة تقنية مميزة لإطالة عمر جهاز Genesis الكلاسيكي. إليك أقوى الحلول البرمجية لاستعادة ذكريات هذا النظام النادر بدقة عالية وأداء مستقر على مختلف المنصات.</p>
     </header>
 

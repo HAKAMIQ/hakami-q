@@ -119,7 +119,7 @@ labels: ["GameCube","Nintendo"]
                 <img class="img-frame" alt="Nintendo GameCube Console" src="/media/blogger/e8/e88844ca71457fcc151ebf7f623902f8f41fd432e85f1455c2a823f06b6a00da.jpg" style="max-width: 250px;" />
             </a>
         </div>
-        <h1>Nintendo GameCube: المكعب الذي خسر السوق وفاز بالتاريخ</h1>
+        <h2>Nintendo GameCube: المكعب الذي خسر السوق وفاز بالتاريخ</h2>
         <p style="opacity: 0.8;">قصة الجهاز الذي خبأ وحشاً تقنياً داخل تصميم "بنفسجي" لطيف!</p>
     </header>
 

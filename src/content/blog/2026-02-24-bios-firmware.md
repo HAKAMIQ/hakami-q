@@ -217,7 +217,7 @@ labels: ["articles","Nintendo","PlayStation","RetroArch","Xbox"]
     <header>
         <h2 class="hakamiq-header-title">المكتبة الشاملة لملفات BIOS و Firmware - نينتندو (Nintendo)</h2>
         
-        <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="760" data-original-width="1381" height="176" src="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" width="320" /></a></div><br /><div style="text-align: center;"><br /></div>
+        <div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال الدليل الشامل لملفات تشغيل المحاكيات (BIOS &amp; Firmware)" border="0" data-original-height="760" data-original-width="1381" height="176" src="/media/blogger/2b/2b0dfba1bc6d79baaaa4fc8f1f67e78ebd9b1fdd69ecd1b35fd7a05ded20ea79.jpg" width="320" /></a></div><br /><div style="text-align: center;"><br /></div>
 
         <p>هل قمت بتحميل محاكي لتستعيد ذكريات الطفولة، لكنك فوجئت بشاشة سوداء أو رسالة خطأ "Missing BIOS"؟ المحاكي هو مجرد "جسد" للجهاز، ولكي يعمل، يحتاج إلى "الروح" وهي ملفات النظام الأصلية. بدون هذه الملفات، لن تتمكن المحاكيات من تشغيل الألعاب بدقة، أو حفظ التقدم، أو حتى الإقلاع في الأجهزة الحديثة مثل Switch و Wii U.</p>
     </header>

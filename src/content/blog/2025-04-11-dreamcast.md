@@ -66,7 +66,7 @@ labels: ["Dreamcast","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg">
-                <img class="img-frame" src="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg" width="267" />
+                <img alt="صورة توضيحية ضمن مقال طريقة ربط يد التحكم والأزرار في محاكي Dreamcast" class="img-frame" src="/media/blogger/66/6632e2699df45923ec59a7c8bdb2ee67e6c2beb1603dcf17b433e92d9deaacb1.jpg" width="267" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">الدليل الشامل: طريقة ربط يد التحكم في محاكيات Dreamcast</h2>

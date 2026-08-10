@@ -107,7 +107,7 @@ labels: ["PlayStation","PS1"]
         </a>
     </div>
 
-    <h2 class="hakamiq-main-title">تشغيل ألعاب PS1 بجرافيكس HD عبر محاكي DuckStation</h2>
+    
 
     <p style="text-align: center;">تبغى تشغّل ألعاب PS1 القديمة بجودة HD تخليك تقول "هذي كانت كذا؟" محاكي DuckStation هو أفضل حل لهذي المهمة 🔥 والجميل؟ أنه سهل، سريع، ويدعم تحسين الجرافيكس لدرجة تخليك تشوف Crash كأنه طالع من بلايستيشن 4 😍</p>
 

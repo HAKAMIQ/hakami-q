@@ -67,7 +67,7 @@ labels: ["Xbox","Xbox-Original"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png">
-                <img class="img-frame" src="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال نظام الحفظ Snapshot (Save States) في محاكي xemu" class="img-frame" src="/media/blogger/6c/6c8789378cbd5c73224d6a2117ca7e3497795e2f817d97649ab0ce4dd4d0fcc3.png" width="320" />
             </a>
         </div>
         <p>ميزة الحفظ السريع (أو Snapshots) تخلّيك تحفظ تقدمك في أي لحظة من اللعب، بدون الحاجة لنقطة حفظ داخل اللعبة نفسها. ترجع تكمل من نفس الثانية اللي كنت واقف فيها، كأنك ما سكرت اللعبة أبدًا! 😍</p>
@@ -82,7 +82,7 @@ labels: ["Xbox","Xbox-Original"]
                 <tr>
                     <td style="text-align: center;">
                         <a href="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png">
-                            <img border="0" src="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png" width="320" />
+                            <img alt="صورة توضيحية ضمن مقال نظام الحفظ Snapshot (Save States) في محاكي xemu" border="0" src="/media/blogger/22/2288dd21b35adc7db37be494285f685aeb405464021e0bcdd1960d62d5c116bc.png" width="320" />
                         </a>
                     </td>
                 </tr>

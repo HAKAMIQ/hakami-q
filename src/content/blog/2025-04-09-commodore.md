@@ -108,7 +108,7 @@ labels: ["Commodore"]
                 <img class="img-frame" alt="جهاز Commodore 64" src="/media/blogger/bb/bb3d7e6e8dc85d1717cfa0be7bc1d7b521d4b3d277669989e3fc241e91b89a53.png" />
             </a>
         </div>
-        <h1>Commodore 64: الأسطورة التي سبقت عمالقة الألعاب</h1>
+        <h2>Commodore 64: الأسطورة التي سبقت عمالقة الألعاب</h2>
         <p style="color: #8b949e; font-size: 16px;">قبل البلايستيشن 🎮، قبل الإكس بوكس 🕹، وحتى قبل النينتندو 🍄.. كان هو نجم الثمانينات المطلق.</p>
     </header>
 

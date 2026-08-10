@@ -61,7 +61,7 @@ labels: ["PlayStation","PS3"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
-                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال الإعدادات الافتراضية في محاكي RPCS3 | إعدادات (I/O configuration)" class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>إعدادات I/O في محاكي RPCS3 تتحكم في كيفية تفاعل الأجهزة الخارجية مثل لوحة المفاتيح، الفأرة، الكاميرا، والأدوات الموسيقية مع الألعاب. ضبط هذه الخيارات ضروري لتشغيل الطرفيات الخاصة ببعض الألعاب بشكل صحيح.</p>

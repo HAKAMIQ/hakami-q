@@ -123,11 +123,11 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 35px;">
         <a href="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg">
-            <img src="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10;" />
+            <img alt="صورة توضيحية ضمن مقال 🟦 تشغيل محاكي PPSSPP على Xbox (UWP) " src="/media/blogger/8f/8f4d68fd47ebd34f9dda26466249267fa23849b41e33dc395223d96a17f3a684.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 600px; height: auto; border: 2px solid #107c10;" />
         </a>
     </div>
 
-    <h2 class="xbox-main-title">🟦 تشغيل محاكي PPSSPP على Xbox (UWP)</h2>
+    
     
     <div class="xbox-intro">
         تخيل تشغل ألعاب PSP على شاشة 55 بوصة… وباليد الرسمية حق Xbox؟ 

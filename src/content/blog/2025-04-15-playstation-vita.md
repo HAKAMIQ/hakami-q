@@ -108,7 +108,7 @@ labels: ["PlayStation","PSPVita"]
 
     <div style="text-align: center; margin-bottom: 35px;">
         <a href="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg">
-            <img src="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال محاكيات PlayStation Vita" src="/media/blogger/19/19766b657b53ceb97757ae79a655f0c565fd667c1c01b6c0a9d6f74cbe0ae266.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

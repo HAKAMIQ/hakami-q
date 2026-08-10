@@ -52,7 +52,7 @@ labels: ["Xbox","Xbox-Original"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png">
-                <img class="img-frame" src="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال إعدادات EEPROM وتعديلها في محاكي xemu" class="img-frame" src="/media/blogger/b5/b51eb75c360f71e2209081ab8af06a14eb7d9df1b3dfd50f1650ab3ea2fe218a.png" width="320" />
             </a>
         </div>
         <p>الـ EEPROM هو شريحة صغيرة في جهاز Xbox الأصلي تحتوي على إعدادات النظام زي المنطقة، اللغة، نوع الإخراج، الصوت، والمزيد. في محاكي xemu يتم محاكاة هذه الشريحة باستخدام ملف يمكن تعديله بكل سهولة.</p>

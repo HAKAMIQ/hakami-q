@@ -66,7 +66,7 @@ labels: ["PlayStation","PS1"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png">
-                <img class="img-frame" src="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال أفضل محاكيات PS1 مقارنة بين DuckStation وMednafen" class="img-frame" src="/media/blogger/c9/c953856dcbe912a61185929bac04408668d2d29c86ec5d7faacc1656009bacc0.png" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">مقارنة محاكيات PS1: DuckStation مقابل Mednafen</h2>

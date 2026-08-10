@@ -118,7 +118,7 @@ labels: ["PlayStation","PS2"]
                 <img alt="أرشيف حزم القوام PCSX2 - حكميك" src="/media/blogger/63/6396dce56f0d6564a45719975dd37a0e5626c027e748beeb341a45c743dd035f.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
-        <h1>أرشيف حزم القوام (HD Textures) لمحاكي PCSX2</h1>
+        <h2>أرشيف حزم القوام (HD Textures) لمحاكي PCSX2</h2>
         <p style="color: #8b949e;">ترقية جرافيكس الألعاب الكلاسيكية لتناسب شاشات 4K الحديثة</p>
     </header>
 

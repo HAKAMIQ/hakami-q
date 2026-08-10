@@ -120,7 +120,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg">
-            <img src="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال 💾 حفظ البيانات والتخزين في PPSSPP على Android – الشرح الكامل" src="/media/blogger/97/979a1c6acf69b18dc33bed2be61b0693cd89e50ffd451674e201ce0587490f3f.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

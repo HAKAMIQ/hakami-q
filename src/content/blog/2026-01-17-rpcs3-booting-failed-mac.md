@@ -117,7 +117,7 @@ labels: ["PlayStation","PS3"]
                 <img alt="إصلاح خطأ تشغيل RPCS3 على الماك - حكميك" src="/media/blogger/e3/e30f189904f0d271de53f2842f1a578671c582353e0fe638524faddc3dcc1f3b.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
-        <h1>إصلاح خطأ "The selected file is invalid" في RPCS3</h1>
+        <h2>إصلاح خطأ "The selected file is invalid" في RPCS3</h2>
         <p>دليل مستخدمي Apple Silicon (M1, M2, M3) لتشغيل ألعاب PS3 بنجاح</p>
     </header>
 

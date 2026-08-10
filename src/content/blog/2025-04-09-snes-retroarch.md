@@ -128,7 +128,7 @@ labels: ["Nintendo","SNES"]
                 <img class="img-frame" alt="Super Nintendo - SNES" src="/media/blogger/e0/e0c995b942c308f31cacac3434f03858a0dcf75a5c3ebff91cb7581723a24157.jpg" style="max-width: 320px;" />
             </a>
         </div>
-        <h1>تشغيل SNES على RetroArch: عيش تجربة الـ 16-بت على أصولها</h1>
+        <h2>تشغيل SNES على RetroArch: عيش تجربة الـ 16-بت على أصولها</h2>
         <p style="opacity: 0.9;">دليلك التقني لتشغيل زيلدا وماريو بأعلى دقة بكسل لعام 2026</p>
     </header>
 

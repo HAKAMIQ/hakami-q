@@ -166,7 +166,7 @@ labels: ["GameCube","Nintendo"]
 <article class="hakamiq-war-article">
 
     <header>
-        <h1 class="hakamiq-main-title">حرب الأجهزة السادسة: عندما تواجه GameCube و PS2 و Xbox!</h1>
+        <h2 class="hakamiq-main-title">حرب الأجهزة السادسة: عندما تواجه GameCube و PS2 و Xbox!</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/fc/fc2cb16898b17f8176d1e630fdfdb10d61a44211f154a87e4d64a6f62cae1f99.jpg" alt="مقارنة بين جيم كيوب وبلايستيشن 2 واكس بوكس" loading="lazy" decoding="async">

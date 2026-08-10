@@ -169,7 +169,7 @@ labels: ["Nintendo","Wii-U"]
 <article class="hakamiq-wiiu-article">
 
     <header>
-        <h1 class="hakamiq-main-title">جهاز Wii U: العبقري المظلوم الذي سبق عصره!</h1>
+        <h2 class="hakamiq-main-title">جهاز Wii U: العبقري المظلوم الذي سبق عصره!</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/32/324da9cc3789fa43aa0fba0f12986c7b17609d8a701fe68c35150729590b983c.jpg" alt="ألعاب جماعية على جهاز نينتندو وي يو" loading="lazy" decoding="async">

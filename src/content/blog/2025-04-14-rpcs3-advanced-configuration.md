@@ -143,7 +143,7 @@ labels: ["PlayStation","PS3"]
 <article class="hakamiq-guide-wrapper">
 
     <header>
-        <h1 class="hakamiq-main-title">⚙️ جدول إعدادات Advanced Configuration في محاكي RPCS3</h1>
+        <h2 class="hakamiq-main-title">⚙️ جدول إعدادات Advanced Configuration في محاكي RPCS3</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" alt="RPCS3 Advanced Configuration Icon" loading="lazy" decoding="async">

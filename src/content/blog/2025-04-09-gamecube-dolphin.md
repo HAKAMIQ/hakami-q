@@ -184,7 +184,7 @@ labels: ["GameCube","Nintendo"]
 <article class="hakamiq-dolphin-guide">
 
     <header>
-        <h1 class="hakamiq-main-title">دليل تشغيل ألعاب GameCube على الحاسوب بمحاكي Dolphin</h1>
+        <h2 class="hakamiq-main-title">دليل تشغيل ألعاب GameCube على الحاسوب بمحاكي Dolphin</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/ac/ac86ed9fe1f8e31c080b498723ee706c03d29a79456d3950c44595c8b8ac889d.jpg" alt="Dolphin Emulator GameCube" loading="lazy" decoding="async">

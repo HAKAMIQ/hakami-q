@@ -183,7 +183,7 @@ labels: ["GameCube","Nintendo","Wii"]
 <article class="hakamiq-dolphin-guide">
 
     <header>
-        <h1 class="hakamiq-main-title">الدليل الشامل لمحاكي Dolphin: تشغيل ألعاب Wii و GameCube</h1>
+        <h2 class="hakamiq-main-title">الدليل الشامل لمحاكي Dolphin: تشغيل ألعاب Wii و GameCube</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/18/18601447fa2cebfd60d6ee0bc956cd3bf38ec8a48f53adacafc87a4a146b1ff8.jpg" alt="Dolphin Emulator Guide" loading="lazy" decoding="async">

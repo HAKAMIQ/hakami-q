@@ -136,7 +136,7 @@ labels: ["Nintendo","Nintendo-NES"]
                 <img src="/media/blogger/e8/e8af486e80fec91df753aa64fd5fd66f0afb300c154b1dae97d8964fa551aefe.png" alt="RetroArch Logo" style="max-width: 300px;" />
             </a>
         </div>
-        <h1>إعداد RetroArch لتشغيل أساطير Nintendo NES</h1>
+        <h2>إعداد RetroArch لتشغيل أساطير Nintendo NES</h2>
         <p style="opacity: 0.8; margin-top: 10px;">دليلك الشامل لضبط الأنوية والتحكم والفلاتر لعام 2026</p>
     </header>
 

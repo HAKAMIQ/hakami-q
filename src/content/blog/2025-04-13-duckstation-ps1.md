@@ -70,7 +70,7 @@ labels: ["PlayStation","PS1"]
                 <img class="img-frame" src="/media/blogger/31/31f0ac8823076a6a9de4ac6ce4536c627f7b71a7d2a6c5b9ed1cdbb5c774cca8.png" alt="DuckStation Logo" />
             </a>
         </div>
-        <h1 style="color: var(--xe-blue); font-size: 28px; font-weight: 900;">DuckStation: الدليل الشامل لأقوى محاكي PS1</h1>
+        <h2 style="color: var(--xe-blue); font-size: 28px; font-weight: 900;">DuckStation: الدليل الشامل لأقوى محاكي PS1</h2>
         <p><strong>DuckStation</strong> هو محاكي مفتوح المصدر تم تصميمه لتقديم أعلى دقة وأفضل أداء لتشغيل ألعاب <strong>PlayStation 1</strong>. يتميز بكونه يجمع بين القوة وسهولة الاستخدام، مما يجعله الخيار الأول للمبتدئين والمحترفين على حد سواء.</p>
     </header>
 

@@ -126,7 +126,7 @@ labels: ["GBC","Nintendo"]
                 <img alt="محاكي Gambatte - حكميك" src="/media/blogger/9a/9a2eed70997b883e1f4f7624180d8a0d5d8d862ae34f1f63c0954dcd098b769d.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
             </a>
         </div>
-        <h1>دليل احتراف محاكاة Game Boy بدقة 2026</h1>
+        <h2>دليل احتراف محاكاة Game Boy بدقة 2026</h2>
         <p style="opacity: 0.8;">تشغيل ألعاب Classic و Color بأعلى دقة محاكاة عالمية</p>
     </header>
 

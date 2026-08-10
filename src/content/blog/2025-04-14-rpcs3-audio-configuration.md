@@ -61,7 +61,7 @@ labels: ["PlayStation","PS3"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png">
-                <img class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال الإعدادات الافتراضية في محاكي RPCS3 | إعدادات (Audio Configuration)" class="img-frame" src="/media/blogger/f1/f1d1b29db9475ed2c5865cfac1e00c73f8a0d95790938bed56c53b0084a1e0ff.png" width="320" />
             </a>
         </div>
         <p>إعدادات الصوت في RPCS3 مسؤولة عن جودة ونقاء المخرجات الصوتية للألعاب. ضبط هذه الخيارات يضمن تجربة خالية من التقطيع (Audio Crackling) وتوافقية تامة مع مختلف أنظمة الصوت الخارجية والمايكروفونات.</p>

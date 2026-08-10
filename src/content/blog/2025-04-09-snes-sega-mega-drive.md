@@ -105,7 +105,7 @@ labels: ["Nintendo","SNES"]
                 <img class="img-frame" alt="Nintendo SNES vs Sega Mega Drive" src="/media/blogger/2f/2f0c133179a6bee6972eda2fa571fb2006ff78316f38ad9372e1271f4e2a22f5.jpg" />
             </a>
         </div>
-        <h1>حروب الـ 16 بت: Nintendo SNES ضد Sega Mega Drive</h1>
+        <h2>حروب الـ 16 بت: Nintendo SNES ضد Sega Mega Drive</h2>
         <p style="opacity: 0.8;">تحليل تقني لأقوى صراع في تاريخ الألعاب المنزلية</p>
     </header>
 

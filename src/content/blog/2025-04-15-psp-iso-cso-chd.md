@@ -133,7 +133,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg">
-            <img src="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال  كيف تضغط ألعاب PSP وتحولها من ISO إلى CSO أو CHD" src="/media/blogger/81/8122f1ef2a727d6a03e2addcc0ef441852a390ad7e25126a5dced8ed975165c0.jpg" width="301" style="border-radius: 12px; width: 100%; max-width: 400px; height: auto;" />
         </a>
     </div>
 

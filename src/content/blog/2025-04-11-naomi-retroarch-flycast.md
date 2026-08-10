@@ -84,10 +84,10 @@ labels: ["sega","Sega-Naomi"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg">
-                <img class="img-frame" src="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg" width="300" />
+                <img alt="صورة توضيحية ضمن مقال  شرح استخدام NAOMI داخل RetroArch (عبر نواة Flycast)" class="img-frame" src="/media/blogger/b2/b2c73e76a947a69f15bdc992db56f3b8ae8860bb59e3a112a51dcabfaa47c1ca.jpg" width="300" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">شرح استخدام NAOMI داخل RetroArch (عبر نواة Flycast)</h2>
+        
         <p style="text-align: center;">استعد لإحياء تجربة الأركيد الأكثر إثارة. عبر نواة Flycast، يمكنك تشغيل ألعاب SEGA NAOMI بواجهة أنيقة وإعدادات رسومية متطورة على كافة أجهزتك.</p>
     </header>
 

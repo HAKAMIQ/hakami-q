@@ -67,7 +67,7 @@ labels: ["Dreamcast","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg">
-                <img class="img-frame" src="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال شغيل ألعاب Sega Dreamcast بجودة عالية عبر محاكي Flycast" class="img-frame" src="/media/blogger/9e/9e0fd87c0740f6843e14c42b692f0611dc51f3fcd6902021aa9b19189b453444.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 تشغيل ألعاب SEGA Dreamcast بجودة عالية عبر محاكي Flycast</h2>

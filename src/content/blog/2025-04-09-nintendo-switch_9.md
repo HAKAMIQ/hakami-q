@@ -11,7 +11,7 @@ labels: ["Nintendo","NS"]
 
 <div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
 
-<h2 style="text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1440" data-original-width="2560" height="180" src="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" width="320" /></a></div></h2><p>كلنا نعرف Switch، لكن ترا وراه أسرار كثيرة مخفية في النظام، التحكم، وحتى القطع الداخلية!  
+<h2 style="text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال 💡 خفايا Nintendo Switch: أشياء كثير ما يعرفونها عن الجهاز !" border="0" data-original-height="1440" data-original-width="2560" height="180" src="/media/blogger/6d/6da25bd337fc84580bccba579cc113c0fce0d8e4cad55ec42016106c06c26b71.jpg" width="320" /></a></div></h2><p>كلنا نعرف Switch، لكن ترا وراه أسرار كثيرة مخفية في النظام، التحكم، وحتى القطع الداخلية!  
 في هذا الموضوع بنكشف <strong>أغرب وأذكى الخفايا</strong> اللي تخلي جهازك Switch كأنه عنده شخصية خاصة فيه! 🎮👇</p>
 
 ---

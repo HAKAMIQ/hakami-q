@@ -90,7 +90,7 @@ labels: []
                 <img src="/media/blogger/24/24322aba4e33b9753de4dbc2fcdbe01eac0087b8701a5e9bb028f1c990b181c5.png" alt="شرح تشغيل Systemlink في محاكي Xenia" loading="lazy">
             </a>
         </div>
-        <h2 style="color: var(--xenia-cyan);">دليل تشغيل Systemlink في محاكي Xenia</h2>
+        
         <p>ميزة <strong style="color: var(--xenia-gold);">Systemlink</strong> تفتح لك الباب للعب الجماعي تمامًا كما كان على جهاز Xbox 360، ولكن عبر الشبكة المحلية أو حتى شبكة وهمية (VPN). في هذا الدليل نوضح كل شيء بأسلوب مبسط واحترافي.</p>
     </header>
 

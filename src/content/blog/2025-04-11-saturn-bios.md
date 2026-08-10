@@ -67,10 +67,10 @@ labels: ["Saturn","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png">
-                <img class="img-frame" src="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png" width="250" />
+                <img alt="صورة توضيحية ضمن مقال شرح تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS" class="img-frame" src="/media/blogger/95/95cc607fb1dbebe6a406d690fd170f5962721010fffe5801f4a40b11826f070e.png" width="250" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 شرح تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS</h2>
+        
         <p style="text-align: center;">إذا كنت تحب ألعاب SEGA Saturn الكلاسيكية وتريد تشغيلها على جهازك باستخدام محاكي، فستحتاج إلى محاكي مناسب وملفات BIOS الخاصة بالجهاز. في هذا الموضوع، راح نتعرف على كيفية تثبيت وتشغيل ألعاب Saturn مع ملفات BIOS بشكل سهل وبسيط. 🚀</p>
     </header>
 

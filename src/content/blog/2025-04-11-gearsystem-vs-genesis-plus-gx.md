@@ -66,10 +66,10 @@ labels: ["sega","Sega-GameGear"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png">
-                <img class="img-frame" src="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال مقارنة بين محاكيات Gearsystem vs Genesis Plus GX" class="img-frame" src="/media/blogger/b8/b80121bff2a937bd9a73284256541224b3ca24968c5cc576518d8e36420b2f71.png" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">مقارنة بين محاكيات Gearsystem vs Genesis Plus GX</h2>
+        
         <p style="text-align: center;">إذا كنت تبحث عن تشغيل مكتبة ألعاب Game Gear على حاسوبك، فإن المفاضلة بين Gearsystem و Genesis Plus GX تعتمد على احتياجاتك من حيث الدقة والمنصة المستخدمة.</p>
     </header>
 

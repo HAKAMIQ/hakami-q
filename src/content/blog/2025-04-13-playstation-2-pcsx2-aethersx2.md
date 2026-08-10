@@ -124,7 +124,7 @@ labels: ["PlayStation","PS2"]
         </a>
     </div>
 
-    <h2 class="hakamiq-main-title">أفضل محاكيات PlayStation 2 – PCSX2 و AetherSX2 والفرق بينهم</h2>
+    
 
     <p style="text-align: center;">إذا ودك تعيش لحظات الطيبين وتلعب God of War 2 أو Need for Speed Most Wanted من أيام البلايستيشن 2، فأنت تحتاج محاكي محترم يشغل الألعاب بدون ما يحوّل جهازك إلى مروحة تبريد نفاثة! 💨 هنا بنعطيك الزبدة بين أفضل محاكيين: <strong>PCSX2</strong> للكمبيوتر و<strong>AetherSX2</strong> للجوال.</p>
 

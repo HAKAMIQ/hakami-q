@@ -65,7 +65,7 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg">
-                <img class="img-frame" src="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال  تشغيل Beena على RetroArch – هل ممكن؟ وهل يستحق؟" class="img-frame" src="/media/blogger/16/167d2f8bf9ad320c4fd8195516e83b099ea8d07aa76d8802c2be5543c424122a.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">تشغيل Beena على RetroArch – هل هو ممكن؟ وهل يستحق؟</h2>

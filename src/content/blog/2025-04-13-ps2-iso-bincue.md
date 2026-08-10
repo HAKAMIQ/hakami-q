@@ -124,7 +124,7 @@ labels: ["PlayStation","PS1"]
         </a>
     </div>
 
-    <h2 class="hakamiq-main-title">طريقة تشغيل ألعاب PS2 بصيغة ISO و BIN/CUE على الكمبيوتر والجوال</h2>
+    
 
     <p style="text-align: center;">لقيت لعبة PS2 بصيغة <strong>ISO</strong> أو <strong>BIN/CUE</strong> وتحس مخك وقف؟ ما تدري تشغلها بأي برنامج؟ لا تشيل هم، جهزنا لك الطريقة الكاملة لتشغيلها سواء على كمبيوترك أو على جوالك… بكل بساطة وبعيد عن الفلسفة التقنية 😎</p>
 

@@ -64,7 +64,7 @@ labels: ["PlayStation","PS1"]
                 <img class="img-frame" src="/media/blogger/fd/fdbb752feec2aee858f7000311a4b07439e2602f65e3403d30de2db608c60e00.jpg" alt="DuckStation PS1 Enhancements Guide" />
             </a>
         </div>
-        <h1 style="color: var(--xe-blue); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;">🚀 كيف تحسن تجربة ألعاب PS1 باستخدام DuckStation؟</h1>
+        <h2 style="color: var(--xe-blue); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;">🚀 كيف تحسن تجربة ألعاب PS1 باستخدام DuckStation؟</h2>
         <p style="color: var(--xe-gold); font-size: 1.2rem;">دليلك التقني لتفعيل أقوى ميزات التعزيز البصري والأداء لتحويل ألعابك الكلاسيكية إلى جودة العصر الحديث.</p>
     </header>
 

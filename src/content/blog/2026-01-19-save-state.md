@@ -89,7 +89,7 @@ labels: ["PlayStation","PS3"]
                 <img alt="ميزة Save State في محاكي RPCS3" src="/media/blogger/a4/a41883552c3948b9df3553122c861021a661159309260565b56c9ef9807ee850.png" style="width:100%; max-width: 650px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);" />
             </a>
         </div>
-        <h1>الدليل الشامل لميزة حفظ الحالة (Save State) في RPCS3</h1>
+        <h2>الدليل الشامل لميزة حفظ الحالة (Save State) في RPCS3</h2>
     </header>
 
     <div class="h-alert" style="border-color: var(--s-gold); background: #fffce0;">

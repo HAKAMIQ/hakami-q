@@ -89,7 +89,7 @@ labels: ["Nintendo","Wii-U"]
                 <img alt="Cemu Graphic Packs Guide" src="/media/blogger/e1/e1f7710c28ce5e23132f13ece0f0fc616159326852b17aae7a224f9dd0961610.png" width="213" style="border-radius: 10px;" />
             </a>
         </div>
-        <h1>Cemu Graphic Packs: الدليل الهندسي الكامل لعام 2026</h1>
+        <h2>Cemu Graphic Packs: الدليل الهندسي الكامل لعام 2026</h2>
     </header>
 
     <section class="h-info">

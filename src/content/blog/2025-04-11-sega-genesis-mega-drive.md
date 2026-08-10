@@ -67,10 +67,10 @@ labels: ["Genesis-MegaDrive","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg">
-                <img class="img-frame" src="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال أفضل محاكيات Sega Genesis (Mega Drive) للكمبيوتر والجوال" class="img-frame" src="/media/blogger/08/08821826a89bfb2c147eaf4539cb8c59876859bbf1e64aca18ba015423308a3c.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 أفضل محاكيات Sega Genesis (Mega Drive) للكمبيوتر والجوال</h2>
+        
         <p style="text-align: center;">إذا كنت من عشاق ألعاب <strong>Sega Genesis</strong> وتبحث عن أفضل المحاكيات لتجربة تلك الألعاب الكلاسيكية على جهازك، فأنت في المكان الصحيح! في هذا الموضوع، بنعرض لك أفضل المحاكيات على الكمبيوتر والجوال اللي بتخليك تعيش مغامرات <b>Sonic</b> و <b>Streets of Rage</b> وكأنك لسه مخلص اللعب عليهم بالأمس!</p>
     </header>
 

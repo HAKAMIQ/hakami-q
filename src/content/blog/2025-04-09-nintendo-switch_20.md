@@ -11,7 +11,7 @@ labels: ["Nintendo","NS"]
 
 <div data-darkreader-inline-bgcolor="" data-darkreader-inline-color="" dir="rtl" style="--darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #2c2e2e); --darkreader-inline-color: var(--darkreader-text-333333, #dedad5); background-color: white; color: #333333; font-family: Cairo, sans-serif; font-size: 16px; line-height: 2; padding: 20px; text-align: right;">
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/b7/b7c6ea67e95e1dbf07622b90bd3786be2fb77c95c2cb61c5c93b16f959069af7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/b7/b7c6ea67e95e1dbf07622b90bd3786be2fb77c95c2cb61c5c93b16f959069af7.png" width="320" /></a></div><h2 style="text-align: center;">📊 جدول توافق أشهر ألعاب Nintendo Switch مع المحاكيات</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/b7/b7c6ea67e95e1dbf07622b90bd3786be2fb77c95c2cb61c5c93b16f959069af7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال 📊 جدول توافق أشهر ألعاب Nintendo Switch مع المحاكيات" border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/b7/b7c6ea67e95e1dbf07622b90bd3786be2fb77c95c2cb61c5c93b16f959069af7.png" width="320" /></a></div>
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
 <thead data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: var(--darkreader-background-f2f2f2, #333636); background-color: #f2f2f2;">

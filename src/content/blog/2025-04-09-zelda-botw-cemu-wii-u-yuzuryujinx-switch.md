@@ -197,7 +197,7 @@ labels: ["Nintendo","NS","Wii-U"]
 <article class="hakamiq-comparison-article">
 
     <header>
-        <h1 class="hakamiq-main-title">Zelda BOTW على الكمبيوتر: مقارنة بين Cemu و Yuzu و Ryujinx</h1>
+        <h2 class="hakamiq-main-title">Zelda BOTW على الكمبيوتر: مقارنة بين Cemu و Yuzu و Ryujinx</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/ae/aec5cabd6db7a15b000b4bb479624e78db4ebbe33efed81b1ff7d808be1c351d.jpg" alt="Zelda Breath of the Wild Emulation Comparison" loading="lazy" decoding="async">

@@ -67,7 +67,7 @@ labels: ["PlayStation","PS1"]
         <h3 style="color: var(--xe-red);">1. ePSXe: المحاكي الكلاسيكي القديم</h3>
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png">
-                <img class="img-frame" src="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال  مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/2b/2b936f46b129e3c7dc6e77bd3f5afee58a61fe9f4ed5e71e89104e74e114acfb.png" width="320" />
             </a>
         </div>
         <p>يعتبر <strong>ePSXe</strong> الأب الروحي لمحاكاة PS1، أطلق عام 2000 واعتمد على نظام "البلجنز" (Plugins). رغم تاريخه العريق، إلا أنه بدأ يواجه صعوبات في التوافق مع أنظمة ويندوز الحديثة.</p>
@@ -82,7 +82,7 @@ labels: ["PlayStation","PS1"]
         <h3 style="color: var(--xe-blue);">2. DuckStation: ثورة المحاكاة الحديثة</h3>
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png">
-                <img class="img-frame" src="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png" width="320" />
+                <img alt="صورة توضيحية ضمن مقال  مقارنة بين محاكيات PS1 القديمة والجديدة: من ePSXe إلى DuckStation" class="img-frame" src="/media/blogger/a1/a1aa148dd069c017a7345d5f5a124b7a921ee785988f1fedeb5b73c6af01f873.png" width="320" />
             </a>
         </div>
         <p>بالمقابل، يمثل <strong>DuckStation</strong> الجيل الجديد. يركز على سهولة الاستخدام، السرعة، والدقة العالية جداً، مما يجعله المحاكي رقم 1 حالياً لمعظم اللاعبين.</p>

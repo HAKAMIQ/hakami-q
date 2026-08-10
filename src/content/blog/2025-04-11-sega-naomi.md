@@ -65,7 +65,7 @@ labels: ["sega","Sega-Naomi"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg">
-                <img class="img-frame" src="/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg" width="297" />
+                <img alt="صورة توضيحية ضمن مقال قائمة بأقوى ألعاب SEGA NAOMI اللي لازم تجربها الآن" class="img-frame" src="/media/blogger/8e/8e87e083696c69fa3c8c7d5caf12a0a217fe02438f594eda386f28a1751ffdb2.jpg" width="297" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">قائمة بأقوى ألعاب SEGA NAOMI التي يجب عليك تجربتها</h2>

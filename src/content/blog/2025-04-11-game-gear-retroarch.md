@@ -67,7 +67,7 @@ labels: ["sega","Sega-GameGear"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg">
-                <img class="img-frame" src="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg" width="265" />
+                <img alt="صورة توضيحية ضمن مقال تشغيل ألعاب Game Gear باستخدام RetroArch" class="img-frame" src="/media/blogger/9b/9bcbea7f6687cf2efa2eae20dba4145936725b4f8ea4091c6524ae5433810c8e.jpg" width="265" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب Game Gear باستخدام RetroArch</h2>

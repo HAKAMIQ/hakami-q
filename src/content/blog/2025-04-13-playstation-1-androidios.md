@@ -56,7 +56,7 @@ labels: ["PlayStation","PS1"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg">
-                <img class="img-frame" src="/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال إمكانية محاكاة PlayStation 1 على الأجهزة المحمولة (Android/iOS)" class="img-frame" src="/media/blogger/4b/4b09ff36656d9e7212e1602cf5ed3196a5a284fa6ba7e2e7fb6d867188660b1e.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">📱 محاكاة PlayStation 1 على الأجهزة المحمولة</h2>

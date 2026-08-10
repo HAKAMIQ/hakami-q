@@ -171,7 +171,7 @@ labels: ["Xbox","Xbox360"]
 <article class="hakamiq-xenia-guide">
 
     <header>
-        <h1 class="hakamiq-main-title">الدليل الاحترافي لتعديل إعدادات Xenia Canary</h1>
+        <h2 class="hakamiq-main-title">الدليل الاحترافي لتعديل إعدادات Xenia Canary</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/fe/fe2a27cf770ae9ea23abd25778decb823966d3c00cf61230429a3023f3f6815f.png" alt="Xenia Canary Settings Guide" loading="lazy" decoding="async">

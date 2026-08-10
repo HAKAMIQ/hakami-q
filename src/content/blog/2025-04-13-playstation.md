@@ -66,7 +66,7 @@ labels: ["PlayStation","PS1","PS2","PS3","PS4","PS5"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg">
-                <img class="img-frame" src="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين !" class="img-frame" src="/media/blogger/3b/3b577ccbbf7efa41e507e657697e1281ae668961b8376397948a1640395633e9.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 كيف تبدأ في محاكيات PlayStation؟ دليل المبتدئين الشامل</h2>

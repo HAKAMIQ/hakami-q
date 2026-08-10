@@ -138,7 +138,7 @@ labels: ["articles"]
                 <img alt="The Spriters Resource - حكميك" src="/media/blogger/c1/c1fe963b0be31e76eddb6ebe53c81deb59d355cdda3920f29e9d9578df71afc8.png" style="width:100%; max-width: 700px; border-radius: 15px;" />
             </a>
         </div>
-        <h1>The Spriters Resource: الكنز الأعظم لأصول ألعاب الفيديو</h1>
+        <h2>The Spriters Resource: الكنز الأعظم لأصول ألعاب الفيديو</h2>
         <p style="opacity: 0.8;">دليلك الشامل لتحميل "السبرايت"، الخلفيات، والمجسمات ثلاثية الأبعاد</p>
     </header>
 

@@ -73,10 +73,10 @@ labels: ["Genesis32X","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg">
-                <img class="img-frame" src="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg" width="317" />
+                <img alt="صورة توضيحية ضمن مقال كيف تجهز ملفات BIOS لتشغيل ألعاب Genesis 32X بدون مشاكل" class="img-frame" src="/media/blogger/7e/7ee1811df174834e0ff41aeb38dc1eefeaa3661eba71f17f03ec7a39768005c7.jpg" width="317" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">كيف تجهز ملفات BIOS لتشغيل ألعاب Genesis 32X بدون مشاكل؟</h2>
+        
         <p style="text-align: center;">تواجه مشكلة الشاشة السوداء عند تشغيل ألعاب 32X؟ غالباً ما يكون السبب هو غياب ملفات النظام الأساسية. إليك الدليل التقني الشامل لضبط ملفات BIOS وضمان عمل المحاكي بكفاءة تامة.</p>
     </header>
 

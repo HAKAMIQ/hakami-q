@@ -153,7 +153,7 @@ labels: ["GameCube","Nintendo"]
 <article class="hakamiq-gc-article">
 
     <header>
-        <h1 class="hakamiq-main-title">أقوى 10 ألعاب على Nintendo GameCube: جواهر المكعب الأرجواني</h1>
+        <h2 class="hakamiq-main-title">أقوى 10 ألعاب على Nintendo GameCube: جواهر المكعب الأرجواني</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/dd/dd4fb1c7d011d0a2b012da3e741ca147fe934732062bc64bd907c6a6dc689996.jpg" alt="أفضل ألعاب نينتندو جيم كيوب" loading="lazy" decoding="async">

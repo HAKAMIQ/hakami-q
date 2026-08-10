@@ -113,7 +113,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg">
-            <img src="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال ديمو وهومبرو PSP: ألعاب مجانية وتجريبية تشتغل على PPSSPP" src="/media/blogger/5c/5ce77f1c32314038307ce62475137ce98445702632b25ed9e05b1e0b23e7a7b7.jpg" width="300" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

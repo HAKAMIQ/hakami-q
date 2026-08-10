@@ -64,7 +64,7 @@ labels: ["Dreamcast","Sega-Naomi"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg">
-                <img class="img-frame" src="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال  هل NAOMI يتفوق على Dreamcast؟ مقارنة" class="img-frame" src="/media/blogger/d5/d5405e7289007e1259490f7d83c57038d4041745f953e850c17a249d46715e1a.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">هل يتفوق نظام NAOMI على Dreamcast؟ مقارنة تقنية</h2>

@@ -58,7 +58,7 @@ a:hover {
    
 </style>
 
-<div class="box">&nbsp;📦 متابعة من الجزء الأول: إعداد وتركيب ملفات BIOS والأنوية في RetroArch</div><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" width="320" /></a></div><p>بعد الانتهاء من <a href="https://hakamiq1.blogspot.com/2025/04/retroarch-install.html">الجزء الأول</a> من سلسلة RetroArch والذي شرحت فيه خطوات التثبيت وتحميل الأنوية، ننتقل الآن إلى المرحلة التالية التي تحل أغلب المشاكل الشائعة.</p>
+<div class="box">&nbsp;📦 متابعة من الجزء الأول: إعداد وتركيب ملفات BIOS والأنوية في RetroArch</div><div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال RetroArch الإعداد وتركيب ملفات BIOS والأنوية | الجزء الثاني" border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/16/165a28e60727ef74af435dd3b54d440baffb612764ee3723456d3e4cc1b1e353.png" width="320" /></a></div><p>بعد الانتهاء من <a href="https://hakamiq1.blogspot.com/2025/04/retroarch-install.html">الجزء الأول</a> من سلسلة RetroArch والذي شرحت فيه خطوات التثبيت وتحميل الأنوية، ننتقل الآن إلى المرحلة التالية التي تحل أغلب المشاكل الشائعة.</p>
 
 <p>في هذا الدليل سنغطي:</p>
 <ul>

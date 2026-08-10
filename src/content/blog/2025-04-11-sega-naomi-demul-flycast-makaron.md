@@ -76,7 +76,7 @@ labels: ["sega","Sega-Naomi"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg">
-                <img class="img-frame" src="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg" width="226" />
+                <img alt="صورة توضيحية ضمن مقال  أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد (Demul - Flycast - Makaron)" class="img-frame" src="/media/blogger/a3/a334b4fc38dad3e24ec5fc7fd1f21449058b0054938e212752ad47f92fed6922.jpg" width="226" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">أفضل محاكيات Sega NAOMI لتشغيل ألعاب الأركيد</h2>

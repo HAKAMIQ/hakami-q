@@ -91,7 +91,7 @@ labels: ["ANDROID-EMU"]
                 <img alt="محاكي Xanite للأندرويد - حقيقة أم وهم؟" src="/media/blogger/7d/7dff7ba84d9dd19304d6c1a137a388caf2acba3f82765fa6131c9a179d8d1ac9.png" style="width:100%; max-width: 600px; border-radius: 15px;" />
             </a>
         </div>
-        <h1>محاكي Xanite (Xbox / Xbox 360) — الحقيقة الكاملة</h1>
+        
         <p style="opacity: 0.8; margin-top: 10px;">بين وعود المطورين وتشكيك المجتمع التقني: هل هو محاكي حقيقي؟</p>
     </header>
 

@@ -71,7 +71,7 @@ labels: ["Genesis32X","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg">
-                <img class="img-frame" src="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال مقارنة بين Kega Fusion وGenesis Plus GX وPicoDrive لتشغيل 32X" class="img-frame" src="/media/blogger/fd/fdf361cd0b4baff7d477e957ebb231677aa88fec30e0234d9396475e4190ed84.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">مقارنة تقنية | Kega Fusion vs Genesis Plus GX vs PicoDrive</h2>

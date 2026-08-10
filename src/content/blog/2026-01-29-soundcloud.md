@@ -109,7 +109,7 @@ labels: ["articles"]
                 <img alt="Have I Been Pwned Alert" src="/media/blogger/35/35314cac627a05cb8f13408595cfd6fc3a79edbf3e7d3faa7f7744cba08090e6.png" style="width:100%; max-width: 500px; border-radius: 10px;" />
             </a>
         </div>
-        <h1>تحذير أمني: اختراق ضخم يطال 29.8 مليون حساب</h1>
+        <h2>تحذير أمني: اختراق ضخم يطال 29.8 مليون حساب</h2>
         <p style="color: #94a3b8; font-size: 14px;">كشفت خدمة Have I Been Pwned في 29 يناير 2026 عن تسريب بيانات يتجاوز كل التوقعات السابقة.</p>
     </header>
 

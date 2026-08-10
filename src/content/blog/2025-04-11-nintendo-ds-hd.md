@@ -69,7 +69,7 @@ labels: ["N-DS","Nintendo"]
                 <img class="img-frame" src="/media/blogger/8a/8addb42bb0ffb04ee847aea918e8fe1a16c8779147d7d257efa153981e9c2c9b.jpg" width="320" alt="صورة توضيحية لجودة المحاكي" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">⏳ كيف تخلي ألعاب Nintendo DS تشتغل بجودة HD</h2>
+        
         <p>طفشان من الجرافيكس المبكسل؟ ودك Pokémon يطلع كأنه أنمي 4K؟ تعال أعلّمك كيف تشغل ألعاب DS بجودة HD وتخلي اللعبة تقول لك: "مين قلك إني لعبة قديمة؟" 😂</p>
     </header>
 

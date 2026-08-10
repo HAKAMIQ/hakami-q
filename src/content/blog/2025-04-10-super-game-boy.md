@@ -38,7 +38,7 @@ labels: ["Nintendo","SGB"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="386" data-original-width="686" height="180" src="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" width="320" /></a></div><h2>🎮 وش هو Super Game Boy؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال 🎮 وش هو Super Game Boy؟" border="0" data-original-height="386" data-original-width="686" height="180" src="/media/blogger/ec/ec73c08a1672d042249ef887475a1c5625099711b6a8c3967946aaf1c754e075.jpg" width="320" /></a></div>
 <p>
 الـ <strong>Super Game Boy</strong> هو محول رسمي من نينتندو صدر سنة 1994، يركب على جهاز <strong>Super Nintendo</strong> (SNES) ويسمح لك تلعب ألعاب <strong>Game Boy</strong> على التلفزيون!
 </p>

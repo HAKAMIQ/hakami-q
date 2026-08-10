@@ -111,7 +111,7 @@ labels: ["Commodore","Commodore64"]
                 <img class="img-frame" alt="محاكي VICE للـ C64" src="/media/blogger/28/28cc5030b4a99547093c1cb8e63f2efeb571a2fa53cf27ec0387eeca54af760b.jpg" />
             </a>
         </div>
-        <h1>🖥️ طريقة تشغيل Commodore 64 على الكمبيوتر باستخدام VICE</h1>
+        <h2>🖥️ طريقة تشغيل Commodore 64 على الكمبيوتر باستخدام VICE</h2>
         <p style="opacity: 0.8; margin-top: 10px;">استعد تجربة الـ C64 الكاملة وكأنك أمام شاشة CRT في الثمانينات</p>
     </header>
 

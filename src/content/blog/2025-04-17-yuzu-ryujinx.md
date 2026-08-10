@@ -126,7 +126,7 @@ labels: ["Nintendo","NS"]
                 <img class="img-frame" alt="Yuzu vs Ryujinx Emulator Comparison" src="/media/blogger/9c/9cb1834f66d73164cdc0e80f7edcb0bae889922a698d9927b3a7c16c827d7ed6.png" style="max-width: 500px;" />
             </a>
         </div>
-        <h1>مقارنة نهائية بين Yuzu و Ryujinx من تجربة شخصية 🎮</h1>
+        <h2>مقارنة نهائية بين Yuzu و Ryujinx من تجربة شخصية 🎮</h2>
         <p style="color: var(--text-muted); font-size: 16px; max-width: 800px; margin: 0 auto;">
             بعد سنوات من الغوص في عالم المحاكاة وتجربة مئات الألعاب عبر منصات متعددة، وصلت لقناعة راسخة: <b>محاكيات Yuzu و Ryujinx هما حجر الأساس لتشغيل ألعاب Nintendo Switch على الحاسب.</b> لكن رغم أنهم يخدمون نفس الهدف، إلا أن كل واحد فيهم يمشي على طريق مختلف تماماً.
         </p>

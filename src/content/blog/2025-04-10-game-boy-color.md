@@ -9,7 +9,7 @@ originalUrl: 'https://hakamiq1.blogspot.com/2025/04/game-boy-color.html'
 labels: ["GBC","Nintendo"]
 ---
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="512" data-original-width="512" height="320" src="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال كل شيء عن Game Boy Color – المحاكي، الإعدادات، التجربة، والنصائح الذهبية" border="0" data-original-height="512" data-original-width="512" height="320" src="/media/blogger/d8/d8e4f5b13d28adea63d7ea2f2e910be44eaf5d1d82eb41dc9ca775ef8f934399.png" width="320" /></a></div><h2>وش سالفة GBC؟</h2>
 <p>بعد ما عشنا على الأبيض والأسود سنين، قررت نينتندو تفكنا وتنزل جهاز ملوّن! <strong>Game Boy Color</strong> نزل عام 1998، وكان حرفيًا صدمة لعيوننا الصغيرة وقتها 😍</p>
 <p>صار كل شيء ينور: بوكيمون بالألوان، زيلدا ترقص، وماريو يلبس أحمر صح 😂</p>
 

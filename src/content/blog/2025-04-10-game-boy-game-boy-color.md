@@ -38,7 +38,7 @@ labels: ["Game Boy","GBC","Nintendo"]
   }
 </style>
 
-<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" width="320" /></a></div><h2>.🧠 ليه السؤال مهم؟</h2>
+<div class="separator" style="clear: both; text-align: center;"><a href="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="صورة توضيحية ضمن مقال  الفرق بين Game Boy و Game Boy Color – وش غيروا بالضبط؟" border="0" data-original-height="1024" data-original-width="1024" height="320" src="/media/blogger/1f/1f15a3ccb84500d2110ef0036dff5621f80734b9887efdb3527cdf7168fbd362.png" width="320" /></a></div><h2>.🧠 ليه السؤال مهم؟</h2>
 <p>
 كثير ناس تخلط بين ألعاب <strong>GB</strong> و <strong>GBC</strong>، وبعضهم يحمّل لعبة GBC على محاكي GB ويقول "ليش ما اشتغلت؟" 😅  
 فلازم نوضح الفرق بين الجهازين، سواء من ناحية الشكل، القدرات، أو التوافق.

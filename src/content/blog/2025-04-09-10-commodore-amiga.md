@@ -123,7 +123,7 @@ labels: ["Commodore","Commodore-AMIGA"]
                 <img class="img-frame" alt="Best Amiga Games - HAKAMIQ" src="/media/blogger/55/554d169c74c5f108240c9e0d9a99cff1bd63addd1e7b5fe7216ae33d49178ab8.jpg" />
             </a>
         </div>
-        <h1>أفضل 10 ألعاب على Commodore Amiga لا تزال ممتعة في 2026</h1>
+        <h2>أفضل 10 ألعاب على Commodore Amiga لا تزال ممتعة في 2026</h2>
         <p style="opacity: 0.8; margin-top: 10px;">استكشف مكتبة الجهاز الذي قدم أروع الرسوم والصوتيات في العصر الذهبي</p>
     </header>
 

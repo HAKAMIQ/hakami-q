@@ -118,7 +118,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg">
-            <img src="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال طريقة نقل ألعاب PSP إلى الجوال (Android و iOS) وتشغيلها على PPSSPP" src="/media/blogger/5e/5e6af4946e89b64fe467801edcee4b623f5ab6717b880aa46d98b98ffb4b78ce.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

@@ -63,7 +63,7 @@ labels: ["Pico","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png">
-                <img class="img-frame" src="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png" width="195" />
+                <img alt="صورة توضيحية ضمن مقال طريقة تشغيل ألعاب Pico داخل RetroArch + أفضل النوى" class="img-frame" src="/media/blogger/c7/c792fbe470d994c1c087f9b5315527bddec4231a49f09633802dba71d1f8e244.png" width="195" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">طريقة تشغيل ألعاب SEGA Pico داخل RetroArch | الدليل التقني</h2>

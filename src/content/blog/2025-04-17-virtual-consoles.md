@@ -146,7 +146,7 @@ labels: ["Atari","Atari2600","Commodore","Commodore64","Game Boy","Nintendo-NES"
                 <img class="img-frame" alt="المحاكيات الأونلاين - Virtual Consoles" src="/media/blogger/81/81229cc63ef54d90b5456dd7242dde4804e52d7cf6bc83e5f426922fd5f95cc0.png" style="max-width: 500px;" />
             </a>
         </div>
-        <h1>🎮 المحاكيات الأونلاين - رجعة للأساطير القديمة بدون تحميل</h1>
+        <h2>🎮 المحاكيات الأونلاين - رجعة للأساطير القديمة بدون تحميل</h2>
         <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">
             إذا أنت من الناس اللي عاشت أيام أبل 2، أتاري، كومودور 64، أو جيم بوي، وتبي تعيش الحنين من جديد بدون تحميل ولا وجع راس؟ موقع <b>Virtual Consoles</b> هو كنزك الرقمي، يقدّم محاكيات للأجهزة القديمة <u>أونلاين مباشرة من المتصفح</u>. افتح اللعبة، واضغط تشغيل، وخلك فالعالم الثاني.
         </p>

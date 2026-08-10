@@ -109,7 +109,7 @@ labels: ["PlayStation","psp"]
 
     <div style="text-align: center; margin-bottom: 30px;">
         <a href="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg">
-            <img src="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
+            <img alt="صورة توضيحية ضمن مقال 💿 كيف تحصل على ألعاب PSP لمحاكي PPSSPP؟ | دليل كامل للـ ISO وCSO وPSN" src="/media/blogger/a2/a25849fff6e0f7fba27abfd6a8406673997cde699d8a3c320a7b013b5df6c812.jpg" width="320" style="border-radius: 12px; width: 100%; max-width: 500px; height: auto;" />
         </a>
     </div>
 

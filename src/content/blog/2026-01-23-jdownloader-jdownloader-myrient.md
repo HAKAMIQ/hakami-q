@@ -105,7 +105,7 @@ labels: ["articles"]
                 <img alt="دليل برامج تحميل Myrient - حكميك" src="/media/blogger/38/38e65228718de16fbde0ee021a8104546893f2ce13d5381b2421daf5ad7c7608.png" style="width:100%; max-width: 650px; border-radius: 15px;" />
             </a>
         </div>
-        <h1>شروحات برامج التحميل وإعدادات الأداء الأقصى</h1>
+        <h2>شروحات برامج التحميل وإعدادات الأداء الأقصى</h2>
         <p style="color: #94a3b8;">تجنب الحظر واضمن سرعة تحميل مستقرة من سيرفرات Myrient</p>
     </header>
 

@@ -62,7 +62,7 @@ labels: ["PlayStation","PS2"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg">
-                <img class="img-frame" src="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال محاكي PCSX2 | هل يجب استخدام النسخة الثابتة أو التجريبية Nightly" class="img-frame" src="/media/blogger/46/460e584b6c34d239fe404f36459fb3b30fcc359f8ac7b38a77bb09db2b13e6e2.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">هل يجب استخدام النسخة الثابتة أم التجريبية (Nightly)؟</h2>

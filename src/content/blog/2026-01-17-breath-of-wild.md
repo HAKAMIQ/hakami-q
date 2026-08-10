@@ -116,7 +116,7 @@ labels: ["Nintendo","Wii-U"]
                 <img alt="تحسين أداء Zelda BOTW على Cemu" src="/media/blogger/bf/bfa8fd1b3091a493b7c19583d0532e22b9dd79815d0218f9ebedf8c8e320cc3d.png" style="width:100%; max-width: 600px; border-radius: 10px;" />
             </a>
         </div>
-        <h1>دليل تحسين أداء Breath of the Wild (Optimizing Guide)</h1>
+        <h2>دليل تحسين أداء Breath of the Wild (Optimizing Guide)</h2>
     </header>
 
     <div class="tech-card" style="border: none; background: transparent; box-shadow: none;">

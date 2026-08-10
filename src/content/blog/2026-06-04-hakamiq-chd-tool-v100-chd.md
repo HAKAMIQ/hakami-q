@@ -256,9 +256,9 @@ labels: ["PC"]
 
     <header class="tech-header">
         <a href="/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg" imageanchor="1">
-            <img class="tech-header-img-center" border="0" data-original-height="768" data-original-width="1376" height="224" src="/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg" width="400" />
+            <img alt="صورة توضيحية ضمن مقال إطلاق Hakamiq CHD Tool v1.0.0 لإدارة وتحويل ملفات CHD على ويندوز" class="tech-header-img-center" border="0" data-original-height="768" data-original-width="1376" height="224" src="/media/blogger/4f/4fceaf9e2caa84a89aa5a8f82067508b35f363c2df1760b5c6d94aaae987ec60.jpg" width="400" />
         </a>
-        <h2>إطلاق Hakamiq CHD Tool v1.0.0 لإدارة وتحويل ملفات CHD على ويندوز</h2>
+        
         <p>أُعلن اليوم عن إطلاق أول إصدار عام من <b>Hakamiq CHD Tool v1.0.0</b>، وهي أداة سطح مكتب لنظام Windows x64 مخصصة لتسهيل التعامل مع ملفات CHD وعمليات التحويل، والاستخراج، والتحقق، كبديل عملي ومنظم عن الاعتماد الكامل على أوامر <code>chdman</code> اليدوية.</p>
     </header>
 

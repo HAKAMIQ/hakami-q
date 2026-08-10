@@ -161,7 +161,7 @@ labels: ["Nintendo","Wii"]
 <article class="hakamiq-wii-article">
 
     <header>
-        <h1 class="hakamiq-main-title">Nintendo Wii: الثورة التي غيرت مفهوم الألعاب للأبد</h1>
+        <h2 class="hakamiq-main-title">Nintendo Wii: الثورة التي غيرت مفهوم الألعاب للأبد</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/21/212cb989a31536537d8e0c236faf8f0802826ac3550b9c805442f87c585f9b67.png" alt="جهاز نينتندو وي" loading="lazy" decoding="async">

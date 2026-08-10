@@ -68,7 +68,7 @@ labels: ["PlayStation","PS3"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg">
-                <img class="img-frame" src="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال كيفية تشغيل الألعاب عبر ملفات PKG وRAP على RPCS3" class="img-frame" src="/media/blogger/2b/2b8a71479094ff5d0df4de6df423f3cee4d405e36e19ceb5d7eeaa937b13bc7e.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">كيفية تشغيل الألعاب عبر ملفات PKG و RAP على محاكي RPCS3</h2>

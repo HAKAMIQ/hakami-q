@@ -67,10 +67,10 @@ labels: ["Saturn","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg">
-                <img class="img-frame" src="/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال محاكيات Sega Saturn - هل فعلاً تحتاج جهاز قوي؟" class="img-frame" src="/media/blogger/42/425a2d6dcaf5c86b66a1a4f06d88a25f3ad17dfcc491822661df4023456dd946.jpg" width="320" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">🎮 محاكيات Sega Saturn - هل فعلاً تحتاج جهاز قوي؟</h2>
+        
         <p style="text-align: center;">كان جهاز Sega Saturn جهازًا قويًا في عصره، لكنه واجه صعوبة في الحصول على دعم كبير بسبب بعض القيود التقنية. والآن، مع محاكياته المتاحة، هل فعلاً تحتاج جهازًا قويًا لتشغيله بشكل سلس؟ هنا هنحلل مع بعض ونكتشف الإجابة! 😎</p>
     </header>
 

@@ -113,7 +113,7 @@ labels: ["articles"]
 
     <header class="tr-header">
         <div class="tr-badge">Native Version • No Emulation</div>
-        <h1>Tomb Raider (2013) تصل رسمياً إلى أندرويد</h1>
+        <h2>Tomb Raider (2013) تصل رسمياً إلى أندرويد</h2>
         <p style="opacity: 0.9;">تجربة الـ AAA الكاملة الآن في جيبك عبر Feral Interactive</p>
     </header>
 

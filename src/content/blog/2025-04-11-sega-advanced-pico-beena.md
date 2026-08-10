@@ -64,10 +64,10 @@ labels: ["sega","Sega-AdvancedPicoBeena"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg">
-                <img class="img-frame" src="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg" width="251" />
+                <img alt="صورة توضيحية ضمن مقال ما هو جهاز Sega Advanced Pico Beena؟ ولماذا لم نسمع به؟" class="img-frame" src="/media/blogger/92/9267cd632cb0dbaf11b50e6d9d6c7aba4aaa206dfecbf1443afdd7e6f51de12e.jpg" width="251" />
             </a>
         </div>
-        <h2 style="color: var(--xe-blue); text-align: center;">ما هو جهاز Sega Advanced Pico Beena؟ ولماذا لم نسمع به؟</h2>
+        
         <p style="text-align: center;">اقتحمت SEGA سوق تعليم الأطفال بجهاز Beena؛ محاولة تقنية طموحة لصنع كونسول تعليمي تفاعلي، لكنها واجهت تحديات كبيرة حالت دون انتشاره العالمي.</p>
     </header>
 

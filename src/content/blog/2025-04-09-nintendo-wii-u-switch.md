@@ -180,7 +180,7 @@ labels: ["Nintendo","Wii-U"]
 <article class="hakamiq-wiiu-article">
 
     <header>
-        <h1 class="hakamiq-main-title">جهاز Wii U: القصة الكاملة للمظلوم الذي مهد الطريق</h1>
+        <h2 class="hakamiq-main-title">جهاز Wii U: القصة الكاملة للمظلوم الذي مهد الطريق</h2>
         
         <figure class="hakamiq-smart-figure">
             <img src="/media/blogger/be/be6ebf2412ca543f4603b1f51f88d9f674275369da55bf698813414cab1f06e9.jpg" alt="Nintendo Wii U Console GamePad" loading="lazy" decoding="async">

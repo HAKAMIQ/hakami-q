@@ -67,7 +67,7 @@ labels: ["Dreamcast","Genesis-MegaDrive","Saturn","sega"]
     <header class="tech-header">
         <div class="separator" style="clear: both; text-align: center;">
             <a href="/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg">
-                <img class="img-frame" src="/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg" width="320" />
+                <img alt="صورة توضيحية ضمن مقال RetroArch وتشغيل ألعاب SEGA - كل الأنوية وأفضل الإعدادات" class="img-frame" src="/media/blogger/75/75614e6a2e2453dd98e3584e6a8211640720f58cf22c7588eb6a406ec7cc14e5.jpg" width="320" />
             </a>
         </div>
         <h2 style="color: var(--xe-blue); text-align: center;">🎮 RetroArch وتشغيل ألعاب SEGA - الأنوية وأفضل الإعدادات</h2>
