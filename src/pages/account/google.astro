@@ -1,0 +1,231 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import SkipLink from '../../components/SkipLink.astro';
+import '../../styles/account-system.css';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title="ربط حساب Google | HAKAMIQ" description="ربط حساب Google بحساب HAKAMIQ." />
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+	</head>
+	<body>
+		<SkipLink />
+		<Header />
+		<main id="main-content" tabindex="-1" class="account-main">
+			<div class="account-shell">
+				<header class="account-heading">
+					<p class="account-kicker">HAKAMIQ ACCOUNT</p>
+					<h1>ربط حساب Google</h1>
+					<p id="page-status">جاري التحقق من الحساب…</p>
+				</header>
+
+				<section id="google-card" class="account-card account-hidden" aria-labelledby="google-title">
+					<h2 id="google-title">تسجيل الدخول باستخدام Google</h2>
+					<p>بعد الربط يمكنك استخدام زر «تسجيل الدخول باستخدام Google» بدل كتابة كلمة المرور. لا نخزن كلمة مرور Google أو رمز وصول إلى Gmail.</p>
+					<dl class="account-summary">
+						<div><dt>حساب HAKAMIQ</dt><dd id="account-username">—</dd></div>
+						<div><dt>البريد الإلكتروني</dt><dd id="account-email">—</dd></div>
+						<div><dt>حالة Google</dt><dd id="google-state">—</dd></div>
+						<div><dt>تاريخ الربط</dt><dd id="google-linked-at">—</dd></div>
+					</dl>
+					<div id="google-link-panel" class="account-form account-hidden">
+						<p class="account-help">للحماية، يجب أن يكون بريد حساب Google مطابقًا لبريد حساب HAKAMIQ الحالي.</p>
+						<div id="google-link-button" class="account-google-button"></div>
+					</div>
+					<div id="google-unlink-panel" class="account-actions account-hidden">
+						<button id="google-unlink-button" class="account-button account-button--danger" type="button">إلغاء ربط Google</button>
+					</div>
+					<p id="google-feedback" class="account-feedback account-hidden" role="status"></p>
+					<p class="account-links"><a href="/account">العودة إلى حسابي</a></p>
+				</section>
+
+				<section id="guest-card" class="account-card account-hidden">
+					<h2>يلزم تسجيل الدخول أولًا</h2>
+					<p>سجّل الدخول بكلمة مرور حساب HAKAMIQ الحالية، ثم ارجع إلى هذه الصفحة لربط Google بأمان.</p>
+					<div class="account-actions">
+						<a class="account-button account-button--primary" href="/login?next=/account/google">تسجيل الدخول</a>
+					</div>
+				</section>
+			</div>
+		</main>
+		<Footer />
+
+		<script>
+			type GoogleCredentialResponse = { credential?: string };
+			type GoogleIdentityApi = {
+				initialize: (config: { client_id: string; callback: (response: GoogleCredentialResponse) => void; auto_select?: boolean }) => void;
+				renderButton: (element: HTMLElement, options: Record<string, string | number | boolean>) => void;
+			};
+
+			const pageStatus = document.querySelector<HTMLElement>('#page-status');
+			const googleCard = document.querySelector<HTMLElement>('#google-card');
+			const guestCard = document.querySelector<HTMLElement>('#guest-card');
+			const username = document.querySelector<HTMLElement>('#account-username');
+			const email = document.querySelector<HTMLElement>('#account-email');
+			const googleState = document.querySelector<HTMLElement>('#google-state');
+			const googleLinkedAt = document.querySelector<HTMLElement>('#google-linked-at');
+			const linkPanel = document.querySelector<HTMLElement>('#google-link-panel');
+			const linkButton = document.querySelector<HTMLElement>('#google-link-button');
+			const unlinkPanel = document.querySelector<HTMLElement>('#google-unlink-panel');
+			const unlinkButton = document.querySelector<HTMLButtonElement>('#google-unlink-button');
+			const feedback = document.querySelector<HTMLElement>('#google-feedback');
+			let googleClientId = '';
+			let googleScriptPromise: Promise<GoogleIdentityApi> | null = null;
+
+			function message(text: string, kind = '') {
+				if (!feedback) return;
+				feedback.textContent = text;
+				feedback.dataset.kind = kind;
+				feedback.classList.toggle('account-hidden', !text);
+			}
+
+			function formatDate(value: unknown) {
+				if (!value) return '—';
+				const date = new Date(String(value));
+				if (Number.isNaN(date.getTime())) return '—';
+				return date.toLocaleString('ar-SA');
+			}
+
+			function googleApi() {
+				return (window as typeof window & { google?: { accounts?: { id?: GoogleIdentityApi } } }).google?.accounts?.id;
+			}
+
+			function loadGoogleScript() {
+				if (googleScriptPromise) return googleScriptPromise;
+				googleScriptPromise = new Promise((resolve, reject) => {
+					const existing = googleApi();
+					if (existing) {
+						resolve(existing);
+						return;
+					}
+					const script = document.createElement('script');
+					script.src = 'https://accounts.google.com/gsi/client?hl=ar';
+					script.async = true;
+					script.defer = true;
+					script.addEventListener('load', () => {
+						const api = googleApi();
+						if (api) resolve(api);
+						else reject(new Error('تعذر تهيئة خدمة Google.'));
+					}, { once: true });
+					script.addEventListener('error', () => reject(new Error('تعذر تحميل خدمة Google.')), { once: true });
+					document.head.append(script);
+				});
+				return googleScriptPromise;
+			}
+
+			async function handleGoogleCredential(response: GoogleCredentialResponse) {
+				const credential = String(response?.credential || '');
+				if (!credential) {
+					message('لم يصل رمز التحقق من Google.', 'error');
+					return;
+				}
+				message('جاري ربط حساب Google…');
+				try {
+					const result = await fetch('/api/google/link', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ credential }),
+					});
+					const payload = await result.json().catch(() => ({}));
+					if (!result.ok) throw new Error(payload.error || 'تعذر ربط حساب Google.');
+					message('تم ربط حساب Google بنجاح.', 'success');
+					await loadGoogleStatus();
+				} catch (error) {
+					message(error instanceof Error ? error.message : 'تعذر ربط حساب Google.', 'error');
+				}
+			}
+
+			async function renderLinkButton() {
+				if (!googleClientId || !linkButton) return;
+				try {
+					const api = await loadGoogleScript();
+					api.initialize({
+						client_id: googleClientId,
+						callback: handleGoogleCredential,
+						auto_select: false,
+					});
+					linkButton.replaceChildren();
+					api.renderButton(linkButton, {
+						theme: 'outline',
+						size: 'large',
+						shape: 'rectangular',
+						text: 'continue_with',
+						locale: 'ar',
+						width: 320,
+					});
+				} catch (error) {
+					message(error instanceof Error ? error.message : 'تعذر تحميل Google.', 'error');
+				}
+			}
+
+			async function loadGoogleStatus() {
+				const result = await fetch('/api/google/status', { credentials: 'same-origin' });
+				const payload = await result.json().catch(() => ({}));
+				if (!result.ok) throw new Error(payload.error || 'تعذر قراءة حالة ربط Google.');
+				if (googleState) googleState.textContent = payload.linked ? 'مرتبط' : 'غير مرتبط';
+				if (googleLinkedAt) googleLinkedAt.textContent = formatDate(payload.linkedAt);
+				linkPanel?.classList.toggle('account-hidden', Boolean(payload.linked));
+				unlinkPanel?.classList.toggle('account-hidden', !payload.linked);
+				if (!payload.linked) await renderLinkButton();
+			}
+
+			async function initialize() {
+				try {
+					const sessionResponse = await fetch('/api/auth/session', { credentials: 'same-origin' });
+					const session = await sessionResponse.json().catch(() => ({}));
+					if (!sessionResponse.ok) throw new Error(session.error || 'تعذر التحقق من الحساب.');
+					if (!session.authenticated) {
+						if (pageStatus) pageStatus.textContent = 'يلزم تسجيل الدخول لربط Google.';
+						guestCard?.classList.remove('account-hidden');
+						return;
+					}
+					if (username) username.textContent = session.user?.username || '—';
+					if (email) email.textContent = session.user?.email || '—';
+					googleCard?.classList.remove('account-hidden');
+					if (pageStatus) pageStatus.textContent = 'إدارة طريقة تسجيل الدخول بحساب Google.';
+
+					const configResponse = await fetch('/api/google/config', { credentials: 'same-origin' });
+					const config = await configResponse.json().catch(() => ({}));
+					if (!configResponse.ok || !config.enabled || !config.clientId) {
+						if (googleState) googleState.textContent = 'غير مهيأ';
+						message('تسجيل الدخول بحساب Google يحتاج إعداد Client ID للموقع أولًا.', 'error');
+						return;
+					}
+					googleClientId = String(config.clientId);
+					await loadGoogleStatus();
+				} catch (error) {
+					if (pageStatus) pageStatus.textContent = error instanceof Error ? error.message : 'تعذر تهيئة ربط Google.';
+				}
+			}
+
+			unlinkButton?.addEventListener('click', async () => {
+				if (!unlinkButton) return;
+				unlinkButton.disabled = true;
+				message('جاري إلغاء الربط…');
+				try {
+					const response = await fetch('/api/google/unlink', {
+						method: 'POST',
+						credentials: 'same-origin',
+						headers: { 'Content-Type': 'application/json' },
+						body: '{}',
+					});
+					const payload = await response.json().catch(() => ({}));
+					if (!response.ok) throw new Error(payload.error || 'تعذر إلغاء ربط Google.');
+					message('تم إلغاء ربط حساب Google.', 'success');
+					await loadGoogleStatus();
+				} catch (error) {
+					message(error instanceof Error ? error.message : 'تعذر إلغاء ربط Google.', 'error');
+				} finally {
+					unlinkButton.disabled = false;
+				}
+			});
+
+			initialize();
+		</script>
+	</body>
+</html>
