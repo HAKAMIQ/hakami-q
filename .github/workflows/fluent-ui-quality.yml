@@ -86,17 +86,19 @@ jobs:
           npm run security:audit:report
           npm run security:audit
 
-      - name: Validate admin auth and MFA syntax
+      - name: Validate admin auth, MFA and publisher syntax
         run: |
           node --check functions/_lib/auth.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
           node --check functions/api/admin/_middleware.js
+          node --check functions/api/admin/rewrite.js
           node --check functions/api/auth/_middleware.js
           node --check 'functions/api/admin/[[path]].js'
           node --check 'functions/api/auth/[[path]].js'
           node --check 'functions/api/mfa/[[path]].js'
+          node --check public/admin-editor-enhancements.js
 
       - name: Verify password hashing
         run: node scripts/auth-password-self-test.mjs
@@ -134,8 +136,11 @@ jobs:
       - name: Evaluate Web Components principles
         run: npm run web:quality
 
-      - name: Validate article publisher function
-        run: node --check 'functions/api/admin/[[path]].js'
+      - name: Validate article publisher functions
+        run: |
+          node --check 'functions/api/admin/[[path]].js'
+          node --check functions/api/admin/rewrite.js
+          node --check public/admin-editor-enhancements.js
 
       - name: Validate Astro production build
         run: npx astro build
