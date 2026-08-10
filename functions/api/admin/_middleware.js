@@ -24,10 +24,7 @@ const JSON_HEADERS = {
 };
 
 function json(payload, status = 200, headers = {}) {
-	return new Response(JSON.stringify(payload), {
-		status,
-		headers: { ...JSON_HEADERS, ...headers },
-	});
+	return new Response(JSON.stringify(payload), { status, headers: { ...JSON_HEADERS, ...headers } });
 }
 
 function actionFrom(request) {
@@ -48,13 +45,7 @@ function toBase64Url(bytes) {
 }
 
 async function hmac(secret, value) {
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(secret),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign'],
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
 	return toBase64Url(await crypto.subtle.sign('HMAC', key, encoder.encode(value)));
 }
 
@@ -70,15 +61,10 @@ function clearLegacyCookie() {
 }
 
 async function ensureLegacyRateTable(db) {
-	await db.prepare(`
-		CREATE TABLE IF NOT EXISTS legacy_admin_login_limits (
-			client_key TEXT PRIMARY KEY,
-			attempts INTEGER NOT NULL DEFAULT 0,
-			window_started TEXT NOT NULL,
-			blocked_until TEXT,
-			updated_at TEXT NOT NULL
-		)
-	`).run();
+	await db.prepare(`CREATE TABLE IF NOT EXISTS legacy_admin_login_limits (
+		client_key TEXT PRIMARY KEY, attempts INTEGER NOT NULL DEFAULT 0, window_started TEXT NOT NULL,
+		blocked_until TEXT, updated_at TEXT NOT NULL
+	)`).run();
 }
 
 async function legacyRateContext(request, env) {
@@ -87,35 +73,20 @@ async function legacyRateContext(request, env) {
 	await ensureLegacyRateTable(db);
 	const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
 	const clientKey = await hmac(env.ADMIN_SESSION_SECRET, `legacy-admin-login:${ip}`);
-	const row = await db.prepare(`
-		SELECT attempts, window_started, blocked_until
-		FROM legacy_admin_login_limits
-		WHERE client_key = ?
-		LIMIT 1
-	`).bind(clientKey).first();
+	const row = await db.prepare('SELECT attempts, window_started, blocked_until FROM legacy_admin_login_limits WHERE client_key = ? LIMIT 1').bind(clientKey).first();
 	return { db, clientKey, row };
 }
 
 function secondsUntil(value) {
 	const timestamp = Date.parse(value || '');
-	if (!Number.isFinite(timestamp)) return 0;
-	return Math.max(0, Math.ceil((timestamp - Date.now()) / 1000));
+	return Number.isFinite(timestamp) ? Math.max(0, Math.ceil((timestamp - Date.now()) / 1000)) : 0;
 }
 
 async function enforceLegacyRateLimit(request, env) {
 	const context = await legacyRateContext(request, env);
 	if (!context) return null;
 	const retryAfter = secondsUntil(context.row?.blocked_until);
-	if (retryAfter > 0) {
-		return {
-			blocked: json(
-				{ error: 'تم إيقاف محاولات دخول الإدارة مؤقتًا. حاول لاحقًا.' },
-				429,
-				{ 'Retry-After': String(retryAfter) },
-			),
-			context,
-		};
-	}
+	if (retryAfter > 0) return { blocked: json({ error: 'تم إيقاف محاولات دخول الإدارة مؤقتًا. حاول لاحقًا.' }, 429, { 'Retry-After': String(retryAfter) }), context };
 	return { blocked: null, context };
 }
 
@@ -124,54 +95,28 @@ async function recordLegacyLoginResult(rateContext, responseStatus) {
 	const { db, clientKey, row } = rateContext;
 	const now = new Date();
 	const nowIso = now.toISOString();
-
 	if (responseStatus >= 200 && responseStatus < 300) {
 		await db.prepare('DELETE FROM legacy_admin_login_limits WHERE client_key = ?').bind(clientKey).run();
 		return;
 	}
 	if (responseStatus !== 401) return;
-
 	const windowStartedMs = Date.parse(row?.window_started || '');
-	const windowExpired = !Number.isFinite(windowStartedMs)
-		|| now.getTime() - windowStartedMs >= LEGACY_RATE_WINDOW_SECONDS * 1000;
+	const windowExpired = !Number.isFinite(windowStartedMs) || now.getTime() - windowStartedMs >= LEGACY_RATE_WINDOW_SECONDS * 1000;
 	const attempts = windowExpired ? 1 : Number(row?.attempts || 0) + 1;
-	const blockedUntil = attempts >= LEGACY_RATE_MAX_FAILURES
-		? new Date(now.getTime() + LEGACY_RATE_BLOCK_SECONDS * 1000).toISOString()
-		: null;
-	const storedAttempts = blockedUntil ? 0 : attempts;
-	const windowStarted = windowExpired ? nowIso : String(row.window_started);
-
-	await db.prepare(`
-		INSERT INTO legacy_admin_login_limits (
-			client_key, attempts, window_started, blocked_until, updated_at
-		) VALUES (?, ?, ?, ?, ?)
-		ON CONFLICT(client_key) DO UPDATE SET
-			attempts = excluded.attempts,
-			window_started = excluded.window_started,
-			blocked_until = excluded.blocked_until,
-			updated_at = excluded.updated_at
-	`).bind(clientKey, storedAttempts, windowStarted, blockedUntil, nowIso).run();
-
-	await db.prepare(`
-		DELETE FROM legacy_admin_login_limits
-		WHERE updated_at < ?
-	`).bind(new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString()).run();
+	const blockedUntil = attempts >= LEGACY_RATE_MAX_FAILURES ? new Date(now.getTime() + LEGACY_RATE_BLOCK_SECONDS * 1000).toISOString() : null;
+	await db.prepare(`INSERT INTO legacy_admin_login_limits (client_key, attempts, window_started, blocked_until, updated_at)
+		VALUES (?, ?, ?, ?, ?)
+		ON CONFLICT(client_key) DO UPDATE SET attempts=excluded.attempts, window_started=excluded.window_started,
+		blocked_until=excluded.blocked_until, updated_at=excluded.updated_at`)
+		.bind(clientKey, blockedUntil ? 0 : attempts, windowExpired ? nowIso : String(row.window_started), blockedUntil, nowIso).run();
 }
 
 async function requireAdminMfa(request, env, user) {
 	if (!(await isMfaEnabled(env, user.id))) {
-		return json({
-			error: 'يلزم تفعيل التحقق بخطوتين قبل استخدام صلاحيات الإدارة.',
-			mfaSetupRequired: true,
-			setupUrl: '/account?security=setup',
-		}, 403);
+		return json({ error: 'يلزم تفعيل التحقق بخطوتين قبل استخدام صلاحيات الإدارة.', mfaSetupRequired: true, setupUrl: '/admin/security' }, 403);
 	}
 	if (!(await isCurrentSessionMfaVerified(request, env))) {
-		return json({
-			error: 'يلزم تسجيل دخول مكتمل بالتحقق بخطوتين.',
-			mfaRequired: true,
-			loginUrl: '/login?next=/admin',
-		}, 401);
+		return json({ error: 'يلزم تسجيل دخول مكتمل بالتحقق بخطوتين.', mfaRequired: true, loginUrl: '/login?next=/admin' }, 401);
 	}
 	return null;
 }
@@ -179,26 +124,14 @@ async function requireAdminMfa(request, env, user) {
 async function handleCutoverRequest(context, action) {
 	const { request, env } = context;
 	const user = await getAuthenticatedUser(request, env);
-
-	if (action === 'login') {
-		return json({
-			error: 'تم إيقاف كلمة مرور الإدارة القديمة. استخدم حساب المدير لتسجيل الدخول.',
-			loginUrl: '/login?next=/admin',
-		}, 410);
-	}
-
+	if (action === 'login') return json({ error: 'تم إيقاف كلمة مرور الإدارة القديمة. استخدم حساب المدير.', loginUrl: '/login?next=/admin' }, 410);
 	if (action === 'session' && request.method === 'GET') {
 		if (!user) return json({ authenticated: false, accountAuth: true, loginUrl: '/login?next=/admin' });
 		if (user.role !== 'admin') return json({ authenticated: false, accountAuth: true, error: 'لا تملك صلاحية إدارة المقالات.' }, 403);
 		const mfaError = await requireAdminMfa(request, env, user);
 		if (mfaError) return mfaError;
-		return json(
-			{ authenticated: true, accountAuth: true, mfaVerified: true, user: { id: user.id, username: user.username, role: user.role } },
-			200,
-			{ 'Set-Cookie': await compatibilityCookie(env) },
-		);
+		return json({ authenticated: true, accountAuth: true, mfaVerified: true, user: { id: user.id, username: user.username, role: user.role } }, 200, { 'Set-Cookie': await compatibilityCookie(env) });
 	}
-
 	if (action === 'logout') {
 		requireSameOriginPost(request);
 		await destroySession(request, env);
@@ -207,7 +140,6 @@ async function handleCutoverRequest(context, action) {
 		headers.append('Set-Cookie', clearLegacyCookie());
 		return new Response(JSON.stringify({ authenticated: false }), { status: 200, headers });
 	}
-
 	if (action === 'publish') {
 		if (!user) return json({ error: 'يلزم تسجيل الدخول بحساب المدير.', loginUrl: '/login?next=/admin' }, 401);
 		if (user.role !== 'admin') return json({ error: 'لا تملك صلاحية نشر المقالات.' }, 403);
@@ -215,7 +147,6 @@ async function handleCutoverRequest(context, action) {
 		if (mfaError) return mfaError;
 		return context.next();
 	}
-
 	return context.next();
 }
 
@@ -223,10 +154,7 @@ export async function onRequest(context) {
 	const { request, env } = context;
 	const action = actionFrom(request);
 	try {
-		if ((await adminCount(env)) > 0) {
-			return await handleCutoverRequest(context, action);
-		}
-
+		if ((await adminCount(env)) > 0) return await handleCutoverRequest(context, action);
 		if (action === 'login' && request.method === 'POST') {
 			const rate = await enforceLegacyRateLimit(request, env);
 			if (rate?.blocked) return rate.blocked;
@@ -234,7 +162,6 @@ export async function onRequest(context) {
 			await recordLegacyLoginResult(rate?.context || null, response.status);
 			return response;
 		}
-
 		return context.next();
 	} catch (error) {
 		console.error('HAKAMIQ admin API middleware failure', error);
