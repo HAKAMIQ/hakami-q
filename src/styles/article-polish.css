@@ -1,0 +1,140 @@
+/* Progressive visual polish for imported articles.
+ * This layer does not rewrite source content or remove author-provided blocks.
+ * It only improves reading rhythm, navigation and resilient presentation after
+ * the compatibility layer has neutralized unsafe legacy styling.
+ */
+
+#main-content [data-hq-article-compat] :where(p) {
+	line-height: 1.9;
+	text-wrap: pretty;
+}
+
+#main-content [data-hq-article-compat] :where(h2[id], h3[id], h4[id]) {
+	position: relative;
+	scroll-margin-top: clamp(72px, 10vh, 112px);
+}
+
+#main-content [data-hq-article-compat] :where(h2[id]) {
+	padding-inline-start: var(--spacing-120);
+	border-inline-start: var(--stroke-thicker) solid var(--color-brand-stroke-1);
+}
+
+#main-content [data-hq-article-compat] :where(h2[id], h3[id], h4[id]):target {
+	border-radius: var(--radius-medium);
+	background: var(--color-brand-background-alpha) !important;
+}
+
+#main-content [data-hq-article-compat] :where(ul, ol) {
+	padding-inline-start: clamp(var(--spacing-220, 22px), 4vw, var(--spacing-320));
+}
+
+#main-content [data-hq-article-compat] :where(li) {
+	padding-inline-start: var(--spacing-40);
+	line-height: 1.85;
+}
+
+#main-content [data-hq-article-compat] :where(li)::marker {
+	color: var(--color-brand-foreground-link);
+	font-weight: var(--font-weight-semibold);
+}
+
+#main-content [data-hq-article-compat] :where(details) {
+	margin-block: var(--spacing-200);
+	padding: var(--spacing-140, 14px) var(--spacing-160);
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
+	border-radius: var(--radius-large);
+	background: var(--color-neutral-background-2) !important;
+}
+
+#main-content [data-hq-article-compat] :where(summary) {
+	cursor: pointer;
+	color: var(--color-neutral-foreground-1) !important;
+	font-weight: var(--font-weight-semibold);
+}
+
+#main-content [data-hq-article-compat] :where(details[open] summary) {
+	margin-bottom: var(--spacing-120);
+	padding-bottom: var(--spacing-100);
+	border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+}
+
+#main-content [data-hq-article-compat] :where(kbd) {
+	display: inline-block;
+	min-width: 1.8em;
+	padding: 0.1em 0.45em;
+	border: var(--stroke-thin) solid var(--color-neutral-stroke-1) !important;
+	border-bottom-width: 2px !important;
+	border-radius: var(--radius-small);
+	background: var(--color-neutral-background-3) !important;
+	color: var(--color-neutral-foreground-1) !important;
+	font-size: 0.88em;
+	line-height: 1.5;
+	text-align: center;
+}
+
+#main-content [data-hq-article-compat] :where(abbr[title]) {
+	text-decoration-style: dotted;
+	text-underline-offset: 3px;
+	cursor: help;
+}
+
+#main-content [data-hq-article-compat] :where(table tbody tr:nth-child(even) td) {
+	background: var(--color-neutral-background-3) !important;
+}
+
+#main-content [data-hq-article-compat] :where(table tr:last-child td) {
+	border-bottom-color: transparent !important;
+}
+
+#main-content [data-hq-article-compat] :where(a:not([role='button']):not([class*='btn']):not([class*='button'])) {
+	text-decoration-thickness: var(--stroke-thin);
+	text-underline-offset: 3px;
+	text-decoration-skip-ink: auto;
+}
+
+#main-content [data-hq-article-compat] :where(a:not([role='button']):not([class*='btn']):not([class*='button'])):focus-visible {
+	border-radius: var(--radius-small);
+	outline: 2px solid var(--color-brand-stroke-1);
+	outline-offset: 3px;
+}
+
+#main-content [data-hq-article-compat] :where(pre) {
+	scrollbar-width: thin;
+	overscroll-behavior-inline: contain;
+}
+
+#main-content [data-hq-article-compat] :where(pre code) {
+	white-space: pre;
+	word-break: normal;
+	overflow-wrap: normal;
+}
+
+#main-content [data-hq-article-compat] :where(iframe) {
+	aspect-ratio: 16 / 9;
+}
+
+#main-content [data-hq-article-compat] :where(.separator, figure, .tr-caption-container) + :where(p, h2, h3) {
+	margin-top: clamp(var(--spacing-160), 2vw, var(--spacing-240));
+}
+
+#main-content [data-hq-article-compat] :where(center) {
+	display: block;
+	max-width: 100%;
+	margin-inline: auto;
+	text-align: center;
+}
+
+@media (max-width: 639px) {
+	#main-content [data-hq-article-compat] :where(p, li) {
+		line-height: 1.82;
+	}
+
+	#main-content [data-hq-article-compat] :where(h2[id]) {
+		padding-inline-start: var(--spacing-100);
+	}
+
+	#main-content [data-hq-article-compat] :where(details) {
+		padding: var(--spacing-120);
+		border-radius: var(--radius-medium);
+	}
+}
