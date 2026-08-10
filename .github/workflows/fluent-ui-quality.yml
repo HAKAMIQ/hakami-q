@@ -89,6 +89,7 @@ jobs:
       - name: Validate auth and MFA syntax
         run: |
           node --check functions/_lib/auth.js
+          node --check functions/_lib/member-audit.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
