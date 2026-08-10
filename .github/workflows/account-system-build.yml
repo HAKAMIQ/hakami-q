@@ -13,6 +13,8 @@ on:
       - 'functions/api/auth/**'
       - 'functions/api/mfa/**'
       - 'migrations/**'
+      - 'public/admin-editor-enhancements.js'
+      - 'src/components/BaseHead.astro'
       - 'src/pages/login.astro'
       - 'src/pages/admin/**'
       - 'src/styles/account-system.css'
@@ -33,6 +35,8 @@ on:
       - 'functions/api/auth/**'
       - 'functions/api/mfa/**'
       - 'migrations/**'
+      - 'public/admin-editor-enhancements.js'
+      - 'src/components/BaseHead.astro'
       - 'src/pages/login.astro'
       - 'src/pages/admin/**'
       - 'src/styles/account-system.css'
@@ -63,17 +67,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check admin security syntax
+      - name: Check admin security and publisher syntax
         run: |
           node --check functions/_lib/auth.js
           node --check functions/_lib/mfa.js
           node --check functions/_lib/mfa-session.js
           node --check functions/admin/_middleware.js
           node --check functions/api/admin/_middleware.js
+          node --check functions/api/admin/rewrite.js
           node --check functions/api/auth/_middleware.js
           node --check 'functions/api/admin/[[path]].js'
           node --check 'functions/api/auth/[[path]].js'
           node --check 'functions/api/mfa/[[path]].js'
+          node --check public/admin-editor-enhancements.js
 
       - name: Verify password hashing
         run: node scripts/auth-password-self-test.mjs
