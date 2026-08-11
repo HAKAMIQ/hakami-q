@@ -169,7 +169,21 @@
 		});
 	};
 
+	const normalizeCategoryLinks = () => {
+		for (const link of document.querySelectorAll('a[href]')) {
+			if (!(link instanceof HTMLAnchorElement)) continue;
+			let url;
+			try { url = new URL(link.href, window.location.href); } catch { continue; }
+			if (url.origin !== window.location.origin) continue;
+			if (url.pathname !== '/blog' && url.pathname !== '/blog/') continue;
+			const category = url.searchParams.get('category')?.trim();
+			if (!category) continue;
+			link.href = `/blog/category/${encodeURIComponent(category)}/`;
+		}
+	};
+
 	const initialize = () => {
+		normalizeCategoryLinks();
 		for (const tree of document.querySelectorAll('[data-category-groups]')) initializeTree(tree);
 		initializePageSizeControl();
 	};
