@@ -61,19 +61,21 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 			{relatedPosts.map((related) => {
 				const image = related.data.heroImageUrl ?? related.data.heroImage?.src;
 				return (
-					<a class="article-discovery__card" href={`/blog/${related.id}/`} aria-label={`قراءة مقال: ${related.data.title}`}>
-						<div class="article-discovery__media">
-							{image ? (
-								<img src={image} alt={related.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-							) : (
-								<div class="article-discovery__placeholder" aria-hidden="true">HAKAMIQ</div>
-							)}
-							<span class="article-discovery__scrim" aria-hidden="true"></span>
-							{primaryCategory && <span class="article-discovery__label">{primaryCategory.name}</span>}
-							<strong class="article-discovery__title">{related.data.title}</strong>
-						</div>
-						<div class="article-discovery__copy"><p>{related.data.description}</p></div>
-					</a>
+					<article class="article-discovery__card">
+						<a href={`/blog/${related.id}/`} aria-label={`قراءة مقال: ${related.data.title}`}>
+							<div class="article-discovery__media">
+								{image ? (
+									<img src={image} alt={related.data.title} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+								) : (
+									<div class="article-discovery__placeholder" aria-hidden="true">HAKAMIQ</div>
+								)}
+								<span class="article-discovery__scrim" aria-hidden="true"></span>
+								<span class="article-discovery__label">articles</span>
+								<div class="article-discovery__title"><h3>{related.data.title}</h3></div>
+							</div>
+							<div class="article-discovery__body"><p>{related.data.description}</p></div>
+						</a>
+					</article>
 				);
 			})}
 		</div>
@@ -143,25 +145,25 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 	.article-discovery__grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: var(--spacing-120);
+		gap: var(--spacing-160);
+		align-items: stretch;
 	}
 
 	.article-discovery__card {
-		display: flex;
-		min-width: 0;
 		overflow: hidden;
-		flex-direction: column;
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-2);
-		color: var(--color-neutral-foreground-1);
-		text-decoration: none;
+		border: 2px solid #4b4b50;
+		border-radius: 18px;
+		background: #242426;
+		box-shadow: 0 0 0 3px #111214, 0 10px 24px rgba(0, 0, 0, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 	}
 
-	.article-discovery__card:hover,
-	.article-discovery__card:focus-visible {
-		border-color: var(--color-neutral-stroke-1);
-		background: var(--color-neutral-background-2-hover);
+	.article-discovery__card > a {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		padding: 7px;
+		color: inherit;
+		text-decoration: none;
 	}
 
 	.article-discovery__media {
@@ -169,7 +171,11 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 		isolation: isolate;
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
-		background: var(--color-neutral-background-3);
+		border: 1px solid rgba(255, 255, 255, 0.34);
+		border-radius: 13px 13px 6px 6px;
+		border-bottom: 2px solid #4385ff;
+		background: #ececee;
+		box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.16), 0 1px 0 rgba(255, 255, 255, 0.1);
 	}
 
 	.article-discovery__media img,
@@ -182,76 +188,94 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 	.article-discovery__media img {
 		object-fit: cover;
 		object-position: center;
-		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
+		transition: transform 180ms ease;
 	}
 
-	.article-discovery__card:hover .article-discovery__media img {
-		transform: scale(1.02);
+	.article-discovery__card:hover .article-discovery__media img,
+	.article-discovery__card:focus-within .article-discovery__media img {
+		transform: scale(1.015);
 	}
 
 	.article-discovery__placeholder {
 		display: grid;
 		place-items: center;
-		color: var(--color-neutral-foreground-4);
-		font-weight: var(--font-weight-semibold);
+		background: linear-gradient(145deg, #eeeeef, #cfcfd2);
+		color: #3e3e42;
+		font-weight: 700;
 	}
 
 	.article-discovery__scrim {
 		position: absolute;
 		z-index: 1;
 		inset: 0;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.5) 38%, transparent 72%);
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.54) 28%, rgba(0, 0, 0, 0.12) 58%, transparent 78%);
 		pointer-events: none;
 	}
 
 	.article-discovery__label {
 		position: absolute;
-		z-index: 2;
-		top: var(--spacing-100);
-		left: var(--spacing-100);
-		max-width: calc(100% - var(--spacing-200));
-		padding: 4px var(--spacing-100);
-		border-radius: var(--radius-circular);
-		background: color-mix(in srgb, var(--color-neutral-background-1) 86%, transparent);
-		color: var(--color-brand-foreground-link);
-		font-size: var(--font-size-caption-1);
-		font-weight: var(--font-weight-semibold);
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		backdrop-filter: blur(8px);
+		z-index: 3;
+		top: 14px;
+		left: 14px;
+		display: inline-flex;
+		min-height: 32px;
+		align-items: center;
+		padding: 0 13px;
+		border: 1px solid rgba(255, 138, 158, 0.46);
+		border-radius: 999px;
+		background: linear-gradient(180deg, #5b0718 0%, #26040c 100%);
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+		color: #ff5270;
+		font-size: 0.86rem;
+		font-weight: 700;
+		line-height: 1;
 	}
 
 	.article-discovery__title {
 		position: absolute;
 		z-index: 2;
-		right: var(--spacing-120);
-		bottom: var(--spacing-120);
-		left: var(--spacing-120);
+		right: 16px;
+		bottom: 15px;
+		left: 16px;
+		text-align: right;
+	}
+
+	.article-discovery__title h3 {
 		display: -webkit-box;
 		overflow: hidden;
 		margin: 0;
 		color: #fff;
-		font-size: var(--font-size-subtitle-1);
-		line-height: 1.5;
-		text-align: right;
-		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+		font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+		font-weight: 800;
+		line-height: 1.42;
 		text-wrap: balance;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
+		-webkit-text-stroke: 0.75px rgba(0, 0, 0, 0.9);
+		paint-order: stroke fill;
+		text-shadow: 0 2px 1px #000, 0 0 7px rgba(0, 0, 0, 0.95);
 	}
 
-	.article-discovery__copy {
-		padding: var(--spacing-140);
+	.article-discovery__body {
+		display: flex;
+		min-height: 108px;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 17px 16px;
+		border-radius: 0 0 11px 11px;
+		background: linear-gradient(180deg, #303033 0%, #29292c 100%);
 	}
 
-	.article-discovery__copy p {
+	.article-discovery__body p {
 		display: -webkit-box;
 		overflow: hidden;
 		margin: 0;
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: var(--line-height-body-1);
+		color: #d5d5d8;
+		font-size: 1rem;
+		line-height: 1.72;
+		text-align: center;
+		text-wrap: pretty;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 	}
@@ -260,7 +284,7 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: var(--spacing-120);
-		margin-top: var(--spacing-160);
+		margin-top: var(--spacing-200);
 	}
 
 	.article-discovery__sequence a {
@@ -301,5 +325,12 @@ const olderPost = currentIndex >= 0 && currentIndex < chronologicalPosts.length 
 		.article-discovery__sequence > span:empty {
 			display: none;
 		}
+
+		.article-discovery__card > a { padding: 6px; }
+		.article-discovery__label { top: 11px; left: 11px; min-height: 29px; padding-inline: 11px; font-size: 0.78rem; }
+		.article-discovery__title { right: 13px; bottom: 12px; left: 13px; }
+		.article-discovery__title h3 { font-size: clamp(1rem, 4.6vw, 1.25rem); }
+		.article-discovery__body { min-height: 94px; padding: 13px 14px 14px; }
+		.article-discovery__body p { font-size: 0.95rem; line-height: 1.65; }
 	}
 </style>
