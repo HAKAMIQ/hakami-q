@@ -18,9 +18,7 @@ export async function getStaticPaths() {
 
 	return categoryDefinitions.flatMap((category) => {
 		const hasPosts = posts.some((post) => getPostCategories(post).includes(category.slug));
-		return hasPosts
-			? [{ params: { slug: category.slug }, props: { category } }]
-			: [];
+		return hasPosts ? [{ params: { slug: category.slug }, props: { category } }] : [];
 	});
 }
 
@@ -99,52 +97,33 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					<span aria-current="page">{category.name}</span>
 				</nav>
 
-				<header class="category-header">
-					<div>
-						<span class="category-eyebrow">قسم المقالات</span>
-						<h1>{category.name}</h1>
-						<p>{description}</p>
+				<header class="category-intro">
+					<div class="category-intro__title-row">
+						<h1 id="category-posts-title">{category.name}</h1>
+						<strong class="category-count">{posts.length} مقال</strong>
 					</div>
-					<strong class="category-count">{posts.length} مقال</strong>
+					<p class="category-description">{description}</p>
+					<p id="category-range" class="category-range" aria-live="polite">
+						{cardPosts.length > 0 ? `عرض 1–${Math.min(DEFAULT_PAGE_SIZE, cardPosts.length)} من ${cardPosts.length}` : 'لا توجد مقالات'}
+					</p>
 				</header>
 
 				<section aria-labelledby="category-posts-title" data-category-list>
-					<div class="category-section-heading">
-						<div>
-							<h2 id="category-posts-title">مقالات {category.name}</h2>
-							<p id="category-range" class="category-range" aria-live="polite">
-								{cardPosts.length > 0 ? `عرض 1–${Math.min(DEFAULT_PAGE_SIZE, cardPosts.length)} من ${cardPosts.length}` : 'لا توجد مقالات'}
-							</p>
-						</div>
-						<a href="/blog/">عرض جميع المقالات</a>
-					</div>
-
 					<div class="category-list-toolbar">
 						<form id="category-page-size-form" class="category-page-size" method="get">
 							<label for="category-page-size">عدد المقالات في الصفحة</label>
-							<input
-								id="category-page-size"
-								name="perPage"
-								type="number"
-								min="5"
-								max="100"
-								step="1"
-								value={DEFAULT_PAGE_SIZE}
-								list="category-page-size-options"
-								inputmode="numeric"
-							/>
-							<datalist id="category-page-size-options">
-								<option value="5"></option>
-								<option value="7"></option>
-								<option value="10"></option>
-								<option value="20"></option>
-								<option value="30"></option>
-								<option value="50"></option>
-								<option value="100"></option>
-							</datalist>
+							<select id="category-page-size" name="perPage" aria-label="عدد المقالات في الصفحة">
+								<option value="5" selected>5</option>
+								<option value="7">7</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+								<option value="30">30</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
 							<button type="submit">تطبيق</button>
 						</form>
-						<span class="category-page-size__hint">من 5 إلى 100، وتُحفظ رغبتك للأقسام الأخرى.</span>
+						<a class="category-all-posts" href="/blog/">جميع المقالات</a>
 					</div>
 
 					<div class="category-grid" id="category-grid">
@@ -168,9 +147,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 										<span class="category-card__label">{post.category}</span>
 										<div class="category-card__title"><h3>{post.title}</h3></div>
 									</div>
-									<div class="category-card__body">
-										<p>{post.description}</p>
-									</div>
+									<div class="category-card__body"><p>{post.description}</p></div>
 								</a>
 							</article>
 						))}
@@ -186,8 +163,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 		<script>
 			const DEFAULT_SIZE = 5;
-			const MIN_SIZE = 5;
-			const MAX_SIZE = 100;
+			const ALLOWED_SIZES = [5, 7, 10, 20, 30, 50, 100];
 			const STORAGE_KEY = 'hakamiq-category-page-size-v1';
 			const dataElement = document.querySelector('#category-post-data');
 			const grid = document.querySelector('#category-grid');
@@ -200,21 +176,20 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 			let items = [];
 			try { items = JSON.parse(dataElement?.textContent || '[]'); } catch { items = []; }
 
-			function clampSize(value) {
+			function normalizeSize(value) {
 				const parsed = Number.parseInt(String(value || ''), 10);
-				if (!Number.isFinite(parsed)) return DEFAULT_SIZE;
-				return Math.min(MAX_SIZE, Math.max(MIN_SIZE, parsed));
+				return ALLOWED_SIZES.includes(parsed) ? parsed : DEFAULT_SIZE;
 			}
 
 			function storedSize() {
-				try { return clampSize(localStorage.getItem(STORAGE_KEY) || DEFAULT_SIZE); }
+				try { return normalizeSize(localStorage.getItem(STORAGE_KEY) || DEFAULT_SIZE); }
 				catch { return DEFAULT_SIZE; }
 			}
 
 			function urlState() {
 				const params = new URLSearchParams(window.location.search);
 				const explicitSize = params.get('perPage');
-				const size = explicitSize ? clampSize(explicitSize) : storedSize();
+				const size = explicitSize ? normalizeSize(explicitSize) : storedSize();
 				const rawPage = Number.parseInt(params.get('page') || '1', 10);
 				return { size, page: Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1 };
 			}
@@ -332,7 +307,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 			function render(page, size, updateHistory = false, scroll = false) {
 				if (!(grid instanceof HTMLElement)) return;
-				const safeSize = clampSize(size);
+				const safeSize = normalizeSize(size);
 				const totalPages = Math.max(1, Math.ceil(items.length / safeSize));
 				const safePage = Math.min(totalPages, Math.max(1, page));
 				const start = (safePage - 1) * safeSize;
@@ -342,7 +317,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				if (rangeLabel instanceof HTMLElement) {
 					rangeLabel.textContent = items.length ? `عرض ${start + 1}–${end} من ${items.length}` : 'لا توجد مقالات';
 				}
-				if (sizeInput instanceof HTMLInputElement) sizeInput.value = String(safeSize);
+				if (sizeInput instanceof HTMLSelectElement) sizeInput.value = String(safeSize);
 				renderPagination(safePage, safeSize, totalPages);
 				try { localStorage.setItem(STORAGE_KEY, String(safeSize)); } catch {}
 
@@ -356,7 +331,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 			sizeForm?.addEventListener('submit', (event) => {
 				event.preventDefault();
-				const size = clampSize(sizeInput instanceof HTMLInputElement ? sizeInput.value : DEFAULT_SIZE);
+				const size = normalizeSize(sizeInput instanceof HTMLSelectElement ? sizeInput.value : DEFAULT_SIZE);
 				render(1, size, true, false);
 			});
 
@@ -379,7 +354,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 <style>
 	.category-main {
-		padding-block: clamp(var(--spacing-200), 3vw, var(--spacing-360));
+		padding-block: clamp(var(--spacing-160), 2.5vw, var(--spacing-280));
 	}
 
 	.category-shell {
@@ -398,78 +373,61 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	}
 
 	.category-breadcrumb a,
-	.category-section-heading a {
+	.category-all-posts {
 		color: var(--color-brand-foreground-link);
 		text-decoration: none;
 	}
 
 	.category-breadcrumb a:hover,
 	.category-breadcrumb a:focus-visible,
-	.category-section-heading a:hover,
-	.category-section-heading a:focus-visible {
+	.category-all-posts:hover,
+	.category-all-posts:focus-visible {
 		text-decoration: underline;
 		text-underline-offset: 3px;
 	}
 
-	.category-header {
+	.category-intro {
+		margin-bottom: var(--spacing-160);
+		padding-bottom: var(--spacing-160);
+		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
+	}
+
+	.category-intro__title-row {
 		display: flex;
-		align-items: end;
+		align-items: center;
 		justify-content: space-between;
-		gap: var(--spacing-240);
-		margin-bottom: clamp(var(--spacing-280), 4vw, var(--spacing-480));
-		padding: clamp(var(--spacing-200), 3vw, var(--spacing-320));
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-2);
+		gap: var(--spacing-160);
 	}
 
-	.category-eyebrow,
-	.category-range,
-	.category-page-size__hint {
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-caption-1);
-	}
-
-	.category-header h1 {
-		margin: var(--spacing-60) 0 var(--spacing-100);
+	.category-intro h1 {
+		margin: 0;
 		color: var(--color-neutral-foreground-1);
 		font-size: clamp(2rem, 4vw, 3rem);
 		line-height: 1.2;
 		text-wrap: balance;
 	}
 
-	.category-header p {
-		max-width: 760px;
-		margin: 0;
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: 1.8;
-	}
-
 	.category-count {
 		flex: 0 0 auto;
-		padding: var(--spacing-80) var(--spacing-120);
+		padding: var(--spacing-60) var(--spacing-100);
 		border-radius: var(--radius-circular);
-		background: var(--color-neutral-background-1);
+		background: var(--color-neutral-background-2);
 		color: var(--color-neutral-foreground-2);
 		font-size: var(--font-size-body-1);
 	}
 
-	.category-section-heading {
-		display: flex;
-		align-items: end;
-		justify-content: space-between;
-		gap: var(--spacing-160);
-		margin-bottom: var(--spacing-120);
-	}
-
-	.category-section-heading h2 {
-		margin: 0;
-		font-size: var(--font-size-title-2);
+	.category-description {
+		max-width: 900px;
+		margin: var(--spacing-80) 0 0;
+		color: var(--color-neutral-foreground-2);
+		font-size: var(--font-size-body-1);
+		line-height: 1.75;
 	}
 
 	.category-range {
-		margin: var(--spacing-40) 0 0;
+		margin: var(--spacing-60) 0 0;
+		color: var(--color-neutral-foreground-3);
+		font-size: var(--font-size-caption-1);
 	}
 
 	.category-list-toolbar {
@@ -491,20 +449,20 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		font-size: var(--font-size-body-1);
 	}
 
-	.category-page-size input {
-		width: 82px;
-		min-height: 36px;
-		padding-inline: var(--spacing-80);
+	.category-page-size select {
+		min-width: 84px;
+		min-height: 38px;
+		padding-inline: var(--spacing-100);
 		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
 		border-radius: var(--radius-medium);
 		background: var(--color-neutral-background-1);
 		color: var(--color-neutral-foreground-1);
 		font: inherit;
-		text-align: center;
+		cursor: pointer;
 	}
 
 	.category-page-size button {
-		min-height: 36px;
+		min-height: 38px;
 		padding-inline: var(--spacing-120);
 		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
 		border-radius: var(--radius-medium);
@@ -525,10 +483,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	.category-card {
 		min-width: 0;
 		overflow: hidden;
-		border: var(--stroke-thin) solid var(--color-neutral-stroke-2);
-		border-radius: var(--radius-large);
-		background: var(--color-neutral-background-2);
-		box-shadow: var(--shadow-2);
 	}
 
 	.category-card > a {
@@ -540,19 +494,12 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		text-decoration: none;
 	}
 
-	.category-card:hover,
-	.category-card:focus-within {
-		border-color: var(--color-neutral-stroke-1);
-		background: var(--color-neutral-background-2-hover);
-	}
-
 	.category-card__media {
 		position: relative;
 		isolation: isolate;
 		width: 100%;
 		aspect-ratio: 16 / 9;
 		overflow: hidden;
-		background: var(--color-neutral-background-3);
 	}
 
 	.category-card__media img,
@@ -565,96 +512,33 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	.category-card__media img {
 		object-fit: cover;
 		object-position: center;
-		transition: transform var(--duration-slow) var(--curve-decelerate-mid);
-	}
-
-	.category-card:hover .category-card__media img {
-		transform: scale(1.02);
 	}
 
 	.category-card__placeholder {
 		display: grid;
 		place-items: center;
-		background: var(--color-neutral-background-3);
-		color: var(--color-neutral-foreground-4);
-		font-size: var(--font-size-subtitle-2);
-		font-weight: var(--font-weight-semibold);
 	}
 
 	.category-card__scrim {
 		position: absolute;
 		z-index: 1;
 		inset: 0;
-		background: linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0.86) 0%,
-			rgba(0, 0, 0, 0.58) 34%,
-			rgba(0, 0, 0, 0.12) 66%,
-			transparent 100%
-		);
 		pointer-events: none;
 	}
 
 	.category-card__label {
 		position: absolute;
 		z-index: 2;
-		top: var(--spacing-100);
-		left: var(--spacing-100);
-		max-width: calc(100% - var(--spacing-200));
-		padding: 4px var(--spacing-100);
-		border: var(--stroke-thin) solid color-mix(in srgb, var(--color-brand-stroke-1) 70%, transparent);
-		border-radius: var(--radius-circular);
-		background: color-mix(in srgb, var(--color-neutral-background-1) 86%, transparent);
-		color: var(--color-brand-foreground-link);
-		font-size: var(--font-size-caption-1);
-		font-weight: var(--font-weight-semibold);
-		line-height: 1.25;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		backdrop-filter: blur(8px);
 	}
 
 	.category-card__title {
 		position: absolute;
 		z-index: 2;
-		right: var(--spacing-140);
-		bottom: var(--spacing-140);
-		left: var(--spacing-140);
-		text-align: right;
-	}
-
-	.category-card__title h3 {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0;
-		color: #fff;
-		font-size: clamp(1.05rem, 1.4vw, 1.35rem);
-		font-weight: var(--font-weight-bold);
-		line-height: 1.45;
-		text-wrap: balance;
-		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
 	}
 
 	.category-card__body {
 		display: flex;
-		min-height: 104px;
 		flex: 1;
-		align-items: center;
-		padding: var(--spacing-140);
-	}
-
-	.category-card__body p {
-		display: -webkit-box;
-		overflow: hidden;
-		margin: 0;
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: 1.75;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
 	}
 
 	.category-pagination {
@@ -706,10 +590,9 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	}
 
 	@media (max-width: 700px) {
-		.category-header,
-		.category-section-heading,
+		.category-intro__title-row,
 		.category-list-toolbar {
-			align-items: start;
+			align-items: flex-start;
 			flex-direction: column;
 		}
 
@@ -718,14 +601,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 			flex-wrap: wrap;
 		}
 
-		.category-page-size__hint {
-			line-height: 1.6;
-		}
-
 		.category-grid { grid-template-columns: 1fr; }
-		.category-card__body { min-height: 88px; }
-		.category-card__title { right: var(--spacing-120); bottom: var(--spacing-120); left: var(--spacing-120); }
-		.category-card__title h3 { font-size: var(--font-size-subtitle-2); }
 		.category-page-link { min-width: 42px; min-height: 42px; }
 	}
 </style>
