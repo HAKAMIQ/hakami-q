@@ -142,12 +142,11 @@ const searchItems = posts.map((post) => ({
 							</div>
 
 							<div class="picks-list">
-								{picks.map((post, index) => {
+								{picks.map((post) => {
 									const category = getDisplayCategory(post.data.labels);
 									return (
 										<article class="pick-card">
 											<a href={`/blog/${post.id}/`} aria-label={`قراءة مقال: ${post.data.title}`}>
-												<span class="pick-rank" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
 												<div class="pick-copy">
 													{category && <span class="story-category compact">{category}</span>}
 													<h3>{post.data.title}</h3>
@@ -251,7 +250,7 @@ const searchItems = posts.map((post) => ({
 
 		<Footer />
 
-		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
+		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\u003c')}></script>
 		<script>
 			type HomeItem = { title: string; description: string; labels: string[]; href: string };
 
@@ -567,14 +566,13 @@ const searchItems = posts.map((post) => ({
 	.pick-card a {
 		display: grid;
 		height: 100%;
-		grid-template-columns: 28px minmax(0, 1fr) 84px;
+		grid-template-columns: minmax(0, 1fr) 84px;
 		align-items: center;
 		gap: var(--spacing-80);
 		padding-block: var(--spacing-80);
 		color: inherit;
 		text-decoration: none;
 	}
-	.pick-rank { color: var(--color-neutral-foreground-4); font-size: var(--font-size-body-1); font-weight: var(--font-weight-semibold); }
 	.pick-copy { min-width: 0; }
 	.pick-copy h3 { display: -webkit-box; overflow: hidden; margin: var(--spacing-40) 0 0; font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 	.pick-media-frame { width: 84px; aspect-ratio: 4 / 3; }
@@ -648,7 +646,7 @@ const searchItems = posts.map((post) => ({
 		.home-editorial-grid { grid-template-columns: minmax(0, 1fr) 290px; }
 		.featured-grid { grid-template-columns: minmax(0, 1.35fr) minmax(260px, .95fr); }
 		.home-search { width: min(280px, 30vw); }
-		.pick-card a { grid-template-columns: 26px minmax(0, 1fr) 72px; }
+		.pick-card a { grid-template-columns: minmax(0, 1fr) 72px; }
 		.pick-media-frame { width: 72px; }
 	}
 
@@ -695,7 +693,7 @@ const searchItems = posts.map((post) => ({
 		.all-posts-top { width: 100%; }
 		.feature-category { inset-block-start: var(--spacing-80); inset-inline-end: var(--spacing-80); }
 		.feature-image-title { inset-inline: var(--spacing-100); inset-block-end: var(--spacing-100); font-size: var(--font-size-body-1); line-height: var(--line-height-body-1); }
-		.pick-card a { grid-template-columns: 24px minmax(0, 1fr) 68px; }
+		.pick-card a { grid-template-columns: minmax(0, 1fr) 68px; }
 		.pick-media-frame { width: 68px; }
 		.library-card a { grid-template-columns: 104px minmax(0, 1fr); }
 	}
