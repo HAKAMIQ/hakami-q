@@ -97,7 +97,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					<span aria-current="page">{category.name}</span>
 				</nav>
 
-				<section aria-labelledby="category-posts-title" data-category-list>
+				<section aria-label={`مقالات ${category.name}`} data-category-list>
 					<div class="category-list-toolbar">
 						<form id="category-page-size-form" class="category-page-size" method="get">
 							<label for="category-page-size">عدد المقالات في الصفحة</label>
@@ -110,7 +110,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 								<option value="50">50</option>
 								<option value="100">100</option>
 							</select>
-							<button type="submit">تطبيق</button>
 						</form>
 						<a class="category-all-posts" href="/blog/">جميع المقالات</a>
 					</div>
@@ -157,10 +156,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 			const dataElement = document.querySelector('#category-post-data');
 			const grid = document.querySelector('#category-grid');
 			const pagination = document.querySelector('#category-pagination');
-			const rangeLabel = document.querySelector('#category-range');
-			const sizeForm = document.querySelector('#category-page-size-form');
 			const sizeInput = document.querySelector('#category-page-size');
-			const heading = document.querySelector('#category-posts-title');
 
 			let items = [];
 			try { items = JSON.parse(dataElement?.textContent || '[]'); } catch { items = []; }
@@ -294,7 +290,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				}
 			}
 
-			function render(page, size, updateHistory = false, scroll = false) {
+			function render(page, size, updateHistory = false) {
 				if (!(grid instanceof HTMLElement)) return;
 				const safeSize = normalizeSize(size);
 				const totalPages = Math.max(1, Math.ceil(items.length / safeSize));
@@ -303,25 +299,20 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				const end = Math.min(start + safeSize, items.length);
 				grid.replaceChildren(...items.slice(start, end).map(makeCard));
 
-				if (rangeLabel instanceof HTMLElement) {
-					rangeLabel.textContent = items.length ? `عرض ${start + 1}–${end} من ${items.length}` : 'لا توجد مقالات';
-				}
 				if (sizeInput instanceof HTMLSelectElement) sizeInput.value = String(safeSize);
 				renderPagination(safePage, safeSize, totalPages);
 				try { localStorage.setItem(STORAGE_KEY, String(safeSize)); } catch {}
 
 				if (updateHistory) history.pushState({ page: safePage, size: safeSize }, '', categoryUrl(safePage, safeSize));
-				if (scroll && heading instanceof HTMLElement) heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			}
 
 			attachInitialImageFallbacks();
 			const initialState = urlState();
-			render(initialState.page, initialState.size, false, false);
+			render(initialState.page, initialState.size, false);
 
-			sizeForm?.addEventListener('submit', (event) => {
-				event.preventDefault();
+			sizeInput?.addEventListener('change', () => {
 				const size = normalizeSize(sizeInput instanceof HTMLSelectElement ? sizeInput.value : DEFAULT_SIZE);
-				render(1, size, true, false);
+				render(1, size, true);
 			});
 
 			pagination?.addEventListener('click', (event) => {
@@ -330,12 +321,12 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				event.preventDefault();
 				const state = urlState();
 				const page = Number.parseInt(link.dataset.page || '1', 10);
-				render(page, state.size, true, true);
+				render(page, state.size, true);
 			});
 
 			window.addEventListener('popstate', () => {
 				const state = urlState();
-				render(state.page, state.size, false, false);
+				render(state.page, state.size, false);
 			});
 		</script>
 	</body>
@@ -375,50 +366,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		text-underline-offset: 3px;
 	}
 
-	.category-intro {
-		margin-bottom: var(--spacing-160);
-		padding-bottom: var(--spacing-160);
-		border-bottom: var(--stroke-thin) solid var(--color-neutral-stroke-alpha);
-	}
-
-	.category-intro__title-row {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--spacing-160);
-	}
-
-	.category-intro h1 {
-		margin: 0;
-		color: var(--color-neutral-foreground-1);
-		font-size: clamp(2rem, 4vw, 3rem);
-		line-height: 1.2;
-		text-wrap: balance;
-	}
-
-	.category-count {
-		flex: 0 0 auto;
-		padding: var(--spacing-60) var(--spacing-100);
-		border-radius: var(--radius-circular);
-		background: var(--color-neutral-background-2);
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-	}
-
-	.category-description {
-		max-width: 900px;
-		margin: var(--spacing-80) 0 0;
-		color: var(--color-neutral-foreground-2);
-		font-size: var(--font-size-body-1);
-		line-height: 1.75;
-	}
-
-	.category-range {
-		margin: var(--spacing-60) 0 0;
-		color: var(--color-neutral-foreground-3);
-		font-size: var(--font-size-caption-1);
-	}
-
 	.category-list-toolbar {
 		display: flex;
 		align-items: center;
@@ -447,18 +394,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		background: var(--color-neutral-background-1);
 		color: var(--color-neutral-foreground-1);
 		font: inherit;
-		cursor: pointer;
-	}
-
-	.category-page-size button {
-		min-height: 38px;
-		padding-inline: var(--spacing-120);
-		border: var(--stroke-thin) solid var(--color-brand-stroke-1);
-		border-radius: var(--radius-medium);
-		background: var(--color-brand-background-2);
-		color: var(--color-brand-foreground-strong);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
 		cursor: pointer;
 	}
 
@@ -579,7 +514,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 	}
 
 	@media (max-width: 700px) {
-		.category-intro__title-row,
 		.category-list-toolbar {
 			align-items: flex-start;
 			flex-direction: column;
