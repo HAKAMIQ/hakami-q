@@ -1,23 +1,262 @@
-/* Blog listing cards use Fluent's auto-sizing behavior instead of equal-height stretching. */
+/*
+ * Unified article-card presentation used by blog archives and every category page.
+ * The target is the approved reference: framed 16:9 image, maroon "articles" badge,
+ * headline over the lower part of the image, and a compact dark excerpt panel.
+ */
 
-#posts-grid {
-	align-items: start;
+/* Dates are intentionally not displayed on article cards. */
+.category-card__date,
+.post-card time,
+.article-discovery__date {
+	display: none !important;
 }
 
-#posts-grid > .post-card {
-	align-self: start;
+/* Keep listing cards the same visual height instead of allowing uneven rows. */
+#posts-grid,
+.category-grid {
+	align-items: stretch !important;
 }
 
-#posts-grid > .post-card > a {
-	height: auto;
+#posts-grid > .post-card,
+.category-grid > .category-card {
+	align-self: stretch !important;
 }
 
-#posts-grid .post-content {
-	min-height: 0;
-	flex: none;
+#posts-grid > .post-card > a,
+.category-grid > .category-card > a {
+	height: 100% !important;
 }
 
-#posts-grid .post-content time {
-	margin-top: var(--spacing-120);
-	padding-top: 0;
+/* Outer framed card — close to the supplied reference screenshot. */
+html body #posts-grid .post-card,
+html body .category-main .category-card {
+	position: relative;
+	overflow: hidden !important;
+	border: 2px solid #4b4b50 !important;
+	border-radius: 18px !important;
+	background: #242426 !important;
+	box-shadow:
+		0 0 0 3px #111214,
+		0 10px 24px rgba(0, 0, 0, 0.28),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+html body #posts-grid .post-card > a,
+html body .category-main .category-card > a {
+	display: flex !important;
+	flex-direction: column !important;
+	padding: 7px !important;
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+/* Image frame. */
+html body #posts-grid .post-image,
+html body .category-main .category-card__media {
+	position: relative !important;
+	isolation: isolate !important;
+	width: 100% !important;
+	aspect-ratio: 16 / 9 !important;
+	min-height: 0 !important;
+	overflow: hidden !important;
+	border: 1px solid rgba(255, 255, 255, 0.34) !important;
+	border-radius: 13px 13px 6px 6px !important;
+	border-bottom: 2px solid #4385ff !important;
+	background: #ececee !important;
+	box-shadow:
+		inset 0 0 0 2px rgba(0, 0, 0, 0.16),
+		0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+html body #posts-grid .post-image img,
+html body .category-main .category-card__media img {
+	display: block !important;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	object-position: center !important;
+	transform: none;
+	transition: transform 180ms ease !important;
+}
+
+html body #posts-grid .post-card:hover .post-image img,
+html body .category-main .category-card:hover .category-card__media img {
+	transform: scale(1.015) !important;
+}
+
+/* The placeholder follows exactly the same media dimensions. */
+html body #posts-grid .image-placeholder,
+html body .category-main .category-card__placeholder {
+	display: grid !important;
+	width: 100% !important;
+	height: 100% !important;
+	place-items: center !important;
+	background: linear-gradient(145deg, #eeeeef, #cfcfd2) !important;
+	color: #3e3e42 !important;
+	font-size: 1rem !important;
+	font-weight: 700 !important;
+}
+
+/* A focused bottom scrim keeps the title readable without darkening the whole image. */
+html body #posts-grid .post-image::after,
+html body .category-main .category-card__scrim {
+	position: absolute !important;
+	z-index: 1 !important;
+	inset: 0 !important;
+	border-radius: inherit !important;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.84) 0%,
+		rgba(0, 0, 0, 0.54) 28%,
+		rgba(0, 0, 0, 0.12) 58%,
+		transparent 78%
+	) !important;
+	content: '';
+	pointer-events: none !important;
+}
+
+/* Visual badge text is intentionally unified to "articles" like the reference. */
+html body #posts-grid .post-label,
+html body .category-main .category-card__label {
+	position: absolute !important;
+	z-index: 4 !important;
+	top: 14px !important;
+	left: 14px !important;
+	display: inline-flex !important;
+	max-width: calc(100% - 28px) !important;
+	min-height: 32px !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 13px !important;
+	border: 1px solid rgba(255, 138, 158, 0.46) !important;
+	border-radius: 999px !important;
+	background: linear-gradient(180deg, #5b0718 0%, #26040c 100%) !important;
+	box-shadow:
+		0 3px 8px rgba(0, 0, 0, 0.34),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+	color: #ff5270 !important;
+	font-size: 0 !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	white-space: nowrap !important;
+	backdrop-filter: none !important;
+}
+
+html body #posts-grid .post-label::after,
+html body .category-main .category-card__label::after {
+	content: 'articles';
+	font-size: 0.86rem;
+	line-height: 1;
+}
+
+/* Headline sits directly on the image, bottom-right, with a strong black edge. */
+html body #posts-grid .post-title-overlay,
+html body .category-main .category-card__title {
+	position: absolute !important;
+	z-index: 3 !important;
+	right: 16px !important;
+	bottom: 15px !important;
+	left: 16px !important;
+	width: auto !important;
+	text-align: right !important;
+}
+
+html body #posts-grid .post-title-overlay h2,
+html body .category-main .category-card__title h3 {
+	display: -webkit-box !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	color: #fff !important;
+	font-size: clamp(1.05rem, 1.55vw, 1.5rem) !important;
+	font-weight: 800 !important;
+	line-height: 1.42 !important;
+	letter-spacing: 0 !important;
+	text-wrap: balance !important;
+	-webkit-box-orient: vertical !important;
+	-webkit-line-clamp: 2 !important;
+	-webkit-text-stroke: 0.75px rgba(0, 0, 0, 0.9) !important;
+	paint-order: stroke fill !important;
+	text-shadow:
+		0 2px 1px #000,
+		0 0 7px rgba(0, 0, 0, 0.95) !important;
+}
+
+/* Bottom excerpt panel. */
+html body #posts-grid .post-content,
+html body .category-main .category-card__body {
+	display: flex !important;
+	min-height: 112px !important;
+	flex: 1 1 auto !important;
+	align-items: center !important;
+	justify-content: center !important;
+	margin: 0 !important;
+	padding: 15px 17px 16px !important;
+	border-radius: 0 0 11px 11px !important;
+	background: linear-gradient(180deg, #303033 0%, #29292c 100%) !important;
+}
+
+html body #posts-grid .post-content p,
+html body .category-main .category-card__body p {
+	display: -webkit-box !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	color: #d5d5d8 !important;
+	font-size: 1rem !important;
+	font-weight: 400 !important;
+	line-height: 1.72 !important;
+	text-align: center !important;
+	text-wrap: pretty !important;
+	-webkit-box-orient: vertical !important;
+	-webkit-line-clamp: 2 !important;
+}
+
+@media (max-width: 1180px) {
+	html body #posts-grid .post-title-overlay h2,
+	html body .category-main .category-card__title h3 {
+		font-size: 1.08rem !important;
+	}
+}
+
+@media (max-width: 700px) {
+	html body #posts-grid .post-card > a,
+	html body .category-main .category-card > a {
+		padding: 6px !important;
+	}
+
+	html body #posts-grid .post-label,
+	html body .category-main .category-card__label {
+		top: 11px !important;
+		left: 11px !important;
+		min-height: 29px !important;
+		padding-inline: 11px !important;
+	}
+
+	html body #posts-grid .post-label::after,
+	html body .category-main .category-card__label::after {
+		font-size: 0.78rem;
+	}
+
+	html body #posts-grid .post-title-overlay,
+	html body .category-main .category-card__title {
+		right: 13px !important;
+		bottom: 12px !important;
+		left: 13px !important;
+	}
+
+	html body #posts-grid .post-title-overlay h2,
+	html body .category-main .category-card__title h3 {
+		font-size: clamp(1rem, 4.6vw, 1.25rem) !important;
+	}
+
+	html body #posts-grid .post-content,
+	html body .category-main .category-card__body {
+		min-height: 94px !important;
+		padding: 13px 14px 14px !important;
+	}
+
+	html body #posts-grid .post-content p,
+	html body .category-main .category-card__body p {
+		font-size: 0.95rem !important;
+		line-height: 1.65 !important;
+	}
 }
