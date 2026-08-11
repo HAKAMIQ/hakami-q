@@ -97,17 +97,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 					<span aria-current="page">{category.name}</span>
 				</nav>
 
-				<header class="category-intro">
-					<div class="category-intro__title-row">
-						<h1 id="category-posts-title">{category.name}</h1>
-						<strong class="category-count">{posts.length} مقال</strong>
-					</div>
-					<p class="category-description">{description}</p>
-					<p id="category-range" class="category-range" aria-live="polite">
-						{cardPosts.length > 0 ? `عرض 1–${Math.min(DEFAULT_PAGE_SIZE, cardPosts.length)} من ${cardPosts.length}` : 'لا توجد مقالات'}
-					</p>
-				</header>
-
 				<section aria-labelledby="category-posts-title" data-category-list>
 					<div class="category-list-toolbar">
 						<form id="category-page-size-form" class="category-page-size" method="get">
