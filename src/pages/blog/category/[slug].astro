@@ -99,9 +99,9 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 
 				<section aria-label={`مقالات ${category.name}`} data-category-list>
 					<div class="category-list-toolbar">
-						<form id="category-page-size-form" class="category-page-size" method="get">
+						<div class="category-page-size">
 							<label for="category-page-size">عدد المقالات في الصفحة</label>
-							<select id="category-page-size" name="perPage" aria-label="عدد المقالات في الصفحة">
+							<select id="category-page-size" aria-label="عدد المقالات في الصفحة">
 								<option value="5" selected>5</option>
 								<option value="7">7</option>
 								<option value="10">10</option>
@@ -110,7 +110,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 								<option value="50">50</option>
 								<option value="100">100</option>
 							</select>
-						</form>
+						</div>
 						<a class="category-all-posts" href="/blog/">جميع المقالات</a>
 					</div>
 
@@ -152,7 +152,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		<script>
 			const DEFAULT_SIZE = 5;
 			const ALLOWED_SIZES = [5, 7, 10, 20, 30, 50, 100];
-			const STORAGE_KEY = 'hakamiq-category-page-size-v1';
 			const dataElement = document.querySelector('#category-post-data');
 			const grid = document.querySelector('#category-grid');
 			const pagination = document.querySelector('#category-pagination');
@@ -164,28 +163,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 			function normalizeSize(value) {
 				const parsed = Number.parseInt(String(value || ''), 10);
 				return ALLOWED_SIZES.includes(parsed) ? parsed : DEFAULT_SIZE;
-			}
-
-			function storedSize() {
-				try { return normalizeSize(localStorage.getItem(STORAGE_KEY) || DEFAULT_SIZE); }
-				catch { return DEFAULT_SIZE; }
-			}
-
-			function urlState() {
-				const params = new URLSearchParams(window.location.search);
-				const explicitSize = params.get('perPage');
-				const size = explicitSize ? normalizeSize(explicitSize) : storedSize();
-				const rawPage = Number.parseInt(params.get('page') || '1', 10);
-				return { size, page: Number.isFinite(rawPage) && rawPage > 0 ? rawPage : 1 };
-			}
-
-			function categoryUrl(page, size) {
-				const url = new URL(window.location.href);
-				url.searchParams.delete('page');
-				url.searchParams.delete('perPage');
-				if (page > 1) url.searchParams.set('page', String(page));
-				if (size !== DEFAULT_SIZE) url.searchParams.set('perPage', String(size));
-				return `${url.pathname}${url.search}`;
 			}
 
 			function makePlaceholder() {
@@ -259,18 +236,17 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				pagination.hidden = totalPages <= 1;
 				if (totalPages <= 1) return;
 
-				const addLink = (label, targetPage, current = false, rel = '') => {
-					const link = document.createElement('a');
-					link.className = 'category-page-link';
-					link.href = categoryUrl(targetPage, size);
-					link.textContent = label;
-					link.dataset.page = String(targetPage);
-					if (current) link.setAttribute('aria-current', 'page');
-					if (rel) link.rel = rel;
-					pagination.append(link);
+				const addButton = (label, targetPage, current = false) => {
+					const button = document.createElement('button');
+					button.type = 'button';
+					button.className = 'category-page-link';
+					button.textContent = label;
+					button.dataset.page = String(targetPage);
+					if (current) button.setAttribute('aria-current', 'page');
+					pagination.append(button);
 				};
 
-				if (page > 1) addLink('السابق', page - 1, false, 'prev');
+				if (page > 1) addButton('السابق', page - 1);
 				for (const token of paginationTokens(page, totalPages)) {
 					if (token === 'ellipsis') {
 						const ellipsis = document.createElement('span');
@@ -278,10 +254,10 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 						ellipsis.textContent = '…';
 						pagination.append(ellipsis);
 					} else {
-						addLink(String(token), token, token === page);
+						addButton(String(token), token, token === page);
 					}
 				}
-				if (page < totalPages) addLink('التالي', page + 1, false, 'next');
+				if (page < totalPages) addButton('التالي', page + 1);
 			}
 
 			function attachInitialImageFallbacks() {
@@ -290,7 +266,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				}
 			}
 
-			function render(page, size, updateHistory = false) {
+			function render(page, size) {
 				if (!(grid instanceof HTMLElement)) return;
 				const safeSize = normalizeSize(size);
 				const totalPages = Math.max(1, Math.ceil(items.length / safeSize));
@@ -298,35 +274,24 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 				const start = (safePage - 1) * safeSize;
 				const end = Math.min(start + safeSize, items.length);
 				grid.replaceChildren(...items.slice(start, end).map(makeCard));
-
-				if (sizeInput instanceof HTMLSelectElement) sizeInput.value = String(safeSize);
 				renderPagination(safePage, safeSize, totalPages);
-				try { localStorage.setItem(STORAGE_KEY, String(safeSize)); } catch {}
-
-				if (updateHistory) history.pushState({ page: safePage, size: safeSize }, '', categoryUrl(safePage, safeSize));
 			}
 
 			attachInitialImageFallbacks();
-			const initialState = urlState();
-			render(initialState.page, initialState.size, false);
+			renderPagination(1, DEFAULT_SIZE, Math.max(1, Math.ceil(items.length / DEFAULT_SIZE)));
 
 			sizeInput?.addEventListener('change', () => {
 				const size = normalizeSize(sizeInput instanceof HTMLSelectElement ? sizeInput.value : DEFAULT_SIZE);
-				render(1, size, true);
+				render(1, size);
 			});
 
 			pagination?.addEventListener('click', (event) => {
-				const link = event.target instanceof Element ? event.target.closest('[data-page]') : null;
-				if (!(link instanceof HTMLAnchorElement)) return;
-				event.preventDefault();
-				const state = urlState();
-				const page = Number.parseInt(link.dataset.page || '1', 10);
-				render(page, state.size, true);
-			});
-
-			window.addEventListener('popstate', () => {
-				const state = urlState();
-				render(state.page, state.size, false);
+				const button = event.target instanceof Element ? event.target.closest('[data-page]') : null;
+				if (!(button instanceof HTMLButtonElement)) return;
+				const size = normalizeSize(sizeInput instanceof HTMLSelectElement ? sizeInput.value : DEFAULT_SIZE);
+				const page = Number.parseInt(button.dataset.page || '1', 10);
+				render(page, size);
+				grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			});
 		</script>
 	</body>
@@ -395,6 +360,13 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		color: var(--color-neutral-foreground-1);
 		font: inherit;
 		cursor: pointer;
+	}
+
+	.category-page-size select:focus,
+	.category-page-size select:focus-visible {
+		outline: none;
+		box-shadow: none;
+		border-color: var(--color-brand-stroke-1);
 	}
 
 	.category-grid {
@@ -486,9 +458,11 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 		border-radius: var(--radius-medium);
 		background: var(--color-subtle-background);
 		color: var(--color-neutral-foreground-2);
+		font: inherit;
 		font-size: var(--font-size-body-1);
 		font-weight: var(--font-weight-semibold);
 		text-decoration: none;
+		cursor: pointer;
 	}
 
 	.category-page-link:hover,
