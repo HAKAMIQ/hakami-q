@@ -141,8 +141,37 @@
 		syncRovingFocus();
 	};
 
+	const initializePageSizeControl = () => {
+		const form = document.querySelector('#category-page-size-form');
+		const select = document.querySelector('#category-page-size');
+		if (!(form instanceof HTMLFormElement) || !(select instanceof HTMLSelectElement)) return;
+		if (form.dataset.pageSizeInitialized === 'true') return;
+		form.dataset.pageSizeInitialized = 'true';
+
+		form.querySelector('button[type="submit"]')?.remove();
+
+		if (!document.querySelector('#category-page-size-focus-style')) {
+			const style = document.createElement('style');
+			style.id = 'category-page-size-focus-style';
+			style.textContent = `
+				.category-page-size select:focus,
+				.category-page-size select:focus-visible {
+					outline: none !important;
+					box-shadow: none !important;
+					border-color: var(--color-brand-stroke-1) !important;
+				}
+			`;
+			document.head.append(style);
+		}
+
+		select.addEventListener('change', () => {
+			form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+		});
+	};
+
 	const initialize = () => {
 		for (const tree of document.querySelectorAll('[data-category-groups]')) initializeTree(tree);
+		initializePageSizeControl();
 	};
 
 	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialize, { once: true });
