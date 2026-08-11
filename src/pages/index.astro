@@ -250,7 +250,7 @@ const searchItems = posts.map((post) => ({
 
 		<Footer />
 
-		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\u003c')}></script>
+		<script id="home-search-data" type="application/json" set:html={JSON.stringify(searchItems).replace(/</g, '\\u003c')}></script>
 		<script>
 			type HomeItem = { title: string; description: string; labels: string[]; href: string };
 
